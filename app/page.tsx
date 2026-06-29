@@ -44,7 +44,7 @@ const techRoutes = [
     label: "UV LED WATER-COOLED SYSTEMS",
     brands: ["Phoseon®", "NobleLight®"],
     desc: "Water-cooled UV LED curing systems for environments with extreme temperatures and debris. Ideal for heat-sensitive substrates.",
-    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT%203-UV-LED%20WATER-COOLED%20SYSTEMS.png`,
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT%203-UV-LED%20WATER-COOLED%20SYSTEM.png`,
     group: "single",
   },
   {
@@ -143,10 +143,10 @@ export default function Home() {
           <div className="rounded-full h-3 mb-1 overflow-hidden" style={{ background: "linear-gradient(to right, #1e1b4b, #4c1d95, #1d4ed8, #0ea5e9, #22c55e, #eab308, #f59e0b)" }} />
           <div className="relative h-4 text-xs text-gray-400 mb-3">
             <span className="absolute" style={{ left: "0%" }}>VUV</span>
-            <span className="absolute" style={{ left: "20%" }}>UVC</span>
-            <span className="absolute" style={{ left: "29%" }}>UVB</span>
+            <span className="absolute" style={{ left: "13%" }}>UVC</span>
+            <span className="absolute" style={{ left: "26%" }}>UVB</span>
             <span className="absolute" style={{ left: "40%", transform: "translateX(-50%)" }}>UVA</span>
-            <span className="absolute" style={{ left: "50%", transform: "translateX(-50%)" }}>Visible</span>
+            <span className="absolute" style={{ left: "72%", transform: "translateX(-50%)" }}>Visible</span>
           </div>
 
           {/* Group labels — 3 left (single wavelength / UVA), 3 right (broad spectrum / Visible) */}
