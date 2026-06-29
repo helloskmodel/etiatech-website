@@ -99,7 +99,7 @@ const brands = [
   },
   {
     id: "fusionuv",
-    name: "Fusion UV®",
+    name: "Fusion®",
     tagline: "Microwave UV Curing",
     logo: "▲",
     color: "#f59e0b",
@@ -175,15 +175,15 @@ export default function ProductPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
+      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>UV Curing Systems · 4 World-Class Brands</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
             Precision Cures.<br />
             <span style={{ color: "#44B549" }}>Supreme Control.</span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
             Advanced UV curing systems engineered for precise output, stable performance, and repeatable manufacturing results.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -234,7 +234,7 @@ export default function ProductPage() {
             <div>
               {brand.families.map((group) => (
                 <div key={group.category} className="mb-10">
-                  <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#1A56DB" }}>
+                  <span className="inline-block whitespace-nowrap text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#1A56DB" }}>
                     {group.category}
                   </span>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

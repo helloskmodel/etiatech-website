@@ -96,7 +96,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col gap-4">
                 {[
-                  { icon: "🔬", title: "Product Inquiry", desc: "Explore OmniCure, Phoseon, Fusion UV and NobleLight systems matched to your process." },
+                  { icon: "🔬", title: "Product Inquiry", desc: "Explore OmniCure, Phoseon, Fusion and NobleLight systems matched to your process." },
                   { icon: "⚗️", title: "Application Consulting", desc: "Validate your UV curing process — from adhesive selection to dose and irradiance testing." },
                   { icon: "🛠️", title: "Custom Engineering", desc: "Need a non-standard configuration? We engineer bespoke solutions for complex production lines." },
                 ].map((item) => (
