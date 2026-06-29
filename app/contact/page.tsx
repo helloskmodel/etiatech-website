@@ -65,11 +65,11 @@ export default function ContactPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Sales & Support</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            Talk to an Engineer.<br />
+            Expert Guidance.<br />
             <span style={{ color: "#44B549" }}>We&apos;re Here to Help.</span>
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-            Whether you need product advice, a custom solution, or equipment support — our team is ready to help.
+            From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answer and keep production moving.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {["Sales Inquiry", "Service & Repair", "Global Contacts"].map((label, i) => (

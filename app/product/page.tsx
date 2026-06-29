@@ -184,7 +184,7 @@ export default function ProductPage() {
             <span style={{ color: "#44B549" }}>Supreme Control.</span>
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Advanced UV curing systems for modern manufacturing and assembly — validated processes, zero compromise.
+            Advanced UV curing systems engineered for precise output, stable performance, and repeatable manufacturing results.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>

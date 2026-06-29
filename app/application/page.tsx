@@ -201,9 +201,9 @@ export default function ApplicationPage() {
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>9 Industries · 51 Application Notes</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Advanced. Reliable.<br /><span style={{ color: "#44B549" }}>Built for Your Process.</span></h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Validated Applications.<br /><span style={{ color: "#44B549" }}>Reliable Performance.</span></h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-            51 validated application notes across 9 industries — browse UV curing solutions matched to your process, substrate, and production requirements.
+            UV curing solutions proven across 9 industries and 51 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.
           </p>
         </div>
       </section>

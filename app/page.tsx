@@ -93,11 +93,11 @@ export default function Home() {
             Authorized Distributor · Genuine Products Guaranteed
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            Your UV Curing Partner —<br />
-            <span style={{ color: "#44B549" }}>From Selection to Support.</span>
+            Trusted Expertise.<br />
+            <span style={{ color: "#44B549" }}>Responsive Solutions.</span>
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-            ETIA combines 20 years of application expertise with local stock, in-house repair, and a professional team — so your line runs faster, smarter, and never stops.
+            ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
