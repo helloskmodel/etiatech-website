@@ -109,9 +109,15 @@ export default function OmniCurePage() {
                     <p className="text-xs opacity-70 mb-2 font-medium tracking-wider">{fam.type}</p>
                     <h3 className="text-xl font-bold mb-4 whitespace-pre-line">{fam.name}</h3>
                     <div className="flex flex-wrap gap-2">
-                      {fam.models.map((m) => (
-                        <span key={m} className="text-xs px-2 py-1 rounded bg-white/15 border border-white/20">{m}</span>
-                      ))}
+                      {fam.models.map((m) =>
+                        m === "S2000 Elite" ? (
+                          <Link key={m} href="/product/omnicure/s2000" className="text-xs px-2 py-1 rounded bg-white/25 border border-white/40 font-semibold hover:bg-white/35 transition-colors">
+                            {m} →
+                          </Link>
+                        ) : (
+                          <span key={m} className="text-xs px-2 py-1 rounded bg-white/15 border border-white/20">{m}</span>
+                        )
+                      )}
                     </div>
                   </div>
                 ))}
