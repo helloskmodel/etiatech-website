@@ -204,30 +204,26 @@ export default function ProductPage() {
           <h2 className="text-center text-2xl font-bold mb-8" style={{ color: "#1A56DB" }}>4 World-Class Brands · Select to Explore</h2>
 
           {/* 4 Brand Icons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {brands.map((b) => (
               <button
                 key={b.id}
                 onClick={() => b.available && setActiveBrand(b.id)}
-                className={`relative rounded-2xl p-6 border-2 transition-all text-left ${
+                className={`relative flex items-center gap-3 px-5 py-3 rounded-xl border-2 transition-all ${
                   activeBrand === b.id
-                    ? "shadow-lg"
+                    ? "shadow-md"
                     : b.available
-                    ? "border-gray-100 hover:border-gray-300 hover:shadow-md bg-gray-50"
-                    : "border-gray-100 bg-gray-50 opacity-50 cursor-default"
+                    ? "border-gray-200 hover:border-gray-300 hover:shadow-sm bg-white"
+                    : "border-gray-100 bg-gray-50 opacity-40 cursor-default"
                 }`}
-                style={activeBrand === b.id ? { borderColor: b.color, background: `${b.color}08` } : {}}
+                style={activeBrand === b.id ? { borderColor: b.color, background: `${b.color}0d` } : {}}
               >
-                {!b.available && (
-                  <span className="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-gray-200 text-gray-400">Coming Soon</span>
-                )}
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl font-bold mb-3" style={{ background: b.color }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-base font-bold flex-shrink-0" style={{ background: b.color }}>
                   {b.logo}
                 </div>
-                <p className="font-bold text-lg" style={{ color: b.available ? b.color : "#9ca3af" }}>{b.name}</p>
-                <p className="text-xs text-gray-400 mt-1">{b.tagline}</p>
-                {activeBrand === b.id && (
-                  <div className="mt-2 text-xs font-semibold" style={{ color: b.color }}>● Selected</div>
+                <span className="font-bold text-sm" style={{ color: activeBrand === b.id ? b.color : b.available ? "#374151" : "#9ca3af" }}>{b.name}</span>
+                {!b.available && (
+                  <span className="text-xs px-1.5 py-0.5 rounded-full bg-gray-100 text-gray-400">Soon</span>
                 )}
               </button>
             ))}
