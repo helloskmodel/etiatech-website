@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { industryImage, industryFallbackIcon } from "@/components/industryMedia";
 
 const whyEtia = [
   {
@@ -194,18 +195,32 @@ export default function Home() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Applications</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>9 Industries · 51 Application Notes</h2>
           <p className="text-gray-500 mb-10">Browse UV curing solutions validated across the most demanding manufacturing environments.</p>
-          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3">
-            {industries.map((ind) => (
-              <Link
-                key={ind.name}
-                href="/application"
-                className="flex flex-col items-center gap-2 p-4 rounded-xl border border-gray-100 hover:border-[#1A56DB]/40 hover:shadow-md transition-all group text-center bg-gray-50"
-              >
-                <span className="text-3xl">{ind.icon}</span>
-                <span className="text-xs text-gray-600 group-hover:text-[#1A56DB] leading-tight">{ind.name}</span>
-                <span className="text-xs font-medium" style={{ color: "#44B549" }}>{ind.count} apps</span>
-              </Link>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {industries.map((ind) => {
+              const photo = industryImage[ind.name];
+              const Icon = industryFallbackIcon[ind.name];
+              return (
+                <Link
+                  key={ind.name}
+                  href="/application"
+                  className="rounded-xl overflow-hidden border border-gray-100 bg-white hover:border-[#1A56DB]/40 hover:shadow-md transition-all group"
+                >
+                  <div className="relative h-28 overflow-hidden bg-gray-100">
+                    {photo ? (
+                      <img src={photo} alt={ind.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #1241a3 100%)" }}>
+                        {Icon && <Icon className="w-9 h-9 text-white/90" strokeWidth={1.5} />}
+                      </div>
+                    )}
+                    <span className="absolute bottom-0 right-0 px-2 py-0.5 text-[11px] font-semibold text-white rounded-tl-lg" style={{ background: "#44B549" }}>{ind.count} apps</span>
+                  </div>
+                  <div className="p-3 text-center">
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#1A56DB] leading-tight">{ind.name}</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
           <div className="mt-10 text-center">
             <Link href="/application" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold border-2 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white transition-all">
