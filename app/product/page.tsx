@@ -103,8 +103,28 @@ const brands = [
     tagline: "Microwave UV Curing",
     logo: "▲",
     color: "#f59e0b",
-    available: false,
-    families: [],
+    available: true,
+    families: [
+      {
+        category: "MICROWAVE UV CURING SYSTEMS",
+        items: [
+          {
+            series: "F SERIES · LIGHTHAMMER · INDUSTRIAL BROADBAND",
+            name: "Microwave UV Curing Systems",
+            desc: "Electrodeless microwave-powered UV systems for production lines. Modular design, Industry 4.0 ready, broad spectrum output. Easy retrofit into existing processes.",
+            models: ["F Series", "LightHammer Series", "Accessories & Replacement Parts"],
+            bg: "#b45309",
+          },
+          {
+            series: "OPTICAL FIBER · DRAW TOWER · CABLE & WIRE",
+            name: "Microwave UV Curing Systems for Optical Fibers",
+            desc: "Modular 6- or 10-inch microwave UV systems for draw towers, coloring lines, and cable marking. Patented secondary reflector maximizes UV delivery to fiber.",
+            models: ["Optical Fiber UV Systems"],
+            bg: "#f59e0b",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "noblelight",
