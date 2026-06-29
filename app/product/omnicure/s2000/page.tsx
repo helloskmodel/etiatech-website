@@ -114,19 +114,19 @@ export default function S2000ElitePage() {
       </div>
 
       {/* Hero — dark */}
-      <section className="py-16 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
+      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 75% 40%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
               OmniCure® S Series · Lamp-Based UV Spot Curing
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-3">S2000 Elite</h1>
-            <p className="text-xl md:text-2xl font-semibold mb-4" style={{ color: "#44B549" }}>Maximum Power. Total Control.</p>
-            <p className="text-base text-gray-300 max-w-xl mb-8 leading-relaxed">
+            <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-2">S2000 Elite</h1>
+            <p className="text-lg md:text-xl font-semibold mb-3" style={{ color: "#44B549" }}>Maximum Power. Total Control.</p>
+            <p className="text-base text-gray-300 max-w-xl mb-6 leading-relaxed line-clamp-2">
               The industry&apos;s most advanced lamp-based UV spot curing system — up to 30 W/cm² with closed-loop precision for medical, electronics, and EV manufacturing.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
               {heroStats.map((s) => (
                 <div key={s.label} className="rounded-lg p-3 border border-white/10" style={{ background: "rgba(255,255,255,0.05)" }}>
                   <p className="text-xl font-bold" style={{ color: "#44B549" }}>{s.val}</p>
@@ -139,8 +139,8 @@ export default function S2000ElitePage() {
               <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">⬇ Download Datasheet</Link>
             </div>
           </div>
-          <div className="rounded-2xl bg-white/95 p-6 flex items-center justify-center" style={{ minHeight: "360px" }}>
-            <img src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" className="object-contain w-full" style={{ maxHeight: "440px" }} />
+          <div className="rounded-2xl bg-white/95 p-6 flex items-center justify-center" style={{ minHeight: "280px" }}>
+            <img src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" className="object-contain w-full" style={{ maxHeight: "340px" }} />
           </div>
         </div>
       </section>
