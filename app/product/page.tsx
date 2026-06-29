@@ -19,7 +19,7 @@ const brands = [
             name: "UV Lamp Spot Curing Systems",
             desc: "Broad-spectrum 200W mercury high-pressure lamp spot curing. Industry-proven for medical devices and precision assembly.",
             models: ["S2000 Elite", "S1500 Pro", "R2000 Radiometer", "S2E Network Module", "S Series Light Guide"],
-            bg: "#1A56DB",
+            bg: "#166534",
           },
           {
             series: "LX SERIES · LED BASED · SINGLE WAVELENGTH",
@@ -45,7 +45,7 @@ const brands = [
             name: "Air-Cooled UV LED Small-Area Curing",
             desc: "Compact LED area curing for inline PCB, display, and small component applications. Fast, consistent, zero warm-up.",
             models: ["AC2", "AC6", "AC5"],
-            bg: "#44B549",
+            bg: "#60a5fa",
           },
         ],
       },
