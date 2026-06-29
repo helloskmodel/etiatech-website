@@ -63,7 +63,7 @@ const brands = [
         category: "WATER-COOLED UV LED AREA CURING SYSTEMS",
         items: [
           {
-            series: "WATER-COOLED · HIGH-POWER · INDUSTRIAL",
+            series: "FIRELINE · VERICURE · SEMRAY · HIGH-POWER INDUSTRIAL",
             name: "Water-Cooled UV LED Area Curing Systems",
             desc: "High-intensity water-cooled UV LED systems for demanding industrial processes. Stable output under extreme temperatures and debris environments.",
             models: ["Nexus II", "FireLine FL200", "FireLine FL400", "FireLine FL400-i Industrial", "FireLine FL440", "VeriCure Water-Cooled", "Semray 5000+"],
@@ -72,24 +72,19 @@ const brands = [
         ],
       },
       {
-        category: "AIR-COOLED UV LED LARGE-AREA CURING SYSTEMS",
+        category: "AIR-COOLED UV LED CURING SYSTEMS",
         items: [
           {
-            series: "AIR-COOLED · LARGE AREA · CONVEYOR INTEGRATION",
+            series: "FIREJET · AIR-COOLED · LARGE AREA",
             name: "Air-Cooled UV LED Large-Area Curing Systems",
-            desc: "Compact and cost-effective air-cooled UV LED systems for wide-format and large-area curing applications. No chiller required.",
+            desc: "Cost-effective air-cooled UV LED systems for wide-format and large-area curing. Conveyor-integrated, no chiller required.",
             models: ["Nexus II Air-Cooled", "FireJet ONE", "FireJet FJ100", "FireJet FJ240", "FireJet FJ800", "FireJet FJ801", "Optical Fiber UV LED"],
             bg: "#0ea5e9",
           },
-        ],
-      },
-      {
-        category: "AIR-COOLED UV LED SMALL-AREA CURING SYSTEMS",
-        items: [
           {
-            series: "FIREEDGE · PASSIVE COOLING · COMPACT FORM FACTOR",
+            series: "FIREEDGE · PASSIVE COOLING · SMALL AREA",
             name: "FireEdge UV LED Small-Area Curing Systems",
-            desc: "Passively air-cooled UV LED systems with ultra-slim form factor. Ideal for digital inkjet pinning, space-limited inline applications, and precision finish control.",
+            desc: "Passively cooled, ultra-slim form factor. Ideal for digital inkjet pinning and space-limited inline applications.",
             models: ["FireEdge FE100", "FireEdge FE400", "FireEdge FE410"],
             bg: "#7dd3fc",
           },
