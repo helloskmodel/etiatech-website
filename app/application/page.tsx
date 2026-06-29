@@ -185,20 +185,19 @@ export default function ApplicationPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest text-[#3b82f6] uppercase mb-3">Applications</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Advanced. Reliable. Built for Your Process.</h1>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg mb-8 leading-relaxed">
-            ETIA delivers the world&apos;s most advanced UV curing solutions — from precision spot curing to high-speed LED area curing — engineered to maximize product quality and production efficiency across 9 industries.
+      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1B3D8F 0%, transparent 60%)" }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>9 Industries · 51 Application Notes</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Advanced. Reliable.<br /><span style={{ color: "#44B549" }}>Built for Your Process.</span></h1>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+            UV curing solutions validated across the most demanding manufacturing environments — from medical device bonding to EV battery encapsulation.
           </p>
-          {/* Key attributes */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {["Faster Cure", "Consistent Results", "Highest Quality", "Easy Integration", "Precision to Area", "Automated & Stand-alone", "VOC-Free", "Industry 4.0 Ready"].map((kw) => (
-              <span key={kw} className="text-xs px-3 py-1.5 rounded-full border border-[#3b82f6]/40 text-[#3b82f6]">{kw}</span>
+          <div className="flex flex-wrap justify-center gap-3">
+            {["Faster Cure", "Consistent Results", "VOC-Free", "Easy Integration", "Industry 4.0 Ready"].map((kw) => (
+              <span key={kw} className="text-xs px-3 py-1.5 rounded-full border border-white/20 text-gray-300">{kw}</span>
             ))}
           </div>
-          <p className="text-sm text-gray-400">9 Industries · 51 Application Notes · Challenge · Solution · Benefit · Recommended System</p>
         </div>
       </section>
 

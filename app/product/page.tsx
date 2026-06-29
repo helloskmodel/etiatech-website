@@ -92,15 +92,16 @@ export default function ProductPage() {
 
   return (
     <>
-      {/* Hero — dark, generic */}
+      {/* Hero */}
       <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1B3D8F 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>UV Curing Systems · 4 World-Class Brands</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
             Precision Cures.<br />
             <span style={{ color: "#44B549" }}>Supreme Control.</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
             Advanced UV curing systems for modern manufacturing and assembly — validated processes, zero compromise.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -110,21 +111,6 @@ export default function ProductPage() {
             <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
               Browse Applications
             </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {[
-              { val: "±5%", label: "Irradiance Stability" },
-              { val: "50,000h", label: "LED Lifespan" },
-              { val: "30 ms", label: "Precision Shutter" },
-              { val: "I 4.0", label: "Industry 4.0 Ready" },
-            ].map((s) => (
-              <div key={s.label} className="rounded-lg p-4 border border-white/10" style={{ background: "rgba(255,255,255,0.05)" }}>
-                <p className="text-2xl font-bold" style={{ color: "#44B549" }}>{s.val}</p>
-                <p className="text-xs text-gray-400 mt-1">{s.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
