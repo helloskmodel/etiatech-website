@@ -100,6 +100,18 @@ const industryIcons: Record<string, string> = {
   "Aerospace": "✈️",
 };
 
+const industryColors: Record<string, string> = {
+  "Medical Device": "#e11d48",
+  "Automotive": "#1e3a5f",
+  "Electronics": "#1A56DB",
+  "Cable & Fiber": "#0d9488",
+  "Precision Optics": "#7c3aed",
+  "UV Printing": "#d97706",
+  "Wood Coatings": "#16a34a",
+  "Metal Coatings": "#92400e",
+  "Aerospace": "#475569",
+};
+
 type CaseStudy = {
   id: string;
   industry: string;
@@ -202,11 +214,12 @@ export default function ApplicationPage() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="sticky top-16 z-40 border-b border-white/10" style={{ background: "#060e1f" }}>
+      <section className="sticky top-16 z-40 border-b border-gray-200 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex gap-2 overflow-x-auto">
           <button
             onClick={() => setActiveIndustry("All")}
-            className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${activeIndustry === "All" ? "bg-[#2563eb] text-white" : "text-gray-400 hover:text-white border border-white/20"}`}
+            className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${activeIndustry === "All" ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
+            style={activeIndustry === "All" ? { background: "#1A56DB" } : {}}
           >
             All ({apps.length})
           </button>
@@ -214,36 +227,46 @@ export default function ApplicationPage() {
             <button
               key={ind}
               onClick={() => setActiveIndustry(ind)}
-              className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${activeIndustry === ind ? "bg-[#2563eb] text-white" : "text-gray-400 hover:text-white border border-white/20"}`}
+              className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${activeIndustry === ind ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
+              style={activeIndustry === ind ? { background: industryColors[ind] } : {}}
             >
-              {industryIcons[ind]} {ind} ({apps.filter((a) => a.industry === ind).length})
+              <span className={`w-2 h-2 rounded-full`} style={{ background: industryColors[ind] }} />
+              {ind} ({apps.filter((a) => a.industry === ind).length})
             </button>
           ))}
         </div>
       </section>
 
       {/* Application Cards */}
-      <section className="py-12" style={{ background: "#0a1628" }}>
+      <section className="py-10" style={{ background: "#f5f7fa" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {filtered.map((app) => (
               <button
                 key={app.id}
                 onClick={() => setSelectedApp(app)}
-                className="text-left rounded-xl p-5 border border-white/10 hover:border-[#3b82f6]/50 hover:bg-white/5 transition-all group"
+                className="text-left rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all group overflow-hidden"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <span className="text-xs text-[#3b82f6] font-medium">{industryIcons[app.industry]} {app.industry}</span>
-                  {app.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-400 border border-orange-500/30">⭐ Hot</span>}
-                </div>
-                <h3 className="text-white font-semibold mb-1 group-hover:text-[#3b82f6] transition-colors">{app.title}</h3>
-                <p className="text-xs text-gray-500 mb-3">{app.subCategory}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs px-2 py-1 rounded bg-white/10 text-gray-300 truncate max-w-[70%]">{app.product}</span>
-                  <span className="text-xs text-gray-600">{app.id}</span>
-                </div>
-                <div className="mt-3 text-xs text-[#3b82f6] opacity-0 group-hover:opacity-100 transition-opacity">
-                  View details →
+                {/* Colored top bar */}
+                <div className="h-1" style={{ background: industryColors[app.industry] }} />
+                <div className="p-4">
+                  {/* Badges row */}
+                  <div className="flex flex-wrap items-center gap-1.5 mb-3">
+                    <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[app.industry] }}>
+                      {app.industry.toUpperCase()}
+                    </span>
+                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">{app.product}</span>
+                    {app.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ Hot</span>}
+                  </div>
+                  {/* Title */}
+                  <h3 className="font-bold text-gray-900 text-sm leading-snug mb-1 group-hover:text-[#1A56DB] transition-colors">{app.title}</h3>
+                  {/* Subcategory */}
+                  <p className="text-xs text-gray-400 mb-3">{app.subCategory}</p>
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-2 border-t border-gray-50">
+                    <span className="text-xs text-gray-300">{app.id}</span>
+                    <span className="text-xs text-[#1A56DB] opacity-0 group-hover:opacity-100 transition-opacity font-medium">View →</span>
+                  </div>
                 </div>
               </button>
             ))}
@@ -252,45 +275,47 @@ export default function ApplicationPage() {
       </section>
 
       {/* Customer Success */}
-      <section className="py-20" style={{ background: "#0d1f3c" }}>
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest text-[#3b82f6] uppercase mb-2">Customer Success</p>
-          <h2 className="text-3xl font-bold text-white mb-3">Real Results from Real Manufacturers</h2>
-          <p className="text-gray-400 mb-10">Validated UV curing outcomes across industries — from medical devices to EV batteries to furniture panels.</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Customer Success</p>
+          <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>Real Results from Real Manufacturers</h2>
+          <p className="text-gray-500 mb-10">Validated UV curing outcomes across industries — from medical devices to EV batteries to furniture panels.</p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {successStories.map((s) => (
-              <div key={s.id} className="rounded-xl border border-white/10 overflow-hidden" style={{ background: "rgba(255,255,255,0.04)" }}>
+              <div key={s.id} className="rounded-xl border border-gray-100 overflow-hidden shadow-sm bg-white">
+                {/* Colored top bar */}
+                <div className="h-1" style={{ background: industryColors[s.industry] }} />
                 {/* Header */}
-                <div className="px-6 pt-5 pb-4 border-b border-white/10">
+                <div className="px-6 pt-5 pb-4 border-b border-gray-100">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-[#3b82f6] font-medium">{industryIcons[s.industry]} {s.industry}</span>
-                    <span className="text-xs text-gray-500">{s.id}</span>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[s.industry] }}>{s.industry.toUpperCase()}</span>
+                    <span className="text-xs text-gray-400">{s.id}</span>
                   </div>
-                  <h3 className="text-white font-bold text-lg">{s.title}</h3>
+                  <h3 className="font-bold text-lg" style={{ color: "#1A56DB" }}>{s.title}</h3>
                   <p className="text-gray-400 text-xs mt-1">{s.company}</p>
                 </div>
                 {/* Body */}
                 <div className="px-6 py-4 space-y-3">
                   <div>
-                    <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-1">The Challenge</p>
-                    <p className="text-sm text-gray-300 leading-relaxed">{s.challenge}</p>
+                    <p className="text-xs font-bold text-red-500 uppercase tracking-wider mb-1">The Challenge</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{s.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-1">The Solution</p>
-                    <p className="text-sm text-gray-300 leading-relaxed">{s.solution}</p>
+                    <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "#1A56DB" }}>The Solution</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{s.solution}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-green-400 uppercase tracking-wider mb-1">Results & Metrics</p>
-                    <p className="text-sm text-gray-300 leading-relaxed">{s.results}</p>
+                    <p className="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">Results & Metrics</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{s.results}</p>
                   </div>
                 </div>
                 {/* Footer metric */}
-                <div className="px-6 py-4 border-t border-white/10 flex items-center justify-between" style={{ background: "rgba(255,255,255,0.02)" }}>
+                <div className="px-6 py-4 border-t border-gray-100 flex items-center justify-between bg-gray-50">
                   <div>
-                    <p className="text-2xl font-bold text-[#3b82f6]">{s.metric}</p>
+                    <p className="text-2xl font-bold" style={{ color: "#1A56DB" }}>{s.metric}</p>
                     <p className="text-xs text-gray-400 mt-0.5">{s.metricLabel}</p>
                   </div>
-                  <p className="text-xs text-gray-600 text-right max-w-[40%]">Source: {s.source}</p>
+                  <p className="text-xs text-gray-400 text-right max-w-[40%]">Source: {s.source}</p>
                 </div>
               </div>
             ))}
@@ -317,40 +342,38 @@ export default function ApplicationPage() {
           onClick={() => setSelectedApp(null)}
         >
           <div
-            className="w-full max-w-lg rounded-2xl p-6 border border-white/20 relative max-h-[90vh] overflow-y-auto"
-            style={{ background: "#0d1f3c" }}
+            className="w-full max-w-lg rounded-2xl bg-white relative max-h-[90vh] overflow-y-auto shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <button onClick={() => setSelectedApp(null)} className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl leading-none">✕</button>
+            {/* Colored top bar */}
+            <div className="h-1.5 rounded-t-2xl" style={{ background: industryColors[selectedApp.industry] }} />
+            <div className="p-6">
+            <button onClick={() => setSelectedApp(null)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl leading-none">✕</button>
 
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs text-[#3b82f6] font-medium">{industryIcons[selectedApp.industry]} {selectedApp.industry}</span>
-              <span className="text-xs text-gray-500">·</span>
-              <span className="text-xs text-gray-500">{selectedApp.subCategory}</span>
+              <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[selectedApp.industry] }}>{selectedApp.industry.toUpperCase()}</span>
+              <span className="text-xs text-gray-400">{selectedApp.subCategory}</span>
+              {selectedApp.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ Hot</span>}
             </div>
-            <h2 className="text-xl font-bold text-white mt-1 mb-1 pr-6">{selectedApp.title}</h2>
-            <p className="text-xs text-gray-500 mb-4">{selectedApp.id}</p>
+            <h2 className="text-xl font-bold mt-2 mb-1 pr-6" style={{ color: "#1A56DB" }}>{selectedApp.title}</h2>
+            <p className="text-xs text-gray-400 mb-4">{selectedApp.id}</p>
 
-            <div className="flex flex-wrap gap-2 mb-5">
-              {selectedApp.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-400 border border-orange-500/30">⭐ Hot Application</span>}
-            </div>
-
-            <div className="space-y-4 mb-5">
-              <div className="rounded-lg p-4" style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}>
-                <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">The Challenge</p>
-                <p className="text-sm text-gray-300 leading-relaxed">{selectedApp.challenge}</p>
+            <div className="space-y-3 mb-5">
+              <div className="rounded-lg p-4 bg-red-50 border border-red-100">
+                <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">The Challenge</p>
+                <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.challenge}</p>
               </div>
-              <div className="rounded-lg p-4" style={{ background: "rgba(59,130,246,0.08)", border: "1px solid rgba(59,130,246,0.2)" }}>
-                <p className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">The Solution</p>
-                <p className="text-sm text-gray-300 leading-relaxed">{selectedApp.solution}</p>
+              <div className="rounded-lg p-4 border" style={{ background: "#f0f5ff", borderColor: "#c7d9ff" }}>
+                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#1A56DB" }}>The Solution</p>
+                <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.solution}</p>
               </div>
-              <div className="rounded-lg p-4" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>
-                <p className="text-xs font-bold text-green-400 uppercase tracking-wider mb-2">The Benefit</p>
-                <p className="text-sm text-gray-300 leading-relaxed">{selectedApp.benefit}</p>
+              <div className="rounded-lg p-4 bg-green-50 border border-green-100">
+                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">The Benefit</p>
+                <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.benefit}</p>
               </div>
-              <div className="rounded-lg p-4" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Recommended System</p>
-                <p className="text-sm text-white font-medium">{selectedApp.recommended}</p>
+              <div className="rounded-lg p-4 bg-gray-50 border border-gray-100">
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Recommended System</p>
+                <p className="text-sm font-semibold" style={{ color: "#1A56DB" }}>{selectedApp.recommended}</p>
               </div>
             </div>
 
@@ -362,6 +385,7 @@ export default function ApplicationPage() {
             >
               Talk to an Engineer About This Application →
             </Link>
+            </div>
           </div>
         </div>
       )}

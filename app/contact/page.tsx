@@ -171,7 +171,7 @@ export default function ContactPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Part 3</p>
           <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>Global Contacts</h2>
           <div className="w-10 h-1 rounded mb-10" style={{ background: "#44B549" }} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { region: "China", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com" },
               { region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "support@etiatech.com" },
