@@ -56,7 +56,7 @@ const techRoutes = [
   },
   {
     label: "MICROWAVE UV CURING SYSTEMS",
-    brands: ["Fusion UV®"],
+    brands: ["Fusion®"],
     desc: "Microwave UV curing systems use electrodeless bulbs offering longer life, consistent output and less heat. Ideal for broad spectrum and UVC applications.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT5-MICROWAVE%20UV%20CURING.png`,
     group: "broad",
@@ -86,17 +86,17 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
+      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
             Authorized Distributor · Genuine Products Guaranteed
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
             Trusted Expertise.<br />
             <span style={{ color: "#44B549" }}>Responsive Solutions.</span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
             ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

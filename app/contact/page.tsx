@@ -60,15 +60,15 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
+      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Sales & Support</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
             Expert Guidance.<br />
             <span style={{ color: "#44B549" }}>We&apos;re Here to Help.</span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-6 line-clamp-2">
             From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answer and keep production moving.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
@@ -96,7 +96,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col gap-4">
                 {[
-                  { icon: "🔬", title: "Product Inquiry", desc: "Explore OmniCure, Phoseon, Fusion UV and NobleLight systems matched to your process." },
+                  { icon: "🔬", title: "Product Inquiry", desc: "Explore OmniCure, Phoseon, Fusion and NobleLight systems matched to your process." },
                   { icon: "⚗️", title: "Application Consulting", desc: "Validate your UV curing process — from adhesive selection to dose and irradiance testing." },
                   { icon: "🛠️", title: "Custom Engineering", desc: "Need a non-standard configuration? We engineer bespoke solutions for complex production lines." },
                 ].map((item) => (

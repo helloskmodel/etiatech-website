@@ -197,14 +197,22 @@ export default function ApplicationPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
+      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>9 Industries · 51 Application Notes</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Validated Applications.<br /><span style={{ color: "#44B549" }}>Reliable Performance.</span></h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">Validated Applications.<br /><span style={{ color: "#44B549" }}>Reliable Performance.</span></h1>
+          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed line-clamp-2">
             UV curing solutions proven across 9 industries and 51 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.
           </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+              Talk to Our Sales
+            </Link>
+            <Link href="/product" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
+              Explore Products
+            </Link>
+          </div>
         </div>
       </section>
 
