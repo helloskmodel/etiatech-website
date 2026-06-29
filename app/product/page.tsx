@@ -1,91 +1,235 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 
 const brands = [
   {
+    id: "omnicure",
     name: "OmniCure®",
-    tagline: "Precision UV Spot & Area Curing",
-    desc: "The world's leading UV curing platform for medical devices, electronics, and precision manufacturing.",
-    available: true,
-    href: "/product/omnicure",
+    tagline: "UV Spot & Area Curing",
+    logo: "●",
     color: "#1B3D8F",
+    available: true,
+    families: [
+      {
+        category: "UV SPOT CURING SYSTEMS",
+        items: [
+          {
+            series: "S SERIES · LAMP-BASED · 200W HG",
+            name: "UV Lamp Spot Curing Systems",
+            desc: "Broad-spectrum 200W mercury high-pressure lamp spot curing. Industry-proven for medical devices and precision assembly.",
+            models: ["S2000 Elite", "S1500 Pro", "R2000 Radiometer", "S2E Network Module", "S Series Light Guide"],
+            bg: "#1B3D8F",
+          },
+          {
+            series: "LX SERIES · LED BASED · SINGLE WAVELENGTH",
+            name: "UV LED Spot Curing Systems",
+            desc: "Single-wavelength LED spot curing at 365 nm. 0 ms warm-up, 50,000h lifespan, Industry 4.0 ready.",
+            models: ["LX500 V2", "LS200 Radiometer", "UV LED Heads (V3)"],
+            bg: "#44B549",
+          },
+        ],
+      },
+      {
+        category: "UV AREA CURING SYSTEMS",
+        items: [
+          {
+            series: "AC LARGE · AIR-COOLED LED · >75MM WIDTH",
+            name: "Air-Cooled UV LED Large-Area Curing",
+            desc: "High-output LED area curing for wide substrates. Conveyor-integrated, uniform irradiance across full panel width.",
+            models: ["ACT", "AC8", "AC8-HD", "ACN225-F", "AC UVC LED – 275nm"],
+            bg: "#1B3D8F",
+          },
+          {
+            series: "AC SMALL · AIR-COOLED LED · UP TO 240MM",
+            name: "Air-Cooled UV LED Small-Area Curing",
+            desc: "Compact LED area curing for inline PCB, display, and small component applications. Fast, consistent, zero warm-up.",
+            models: ["AC2", "AC6", "AC5"],
+            bg: "#44B549",
+          },
+        ],
+      },
+    ],
   },
   {
+    id: "phoseon",
     name: "Phoseon®",
-    tagline: "UV LED Air & Water-Cooled Systems",
-    desc: "High-power LED curing for printing, labels, packaging, and industrial coating applications.",
-    available: false,
-    color: "#44B549",
-  },
-  {
-    name: "Fusion UV®",
-    tagline: "Microwave UV Curing Systems",
-    desc: "Electrodeless microwave UV systems for broad-spectrum, high-power industrial curing.",
-    available: false,
+    tagline: "UV LED Air & Water-Cooled",
+    logo: "◆",
     color: "#0ea5e9",
+    available: false,
+    families: [],
   },
   {
-    name: "NobleLight®",
-    tagline: "Mercury Arc Lamps & Water-Cooled Systems",
-    desc: "Broad-spectrum mercury arc lamps for printing, wood coating, and replacement applications.",
+    id: "fusionuv",
+    name: "Fusion UV®",
+    tagline: "Microwave UV Curing",
+    logo: "▲",
+    color: "#f59e0b",
     available: false,
+    families: [],
+  },
+  {
+    id: "noblelight",
+    name: "NobleLight®",
+    tagline: "Mercury Arc Lamps",
+    logo: "■",
     color: "#7c3aed",
+    available: false,
+    families: [],
   },
 ];
 
+const uvCuringBenefits = [
+  { icon: "⚡", title: "Speed", desc: "UV curing converts liquid formulations to solid materials in seconds — eliminating thermal ovens, long cure queues, and handling delays that slow production lines." },
+  { icon: "🌿", title: "Clean & Safe", desc: "UV curable materials are 100% solid with no solvents — zero VOC emissions, no hazardous waste disposal, and no fumes in the clean room." },
+  { icon: "🔬", title: "Precision", desc: "Spectral output, peak irradiance, and energy dose precisely determine the physical properties of the cured material. The right equipment controls all three." },
+];
+
 export default function ProductPage() {
+  const [activeBrand, setActiveBrand] = useState("omnicure");
+  const brand = brands.find((b) => b.id === activeBrand)!;
+
   return (
     <>
-      {/* Hero — dark */}
-      <section className="py-20" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Our Products</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Precision Cures.<br /><span style={{ color: "#44B549" }}>Supreme Control.</span>
+      {/* Hero — dark, generic */}
+      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1B3D8F 0%, transparent 60%)" }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+            Precision Cures.<br />
+            <span style={{ color: "#44B549" }}>Supreme Control.</span>
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            4 world-class brands. 6 technology routes. One authorized partner who stocks it, supports it, and stands behind every system.
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Advanced UV curing systems for modern manufacturing and assembly — validated processes, zero compromise.
           </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1B3D8F" }}>
+              Talk to an Engineer
+            </Link>
+            <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
+              Browse Applications
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            {[
+              { val: "±5%", label: "Irradiance Stability" },
+              { val: "50,000h", label: "LED Lifespan" },
+              { val: "30 ms", label: "Precision Shutter" },
+              { val: "I 4.0", label: "Industry 4.0 Ready" },
+            ].map((s) => (
+              <div key={s.label} className="rounded-lg p-4 border border-white/10" style={{ background: "rgba(255,255,255,0.05)" }}>
+                <p className="text-2xl font-bold" style={{ color: "#44B549" }}>{s.val}</p>
+                <p className="text-xs text-gray-400 mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Brand Selection — light */}
-      <section className="py-20 bg-white">
+      {/* Brand Selector + Products — light */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-400 mb-12 text-sm">Select a brand to explore products and solutions</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {brands.map((brand) => (
-              <div
-                key={brand.name}
-                className={`relative rounded-2xl p-6 border transition-all flex flex-col bg-gray-50 ${
-                  brand.available
-                    ? "border-gray-200 hover:border-[#1B3D8F]/40 hover:shadow-lg cursor-pointer"
-                    : "border-gray-100 opacity-60"
+          <p className="text-center text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Our Brands</p>
+          <h2 className="text-center text-2xl font-bold mb-8" style={{ color: "#1B3D8F" }}>4 World-Class Brands · Select to Explore</h2>
+
+          {/* 4 Brand Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {brands.map((b) => (
+              <button
+                key={b.id}
+                onClick={() => b.available && setActiveBrand(b.id)}
+                className={`relative rounded-2xl p-6 border-2 transition-all text-left ${
+                  activeBrand === b.id
+                    ? "shadow-lg"
+                    : b.available
+                    ? "border-gray-100 hover:border-gray-300 hover:shadow-md bg-gray-50"
+                    : "border-gray-100 bg-gray-50 opacity-50 cursor-default"
                 }`}
+                style={activeBrand === b.id ? { borderColor: b.color, background: `${b.color}08` } : {}}
               >
-                {!brand.available && (
-                  <span className="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-gray-200 text-gray-500">
-                    Coming Soon
-                  </span>
+                {!b.available && (
+                  <span className="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-gray-200 text-gray-400">Coming Soon</span>
                 )}
-                <div className="w-10 h-10 rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm" style={{ background: brand.color }}>
-                  {brand.name[0]}
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl font-bold mb-3" style={{ background: b.color }}>
+                  {b.logo}
                 </div>
-                <h2 className="font-bold text-xl mb-1" style={{ color: "#1B3D8F" }}>{brand.name}</h2>
-                <p className="text-xs font-medium mb-3" style={{ color: "#44B549" }}>{brand.tagline}</p>
-                <p className="text-gray-500 text-sm leading-relaxed flex-1">{brand.desc}</p>
-                {brand.available ? (
-                  <Link
-                    href={brand.href!}
-                    className="mt-5 block text-center py-2 rounded font-semibold text-white text-sm hover:opacity-90 transition-all"
-                    style={{ background: "#1B3D8F" }}
-                  >
-                    Explore {brand.name} →
-                  </Link>
-                ) : (
-                  <div className="mt-5 py-2 rounded text-center text-sm text-gray-400 border border-gray-200 bg-white">
-                    Coming Soon
-                  </div>
+                <p className="font-bold text-lg" style={{ color: b.available ? b.color : "#9ca3af" }}>{b.name}</p>
+                <p className="text-xs text-gray-400 mt-1">{b.tagline}</p>
+                {activeBrand === b.id && (
+                  <div className="mt-2 text-xs font-semibold" style={{ color: b.color }}>● Selected</div>
                 )}
+              </button>
+            ))}
+          </div>
+
+          {/* Product Cards */}
+          {brand.available ? (
+            <div>
+              {brand.families.map((group) => (
+                <div key={group.category} className="mb-10">
+                  <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#1B3D8F" }}>
+                    {group.category}
+                  </span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {group.items.map((item) => (
+                      <div key={item.name} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                        {/* Card header */}
+                        <div className="p-5 text-white" style={{ background: item.bg }}>
+                          <p className="text-xs opacity-70 mb-1 tracking-wider font-medium">{item.series}</p>
+                          <h3 className="text-lg font-bold">{item.name}</h3>
+                        </div>
+                        {/* Card body */}
+                        <div className="p-5 bg-white">
+                          <p className="text-gray-500 text-sm mb-4 leading-relaxed">{item.desc}</p>
+                          <div className="flex flex-wrap gap-2">
+                            {item.models.map((m) => (
+                              <span key={m} className="text-xs px-3 py-1 rounded-full border font-medium" style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}>
+                                {m}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              <div className="text-center mt-4 text-sm text-gray-400">
+                *Custom Engineering Solutions Available ·{" "}
+                <Link href="/contact" className="font-medium hover:underline" style={{ color: "#1B3D8F" }}>Talk to ETIA Engineers →</Link>
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-20 rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50">
+              <div className="text-5xl mb-4">🔧</div>
+              <h3 className="text-xl font-bold mb-2" style={{ color: "#1B3D8F" }}>{brand.name} — Coming Soon</h3>
+              <p className="text-gray-400 mb-6">Product details for {brand.name} are being prepared. Contact us for information.</p>
+              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1B3D8F" }}>
+                Enquire About {brand.name} →
+              </Link>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Why UV Curing — light gray */}
+      <section className="py-20" style={{ background: "#f0f4f8" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>UV Curing Technology</p>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1B3D8F" }}>Why UV Curing?</h2>
+          <div className="w-10 h-1 rounded mb-8" style={{ background: "#44B549" }} />
+          <p className="text-gray-500 max-w-2xl mb-10">
+            UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {uvCuringBenefits.map((b) => (
+              <div key={b.title} className="rounded-xl p-6 border border-gray-100 bg-white hover:shadow-md transition-all">
+                <div className="text-3xl mb-3">{b.icon}</div>
+                <h3 className="font-semibold mb-2" style={{ color: "#1B3D8F" }}>{b.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -95,8 +239,8 @@ export default function ProductPage() {
       {/* CTA — dark */}
       <section className="py-16" style={{ background: "#0a1628" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Not sure which system is right for you?</h2>
-          <p className="text-gray-300 mb-6">Talk directly to an ETIA engineer — we'll match the right system to your application.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Not sure which system is right for you?</h2>
+          <p className="text-gray-300 mb-8">Our engineers will match the right UV curing system to your exact application — from selection to validation.</p>
           <Link href="/contact" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             Talk to ETIA Engineers →
           </Link>
