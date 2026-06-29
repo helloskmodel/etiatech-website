@@ -173,12 +173,10 @@ export default function ContactPage() {
           <div className="w-10 h-1 rounded mb-10" style={{ background: "#44B549" }} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { region: "Singapore", flag: "🇸🇬", phone: "+65 XXXX XXXX", email: "support@etiatech.com" },
-              { region: "Malaysia", flag: "🇲🇾", phone: "+60 X XXXX XXXX", email: "support@etiatech.com" },
-              { region: "Thailand", flag: "🇹🇭", phone: "+66 X XXXX XXXX", email: "support@etiatech.com" },
-              { region: "Vietnam", flag: "🇻🇳", phone: "+84 XX XXXX XXXX", email: "support@etiatech.com" },
-              { region: "Indonesia", flag: "🇮🇩", phone: "+62 XX XXXX XXXX", email: "support@etiatech.com" },
-              { region: "Philippines", flag: "🇵🇭", phone: "+63 X XXXX XXXX", email: "support@etiatech.com" },
+              { region: "China", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com" },
+              { region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "support@etiatech.com" },
+              { region: "Thailand", flag: "🇹🇭", phone: "+66 2 000 0000", email: "support@etiatech.com" },
+              { region: "Vietnam", flag: "🇻🇳", phone: "+84 28 0000 0000", email: "support@etiatech.com" },
             ].map((c) => (
               <div key={c.region} className="rounded-xl border border-gray-100 bg-gray-50 p-5 hover:shadow-md transition-all">
                 <div className="flex items-center gap-2 mb-3">
