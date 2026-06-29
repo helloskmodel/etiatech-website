@@ -188,7 +188,7 @@ export default function ProductPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-              Talk to an Engineer
+              Talk to Our Sales
             </Link>
             <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
               Browse Applications
@@ -263,7 +263,7 @@ export default function ProductPage() {
               ))}
               <div className="text-center mt-4 text-sm text-gray-400">
                 *Custom Engineering Solutions Available ·{" "}
-                <Link href="/contact" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to ETIA Engineers →</Link>
+                <Link href="/contact" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to Our Sales →</Link>
               </div>
             </div>
           ) : (
@@ -306,7 +306,7 @@ export default function ProductPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Not sure which system is right for you?</h2>
           <p className="text-gray-300 mb-8">Our engineers will match the right UV curing system to your exact application — from selection to validation.</p>
           <Link href="/contact" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
-            Talk to ETIA Engineers →
+            Talk to Our Sales →
           </Link>
         </div>
       </section>

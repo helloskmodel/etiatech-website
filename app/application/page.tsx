@@ -203,13 +203,8 @@ export default function ApplicationPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>9 Industries · 51 Application Notes</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Advanced. Reliable.<br /><span style={{ color: "#44B549" }}>Built for Your Process.</span></h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-            UV curing solutions validated across the most demanding manufacturing environments — from medical device bonding to EV battery encapsulation.
+            51 validated application notes across 9 industries — browse UV curing solutions matched to your process, substrate, and production requirements.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {["Faster Cure", "Consistent Results", "VOC-Free", "Easy Integration", "Industry 4.0 Ready"].map((kw) => (
-              <span key={kw} className="text-xs px-3 py-1.5 rounded-full border border-white/20 text-gray-300">{kw}</span>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -329,7 +324,7 @@ export default function ApplicationPage() {
           <h2 className="text-2xl font-bold text-white mb-4">Find the Right UV Curing Solution for Your Process</h2>
           <p className="text-gray-300 mb-6">Our engineers are ready to help — from application validation to system selection.</p>
           <Link href="/contact" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#2563eb" }}>
-            Talk to ETIA Engineers →
+            Talk to Our Sales →
           </Link>
         </div>
       </section>
@@ -383,7 +378,7 @@ export default function ApplicationPage() {
               style={{ background: "#2563eb" }}
               onClick={() => setSelectedApp(null)}
             >
-              Talk to an Engineer About This Application →
+              Talk to Our Sales →
             </Link>
             </div>
           </div>
