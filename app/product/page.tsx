@@ -16,14 +16,14 @@ const brands = [
         items: [
           {
             series: "S SERIES · LAMP-BASED · 200W HG",
-            name: "UV Lamp Spot Curing Systems",
+            name: "UV Lamp Spot Curing",
             desc: "Broad-spectrum 200W mercury high-pressure lamp spot curing. Industry-proven for medical devices and precision assembly.",
             models: ["S2000 Elite", "S1500 Pro", "R2000 Radiometer", "S2E Network Module", "S Series Light Guide"],
             bg: "#166534",
           },
           {
             series: "LX SERIES · LED BASED · SINGLE WAVELENGTH",
-            name: "UV LED Spot Curing Systems",
+            name: "UV LED Spot Curing",
             desc: "Single-wavelength LED spot curing at 365 nm. 0 ms warm-up, 50,000h lifespan, Industry 4.0 ready.",
             models: ["LX500 V2", "LS200 Radiometer", "UV LED Heads (V3)"],
             bg: "#44B549",
@@ -35,14 +35,14 @@ const brands = [
         items: [
           {
             series: "AC LARGE · AIR-COOLED LED · >75MM WIDTH",
-            name: "Air-Cooled UV LED Large-Area Curing",
+            name: "Air-Cooled UV LED Large Area",
             desc: "High-output LED area curing for wide substrates. Conveyor-integrated, uniform irradiance across full panel width.",
             models: ["ACT", "AC8", "AC8-HD", "ACN225-F", "AC UVC LED – 275nm"],
             bg: "#1A56DB",
           },
           {
             series: "AC SMALL · AIR-COOLED LED · UP TO 240MM",
-            name: "Air-Cooled UV LED Small-Area Curing",
+            name: "Air-Cooled UV LED Small Area",
             desc: "Compact LED area curing for inline PCB, display, and small component applications. Fast, consistent, zero warm-up.",
             models: ["AC2", "AC6", "AC5"],
             bg: "#60a5fa",
@@ -64,7 +64,7 @@ const brands = [
         items: [
           {
             series: "FIRELINE · VERICURE · SEMRAY · HIGH-POWER INDUSTRIAL",
-            name: "Water-Cooled UV LED Area Curing Systems",
+            name: "Water-Cooled UV LED",
             desc: "High-intensity water-cooled UV LED systems for demanding industrial processes. Stable output under extreme temperatures and debris environments.",
             models: ["Nexus II", "FireLine FL200", "FireLine FL400", "FireLine FL400-i Industrial", "FireLine FL440", "VeriCure Water-Cooled", "Semray 5000+"],
             bg: "#0d9488",
@@ -76,7 +76,7 @@ const brands = [
         items: [
           {
             series: "FIREJET · AIR-COOLED · LARGE AREA",
-            name: "Air-Cooled UV LED Large-Area Curing Systems",
+            name: "Air-Cooled UV LED Large Area",
             desc: "Cost-effective air-cooled UV LED systems for wide-format and large-area curing. Conveyor-integrated, no chiller required.",
             models: ["Nexus II Air-Cooled", "FireJet ONE", "FireJet FJ100", "FireJet FJ240", "FireJet FJ800", "FireJet FJ801", "Optical Fiber UV LED"],
             bg: "#1A56DB",
@@ -88,7 +88,7 @@ const brands = [
         items: [
           {
             series: "FIREEDGE · PASSIVE COOLING · SMALL AREA",
-            name: "FireEdge UV LED Small-Area Curing Systems",
+            name: "Air-Cooled UV LED Small Area",
             desc: "Passively cooled, ultra-slim form factor. Ideal for digital inkjet pinning and space-limited inline applications.",
             models: ["FireEdge FE100", "FireEdge FE400", "FireEdge FE410"],
             bg: "#60a5fa",
@@ -110,14 +110,14 @@ const brands = [
         items: [
           {
             series: "F SERIES · LIGHTHAMMER · INDUSTRIAL BROADBAND",
-            name: "Microwave UV Curing Systems",
+            name: "Microwave UV Curing",
             desc: "Electrodeless microwave-powered UV systems for production lines. Modular design, Industry 4.0 ready, broad spectrum output. Easy retrofit into existing processes.",
             models: ["LightHammer 6 Mark II", "LightHammer 10 Mark III", "F Series"],
             bg: "#b45309",
           },
           {
             series: "OPTICAL FIBER · DRAW TOWER · CABLE & WIRE",
-            name: "Microwave UV Curing Systems for Optical Fibers",
+            name: "Microwave UV · Optical Fiber",
             desc: "Modular 6- or 10-inch microwave UV systems for draw towers, coloring lines, and cable marking. Patented secondary reflector maximizes UV delivery to fiber.",
             models: ["Optical Fiber UV Systems"],
             bg: "#f59e0b",
@@ -139,7 +139,7 @@ const brands = [
         items: [
           {
             series: "SEMRAY UV5000+ · WATER-COOLED · HIGH INTENSITY",
-            name: "Semray® UV5000+ Series",
+            name: "Water-Cooled UV LED",
             desc: "Water-cooled high-intensity UV LED system with dedicated optics for even irradiance at large working distances. Designed for flexible industrial integration.",
             models: ["Semray UV5000+"],
             bg: "#0d9488",
@@ -151,7 +151,7 @@ const brands = [
         items: [
           {
             series: "UV PC6003 · CUSTOMIZED · UV LED SOLUTIONS",
-            name: "UV LED Curing Systems",
+            name: "UV LED Curing",
             desc: "UV LED systems for optical fiber draw, wire marking, and bespoke process requirements. 360° curing coverage and custom-engineered solutions available.",
             models: ["Semray UV PC6003", "Customized UV LED Solutions"],
             bg: "#44B549",
