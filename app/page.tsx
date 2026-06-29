@@ -48,7 +48,7 @@ const techRoutes = [
     group: "single",
   },
   {
-    label: "UV SPOT CURING SYSTEMS",
+    label: "UV LAMP SPOT CURING SYSTEMS",
     brands: ["OmniCure®"],
     desc: "UV lamp spot curing systems are ideal for precision adhesive spot curing for broad spectrum applications.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT4-UV%20LAMP%20SPOT%20CURING%20SYSTEMS.png`,
@@ -145,17 +145,17 @@ export default function Home() {
             <span>VUV</span><span>UVC</span><span>UVB</span><span>UVA</span><span>Visible</span>
           </div>
 
-          {/* Group labels */}
-          <div className="grid grid-cols-2 gap-2 mb-6 text-sm font-semibold text-center">
-            <div className="py-2 rounded-lg border" style={{ background: "#1A56DB0D", color: "#1A56DB", borderColor: "#1A56DB30" }}>
-              Single Wavelength Light Sources · 365–405 nm
+          {/* Group labels — 3 left (single wavelength / UVA), 3 right (broad spectrum / Visible) */}
+          <div className="flex gap-2 mb-6 text-sm font-semibold text-center">
+            <div className="flex-1 py-2 rounded-lg border" style={{ background: "#1A56DB0D", color: "#1A56DB", borderColor: "#1A56DB30" }}>
+              Single Wavelength · 365–405 nm (UVA)
             </div>
-            <div className="py-2 rounded-lg border" style={{ background: "#44B5490D", color: "#44B549", borderColor: "#44B54930" }}>
-              Broad Spectrum Light Sources · 200–600 nm
+            <div className="flex-1 py-2 rounded-lg border" style={{ background: "#44B5490D", color: "#44B549", borderColor: "#44B54930" }}>
+              Broad Spectrum · 200–600 nm (UV + Visible)
             </div>
           </div>
 
-          {/* 6 product cards — horizontal */}
+          {/* 6 product cards — horizontal, image + title only */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {techRoutes.map((t) => (
               <div key={t.label} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all flex flex-col">
@@ -164,22 +164,13 @@ export default function Home() {
                   {t.label}
                 </div>
                 {/* Product image */}
-                <div className="bg-gray-50 flex items-center justify-center p-3" style={{ minHeight: "120px" }}>
+                <div className="bg-gray-50 flex items-center justify-center p-3 flex-1" style={{ minHeight: "120px" }}>
                   <img
                     src={t.img}
                     alt={t.label}
                     className="object-contain w-full"
-                    style={{ maxHeight: "100px" }}
+                    style={{ maxHeight: "110px" }}
                   />
-                </div>
-                {/* Description + brands */}
-                <div className="p-3 flex flex-col gap-2 flex-1">
-                  <p className="text-gray-500 text-xs leading-relaxed">{t.desc}</p>
-                  <div className="mt-auto pt-2 border-t border-gray-100">
-                    {t.brands.map((b) => (
-                      <p key={b} className="text-xs font-semibold italic" style={{ color: "#1A56DB" }}>{b}</p>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}
