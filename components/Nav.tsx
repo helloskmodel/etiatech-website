@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
+const languages = ["EN", "CN", "VN", "TH"];
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/product", label: "Products" },
@@ -13,6 +15,8 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [lang, setLang] = useState("EN");
+  const [langOpen, setLangOpen] = useState(false);
   const pathname = usePathname();
 
   return (
@@ -44,13 +48,28 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="ml-4 px-4 py-2 rounded text-sm font-semibold text-white transition-all hover:opacity-90"
-            style={{ background: "#1A56DB" }}
-          >
-            Talk to an Engineer
-          </Link>
+          <div className="relative ml-4">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded border border-gray-200 text-sm font-semibold text-gray-700 hover:border-[#1A56DB] hover:text-[#1A56DB] transition-all"
+            >
+              🌐 {lang}
+              <svg className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50">
+                {languages.map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => { setLang(l); setLangOpen(false); }}
+                    className={`block w-full px-4 py-2 text-sm text-left hover:bg-gray-50 transition-colors ${lang === l ? "font-semibold text-[#1A56DB]" : "text-gray-600"}`}
+                  >
+                    {l}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -73,14 +92,18 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="px-4 py-2 rounded text-sm font-semibold text-white text-center"
-            style={{ background: "#1A56DB" }}
-            onClick={() => setOpen(false)}
-          >
-            Talk to an Engineer
-          </Link>
+          <div className="flex gap-2">
+            {languages.map((l) => (
+              <button
+                key={l}
+                onClick={() => { setLang(l); setOpen(false); }}
+                className={`px-3 py-1.5 rounded text-sm font-semibold transition-all ${lang === l ? "text-white" : "border border-gray-200 text-gray-600"}`}
+                style={lang === l ? { background: "#1A56DB" } : {}}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </nav>
