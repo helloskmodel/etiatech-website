@@ -112,7 +112,7 @@ const brands = [
             series: "F SERIES · LIGHTHAMMER · INDUSTRIAL BROADBAND",
             name: "Microwave UV Curing Systems",
             desc: "Electrodeless microwave-powered UV systems for production lines. Modular design, Industry 4.0 ready, broad spectrum output. Easy retrofit into existing processes.",
-            models: ["F Series", "LightHammer Series", "Accessories & Replacement Parts"],
+            models: ["LightHammer 6 Mark II", "LightHammer 10 Mark III", "F Series"],
             bg: "#b45309",
           },
           {
