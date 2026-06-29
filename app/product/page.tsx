@@ -154,7 +154,7 @@ const brands = [
             name: "UV LED Curing Systems",
             desc: "UV LED systems for optical fiber draw, wire marking, and bespoke process requirements. 360° curing coverage and custom-engineered solutions available.",
             models: ["Semray UV PC6003", "Customized UV LED Solutions"],
-            bg: "#7c3aed",
+            bg: "#44B549",
           },
         ],
       },
