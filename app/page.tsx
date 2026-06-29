@@ -141,8 +141,12 @@ export default function Home() {
 
           {/* Spectrum bar */}
           <div className="rounded-full h-3 mb-1 overflow-hidden" style={{ background: "linear-gradient(to right, #1e1b4b, #4c1d95, #1d4ed8, #0ea5e9, #22c55e, #eab308, #f59e0b)" }} />
-          <div className="flex justify-between text-xs text-gray-400 mb-3">
-            <span>VUV</span><span>UVC</span><span>UVB</span><span>UVA</span><span>Visible</span>
+          <div className="relative h-4 text-xs text-gray-400 mb-3">
+            <span className="absolute" style={{ left: "0%" }}>VUV</span>
+            <span className="absolute" style={{ left: "20%" }}>UVC</span>
+            <span className="absolute" style={{ left: "29%" }}>UVB</span>
+            <span className="absolute" style={{ left: "50%", transform: "translateX(-50%)" }}>UVA</span>
+            <span className="absolute" style={{ right: "0%" }}>Visible</span>
           </div>
 
           {/* Group labels — 3 left (single wavelength / UVA), 3 right (broad spectrum / Visible) */}
