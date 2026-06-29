@@ -85,41 +85,27 @@ const industries = [
 export default function Home() {
   return (
     <>
-      {/* HERO — dark */}
-      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 60%, #0a1628 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 25% 50%, #1A56DB 0%, transparent 55%)" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#44B549" }}>
+      {/* HERO */}
+      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
             Authorized Distributor · Genuine Products Guaranteed
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
             Your UV Curing Partner —<br />
             <span style={{ color: "#44B549" }}>From Selection to Support.</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
             ETIA combines 20 years of application expertise with local stock, in-house repair, and a professional team — so your line runs faster, smarter, and never stops.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
               Explore Products →
             </Link>
             <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
               Talk to an Engineer
             </Link>
-          </div>
-
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { val: "20+", label: "Years Experience" },
-              { val: "9", label: "Industries Served" },
-              { val: "51", label: "Application Notes" },
-              { val: "4", label: "World-Class Brands" },
-            ].map((s) => (
-              <div key={s.label} className="rounded-lg p-4 border border-white/10" style={{ background: "rgba(255,255,255,0.05)" }}>
-                <p className="text-3xl font-bold" style={{ color: "#44B549" }}>{s.val}</p>
-                <p className="text-xs text-gray-400 mt-1">{s.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
