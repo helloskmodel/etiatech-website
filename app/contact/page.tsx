@@ -60,7 +60,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
+      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Sales & Support</p>
@@ -196,7 +196,7 @@ export default function ContactPage() {
       </section>
 
       {/* Bottom strip */}
-      <section className="py-16" style={{ background: "#0a1628" }}>
+      <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           {[
             { icon: "⚡", title: "Fast Response", desc: "Within 1 business day" },

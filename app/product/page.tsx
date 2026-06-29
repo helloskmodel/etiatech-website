@@ -175,7 +175,7 @@ export default function ProductPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
+      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>UV Curing Systems · 4 World-Class Brands</p>
@@ -305,7 +305,7 @@ export default function ProductPage() {
       </section>
 
       {/* CTA — dark */}
-      <section className="py-16" style={{ background: "#0a1628" }}>
+      <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Not sure which system is right for you?</h2>
           <p className="text-gray-300 mb-8">Our engineers will match the right UV curing system to your exact application — from selection to validation.</p>
