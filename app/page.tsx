@@ -23,16 +23,51 @@ const whyEtia = [
   },
 ];
 
-const techRoutesSingleWavelength = [
-  { name: "UV LED Spot Curing Systems", brands: ["OmniCure®"], desc: "Precision adhesive spot curing for electronics, medical devices, and opto-electronics." },
-  { name: "UV LED Air-Cooled Systems", brands: ["Phoseon®", "OmniCure®"], desc: "Easy integration into automated systems without a separate chiller." },
-  { name: "UV LED Water-Cooled Systems", brands: ["Phoseon®", "NobleLight®"], desc: "Designed for extreme temperature environments. Ideal for heat-sensitive substrates." },
-];
+const BASE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/homepageproduct";
 
-const techRoutesBroadSpectrum = [
-  { name: "UV Lamp Spot Curing Systems", brands: ["OmniCure®"], desc: "Broad spectrum adhesive spot curing for a wide range of applications." },
-  { name: "Microwave UV Curing Systems", brands: ["Fusion UV®"], desc: "Electrodeless bulbs for longer life, consistent output, and high-power broad spectrum." },
-  { name: "Mercury Arc Lamps", brands: ["NobleLight®"], desc: "Broad spectrum replacement lamps for printing, wood coating, and UV curing processes." },
+const techRoutes = [
+  {
+    label: "UV LED SPOT CURING SYSTEMS",
+    brands: ["OmniCure®"],
+    desc: "UV LED spot curing systems are ideal for precision adhesive spot curing applications.",
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT1-UV%20LED%20CURING.png`,
+    group: "single",
+  },
+  {
+    label: "UV LED AIR-COOLED SYSTEMS",
+    brands: ["Phoseon®", "OmniCure®"],
+    desc: "Air-cooled UV LED curing systems allow for easy and cost-effective integration into automated systems without a separate chiller.",
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT%202-UV%20LED%20AIR-COOLED.png`,
+    group: "single",
+  },
+  {
+    label: "UV LED WATER-COOLED SYSTEMS",
+    brands: ["Phoseon®", "NobleLight®"],
+    desc: "Water-cooled UV LED curing systems for environments with extreme temperatures and debris. Ideal for heat-sensitive substrates.",
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT%203-UV-LED%20WATER-COOLED%20SYSTEMS.png`,
+    group: "single",
+  },
+  {
+    label: "UV SPOT CURING SYSTEMS",
+    brands: ["OmniCure®"],
+    desc: "UV lamp spot curing systems are ideal for precision adhesive spot curing for broad spectrum applications.",
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT4-UV%20LAMP%20SPOT%20CURING%20SYSTEMS.png`,
+    group: "broad",
+  },
+  {
+    label: "MICROWAVE UV CURING SYSTEMS",
+    brands: ["Fusion UV®"],
+    desc: "Microwave UV curing systems use electrodeless bulbs offering longer life, consistent output and less heat. Ideal for broad spectrum and UVC applications.",
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT5-MICROWAVE%20UV%20CURING.png`,
+    group: "broad",
+  },
+  {
+    label: "MERCURY ARC LAMPS",
+    brands: ["NobleLight®"],
+    desc: "Broad spectrum medium pressure mercury arc lamps in various lengths and power classes. Ideal for replacement lamps.",
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT6-MERCURY%20UVC%20LAMPS.png`,
+    group: "broad",
+  },
 ];
 
 const industries = [
@@ -119,63 +154,52 @@ export default function Home() {
           <p className="text-gray-500 mb-6">200–600 nm · 6 Technology Routes · 4 World-Class Brands</p>
 
           {/* Spectrum bar */}
-          <div className="rounded-full h-3 mb-2 overflow-hidden" style={{ background: "linear-gradient(to right, #1e1b4b, #4c1d95, #1d4ed8, #0ea5e9, #22c55e, #eab308, #f59e0b)" }} />
-          <div className="flex justify-between text-xs text-gray-400 mb-2">
+          <div className="rounded-full h-3 mb-1 overflow-hidden" style={{ background: "linear-gradient(to right, #1e1b4b, #4c1d95, #1d4ed8, #0ea5e9, #22c55e, #eab308, #f59e0b)" }} />
+          <div className="flex justify-between text-xs text-gray-400 mb-3">
             <span>VUV</span><span>UVC</span><span>UVB</span><span>UVA</span><span>Visible</span>
           </div>
-          {/* Group labels under spectrum bar */}
-          <div className="grid grid-cols-2 gap-4 mb-8 text-xs font-semibold text-center">
-            <div className="py-1 rounded" style={{ background: "#1B3D8F10", color: "#1B3D8F" }}>← Single Wavelength · 365–405 nm</div>
-            <div className="py-1 rounded" style={{ background: "#44B54910", color: "#44B549" }}>Broad Spectrum · 200–600 nm →</div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Single Wavelength column */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="h-0.5 flex-1 rounded" style={{ background: "#1B3D8F" }} />
-                <span className="text-xs font-bold px-3 py-1 rounded-full text-white whitespace-nowrap" style={{ background: "#1B3D8F" }}>Single Wavelength Light Sources</span>
-                <div className="h-0.5 flex-1 rounded" style={{ background: "#1B3D8F" }} />
-              </div>
-              <div className="flex flex-col gap-4">
-                {techRoutesSingleWavelength.map((t) => (
-                  <div key={t.name} className="rounded-xl p-5 bg-white border border-gray-100 hover:border-[#1B3D8F]/30 hover:shadow-md transition-all">
-                    <h3 className="font-semibold mb-2" style={{ color: "#1B3D8F" }}>{t.name}</h3>
-                    <p className="text-gray-500 text-sm mb-3 leading-relaxed">{t.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {t.brands.map((b) => (
-                        <span key={b} className="text-xs px-2 py-1 rounded-full border text-white font-medium" style={{ background: "#1B3D8F", borderColor: "#1B3D8F" }}>{b}</span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Group labels */}
+          <div className="grid grid-cols-2 gap-2 mb-6 text-sm font-semibold text-center">
+            <div className="py-2 rounded-lg border" style={{ background: "#1B3D8F0D", color: "#1B3D8F", borderColor: "#1B3D8F30" }}>
+              Single Wavelength Light Sources · 365–405 nm
             </div>
-
-            {/* Broad Spectrum column */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="h-0.5 flex-1 rounded" style={{ background: "#44B549" }} />
-                <span className="text-xs font-bold px-3 py-1 rounded-full text-white whitespace-nowrap" style={{ background: "#44B549" }}>Broad Spectrum Light Sources</span>
-                <div className="h-0.5 flex-1 rounded" style={{ background: "#44B549" }} />
-              </div>
-              <div className="flex flex-col gap-4">
-                {techRoutesBroadSpectrum.map((t) => (
-                  <div key={t.name} className="rounded-xl p-5 bg-white border border-gray-100 hover:border-[#44B549]/30 hover:shadow-md transition-all">
-                    <h3 className="font-semibold mb-2" style={{ color: "#1B3D8F" }}>{t.name}</h3>
-                    <p className="text-gray-500 text-sm mb-3 leading-relaxed">{t.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {t.brands.map((b) => (
-                        <span key={b} className="text-xs px-2 py-1 rounded-full border text-white font-medium" style={{ background: "#44B549", borderColor: "#44B549" }}>{b}</span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="py-2 rounded-lg border" style={{ background: "#44B5490D", color: "#44B549", borderColor: "#44B54930" }}>
+              Broad Spectrum Light Sources · 200–600 nm
             </div>
           </div>
 
-          <div className="mt-10 text-center">
+          {/* 6 product cards — horizontal */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {techRoutes.map((t) => (
+              <div key={t.label} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all flex flex-col">
+                {/* Green header */}
+                <div className="px-3 py-2 text-white text-xs font-bold leading-tight" style={{ background: "#44B549" }}>
+                  {t.label}
+                </div>
+                {/* Product image */}
+                <div className="bg-gray-50 flex items-center justify-center p-3" style={{ minHeight: "120px" }}>
+                  <img
+                    src={t.img}
+                    alt={t.label}
+                    className="object-contain w-full"
+                    style={{ maxHeight: "100px" }}
+                  />
+                </div>
+                {/* Description + brands */}
+                <div className="p-3 flex flex-col gap-2 flex-1">
+                  <p className="text-gray-500 text-xs leading-relaxed">{t.desc}</p>
+                  <div className="mt-auto pt-2 border-t border-gray-100">
+                    {t.brands.map((b) => (
+                      <p key={b} className="text-xs font-semibold italic" style={{ color: "#1B3D8F" }}>{b}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
             <Link href="/product" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1B3D8F" }}>
               View All Products →
             </Link>
