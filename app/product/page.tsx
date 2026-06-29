@@ -150,18 +150,11 @@ const brands = [
         category: "UV LED CURING SYSTEMS",
         items: [
           {
-            series: "UV PC6003 · OPTICAL FIBER · 360° CURING",
-            name: "Semray® UV PC6003",
-            desc: "UV LED system designed for optical fiber draw and wire marking manufacturing processes. 360° curing coverage for complete and uniform cure.",
-            models: ["Semray UV PC6003"],
+            series: "UV PC6003 · CUSTOMIZED · UV LED SOLUTIONS",
+            name: "UV LED Curing Systems",
+            desc: "UV LED systems for optical fiber draw, wire marking, and bespoke process requirements. 360° curing coverage and custom-engineered solutions available.",
+            models: ["Semray UV PC6003", "Customized UV LED Solutions"],
             bg: "#7c3aed",
-          },
-          {
-            series: "CUSTOMIZED · BESPOKE UV LED SOLUTIONS",
-            name: "Customized UV LED Solutions",
-            desc: "Tailored UV LED curing systems engineered to unique process requirements. Simply more performance — dedicated optics for your specific application.",
-            models: ["Custom Engineering"],
-            bg: "#a78bfa",
           },
         ],
       },
