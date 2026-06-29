@@ -28,7 +28,7 @@ export default function PrivacyPage() {
               This Privacy Policy explains how <strong>ETIA-TECH (ASIA) Co., Limited</strong> (&quot;ETIA&quot;, &quot;we&quot;,
               &quot;us&quot;, or &quot;our&quot;) collects, uses, discloses, and safeguards your information when you visit this
               website. ETIA-TECH (ASIA) Co., Limited is a company incorporated in Hong Kong under the Companies Ordinance
-              (Cap. 622), Company Registration No. 2846824.
+              (Cap. 622).
             </p>
           </div>
 
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-2">
               <strong>ETIA-TECH (ASIA) Co., Limited</strong><br />
-              Hong Kong · Company Registration No. 2846824<br />
+              Hong Kong<br />
               Email:{" "}
               <a href="mailto:support@etiatech.com" className="font-medium hover:underline" style={{ color: "#44B549" }}>support@etiatech.com</a>
             </p>

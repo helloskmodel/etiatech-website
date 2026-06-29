@@ -174,18 +174,38 @@ export default function ContactPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Part 3</p>
           <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>Global Contacts</h2>
           <div className="w-10 h-1 rounded mb-10" style={{ background: "#44B549" }} />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
-              { region: "China", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com" },
-              { region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "support@etiatech.com" },
-              { region: "Thailand", flag: "🇹🇭", phone: "+66 2 000 0000", email: "support@etiatech.com" },
-              { region: "Vietnam", flag: "🇻🇳", phone: "+84 28 0000 0000", email: "support@etiatech.com" },
+              {
+                region: "China", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com",
+                local: "上海市普陀区中江路388弄国盛中心2号楼1903室",
+                en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China",
+              },
+              {
+                region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "support@etiatech.com",
+              },
+              {
+                region: "Thailand", flag: "🇹🇭", phone: "+66 2 000 0000", email: "support@etiatech.com",
+                local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250",
+                en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand",
+              },
+              {
+                region: "Vietnam", flag: "🇻🇳", phone: "+84 28 0000 0000", email: "support@etiatech.com",
+                local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam",
+                en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam",
+              },
             ].map((c) => (
               <div key={c.region} className="rounded-xl border border-gray-100 bg-gray-50 p-5 hover:shadow-md transition-all">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-2xl">{c.flag}</span>
                   <span className="font-bold" style={{ color: "#1A56DB" }}>{c.region}</span>
                 </div>
+                {c.local && (
+                  <p className="text-xs text-gray-500 leading-relaxed mb-1">📍 {c.local}</p>
+                )}
+                {c.en && (
+                  <p className="text-xs text-gray-400 leading-relaxed mb-2">{c.en}</p>
+                )}
                 <p className="text-sm text-gray-600 mb-1">📞 {c.phone}</p>
                 <a href={`mailto:${c.email}`} className="text-xs hover:underline" style={{ color: "#44B549" }}>{c.email}</a>
               </div>

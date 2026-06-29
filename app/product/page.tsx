@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { modelToSlug, getProduct, productHref } from "@/components/productCatalog";
 
 const brands = [
   {
@@ -249,11 +250,24 @@ export default function ProductPage() {
                         <div className="p-5 bg-white">
                           <p className="text-gray-500 text-sm mb-4 leading-relaxed">{item.desc}</p>
                           <div className="flex flex-wrap gap-2">
-                            {item.models.map((m) => (
-                              <span key={m} className="text-xs px-3 py-1 rounded-full border font-medium" style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}>
-                                {m}
-                              </span>
-                            ))}
+                            {item.models.map((m) => {
+                              const slug = modelToSlug[m];
+                              const product = slug ? getProduct(slug) : undefined;
+                              return product ? (
+                                <Link
+                                  key={m}
+                                  href={productHref(product)}
+                                  className="text-xs px-3 py-1 rounded-full border font-medium hover:text-white transition-colors"
+                                  style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}
+                                >
+                                  {m} →
+                                </Link>
+                              ) : (
+                                <span key={m} className="text-xs px-3 py-1 rounded-full border font-medium" style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}>
+                                  {m}
+                                </span>
+                              );
+                            })}
                           </div>
                         </div>
                       </div>
