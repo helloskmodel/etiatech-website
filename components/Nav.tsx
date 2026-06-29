@@ -20,7 +20,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/imgae/logo/etialogo.png"
+            src="https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/imgae/logo/etialogo.jpg"
             alt="ETIA Technology"
             width={130}
             height={44}
