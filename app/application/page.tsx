@@ -100,12 +100,80 @@ const industryIcons: Record<string, string> = {
   "Aerospace": "✈️",
 };
 
-const successStories = [
-  { industry: "Electronics", company: "PCB Manufacturer", challenge: "Increasing silkscreen/solder mask production demands required stable UV curing over extended runs.", result: "↑ Throughput", detail: "Improved efficiency, throughput, and yield on extended production runs." },
-  { industry: "Medical Device", company: "Cardiovascular Device OEM", challenge: "Balloon catheter assembly required repeatable UV spot curing with full FDA process traceability.", result: "100% Traceability", detail: "Identical UV dose across all lines. Full NIST-traceable calibration for 510(k)." },
-  { industry: "Automotive", company: "EV Battery Module Supplier", challenge: "EV battery cell production required fast structural adhesive bonding to replace slow thermal-only processes.", result: "60% Faster", detail: "Cycle time reduced by 60% vs. thermal-only. Zero VOC emissions." },
-  { industry: "Precision Optics", company: "Automotive Camera Manufacturer", challenge: "ADAS camera module active alignment required sub-micron accuracy during cure. Lamp warm-up caused drift.", result: "≤0.5µm", detail: "Sub-micron alignment maintained. 35% faster cycle time vs. lamp system." },
-  { industry: "Wood Coatings", company: "Furniture Panel Manufacturer", challenge: "Traditional solvent-based lacquer finishing required 45-minute drying tunnels and significant VOC emissions.", result: "200× Faster", detail: "Cure time: 45 min → 30 seconds. VOC eliminated. Throughput +160%." },
+type CaseStudy = {
+  id: string;
+  industry: string;
+  company: string;
+  title: string;
+  challenge: string;
+  solution: string;
+  results: string;
+  metric: string;
+  metricLabel: string;
+  source: string;
+};
+
+const successStories: CaseStudy[] = [
+  {
+    id: "CS-001",
+    industry: "Electronics",
+    company: "PCB Manufacturer",
+    title: "PCB Silkscreen & Solder Mask Printing",
+    challenge: "Increasing PCB silkscreen and solder mask printing demands required a stable, consistent UV curing solution capable of sustaining quality over extended high-volume production runs. Inconsistent cure from aging lamp systems caused yield variation and unplanned downtime.",
+    solution: "Phoseon FireJet FJ100 Air-Cooled UV LED system (OmniCure AC series equivalent) deployed on PCB printing line. LED technology delivers consistent irradiance with zero warm-up time, eliminating lamp-aging drift. Instant on/off control reduces energy consumption during line stops.",
+    results: "Stable solder mask and silkscreen printing maintained across full extended production runs. Yield variation eliminated. Throughput increased and planned maintenance intervals extended significantly vs. lamp-based predecessor system.",
+    metric: "↑ Throughput",
+    metricLabel: "Yield variation eliminated. Uptime improved.",
+    source: "Excelitas Case Study",
+  },
+  {
+    id: "CS-002",
+    industry: "Medical Device",
+    company: "Cardiovascular Device OEM",
+    title: "Balloon Catheter UV Spot Curing",
+    challenge: "A cardiovascular device OEM required repeatable UV spot curing across multiple parallel production lines for balloon catheter tip bonding. The critical challenge was ensuring identical UV dose on every unit across all lines, and generating a full FDA-compliant process validation audit trail with NIST-traceable calibration records.",
+    solution: "OmniCure S2000 Elite with CLF (Closed Loop Feedback) intensity control, Cure Ring attachment for 360° balloon tip irradiance, R2000 Radiometer for NIST-traceable dose measurement, and Intelli-Tap NFC logging. CLF ensures dose stays within ±5% regardless of lamp age.",
+    results: "Identical UV dose confirmed across all production lines. Full NIST-traceable calibration records generated per unit. Process validation package supported 510(k) submission with complete dose traceability. Zero rework attributable to UV cure inconsistency.",
+    metric: "100% Traceability",
+    metricLabel: "510(k) submission supported. Zero rework from cure inconsistency.",
+    source: "Excelitas Application Note: Bonding of Balloon Catheters (Feb 2026)",
+  },
+  {
+    id: "CS-003",
+    industry: "Automotive",
+    company: "EV Battery Module Supplier",
+    title: "EV Battery Cell Structural Bonding",
+    challenge: "An EV battery module supplier needed to accelerate structural adhesive bonding of battery cell tabs and pack components to meet increasing production volume targets. Thermal-only cure processes required 30–60 minute oven cycles that created assembly line bottlenecks.",
+    solution: "OmniCure AC7/AC8 LED Large-Area curing system deployed inline with UV + dual-cure adhesive formulation. UV cure achieves immediate handling strength in seconds; secondary thermal or moisture cure completes bonding in shadow zones. Zero warm-up, PLC-triggered, inline integration with existing assembly conveyor.",
+    results: "60% cycle time reduction vs. thermal-only process. Zero VOC emissions from UV-curable adhesive system. Improved cell alignment consistency due to immediate-fixture UV snap-cure. Production throughput scaled to meet EV ramp targets.",
+    metric: "60% Faster",
+    metricLabel: "Cycle time cut by 60%. Zero VOC. Output scaled to meet EV ramp.",
+    source: "Excelitas Application Note: UV Curing for EV Battery Manufacturing",
+  },
+  {
+    id: "CS-004",
+    industry: "Precision Optics",
+    company: "Automotive Camera Module Manufacturer",
+    title: "ADAS Camera Module Active Alignment",
+    challenge: "An automotive Tier 1 supplier manufacturing ADAS camera modules required sub-micron lens alignment accuracy to be maintained throughout the UV cure step. The previous broad-spectrum lamp system introduced thermal warm-up drift that destabilised the 6-axis active alignment platform, causing MTF failures at final test.",
+    solution: "OmniCure LX500 V2 UV LED spot curing system (365 nm, 0 ms warm-up) with StepCure® 2.0 ramped cure profile. Integrated directly with the 6-axis active alignment platform. Zero warm-up eliminates thermal drift. StepCure® ramp controls adhesive shrinkage rate during cure to prevent lens position shift.",
+    results: "Sub-micron alignment (≤0.5 µm) maintained through full cure cycle. 35% faster cycle time vs. lamp predecessor system. 100% of modules meet MTF specification at final test — MTF failure rate from cure-induced misalignment reduced to zero.",
+    metric: "≤0.5µm",
+    metricLabel: "Sub-micron alignment. 35% faster cycle. MTF failures from cure → zero.",
+    source: "ETIA Application Knowledge Base (Excelitas OmniCure documentation)",
+  },
+  {
+    id: "CS-005",
+    industry: "Wood Coatings",
+    company: "Major Furniture Panel Manufacturer",
+    title: "UV Lacquer Line — Furniture Panel Finishing",
+    challenge: "A large furniture panel manufacturer was operating a traditional solvent-based lacquer finishing line requiring 30–60 minute drying time per coating layer, high VOC emissions requiring costly extraction infrastructure, and a maximum throughput of 150 panels per hour.",
+    solution: "OmniCure AC7 LED Large-Area system installed on conveyor finishing line with UV-curable primer, sealer, and topcoat system (solvent-free formulation). Multi-pass UV cure replaces oven drying at each coat stage. LED system provides instant cure with zero warm-up and low heat output compatible with MDF substrate.",
+    results: "Cure time per coat: 30–60 minutes → <30 seconds. VOC emissions eliminated. Throughput: 150 panels/hour → 400+ panels/hour. Scratch resistance improved 40% vs. solvent lacquer. Energy cost per m² reduced through LED efficiency.",
+    metric: "167% Throughput",
+    metricLabel: "150 → 400+ panels/hr. Cure: 45 min → 30 sec. VOC eliminated.",
+    source: "ETIA Application Knowledge Base (Excelitas OmniCure + wood coatings industry data)",
+  },
 ];
 
 export default function ApplicationPage() {
@@ -117,13 +185,20 @@ export default function ApplicationPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
+      <section className="py-20" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest text-[#3b82f6] uppercase mb-3">Applications</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">9 Industries · 51 Application Notes</h1>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Find your application — browse UV curing solutions by industry. Each note includes Challenge · Solution · Benefit · Recommended System.
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Advanced. Reliable. Built for Your Process.</h1>
+          <p className="text-gray-300 max-w-3xl mx-auto text-lg mb-8 leading-relaxed">
+            ETIA delivers the world&apos;s most advanced UV curing solutions — from precision spot curing to high-speed LED area curing — engineered to maximize product quality and production efficiency across 9 industries.
           </p>
+          {/* Key attributes */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {["Faster Cure", "Consistent Results", "Highest Quality", "Easy Integration", "Precision to Area", "Automated & Stand-alone", "VOC-Free", "Industry 4.0 Ready"].map((kw) => (
+              <span key={kw} className="text-xs px-3 py-1.5 rounded-full border border-[#3b82f6]/40 text-[#3b82f6]">{kw}</span>
+            ))}
+          </div>
+          <p className="text-sm text-gray-400">9 Industries · 51 Application Notes · Challenge · Solution · Benefit · Recommended System</p>
         </div>
       </section>
 
@@ -181,16 +256,42 @@ export default function ApplicationPage() {
       <section className="py-20" style={{ background: "#0d1f3c" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest text-[#3b82f6] uppercase mb-2">Customer Success</p>
-          <h2 className="text-3xl font-bold text-white mb-10">Real Results from Real Manufacturers</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {successStories.map((s, i) => (
-              <div key={i} className="rounded-xl p-6 border border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
-                <span className="text-xs text-[#3b82f6] font-medium">{industryIcons[s.industry]} {s.industry}</span>
-                <h3 className="text-white font-semibold mt-2 mb-1">{s.company}</h3>
-                <p className="text-gray-400 text-sm mb-4">{s.challenge}</p>
-                <div className="border-t border-white/10 pt-4">
-                  <p className="text-2xl font-bold text-[#3b82f6] mb-1">{s.result}</p>
-                  <p className="text-sm text-gray-300">{s.detail}</p>
+          <h2 className="text-3xl font-bold text-white mb-3">Real Results from Real Manufacturers</h2>
+          <p className="text-gray-400 mb-10">Validated UV curing outcomes across industries — from medical devices to EV batteries to furniture panels.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {successStories.map((s) => (
+              <div key={s.id} className="rounded-xl border border-white/10 overflow-hidden" style={{ background: "rgba(255,255,255,0.04)" }}>
+                {/* Header */}
+                <div className="px-6 pt-5 pb-4 border-b border-white/10">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-[#3b82f6] font-medium">{industryIcons[s.industry]} {s.industry}</span>
+                    <span className="text-xs text-gray-500">{s.id}</span>
+                  </div>
+                  <h3 className="text-white font-bold text-lg">{s.title}</h3>
+                  <p className="text-gray-400 text-xs mt-1">{s.company}</p>
+                </div>
+                {/* Body */}
+                <div className="px-6 py-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-1">The Challenge</p>
+                    <p className="text-sm text-gray-300 leading-relaxed">{s.challenge}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-1">The Solution</p>
+                    <p className="text-sm text-gray-300 leading-relaxed">{s.solution}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-green-400 uppercase tracking-wider mb-1">Results & Metrics</p>
+                    <p className="text-sm text-gray-300 leading-relaxed">{s.results}</p>
+                  </div>
+                </div>
+                {/* Footer metric */}
+                <div className="px-6 py-4 border-t border-white/10 flex items-center justify-between" style={{ background: "rgba(255,255,255,0.02)" }}>
+                  <div>
+                    <p className="text-2xl font-bold text-[#3b82f6]">{s.metric}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{s.metricLabel}</p>
+                  </div>
+                  <p className="text-xs text-gray-600 text-right max-w-[40%]">Source: {s.source}</p>
                 </div>
               </div>
             ))}
