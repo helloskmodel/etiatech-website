@@ -145,8 +145,8 @@ export default function Home() {
             <span className="absolute" style={{ left: "0%" }}>VUV</span>
             <span className="absolute" style={{ left: "20%" }}>UVC</span>
             <span className="absolute" style={{ left: "29%" }}>UVB</span>
-            <span className="absolute" style={{ left: "50%", transform: "translateX(-50%)" }}>UVA</span>
-            <span className="absolute" style={{ right: "0%" }}>Visible</span>
+            <span className="absolute" style={{ left: "40%", transform: "translateX(-50%)" }}>UVA</span>
+            <span className="absolute" style={{ left: "50%", transform: "translateX(-50%)" }}>Visible</span>
           </div>
 
           {/* Group labels — 3 left (single wavelength / UVA), 3 right (broad spectrum / Visible) */}
