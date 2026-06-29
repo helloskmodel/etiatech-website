@@ -72,7 +72,7 @@ const brands = [
         ],
       },
       {
-        category: "AIR-COOLED UV LED LARGE-AREA CURING SYSTEMS",
+        category: "AIR-COOLED UV LED AREA CURING SYSTEMS",
         items: [
           {
             series: "FIREJET · AIR-COOLED · LARGE AREA",
@@ -81,11 +81,6 @@ const brands = [
             models: ["Nexus II Air-Cooled", "FireJet ONE", "FireJet FJ100", "FireJet FJ240", "FireJet FJ800", "FireJet FJ801", "Optical Fiber UV LED"],
             bg: "#1A56DB",
           },
-        ],
-      },
-      {
-        category: "AIR-COOLED UV LED SMALL-AREA CURING SYSTEMS",
-        items: [
           {
             series: "FIREEDGE · PASSIVE COOLING · SMALL AREA",
             name: "Air-Cooled UV LED Small Area",
