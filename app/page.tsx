@@ -23,10 +23,13 @@ const whyEtia = [
   },
 ];
 
-const techRoutes = [
+const techRoutesSingleWavelength = [
   { name: "UV LED Spot Curing Systems", brands: ["OmniCure®"], desc: "Precision adhesive spot curing for electronics, medical devices, and opto-electronics." },
   { name: "UV LED Air-Cooled Systems", brands: ["Phoseon®", "OmniCure®"], desc: "Easy integration into automated systems without a separate chiller." },
   { name: "UV LED Water-Cooled Systems", brands: ["Phoseon®", "NobleLight®"], desc: "Designed for extreme temperature environments. Ideal for heat-sensitive substrates." },
+];
+
+const techRoutesBroadSpectrum = [
   { name: "UV Lamp Spot Curing Systems", brands: ["OmniCure®"], desc: "Broad spectrum adhesive spot curing for a wide range of applications." },
   { name: "Microwave UV Curing Systems", brands: ["Fusion UV®"], desc: "Electrodeless bulbs for longer life, consistent output, and high-power broad spectrum." },
   { name: "Mercury Arc Lamps", brands: ["NobleLight®"], desc: "Broad spectrum replacement lamps for printing, wood coating, and UV curing processes." },
@@ -115,24 +118,61 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1B3D8F" }}>The Full Spectrum of UV Curing Solutions</h2>
           <p className="text-gray-500 mb-6">200–600 nm · 6 Technology Routes · 4 World-Class Brands</p>
 
+          {/* Spectrum bar */}
           <div className="rounded-full h-3 mb-2 overflow-hidden" style={{ background: "linear-gradient(to right, #1e1b4b, #4c1d95, #1d4ed8, #0ea5e9, #22c55e, #eab308, #f59e0b)" }} />
-          <div className="flex justify-between text-xs text-gray-400 mb-10">
+          <div className="flex justify-between text-xs text-gray-400 mb-2">
             <span>VUV</span><span>UVC</span><span>UVB</span><span>UVA</span><span>Visible</span>
           </div>
+          {/* Group labels under spectrum bar */}
+          <div className="grid grid-cols-2 gap-4 mb-8 text-xs font-semibold text-center">
+            <div className="py-1 rounded" style={{ background: "#1B3D8F10", color: "#1B3D8F" }}>← Single Wavelength · 365–405 nm</div>
+            <div className="py-1 rounded" style={{ background: "#44B54910", color: "#44B549" }}>Broad Spectrum · 200–600 nm →</div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {techRoutes.map((t) => (
-              <div key={t.name} className="rounded-xl p-5 bg-white border border-gray-100 hover:border-[#1B3D8F]/30 hover:shadow-md transition-all">
-                <h3 className="font-semibold mb-2" style={{ color: "#1B3D8F" }}>{t.name}</h3>
-                <p className="text-gray-500 text-sm mb-3 leading-relaxed">{t.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {t.brands.map((b) => (
-                    <span key={b} className="text-xs px-2 py-1 rounded-full border text-white font-medium" style={{ background: "#1B3D8F", borderColor: "#1B3D8F" }}>{b}</span>
-                  ))}
-                </div>
-                <p className="text-xs text-gray-400 mt-3 italic">*Custom Engineering Solutions Available</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Single Wavelength column */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="h-0.5 flex-1 rounded" style={{ background: "#1B3D8F" }} />
+                <span className="text-xs font-bold px-3 py-1 rounded-full text-white whitespace-nowrap" style={{ background: "#1B3D8F" }}>Single Wavelength Light Sources</span>
+                <div className="h-0.5 flex-1 rounded" style={{ background: "#1B3D8F" }} />
               </div>
-            ))}
+              <div className="flex flex-col gap-4">
+                {techRoutesSingleWavelength.map((t) => (
+                  <div key={t.name} className="rounded-xl p-5 bg-white border border-gray-100 hover:border-[#1B3D8F]/30 hover:shadow-md transition-all">
+                    <h3 className="font-semibold mb-2" style={{ color: "#1B3D8F" }}>{t.name}</h3>
+                    <p className="text-gray-500 text-sm mb-3 leading-relaxed">{t.desc}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {t.brands.map((b) => (
+                        <span key={b} className="text-xs px-2 py-1 rounded-full border text-white font-medium" style={{ background: "#1B3D8F", borderColor: "#1B3D8F" }}>{b}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Broad Spectrum column */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="h-0.5 flex-1 rounded" style={{ background: "#44B549" }} />
+                <span className="text-xs font-bold px-3 py-1 rounded-full text-white whitespace-nowrap" style={{ background: "#44B549" }}>Broad Spectrum Light Sources</span>
+                <div className="h-0.5 flex-1 rounded" style={{ background: "#44B549" }} />
+              </div>
+              <div className="flex flex-col gap-4">
+                {techRoutesBroadSpectrum.map((t) => (
+                  <div key={t.name} className="rounded-xl p-5 bg-white border border-gray-100 hover:border-[#44B549]/30 hover:shadow-md transition-all">
+                    <h3 className="font-semibold mb-2" style={{ color: "#1B3D8F" }}>{t.name}</h3>
+                    <p className="text-gray-500 text-sm mb-3 leading-relaxed">{t.desc}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {t.brands.map((b) => (
+                        <span key={b} className="text-xs px-2 py-1 rounded-full border text-white font-medium" style={{ background: "#44B549", borderColor: "#44B549" }}>{b}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="mt-10 text-center">
