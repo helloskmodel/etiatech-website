@@ -142,7 +142,7 @@ const brands = [
             name: "Semray® UV5000+ Series",
             desc: "Water-cooled high-intensity UV LED system with dedicated optics for even irradiance at large working distances. Designed for flexible industrial integration.",
             models: ["Semray UV5000+"],
-            bg: "#4c1d95",
+            bg: "#0d9488",
           },
         ],
       },
