@@ -849,10 +849,10 @@ export function productHref(p: Product): string {
 }
 
 // Each product has exactly one image, named by its slug:
-//   IMAGE/products/<slug>.webp
+//   IMAGE/products/<slug>.png
 const PRODUCT_IMG_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/products";
 
 export function productImage(p: Product): string {
-  return `${PRODUCT_IMG_BASE}/${p.slug}.webp`;
+  return `${PRODUCT_IMG_BASE}/${p.slug}.png`;
 }
