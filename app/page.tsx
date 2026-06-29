@@ -51,7 +51,7 @@ const techRoutes = [
     label: "UV LAMP SPOT CURING SYSTEMS",
     brands: ["OmniCure®"],
     desc: "UV lamp spot curing systems are ideal for precision adhesive spot curing for broad spectrum applications.",
-    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT4-UV%20LAMP%20SPOT%20CURING%20SYSTEMS.png`,
+    img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT4-UV%20LAMP%20SPOT%20CURING%20SYSTEM.png`,
     group: "broad",
   },
   {
