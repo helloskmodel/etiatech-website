@@ -135,20 +135,32 @@ const brands = [
     available: true,
     families: [
       {
-        category: "UV LED CURING SYSTEMS",
+        category: "WATER-COOLED UV LED SYSTEMS",
         items: [
           {
-            series: "SEMRAY UV5000+ · WATER-COOLED · LARGE WORKING DISTANCE",
+            series: "SEMRAY UV5000+ · WATER-COOLED · HIGH INTENSITY",
             name: "Semray® UV5000+ Series",
             desc: "Water-cooled high-intensity UV LED system with dedicated optics for even irradiance at large working distances. Designed for flexible industrial integration.",
             models: ["Semray UV5000+"],
-            bg: "#6d28d9",
+            bg: "#4c1d95",
+          },
+        ],
+      },
+      {
+        category: "UV LED CURING SYSTEMS",
+        items: [
+          {
+            series: "UV PC6003 · OPTICAL FIBER · 360° CURING",
+            name: "Semray® UV PC6003",
+            desc: "UV LED system designed for optical fiber draw and wire marking manufacturing processes. 360° curing coverage for complete and uniform cure.",
+            models: ["Semray UV PC6003"],
+            bg: "#7c3aed",
           },
           {
-            series: "SEMRAY UV PC6003 · OPTICAL FIBER · 360° CURING",
-            name: "Semray® UV PC6003 & Custom Solutions",
-            desc: "UV LED system designed for optical fiber draw and wire marking. 360° curing coverage. Customized UV LED solutions also available for unique process requirements.",
-            models: ["Semray UV PC6003", "Customized UV LED Solutions"],
+            series: "CUSTOMIZED · BESPOKE UV LED SOLUTIONS",
+            name: "Customized UV LED Solutions",
+            desc: "Tailored UV LED curing systems engineered to unique process requirements. Simply more performance — dedicated optics for your specific application.",
+            models: ["Custom Engineering"],
             bg: "#a78bfa",
           },
         ],
