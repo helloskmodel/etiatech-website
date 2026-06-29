@@ -7,7 +7,7 @@ function ContactForm({ type, fields }: { type: string; fields: string[] }) {
     return (
       <div className="rounded-2xl p-8 text-center border border-gray-100 bg-white">
         <div className="text-4xl mb-3">✅</div>
-        <p className="font-semibold" style={{ color: "#1B3D8F" }}>Message Sent!</p>
+        <p className="font-semibold" style={{ color: "#1A56DB" }}>Message Sent!</p>
         <p className="text-gray-500 text-sm mt-1">We'll get back to you within 1 business day.</p>
       </div>
     );
@@ -21,23 +21,23 @@ function ContactForm({ type, fields }: { type: string; fields: string[] }) {
         <div>
           <label className="text-xs text-gray-500 block mb-1">Name *</label>
           <input type="text" required placeholder="Your name"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1B3D8F] placeholder-gray-300" />
+            className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300" />
         </div>
         <div>
           <label className="text-xs text-gray-500 block mb-1">Company</label>
           <input type="text" placeholder="Company name"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1B3D8F] placeholder-gray-300" />
+            className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300" />
         </div>
       </div>
       <div>
         <label className="text-xs text-gray-500 block mb-1">Email *</label>
         <input type="email" required placeholder="your@email.com"
-          className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1B3D8F] placeholder-gray-300" />
+          className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300" />
       </div>
       {fields.map((f) => (
         <div key={f}>
           <label className="text-xs text-gray-500 block mb-1">{f}</label>
-          <select className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-600 text-sm focus:outline-none focus:border-[#1B3D8F]">
+          <select className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-600 text-sm focus:outline-none focus:border-[#1A56DB]">
             <option value="">Select…</option>
             {f === "Industry" && ["Medical Device", "Automotive", "Electronics", "Cable & Fiber", "Precision Optics", "UV Printing", "Wood Coatings", "Metal Coatings", "Aerospace", "Other"].map((o) => <option key={o}>{o}</option>)}
             {f === "Request Type" && ["Equipment Repair", "Radiometer Calibration", "Preventive Maintenance", "Spare Parts", "Other"].map((o) => <option key={o}>{o}</option>)}
@@ -47,9 +47,9 @@ function ContactForm({ type, fields }: { type: string; fields: string[] }) {
       <div>
         <label className="text-xs text-gray-500 block mb-1">Message *</label>
         <textarea required rows={4} placeholder="Describe your requirements…"
-          className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1B3D8F] placeholder-gray-300 resize-none" />
+          className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300 resize-none" />
       </div>
-      <button type="submit" className="w-full py-3 rounded-lg font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1B3D8F" }}>
+      <button type="submit" className="w-full py-3 rounded-lg font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
         Submit →
       </button>
     </form>
@@ -61,7 +61,7 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1B3D8F 0%, transparent 60%)" }} />
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Sales & Support</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Talk to an Engineer</h1>
@@ -86,7 +86,7 @@ export default function ContactPage() {
             {/* Left: description */}
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Part 1</p>
-              <h2 className="text-3xl font-bold mb-4" style={{ color: "#1B3D8F" }}>Sales Inquiry</h2>
+              <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>Sales Inquiry</h2>
               <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
               <p className="text-gray-500 mb-8 leading-relaxed">
                 Looking for the right UV curing system? Our engineers will evaluate your application, recommend the best solution, and support you through the entire selection process.
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <div key={item.title} className="flex gap-4">
                     <div className="text-2xl mt-0.5">{item.icon}</div>
                     <div>
-                      <p className="font-semibold text-sm mb-1" style={{ color: "#1B3D8F" }}>{item.title}</p>
+                      <p className="font-semibold text-sm mb-1" style={{ color: "#1A56DB" }}>{item.title}</p>
                       <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
             </div>
             {/* Right: form */}
             <div className="rounded-2xl p-8 border border-gray-100 bg-gray-50">
-              <h3 className="font-semibold text-lg mb-6" style={{ color: "#1B3D8F" }}>Send a Sales Inquiry</h3>
+              <h3 className="font-semibold text-lg mb-6" style={{ color: "#1A56DB" }}>Send a Sales Inquiry</h3>
               <ContactForm type="sales" fields={["Industry"]} />
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
             {/* Left: description */}
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Part 2</p>
-              <h2 className="text-3xl font-bold mb-4" style={{ color: "#1B3D8F" }}>Service & Repair</h2>
+              <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>Service & Repair</h2>
               <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
               <p className="text-gray-500 mb-8 leading-relaxed">
                 Our in-house repair factory and certified technicians keep your UV curing equipment running at peak performance — minimizing downtime and maximizing production reliability.
@@ -143,7 +143,7 @@ export default function ContactPage() {
                   <div key={item.title} className="flex gap-4">
                     <div className="text-2xl mt-0.5">{item.icon}</div>
                     <div>
-                      <p className="font-semibold text-sm mb-1" style={{ color: "#1B3D8F" }}>{item.title}</p>
+                      <p className="font-semibold text-sm mb-1" style={{ color: "#1A56DB" }}>{item.title}</p>
                       <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
             </div>
             {/* Right: form */}
             <div className="rounded-2xl p-8 border border-gray-100 bg-white">
-              <h3 className="font-semibold text-lg mb-6" style={{ color: "#1B3D8F" }}>Submit a Service Request</h3>
+              <h3 className="font-semibold text-lg mb-6" style={{ color: "#1A56DB" }}>Submit a Service Request</h3>
               <ContactForm type="service" fields={["Request Type"]} />
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function ContactPage() {
       <section id="global" className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Part 3</p>
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1B3D8F" }}>Global Contacts</h2>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>Global Contacts</h2>
           <div className="w-10 h-1 rounded mb-10" style={{ background: "#44B549" }} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
@@ -181,7 +181,7 @@ export default function ContactPage() {
               <div key={c.region} className="rounded-xl border border-gray-100 bg-gray-50 p-5 hover:shadow-md transition-all">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-2xl">{c.flag}</span>
-                  <span className="font-bold" style={{ color: "#1B3D8F" }}>{c.region}</span>
+                  <span className="font-bold" style={{ color: "#1A56DB" }}>{c.region}</span>
                 </div>
                 <p className="text-sm text-gray-600 mb-1">📞 {c.phone}</p>
                 <a href={`mailto:${c.email}`} className="text-xs hover:underline" style={{ color: "#44B549" }}>{c.email}</a>

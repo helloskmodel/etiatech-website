@@ -8,7 +8,7 @@ const brands = [
     name: "OmniCure®",
     tagline: "UV Spot & Area Curing",
     logo: "●",
-    color: "#1B3D8F",
+    color: "#1A56DB",
     available: true,
     families: [
       {
@@ -19,7 +19,7 @@ const brands = [
             name: "UV Lamp Spot Curing Systems",
             desc: "Broad-spectrum 200W mercury high-pressure lamp spot curing. Industry-proven for medical devices and precision assembly.",
             models: ["S2000 Elite", "S1500 Pro", "R2000 Radiometer", "S2E Network Module", "S Series Light Guide"],
-            bg: "#1B3D8F",
+            bg: "#1A56DB",
           },
           {
             series: "LX SERIES · LED BASED · SINGLE WAVELENGTH",
@@ -38,7 +38,7 @@ const brands = [
             name: "Air-Cooled UV LED Large-Area Curing",
             desc: "High-output LED area curing for wide substrates. Conveyor-integrated, uniform irradiance across full panel width.",
             models: ["ACT", "AC8", "AC8-HD", "ACN225-F", "AC UVC LED – 275nm"],
-            bg: "#1B3D8F",
+            bg: "#1A56DB",
           },
           {
             series: "AC SMALL · AIR-COOLED LED · UP TO 240MM",
@@ -94,7 +94,7 @@ export default function ProductPage() {
     <>
       {/* Hero */}
       <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1B3D8F 0%, transparent 60%)" }} />
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>UV Curing Systems · 4 World-Class Brands</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
@@ -105,7 +105,7 @@ export default function ProductPage() {
             Advanced UV curing systems for modern manufacturing and assembly — validated processes, zero compromise.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1B3D8F" }}>
+            <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
               Talk to an Engineer
             </Link>
             <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -119,7 +119,7 @@ export default function ProductPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Our Brands</p>
-          <h2 className="text-center text-2xl font-bold mb-8" style={{ color: "#1B3D8F" }}>4 World-Class Brands · Select to Explore</h2>
+          <h2 className="text-center text-2xl font-bold mb-8" style={{ color: "#1A56DB" }}>4 World-Class Brands · Select to Explore</h2>
 
           {/* 4 Brand Icons */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
@@ -156,7 +156,7 @@ export default function ProductPage() {
             <div>
               {brand.families.map((group) => (
                 <div key={group.category} className="mb-10">
-                  <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#1B3D8F" }}>
+                  <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#1A56DB" }}>
                     {group.category}
                   </span>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -185,15 +185,15 @@ export default function ProductPage() {
               ))}
               <div className="text-center mt-4 text-sm text-gray-400">
                 *Custom Engineering Solutions Available ·{" "}
-                <Link href="/contact" className="font-medium hover:underline" style={{ color: "#1B3D8F" }}>Talk to ETIA Engineers →</Link>
+                <Link href="/contact" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to ETIA Engineers →</Link>
               </div>
             </div>
           ) : (
             <div className="text-center py-20 rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50">
               <div className="text-5xl mb-4">🔧</div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: "#1B3D8F" }}>{brand.name} — Coming Soon</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: "#1A56DB" }}>{brand.name} — Coming Soon</h3>
               <p className="text-gray-400 mb-6">Product details for {brand.name} are being prepared. Contact us for information.</p>
-              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1B3D8F" }}>
+              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
                 Enquire About {brand.name} →
               </Link>
             </div>
@@ -205,7 +205,7 @@ export default function ProductPage() {
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>UV Curing Technology</p>
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1B3D8F" }}>Why UV Curing?</h2>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>Why UV Curing?</h2>
           <div className="w-10 h-1 rounded mb-8" style={{ background: "#44B549" }} />
           <p className="text-gray-500 max-w-2xl mb-10">
             UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.
@@ -214,7 +214,7 @@ export default function ProductPage() {
             {uvCuringBenefits.map((b) => (
               <div key={b.title} className="rounded-xl p-6 border border-gray-100 bg-white hover:shadow-md transition-all">
                 <div className="text-3xl mb-3">{b.icon}</div>
-                <h3 className="font-semibold mb-2" style={{ color: "#1B3D8F" }}>{b.title}</h3>
+                <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>{b.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
               </div>
             ))}

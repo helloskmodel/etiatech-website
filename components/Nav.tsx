@@ -37,8 +37,8 @@ export default function Nav() {
               href={l.href}
               className={`text-sm font-medium transition-colors ${
                 pathname === l.href
-                  ? "text-[#1B3D8F] border-b-2 border-[#1B3D8F] pb-0.5"
-                  : "text-gray-600 hover:text-[#1B3D8F]"
+                  ? "text-[#1A56DB] border-b-2 border-[#1A56DB] pb-0.5"
+                  : "text-gray-600 hover:text-[#1A56DB]"
               }`}
             >
               {l.label}
@@ -47,7 +47,7 @@ export default function Nav() {
           <Link
             href="/contact"
             className="ml-4 px-4 py-2 rounded text-sm font-semibold text-white transition-all hover:opacity-90"
-            style={{ background: "#1B3D8F" }}
+            style={{ background: "#1A56DB" }}
           >
             Talk to an Engineer
           </Link>
@@ -69,14 +69,14 @@ export default function Nav() {
       {open && (
         <div className="md:hidden border-t border-gray-200 px-4 py-4 flex flex-col gap-4 bg-white">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-gray-600 hover:text-[#1B3D8F] text-sm" onClick={() => setOpen(false)}>
+            <Link key={l.href} href={l.href} className="text-gray-600 hover:text-[#1A56DB] text-sm" onClick={() => setOpen(false)}>
               {l.label}
             </Link>
           ))}
           <Link
             href="/contact"
             className="px-4 py-2 rounded text-sm font-semibold text-white text-center"
-            style={{ background: "#1B3D8F" }}
+            style={{ background: "#1A56DB" }}
             onClick={() => setOpen(false)}
           >
             Talk to an Engineer

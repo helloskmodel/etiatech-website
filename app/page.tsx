@@ -87,7 +87,7 @@ export default function Home() {
     <>
       {/* HERO — dark */}
       <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 60%, #0a1628 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 25% 50%, #1B3D8F 0%, transparent 55%)" }} />
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 25% 50%, #1A56DB 0%, transparent 55%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
           <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#44B549" }}>
             Authorized Distributor · Genuine Products Guaranteed
@@ -100,7 +100,7 @@ export default function Home() {
             ETIA combines 20 years of application expertise with local stock, in-house repair, and a professional team — so your line runs faster, smarter, and never stops.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1B3D8F" }}>
+            <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
               Explore Products →
             </Link>
             <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -128,7 +128,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Why ETIA</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1B3D8F" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1A56DB" }}>
             20 Years of UV Curing —<br />Built Into Every Sale, Every Visit, Every Fix.
           </h2>
           <p className="text-gray-500 max-w-2xl mb-12">
@@ -136,9 +136,9 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyEtia.map((item) => (
-              <div key={item.title} className="rounded-xl p-6 border border-gray-100 hover:border-[#1B3D8F]/30 hover:shadow-md transition-all bg-gray-50">
+              <div key={item.title} className="rounded-xl p-6 border border-gray-100 hover:border-[#1A56DB]/30 hover:shadow-md transition-all bg-gray-50">
                 <div className="text-3xl mb-4">{item.icon}</div>
-                <h3 className="font-semibold text-base mb-2" style={{ color: "#1B3D8F" }}>{item.title}</h3>
+                <h3 className="font-semibold text-base mb-2" style={{ color: "#1A56DB" }}>{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -150,7 +150,7 @@ export default function Home() {
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>UV Curing Technology</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1B3D8F" }}>The Full Spectrum of UV Curing Solutions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>The Full Spectrum of UV Curing Solutions</h2>
           <p className="text-gray-500 mb-6">200–600 nm · 6 Technology Routes · 4 World-Class Brands</p>
 
           {/* Spectrum bar */}
@@ -161,7 +161,7 @@ export default function Home() {
 
           {/* Group labels */}
           <div className="grid grid-cols-2 gap-2 mb-6 text-sm font-semibold text-center">
-            <div className="py-2 rounded-lg border" style={{ background: "#1B3D8F0D", color: "#1B3D8F", borderColor: "#1B3D8F30" }}>
+            <div className="py-2 rounded-lg border" style={{ background: "#1A56DB0D", color: "#1A56DB", borderColor: "#1A56DB30" }}>
               Single Wavelength Light Sources · 365–405 nm
             </div>
             <div className="py-2 rounded-lg border" style={{ background: "#44B5490D", color: "#44B549", borderColor: "#44B54930" }}>
@@ -191,7 +191,7 @@ export default function Home() {
                   <p className="text-gray-500 text-xs leading-relaxed">{t.desc}</p>
                   <div className="mt-auto pt-2 border-t border-gray-100">
                     {t.brands.map((b) => (
-                      <p key={b} className="text-xs font-semibold italic" style={{ color: "#1B3D8F" }}>{b}</p>
+                      <p key={b} className="text-xs font-semibold italic" style={{ color: "#1A56DB" }}>{b}</p>
                     ))}
                   </div>
                 </div>
@@ -200,7 +200,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 text-center">
-            <Link href="/product" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1B3D8F" }}>
+            <Link href="/product" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
               View All Products →
             </Link>
           </div>
@@ -211,23 +211,23 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Applications</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1B3D8F" }}>9 Industries · 51 Application Notes</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>9 Industries · 51 Application Notes</h2>
           <p className="text-gray-500 mb-10">Browse UV curing solutions validated across the most demanding manufacturing environments.</p>
           <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3">
             {industries.map((ind) => (
               <Link
                 key={ind.name}
                 href="/application"
-                className="flex flex-col items-center gap-2 p-4 rounded-xl border border-gray-100 hover:border-[#1B3D8F]/40 hover:shadow-md transition-all group text-center bg-gray-50"
+                className="flex flex-col items-center gap-2 p-4 rounded-xl border border-gray-100 hover:border-[#1A56DB]/40 hover:shadow-md transition-all group text-center bg-gray-50"
               >
                 <span className="text-3xl">{ind.icon}</span>
-                <span className="text-xs text-gray-600 group-hover:text-[#1B3D8F] leading-tight">{ind.name}</span>
+                <span className="text-xs text-gray-600 group-hover:text-[#1A56DB] leading-tight">{ind.name}</span>
                 <span className="text-xs font-medium" style={{ color: "#44B549" }}>{ind.count} apps</span>
               </Link>
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/application" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold border-2 border-[#1B3D8F] text-[#1B3D8F] hover:bg-[#1B3D8F] hover:text-white transition-all">
+            <Link href="/application" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold border-2 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white transition-all">
               Explore All Applications →
             </Link>
           </div>
