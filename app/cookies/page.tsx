@@ -42,8 +42,8 @@ export default function CookiePolicyPage() {
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-600 text-sm leading-relaxed space-y-8">
           <p>
-            This Cookie Policy explains how <strong>ETIA-TECH (ASIA) Co., Limited</strong> (Company Registration No. 2846824,
-            Hong Kong) uses cookies and similar technologies on this website. It should be read together with our{" "}
+            This Cookie Policy explains how <strong>ETIA-TECH (ASIA) Co., Limited</strong> (Hong Kong) uses cookies and
+            similar technologies on this website. It should be read together with our{" "}
             <Link href="/privacy" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>Privacy Policy</Link>.
           </p>
 

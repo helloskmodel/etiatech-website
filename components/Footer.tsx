@@ -38,9 +38,6 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <p className="text-xs text-gray-400">
             © {new Date().getFullYear()} ETIA-TECH (ASIA) Co., Limited. All rights reserved.
-            <span className="hidden sm:inline"> · </span>
-            <br className="sm:hidden" />
-            Incorporated in Hong Kong · Company Reg. No. 2846824
           </p>
           <div className="flex gap-4">
             <Link href="/privacy" className="text-xs text-gray-400 hover:text-[#1A56DB] transition-colors">Privacy</Link>

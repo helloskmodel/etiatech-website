@@ -844,6 +844,32 @@ export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
 
+// Maps the model chips shown on the Products brand selector to catalog slugs,
+// so each real product chip can link to its detail page.
+export const modelToSlug: Record<string, string> = {
+  "S2000 Elite": "s2000-elite",
+  "S1500 Pro": "s1500-pro",
+  "LX500 V2": "lx500",
+  "LS200 Radiometer": "ls200",
+  "UV LED Heads (V3)": "v3-led-heads",
+  "AC2": "ac2",
+  "AC5": "ac5",
+  "Nexus II": "nexus-ii",
+  "FireLine FL200": "fl200",
+  "FireLine FL400": "fl400",
+  "FireLine FL400-i Industrial": "fl400-i",
+  "FireLine FL440": "fl440",
+  "VeriCure Water-Cooled": "vericure",
+  "FireJet FJ800": "fj800",
+  "FireJet FJ801": "fj801",
+  "FireEdge FE400": "fe400",
+  "FireEdge FE410": "fe410",
+  "LightHammer 6 Mark II": "lighthammer-6",
+  "LightHammer 10 Mark III": "lighthammer-10",
+  "F Series": "f-series",
+  "Optical Fiber UV Systems": "drf-series",
+};
+
 export function productHref(p: Product): string {
   return p.href ?? `/product/systems/${p.slug}`;
 }
