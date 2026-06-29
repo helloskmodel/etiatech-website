@@ -5,7 +5,7 @@ export default function ContactPage() {
       <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1B3D8F 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Get in Touch</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Sales & Support</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Talk to an Engineer</h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Tell us about your application — our UV curing engineers will help you find the right solution.
