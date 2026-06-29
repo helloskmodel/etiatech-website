@@ -67,7 +67,7 @@ const brands = [
             name: "Water-Cooled UV LED Area Curing Systems",
             desc: "High-intensity water-cooled UV LED systems for demanding industrial processes. Stable output under extreme temperatures and debris environments.",
             models: ["Nexus II", "FireLine FL200", "FireLine FL400", "FireLine FL400-i Industrial", "FireLine FL440", "VeriCure Water-Cooled", "Semray 5000+"],
-            bg: "#1e3a5f",
+            bg: "#0d9488",
           },
         ],
       },
