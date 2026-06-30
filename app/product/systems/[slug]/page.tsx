@@ -116,7 +116,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* CTA */}
-      <section className="py-14" style={{ background: "#0a1628" }}>
+      <section className="py-14" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Interested in the {p.name.split(" ").slice(0, 3).join(" ")}?</h2>
           <p className="text-gray-300 mb-8">Our UV curing engineers will match the right configuration to your process — from selection to validation.</p>

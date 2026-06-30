@@ -150,8 +150,8 @@ export default function OmniCurePage() {
         </div>
       </section>
 
-      {/* CTA — dark */}
-      <section className="py-16" style={{ background: "#0a1628" }}>
+      {/* CTA */}
+      <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Need help selecting the right system?</h2>
           <p className="text-gray-300 mb-8">Our UV curing engineers are ready to help you find the best solution for your process — from spot to area, lamp to LED.</p>
