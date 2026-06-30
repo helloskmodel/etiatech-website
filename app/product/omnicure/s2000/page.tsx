@@ -286,7 +286,7 @@ export default function S2000ElitePage() {
               <div className="text-2xl mb-3">💬</div>
               <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>Not sure what you need?</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Our engineers will recommend the right accessories for your application, working distance, and light guide configuration.</p>
-              <Link href="/contact" className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to an Engineer →</Link>
+              <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to an Engineer →</a>
             </div>
           </div>
         </div>

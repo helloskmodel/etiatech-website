@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { type CaseStudy, caseStudyImage } from "@/components/caseStudies";
 import { industryColors, industryImage, industryFallbackIcon } from "@/components/industryMedia";
@@ -123,14 +122,14 @@ export default function CaseStudyModal({
             <p className="text-[11px] text-gray-400 text-right max-w-[45%]">Source: {c.source}</p>
           </div>
 
-          <Link
-            href="/contact"
+          <a
+            href="mailto:support@etiatech.com?subject=Sales%20Inquiry"
             className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"
             style={{ background: "#2563eb" }}
             onClick={onClose}
           >
             Talk to Our Sales →
-          </Link>
+          </a>
         </div>
       </div>
     </div>
