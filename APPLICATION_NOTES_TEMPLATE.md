@@ -138,7 +138,7 @@
 
 ---
 
-## 3. Electronics(9)
+## 3. Electronics & Semiconductor(9)  · ID 前缀仍为 ELC
 
 ### AN-ELC-001 ⭐ — PCB Conformal Coating
 - Sub-category: PCB Assembly
@@ -205,7 +205,7 @@
 
 ---
 
-## 4. Cable & Fiber(6)
+## 4. Optical Fiber & Cable(6)  · ID 前缀仍为 CAB
 
 ### AN-CAB-001 ⭐ — Fiber Optic Connector Termination
 - Sub-category: Fiber Connector
@@ -251,7 +251,7 @@
 
 ---
 
-## 5. Precision Optics(3)
+## 5. Optics & Optical Assembly(3)  · ID 前缀仍为 OPT
 
 ### AN-OPT-001 — Camera Lens Element Bonding
 - Sub-category: Lens Assembly

@@ -74,9 +74,9 @@ const techRoutes = [
 const industries = [
   { name: "Medical Device", icon: "🏥", count: 10 },
   { name: "Automotive", icon: "🚗", count: 7 },
-  { name: "Electronics", icon: "💡", count: 9 },
-  { name: "Cable & Fiber", icon: "🔌", count: 6 },
-  { name: "Precision Optics", icon: "🔬", count: 3 },
+  { name: "Electronics & Semiconductor", icon: "💡", count: 9 },
+  { name: "Optical Fiber & Cable", icon: "🔌", count: 6 },
+  { name: "Optics & Optical Assembly", icon: "🔬", count: 3 },
   { name: "UV Printing", icon: "🖨️", count: 3 },
   { name: "Wood Coatings", icon: "🪵", count: 6 },
   { name: "Metal Coatings", icon: "⚙️", count: 4 },
