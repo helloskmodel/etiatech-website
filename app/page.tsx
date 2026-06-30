@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CaseStudyCarousel from "@/components/CaseStudyCarousel";
+import { heroBannerImage } from "@/components/caseStudies";
 
 const whyEtia = [
   {
@@ -76,8 +77,9 @@ export default function Home() {
   return (
     <>
       {/* HERO — left-aligned, banner-ready (swap the section background for a banner image later) */}
-      <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 75% 50%, #1A56DB 0%, transparent 60%)" }} />
+      <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "#0f2444" }}>
+        {heroBannerImage && <Image src={heroBannerImage} alt="" fill priority sizes="100vw" className="object-cover" />}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
             <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
