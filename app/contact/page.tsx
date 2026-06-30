@@ -183,6 +183,7 @@ export default function ContactPage() {
               },
               {
                 region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "support@etiatech.com",
+                en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong",
               },
               {
                 region: "Thailand", flag: "🇹🇭", phone: "+66 2 000 0000", email: "support@etiatech.com",
