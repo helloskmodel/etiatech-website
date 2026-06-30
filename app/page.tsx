@@ -106,10 +106,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Why ETIA</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1A56DB" }}>
-            20 Years of UV Curing —<br />Built Into Every Sale, Every Visit, Every Fix.
+            ETIA — 20 Years of UV Curing Expertise,<br />Delivered in Every Sale, Every Visit, Every Fix.
           </h2>
           <p className="text-gray-500 max-w-2xl mb-12">
-            Rooted in engineering excellence, ETIA partners with the world&apos;s leading UV curing brands to deliver solutions that are validated, reliable, and backed end-to-end.
+            Rooted in engineering excellence, ETIA partners with the world&apos;s leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyEtia.map((item) => (
