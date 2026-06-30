@@ -3,9 +3,10 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
-import { successStories, caseStudyImage, heroBannerImage, type CaseStudy } from "@/components/caseStudies";
+import { successStories, caseStudyImage, heroBannerImage, localizeCase, type CaseStudy } from "@/components/caseStudies";
 import { apps, type App } from "@/components/applicationNotes";
 import CaseStudyModal from "@/components/CaseStudyModal";
+import { useLocale } from "@/components/LocaleContext";
 
 
 const industries = [...new Set(apps.map((a) => a.industry))];
@@ -15,6 +16,7 @@ export default function ApplicationPage() {
   const [activeIndustry, setActiveIndustry] = useState<string>("All");
   const [selectedApp, setSelectedApp] = useState<App | null>(null);
   const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);
+  const { locale } = useLocale();
 
   const filtered = activeIndustry === "All" ? apps : apps.filter((a) => a.industry === activeIndustry);
 
@@ -111,7 +113,9 @@ export default function ApplicationPage() {
           <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>From Application Know-How to Real Results</h2>
           <p className="text-gray-500 mb-10 max-w-3xl">Unmatched light-cure expertise — full system solutions where chemistry, material, and equipment work as one.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {successStories.map((s) => (
+            {successStories.map((raw) => {
+              const s = localizeCase(raw, locale);
+              return (
               <button
                 key={s.id}
                 onClick={() => setSelectedCase(s)}
@@ -148,10 +152,11 @@ export default function ApplicationPage() {
                     <p className="text-xl font-bold" style={{ color: "#1A56DB" }}>{s.metric}</p>
                     <p className="text-[11px] text-gray-400 mt-0.5 line-clamp-1">{s.metricLabel}</p>
                   </div>
-                  <span className="text-xs font-semibold whitespace-nowrap group-hover:underline" style={{ color: industryColors[s.industry] }}>Read case →</span>
+                  <span className="text-xs font-semibold whitespace-nowrap group-hover:underline" style={{ color: industryColors[s.industry] }}>{locale === "zh" ? "查看案例 →" : "Read case →"}</span>
                 </div>
               </button>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

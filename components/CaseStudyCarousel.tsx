@@ -1,14 +1,16 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { successStories, caseStudyImage, type CaseStudy } from "@/components/caseStudies";
+import { successStories, caseStudyImage, localizeCase, type CaseStudy } from "@/components/caseStudies";
 import { industryColors, industryFallbackIcon } from "@/components/industryMedia";
 import CaseStudyModal from "@/components/CaseStudyModal";
+import { useLocale, t } from "@/components/LocaleContext";
 
 export default function CaseStudyCarousel() {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   const [selected, setSelected] = useState<CaseStudy | null>(null);
+  const { locale } = useLocale();
   const n = successStories.length;
 
   const go = useCallback((d: number) => setI((p) => (p + d + n) % n), [n]);
@@ -19,7 +21,7 @@ export default function CaseStudyCarousel() {
     return () => clearInterval(t);
   }, [paused, selected, n]);
 
-  const c = successStories[i];
+  const c = localizeCase(successStories[i], locale);
   const color = industryColors[c.industry] || "#1A56DB";
   const img = caseStudyImage(c);
   const Icon = industryFallbackIcon[c.industry];
@@ -67,7 +69,7 @@ export default function CaseStudyCarousel() {
             ))}
           </div>
           <button onClick={() => setSelected(c)} className="mt-auto inline-flex items-center gap-2 text-sm font-semibold hover:underline self-start" style={{ color }}>
-            Read this case study →
+            {t({ en: "Read this case study →", zh: "查看此案例 →" }, locale)}
           </button>
         </div>
       </div>
