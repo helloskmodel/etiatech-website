@@ -1,17 +1,20 @@
 "use client";
 import Image from "next/image";
-import { type CaseStudy, caseStudyImage } from "@/components/caseStudies";
+import { type CaseStudy, caseStudyImage, localizeCase } from "@/components/caseStudies";
 import { industryColors, industryImage, industryFallbackIcon } from "@/components/industryMedia";
+import { useLocale, t } from "@/components/LocaleContext";
 
 // Rich case-study detail modal, shared by the Application page and the
 // home Case Study carousel.
 export default function CaseStudyModal({
-  caseStudy: c,
+  caseStudy,
   onClose,
 }: {
   caseStudy: CaseStudy;
   onClose: () => void;
 }) {
+  const { locale } = useLocale();
+  const c = localizeCase(caseStudy, locale);
   const color = industryColors[c.industry] || "#1A56DB";
   const headerImg = caseStudyImage(c) || industryImage[c.industry];
   const Icon = industryFallbackIcon[c.industry];
@@ -51,29 +54,29 @@ export default function CaseStudyModal({
           <div className="space-y-3 mb-5">
             {c.overview && (
               <div className="rounded-lg p-4 bg-gray-50 border border-gray-100">
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Application Overview</p>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">{t({ en: "Application Overview", zh: "应用概述" }, locale)}</p>
                 <p className="text-sm text-gray-700 leading-relaxed">{c.overview}</p>
               </div>
             )}
             <div className="rounded-lg p-4 bg-red-50 border border-red-100">
-              <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">The Challenge</p>
+              <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">{t({ en: "The Challenge", zh: "挑战" }, locale)}</p>
               <p className="text-sm text-gray-700 leading-relaxed">{c.challenge}</p>
             </div>
             <div className="rounded-lg p-4 border" style={{ background: "#f0f5ff", borderColor: "#c7d9ff" }}>
-              <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#1A56DB" }}>The Solution</p>
+              <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#1A56DB" }}>{t({ en: "The Solution", zh: "解决方案" }, locale)}</p>
               <p className="text-sm text-gray-700 leading-relaxed">{c.solution}</p>
             </div>
             {c.materials && (
               <div className="rounded-lg p-4 border" style={{ background: "#fafafa", borderColor: "#e5e7eb" }}>
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Compatible Materials</p>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">{t({ en: "Compatible Materials", zh: "兼容材料" }, locale)}</p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-[11px] text-left text-gray-600">
                     <thead>
                       <tr className="text-gray-400">
-                        <th className="py-1 pr-2 font-semibold">Application</th>
-                        <th className="py-1 pr-2 font-semibold">System</th>
-                        <th className="py-1 pr-2 font-semibold">Adhesive / Category</th>
-                        <th className="py-1 font-semibold">Notes</th>
+                        <th className="py-1 pr-2 font-semibold">{t({ en: "Application", zh: "应用" }, locale)}</th>
+                        <th className="py-1 pr-2 font-semibold">{t({ en: "System", zh: "系统" }, locale)}</th>
+                        <th className="py-1 pr-2 font-semibold">{t({ en: "Adhesive / Category", zh: "胶粘剂 / 类别" }, locale)}</th>
+                        <th className="py-1 font-semibold">{t({ en: "Notes", zh: "备注" }, locale)}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -95,20 +98,20 @@ export default function CaseStudyModal({
             )}
             {c.benefits && c.benefits.length > 0 ? (
               <div className="rounded-lg p-4 bg-green-50 border border-green-100">
-                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">The Benefit</p>
+                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">{t({ en: "The Benefit", zh: "效益" }, locale)}</p>
                 <ul className="text-sm text-gray-700 leading-relaxed list-disc pl-5 space-y-1">
                   {c.benefits.map((b, i) => <li key={i}>{b}</li>)}
                 </ul>
               </div>
             ) : c.results ? (
               <div className="rounded-lg p-4 bg-green-50 border border-green-100">
-                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">Results &amp; Metrics</p>
+                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">{t({ en: "Results & Metrics", zh: "成果与指标" }, locale)}</p>
                 <p className="text-sm text-gray-700 leading-relaxed">{c.results}</p>
               </div>
             ) : null}
             {c.marketContext && (
               <div className="rounded-lg p-4 border" style={{ background: "#0891b20d", borderColor: "#0891b233" }}>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#0891b2" }}>Market Context</p>
+                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#0891b2" }}>{t({ en: "Market Context", zh: "市场背景" }, locale)}</p>
                 <p className="text-sm text-gray-700 leading-relaxed">{c.marketContext}</p>
               </div>
             )}
@@ -119,7 +122,7 @@ export default function CaseStudyModal({
               <p className="text-2xl font-bold" style={{ color: "#1A56DB" }}>{c.metric}</p>
               <p className="text-xs text-gray-400 mt-0.5">{c.metricLabel}</p>
             </div>
-            <p className="text-[11px] text-gray-400 text-right max-w-[45%]">Source: {c.source}</p>
+            <p className="text-[11px] text-gray-400 text-right max-w-[45%]">{t({ en: "Source", zh: "来源" }, locale)}: {c.source}</p>
           </div>
 
           <a
@@ -128,7 +131,7 @@ export default function CaseStudyModal({
             style={{ background: "#2563eb" }}
             onClick={onClose}
           >
-            Talk to Our Sales →
+            {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}
           </a>
         </div>
       </div>

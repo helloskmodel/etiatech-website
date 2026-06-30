@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import { LocaleProvider } from "@/components/LocaleContext";
 
 export const metadata: Metadata = {
   title: "ETIA Technology — UV Curing Solutions",
@@ -13,10 +14,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col" style={{ background: "#ffffff", color: "#111827" }}>
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <CookieConsent />
+        <LocaleProvider>
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <CookieConsent />
+        </LocaleProvider>
       </body>
     </html>
   );

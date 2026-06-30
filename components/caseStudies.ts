@@ -1,5 +1,6 @@
 // Featured ETIA case studies (B1–B10). Shared by the home page carousel
 // and the Application page Customer Success section.
+import { caseStudiesZh } from "./caseStudies.zh";
 
 export type MaterialRow = { application: string; system: string; category: string; notes: string };
 
@@ -354,6 +355,14 @@ const CASE_IMG_BASE =
 
 export function caseStudyImage(c: CaseStudy): string {
   return c.image ? `${CASE_IMG_BASE}/${encodeURIComponent(c.image)}` : "";
+}
+
+// Returns the case study with translated fields merged in for the given
+// locale. Any field not translated falls back to the English source.
+export function localizeCase(c: CaseStudy, locale: "en" | "zh" | "vi" | "th"): CaseStudy {
+  if (locale !== "zh") return c;
+  const zh = caseStudiesZh[c.id];
+  return zh ? { ...c, ...zh } : c;
 }
 
 // Representative case-study photo reused as the page-hero banner background.
