@@ -355,3 +355,8 @@ const CASE_IMG_BASE =
 export function caseStudyImage(c: CaseStudy): string {
   return c.image ? `${CASE_IMG_BASE}/${encodeURIComponent(c.image)}` : "";
 }
+
+// Representative case-study photo reused as the page-hero banner background.
+// Change the id to swap which photo backs the heroes.
+const heroCase = successStories.find((s) => s.id === "B5");
+export const heroBannerImage = heroCase ? caseStudyImage(heroCase) : "";

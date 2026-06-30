@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import { heroBannerImage } from "@/components/caseStudies";
 
 function ContactForm({ type, fields }: { type: string; fields: string[] }) {
   const [submitted, setSubmitted] = useState(false);
@@ -60,24 +62,27 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: "#0f2444" }}>
+        {heroBannerImage && <Image src={heroBannerImage} alt="" fill priority sizes="100vw" className="object-cover" />}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl text-left">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>Sales & Support</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
             Expert Guidance.<br />
             <span style={{ color: "#44B549" }}>We&apos;re Here to Help.</span>
           </h1>
-          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-6 line-clamp-2">
+          <p className="text-base text-gray-200 mb-6">
             From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answer and keep production moving.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap gap-3">
             {["Sales Inquiry", "Service & Repair", "Global Contacts"].map((label, i) => (
               <a key={label} href={["#sales", "#service", "#global"][i]}
                 className="text-xs px-4 py-2 rounded-full border border-white/30 text-gray-300 hover:border-white/60 hover:text-white transition-all">
                 {label}
               </a>
             ))}
+          </div>
           </div>
         </div>
       </section>

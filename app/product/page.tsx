@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { modelToSlug, getProduct, productHref } from "@/components/productCatalog";
+import { heroBannerImage } from "@/components/caseStudies";
 
 const brands = [
   {
@@ -171,24 +173,27 @@ export default function ProductPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>UV Curing Systems · 4 Product Lines</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-            Precision Cures.<br />
-            <span style={{ color: "#44B549" }}>Supreme Control.</span>
-          </h1>
-          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
-            Advanced UV curing systems engineered for precise output, stable performance, and repeatable manufacturing results.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-              Talk to Our Sales
-            </Link>
-            <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
-              Browse Applications
-            </Link>
+      <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: "#0f2444" }}>
+        {heroBannerImage && <Image src={heroBannerImage} alt="" fill priority sizes="100vw" className="object-cover" />}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl text-left">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>UV Curing Systems · 4 Product Lines</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
+              Precision Cures.<br />
+              <span style={{ color: "#44B549" }}>Supreme Control.</span>
+            </h1>
+            <p className="text-base text-gray-200 mb-6 leading-relaxed">
+              Advanced UV curing systems engineered for precise output, stable performance, and repeatable manufacturing results.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+                Talk to Our Sales
+              </Link>
+              <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
+                Browse Applications
+              </Link>
+            </div>
           </div>
         </div>
       </section>
