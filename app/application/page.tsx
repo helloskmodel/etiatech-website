@@ -277,7 +277,7 @@ export default function ApplicationPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Customer Success</p>
-          <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>Real Results from Real Manufacturers</h2>
+          <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>On-Site Expertise That Drives Customer Success</h2>
           <p className="text-gray-500 mb-10 max-w-3xl">Unmatched light-cure expertise — full system solutions where chemistry, material, and equipment work as one.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {successStories.map((s) => (
