@@ -198,7 +198,6 @@ export default function ContactPage() {
             ].map((c) => (
               <div key={c.region} className="rounded-xl border border-gray-100 bg-gray-50 p-5 hover:shadow-md transition-all">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">{c.flag}</span>
                   <span className="font-bold" style={{ color: "#1A56DB" }}>{c.region}</span>
                 </div>
                 {c.local && (
