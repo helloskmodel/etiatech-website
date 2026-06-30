@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { successStories, caseStudyImage } from "@/components/caseStudies";
 import { industryColors, industryFallbackIcon } from "@/components/industryMedia";
 
@@ -32,7 +33,15 @@ export default function CaseStudyCarousel() {
         {/* Image / fallback */}
         <div className="relative h-56 md:h-auto md:min-h-[20rem]">
           {img ? (
-            <img src={img} alt={c.title} className="absolute inset-0 w-full h-full object-cover" />
+            <Image
+              key={c.id}
+              src={img}
+              alt={c.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              priority={i === 0}
+            />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${color} 0%, ${color}cc 100%)` }}>
               {Icon && <Icon className="w-16 h-16 text-white/90" strokeWidth={1.25} />}
