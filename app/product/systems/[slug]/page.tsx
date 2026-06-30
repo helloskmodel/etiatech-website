@@ -39,23 +39,22 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Hero */}
-      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(circle at 75% 40%, ${accent} 0%, transparent 60%)` }} />
+      <section className="py-12 relative overflow-hidden border-b border-gray-200" style={{ background: "#f8fafc" }}>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <span className="text-[11px] font-bold px-2.5 py-1 rounded text-white" style={{ background: accent }}>{p.brand}</span>
-              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-white/25 text-gray-200">{p.tech}{p.sub ? ` · ${p.sub}` : ""}</span>
+              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{p.tech}{p.sub ? ` · ${p.sub}` : ""}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">{p.name}</h1>
-            <p className="text-base text-gray-300 leading-relaxed mb-8">{p.intro}</p>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "#1A56DB" }}>{p.name}</h1>
+            <p className="text-base text-gray-600 leading-relaxed mb-8">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>Request a Quote</Link>
-              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">Talk to an Engineer</Link>
+              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">Talk to an Engineer</Link>
             </div>
           </div>
           {/* Product image */}
-          <div className="rounded-2xl bg-white/95 p-6 flex items-center justify-center" style={{ minHeight: "300px" }}>
+          <div className="rounded-2xl bg-white border border-gray-200 shadow-sm p-6 flex items-center justify-center" style={{ minHeight: "300px" }}>
             {productImage(p) ? (
               <img src={productImage(p)} alt={p.name} className="object-contain w-full" style={{ maxHeight: "360px" }} />
             ) : (

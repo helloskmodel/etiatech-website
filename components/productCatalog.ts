@@ -1381,7 +1381,7 @@ export function productHref(p: Product): string {
 // The object keys there do NOT follow the slug convention (and are
 // case-sensitive), so we map each slug to its real filename explicitly.
 const PRODUCT_IMG_BASE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/products";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product";
 
 // slug → actual object key in the bucket.
 const productImageFile: Record<string, string> = {
