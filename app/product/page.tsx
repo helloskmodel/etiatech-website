@@ -187,7 +187,7 @@ export default function ProductPage() {
               Advanced UV curing systems engineered for precise output, stable performance, and repeatable manufacturing results.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+              <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
                 Talk to Our Sales
               </a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -280,7 +280,7 @@ export default function ProductPage() {
               ))}
               <div className="text-center mt-4 text-sm text-gray-400">
                 *Custom Engineering Solutions Available ·{" "}
-                <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to Our Sales →</a>
+                <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to Our Sales →</a>
               </div>
             </div>
           ) : (
@@ -322,7 +322,7 @@ export default function ProductPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Not sure which system is right for you?</h2>
           <p className="text-gray-300 mb-8">Our engineers will match the right UV curing system to your exact application — from selection to validation.</p>
-          <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
+          <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             Talk to Our Sales →
           </a>
         </div>

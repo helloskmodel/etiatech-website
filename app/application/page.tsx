@@ -32,7 +32,7 @@ export default function ApplicationPage() {
             UV curing solutions proven across 10 industries and 62 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+            <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
               Talk to Our Sales
             </a>
             <Link href="/product" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -161,7 +161,7 @@ export default function ApplicationPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Find the Right UV Curing Solution for Your Process</h2>
           <p className="text-gray-300 mb-6">Our engineers are ready to help — from application validation to system selection.</p>
-          <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#2563eb" }}>
+          <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#2563eb" }}>
             Talk to Our Sales →
           </a>
         </div>
