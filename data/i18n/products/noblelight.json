@@ -1,0 +1,288 @@
+{
+  "brand": "NobleLight",
+  "brand_slug": "noblelight",
+  "products": [
+    {
+      "model": "Semray UV5000+",
+      "slug": "product/noblelight/uv5000-plus",
+      "category": {
+        "en": "Water-cooled UV LED Curing",
+        "zh": "水冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng nước"
+      },
+      "name": {
+        "en": "Semray® UV5000+ Series",
+        "zh": "Semray® UV5000+ 系列",
+        "vi": "Semray® UV5000+ Series"
+      },
+      "description": {
+        "en": "Designed for higher performance and flexible integration especially for larger working distances, the Semray UV5000+ Series is a water-cooled system. The emission window size is scalable in width from 400 to 1300mm in 50mm steps, with housing dimensions scalable accordingly.",
+        "zh": "Semray UV5000+系列为水冷式系统，专为更高性能与灵活集成而设计，尤其适合较大工作距离的应用场景。发光窗口宽度可在400至1300毫米范围内以50毫米为步进进行调整，外壳尺寸相应可调。",
+        "vi": "Được thiết kế cho hiệu suất cao hơn và tích hợp linh hoạt, đặc biệt phù hợp với khoảng cách làm việc lớn hơn, dòng Semray UV5000+ là hệ thống làm mát bằng nước. Kích thước cửa sổ phát quang có thể điều chỉnh theo chiều rộng từ 400 đến 1300mm theo bước 50mm, kích thước vỏ máy điều chỉnh tương ứng."
+      },
+      "features": [
+        {
+          "en": "Designed for larger working distances with flexible integration",
+          "zh": "专为大工作距离与灵活集成而设计",
+          "vi": "Thiết kế cho khoảng cách làm việc lớn với tích hợp linh hoạt"
+        },
+        {
+          "en": "Emission window scalable from 400 to 1300mm in 50mm steps",
+          "zh": "发光窗口宽度可在400至1300毫米之间以50毫米为步进调整",
+          "vi": "Cửa sổ phát quang điều chỉnh từ 400 đến 1300mm theo bước 50mm"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "UV5000+ Series",
+            "zh": "UV5000+ 系列",
+            "vi": "Dòng UV5000+"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Peak Wavelength",
+                "zh": "峰值波长",
+                "vi": "Bước sóng đỉnh"
+              },
+              "value": {
+                "en": "385 nm",
+                "zh": "385纳米",
+                "vi": "385 nm"
+              }
+            },
+            {
+              "label": {
+                "en": "Irradiation Intensity (at emission window)",
+                "zh": "辐照强度（发光窗口处）",
+                "vi": "Cường độ chiếu xạ (tại cửa sổ phát quang)"
+              },
+              "value": {
+                "en": "6.5 W/cm2",
+                "zh": "6.5 W/cm²",
+                "vi": "6.5 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Irradiation Intensity at 50mm Working Distance",
+                "zh": "50毫米工作距离下的辐照强度",
+                "vi": "Cường độ chiếu xạ ở khoảng cách làm việc 50mm"
+              },
+              "value": {
+                "en": "16 W/cm2",
+                "zh": "16 W/cm²",
+                "vi": "16 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Emission Window Size",
+                "zh": "发光窗口尺寸",
+                "vi": "Kích thước cửa sổ phát quang"
+              },
+              "value": {
+                "en": "X × 82 mm (X scalable 400-1300mm in 50mm steps)",
+                "zh": "X × 82 毫米（X可在400-1300毫米范围内以50毫米为步进调整）",
+                "vi": "X × 82 mm (X điều chỉnh 400-1300mm theo bước 50mm)"
+              }
+            },
+            {
+              "label": {
+                "en": "Outer Dimensions of Housing",
+                "zh": "外壳外部尺寸",
+                "vi": "Kích thước ngoài của vỏ máy"
+              },
+              "value": {
+                "en": "X(W) × 100(D) × 100(H) mm (W scalable 415-1315mm in 50mm steps)",
+                "zh": "X（宽）× 100（深）× 100（高）毫米（宽度可在415-1315毫米范围内以50毫米为步进调整）",
+                "vi": "X(R) × 100(S) × 100(C) mm (R điều chỉnh 415-1315mm theo bước 50mm)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Semray UV PC6003",
+      "slug": "product/noblelight/uv-pc6003",
+      "category": {
+        "en": "UV LED Curing for Fiber & Wire",
+        "zh": "光纤与线缆专用UV LED固化系统",
+        "vi": "Đóng rắn UV LED cho sợi quang & dây"
+      },
+      "name": {
+        "en": "Semray® UV PC6003",
+        "zh": "Semray® UV PC6003",
+        "vi": "Semray® UV PC6003"
+      },
+      "description": {
+        "en": "A UV LED curing system designed from the ground up for optical fiber draw and wire marking manufacturing processes, providing 360° curing coverage.",
+        "zh": "UV PC6003是一款从零开始专为光纤拉丝与线材标识制造工艺设计的UV LED固化系统，提供360°全方位固化覆盖。",
+        "vi": "Hệ thống đóng rắn UV LED được thiết kế từ đầu cho quy trình sản xuất kéo sợi quang và đánh dấu dây, cung cấp phạm vi đóng rắn 360°."
+      },
+      "features": [
+        {
+          "en": "Purpose-built for optical fiber draw and wire marking processes",
+          "zh": "专为光纤拉丝与线材标识工艺打造",
+          "vi": "Được chế tạo riêng cho quy trình kéo sợi quang và đánh dấu dây"
+        },
+        {
+          "en": "360° curing coverage",
+          "zh": "360°全方位固化覆盖",
+          "vi": "Phạm vi đóng rắn 360°"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "UV PC6003 UV LED Lamp Assembly",
+            "zh": "UV PC6003 UV LED灯组",
+            "vi": "Cụm đèn UV LED UV PC6003"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Wavelength",
+                "zh": "波长",
+                "vi": "Bước sóng"
+              },
+              "value": {
+                "en": "395 nm",
+                "zh": "395纳米",
+                "vi": "395 nm"
+              }
+            },
+            {
+              "label": {
+                "en": "Irradiance at Target",
+                "zh": "目标处辐照度",
+                "vi": "Độ rọi tại mục tiêu"
+              },
+              "value": {
+                "en": "65 – 70 W/cm2",
+                "zh": "65 – 70 W/cm²",
+                "vi": "65 – 70 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Emission Length",
+                "zh": "发光长度",
+                "vi": "Chiều dài phát quang"
+              },
+              "value": {
+                "en": "165 mm",
+                "zh": "165毫米",
+                "vi": "165 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Maximum Dimensions",
+                "zh": "最大外形尺寸",
+                "vi": "Kích thước tối đa"
+              },
+              "value": {
+                "en": "364(W) × 265(H) × 543(L) mm",
+                "zh": "364（宽）× 265（高）× 543（长）毫米",
+                "vi": "364(R) × 265(C) × 543(D) mm"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Semray UV5052M",
+      "slug": "product/noblelight/uv5052m",
+      "category": {
+        "en": "Customized UV LED Curing",
+        "zh": "定制化UV LED固化系统",
+        "vi": "Đóng rắn UV LED tùy chỉnh"
+      },
+      "name": {
+        "en": "Semray® UV5052M",
+        "zh": "Semray® UV5052M",
+        "vi": "Semray® UV5052M"
+      },
+      "description": {
+        "en": "Equipped with special optics to bring more energy to the process, the Semray UV5052M is an example of customized UV LED development. A set of unique optical concepts direct photons from the UV-LED chips to larger working distances for greater flexibility in applications, minimum loss of energy and straylight, and focused UV intensity.",
+        "zh": "UV5052M配备特殊光学系统，可为工艺过程提供更高能量，是Semray定制化UV LED开发的代表案例之一。独特的光学设计可将UV-LED芯片发出的光子引导至更大的工作距离，从而提升应用灵活性、最大限度降低能量损耗与杂散光，并实现聚焦的UV强度输出。",
+        "vi": "Được trang bị quang học đặc biệt để mang lại nhiều năng lượng hơn cho quy trình, Semray UV5052M là ví dụ điển hình của phát triển UV LED tùy chỉnh. Một loạt khái niệm quang học độc đáo định hướng photon từ chip UV-LED đến khoảng cách làm việc lớn hơn, mang lại tính linh hoạt cao hơn trong ứng dụng, giảm thiểu thất thoát năng lượng và tán xạ, và cường độ UV tập trung."
+      },
+      "features": [
+        {
+          "en": "Dedicated optics for high intensity even at large working distances",
+          "zh": "专用光学设计，即使在大工作距离下也能保持高强度",
+          "vi": "Quang học chuyên dụng cho cường độ cao ngay cả ở khoảng cách làm việc lớn"
+        },
+        {
+          "en": "Customizable in sizes, lengths, connections, and optical concepts",
+          "zh": "尺寸、长度、接口及光学方案均可定制",
+          "vi": "Có thể tùy chỉnh về kích thước, chiều dài, kết nối và khái niệm quang học"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "UV5052M",
+            "zh": "UV5052M",
+            "vi": "UV5052M"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Peak Wavelength",
+                "zh": "峰值波长",
+                "vi": "Bước sóng đỉnh"
+              },
+              "value": {
+                "en": "365 / 385 / 395 / 405 nm",
+                "zh": "365 / 385 / 395 / 405纳米",
+                "vi": "365 / 385 / 395 / 405 nm"
+              }
+            },
+            {
+              "label": {
+                "en": "Irradiation Intensity (at emission window)",
+                "zh": "辐照强度（发光窗口处）",
+                "vi": "Cường độ chiếu xạ (tại cửa sổ phát quang)"
+              },
+              "value": {
+                "en": "15 / 17 / 20 / 19 W/cm2 (respectively)",
+                "zh": "分别为15 / 17 / 20 / 19 W/cm²",
+                "vi": "Tương ứng 15 / 17 / 20 / 19 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Emission Window Size",
+                "zh": "发光窗口尺寸",
+                "vi": "Kích thước cửa sổ phát quang"
+              },
+              "value": {
+                "en": "1300 × 84 mm",
+                "zh": "1300 × 84 毫米",
+                "vi": "1300 × 84 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Outer Dimensions of Housing",
+                "zh": "外壳外部尺寸",
+                "vi": "Kích thước ngoài của vỏ máy"
+              },
+              "value": {
+                "en": "1316(W) × 100(D) × 100(H) mm",
+                "zh": "1316（宽）× 100（深）× 100（高）毫米",
+                "vi": "1316(R) × 100(S) × 100(C) mm"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

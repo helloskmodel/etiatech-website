@@ -1,5 +1,6 @@
 // Authoritative Excelitas UV curing product catalog.
 // Organized by technology → brand. Used by the product index and detail pages.
+import { productI18n } from "./productCatalog.zh";
 
 export type Product = {
   slug: string;
@@ -1574,4 +1575,17 @@ export function productImage(p: Product): string {
   if (p.imageUrl) return p.imageUrl;
   const file = productImageFile[p.slug];
   return file ? `${PRODUCT_IMG_BASE}/${encodeURIComponent(file)}` : "";
+}
+
+// Returns the product with intro + feature bullets translated for the given
+// locale. English is returned unchanged (no regression); zh/vi overlay the
+// translated copy where available, falling back to the catalog text.
+// Spec tables are intentionally left as-is (values are language-neutral).
+export function localizeProduct(p: Product, locale: "en" | "zh" | "vi" | "th"): Product {
+  if (locale === "en") return p;
+  const o = productI18n[p.slug];
+  if (!o) return p;
+  const intro = o.intro ? (locale === "zh" ? o.intro.zh : locale === "vi" ? o.intro.vi : "") || p.intro : p.intro;
+  const features = o.features ? (locale === "zh" ? o.features.zh : locale === "vi" ? o.features.vi : null) || p.features : p.features;
+  return { ...p, intro, features };
 }

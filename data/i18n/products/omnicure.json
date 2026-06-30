@@ -1,0 +1,2028 @@
+{
+  "brand": "OmniCure",
+  "brand_slug": "omnicure",
+  "products": [
+    {
+      "model": "S2000 Elite",
+      "slug": "product/omnicure/s2000",
+      "category": {
+        "en": "UV Spot Curing Systems",
+        "zh": "UV点光源固化系统",
+        "vi": "Hệ thống đóng rắn UV điểm"
+      },
+      "name": {
+        "en": "OmniCure S2000 Elite",
+        "zh": "OmniCure S2000 Elite",
+        "vi": "OmniCure S2000 Elite"
+      },
+      "description": {
+        "en": "A new generation lamp-based UV spot curing system designed for the most demanding manufacturing applications. Offers a powerful 200 Watt lamp with a guaranteed life of 2000 hours, proprietary Closed-Loop Feedback technology that monitors light output in real time and automatically corrects within +/-5%, a 4.3\" touch screen, and StepCure 2.0 with 7 programmable PLC output channels for Industry 4.0 integration.",
+        "zh": "新一代灯式UV点固化系统，专为最严苛的制造应用而设计。配备200瓦大功率灯，保证寿命2000小时；搭载专利闭环反馈（Closed-Loop Feedback）技术，实时监测光输出并自动修正，误差控制在±5%以内；配有4.3英寸触摸屏，以及具备7个可编程PLC输出通道的StepCure 2.0系统，可轻松接入工业4.0环境。",
+        "vi": "Hệ thống đóng rắn UV điểm thế hệ mới sử dụng đèn, được thiết kế cho các ứng dụng sản xuất khắt khe nhất. Trang bị đèn công suất 200W với tuổi thọ bảo hành 2000 giờ, công nghệ phản hồi vòng kín (Closed-Loop Feedback) độc quyền giám sát đầu ra ánh sáng theo thời gian thực và tự động hiệu chỉnh trong phạm vi ±5%, màn hình cảm ứng 4.3 inch, cùng StepCure 2.0 với 7 kênh đầu ra PLC lập trình được, sẵn sàng tích hợp Industry 4.0."
+      },
+      "features": [
+        {
+          "en": "Closed-Loop Feedback and Intelli-lamp technology guarantee precise dosage delivery",
+          "zh": "闭环反馈与Intelli-lamp技术确保精准剂量输出",
+          "vi": "Công nghệ phản hồi vòng kín và Intelli-lamp đảm bảo cấp liều chính xác"
+        },
+        {
+          "en": "Plug-and-play compatibility with existing S2000/S1500 production lines",
+          "zh": "即插即用，兼容现有S2000/S1500生产线",
+          "vi": "Tương thích cắm-và-chạy với dây chuyền sản xuất S2000/S1500 hiện có"
+        },
+        {
+          "en": "Calibration with OmniCure R2000 Radiometer, remote control via WEB UI",
+          "zh": "可配合OmniCure R2000辐射计校准，支持WEB UI远程控制管理",
+          "vi": "Hiệu chuẩn cùng máy đo bức xạ OmniCure R2000, điều khiển từ xa qua WEB UI"
+        },
+        {
+          "en": "StepCure 2.0 with PLC control enhances automation for Industry 4.0",
+          "zh": "StepCure 2.0配合PLC控制，提升自动化水平，适配工业4.0",
+          "vi": "StepCure 2.0 với điều khiển PLC tăng cường tự động hóa cho Industry 4.0"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "Control & Repeatability",
+            "zh": "控制与重复精度",
+            "vi": "Điều khiển & Độ lặp lại"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "CLF",
+                "zh": "闭环反馈精度",
+                "vi": "CLF"
+              },
+              "value": {
+                "en": "+/-5% or 200 W/cm2, whichever is greater",
+                "zh": "±5% 或 200 W/cm²，取较大值",
+                "vi": "+/-5% hoặc 200 W/cm², tùy giá trị nào lớn hơn"
+              }
+            },
+            {
+              "label": {
+                "en": "Calibration/Radiometry",
+                "zh": "校准/辐射测量",
+                "vi": "Hiệu chuẩn/Đo bức xạ"
+              },
+              "value": {
+                "en": "R2000 Radiometer",
+                "zh": "R2000辐射计",
+                "vi": "Máy đo bức xạ R2000"
+              }
+            },
+            {
+              "label": {
+                "en": "Intelli-Lamp",
+                "zh": "Intelli-Lamp智能灯",
+                "vi": "Intelli-Lamp"
+              },
+              "value": {
+                "en": "V2.0 — Not compatible with older gen systems",
+                "zh": "V2.0版本——不兼容旧款系统",
+                "vi": "V2.0 — Không tương thích hệ thống thế hệ cũ"
+              }
+            },
+            {
+              "label": {
+                "en": "High Speed Mechanical Shutter",
+                "zh": "高速机械快门",
+                "vi": "Cửa chớp cơ học tốc độ cao"
+              },
+              "value": {
+                "en": "Yes (30ms)",
+                "zh": "支持（30毫秒）",
+                "vi": "Có (30ms)"
+              }
+            },
+            {
+              "label": {
+                "en": "StepCure",
+                "zh": "StepCure固化程序",
+                "vi": "StepCure"
+              },
+              "value": {
+                "en": "StepCure 2.0, programmable via System UI, Web UI, or SD card",
+                "zh": "StepCure 2.0，可通过系统界面、Web界面或SD卡编程",
+                "vi": "StepCure 2.0, lập trình qua giao diện hệ thống, Web UI hoặc thẻ SD"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Optical",
+            "zh": "光学性能",
+            "vi": "Quang học"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Replacement Lamp Part No.",
+                "zh": "替换灯泡料号",
+                "vi": "Mã đèn thay thế"
+              },
+              "value": {
+                "en": "Standard: 012-68000R; Surface Cure: 012-69000R",
+                "zh": "标准款：012-68000R；表面固化款：012-69000R",
+                "vi": "Tiêu chuẩn: 012-68000R; Đóng rắn bề mặt: 012-69000R"
+              }
+            },
+            {
+              "label": {
+                "en": "Optical Output",
+                "zh": "光输出功率",
+                "vi": "Công suất quang"
+              },
+              "value": {
+                "en": "Up to 37 W/cm2",
+                "zh": "最高37 W/cm²",
+                "vi": "Lên đến 37 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Optical Filters",
+                "zh": "光学滤镜",
+                "vi": "Bộ lọc quang"
+              },
+              "value": {
+                "en": "User-interchangeable",
+                "zh": "用户可自行更换",
+                "vi": "Người dùng có thể tự thay"
+              }
+            },
+            {
+              "label": {
+                "en": "Filter Selection",
+                "zh": "滤镜规格",
+                "vi": "Lựa chọn bộ lọc"
+              },
+              "value": {
+                "en": "Blank, 250-400, 320-390, 320-500, 365, 400-500 nm; custom available",
+                "zh": "空白、250-400、320-390、320-500、365、400-500 nm，另支持定制",
+                "vi": "Trống, 250-400, 320-390, 320-500, 365, 400-500 nm; có tùy chỉnh"
+              }
+            },
+            {
+              "label": {
+                "en": "Warm-up Period",
+                "zh": "预热时间",
+                "vi": "Thời gian khởi động"
+              },
+              "value": {
+                "en": "Min 4 minutes",
+                "zh": "最短4分钟",
+                "vi": "Tối thiểu 4 phút"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Technology",
+                "zh": "灯泡技术",
+                "vi": "Công nghệ đèn"
+              },
+              "value": {
+                "en": "High Pressure 200W Mercury Vapor Short Arc with integrated Intelli-Lamp",
+                "zh": "200瓦高压汞蒸气短弧灯，集成Intelli-Lamp智能灯技术",
+                "vi": "Đèn hơi thủy ngân hồ quang ngắn áp suất cao 200W tích hợp Intelli-Lamp"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Life",
+                "zh": "灯泡寿命",
+                "vi": "Tuổi thọ đèn"
+              },
+              "value": {
+                "en": "Guaranteed 2000 hours",
+                "zh": "保证2000小时",
+                "vi": "Bảo hành 2000 giờ"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "User Interface",
+            "zh": "用户界面",
+            "vi": "Giao diện người dùng"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Manual Control",
+                "zh": "手动控制",
+                "vi": "Điều khiển thủ công"
+              },
+              "value": {
+                "en": "LCD Touch Screen + Physical Keypad",
+                "zh": "液晶触摸屏+物理按键",
+                "vi": "Màn hình cảm ứng LCD + Bàn phím vật lý"
+              }
+            },
+            {
+              "label": {
+                "en": "Automation / Industry 4.0",
+                "zh": "自动化/工业4.0兼容性",
+                "vi": "Tự động hóa / Tương thích Industry 4.0"
+              },
+              "value": {
+                "en": "Built-in PLC with 7 programmable output channels; USB Type B; RJ485 Ethernet; Web-GUI monitoring; SD card; NFC; field-upgradeable",
+                "zh": "内置PLC，7个可编程输出通道；USB Type B接口；RJ485以太网；支持Web图形界面监控；SD卡；NFC；可现场升级固件",
+                "vi": "PLC tích hợp với 7 kênh đầu ra lập trình được; USB Type B; Ethernet RJ485; giám sát qua Web-GUI; thẻ SD; NFC; nâng cấp tại hiện trường"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Electrical",
+            "zh": "电气参数",
+            "vi": "Điện"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Rated Input Voltage",
+                "zh": "额定输入电压",
+                "vi": "Điện áp đầu vào định mức"
+              },
+              "value": {
+                "en": "100-240 VAC, 50/60 Hz",
+                "zh": "100-240伏交流电，50/60赫兹",
+                "vi": "100-240 VAC, 50/60 Hz"
+              }
+            },
+            {
+              "label": {
+                "en": "Current",
+                "zh": "电流",
+                "vi": "Dòng điện"
+              },
+              "value": {
+                "en": "3.5A Max at 120VAC / 2.0A Max at 240VAC",
+                "zh": "120伏时最大3.5安培／240伏时最大2.0安培",
+                "vi": "Tối đa 3.5A ở 120VAC / Tối đa 2.0A ở 240VAC"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Physical",
+            "zh": "物理参数",
+            "vi": "Thông số vật lý"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Size (H x W x D)",
+                "zh": "尺寸（高x宽x深）",
+                "vi": "Kích thước (Cao x Rộng x Sâu)"
+              },
+              "value": {
+                "en": "268 x 139 x 289 mm (10.54 x 5.45 x 11.38 in)",
+                "zh": "268 x 139 x 289 毫米（10.54 x 5.45 x 11.38 英寸）",
+                "vi": "268 x 139 x 289 mm (10.54 x 5.45 x 11.38 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Weight",
+                "zh": "重量",
+                "vi": "Trọng lượng"
+              },
+              "value": {
+                "en": "3 KG (6.6 lbs)",
+                "zh": "3公斤（6.6磅）",
+                "vi": "3 kg (6.6 lbs)"
+              }
+            },
+            {
+              "label": {
+                "en": "Rated Operating Temperature",
+                "zh": "额定工作温度",
+                "vi": "Nhiệt độ vận hành định mức"
+              },
+              "value": {
+                "en": "15°C to 40°C",
+                "zh": "15°C至40°C",
+                "vi": "15°C đến 40°C"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Warranty",
+            "zh": "保修",
+            "vi": "Bảo hành"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "System",
+                "zh": "整机",
+                "vi": "Hệ thống"
+              },
+              "value": {
+                "en": "1 Year",
+                "zh": "1年",
+                "vi": "1 năm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Strike",
+                "zh": "灯泡点亮次数",
+                "vi": "Số lần kích đèn"
+              },
+              "value": {
+                "en": "2000 Hours",
+                "zh": "2000小时",
+                "vi": "2000 giờ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "S1500 Pro",
+      "slug": "product/systems/s1500-pro",
+      "category": {
+        "en": "UV Spot Curing Systems",
+        "zh": "UV点光源固化系统",
+        "vi": "Hệ thống đóng rắn UV điểm"
+      },
+      "name": {
+        "en": "OmniCure S1500 Pro",
+        "zh": "OmniCure S1500 Pro",
+        "vi": "OmniCure S1500 Pro"
+      },
+      "description": {
+        "en": "The latest addition to the OmniCure S-series lamp-based spot curing solutions, ideal for high-throughput UV adhesive curing and automated bonding processes in micro-electronic and opto-electronic manufacturing. Features Intelli-Lamp 2.0 technology, user-interchangeable optical filters, integrated StepCure 2.0, USB and SD card connectivity, and an intuitive LCD touch screen.",
+        "zh": "OmniCure S系列灯式点固化解决方案的最新成员，适用于微电子和光电制造中高产能的UV胶水固化与自动化粘接工艺。配备Intelli-Lamp 2.0技术、用户可更换光学滤镜、集成StepCure 2.0、USB与SD卡连接，以及直观的液晶触摸屏界面。",
+        "vi": "Sản phẩm mới nhất trong dòng giải pháp đóng rắn điểm sử dụng đèn của OmniCure S-series, lý tưởng cho quy trình đóng rắn keo UV và liên kết tự động hóa năng suất cao trong sản xuất vi điện tử và quang điện tử. Trang bị công nghệ Intelli-Lamp 2.0, bộ lọc quang có thể thay thế, StepCure 2.0 tích hợp, kết nối USB và thẻ SD, cùng màn hình cảm ứng LCD trực quan."
+      },
+      "features": [
+        {
+          "en": "Intelli-Lamp 2.0 technology enhances lamp life while maintaining performance",
+          "zh": "Intelli-Lamp 2.0技术延长灯泡寿命同时保持性能",
+          "vi": "Công nghệ Intelli-Lamp 2.0 kéo dài tuổi thọ đèn trong khi duy trì hiệu suất"
+        },
+        {
+          "en": "User-interchangeable and customizable optical filters",
+          "zh": "用户可更换、可定制的光学滤镜",
+          "vi": "Bộ lọc quang có thể thay thế và tùy chỉnh bởi người dùng"
+        },
+        {
+          "en": "Industry 4.0 ready with programmable PLC output, Flight Recorder log, and NFC key card",
+          "zh": "支持工业4.0，配备可编程PLC输出、飞行记录器日志和NFC密钥卡",
+          "vi": "Sẵn sàng Industry 4.0 với đầu ra PLC lập trình được, nhật ký Flight Recorder và thẻ khóa NFC"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "Lamp Technology",
+            "zh": "灯泡技术",
+            "vi": "Công nghệ đèn"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Intelli-Lamp",
+                "zh": "Intelli-Lamp",
+                "vi": "Intelli-Lamp"
+              },
+              "value": {
+                "en": "Intelli-Lamp 2.0",
+                "zh": "Intelli-Lamp 2.0",
+                "vi": "Intelli-Lamp 2.0"
+              }
+            },
+            {
+              "label": {
+                "en": "StepCure",
+                "zh": "StepCure",
+                "vi": "StepCure"
+              },
+              "value": {
+                "en": "StepCure 2.0",
+                "zh": "StepCure 2.0",
+                "vi": "StepCure 2.0"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Optical",
+            "zh": "光学性能",
+            "vi": "Quang học"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Replacement Lamps",
+                "zh": "替换灯泡",
+                "vi": "Đèn thay thế"
+              },
+              "value": {
+                "en": "Standard (012-68000R); Surface Cure (012-69000R)",
+                "zh": "标准款（012-68000R）；表面固化款（012-69000R）",
+                "vi": "Tiêu chuẩn (012-68000R); Đóng rắn bề mặt (012-69000R)"
+              }
+            },
+            {
+              "label": {
+                "en": "Optical Output",
+                "zh": "光输出功率",
+                "vi": "Công suất quang"
+              },
+              "value": {
+                "en": "Up to 37 W/cm2",
+                "zh": "最高37 W/cm²",
+                "vi": "Lên đến 37 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Filter Selection",
+                "zh": "滤镜规格",
+                "vi": "Lựa chọn bộ lọc"
+              },
+              "value": {
+                "en": "No filter, 250-400, 320-390, 320-500, 365, 400-500 nm",
+                "zh": "无滤镜、250-400、320-390、320-500、365、400-500 nm",
+                "vi": "Không lọc, 250-400, 320-390, 320-500, 365, 400-500 nm"
+              }
+            },
+            {
+              "label": {
+                "en": "Warm-up Period",
+                "zh": "预热时间",
+                "vi": "Thời gian khởi động"
+              },
+              "value": {
+                "en": "Minimum 4 min",
+                "zh": "最短4分钟",
+                "vi": "Tối thiểu 4 phút"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Automation / Industry 4.0",
+            "zh": "自动化/工业4.0",
+            "vi": "Tự động hóa / Industry 4.0"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Manual Control",
+                "zh": "手动控制",
+                "vi": "Điều khiển thủ công"
+              },
+              "value": {
+                "en": "LCD Touch Screen + Physical Keypad",
+                "zh": "液晶触摸屏+物理按键",
+                "vi": "Màn hình cảm ứng LCD + Bàn phím vật lý"
+              }
+            },
+            {
+              "label": {
+                "en": "Built-in PLC controller",
+                "zh": "内置PLC控制器",
+                "vi": "Bộ điều khiển PLC tích hợp"
+              },
+              "value": {
+                "en": "1 programmable PLC output channel",
+                "zh": "1个可编程PLC输出通道",
+                "vi": "1 kênh đầu ra PLC lập trình được"
+              }
+            },
+            {
+              "label": {
+                "en": "NFC Key Cards",
+                "zh": "NFC密钥卡",
+                "vi": "Thẻ khóa NFC"
+              },
+              "value": {
+                "en": "Supported",
+                "zh": "支持",
+                "vi": "Hỗ trợ"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Electrical",
+            "zh": "电气参数",
+            "vi": "Điện"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Rated Input Voltage",
+                "zh": "额定输入电压",
+                "vi": "Điện áp đầu vào định mức"
+              },
+              "value": {
+                "en": "100-240 VAC, 50/60 Hz",
+                "zh": "100-240伏交流电，50/60赫兹",
+                "vi": "100-240 VAC, 50/60 Hz"
+              }
+            },
+            {
+              "label": {
+                "en": "Current",
+                "zh": "电流",
+                "vi": "Dòng điện"
+              },
+              "value": {
+                "en": "3.5A Max at 120VAC / 2.0A Max at 240VAC",
+                "zh": "120伏时最大3.5安培／240伏时最大2.0安培",
+                "vi": "Tối đa 3.5A ở 120VAC / Tối đa 2.0A ở 240VAC"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Physical",
+            "zh": "物理参数",
+            "vi": "Thông số vật lý"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Size (H x W x D)",
+                "zh": "尺寸（高x宽x深）",
+                "vi": "Kích thước (Cao x Rộng x Sâu)"
+              },
+              "value": {
+                "en": "268 x 139 x 289 mm",
+                "zh": "268 x 139 x 289 毫米",
+                "vi": "268 x 139 x 289 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Weight",
+                "zh": "重量",
+                "vi": "Trọng lượng"
+              },
+              "value": {
+                "en": "5 kg (11 lbs)",
+                "zh": "5公斤（11磅）",
+                "vi": "5 kg (11 lbs)"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "Warranty",
+            "zh": "保修",
+            "vi": "Bảo hành"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "System",
+                "zh": "整机",
+                "vi": "Hệ thống"
+              },
+              "value": {
+                "en": "1 Year",
+                "zh": "1年",
+                "vi": "1 năm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Strike",
+                "zh": "灯泡点亮次数",
+                "vi": "Số lần kích đèn"
+              },
+              "value": {
+                "en": "2000 Hours",
+                "zh": "2000小时",
+                "vi": "2000 giờ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "R2000 Radiometer",
+      "slug": "product/systems/r2000",
+      "category": {
+        "en": "Radiometry & Calibration",
+        "zh": "辐射测量与校准",
+        "vi": "Đo bức xạ & Hiệu chuẩn"
+      },
+      "name": {
+        "en": "OmniCure R2000 Radiometer",
+        "zh": "OmniCure R2000 辐射计",
+        "vi": "Máy đo bức xạ OmniCure R2000"
+      },
+      "description": {
+        "en": "Radiometry is essential for measuring UV light output to maintain a repeatable curing process. The R2000 Radiometer combines with the S2000 Elite/S2000 UV Spot Curing System to provide a complete curing station with unmatched control and repeatability. Special electronics allow connection of custom sensors that measure light energy directly at the cure site or within cure ring bonding fixtures.",
+        "zh": "辐射测量是维持可重复UV固化工艺的关键技术，用于测量UV光输出。R2000辐射计可与S2000 Elite/S2000 UV点固化系统配合使用，组成具备无可比拟控制力与重复精度的完整固化工作站。其特殊电路设计支持连接定制传感器，可直接在固化点或固化环夹具内测量光能。",
+        "vi": "Đo bức xạ là kỹ thuật thiết yếu để đo đầu ra ánh sáng UV nhằm duy trì quy trình đóng rắn có thể lặp lại. Máy đo bức xạ R2000 có thể kết hợp với Hệ thống đóng rắn điểm UV S2000 Elite/S2000 để tạo thành trạm đóng rắn hoàn chỉnh với khả năng kiểm soát và độ lặp lại vượt trội. Mạch điện tử đặc biệt cho phép kết nối cảm biến tùy chỉnh để đo năng lượng ánh sáng trực tiếp tại điểm đóng rắn hoặc trong đồ gá vòng đóng rắn."
+      },
+      "features": [
+        {
+          "en": "Combines with S2000 Elite/S2000 for complete curing station control",
+          "zh": "可与S2000 Elite/S2000配合，组成完整固化工作站控制方案",
+          "vi": "Kết hợp với S2000 Elite/S2000 để kiểm soát trạm đóng rắn hoàn chỉnh"
+        },
+        {
+          "en": "Supports custom sensors for cure site and cure ring measurement",
+          "zh": "支持连接定制传感器，用于固化点和固化环测量",
+          "vi": "Hỗ trợ cảm biến tùy chỉnh để đo tại điểm đóng rắn và vòng đóng rắn"
+        }
+      ],
+      "accessories": [
+        {
+          "part_no": "010-00208",
+          "description": {
+            "en": "OmniCure R2000 Radiometer",
+            "zh": "OmniCure R2000 辐射计主机",
+            "vi": "Máy đo bức xạ OmniCure R2000"
+          }
+        },
+        {
+          "part_no": "019-01033",
+          "description": {
+            "en": "Radiometer lamp output adapter",
+            "zh": "辐射计灯输出适配器",
+            "vi": "Bộ chuyển đổi đầu ra đèn cho máy đo bức xạ"
+          }
+        },
+        {
+          "part_no": "019-01041",
+          "description": {
+            "en": "Proximity measurement adapter",
+            "zh": "近距测量适配器",
+            "vi": "Bộ chuyển đổi đo khoảng cách gần"
+          }
+        },
+        {
+          "part_no": "019-01042",
+          "description": {
+            "en": "Light Guide Adapter, 8mm (Green)",
+            "zh": "导光适配器，8毫米（绿色）",
+            "vi": "Bộ chuyển đổi dẫn sáng, 8mm (Xanh lá)"
+          }
+        },
+        {
+          "part_no": "019-01043",
+          "description": {
+            "en": "Light Guide Adapter, 2mm (Gold)",
+            "zh": "导光适配器，2毫米（金色）",
+            "vi": "Bộ chuyển đổi dẫn sáng, 2mm (Vàng)"
+          }
+        },
+        {
+          "part_no": "019-01050",
+          "description": {
+            "en": "Light Guide Adapter, 3mm (Red)",
+            "zh": "导光适配器，3毫米（红色）",
+            "vi": "Bộ chuyển đổi dẫn sáng, 3mm (Đỏ)"
+          }
+        },
+        {
+          "part_no": "019-01051",
+          "description": {
+            "en": "Light Guide Adapter, 5mm (Blue)",
+            "zh": "导光适配器，5毫米（蓝色）",
+            "vi": "Bộ chuyển đổi dẫn sáng, 5mm (Xanh dương)"
+          }
+        }
+      ]
+    },
+    {
+      "model": "LS200",
+      "slug": "product/systems/ls200",
+      "category": {
+        "en": "Radiometry & Calibration",
+        "zh": "辐射测量与校准",
+        "vi": "Đo bức xạ & Hiệu chuẩn"
+      },
+      "name": {
+        "en": "OmniCure LS200 Radiometer",
+        "zh": "OmniCure LS200 辐射计",
+        "vi": "Máy đo bức xạ OmniCure LS200"
+      },
+      "description": {
+        "en": "Radiometry is essential for measuring light output from a UV curing system to maintain a precise, repeatable process. UV measuring systems must capture the narrow beam at the center of a detecting sensor at an exact focal height to determine peak irradiance. Two options are available: Irradiance (W/cm2) using the LS200 or Optical Power (W) using the LS200P, achieving unmatched control when used with a Beam Positioning Kit and LX500 controller.",
+        "zh": "辐射测量是维持精准、可重复UV固化工艺的关键，用于测量UV固化系统的光输出。UV测量系统必须在精确焦距高度内、于检测传感器中心捕获窄光束，才能确定峰值辐照度。提供两种测量方案：使用LS200测量辐照度（W/cm²），或使用LS200P测量光功率（W）；搭配光束定位套件与LX500控制器使用时，可实现无可比拟的控制精度。",
+        "vi": "Đo bức xạ là kỹ thuật thiết yếu để đo đầu ra ánh sáng từ hệ thống đóng rắn UV nhằm duy trì quy trình chính xác, có thể lặp lại. Hệ thống đo UV phải bắt được chùm tia hẹp tại tâm cảm biến ở đúng độ cao tiêu cự để xác định độ rọi đỉnh. Có hai tùy chọn: đo độ rọi (W/cm²) bằng LS200 hoặc công suất quang (W) bằng LS200P, đạt khả năng kiểm soát vượt trội khi dùng cùng Bộ định vị chùm tia và bộ điều khiển LX500."
+      },
+      "features": [
+        {
+          "en": "Accurate measurement with +/-10% accuracy and high resolution",
+          "zh": "测量精准，误差±10%，分辨率高",
+          "vi": "Đo chính xác với độ chính xác +/-10% và độ phân giải cao"
+        },
+        {
+          "en": "Optimized for monochromatic UV LED sources",
+          "zh": "针对单色UV LED光源优化",
+          "vi": "Tối ưu cho nguồn UV LED đơn sắc"
+        },
+        {
+          "en": "Compact design suitable for confined-area measurements",
+          "zh": "紧凑设计，适合狭小空间测量",
+          "vi": "Thiết kế nhỏ gọn phù hợp đo trong không gian hẹp"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "Technical Specifications",
+            "zh": "技术规格",
+            "vi": "Thông số kỹ thuật"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Measurement Range",
+                "zh": "测量范围",
+                "vi": "Phạm vi đo"
+              },
+              "value": {
+                "en": "Irradiance: 50 mW/cm2 to 40 W/cm2; Power: 1 mW to 2000 mW",
+                "zh": "辐照度：50 mW/cm² 至 40 W/cm²；光功率：1 mW 至 2000 mW",
+                "vi": "Độ rọi: 50 mW/cm² đến 40 W/cm²; Công suất: 1 mW đến 2000 mW"
+              }
+            },
+            {
+              "label": {
+                "en": "Accuracy",
+                "zh": "精度",
+                "vi": "Độ chính xác"
+              },
+              "value": {
+                "en": "+/-10%",
+                "zh": "±10%",
+                "vi": "+/-10%"
+              }
+            },
+            {
+              "label": {
+                "en": "Resolution",
+                "zh": "分辨率",
+                "vi": "Độ phân giải"
+              },
+              "value": {
+                "en": "Irradiance: 1 mW/cm2; Power: 1 mW",
+                "zh": "辐照度：1 mW/cm²；光功率：1 mW",
+                "vi": "Độ rọi: 1 mW/cm²; Công suất: 1 mW"
+              }
+            },
+            {
+              "label": {
+                "en": "Calibration Cycle",
+                "zh": "校准周期",
+                "vi": "Chu kỳ hiệu chuẩn"
+              },
+              "value": {
+                "en": "One year",
+                "zh": "一年",
+                "vi": "Một năm"
+              }
+            },
+            {
+              "label": {
+                "en": "Battery Life",
+                "zh": "电池寿命",
+                "vi": "Tuổi thọ pin"
+              },
+              "value": {
+                "en": "Two years, typical (intermittent use)",
+                "zh": "约两年（间歇使用情况下）",
+                "vi": "Khoảng hai năm (sử dụng không liên tục)"
+              }
+            },
+            {
+              "label": {
+                "en": "Operating Temperature Range",
+                "zh": "工作温度范围",
+                "vi": "Phạm vi nhiệt độ vận hành"
+              },
+              "value": {
+                "en": "Ambient to 40°C",
+                "zh": "常温至40°C",
+                "vi": "Nhiệt độ phòng đến 40°C"
+              }
+            },
+            {
+              "label": {
+                "en": "Certification",
+                "zh": "认证",
+                "vi": "Chứng nhận"
+              },
+              "value": {
+                "en": "Complies with IEC, Canadian and US Standards, RoHS compliant",
+                "zh": "符合IEC、加拿大及美国标准，符合RoHS要求",
+                "vi": "Tuân thủ tiêu chuẩn IEC, Canada và Hoa Kỳ, đạt RoHS"
+              }
+            },
+            {
+              "label": {
+                "en": "Functions",
+                "zh": "功能",
+                "vi": "Chức năng"
+              },
+              "value": {
+                "en": "Peak Hold, Power On/Off, Wavelength selection, Power/Irradiance",
+                "zh": "峰值保持、电源开关、波长选择、功率/辐照度切换",
+                "vi": "Giữ đỉnh, Bật/Tắt nguồn, Chọn bước sóng, Công suất/Độ rọi"
+              }
+            },
+            {
+              "label": {
+                "en": "Traceability",
+                "zh": "可追溯性",
+                "vi": "Khả năng truy xuất"
+              },
+              "value": {
+                "en": "NRC Traceable Calibration",
+                "zh": "NRC可追溯校准",
+                "vi": "Hiệu chuẩn truy xuất được NRC"
+              }
+            },
+            {
+              "label": {
+                "en": "Sensor Dimension (LxWxH)",
+                "zh": "传感器尺寸（长x宽x高）",
+                "vi": "Kích thước cảm biến (DxRxC)"
+              },
+              "value": {
+                "en": "75 x 25 x 11.95 mm",
+                "zh": "75 x 25 x 11.95 毫米",
+                "vi": "75 x 25 x 11.95 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Meter Dimension (LxWxH)",
+                "zh": "仪表尺寸（长x宽x高）",
+                "vi": "Kích thước máy đo (DxRxC)"
+              },
+              "value": {
+                "en": "165 x 100 x 44 mm",
+                "zh": "165 x 100 x 44 毫米",
+                "vi": "165 x 100 x 44 mm"
+              }
+            }
+          ]
+        }
+      ],
+      "accessories": [
+        {
+          "part_no": "019-00412R",
+          "description": {
+            "en": "LS200 Calibration Kit – Irradiance, includes Light Sensor and Positioning Device for V3 Heads",
+            "zh": "LS200校准套件——辐照度，含光传感器与V3型号灯头定位装置",
+            "vi": "Bộ hiệu chuẩn LS200 – Độ rọi, gồm cảm biến ánh sáng và thiết bị định vị cho đầu V3"
+          }
+        },
+        {
+          "part_no": "019-00414R",
+          "description": {
+            "en": "LS200 Calibration Kit – Power, includes LS200P Light Sensor and Positioning Device for V3 Heads",
+            "zh": "LS200校准套件——光功率，含LS200P光传感器与V3型号灯头定位装置",
+            "vi": "Bộ hiệu chuẩn LS200 – Công suất, gồm cảm biến ánh sáng LS200P và thiết bị định vị cho đầu V3"
+          }
+        },
+        {
+          "part_no": "019-00413R",
+          "description": {
+            "en": "LS200 LED Light Sensor Only – Irradiance",
+            "zh": "LS200 LED光传感器（单独）——辐照度款",
+            "vi": "Cảm biến ánh sáng LED LS200 (riêng) – Độ rọi"
+          }
+        },
+        {
+          "part_no": "019-00415R",
+          "description": {
+            "en": "LS200 LED Light Sensor Only – Power",
+            "zh": "LS200 LED光传感器（单独）——光功率款",
+            "vi": "Cảm biến ánh sáng LED LS200 (riêng) – Công suất"
+          }
+        },
+        {
+          "part_no": "019-00409R",
+          "description": {
+            "en": "Beam Positioning Kit (BPK) for V3 UV LED Heads",
+            "zh": "光束定位套件（BPK），适用于V3型号UV LED灯头",
+            "vi": "Bộ định vị chùm tia (BPK) cho đầu UV LED V3"
+          }
+        },
+        {
+          "part_no": "019-00131R",
+          "description": {
+            "en": "Beam Positioning Kit (BPK) for MAX UV LED Heads",
+            "zh": "光束定位套件（BPK），适用于MAX型号UV LED灯头",
+            "vi": "Bộ định vị chùm tia (BPK) cho đầu UV LED MAX"
+          }
+        },
+        {
+          "part_no": "019-00427R",
+          "description": {
+            "en": "LS200 Light Meter System, includes LM2011 Light Meter and LS200 Sensor",
+            "zh": "LS200光度计系统，含LM2011光度计与LS200传感器",
+            "vi": "Hệ thống máy đo ánh sáng LS200, gồm máy đo LM2011 và cảm biến LS200"
+          }
+        }
+      ]
+    },
+    {
+      "model": "LX500 V2",
+      "slug": "product/systems/lx500",
+      "category": {
+        "en": "UV LED Spot Curing",
+        "zh": "UV LED点固化系统",
+        "vi": "Đóng rắn UV LED điểm"
+      },
+      "name": {
+        "en": "OmniCure LX500 V2",
+        "zh": "OmniCure LX500 V2",
+        "vi": "OmniCure LX500 V2"
+      },
+      "description": {
+        "en": "The LX500 V2 series delivers outstanding optical stability with proprietary Intelli-Lamp LED technology, exceptionally high peak irradiance, and unparalleled process control with StepCure 2.0. A newly designed 2.4-inch full color LCD provides flexible control via keypad, foot pedal, PLC, or USB, with real-time programming and data logging via Micro SD card.",
+        "zh": "LX500 V2系列搭载专利Intelli-Lamp LED技术，光学稳定性出众，峰值辐照度极高，并通过StepCure 2.0实现无与伦比的工艺控制。全新设计的2.4英寸全彩液晶屏支持四向按键、脚踏开关、PLC或USB等多种控制方式，并可通过Micro SD卡实现实时编程与数据记录。",
+        "vi": "Dòng LX500 V2 mang lại độ ổn định quang học vượt trội nhờ công nghệ Intelli-Lamp LED độc quyền, độ rọi đỉnh cực cao, và khả năng kiểm soát quy trình vô song với StepCure 2.0. Màn hình LCD màu 2.4 inch thiết kế mới cho phép điều khiển linh hoạt qua bàn phím, bàn đạp, PLC hoặc USB, cùng lập trình thời gian thực và ghi log dữ liệu qua thẻ Micro SD."
+      },
+      "features": [
+        {
+          "en": "Intelli-Lamp LED technology maintains optical stability +/-5% during exposure",
+          "zh": "Intelli-Lamp LED技术在曝光过程中保持±5%的光学稳定性",
+          "vi": "Công nghệ Intelli-Lamp LED duy trì độ ổn định quang học +/-5% trong khi phơi sáng"
+        },
+        {
+          "en": "Integrated radiometer for quick calibration and accurate intensity measurement",
+          "zh": "集成辐射计，实现快速校准与精准强度测量",
+          "vi": "Máy đo bức xạ tích hợp để hiệu chuẩn nhanh và đo cường độ chính xác"
+        },
+        {
+          "en": "2.4-inch full color LCD with four-way keypad, foot pedal, PLC, or USB control",
+          "zh": "2.4英寸全彩液晶屏，支持四向按键、脚踏、PLC或USB多种控制方式",
+          "vi": "Màn hình LCD màu 2.4 inch với điều khiển bàn phím 4 hướng, bàn đạp, PLC hoặc USB"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "Controllers",
+            "zh": "控制器",
+            "vi": "Bộ điều khiển"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "010-00520R",
+                "zh": "010-00520R",
+                "vi": "010-00520R"
+              },
+              "value": {
+                "en": "OmniCure LX500-2 V2 Controller, 2-Channel",
+                "zh": "OmniCure LX500-2 V2控制器，双通道",
+                "vi": "Bộ điều khiển OmniCure LX500-2 V2, 2 kênh"
+              }
+            },
+            {
+              "label": {
+                "en": "010-00521R",
+                "zh": "010-00521R",
+                "vi": "010-00521R"
+              },
+              "value": {
+                "en": "OmniCure LX500-4 V2 Controller, 4-Channel",
+                "zh": "OmniCure LX500-4 V2控制器，四通道",
+                "vi": "Bộ điều khiển OmniCure LX500-4 V2, 4 kênh"
+              }
+            }
+          ]
+        }
+      ],
+      "accessories": [
+        {
+          "part_no": "019-00398R",
+          "description": {
+            "en": "LX500 365nm x 55mm UV Head HDMI V3, includes clamp sub-assy",
+            "zh": "LX500 365nm x 55mm UV灯头HDMI V3版，含夹具组件",
+            "vi": "Đầu UV LX500 365nm x 55mm HDMI V3, gồm kẹp lắp ráp"
+          }
+        },
+        {
+          "part_no": "019-00399R",
+          "description": {
+            "en": "LX500 365nm x 125mm UV Head HDMI V3, clamp sub-assy not included",
+            "zh": "LX500 365nm x 125mm UV灯头HDMI V3版，不含夹具组件",
+            "vi": "Đầu UV LX500 365nm x 125mm HDMI V3, không gồm kẹp"
+          }
+        },
+        {
+          "part_no": "019-00400R",
+          "description": {
+            "en": "LX500 385nm x 125mm UV Head HDMI V3, includes clamp sub-assy",
+            "zh": "LX500 385nm x 125mm UV灯头HDMI V3版，含夹具组件",
+            "vi": "Đầu UV LX500 385nm x 125mm HDMI V3, gồm kẹp lắp ráp"
+          }
+        },
+        {
+          "part_no": "019-00402R",
+          "description": {
+            "en": "LX500 395nm x 55mm UV Head HDMI V3, includes clamp sub-assy",
+            "zh": "LX500 395nm x 55mm UV灯头HDMI V3版，含夹具组件",
+            "vi": "Đầu UV LX500 395nm x 55mm HDMI V3, gồm kẹp lắp ráp"
+          }
+        },
+        {
+          "part_no": "019-00404R",
+          "description": {
+            "en": "LX500 405nm x 55mm UV Head HDMI V3, includes clamp sub-assy",
+            "zh": "LX500 405nm x 55mm UV灯头HDMI V3版，含夹具组件",
+            "vi": "Đầu UV LX500 405nm x 55mm HDMI V3, gồm kẹp lắp ráp"
+          }
+        },
+        {
+          "part_no": "810-00053R",
+          "description": {
+            "en": "3mm Focusing Lens for LED Heads",
+            "zh": "3毫米聚焦镜片，适用于LED灯头",
+            "vi": "Thấu kính hội tụ 3mm cho đầu LED"
+          }
+        },
+        {
+          "part_no": "810-00060R",
+          "description": {
+            "en": "8mm Focusing Lens for LED Heads",
+            "zh": "8毫米聚焦镜片，适用于LED灯头",
+            "vi": "Thấu kính hội tụ 8mm cho đầu LED"
+          }
+        },
+        {
+          "part_no": "018-00642R",
+          "description": {
+            "en": "LX500 HDMI LED Head Extension Cable, 1m",
+            "zh": "LX500 HDMI LED灯头延长线，1米",
+            "vi": "Cáp nối dài đầu LED HDMI LX500, 1m"
+          }
+        },
+        {
+          "part_no": "018-00645R",
+          "description": {
+            "en": "LX500 HDMI LED Head Extension Cable, 10m",
+            "zh": "LX500 HDMI LED灯头延长线，10米",
+            "vi": "Cáp nối dài đầu LED HDMI LX500, 10m"
+          }
+        },
+        {
+          "part_no": "019-00087R",
+          "description": {
+            "en": "Mounting clamp/heat sink (includes Allen key)",
+            "zh": "安装夹具/散热片（含内六角扳手）",
+            "vi": "Kẹp gắn/tản nhiệt (kèm lục giác)"
+          }
+        }
+      ]
+    },
+    {
+      "model": "AC2 Series",
+      "slug": "product/systems/ac2",
+      "category": {
+        "en": "UV LED Area Curing — Small Area",
+        "zh": "UV LED面固化系统——小面积款",
+        "vi": "Đóng rắn UV LED diện tích — Diện tích nhỏ"
+      },
+      "name": {
+        "en": "OmniCure AC2 Series",
+        "zh": "OmniCure AC2系列",
+        "vi": "OmniCure AC2 Series"
+      },
+      "description": {
+        "en": "The AC275 and AC2110 air-cooled UV LED curing systems are compact and ideal for applications with space constraints, designed with advanced front-end optics to provide high peak irradiance and exceptional uniformity. Suited for printing, medical device, electronic and optoelectronic applications.",
+        "zh": "AC275与AC2110风冷式UV LED固化系统结构紧凑，适合空间受限的应用场景，配备先进前端光学设计，实现高峰值辐照度与卓越的均匀性。适用于印刷、医疗器械、电子与光电等领域。",
+        "vi": "Hệ thống đóng rắn UV LED làm mát bằng khí AC275 và AC2110 có thiết kế nhỏ gọn, lý tưởng cho các ứng dụng hạn chế không gian, sử dụng quang học mặt trước tiên tiến để đạt độ rọi đỉnh cao và độ đồng đều vượt trội. Phù hợp cho ứng dụng in ấn, thiết bị y tế, điện tử và quang điện tử."
+      },
+      "features": [
+        {
+          "en": "Compact form factor ideal for space-constrained installations",
+          "zh": "结构紧凑，适合空间受限的安装环境",
+          "vi": "Kích thước nhỏ gọn, lý tưởng cho lắp đặt hạn chế không gian"
+        },
+        {
+          "en": "Advanced front-end optics for high peak irradiance and uniformity",
+          "zh": "先进前端光学设计，实现高峰值辐照度与均匀性",
+          "vi": "Quang học mặt trước tiên tiến cho độ rọi đỉnh cao và độ đồng đều"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "365nm Products",
+            "zh": "365nm波长产品",
+            "vi": "Sản phẩm 365nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC275-365",
+                "zh": "AC275-365",
+                "vi": "AC275-365"
+              },
+              "value": {
+                "en": "3 W/cm2, 10x75mm @365nm",
+                "zh": "3 W/cm²，10x75毫米 @365nm",
+                "vi": "3 W/cm², 10x75mm @365nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC2110-365",
+                "zh": "AC2110-365",
+                "vi": "AC2110-365"
+              },
+              "value": {
+                "en": "3 W/cm2, 10x114mm @365nm",
+                "zh": "3 W/cm²，10x114毫米 @365nm",
+                "vi": "3 W/cm², 10x114mm @365nm"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "395nm Products",
+            "zh": "395nm波长产品",
+            "vi": "Sản phẩm 395nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC275-395",
+                "zh": "AC275-395",
+                "vi": "AC275-395"
+              },
+              "value": {
+                "en": "4 W/cm2, 10x75mm @395nm",
+                "zh": "4 W/cm²，10x75毫米 @395nm",
+                "vi": "4 W/cm², 10x75mm @395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC2110-395",
+                "zh": "AC2110-395",
+                "vi": "AC2110-395"
+              },
+              "value": {
+                "en": "4 W/cm2, 10x114mm @395nm",
+                "zh": "4 W/cm²，10x114毫米 @395nm",
+                "vi": "4 W/cm², 10x114mm @395nm"
+              }
+            }
+          ]
+        }
+      ],
+      "applications": {
+        "printing": {
+          "en": "Pinning, 3D printing, coding, marking, signage, packaging",
+          "zh": "点固化、3D打印、编码、产品标识、海报标牌、包装",
+          "vi": "Định hình, in 3D, mã hóa, đánh dấu, biển hiệu, đóng gói"
+        },
+        "medical": {
+          "en": "Anesthesia masks, blood bags, catheters, contact lens, endoscopes, syringes, tube sets",
+          "zh": "麻醉面罩、血袋、导管、隐形眼镜、内窥镜、注射器、管路套件",
+          "vi": "Mặt nạ gây mê, túi máu, ống thông, kính áp tròng, nội soi, ống tiêm, bộ ống"
+        },
+        "electronics": {
+          "en": "Camera modules, chip on glass, connectors, display bonding, flex circuits, lens bonding, OLED",
+          "zh": "摄像模组、玻璃上芯片封装、连接器、屏幕贴合、柔性电路、镜头贴合、OLED显示屏制造",
+          "vi": "Mô-đun camera, chip trên kính, đầu nối, dán màn hình, mạch dẻo, dán thấu kính, OLED"
+        }
+      }
+    },
+    {
+      "model": "AC4 Series",
+      "slug": "product/systems/ac4",
+      "category": {
+        "en": "UV LED Area Curing — Small Area",
+        "zh": "UV LED面固化系统——小面积款",
+        "vi": "Đóng rắn UV LED diện tích — Diện tích nhỏ"
+      },
+      "name": {
+        "en": "OmniCure AC4 Series",
+        "zh": "OmniCure AC4系列",
+        "vi": "OmniCure AC4 Series"
+      },
+      "description": {
+        "en": "The AC450/P and AC475/P air-cooled UV LED small area curing systems provide high irradiance (8 W/cm2) at flexible working distances, ideal for medical device assembly and electronic applications requiring high throughput, low temperature curing.",
+        "zh": "AC450/P与AC475/P风冷式UV LED小面积固化系统在灵活工作距离下提供高辐照度（8 W/cm²），适用于需要高产能、低温固化的医疗器械组装与电子应用。",
+        "vi": "Hệ thống đóng rắn UV LED diện tích nhỏ làm mát bằng khí AC450/P và AC475/P cung cấp độ rọi cao (8 W/cm²) ở khoảng cách làm việc linh hoạt, lý tưởng cho lắp ráp thiết bị y tế và ứng dụng điện tử cần đóng rắn năng suất cao, nhiệt độ thấp."
+      },
+      "features": [
+        {
+          "en": "High irradiance of 8 W/cm2 at flexible working distances",
+          "zh": "灵活工作距离下提供8 W/cm²高辐照度",
+          "vi": "Độ rọi cao 8 W/cm² ở khoảng cách làm việc linh hoạt"
+        },
+        {
+          "en": "Suitable for high-throughput, low-temperature curing of plastic parts",
+          "zh": "适用于塑料零件的高产能、低温固化",
+          "vi": "Phù hợp đóng rắn năng suất cao, nhiệt độ thấp cho linh kiện nhựa"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "365nm Products",
+            "zh": "365nm波长产品",
+            "vi": "Sản phẩm 365nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC450-365",
+                "zh": "AC450-365",
+                "vi": "AC450-365"
+              },
+              "value": {
+                "en": "8 W/cm2, 25x50mm @365nm",
+                "zh": "8 W/cm²，25x50毫米 @365nm",
+                "vi": "8 W/cm², 25x50mm @365nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC475-365",
+                "zh": "AC475-365",
+                "vi": "AC475-365"
+              },
+              "value": {
+                "en": "8 W/cm2, 25x75mm @365nm",
+                "zh": "8 W/cm²，25x75毫米 @365nm",
+                "vi": "8 W/cm², 25x75mm @365nm"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "395nm Products",
+            "zh": "395nm波长产品",
+            "vi": "Sản phẩm 395nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC450-395",
+                "zh": "AC450-395",
+                "vi": "AC450-395"
+              },
+              "value": {
+                "en": "8 W/cm2, 25x50mm @395nm",
+                "zh": "8 W/cm²，25x50毫米 @395nm",
+                "vi": "8 W/cm², 25x50mm @395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC475-395",
+                "zh": "AC475-395",
+                "vi": "AC475-395"
+              },
+              "value": {
+                "en": "8 W/cm2, 25x75mm @395nm",
+                "zh": "8 W/cm²，25x75毫米 @395nm",
+                "vi": "8 W/cm², 25x75mm @395nm"
+              }
+            }
+          ]
+        }
+      ],
+      "applications": {
+        "medical": {
+          "en": "Anesthesia masks, blood bags, catheters, contact lens, endoscopes, syringes, tube sets",
+          "zh": "麻醉面罩、血袋、导管、隐形眼镜、内窥镜、注射器、管路套件",
+          "vi": "Mặt nạ gây mê, túi máu, ống thông, kính áp tròng, nội soi, ống tiêm, bộ ống"
+        },
+        "electronics": {
+          "en": "Camera modules, flex circuit assembly, chip on glass, hard disk drives, connectors, lens bonding, OLED",
+          "zh": "摄像模组、柔性电路组装、玻璃上芯片封装、硬盘驱动器、连接器、镜头贴合、OLED制造",
+          "vi": "Mô-đun camera, lắp ráp mạch dẻo, chip trên kính, ổ cứng, đầu nối, dán thấu kính, OLED"
+        },
+        "printing": {
+          "en": "Coding, labels, marking",
+          "zh": "编码、标签、标识打印",
+          "vi": "Mã hóa, nhãn, đánh dấu"
+        }
+      }
+    },
+    {
+      "model": "AC5 Series",
+      "slug": "product/systems/ac5",
+      "category": {
+        "en": "UV LED Area Curing — Small Area",
+        "zh": "UV LED面固化系统——小面积款",
+        "vi": "Đóng rắn UV LED diện tích — Diện tích nhỏ"
+      },
+      "name": {
+        "en": "OmniCure AC5 Series",
+        "zh": "OmniCure AC5系列",
+        "vi": "OmniCure AC5 Series"
+      },
+      "description": {
+        "en": "Designed with a unique combination of high output LEDs and custom optics delivering up to 14 W/cm2, the AC5 air-cooled UV LED system provides high irradiance at flexible working distances. The compact head design eliminates the need for external cooling or ozone extraction, simplifying integration, and can be mounted in any orientation.",
+        "zh": "AC5风冷式UV LED系统采用高输出LED与定制光学设计的独特组合，最高可达14 W/cm²辐照度，并在灵活工作距离下提供高辐照度。紧凑灯头设计无需外部冷却或臭氧排放装置，大幅简化集成难度，且可任意方向安装。",
+        "vi": "Hệ thống UV LED làm mát bằng khí AC5 được thiết kế với sự kết hợp độc đáo giữa LED công suất cao và quang học tùy chỉnh, đạt tới 14 W/cm², cung cấp độ rọi cao ở khoảng cách làm việc linh hoạt. Thiết kế đầu nhỏ gọn loại bỏ nhu cầu làm mát ngoài hoặc hút khí ozone, đơn giản hóa tích hợp, và có thể lắp đặt theo mọi hướng."
+      },
+      "features": [
+        {
+          "en": "Up to 14-15 W/cm2 peak irradiance",
+          "zh": "峰值辐照度最高达14-15 W/cm²",
+          "vi": "Độ rọi đỉnh lên đến 14-15 W/cm²"
+        },
+        {
+          "en": "No external cooling or ozone extraction needed; mountable in any orientation",
+          "zh": "无需外部冷却或臭氧排放装置，可任意方向安装",
+          "vi": "Không cần làm mát ngoài hay hút ozone; lắp đặt theo mọi hướng"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "395nm Products",
+            "zh": "395nm波长产品",
+            "vi": "Sản phẩm 395nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC550-395",
+                "zh": "AC550-395",
+                "vi": "AC550-395"
+              },
+              "value": {
+                "en": "14 W/cm2, 25x50mm @395nm",
+                "zh": "14 W/cm²，25x50毫米 @395nm",
+                "vi": "14 W/cm², 25x50mm @395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC575-395",
+                "zh": "AC575-395",
+                "vi": "AC575-395"
+              },
+              "value": {
+                "en": "14 W/cm2, 25x75mm @395nm",
+                "zh": "14 W/cm²，25x75毫米 @395nm",
+                "vi": "14 W/cm², 25x75mm @395nm"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "405nm Products",
+            "zh": "405nm波长产品",
+            "vi": "Sản phẩm 405nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC575-405",
+                "zh": "AC575-405",
+                "vi": "AC575-405"
+              },
+              "value": {
+                "en": "15 W/cm2, 25x75mm @405nm",
+                "zh": "15 W/cm²，25x75毫米 @405nm",
+                "vi": "15 W/cm², 25x75mm @405nm"
+              }
+            }
+          ]
+        }
+      ],
+      "applications": {
+        "medical": {
+          "en": "Anesthesia masks, blood bags, catheters, contact lens, endoscopes, syringes, tube sets",
+          "zh": "麻醉面罩、血袋、导管、隐形眼镜、内窥镜、注射器、管路套件",
+          "vi": "Mặt nạ gây mê, túi máu, ống thông, kính áp tròng, nội soi, ống tiêm, bộ ống"
+        },
+        "electronics": {
+          "en": "Camera modules, chip on glass, connectors, display bonding, flex circuits, hard disk drives, lens bonding",
+          "zh": "摄像模组、玻璃上芯片封装、连接器、屏幕贴合、柔性电路、硬盘驱动器、镜头贴合",
+          "vi": "Mô-đun camera, chip trên kính, đầu nối, dán màn hình, mạch dẻo, ổ cứng, dán thấu kính"
+        },
+        "industrial": {
+          "en": "Wood coatings, solar panels, UV film lamination, lens bonding, pressure sensitive adhesives",
+          "zh": "木材涂层、太阳能板、UV薄膜贴合、镜头贴合、压敏胶",
+          "vi": "Sơn phủ gỗ, tấm pin mặt trời, dán màng UV, dán thấu kính, keo dán áp lực"
+        }
+      }
+    },
+    {
+      "model": "AC7 Series",
+      "slug": "product/systems/ac7",
+      "category": {
+        "en": "UV LED Area Curing — Large Area",
+        "zh": "UV LED面固化系统——大面积款",
+        "vi": "Đóng rắn UV LED diện tích — Diện tích lớn"
+      },
+      "name": {
+        "en": "OmniCure AC7 Series",
+        "zh": "OmniCure AC7系列",
+        "vi": "OmniCure AC7 Series"
+      },
+      "description": {
+        "en": "The AC7150 and AC7300 provide exceptional uniformity over the full curing area for even and consistent curing. Multiple systems can be joined together without compromising uniformity, for greater flexibility in curing larger parts. Designed for medical device, electronic assembly, automotive, optical fiber, and industrial applications.",
+        "zh": "AC7150与AC7300在整个固化区域内提供卓越的均匀性，实现均衡一致的固化效果，且可多台联接组合而不影响均匀性，适用于更大尺寸零件的固化需求。适用于医疗器械、电子组装、汽车、光纤及工业应用领域。",
+        "vi": "AC7150 và AC7300 cung cấp độ đồng đều vượt trội trên toàn bộ vùng đóng rắn để đóng rắn đều và nhất quán. Nhiều hệ thống có thể ghép nối mà không ảnh hưởng độ đồng đều, mang lại tính linh hoạt cao hơn khi đóng rắn các bộ phận lớn hơn. Thiết kế cho lắp ráp thiết bị y tế, điện tử, ô tô, sợi quang và ứng dụng công nghiệp."
+      },
+      "features": [
+        {
+          "en": "Exceptional uniformity over full curing area",
+          "zh": "整个固化区域内均匀性卓越",
+          "vi": "Độ đồng đều vượt trội trên toàn vùng đóng rắn"
+        },
+        {
+          "en": "Multiple systems can be joined for wider curing without uniformity loss",
+          "zh": "可多台联接以扩大固化宽度，且不影响均匀性",
+          "vi": "Có thể ghép nhiều hệ thống để mở rộng vùng đóng rắn mà không mất độ đồng đều"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "365nm Products",
+            "zh": "365nm波长产品",
+            "vi": "Sản phẩm 365nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC7150-365",
+                "zh": "AC7150-365",
+                "vi": "AC7150-365"
+              },
+              "value": {
+                "en": "3 W/cm2, 15x150mm @365nm",
+                "zh": "3 W/cm²，15x150毫米 @365nm",
+                "vi": "3 W/cm², 15x150mm @365nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC7300-365",
+                "zh": "AC7300-365",
+                "vi": "AC7300-365"
+              },
+              "value": {
+                "en": "3 W/cm2, 15x300mm @365nm",
+                "zh": "3 W/cm²，15x300毫米 @365nm",
+                "vi": "3 W/cm², 15x300mm @365nm"
+              }
+            }
+          ]
+        },
+        {
+          "group": {
+            "en": "395nm Products",
+            "zh": "395nm波长产品",
+            "vi": "Sản phẩm 395nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC7150-395",
+                "zh": "AC7150-395",
+                "vi": "AC7150-395"
+              },
+              "value": {
+                "en": "5 W/cm2, 15x150mm @395nm",
+                "zh": "5 W/cm²，15x150毫米 @395nm",
+                "vi": "5 W/cm², 15x150mm @395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC7300-395",
+                "zh": "AC7300-395",
+                "vi": "AC7300-395"
+              },
+              "value": {
+                "en": "5 W/cm2, 15x300mm @395nm",
+                "zh": "5 W/cm²，15x300毫米 @395nm",
+                "vi": "5 W/cm², 15x300mm @395nm"
+              }
+            }
+          ]
+        }
+      ],
+      "applications": {
+        "medical": {
+          "en": "Anesthesia masks, blood bags, catheters, contact lens, endoscopes, hydrogels, syringes, tube sets",
+          "zh": "麻醉面罩、血袋、导管、隐形眼镜、内窥镜、水凝胶、注射器、管路套件",
+          "vi": "Mặt nạ gây mê, túi máu, ống thông, kính áp tròng, nội soi, hydrogel, ống tiêm, bộ ống"
+        },
+        "electronics": {
+          "en": "Camera modules, chip on glass, display bonding, flex circuits, hard disk drives, optical film coating, touch panels, OLED",
+          "zh": "摄像模组、玻璃上芯片封装、屏幕贴合、柔性电路、硬盘驱动器、光学薄膜涂层、触摸屏、OLED制造",
+          "vi": "Mô-đun camera, chip trên kính, dán màn hình, mạch dẻo, ổ cứng, phủ màng quang học, màn cảm ứng, OLED"
+        },
+        "automotive": {
+          "en": "Automotive filters, gaskets and sealing, sealants",
+          "zh": "汽车滤芯、垫圈密封、密封胶",
+          "vi": "Bộ lọc ô tô, gioăng và làm kín, chất bịt kín"
+        },
+        "optical_fiber": {
+          "en": "Fiber coating, fiber connectors, fiber ribbon",
+          "zh": "光纤涂层、光纤连接器、光纤带",
+          "vi": "Phủ sợi quang, đầu nối sợi quang, ruy băng sợi quang"
+        }
+      }
+    },
+    {
+      "model": "AC8 Series",
+      "slug": "product/systems/ac8",
+      "category": {
+        "en": "UV LED Area Curing — Large Area",
+        "zh": "UV LED面固化系统——大面积款",
+        "vi": "Đóng rắn UV LED diện tích — Diện tích lớn"
+      },
+      "name": {
+        "en": "OmniCure AC8 Series",
+        "zh": "OmniCure AC8系列",
+        "vi": "OmniCure AC8 Series"
+      },
+      "description": {
+        "en": "The AC8150/P, AC8225/P and AC8300/P air-cooled UV LED curing systems deliver over 8 W/cm2 peak irradiance for fast, even curing at long working distances. \"P\" versions feature enhanced optics optimized for short working distances required by print applications.",
+        "zh": "AC8150/P、AC8225/P与AC8300/P风冷式UV LED固化系统峰值辐照度超过8 W/cm²，在长工作距离下实现快速均匀固化。\"P\"版本配备增强光学设计，专为印刷应用所需的短工作距离优化。",
+        "vi": "Hệ thống đóng rắn UV LED làm mát bằng khí AC8150/P, AC8225/P và AC8300/P đạt độ rọi đỉnh trên 8 W/cm², đóng rắn nhanh và đều ở khoảng cách làm việc xa. Phiên bản \"P\" có quang học tăng cường tối ưu cho khoảng cách làm việc ngắn cần thiết trong ứng dụng in ấn."
+      },
+      "features": [
+        {
+          "en": "Over 8 W/cm2 peak irradiance for fast, even curing at long working distances",
+          "zh": "峰值辐照度超过8 W/cm²，长工作距离下实现快速均匀固化",
+          "vi": "Độ rọi đỉnh trên 8 W/cm², đóng rắn nhanh đều ở khoảng cách xa"
+        },
+        {
+          "en": "\"P\" print versions optimized for short working distances",
+          "zh": "\"P\"印刷版本针对短工作距离优化",
+          "vi": "Phiên bản in \"P\" tối ưu cho khoảng cách làm việc ngắn"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "365 / 385 / 395 / 405nm Products",
+            "zh": "365 / 385 / 395 / 405nm波长产品",
+            "vi": "Sản phẩm 365 / 385 / 395 / 405nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC8150 series",
+                "zh": "AC8150系列",
+                "vi": "Dòng AC8150"
+              },
+              "value": {
+                "en": "8 W/cm2, 25x150mm, available at 365/385/395/405nm",
+                "zh": "8 W/cm²，25x150毫米，提供365/385/395/405nm波长",
+                "vi": "8 W/cm², 25x150mm, có ở 365/385/395/405nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC8225 series",
+                "zh": "AC8225系列",
+                "vi": "Dòng AC8225"
+              },
+              "value": {
+                "en": "8 W/cm2, 25x225mm, available at 365/385/395/405nm",
+                "zh": "8 W/cm²，25x225毫米，提供365/385/395/405nm波长",
+                "vi": "8 W/cm², 25x225mm, có ở 365/385/395/405nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC8300 series",
+                "zh": "AC8300系列",
+                "vi": "Dòng AC8300"
+              },
+              "value": {
+                "en": "8 W/cm2, 25x300mm, available at 365/385/395/405nm",
+                "zh": "8 W/cm²，25x300毫米，提供365/385/395/405nm波长",
+                "vi": "8 W/cm², 25x300mm, có ở 365/385/395/405nm"
+              }
+            }
+          ]
+        }
+      ],
+      "applications": {
+        "medical": {
+          "en": "Anesthesia masks, blood bags, catheters, contact lens, endoscopes, syringes, tube sets",
+          "zh": "麻醉面罩、血袋、导管、隐形眼镜、内窥镜、注射器、管路套件",
+          "vi": "Mặt nạ gây mê, túi máu, ống thông, kính áp tròng, nội soi, ống tiêm, bộ ống"
+        },
+        "electronics": {
+          "en": "Camera modules, chip on glass, connectors, display bonding, wafer tape removal, flex circuits, hard disk drives, lens bonding, OLED",
+          "zh": "摄像模组、玻璃上芯片封装、连接器、屏幕贴合、晶圆胶带剥离、柔性电路、硬盘驱动器、镜头贴合、OLED制造",
+          "vi": "Mô-đun camera, chip trên kính, đầu nối, dán màn hình, gỡ băng wafer, mạch dẻo, ổ cứng, dán thấu kính, OLED"
+        },
+        "printing": {
+          "en": "Coding, labels, marking, posters, signage, packaging, 3D printing",
+          "zh": "编码、标签、标识、海报、标牌、包装、3D打印",
+          "vi": "Mã hóa, nhãn, đánh dấu, áp phích, biển hiệu, đóng gói, in 3D"
+        }
+      }
+    },
+    {
+      "model": "AC8-HD Series",
+      "slug": "product/systems/ac8-hd",
+      "category": {
+        "en": "UV LED Area Curing — High Dose Large Area",
+        "zh": "UV LED面固化系统——大面积高剂量款",
+        "vi": "Đóng rắn UV LED diện tích — Liều cao, diện tích lớn"
+      },
+      "name": {
+        "en": "OmniCure AC8-HD Series",
+        "zh": "OmniCure AC8-HD系列",
+        "vi": "OmniCure AC8-HD Series"
+      },
+      "description": {
+        "en": "The AC8-HD Series brings air-cooled UV LED curing to the next level, delivering over 15 W/cm2 peak irradiance and nearly double the dose of the AC8 Series, with innovative technology enabling unbeatable uniformity across the irradiation area. Offers three standard cure widths (6\", 9\", 12\") that can be adjoined for customized curing sizes.",
+        "zh": "AC8-HD系列将风冷式UV LED固化技术推向新高度，峰值辐照度超过15 W/cm²，剂量几乎是AC8系列的两倍，并通过创新技术实现整个照射区域内无可匹敌的均匀性。提供三种标准固化宽度（6英寸、9英寸、12英寸），可拼接组合以定制固化尺寸。",
+        "vi": "Dòng AC8-HD đưa công nghệ đóng rắn UV LED làm mát bằng khí lên một tầm cao mới, đạt độ rọi đỉnh trên 15 W/cm² và liều gần gấp đôi dòng AC8, với công nghệ đột phá mang lại độ đồng đều vượt trội trên toàn vùng chiếu xạ. Có ba độ rộng đóng rắn tiêu chuẩn (6\", 9\", 12\") có thể ghép nối để tùy chỉnh kích thước đóng rắn."
+      },
+      "features": [
+        {
+          "en": "Over 15 W/cm2 peak irradiance, nearly double the dose of AC8 Series",
+          "zh": "峰值辐照度超过15 W/cm²，剂量近乎AC8系列的两倍",
+          "vi": "Độ rọi đỉnh trên 15 W/cm², liều gần gấp đôi dòng AC8"
+        },
+        {
+          "en": "Three standard cure widths adjoinable for customized sizes",
+          "zh": "三种标准固化宽度，可拼接定制尺寸",
+          "vi": "Ba độ rộng đóng rắn tiêu chuẩn, có thể ghép nối tùy chỉnh kích thước"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "385 / 395 / 405nm Products",
+            "zh": "385 / 395 / 405nm波长产品",
+            "vi": "Sản phẩm 385 / 395 / 405nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC8150P-HD",
+                "zh": "AC8150P-HD",
+                "vi": "AC8150P-HD"
+              },
+              "value": {
+                "en": "15 W/cm2, 30x150mm, available at 385/395/405nm",
+                "zh": "15 W/cm²，30x150毫米，提供385/395/405nm波长",
+                "vi": "15 W/cm², 30x150mm, có ở 385/395/405nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC8225P-HD",
+                "zh": "AC8225P-HD",
+                "vi": "AC8225P-HD"
+              },
+              "value": {
+                "en": "15 W/cm2, 30x225mm, available at 385/395/405nm",
+                "zh": "15 W/cm²，30x225毫米，提供385/395/405nm波长",
+                "vi": "15 W/cm², 30x225mm, có ở 385/395/405nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC8300P-HD",
+                "zh": "AC8300P-HD",
+                "vi": "AC8300P-HD"
+              },
+              "value": {
+                "en": "15 W/cm2, 30x300mm, available at 385/395/405nm",
+                "zh": "15 W/cm²，30x300毫米，提供385/395/405nm波长",
+                "vi": "15 W/cm², 30x300mm, có ở 385/395/405nm"
+              }
+            }
+          ]
+        }
+      ],
+      "applications": {
+        "printing": {
+          "en": "Wide format graphics, coding, labels, marking, posters, signage, packaging, screen and bottle printing",
+          "zh": "宽幅图形印刷、编码、标签、标识、海报、标牌、包装、丝网及瓶身印刷",
+          "vi": "In khổ rộng, mã hóa, nhãn, đánh dấu, áp phích, biển hiệu, đóng gói, in lụa và in chai"
+        },
+        "medical": {
+          "en": "Anesthesia masks, blood bags, catheters, contact lens, endoscopes, syringes, tube sets",
+          "zh": "麻醉面罩、血袋、导管、隐形眼镜、内窥镜、注射器、管路套件",
+          "vi": "Mặt nạ gây mê, túi máu, ống thông, kính áp tròng, nội soi, ống tiêm, bộ ống"
+        },
+        "electronics": {
+          "en": "Camera modules, chip on glass, connectors, display bonding, OLED wafer tape removal, flex circuits, hard disk drives, lens bonding",
+          "zh": "摄像模组、玻璃上芯片封装、连接器、屏幕贴合、OLED晶圆胶带剥离、柔性电路、硬盘驱动器、镜头贴合",
+          "vi": "Mô-đun camera, chip trên kính, đầu nối, dán màn hình, gỡ băng wafer OLED, mạch dẻo, ổ cứng, dán thấu kính"
+        },
+        "industrial": {
+          "en": "Wood coatings, solar panels, UV film lamination, lens bonding, pressure sensitive adhesives",
+          "zh": "木材涂层、太阳能板、UV薄膜贴合、镜头贴合、压敏胶",
+          "vi": "Sơn phủ gỗ, tấm pin mặt trời, dán màng UV, dán thấu kính, keo dán áp lực"
+        }
+      }
+    },
+    {
+      "model": "AC9 Series",
+      "slug": "product/systems/ac9",
+      "category": {
+        "en": "UV LED Area Curing — Large Area",
+        "zh": "UV LED面固化系统——大面积款",
+        "vi": "Đóng rắn UV LED diện tích — Diện tích lớn"
+      },
+      "name": {
+        "en": "OmniCure AC9 Series",
+        "zh": "OmniCure AC9系列",
+        "vi": "OmniCure AC9 Series"
+      },
+      "description": {
+        "en": "The AC9 Series are high-power UV LED curing systems delivering over 14 W/cm2 peak irradiance for fast curing of inks, adhesives and coatings. Innovative design features a high-performing, small form-factor air-cooled solution enabling fast line speeds. Individual LED module control provides exceptional uniformity, and the scalable design allows multiple heads to be adjoined.",
+        "zh": "AC9系列是高功率UV LED固化系统，峰值辐照度超过14 W/cm²，可快速固化油墨、胶水与涂层。创新设计采用高性能小尺寸风冷方案，可实现高速生产线运行。独立LED模块控制带来卓越均匀性，可扩展设计支持多个灯头拼接组合。",
+        "vi": "Dòng AC9 là hệ thống đóng rắn UV LED công suất cao, đạt độ rọi đỉnh trên 14 W/cm² để đóng rắn nhanh mực in, keo dán và sơn phủ. Thiết kế đột phá với giải pháp làm mát bằng khí hiệu suất cao, kích thước nhỏ gọn, cho phép tốc độ dây chuyền nhanh. Điều khiển từng mô-đun LED riêng lẻ mang lại độ đồng đều vượt trội, thiết kế mở rộng cho phép ghép nối nhiều đầu."
+      },
+      "features": [
+        {
+          "en": "Over 14 W/cm2 peak irradiance for fast curing",
+          "zh": "峰值辐照度超过14 W/cm²，实现快速固化",
+          "vi": "Độ rọi đỉnh trên 14 W/cm² để đóng rắn nhanh"
+        },
+        {
+          "en": "Individual LED module control for exceptional curing uniformity",
+          "zh": "独立LED模块控制，实现卓越固化均匀性",
+          "vi": "Điều khiển mô-đun LED riêng lẻ cho độ đồng đều đóng rắn vượt trội"
+        },
+        {
+          "en": "Scalable design — multiple heads can be adjoined",
+          "zh": "可扩展设计，支持多个灯头拼接组合",
+          "vi": "Thiết kế mở rộng — có thể ghép nối nhiều đầu"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "385 / 395nm Products",
+            "zh": "385 / 395nm波长产品",
+            "vi": "Sản phẩm 385 / 395nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC9150 series",
+                "zh": "AC9150系列",
+                "vi": "Dòng AC9150"
+              },
+              "value": {
+                "en": "14 W/cm2, 25x150mm, available at 385/395nm",
+                "zh": "14 W/cm²，25x150毫米，提供385/395nm波长",
+                "vi": "14 W/cm², 25x150mm, có ở 385/395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC9225 series",
+                "zh": "AC9225系列",
+                "vi": "Dòng AC9225"
+              },
+              "value": {
+                "en": "14 W/cm2, 25x225mm, available at 385/395nm",
+                "zh": "14 W/cm²，25x225毫米，提供385/395nm波长",
+                "vi": "14 W/cm², 25x225mm, có ở 385/395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC9300 series",
+                "zh": "AC9300系列",
+                "vi": "Dòng AC9300"
+              },
+              "value": {
+                "en": "14 W/cm2, 25x300mm, available at 385/395nm",
+                "zh": "14 W/cm²，25x300毫米，提供385/395nm波长",
+                "vi": "14 W/cm², 25x300mm, có ở 385/395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC9225F-395 (Fiber)",
+                "zh": "AC9225F-395（光纤款）",
+                "vi": "AC9225F-395 (Sợi quang)"
+              },
+              "value": {
+                "en": "20 W/cm2, 15x225mm @395nm",
+                "zh": "20 W/cm²，15x225毫米 @395nm",
+                "vi": "20 W/cm², 15x225mm @395nm"
+              }
+            }
+          ]
+        }
+      ],
+      "applications": {
+        "printing": {
+          "en": "Wide format graphics, coding, labels, marking, posters, signage, packaging, screen and bottle printing",
+          "zh": "宽幅图形印刷、编码、标签、标识、海报、标牌、包装、丝网及瓶身印刷",
+          "vi": "In khổ rộng, mã hóa, nhãn, đánh dấu, áp phích, biển hiệu, đóng gói, in lụa và in chai"
+        },
+        "electronics": {
+          "en": "Camera modules, chip on glass, connectors, display bonding, wafer tape removal, flex circuits, hard disk drives, lens bonding, micro-speakers",
+          "zh": "摄像模组、玻璃上芯片封装、连接器、屏幕贴合、晶圆胶带剥离、柔性电路、硬盘驱动器、镜头贴合、微型扬声器",
+          "vi": "Mô-đun camera, chip trên kính, đầu nối, dán màn hình, gỡ băng wafer, mạch dẻo, ổ cứng, dán thấu kính, loa mini"
+        },
+        "industrial": {
+          "en": "Wood coatings, solar panels, UV film lamination, lens bonding, pressure sensitive adhesives, cable marking and ribboning",
+          "zh": "木材涂层、太阳能板、UV薄膜贴合、镜头贴合、压敏胶、线缆标识与色带",
+          "vi": "Sơn phủ gỗ, tấm pin mặt trời, dán màng UV, dán thấu kính, keo dán áp lực, đánh dấu cáp"
+        }
+      }
+    },
+    {
+      "model": "AC9225-F",
+      "slug": "product/systems/ac9225-f",
+      "category": {
+        "en": "UV LED Fiber Curing",
+        "zh": "UV LED光纤固化系统",
+        "vi": "Đóng rắn UV LED cho sợi quang"
+      },
+      "name": {
+        "en": "OmniCure AC9225-F",
+        "zh": "OmniCure AC9225-F",
+        "vi": "OmniCure AC9225-F"
+      },
+      "description": {
+        "en": "Specifically designed for fiber curing applications, the AC9225-F delivers up to 88 W/cm2 peak irradiance at the fiber in typical face-to-face configuration, with 10-18mm working distance. Reduces electrical power consumption by up to 60% compared to traditional arc lamp systems, with over 40,000 hours of LED lifetime and no replacement parts.",
+        "zh": "AC9225-F专为光纤固化应用设计，在典型面对面配置下可实现高达88 W/cm²的峰值辐照度，工作距离为10-18毫米。相较传统电弧灯系统，可节省高达60%的电力消耗，LED寿命超过40,000小时，无需更换部件。",
+        "vi": "Được thiết kế riêng cho ứng dụng đóng rắn sợi quang, AC9225-F đạt độ rọi đỉnh lên đến 88 W/cm² tại sợi quang trong cấu hình đối diện điển hình, khoảng cách làm việc 10-18mm. Giảm tiêu thụ điện lên đến 60% so với hệ thống đèn hồ quang truyền thống, tuổi thọ LED trên 40.000 giờ và không cần thay thế linh kiện."
+      },
+      "features": [
+        {
+          "en": "Up to 88 W/cm2 peak irradiance at the fiber",
+          "zh": "光纤处峰值辐照度高达88 W/cm²",
+          "vi": "Độ rọi đỉnh tại sợi quang lên đến 88 W/cm²"
+        },
+        {
+          "en": "Reduces power consumption by up to 60% vs. arc lamp systems",
+          "zh": "相较电弧灯系统，节省高达60%电力消耗",
+          "vi": "Giảm tiêu thụ điện đến 60% so với hệ thống đèn hồ quang"
+        },
+        {
+          "en": "Over 40,000 hours LED lifetime with no replacement parts",
+          "zh": "LED寿命超过40,000小时，无需更换部件",
+          "vi": "Tuổi thọ LED trên 40.000 giờ, không cần thay thế linh kiện"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "395nm Products",
+            "zh": "395nm波长产品",
+            "vi": "Sản phẩm 395nm"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "AC9225F-395 (Fiber) UV LED Head",
+                "zh": "AC9225F-395（光纤款）UV LED灯头",
+                "vi": "Đầu UV LED AC9225F-395 (Sợi quang)"
+              },
+              "value": {
+                "en": "20 W/cm2, 15x225mm @395nm",
+                "zh": "20 W/cm²，15x225毫米 @395nm",
+                "vi": "20 W/cm², 15x225mm @395nm"
+              }
+            },
+            {
+              "label": {
+                "en": "AC9225F-395 with RS485",
+                "zh": "AC9225F-395（含RS485）",
+                "vi": "AC9225F-395 với RS485"
+              },
+              "value": {
+                "en": "20 W/cm2, 15x225mm @395nm",
+                "zh": "20 W/cm²，15x225毫米 @395nm",
+                "vi": "20 W/cm², 15x225mm @395nm"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "CV300",
+      "slug": "product/systems/cv300",
+      "category": {
+        "en": "Conveyor System",
+        "zh": "传送带系统",
+        "vi": "Hệ thống băng tải"
+      },
+      "name": {
+        "en": "OmniCure CV300 Small Volume Production Conveyor",
+        "zh": "OmniCure CV300小批量生产传送带",
+        "vi": "Băng tải sản xuất số lượng nhỏ OmniCure CV300"
+      },
+      "description": {
+        "en": "Designed to complement the OmniCure AC Series of high power UV LED area curing systems, the CV300 is a versatile conveyor system suitable for production, laboratory, and R&D applications. Handles substrates up to 310mm wide on an open mesh Teflon-coated fiberglass belt, with the LED system positionable perpendicular or in 15-degree steps toward parallel orientation.",
+        "zh": "CV300是专为搭配OmniCure AC系列高功率UV LED面固化系统而设计的多功能传送带系统，适用于生产、实验室及研发应用。可处理最宽310毫米的基材，采用开放式网状特氟龙涂层玻璃纤维传送带，LED系统可垂直安装或以15度为步进调整至平行方向。",
+        "vi": "Được thiết kế để bổ sung cho dòng hệ thống đóng rắn diện tích UV LED công suất cao OmniCure AC Series, CV300 là hệ thống băng tải đa năng phù hợp cho sản xuất, phòng thí nghiệm và ứng dụng R&D. Xử lý vật liệu nền rộng tới 310mm trên băng tải sợi thủy tinh phủ Teflon dạng lưới hở, hệ thống LED có thể đặt vuông góc hoặc điều chỉnh theo bước 15 độ hướng tới song song."
+      },
+      "features": [
+        {
+          "en": "Handles substrates up to 310mm (12.2\") wide",
+          "zh": "可处理最宽310毫米（12.2英寸）的基材",
+          "vi": "Xử lý vật liệu nền rộng tới 310mm (12.2 inch)"
+        },
+        {
+          "en": "LED system positionable perpendicular or in 15-degree steps toward parallel orientation",
+          "zh": "LED系统可垂直安装，或以15度为步进调整方向",
+          "vi": "Hệ thống LED có thể đặt vuông góc hoặc điều chỉnh theo bước 15 độ"
+        },
+        {
+          "en": "Suitable for production, laboratory, and R&D applications",
+          "zh": "适用于生产、实验室及研发场景",
+          "vi": "Phù hợp cho sản xuất, phòng thí nghiệm và R&D"
+        }
+      ],
+      "accessories": [
+        {
+          "part_no": "010-00329R",
+          "description": {
+            "en": "CV300 Conveyor System, 300mm-wide belt, complete with power cord (only available in USA)",
+            "zh": "CV300传送带系统，300毫米宽传送带，含电源线（仅限美国地区销售）",
+            "vi": "Hệ thống băng tải CV300, băng rộng 300mm, kèm dây nguồn (chỉ bán tại Mỹ)"
+          }
+        }
+      ]
+    },
+    {
+      "model": "PLC2000",
+      "slug": "product/systems/plc2000",
+      "category": {
+        "en": "External PLC Controller",
+        "zh": "外部PLC控制器",
+        "vi": "Bộ điều khiển PLC ngoài"
+      },
+      "name": {
+        "en": "OmniCure PLC2000",
+        "zh": "OmniCure PLC2000",
+        "vi": "OmniCure PLC2000"
+      },
+      "description": {
+        "en": "An innovative product accessory designed to complement the OmniCure AC Series of high power UV LED curing systems. When connected to an AC Series UV LED Head, this multi-purpose external controller enables intelligent management, monitoring and control, including dynamic adjustment of output intensity, exposure time, and on/off capabilities, while providing system information and error monitoring.",
+        "zh": "PLC2000是一款创新型配件产品，专为搭配OmniCure AC系列高功率UV LED固化系统而设计。当连接至AC系列UV LED灯头后，这款多用途外部控制器可实现智能化管理、监控与控制，包括动态调整输出强度、曝光时间及开关功能，并提供系统信息与故障监控。",
+        "vi": "Phụ kiện đột phá được thiết kế để bổ sung cho dòng hệ thống đóng rắn UV LED công suất cao OmniCure AC Series. Khi kết nối với đầu UV LED dòng AC, bộ điều khiển ngoài đa năng này cho phép quản lý, giám sát và điều khiển thông minh, bao gồm điều chỉnh động cường độ đầu ra, thời gian phơi sáng và khả năng bật/tắt, đồng thời cung cấp thông tin hệ thống và giám sát lỗi."
+      },
+      "features": [
+        {
+          "en": "Dynamic adjustment of output intensity, exposure time, on/off",
+          "zh": "动态调整输出强度、曝光时间与开关功能",
+          "vi": "Điều chỉnh động cường độ đầu ra, thời gian phơi sáng, bật/tắt"
+        },
+        {
+          "en": "Local or remote operation through an automated system",
+          "zh": "支持本地操作或通过自动化系统远程控制",
+          "vi": "Vận hành tại chỗ hoặc từ xa qua hệ thống tự động hóa"
+        }
+      ],
+      "accessories": [
+        {
+          "part_no": "019-00214R",
+          "description": {
+            "en": "PLC2000 External PLC Controller (includes HD15 cable)",
+            "zh": "PLC2000外部PLC控制器（含HD15线缆）",
+            "vi": "Bộ điều khiển PLC ngoài PLC2000 (kèm cáp HD15)"
+          }
+        }
+      ]
+    }
+  ]
+}
