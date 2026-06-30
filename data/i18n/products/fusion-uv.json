@@ -1,0 +1,1217 @@
+{
+  "brand": "Fusion UV",
+  "brand_slug": "fusion-uv",
+  "products": [
+    {
+      "model": "F300S / F300SQ",
+      "slug": "product/fusion-uv/f300s",
+      "category": {
+        "en": "Microwave UV Curing Systems",
+        "zh": "微波UV固化系统",
+        "vi": "Hệ thống đóng rắn UV vi sóng"
+      },
+      "name": {
+        "en": "Fusion UV F300S / F300SQ",
+        "zh": "Fusion UV F300S / F300SQ",
+        "vi": "Fusion UV F300S / F300SQ"
+      },
+      "description": {
+        "en": "An economical electrodeless UV lamp system offering unlimited cure width by stacking lamps end-to-end. Features a semi-elliptical reflector geometry, optional dichroic reflectors, and optional mechanical shutter, suitable for a broad range of standard industrial UV curing applications.",
+        "zh": "经济型无极UV灯系统，可通过首尾拼接灯具实现无限固化宽度。采用半椭圆反射器几何设计，可选配二向色反射器与机械快门，适用于各类标准工业UV固化应用。",
+        "vi": "Hệ thống đèn UV không điện cực kinh tế, cho phép độ rộng đóng rắn không giới hạn bằng cách ghép nối các đèn nối tiếp. Có hình học gương phản xạ bán elip, gương phản xạ lưỡng sắc tùy chọn, và cửa chớp cơ học tùy chọn, phù hợp cho nhiều ứng dụng đóng rắn UV công nghiệp tiêu chuẩn."
+      },
+      "features": [
+        {
+          "en": "Unlimited cure width by stacking lamps end-to-end",
+          "zh": "灯具可首尾拼接，实现无限固化宽度",
+          "vi": "Độ rộng đóng rắn không giới hạn bằng ghép nối đèn nối tiếp"
+        },
+        {
+          "en": "Fast startup: 20s cold start, 5s warm start (F300S/F300SQ)",
+          "zh": "启动迅速：冷启动20秒，热启动5秒（F300S/F300SQ）",
+          "vi": "Khởi động nhanh: khởi động nguội 20s, khởi động nóng 5s (F300S/F300SQ)"
+        },
+        {
+          "en": "Standard external control and remote cooling blower",
+          "zh": "标配外部控制与远程冷却风机",
+          "vi": "Điều khiển ngoài tiêu chuẩn và quạt làm mát từ xa"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "F300S and F300SQ",
+            "zh": "F300S 与 F300SQ",
+            "vi": "F300S và F300SQ"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Lamp Type",
+                "zh": "灯具类型",
+                "vi": "Loại đèn"
+              },
+              "value": {
+                "en": "Electrodeless UV",
+                "zh": "无极UV灯",
+                "vi": "Đèn UV không điện cực"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Length",
+                "zh": "灯泡长度",
+                "vi": "Chiều dài bóng đèn"
+              },
+              "value": {
+                "en": "15 cm (6-inch)",
+                "zh": "15厘米（6英寸）",
+                "vi": "15 cm (6 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Type",
+                "zh": "灯泡类型",
+                "vi": "Loại bóng đèn"
+              },
+              "value": {
+                "en": "H, D, V, H+",
+                "zh": "H、D、V、H+型",
+                "vi": "H, D, V, H+"
+              }
+            },
+            {
+              "label": {
+                "en": "Start-up Time",
+                "zh": "启动时间",
+                "vi": "Thời gian khởi động"
+              },
+              "value": {
+                "en": "20s cold start, 5s warm start",
+                "zh": "冷启动20秒，热启动5秒",
+                "vi": "Khởi động nguội 20s, khởi động nóng 5s"
+              }
+            },
+            {
+              "label": {
+                "en": "Reflector Geometry",
+                "zh": "反射器几何形状",
+                "vi": "Hình học gương phản xạ"
+              },
+              "value": {
+                "en": "Semi-elliptical",
+                "zh": "半椭圆形",
+                "vi": "Bán elip"
+              }
+            },
+            {
+              "label": {
+                "en": "Optimum Focus Distance",
+                "zh": "最佳聚焦距离",
+                "vi": "Khoảng cách hội tụ tối ưu"
+              },
+              "value": {
+                "en": "5.3 cm (2.1 inches)",
+                "zh": "5.3厘米（2.1英寸）",
+                "vi": "5.3 cm (2.1 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Class",
+                "zh": "功率等级",
+                "vi": "Cấp công suất"
+              },
+              "value": {
+                "en": "120 W/cm (300 W/inch)",
+                "zh": "120 瓦/厘米（300瓦/英寸）",
+                "vi": "120 W/cm (300 W/inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Level",
+                "zh": "功率档位",
+                "vi": "Mức công suất"
+              },
+              "value": {
+                "en": "Fixed or quick restart (optional)",
+                "zh": "固定档或快速重启（可选）",
+                "vi": "Cố định hoặc khởi động lại nhanh (tùy chọn)"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling Blower",
+                "zh": "冷却风机",
+                "vi": "Quạt làm mát"
+              },
+              "value": {
+                "en": "Remote",
+                "zh": "远程式",
+                "vi": "Từ xa"
+              }
+            },
+            {
+              "label": {
+                "en": "Air Flow @ Irradiator Inlet",
+                "zh": "照射器入口风量",
+                "vi": "Lưu lượng khí tại cửa hút"
+              },
+              "value": {
+                "en": "2.8 m3/min; 100 scfm",
+                "zh": "2.8 立方米/分钟；100 scfm",
+                "vi": "2.8 m3/phút; 100 scfm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Footprint (WxL)",
+                "zh": "灯具尺寸（宽x长）",
+                "vi": "Kích thước đèn (Rộng x Dài)"
+              },
+              "value": {
+                "en": "208 x 168 mm (8.2 x 6.6 inches)",
+                "zh": "208 x 168 毫米（8.2 x 6.6英寸）",
+                "vi": "208 x 168 mm (8.2 x 6.6 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Compliance",
+                "zh": "认证",
+                "vi": "Chứng nhận"
+              },
+              "value": {
+                "en": "CE, TÜV",
+                "zh": "CE、TÜV认证",
+                "vi": "CE, TÜV"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "F600S",
+      "slug": "product/fusion-uv/f600s",
+      "category": {
+        "en": "Microwave UV Curing Systems",
+        "zh": "微波UV固化系统",
+        "vi": "Hệ thống đóng rắn UV vi sóng"
+      },
+      "name": {
+        "en": "Fusion UV F600S",
+        "zh": "Fusion UV F600S",
+        "vi": "Fusion UV F600S"
+      },
+      "description": {
+        "en": "A higher-power electrodeless UV lamp system with a 10-inch bulb and dual power level (160/240 W/cm) operation, offering unlimited cure width by stacking lamps end-to-end and faster startup than the F300 series.",
+        "zh": "更高功率的无极UV灯系统，采用10英寸灯泡，支持双档功率（160/240 瓦/厘米）运行，灯具可首尾拼接实现无限固化宽度，启动速度优于F300系列。",
+        "vi": "Hệ thống đèn UV không điện cực công suất cao hơn với bóng đèn 10 inch và vận hành hai mức công suất (160/240 W/cm), cho phép độ rộng đóng rắn không giới hạn bằng ghép nối đèn nối tiếp, khởi động nhanh hơn dòng F300."
+      },
+      "features": [
+        {
+          "en": "Dual power level operation (160/240 W/cm)",
+          "zh": "支持双档功率运行（160/240 瓦/厘米）",
+          "vi": "Vận hành hai mức công suất (160/240 W/cm)"
+        },
+        {
+          "en": "Faster startup: 15s cold start, 5s warm start",
+          "zh": "启动更快：冷启动15秒，热启动5秒",
+          "vi": "Khởi động nhanh hơn: khởi động nguội 15s, khởi động nóng 5s"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "F600S",
+            "zh": "F600S",
+            "vi": "F600S"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Lamp Type",
+                "zh": "灯具类型",
+                "vi": "Loại đèn"
+              },
+              "value": {
+                "en": "Electrodeless UV",
+                "zh": "无极UV灯",
+                "vi": "Đèn UV không điện cực"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Length",
+                "zh": "灯泡长度",
+                "vi": "Chiều dài bóng đèn"
+              },
+              "value": {
+                "en": "25 cm (10-inch)",
+                "zh": "25厘米（10英寸）",
+                "vi": "25 cm (10 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Type",
+                "zh": "灯泡类型",
+                "vi": "Loại bóng đèn"
+              },
+              "value": {
+                "en": "H, D, V, H+",
+                "zh": "H、D、V、H+型",
+                "vi": "H, D, V, H+"
+              }
+            },
+            {
+              "label": {
+                "en": "Start-up Time",
+                "zh": "启动时间",
+                "vi": "Thời gian khởi động"
+              },
+              "value": {
+                "en": "15s cold start, 5s warm start",
+                "zh": "冷启动15秒，热启动5秒",
+                "vi": "Khởi động nguội 15s, khởi động nóng 5s"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Class",
+                "zh": "功率等级",
+                "vi": "Cấp công suất"
+              },
+              "value": {
+                "en": "240 W/cm (600 W/inch)",
+                "zh": "240 瓦/厘米（600瓦/英寸）",
+                "vi": "240 W/cm (600 W/inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Level",
+                "zh": "功率档位",
+                "vi": "Mức công suất"
+              },
+              "value": {
+                "en": "Dual level (160/240 W/cm)",
+                "zh": "双档（160/240 瓦/厘米）",
+                "vi": "Hai mức (160/240 W/cm)"
+              }
+            },
+            {
+              "label": {
+                "en": "Air Flow @ Irradiator Inlet",
+                "zh": "照射器入口风量",
+                "vi": "Lưu lượng khí tại cửa hút"
+              },
+              "value": {
+                "en": "8.9 m3/min; 315 scfm",
+                "zh": "8.9 立方米/分钟；315 scfm",
+                "vi": "8.9 m3/phút; 315 scfm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Footprint (WxL)",
+                "zh": "灯具尺寸（宽x长）",
+                "vi": "Kích thước đèn (Rộng x Dài)"
+              },
+              "value": {
+                "en": "206 x 267 mm (8.1 x 10.5 inches)",
+                "zh": "206 x 267 毫米（8.1 x 10.5英寸）",
+                "vi": "206 x 267 mm (8.1 x 10.5 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Compliance",
+                "zh": "认证",
+                "vi": "Chứng nhận"
+              },
+              "value": {
+                "en": "CE, TÜV",
+                "zh": "CE、TÜV认证",
+                "vi": "CE, TÜV"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "LightHammer 6 Mark II",
+      "slug": "product/fusion-uv/lighthammer-6-mark-ii",
+      "category": {
+        "en": "Microwave UV Curing Systems",
+        "zh": "微波UV固化系统",
+        "vi": "Hệ thống đóng rắn UV vi sóng"
+      },
+      "name": {
+        "en": "Fusion UV LightHammer® 6 Mark II",
+        "zh": "Fusion UV LightHammer® 6 Mark II",
+        "vi": "Fusion UV LightHammer® 6 Mark II"
+      },
+      "description": {
+        "en": "A 6-inch electrodeless UV lamp system with variable power (35-100%) and quick restart, electronic shutter, and standard primary/secondary external control with optional industrial fieldbus protocols (DeviceNet, Profinet, Profibus, EtherNet/IP).",
+        "zh": "采用6英寸灯泡的无极UV灯系统，支持可变功率（35-100%）及快速重启、电子快门，以及标配主/从外部控制，并可选配工业现场总线协议（DeviceNet、Profinet、Profibus、EtherNet/IP）。",
+        "vi": "Hệ thống đèn UV không điện cực 6 inch với công suất biến thiên (35-100%) và khởi động lại nhanh, cửa chớp điện tử, và điều khiển ngoài chính/phụ tiêu chuẩn với giao thức fieldbus công nghiệp tùy chọn (DeviceNet, Profinet, Profibus, EtherNet/IP)."
+      },
+      "features": [
+        {
+          "en": "Variable power (35-100%) with quick restart capability",
+          "zh": "支持可变功率（35-100%），可快速重启",
+          "vi": "Công suất biến thiên (35-100%) với khả năng khởi động lại nhanh"
+        },
+        {
+          "en": "Electronic shutter standard, optional mechanical",
+          "zh": "标配电子快门，可选机械快门",
+          "vi": "Cửa chớp điện tử tiêu chuẩn, tùy chọn cơ học"
+        },
+        {
+          "en": "Optional industrial fieldbus protocol support",
+          "zh": "可选支持工业现场总线协议",
+          "vi": "Hỗ trợ giao thức fieldbus công nghiệp tùy chọn"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "LightHammer 6 Mark II",
+            "zh": "LightHammer 6 Mark II",
+            "vi": "LightHammer 6 Mark II"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Bulb Length",
+                "zh": "灯泡长度",
+                "vi": "Chiều dài bóng đèn"
+              },
+              "value": {
+                "en": "15 cm (6-inch)",
+                "zh": "15厘米（6英寸）",
+                "vi": "15 cm (6 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Type",
+                "zh": "灯泡类型",
+                "vi": "Loại bóng đèn"
+              },
+              "value": {
+                "en": "H, D, V",
+                "zh": "H、D、V型",
+                "vi": "H, D, V"
+              }
+            },
+            {
+              "label": {
+                "en": "Start-up Time",
+                "zh": "启动时间",
+                "vi": "Thời gian khởi động"
+              },
+              "value": {
+                "en": "15s cold start, instantaneous warm start",
+                "zh": "冷启动15秒，热启动瞬时完成",
+                "vi": "Khởi động nguội 15s, khởi động nóng tức thì"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Class",
+                "zh": "功率等级",
+                "vi": "Cấp công suất"
+              },
+              "value": {
+                "en": "200 W/cm (500 W/inch)",
+                "zh": "200 瓦/厘米（500瓦/英寸）",
+                "vi": "200 W/cm (500 W/inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Level",
+                "zh": "功率档位",
+                "vi": "Mức công suất"
+              },
+              "value": {
+                "en": "Variable (35-100%) quick restart",
+                "zh": "可变功率（35-100%），快速重启",
+                "vi": "Biến thiên (35-100%) khởi động lại nhanh"
+              }
+            },
+            {
+              "label": {
+                "en": "External Control",
+                "zh": "外部控制",
+                "vi": "Điều khiển ngoài"
+              },
+              "value": {
+                "en": "Std primary/secondary; opt DeviceNet, Profinet, Profibus, EtherNet/IP",
+                "zh": "标配主/从控制；可选DeviceNet、Profinet、Profibus、EtherNet/IP",
+                "vi": "Tiêu chuẩn chính/phụ; tùy chọn DeviceNet, Profinet, Profibus, EtherNet/IP"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling Blower",
+                "zh": "冷却风机",
+                "vi": "Quạt làm mát"
+              },
+              "value": {
+                "en": "Integral or remote",
+                "zh": "内置式或远程式",
+                "vi": "Tích hợp hoặc từ xa"
+              }
+            },
+            {
+              "label": {
+                "en": "Air Flow @ Irradiator Inlet",
+                "zh": "照射器入口风量",
+                "vi": "Lưu lượng khí tại cửa hút"
+              },
+              "value": {
+                "en": "1.4 to 4.2 m3/min; 50 to 150 scfm",
+                "zh": "1.4 至 4.2 立方米/分钟；50 至 150 scfm",
+                "vi": "1.4 đến 4.2 m3/phút; 50 đến 150 scfm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Footprint (WxL)",
+                "zh": "灯具尺寸（宽x长）",
+                "vi": "Kích thước đèn (Rộng x Dài)"
+              },
+              "value": {
+                "en": "168 x 168 mm (6.6 x 6.6 inches)",
+                "zh": "168 x 168 毫米（6.6 x 6.6英寸）",
+                "vi": "168 x 168 mm (6.6 x 6.6 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "AIMS Cloud Enabled",
+                "zh": "支持AIMS云平台",
+                "vi": "Hỗ trợ AIMS Cloud"
+              },
+              "value": {
+                "en": "Optional",
+                "zh": "可选",
+                "vi": "Tùy chọn"
+              }
+            },
+            {
+              "label": {
+                "en": "Upgrade/Retrofit Capable",
+                "zh": "可升级改造",
+                "vi": "Có thể nâng cấp/cải tạo"
+              },
+              "value": {
+                "en": "Available",
+                "zh": "支持",
+                "vi": "Có sẵn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "LightHammer 10 Mark II",
+      "slug": "product/fusion-uv/lighthammer-10-mark-ii",
+      "category": {
+        "en": "Microwave UV Curing Systems",
+        "zh": "微波UV固化系统",
+        "vi": "Hệ thống đóng rắn UV vi sóng"
+      },
+      "name": {
+        "en": "Fusion UV LightHammer® 10 Mark II",
+        "zh": "Fusion UV LightHammer® 10 Mark II",
+        "vi": "Fusion UV LightHammer® 10 Mark II"
+      },
+      "description": {
+        "en": "A 10-inch electrodeless UV lamp system delivering 240 W/cm power class with variable power (35-100%) and quick restart, electronic shutter, and remote cooling blower for higher throughput applications.",
+        "zh": "采用10英寸灯泡的无极UV灯系统，功率等级达240 瓦/厘米，支持可变功率（35-100%）及快速重启、电子快门，配备远程冷却风机，适用于更高产能需求的应用。",
+        "vi": "Hệ thống đèn UV không điện cực 10 inch với cấp công suất 240 W/cm, công suất biến thiên (35-100%) và khởi động lại nhanh, cửa chớp điện tử, và quạt làm mát từ xa cho các ứng dụng năng suất cao hơn."
+      },
+      "features": [
+        {
+          "en": "Higher power class of 240 W/cm for larger throughput",
+          "zh": "更高功率等级240 瓦/厘米，适合更大产能",
+          "vi": "Cấp công suất cao hơn 240 W/cm cho năng suất lớn hơn"
+        },
+        {
+          "en": "Variable power with quick restart and electronic shutter",
+          "zh": "可变功率配合快速重启与电子快门",
+          "vi": "Công suất biến thiên với khởi động lại nhanh và cửa chớp điện tử"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "LightHammer 10 Mark II",
+            "zh": "LightHammer 10 Mark II",
+            "vi": "LightHammer 10 Mark II"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Bulb Length",
+                "zh": "灯泡长度",
+                "vi": "Chiều dài bóng đèn"
+              },
+              "value": {
+                "en": "25 cm (10-inch)",
+                "zh": "25厘米（10英寸）",
+                "vi": "25 cm (10 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Type",
+                "zh": "灯泡类型",
+                "vi": "Loại bóng đèn"
+              },
+              "value": {
+                "en": "H, D, V, H+",
+                "zh": "H、D、V、H+型",
+                "vi": "H, D, V, H+"
+              }
+            },
+            {
+              "label": {
+                "en": "Start-up Time",
+                "zh": "启动时间",
+                "vi": "Thời gian khởi động"
+              },
+              "value": {
+                "en": "15s cold start, instantaneous warm start",
+                "zh": "冷启动15秒，热启动瞬时完成",
+                "vi": "Khởi động nguội 15s, khởi động nóng tức thì"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Class",
+                "zh": "功率等级",
+                "vi": "Cấp công suất"
+              },
+              "value": {
+                "en": "240 W/cm (600 W/inch)",
+                "zh": "240 瓦/厘米（600瓦/英寸）",
+                "vi": "240 W/cm (600 W/inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Level",
+                "zh": "功率档位",
+                "vi": "Mức công suất"
+              },
+              "value": {
+                "en": "Variable (35-100%) quick restart",
+                "zh": "可变功率（35-100%），快速重启",
+                "vi": "Biến thiên (35-100%) khởi động lại nhanh"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling Blower",
+                "zh": "冷却风机",
+                "vi": "Quạt làm mát"
+              },
+              "value": {
+                "en": "Integral or remote",
+                "zh": "内置式或远程式",
+                "vi": "Tích hợp hoặc từ xa"
+              }
+            },
+            {
+              "label": {
+                "en": "Air Flow @ Irradiator Inlet",
+                "zh": "照射器入口风量",
+                "vi": "Lưu lượng khí tại cửa hút"
+              },
+              "value": {
+                "en": "8.9 m3/min; 315 scfm",
+                "zh": "8.9 立方米/分钟；315 scfm",
+                "vi": "8.9 m3/phút; 315 scfm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Footprint (WxL)",
+                "zh": "灯具尺寸（宽x长）",
+                "vi": "Kích thước đèn (Rộng x Dài)"
+              },
+              "value": {
+                "en": "206 x 267 mm (8.1 x 10.5 inches)",
+                "zh": "206 x 267 毫米（8.1 x 10.5英寸）",
+                "vi": "206 x 267 mm (8.1 x 10.5 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "AIMS Cloud Enabled",
+                "zh": "支持AIMS云平台",
+                "vi": "Hỗ trợ AIMS Cloud"
+              },
+              "value": {
+                "en": "Optional",
+                "zh": "可选",
+                "vi": "Tùy chọn"
+              }
+            },
+            {
+              "label": {
+                "en": "Upgrade/Retrofit Capable",
+                "zh": "可升级改造",
+                "vi": "Có thể nâng cấp/cải tạo"
+              },
+              "value": {
+                "en": "Available",
+                "zh": "支持",
+                "vi": "Có sẵn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "LightHammer 10L Mark II",
+      "slug": "product/fusion-uv/lighthammer-10l-mark-ii",
+      "category": {
+        "en": "Microwave UV Curing Systems",
+        "zh": "微波UV固化系统",
+        "vi": "Hệ thống đóng rắn UV vi sóng"
+      },
+      "name": {
+        "en": "Fusion UV LightHammer® 10L Mark II",
+        "zh": "Fusion UV LightHammer® 10L Mark II",
+        "vi": "Fusion UV LightHammer® 10L Mark II"
+      },
+      "description": {
+        "en": "A 10-inch electrodeless UV lamp system with a lower 170 W/cm power class, designed for applications where reduced power output is preferable while maintaining variable power control and quick restart capability.",
+        "zh": "采用10英寸灯泡的无极UV灯系统，功率等级较低，为170 瓦/厘米，适用于需要较低功率输出的应用场景，同时保留可变功率控制与快速重启功能。",
+        "vi": "Hệ thống đèn UV không điện cực 10 inch với cấp công suất thấp hơn 170 W/cm, được thiết kế cho các ứng dụng cần công suất đầu ra thấp hơn trong khi vẫn duy trì điều khiển công suất biến thiên và khả năng khởi động lại nhanh."
+      },
+      "features": [
+        {
+          "en": "Lower 170 W/cm power class for moderate-output applications",
+          "zh": "较低170 瓦/厘米功率等级，适合中等输出需求应用",
+          "vi": "Cấp công suất thấp hơn 170 W/cm cho ứng dụng đầu ra vừa phải"
+        },
+        {
+          "en": "Variable power with quick restart, electronic shutter",
+          "zh": "可变功率配合快速重启、电子快门",
+          "vi": "Công suất biến thiên với khởi động lại nhanh, cửa chớp điện tử"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "LightHammer 10L Mark II",
+            "zh": "LightHammer 10L Mark II",
+            "vi": "LightHammer 10L Mark II"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Bulb Length",
+                "zh": "灯泡长度",
+                "vi": "Chiều dài bóng đèn"
+              },
+              "value": {
+                "en": "25 cm (10-inch)",
+                "zh": "25厘米（10英寸）",
+                "vi": "25 cm (10 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Type",
+                "zh": "灯泡类型",
+                "vi": "Loại bóng đèn"
+              },
+              "value": {
+                "en": "H, D, V, H+",
+                "zh": "H、D、V、H+型",
+                "vi": "H, D, V, H+"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Class",
+                "zh": "功率等级",
+                "vi": "Cấp công suất"
+              },
+              "value": {
+                "en": "170 W/cm (410 W/inch)",
+                "zh": "170 瓦/厘米（410瓦/英寸）",
+                "vi": "170 W/cm (410 W/inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Level",
+                "zh": "功率档位",
+                "vi": "Mức công suất"
+              },
+              "value": {
+                "en": "Variable (35-100%) quick restart",
+                "zh": "可变功率（35-100%），快速重启",
+                "vi": "Biến thiên (35-100%) khởi động lại nhanh"
+              }
+            },
+            {
+              "label": {
+                "en": "Air Flow @ Irradiator Inlet",
+                "zh": "照射器入口风量",
+                "vi": "Lưu lượng khí tại cửa hút"
+              },
+              "value": {
+                "en": "6.2 to 8.2 m3/min; 220 to 290 scfm",
+                "zh": "6.2 至 8.2 立方米/分钟；220 至 290 scfm",
+                "vi": "6.2 đến 8.2 m3/phút; 220 đến 290 scfm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Footprint (WxL)",
+                "zh": "灯具尺寸（宽x长）",
+                "vi": "Kích thước đèn (Rộng x Dài)"
+              },
+              "value": {
+                "en": "206 x 267 mm (8.1 x 10.5 inches)",
+                "zh": "206 x 267 毫米（8.1 x 10.5英寸）",
+                "vi": "206 x 267 mm (8.1 x 10.5 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Compliance",
+                "zh": "认证",
+                "vi": "Chứng nhận"
+              },
+              "value": {
+                "en": "CE, TÜV",
+                "zh": "CE、TÜV认证",
+                "vi": "CE, TÜV"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "LightHammer 10H Mark II",
+      "slug": "product/fusion-uv/lighthammer-10h-mark-ii",
+      "category": {
+        "en": "Microwave UV Curing Systems",
+        "zh": "微波UV固化系统",
+        "vi": "Hệ thống đóng rắn UV vi sóng"
+      },
+      "name": {
+        "en": "Fusion UV LightHammer® 10H Mark II",
+        "zh": "Fusion UV LightHammer® 10H Mark II",
+        "vi": "Fusion UV LightHammer® 10H Mark II"
+      },
+      "description": {
+        "en": "A 10-inch electrodeless UV lamp system at the full 240 W/cm power class with remote cooling blower, variable power control, and electronic shutter — the higher-output counterpart in the LightHammer 10 Mark II family.",
+        "zh": "采用10英寸灯泡的无极UV灯系统，全功率等级达240 瓦/厘米，配备远程冷却风机、可变功率控制及电子快门——是LightHammer 10 Mark II系列中的高输出版本。",
+        "vi": "Hệ thống đèn UV không điện cực 10 inch ở cấp công suất đầy đủ 240 W/cm với quạt làm mát từ xa, điều khiển công suất biến thiên, và cửa chớp điện tử — phiên bản đầu ra cao hơn trong dòng LightHammer 10 Mark II."
+      },
+      "features": [
+        {
+          "en": "Full 240 W/cm power class with remote cooling blower",
+          "zh": "全功率等级240 瓦/厘米，配备远程冷却风机",
+          "vi": "Cấp công suất đầy đủ 240 W/cm với quạt làm mát từ xa"
+        },
+        {
+          "en": "Variable power (35-100%) with quick restart",
+          "zh": "可变功率（35-100%），支持快速重启",
+          "vi": "Công suất biến thiên (35-100%) với khởi động lại nhanh"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "LightHammer 10H Mark II",
+            "zh": "LightHammer 10H Mark II",
+            "vi": "LightHammer 10H Mark II"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Bulb Length",
+                "zh": "灯泡长度",
+                "vi": "Chiều dài bóng đèn"
+              },
+              "value": {
+                "en": "25 cm (10-inch)",
+                "zh": "25厘米（10英寸）",
+                "vi": "25 cm (10 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Type",
+                "zh": "灯泡类型",
+                "vi": "Loại bóng đèn"
+              },
+              "value": {
+                "en": "H, D, V, H+",
+                "zh": "H、D、V、H+型",
+                "vi": "H, D, V, H+"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Class",
+                "zh": "功率等级",
+                "vi": "Cấp công suất"
+              },
+              "value": {
+                "en": "240 W/cm (600 W/inch)",
+                "zh": "240 瓦/厘米（600瓦/英寸）",
+                "vi": "240 W/cm (600 W/inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Level",
+                "zh": "功率档位",
+                "vi": "Mức công suất"
+              },
+              "value": {
+                "en": "Variable (35-100%) quick restart",
+                "zh": "可变功率（35-100%），快速重启",
+                "vi": "Biến thiên (35-100%) khởi động lại nhanh"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling Blower",
+                "zh": "冷却风机",
+                "vi": "Quạt làm mát"
+              },
+              "value": {
+                "en": "Remote",
+                "zh": "远程式",
+                "vi": "Từ xa"
+              }
+            },
+            {
+              "label": {
+                "en": "Air Flow @ Irradiator Inlet",
+                "zh": "照射器入口风量",
+                "vi": "Lưu lượng khí tại cửa hút"
+              },
+              "value": {
+                "en": "8.9 m3/min; 315 scfm",
+                "zh": "8.9 立方米/分钟；315 scfm",
+                "vi": "8.9 m3/phút; 315 scfm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Footprint (WxL)",
+                "zh": "灯具尺寸（宽x长）",
+                "vi": "Kích thước đèn (Rộng x Dài)"
+              },
+              "value": {
+                "en": "206 x 267 mm (8.1 x 10.5 inches)",
+                "zh": "206 x 267 毫米（8.1 x 10.5英寸）",
+                "vi": "206 x 267 mm (8.1 x 10.5 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Compliance",
+                "zh": "认证",
+                "vi": "Chứng nhận"
+              },
+              "value": {
+                "en": "CE, TÜV",
+                "zh": "CE、TÜV认证",
+                "vi": "CE, TÜV"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "LightHammer 10 Mark III",
+      "slug": "product/fusion-uv/lighthammer-10-mark-iii",
+      "category": {
+        "en": "Microwave UV Curing Systems",
+        "zh": "微波UV固化系统",
+        "vi": "Hệ thống đóng rắn UV vi sóng"
+      },
+      "name": {
+        "en": "Fusion UV LightHammer® 10 Mark III",
+        "zh": "Fusion UV LightHammer® 10 Mark III",
+        "vi": "Fusion UV LightHammer® 10 Mark III"
+      },
+      "description": {
+        "en": "The ultra high output 10-inch lamp system and flagship of the Fusion UV range, delivering the full 240 W/cm power class with electronic shutter, variable power control, and optional industrial fieldbus protocols. Represents the latest generation of LightHammer technology with CE compliance.",
+        "zh": "超高输出10英寸灯具系统，是Fusion UV产品线的旗舰型号，提供全功率等级240 瓦/厘米，配备电子快门、可变功率控制及可选工业现场总线协议。代表LightHammer技术的最新一代，符合CE认证标准。",
+        "vi": "Hệ thống đèn 10 inch đầu ra siêu cao và là sản phẩm chủ lực của dòng Fusion UV, cung cấp cấp công suất đầy đủ 240 W/cm với cửa chớp điện tử, điều khiển công suất biến thiên, và giao thức fieldbus công nghiệp tùy chọn. Đại diện cho thế hệ công nghệ LightHammer mới nhất, đạt chứng nhận CE."
+      },
+      "features": [
+        {
+          "en": "Ultra high output flagship of the Fusion UV product range",
+          "zh": "Fusion UV产品线超高输出旗舰型号",
+          "vi": "Sản phẩm chủ lực đầu ra siêu cao của dòng Fusion UV"
+        },
+        {
+          "en": "Electronic shutter and variable power (35-100%)",
+          "zh": "电子快门与可变功率（35-100%）",
+          "vi": "Cửa chớp điện tử và công suất biến thiên (35-100%)"
+        },
+        {
+          "en": "Optional industrial fieldbus protocol support",
+          "zh": "可选支持工业现场总线协议",
+          "vi": "Hỗ trợ giao thức fieldbus công nghiệp tùy chọn"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "LightHammer 10 Mark III",
+            "zh": "LightHammer 10 Mark III",
+            "vi": "LightHammer 10 Mark III"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Bulb Length",
+                "zh": "灯泡长度",
+                "vi": "Chiều dài bóng đèn"
+              },
+              "value": {
+                "en": "25 cm (10-inch)",
+                "zh": "25厘米（10英寸）",
+                "vi": "25 cm (10 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Bulb Type",
+                "zh": "灯泡类型",
+                "vi": "Loại bóng đèn"
+              },
+              "value": {
+                "en": "H, D, V, H+",
+                "zh": "H、D、V、H+型",
+                "vi": "H, D, V, H+"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Class",
+                "zh": "功率等级",
+                "vi": "Cấp công suất"
+              },
+              "value": {
+                "en": "240 W/cm (600 W/inch)",
+                "zh": "240 瓦/厘米（600瓦/英寸）",
+                "vi": "240 W/cm (600 W/inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Power Level",
+                "zh": "功率档位",
+                "vi": "Mức công suất"
+              },
+              "value": {
+                "en": "Variable (35-100%)",
+                "zh": "可变功率（35-100%）",
+                "vi": "Biến thiên (35-100%)"
+              }
+            },
+            {
+              "label": {
+                "en": "External Control",
+                "zh": "外部控制",
+                "vi": "Điều khiển ngoài"
+              },
+              "value": {
+                "en": "Std primary/secondary; opt DeviceNet, Profinet, Profibus, EtherNet/IP",
+                "zh": "标配主/从控制；可选DeviceNet、Profinet、Profibus、EtherNet/IP",
+                "vi": "Tiêu chuẩn chính/phụ; tùy chọn DeviceNet, Profinet, Profibus, EtherNet/IP"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling Blower",
+                "zh": "冷却风机",
+                "vi": "Quạt làm mát"
+              },
+              "value": {
+                "en": "Integral or remote",
+                "zh": "内置式或远程式",
+                "vi": "Tích hợp hoặc từ xa"
+              }
+            },
+            {
+              "label": {
+                "en": "Air Flow @ Irradiator Inlet",
+                "zh": "照射器入口风量",
+                "vi": "Lưu lượng khí tại cửa hút"
+              },
+              "value": {
+                "en": "8.9 m3/min; 315 scfm",
+                "zh": "8.9 立方米/分钟；315 scfm",
+                "vi": "8.9 m3/phút; 315 scfm"
+              }
+            },
+            {
+              "label": {
+                "en": "Lamp Footprint (WxL)",
+                "zh": "灯具尺寸（宽x长）",
+                "vi": "Kích thước đèn (Rộng x Dài)"
+              },
+              "value": {
+                "en": "206 x 267 mm (8.1 x 10.5 inches)",
+                "zh": "206 x 267 毫米（8.1 x 10.5英寸）",
+                "vi": "206 x 267 mm (8.1 x 10.5 inch)"
+              }
+            },
+            {
+              "label": {
+                "en": "Compliance",
+                "zh": "认证",
+                "vi": "Chứng nhận"
+              },
+              "value": {
+                "en": "CE",
+                "zh": "CE认证",
+                "vi": "CE"
+              }
+            },
+            {
+              "label": {
+                "en": "AIMS Cloud Enabled",
+                "zh": "支持AIMS云平台",
+                "vi": "Hỗ trợ AIMS Cloud"
+              },
+              "value": {
+                "en": "Optional",
+                "zh": "可选",
+                "vi": "Tùy chọn"
+              }
+            },
+            {
+              "label": {
+                "en": "Upgrade/Retrofit Capable",
+                "zh": "可升级改造",
+                "vi": "Có thể nâng cấp/cải tạo"
+              },
+              "value": {
+                "en": "Available",
+                "zh": "支持",
+                "vi": "Có sẵn"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "shared_accessories": {
+    "description": {
+      "en": "Special fill bulbs available to match lamp spectrum to process; lightshields (standard and custom) for webs, sheets and 3D parts; conveyors up to 6m (20ft) wide; custom design and engineering; cabinet enclosures and racks for multiple power supplies; turnkey system capability; variable power output option.",
+      "zh": "提供特殊填充灯泡，可将灯具光谱与工艺需求匹配；提供标准及定制光屏蔽罩，适用于卷材、片材及3D零件；传送带系统宽度可达6米（20英尺）；提供定制设计与工程服务；提供多电源机柜与机架；支持交钥匙系统方案；可选变功率输出。",
+      "vi": "Cung cấp bóng đèn fill đặc biệt để khớp phổ đèn với quy trình; tấm chắn sáng (tiêu chuẩn và tùy chỉnh) cho cuộn, tấm và linh kiện 3D; băng tải rộng tới 6m (20ft); thiết kế và kỹ thuật tùy chỉnh; tủ và giá đỡ cho nhiều nguồn điện; khả năng hệ thống trọn gói; tùy chọn đầu ra công suất biến thiên."
+    },
+    "warranty": {
+      "en": "8,000-hour warranty (non-prorated) on H bulbs; 6,000-hour warranty (non-prorated) on special fill bulbs.",
+      "zh": "H型灯泡提供8,000小时质保（不按比例折算）；特殊填充灯泡提供6,000小时质保（不按比例折算）。",
+      "vi": "Bảo hành 8.000 giờ (không tính theo tỷ lệ) cho bóng H; bảo hành 6.000 giờ (không tính theo tỷ lệ) cho bóng fill đặc biệt."
+    }
+  },
+  "processing_systems": [
+    {
+      "name": {
+        "en": "Benchtop Conveyor Systems",
+        "zh": "台式传送带系统",
+        "vi": "Hệ thống băng tải để bàn"
+      },
+      "description": {
+        "en": "Ideal for small parts; lamp can rotate, raise and lower; belt speeds 0.6-76 m/min; suited for lab, R&D, pilot plant or production",
+        "zh": "适合小型零件固化；灯具可旋转、升降；传送带速度0.6-76米/分钟；适用于实验室、研发、中试或生产环境",
+        "vi": "Lý tưởng cho linh kiện nhỏ; đèn có thể xoay, nâng hạ; tốc độ băng tải 0.6-76 m/phút; phù hợp phòng thí nghiệm, R&D, thử nghiệm hoặc sản xuất"
+      }
+    },
+    {
+      "name": {
+        "en": "Sheet & Part Handling Systems",
+        "zh": "片材与零件处理系统",
+        "vi": "Hệ thống xử lý tấm và linh kiện"
+      },
+      "description": {
+        "en": "Conveyor widths 5cm-3m, speeds to 150 m/min, Teflon-coated Kevlar/Nomex or stainless steel belts, water-cooled beds and nitrogen inerting available",
+        "zh": "传送带宽度5厘米至3米，速度可达150米/分钟，采用特氟龙涂层Kevlar/Nomex纤维或不锈钢传送带，可选水冷床体与氮气保护",
+        "vi": "Băng tải rộng 5cm-3m, tốc độ đến 150 m/phút, băng phủ Teflon Kevlar/Nomex hoặc thép không gỉ, có giường làm mát bằng nước và khí trơ nitơ"
+      }
+    },
+    {
+      "name": {
+        "en": "Web Systems",
+        "zh": "卷材系统",
+        "vi": "Hệ thống cuộn"
+      },
+      "description": {
+        "en": "15cm to 6m wide, nitrogen inerted to 50 ppm O2 available, purged and pressurized for hazardous locations, full process control integration",
+        "zh": "宽度15厘米至6米，可选氮气保护至50 ppm氧气浓度，支持危险区域吹扫加压，可完整集成工艺控制系统",
+        "vi": "Rộng 15cm đến 6m, có khí trơ nitơ xuống 50 ppm O2, thông khí và tăng áp cho khu vực nguy hiểm, tích hợp đầy đủ điều khiển quy trình"
+      }
+    },
+    {
+      "name": {
+        "en": "Wide-Line Systems",
+        "zh": "宽幅生产线系统",
+        "vi": "Hệ thống dây chuyền rộng"
+      },
+      "description": {
+        "en": "Unlimited widths, 8-meter wide systems in production, excellent uniformity, heat management options, nitrogen-inerted systems available",
+        "zh": "宽度不限，已有8米宽系统投入生产，均匀性优异，提供热管理选项，可选氮气保护系统",
+        "vi": "Độ rộng không giới hạn, hệ thống rộng 8 mét đang sản xuất, độ đồng đều xuất sắc, có tùy chọn quản lý nhiệt, hệ thống khí trơ nitơ"
+      }
+    },
+    {
+      "name": {
+        "en": "Wire, Cable and Fiber Systems",
+        "zh": "线缆与光纤系统",
+        "vi": "Hệ thống dây, cáp và sợi quang"
+      },
+      "description": {
+        "en": "360-degree reflector systems for maximum efficiency, high intensity well-defined sweet spot, nitrogen-inerted systems available, special reflector patented for optical fiber production",
+        "zh": "360度反射器系统实现最高效率，高强度且光斑精准，可选氮气保护系统，专利特殊反射器适用于光纤生产",
+        "vi": "Hệ thống gương phản xạ 360 độ cho hiệu suất tối đa, cường độ cao điểm hội tụ rõ ràng, có hệ thống khí trơ nitơ, gương phản xạ đặc biệt được cấp bằng sáng chế cho sản xuất sợi quang"
+      }
+    },
+    {
+      "name": {
+        "en": "Special Product Handling Systems",
+        "zh": "特殊产品处理系统",
+        "vi": "Hệ thống xử lý sản phẩm đặc biệt"
+      },
+      "description": {
+        "en": "Static exposure chambers, 3D parts curing, rotational or non-rotational cure, robotic parts handling",
+        "zh": "静态曝光腔体、3D零件固化、旋转或非旋转固化、机器人零件搬运",
+        "vi": "Buồng phơi sáng tĩnh, đóng rắn linh kiện 3D, đóng rắn xoay hoặc không xoay, xử lý linh kiện bằng robot"
+      }
+    }
+  ]
+}

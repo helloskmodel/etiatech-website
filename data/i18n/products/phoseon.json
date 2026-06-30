@@ -1,0 +1,1185 @@
+{
+  "brand": "Phoseon",
+  "brand_slug": "phoseon",
+  "products": [
+    {
+      "model": "VeriCure",
+      "slug": "product/phoseon/vericure",
+      "category": {
+        "en": "Water-cooled UV LED Curing",
+        "zh": "水冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng nước"
+      },
+      "name": {
+        "en": "Phoseon VeriCure™",
+        "zh": "Phoseon VeriCure™",
+        "vi": "Phoseon VeriCure™"
+      },
+      "description": {
+        "en": "A water-cooled UV LED system delivering ultra-high UV dose in a wide lamp format, up to 500 mJ/cm2 dose at 50mm working distance. Offers quiet operation and rugged reliability in tough environments, with Ethernet and analog communications. Well suited to high performance applications such as wood coatings.",
+        "zh": "水冷式UV LED系统，以宽幅灯具形式提供超高UV剂量，工作距离50毫米时剂量最高可达500 mJ/cm²。运行安静，在恶劣环境下坚固可靠，支持以太网与模拟通信。适用于木材涂层等高性能应用场景。",
+        "vi": "Hệ thống UV LED làm mát bằng nước cung cấp liều UV siêu cao ở định dạng đèn rộng, đạt tới 500 mJ/cm² ở khoảng cách làm việc 50mm. Vận hành êm ái và độ bền cao trong môi trường khắc nghiệt, hỗ trợ giao tiếp Ethernet và tương tự. Phù hợp cho ứng dụng hiệu suất cao như sơn phủ gỗ."
+      },
+      "features": [
+        {
+          "en": "Ultra-high UV dose up to 500 mJ/cm2 at 50mm working distance",
+          "zh": "超高UV剂量，50毫米工作距离下最高可达500 mJ/cm²",
+          "vi": "Liều UV siêu cao lên đến 500 mJ/cm² ở khoảng cách làm việc 50mm"
+        },
+        {
+          "en": "Quiet operation, rugged and reliable in tough environments",
+          "zh": "运行安静，在恶劣环境下坚固可靠",
+          "vi": "Vận hành êm ái, bền bỉ và đáng tin cậy trong môi trường khắc nghiệt"
+        },
+        {
+          "en": "Ethernet and analog communications, easy mounting with common form factor",
+          "zh": "支持以太网与模拟通信，采用通用结构便于安装",
+          "vi": "Giao tiếp Ethernet và tương tự, dễ lắp đặt với kích thước tiêu chuẩn"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "VeriCure",
+            "zh": "VeriCure",
+            "vi": "VeriCure"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "1350 x 20 mm",
+                "zh": "1350 x 20 毫米",
+                "vi": "1350 x 20 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "95W",
+                "zh": "95瓦",
+                "vi": "95W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Water-cooled",
+                "zh": "水冷式",
+                "vi": "Làm mát bằng nước"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Nexus II AC",
+      "slug": "product/phoseon/nexus-ii-ac",
+      "category": {
+        "en": "Air-cooled UV LED Curing",
+        "zh": "风冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng khí"
+      },
+      "name": {
+        "en": "Phoseon Nexus II™ AC",
+        "zh": "Phoseon Nexus II™ AC",
+        "vi": "Phoseon Nexus II™ AC"
+      },
+      "description": {
+        "en": "An air-cooled UV LED system with reduced routine maintenance and no chiller needed, offering Ethernet communications and easy mounting with a common form factor. Well suited to flexographic printing applications.",
+        "zh": "风冷式UV LED系统，日常维护需求更低，无需配置冷水机，支持以太网通信，采用通用结构便于安装。适用于柔印等印刷应用场景。",
+        "vi": "Hệ thống UV LED làm mát bằng khí giảm bảo trì định kỳ và không cần máy làm lạnh, hỗ trợ giao tiếp Ethernet và dễ lắp đặt với kích thước tiêu chuẩn. Phù hợp cho ứng dụng in flexo."
+      },
+      "features": [
+        {
+          "en": "No chiller needed, reduced routine maintenance",
+          "zh": "无需冷水机，日常维护需求降低",
+          "vi": "Không cần máy làm lạnh, giảm bảo trì định kỳ"
+        },
+        {
+          "en": "Ethernet communications, easy mounting with common form factor",
+          "zh": "支持以太网通信，通用结构便于安装",
+          "vi": "Giao tiếp Ethernet, dễ lắp đặt với kích thước tiêu chuẩn"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "Nexus II AC",
+            "zh": "Nexus II AC",
+            "vi": "Nexus II AC"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "300 / 375 / 450 / 525 / 600 x 20 mm",
+                "zh": "300 / 375 / 450 / 525 / 600 x 20 毫米",
+                "vi": "300 / 375 / 450 / 525 / 600 x 20 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "90W",
+                "zh": "90瓦",
+                "vi": "90W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Air-cooled",
+                "zh": "风冷式",
+                "vi": "Làm mát bằng khí"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Nexus II WC",
+      "slug": "product/phoseon/nexus-ii-wc",
+      "category": {
+        "en": "Water-cooled UV LED Curing",
+        "zh": "水冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng nước"
+      },
+      "name": {
+        "en": "Phoseon Nexus II™ WC",
+        "zh": "Phoseon Nexus II™ WC",
+        "vi": "Phoseon Nexus II™ WC"
+      },
+      "description": {
+        "en": "A water-cooled high power UV LED system offering quiet operation and rugged reliability in tough environments, with Ethernet communications and easy mounting with a common form factor. Well suited to flexographic printing applications.",
+        "zh": "水冷式高功率UV LED系统，运行安静，在恶劣环境下坚固可靠，支持以太网通信，采用通用结构便于安装。适用于柔印等印刷应用场景。",
+        "vi": "Hệ thống UV LED công suất cao làm mát bằng nước, vận hành êm ái và bền bỉ trong môi trường khắc nghiệt, hỗ trợ giao tiếp Ethernet và dễ lắp đặt với kích thước tiêu chuẩn. Phù hợp cho ứng dụng in flexo."
+      },
+      "features": [
+        {
+          "en": "High power output with quiet operation",
+          "zh": "高功率输出，运行安静",
+          "vi": "Công suất đầu ra cao với vận hành êm ái"
+        },
+        {
+          "en": "Rugged and reliable in tough industrial environments",
+          "zh": "在恶劣工业环境下坚固可靠",
+          "vi": "Bền bỉ và đáng tin cậy trong môi trường công nghiệp khắc nghiệt"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "Nexus II WC",
+            "zh": "Nexus II WC",
+            "vi": "Nexus II WC"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "300 / 375 / 450 / 525 / 600 x 20 mm",
+                "zh": "300 / 375 / 450 / 525 / 600 x 20 毫米",
+                "vi": "300 / 375 / 450 / 525 / 600 x 20 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "90W",
+                "zh": "90瓦",
+                "vi": "90W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Water-cooled",
+                "zh": "水冷式",
+                "vi": "Làm mát bằng nước"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FireJet ONE",
+      "slug": "product/phoseon/firejet-one",
+      "category": {
+        "en": "Air-cooled UV LED Curing",
+        "zh": "风冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng khí"
+      },
+      "name": {
+        "en": "Phoseon FireJet™ ONE",
+        "zh": "Phoseon FireJet™ ONE",
+        "vi": "Phoseon FireJet™ ONE"
+      },
+      "description": {
+        "en": "An air-cooled UV LED system with TargetCure and WhisperCure technology, offering high irradiance in a small, scalable form factor with optional Ethernet communication.",
+        "zh": "风冷式UV LED系统，搭载TargetCure与WhisperCure技术，体积小巧、可扩展，提供高辐照度，并支持可选以太网通信。",
+        "vi": "Hệ thống UV LED làm mát bằng khí với công nghệ TargetCure và WhisperCure, mang lại độ rọi cao trong kích thước nhỏ gọn, có thể mở rộng, với giao tiếp Ethernet tùy chọn."
+      },
+      "features": [
+        {
+          "en": "TargetCure and WhisperCure technology",
+          "zh": "搭载TargetCure与WhisperCure技术",
+          "vi": "Công nghệ TargetCure và WhisperCure"
+        },
+        {
+          "en": "High irradiance in a small, scalable form factor",
+          "zh": "体积小巧可扩展，辐照度高",
+          "vi": "Độ rọi cao trong kích thước nhỏ gọn, có thể mở rộng"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FireJet ONE",
+            "zh": "FireJet ONE",
+            "vi": "FireJet ONE"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "75 / 150 / 225 / 300 / 375 x 20 mm",
+                "zh": "75 / 150 / 225 / 300 / 375 x 20 毫米",
+                "vi": "75 / 150 / 225 / 300 / 375 x 20 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "12 W/cm2",
+                "zh": "12 W/cm²",
+                "vi": "12 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "20 W/cm2",
+                "zh": "20 W/cm²",
+                "vi": "20 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "70W",
+                "zh": "70瓦",
+                "vi": "70W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Air-cooled",
+                "zh": "风冷式",
+                "vi": "Làm mát bằng khí"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FJ100",
+      "slug": "product/phoseon/fj100",
+      "category": {
+        "en": "Air-cooled UV LED Curing",
+        "zh": "风冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng khí"
+      },
+      "name": {
+        "en": "Phoseon FJ100",
+        "zh": "Phoseon FJ100",
+        "vi": "Phoseon FJ100"
+      },
+      "description": {
+        "en": "An air-cooled, scalable UV LED system with TargetCure and WhisperCure technology, digital/analog control, and optional Ethernet communication for high irradiance curing applications.",
+        "zh": "风冷式、可扩展的UV LED系统，搭载TargetCure与WhisperCure技术，支持数字/模拟控制及可选以太网通信，适用于高辐照度固化应用。",
+        "vi": "Hệ thống UV LED làm mát bằng khí, có thể mở rộng với công nghệ TargetCure và WhisperCure, điều khiển số/tương tự, và giao tiếp Ethernet tùy chọn cho ứng dụng đóng rắn độ rọi cao."
+      },
+      "features": [
+        {
+          "en": "TargetCure and WhisperCure technology",
+          "zh": "搭载TargetCure与WhisperCure技术",
+          "vi": "Công nghệ TargetCure và WhisperCure"
+        },
+        {
+          "en": "Digital/analog control with optional Ethernet communication",
+          "zh": "支持数字/模拟控制及可选以太网通信",
+          "vi": "Điều khiển số/tương tự với giao tiếp Ethernet tùy chọn"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FJ100",
+            "zh": "FJ100",
+            "vi": "FJ100"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "75 / 150 / 225 / 300 / 375 x 20 mm",
+                "zh": "75 / 150 / 225 / 300 / 375 x 20 毫米",
+                "vi": "75 / 150 / 225 / 300 / 375 x 20 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "8 W/cm2",
+                "zh": "8 W/cm²",
+                "vi": "8 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "16 W/cm2",
+                "zh": "16 W/cm²",
+                "vi": "16 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "53W",
+                "zh": "53瓦",
+                "vi": "53W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Air-cooled",
+                "zh": "风冷式",
+                "vi": "Làm mát bằng khí"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FJ240",
+      "slug": "product/phoseon/fj240",
+      "category": {
+        "en": "Air-cooled UV LED Curing",
+        "zh": "风冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng khí"
+      },
+      "name": {
+        "en": "Phoseon FJ240",
+        "zh": "Phoseon FJ240",
+        "vi": "Phoseon FJ240"
+      },
+      "description": {
+        "en": "An air-cooled, scalable UV LED system featuring TargetCure technology and high dose output, with digital/analog control and optional Ethernet communication.",
+        "zh": "风冷式、可扩展的UV LED系统，搭载TargetCure技术，提供高剂量输出，支持数字/模拟控制及可选以太网通信。",
+        "vi": "Hệ thống UV LED làm mát bằng khí, có thể mở rộng với công nghệ TargetCure và đầu ra liều cao, điều khiển số/tương tự và giao tiếp Ethernet tùy chọn."
+      },
+      "features": [
+        {
+          "en": "High dose output with TargetCure technology",
+          "zh": "搭载TargetCure技术，提供高剂量输出",
+          "vi": "Đầu ra liều cao với công nghệ TargetCure"
+        },
+        {
+          "en": "Scalable design with digital/analog control",
+          "zh": "可扩展设计，支持数字/模拟控制",
+          "vi": "Thiết kế mở rộng với điều khiển số/tương tự"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FJ240",
+            "zh": "FJ240",
+            "vi": "FJ240"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "75 / 150 / 225 / 300 x 40 mm",
+                "zh": "75 / 150 / 225 / 300 x 40 毫米",
+                "vi": "75 / 150 / 225 / 300 x 40 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "8 W/cm2",
+                "zh": "8 W/cm²",
+                "vi": "8 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "16 W/cm2",
+                "zh": "16 W/cm²",
+                "vi": "16 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "130W",
+                "zh": "130瓦",
+                "vi": "130W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Air-cooled",
+                "zh": "风冷式",
+                "vi": "Làm mát bằng khí"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FJ801",
+      "slug": "product/phoseon/fj801",
+      "category": {
+        "en": "Air-cooled UV LED Area Curing",
+        "zh": "风冷式UV LED面固化系统",
+        "vi": "Đóng rắn UV LED diện tích, làm mát bằng khí"
+      },
+      "name": {
+        "en": "Phoseon FJ801",
+        "zh": "Phoseon FJ801",
+        "vi": "Phoseon FJ801"
+      },
+      "description": {
+        "en": "An air-cooled UV LED area curing system featuring TargetCure technology, exceptional uniformity, and a separate controller, designed for area curing applications.",
+        "zh": "风冷式UV LED面固化系统，搭载TargetCure技术，均匀性卓越，配备独立控制器，专为面固化应用设计。",
+        "vi": "Hệ thống đóng rắn diện tích UV LED làm mát bằng khí với công nghệ TargetCure, độ đồng đều vượt trội, và bộ điều khiển riêng, được thiết kế cho ứng dụng đóng rắn diện tích."
+      },
+      "features": [
+        {
+          "en": "Exceptional uniformity for area curing applications",
+          "zh": "面固化应用中均匀性卓越",
+          "vi": "Độ đồng đều vượt trội cho ứng dụng đóng rắn diện tích"
+        },
+        {
+          "en": "Separate controller, scalable design",
+          "zh": "配备独立控制器，可扩展设计",
+          "vi": "Bộ điều khiển riêng, thiết kế mở rộng"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FJ801",
+            "zh": "FJ801",
+            "vi": "FJ801"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Window",
+                "zh": "发光窗口",
+                "vi": "Cửa sổ phát quang"
+              },
+              "value": {
+                "en": "100 x 100 mm",
+                "zh": "100 x 100 毫米",
+                "vi": "100 x 100 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "1.2 W/cm2",
+                "zh": "1.2 W/cm²",
+                "vi": "1.2 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "1.7 W/cm2",
+                "zh": "1.7 W/cm²",
+                "vi": "1.7 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power",
+                "zh": "UV功率",
+                "vi": "Công suất UV"
+              },
+              "value": {
+                "en": "42W",
+                "zh": "42瓦",
+                "vi": "42W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Air-cooled",
+                "zh": "风冷式",
+                "vi": "Làm mát bằng khí"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FireEdge FE410",
+      "slug": "product/phoseon/fe410",
+      "category": {
+        "en": "Air-cooled UV LED Curing",
+        "zh": "风冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng khí"
+      },
+      "name": {
+        "en": "Phoseon FireEdge™ FE410",
+        "zh": "Phoseon FireEdge™ FE410",
+        "vi": "Phoseon FireEdge™ FE410"
+      },
+      "description": {
+        "en": "An air-cooled UV LED system with TargetCure and WhisperCure technology delivering full cure, optics options, analog control, and a small form factor.",
+        "zh": "风冷式UV LED系统，搭载TargetCure与WhisperCure技术，实现完全固化，提供光学选配方案，支持模拟控制，体积小巧。",
+        "vi": "Hệ thống UV LED làm mát bằng khí với công nghệ TargetCure và WhisperCure mang lại đóng rắn hoàn toàn, tùy chọn quang học, điều khiển tương tự, và kích thước nhỏ gọn."
+      },
+      "features": [
+        {
+          "en": "Full cure with TargetCure and WhisperCure technology",
+          "zh": "搭载TargetCure与WhisperCure技术，实现完全固化",
+          "vi": "Đóng rắn hoàn toàn với công nghệ TargetCure và WhisperCure"
+        },
+        {
+          "en": "Optics options available, small form factor",
+          "zh": "提供光学选配方案，体积小巧",
+          "vi": "Có tùy chọn quang học, kích thước nhỏ gọn"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FE410",
+            "zh": "FE410",
+            "vi": "FE410"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "80 / 120 / 160 / 180 / 240 x 10 mm",
+                "zh": "80 / 120 / 160 / 180 / 240 x 10 毫米",
+                "vi": "80 / 120 / 160 / 180 / 240 x 10 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "6 W/cm2",
+                "zh": "6 W/cm²",
+                "vi": "6 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "10 W/cm2",
+                "zh": "10 W/cm²",
+                "vi": "10 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "20W",
+                "zh": "20瓦",
+                "vi": "20W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Air-cooled",
+                "zh": "风冷式",
+                "vi": "Làm mát bằng khí"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FireEdge FE100",
+      "slug": "product/phoseon/fe100",
+      "category": {
+        "en": "Air-cooled UV LED Curing",
+        "zh": "风冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng khí"
+      },
+      "name": {
+        "en": "Phoseon FireEdge™ FE100",
+        "zh": "Phoseon FireEdge™ FE100",
+        "vi": "Phoseon FireEdge™ FE100"
+      },
+      "description": {
+        "en": "A natural convection-cooled UV LED system with WhisperCure technology, a thin form factor, and analog control, designed for pinning and gelling applications.",
+        "zh": "采用自然对流冷却的UV LED系统，搭载WhisperCure技术，机身轻薄，支持模拟控制，专为点固化与凝胶化应用设计。",
+        "vi": "Hệ thống UV LED làm mát bằng đối lưu tự nhiên với công nghệ WhisperCure, kích thước mỏng, và điều khiển tương tự, được thiết kế cho ứng dụng định hình và đông gel."
+      },
+      "features": [
+        {
+          "en": "Natural convection cooling, no fan required",
+          "zh": "自然对流冷却，无需风扇",
+          "vi": "Làm mát đối lưu tự nhiên, không cần quạt"
+        },
+        {
+          "en": "Thin form factor designed for pinning and gelling",
+          "zh": "机身轻薄，专为点固化与凝胶化设计",
+          "vi": "Kích thước mỏng, thiết kế cho định hình và đông gel"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FE100",
+            "zh": "FE100",
+            "vi": "FE100"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "80 / 120 / 180 / 240 x 10 mm",
+                "zh": "80 / 120 / 180 / 240 x 10 毫米",
+                "vi": "80 / 120 / 180 / 240 x 10 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "1 W/cm2",
+                "zh": "1 W/cm²",
+                "vi": "1 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "2 W/cm2",
+                "zh": "2 W/cm²",
+                "vi": "2 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "3W",
+                "zh": "3瓦",
+                "vi": "3W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Natural convection (air-cooled)",
+                "zh": "自然对流（风冷式）",
+                "vi": "Đối lưu tự nhiên (làm mát bằng khí)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FireLine FL440",
+      "slug": "product/phoseon/fl440",
+      "category": {
+        "en": "Water-cooled UV LED Curing",
+        "zh": "水冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng nước"
+      },
+      "name": {
+        "en": "Phoseon FireLine™ FL440",
+        "zh": "Phoseon FireLine™ FL440",
+        "vi": "Phoseon FireLine™ FL440"
+      },
+      "description": {
+        "en": "A water-cooled, scalable UV LED system delivering high dose and high irradiance with digital/analog control, suited for high performance curing applications with optional Ethernet communication.",
+        "zh": "水冷式、可扩展的UV LED系统，提供高剂量与高辐照度，支持数字/模拟控制，适用于高性能固化应用，并支持可选以太网通信。",
+        "vi": "Hệ thống UV LED làm mát bằng nước, có thể mở rộng, mang lại liều cao và độ rọi cao với điều khiển số/tương tự, phù hợp cho ứng dụng đóng rắn hiệu suất cao với giao tiếp Ethernet tùy chọn."
+      },
+      "features": [
+        {
+          "en": "High dose and high irradiance output",
+          "zh": "提供高剂量与高辐照度输出",
+          "vi": "Đầu ra liều cao và độ rọi cao"
+        },
+        {
+          "en": "Suited for high performance curing applications",
+          "zh": "适用于高性能固化应用",
+          "vi": "Phù hợp cho ứng dụng đóng rắn hiệu suất cao"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FL440",
+            "zh": "FL440",
+            "vi": "FL440"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "150 / 225 / 250 / 300 x 40 mm",
+                "zh": "150 / 225 / 250 / 300 x 40 毫米",
+                "vi": "150 / 225 / 250 / 300 x 40 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "12 W/cm2",
+                "zh": "12 W/cm²",
+                "vi": "12 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "16 W/cm2",
+                "zh": "16 W/cm²",
+                "vi": "16 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "150W",
+                "zh": "150瓦",
+                "vi": "150W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Water-cooled",
+                "zh": "水冷式",
+                "vi": "Làm mát bằng nước"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FireLine FL400 / FL400SLD",
+      "slug": "product/phoseon/fl400",
+      "category": {
+        "en": "Water-cooled UV LED Curing",
+        "zh": "水冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng nước"
+      },
+      "name": {
+        "en": "Phoseon FireLine™ FL400 / FL400SLD",
+        "zh": "Phoseon FireLine™ FL400 / FL400SLD",
+        "vi": "Phoseon FireLine™ FL400 / FL400SLD"
+      },
+      "description": {
+        "en": "A water-cooled, scalable UV LED system with digital/analog control, designed for high performance curing applications with optional Ethernet communication.",
+        "zh": "水冷式、可扩展的UV LED系统，支持数字/模拟控制，专为高性能固化应用设计，并支持可选以太网通信。",
+        "vi": "Hệ thống UV LED làm mát bằng nước, có thể mở rộng với điều khiển số/tương tự, được thiết kế cho ứng dụng đóng rắn hiệu suất cao với giao tiếp Ethernet tùy chọn."
+      },
+      "features": [
+        {
+          "en": "Scalable design with digital/analog control",
+          "zh": "可扩展设计，支持数字/模拟控制",
+          "vi": "Thiết kế mở rộng với điều khiển số/tương tự"
+        },
+        {
+          "en": "Suited for high performance curing applications",
+          "zh": "适用于高性能固化应用",
+          "vi": "Phù hợp cho ứng dụng đóng rắn hiệu suất cao"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FL400 / FL400SLD",
+            "zh": "FL400 / FL400SLD",
+            "vi": "FL400 / FL400SLD"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "125 / 150 / 225 / 250 / 300 x 20 mm",
+                "zh": "125 / 150 / 225 / 250 / 300 x 20 毫米",
+                "vi": "125 / 150 / 225 / 250 / 300 x 20 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "12 W/cm2",
+                "zh": "12 W/cm²",
+                "vi": "12 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "24 W/cm2",
+                "zh": "24 W/cm²",
+                "vi": "24 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "100W",
+                "zh": "100瓦",
+                "vi": "100W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Water-cooled",
+                "zh": "水冷式",
+                "vi": "Làm mát bằng nước"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "FireLine FL200",
+      "slug": "product/phoseon/fl200",
+      "category": {
+        "en": "Water-cooled UV LED Curing",
+        "zh": "水冷式UV LED固化系统",
+        "vi": "Đóng rắn UV LED làm mát bằng nước"
+      },
+      "name": {
+        "en": "Phoseon FireLine™ FL200",
+        "zh": "Phoseon FireLine™ FL200",
+        "vi": "Phoseon FireLine™ FL200"
+      },
+      "description": {
+        "en": "A water-cooled, scalable, small form factor UV LED system with a separate controller and Ethernet control, designed for compact installation requirements.",
+        "zh": "水冷式、可扩展、体积小巧的UV LED系统，配备独立控制器，支持以太网控制，专为紧凑安装需求设计。",
+        "vi": "Hệ thống UV LED làm mát bằng nước, có thể mở rộng, kích thước nhỏ gọn với bộ điều khiển riêng và điều khiển Ethernet, được thiết kế cho yêu cầu lắp đặt nhỏ gọn."
+      },
+      "features": [
+        {
+          "en": "Small form factor with separate controller",
+          "zh": "体积小巧，配备独立控制器",
+          "vi": "Kích thước nhỏ gọn với bộ điều khiển riêng"
+        },
+        {
+          "en": "Ethernet control for system integration",
+          "zh": "支持以太网控制，便于系统集成",
+          "vi": "Điều khiển Ethernet để tích hợp hệ thống"
+        }
+      ],
+      "specifications": [
+        {
+          "group": {
+            "en": "FL200",
+            "zh": "FL200",
+            "vi": "FL200"
+          },
+          "items": [
+            {
+              "label": {
+                "en": "Emitting Width",
+                "zh": "发光宽度",
+                "vi": "Chiều rộng phát quang"
+              },
+              "value": {
+                "en": "75 / 125 x 10 mm",
+                "zh": "75 / 125 x 10 毫米",
+                "vi": "75 / 125 x 10 mm"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @365nm",
+                "zh": "峰值辐照度 @365nm",
+                "vi": "Độ rọi đỉnh @365nm"
+              },
+              "value": {
+                "en": "10 W/cm2",
+                "zh": "10 W/cm²",
+                "vi": "10 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "Peak Irradiance @385/395/405nm",
+                "zh": "峰值辐照度 @385/395/405nm",
+                "vi": "Độ rọi đỉnh @385/395/405nm"
+              },
+              "value": {
+                "en": "25 W/cm2",
+                "zh": "25 W/cm²",
+                "vi": "25 W/cm²"
+              }
+            },
+            {
+              "label": {
+                "en": "UV Power (per 25mm length)",
+                "zh": "UV功率（每25毫米长度）",
+                "vi": "Công suất UV (mỗi 25mm chiều dài)"
+              },
+              "value": {
+                "en": "30W",
+                "zh": "30瓦",
+                "vi": "30W"
+              }
+            },
+            {
+              "label": {
+                "en": "Cooling",
+                "zh": "冷却方式",
+                "vi": "Làm mát"
+              },
+              "value": {
+                "en": "Water-cooled",
+                "zh": "水冷式",
+                "vi": "Làm mát bằng nước"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "applications": {
+    "printing_packaging": {
+      "en": "Digital inkjet, screen, flexo, offset, 3D; labels and packaging; bottle and tube decorating",
+      "zh": "数字喷墨、丝网、柔版、胶版、3D打印；标签与包装；瓶身与软管装饰",
+      "vi": "In phun kỹ thuật số, lụa, flexo, offset, 3D; nhãn và đóng gói; trang trí chai và ống"
+    },
+    "electronics": {
+      "en": "Protective coatings, electronic potting compounds, marking parts and boards",
+      "zh": "保护涂层、电子灌封料、零件与电路板标识",
+      "vi": "Sơn phủ bảo vệ, hợp chất đổ khuôn điện tử, đánh dấu linh kiện và bo mạch"
+    },
+    "fiber_cable": {
+      "en": "Adhesive bonding of medical devices, medical device coatings, printing on tubes and labels",
+      "zh": "医疗器械粘接、医疗器械涂层、管材与标签印刷",
+      "vi": "Liên kết keo cho thiết bị y tế, sơn phủ thiết bị y tế, in trên ống và nhãn"
+    },
+    "industrial_coatings": {
+      "en": "Wood coatings, metal coatings, glass coatings",
+      "zh": "木材涂层、金属涂层、玻璃涂层",
+      "vi": "Sơn phủ gỗ, sơn phủ kim loại, sơn phủ kính"
+    }
+  }
+}
