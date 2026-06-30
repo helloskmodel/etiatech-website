@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
 import { successStories, caseStudyImage, heroBannerImage, localizeCase, type CaseStudy } from "@/components/caseStudies";
-import { apps, type App } from "@/components/applicationNotes";
+import { apps, localizeApp, localizeIndustry, type App } from "@/components/applicationNotes";
 import CaseStudyModal from "@/components/CaseStudyModal";
-import { useLocale } from "@/components/LocaleContext";
+import { useLocale, t } from "@/components/LocaleContext";
 
 
 const industries = [...new Set(apps.map((a) => a.industry))];
@@ -28,17 +28,17 @@ export default function ApplicationPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>10 Industries · 62 Application Notes</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">Validated Applications.<br /><span style={{ color: "#44B549" }}>Reliable Performance.</span></h1>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "10 Industries · 62 Application Notes", zh: "10大行业 · 62个应用点" }, locale)}</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "Validated Applications.", zh: "验证过的应用。" }, locale)}<br /><span style={{ color: "#44B549" }}>{t({ en: "Reliable Performance.", zh: "可靠的性能。" }, locale)}</span></h1>
           <p className="text-base text-gray-200 mb-8 leading-relaxed">
-            UV curing solutions proven across 10 industries and 62 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.
+            {t({ en: "UV curing solutions proven across 10 industries and 62 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.", zh: "经10大行业、62个应用场景验证的UV固化解决方案——帮助制造商在严苛的生产环境中获得稳定的固化效果。" }, locale)}
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-              Talk to Our Sales
+              {t({ en: "Talk to Our Sales", zh: "联系我们的销售" }, locale)}
             </a>
             <Link href="/product" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
-              Explore Products
+              {t({ en: "Explore Products", zh: "浏览产品" }, locale)}
             </Link>
           </div>
           </div>
@@ -53,7 +53,7 @@ export default function ApplicationPage() {
             className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all ${activeIndustry === "All" ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
             style={activeIndustry === "All" ? { background: "#1A56DB" } : {}}
           >
-            All ({apps.length})
+            {t({ en: "All", zh: "全部" }, locale)} ({apps.length})
           </button>
           {industries.map((ind) => (
             <button
@@ -63,7 +63,7 @@ export default function ApplicationPage() {
               style={activeIndustry === ind ? { background: industryColors[ind] } : {}}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: industryColors[ind] }} />
-              {ind}
+              {localizeIndustry(ind, locale)}
             </button>
           ))}
         </div>
@@ -73,7 +73,9 @@ export default function ApplicationPage() {
       <section className="py-10" style={{ background: "#f5f7fa" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {filtered.map((app) => (
+            {filtered.map((rawApp) => {
+              const app = localizeApp(rawApp, locale);
+              return (
               <button
                 key={app.id}
                 onClick={() => setSelectedApp(app)}
@@ -85,10 +87,10 @@ export default function ApplicationPage() {
                   {/* Badges row */}
                   <div className="flex flex-wrap items-center gap-1.5 mb-3">
                     <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[app.industry] }}>
-                      {app.industry.toUpperCase()}
+                      {localizeIndustry(app.industry, locale).toUpperCase()}
                     </span>
                     <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">{app.product}</span>
-                    {app.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ Hot</span>}
+                    {app.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ {t({ en: "Hot", zh: "热门" }, locale)}</span>}
                   </div>
                   {/* Title */}
                   <h3 className="font-bold text-gray-900 text-sm leading-snug mb-1 group-hover:text-[#1A56DB] transition-colors">{app.title}</h3>
@@ -97,11 +99,12 @@ export default function ApplicationPage() {
                   {/* Footer */}
                   <div className="flex items-center justify-between pt-2 border-t border-gray-50">
                     <span className="text-xs text-gray-300">{app.id}</span>
-                    <span className="text-xs text-[#1A56DB] opacity-0 group-hover:opacity-100 transition-opacity font-medium">View →</span>
+                    <span className="text-xs text-[#1A56DB] opacity-0 group-hover:opacity-100 transition-opacity font-medium">{t({ en: "View →", zh: "查看 →" }, locale)}</span>
                   </div>
                 </div>
               </button>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -109,9 +112,9 @@ export default function ApplicationPage() {
       {/* Customer Success */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Customer Success</p>
-          <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>From Application Know-How to Real Results</h2>
-          <p className="text-gray-500 mb-10 max-w-3xl">Unmatched light-cure expertise — full system solutions where chemistry, material, and equipment work as one.</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Customer Success", zh: "客户成功案例" }, locale)}</p>
+          <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "From Application Know-How to Real Results", zh: "从应用专知到真实成果" }, locale)}</h2>
+          <p className="text-gray-500 mb-10 max-w-3xl">{t({ en: "Unmatched light-cure expertise — full system solutions where chemistry, material, and equipment work as one.", zh: "无可比拟的光固化专业能力——化学、材料与设备协同一体的完整系统解决方案。" }, locale)}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {successStories.map((raw) => {
               const s = localizeCase(raw, locale);
@@ -189,9 +192,9 @@ export default function ApplicationPage() {
             <button onClick={() => setSelectedApp(null)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl leading-none">✕</button>
 
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[selectedApp.industry] }}>{selectedApp.industry.toUpperCase()}</span>
+              <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[selectedApp.industry] }}>{localizeIndustry(selectedApp.industry, locale).toUpperCase()}</span>
               <span className="text-xs text-gray-400">{selectedApp.subCategory}</span>
-              {selectedApp.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ Hot</span>}
+              {selectedApp.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ {t({ en: "Hot", zh: "热门" }, locale)}</span>}
             </div>
             <h2 className="text-xl font-bold mt-2 mb-1 pr-6" style={{ color: "#1A56DB" }}>{selectedApp.title}</h2>
             <p className="text-xs text-gray-400 mb-3">{selectedApp.id}</p>
@@ -199,37 +202,37 @@ export default function ApplicationPage() {
 
             <div className="space-y-3 mb-5">
               <div className="rounded-lg p-4 bg-red-50 border border-red-100">
-                <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">The Challenge</p>
+                <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">{t({ en: "The Challenge", zh: "挑战" }, locale)}</p>
                 <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.challenge}</p>
               </div>
               <div className="rounded-lg p-4 border" style={{ background: "#f0f5ff", borderColor: "#c7d9ff" }}>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#1A56DB" }}>The Solution</p>
+                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#1A56DB" }}>{t({ en: "The Solution", zh: "解决方案" }, locale)}</p>
                 <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.solution}</p>
               </div>
               <div className="rounded-lg p-4 bg-green-50 border border-green-100">
-                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">The Benefit</p>
+                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">{t({ en: "The Benefit", zh: "效益" }, locale)}</p>
                 <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.benefit}</p>
               </div>
               <div className="rounded-lg p-4 border" style={{ background: "#fafafa", borderColor: "#eee" }}>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: industryColors[selectedApp.industry] }}>Technology Highlights</p>
+                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: industryColors[selectedApp.industry] }}>{t({ en: "Technology Highlights", zh: "技术亮点" }, locale)}</p>
                 <ul className="text-sm text-gray-700 leading-relaxed list-disc pl-5 space-y-1">
                   {selectedApp.highlights.map((h, i) => <li key={i}>{h}</li>)}
                 </ul>
               </div>
               <div className="rounded-lg p-4 bg-gray-50 border border-gray-100">
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Recommended System</p>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">{t({ en: "Recommended System", zh: "推荐系统" }, locale)}</p>
                 <p className="text-sm font-semibold" style={{ color: "#1A56DB" }}>{selectedApp.recommended}</p>
               </div>
             </div>
 
-            <Link
-              href="/contact"
+            <a
+              href="mailto:support@etiatech.com?subject=Sales%20Inquiry"
               className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"
               style={{ background: "#2563eb" }}
               onClick={() => setSelectedApp(null)}
             >
-              Talk to Our Sales →
-            </Link>
+              {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}
+            </a>
             </div>
           </div>
         </div>

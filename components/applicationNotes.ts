@@ -99,3 +99,19 @@ export const apps: App[] = [
   { id: "AN-AER-003", industry: "Aerospace & Defense", subCategory: "Airframe Sealing", product: "S2000 Elite (spot) or AC Large (area)", title: "Sealant Cure — Fuel Tank & Airframe", intro: "Airframe joints and integral fuel tank surfaces require validated, leak-free sealant cure for flight-critical integrity.", challenge: "Curing structural and fuel-resistant sealants on airframe joints and fuel tank surfaces requiring validated, leak-free cure.", solution: "OmniCure S2000 Elite for targeted spot sealant cure or AC Large for broader airframe seam area coverage.", benefit: "Leak-free, fuel-resistant seal cure validated for flight-critical airframe integrity.", highlights: ["Spot curing for targeted joint sealant application", "Area curing option for broader airframe seam coverage", "Validated for fuel-resistant, flight-critical seal performance"], recommended: "OmniCure S2000 Elite (spot) or AC Large (area)" },
   { id: "AN-AER-004", industry: "Aerospace & Defense", subCategory: "Space Electronics", product: "S2000 Elite + R2000 Radiometer", title: "Satellite & Space Electronics Encapsulation", intro: "Satellite and space-grade electronics require low-outgassing UV-curable encapsulants meeting NASA ASTM E595 outgassing standards.", challenge: "Encapsulating satellite electronics with low-outgassing materials meeting NASA ASTM E595 outgassing standards.", solution: "OmniCure S2000 Elite with R2000 Radiometer calibration for validated, low-outgassing encapsulant cure documentation.", benefit: "Documented, low-outgassing protection suitable for space-qualified electronics manufacturing.", highlights: ["NIST-traceable calibration supports space-qualification documentation", "Compatible with ASTM E595 low-outgassing encapsulant formulations", "Repeatable process control for space electronics reliability requirements"], recommended: "OmniCure S2000 Elite + R2000 Radiometer" },
 ];
+
+import { appsZh, industryZh } from "./applicationNotes.zh";
+
+// Returns the application note with Chinese fields merged in for the given
+// locale; any field not translated falls back to the English source.
+export function localizeApp(a: App, locale: "en" | "zh" | "vi" | "th"): App {
+  if (locale !== "zh") return a;
+  const zh = appsZh[a.id];
+  return zh ? { ...a, ...zh } : a;
+}
+
+// Localized industry label for filter tabs / badges.
+export function localizeIndustry(industry: string, locale: "en" | "zh" | "vi" | "th"): string {
+  if (locale === "zh") return industryZh[industry] ?? industry;
+  return industry;
+}
