@@ -177,7 +177,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
               {
-                region: "China", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com",
+                region: "China · Shanghai", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com",
                 local: "上海市普陀区中江路388弄国盛中心2号楼1903室",
                 en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China",
               },
@@ -186,12 +186,12 @@ export default function ContactPage() {
                 en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong",
               },
               {
-                region: "Thailand", flag: "🇹🇭", phone: "+66 2 000 0000", email: "support@etiatech.com",
+                region: "Thailand · Bangkok", flag: "🇹🇭", phone: "+66 2 000 0000", email: "support@etiatech.com",
                 local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250",
                 en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand",
               },
               {
-                region: "Vietnam", flag: "🇻🇳", phone: "+84 28 0000 0000", email: "support@etiatech.com",
+                region: "Vietnam · Bac Ninh", flag: "🇻🇳", phone: "+84 28 0000 0000", email: "support@etiatech.com",
                 local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam",
                 en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam",
               },
