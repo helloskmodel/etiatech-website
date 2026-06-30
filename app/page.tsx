@@ -183,8 +183,8 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Case Studies</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>Real Results, Real Manufacturing</h2>
-          <p className="text-gray-500 mb-10">Proven UV curing outcomes — from EV batteries and AI-data-center photonics to medical and aerospace assembly.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>Where Performance Is Proven</h2>
+          <p className="text-gray-500 mb-10">See how our UV curing systems deliver where precision and reliability matter most.</p>
           <CaseStudyCarousel />
           <div className="mt-10 text-center">
             <Link href="/application" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold border-2 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white transition-all">
