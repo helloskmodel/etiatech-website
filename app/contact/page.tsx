@@ -158,9 +158,9 @@ export default function ContactPage() {
                 ))}
               </div>
               <div className="mt-8 p-4 rounded-xl border border-gray-100 bg-white">
-                <p className="text-xs text-gray-400 mb-1">Service Email</p>
-                <a href="mailto:support@etiatech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
-                  support@etiatech.com
+                <p className="text-xs text-gray-400 mb-1">Service Email (Technical Manager)</p>
+                <a href="mailto:guoren_wang@etia-tech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
+                  guoren_wang@etia-tech.com
                 </a>
               </div>
             </div>
@@ -182,21 +182,21 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
               {
-                region: "China · Shanghai", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com",
+                region: "China · Shanghai", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "13579@etia-tech.com",
                 local: "上海市普陀区中江路388弄国盛中心2号楼1903室",
                 en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China",
               },
               {
-                region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "support@etiatech.com",
+                region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "mark_tang@etia-tech.com",
                 en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong",
               },
               {
-                region: "Thailand · Bangkok", flag: "🇹🇭", phone: "+66 2 000 0000", email: "support@etiatech.com",
+                region: "Thailand · Bangkok", flag: "🇹🇭", phone: "+66 2 000 0000", email: "sompoch@etia-tech.com",
                 local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250",
                 en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand",
               },
               {
-                region: "Vietnam · Bac Ninh", flag: "🇻🇳", phone: "+84 28 0000 0000", email: "support@etiatech.com",
+                region: "Vietnam · Bac Ninh", flag: "🇻🇳", phone: "+84 28 0000 0000", email: "ts_vn@etia-tech.com",
                 local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam",
                 en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam",
               },

@@ -123,7 +123,7 @@ export default function CaseStudyModal({
           </div>
 
           <a
-            href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry"
+            href="mailto:support@etiatech.com?subject=Sales%20Inquiry"
             className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"
             style={{ background: "#2563eb" }}
             onClick={onClose}

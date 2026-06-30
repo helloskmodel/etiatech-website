@@ -50,8 +50,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "#1A56DB" }}>{p.name}</h1>
             <p className="text-base text-gray-600 leading-relaxed mb-8">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>Request a Quote</Link>
-              <a href="mailto:guoren_wang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">Talk to an Engineer</a>
+              <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>Request a Quote</a>
+              <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">Talk to an Engineer</a>
             </div>
           </div>
           {/* Product image */}
@@ -121,7 +121,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <h2 className="text-2xl font-bold text-white mb-4">Interested in the {p.name.split(" ").slice(0, 3).join(" ")}?</h2>
           <p className="text-gray-300 mb-8">Our UV curing engineers will match the right configuration to your process — from selection to validation.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>Request a Quote →</Link>
+            <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>Request a Quote →</a>
             <Link href="/product/systems" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">All Systems</Link>
           </div>
         </div>
