@@ -197,7 +197,7 @@ export default function ProductPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Our Brands</p>
-          <h2 className="text-center text-2xl font-bold mb-4" style={{ color: "#1A56DB" }}>4 World-Class Brands · Select to Explore</h2>
+          <h2 className="text-center text-2xl font-bold mb-4" style={{ color: "#1A56DB" }}>4 Product Lines · Leading Technology</h2>
           <div className="text-center mb-8">
             <Link href="/product/systems" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>
               Browse the full product catalog — every system with specs →
