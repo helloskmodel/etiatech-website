@@ -1,31 +1,55 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { FlaskConical, Package, Wrench, ClipboardCheck } from "lucide-react";
 import CaseStudyCarousel from "@/components/CaseStudyCarousel";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 
+export const metadata: Metadata = {
+  title: "ETIA Technology | UV Curing Systems & Solutions Distributor",
+  description:
+    "Authorized distributor of OmniCure, Phoseon, Fusion & NobleLight UV curing systems. 20 years of application expertise, local stock, in-house repair across 10 industries.",
+};
+
 const whyEtia = [
   {
-    icon: "🧠",
+    Icon: FlaskConical,
     title: "Deep Application Expertise",
     desc: "20 years of validated industry cases across 10 industries. From medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
   },
   {
-    icon: "📦",
+    Icon: Package,
     title: "Local Supply & Fast Delivery",
     desc: "Equipment and consumables in local stock. No long lead times, no import surprises — the system you need, when you need it.",
   },
   {
-    icon: "🔧",
+    Icon: Wrench,
     title: "In-House Repair Factory",
     desc: "Our own repair facility with a trained technical team handles maintenance, extended warranty, and urgent repairs — minimizing downtime on your production line.",
   },
   {
-    icon: "💼",
+    Icon: ClipboardCheck,
     title: "Full-Process Consulting Service",
     desc: "From initial selection and application validation to troubleshooting and lifecycle management — our engineers are your partners at every stage of the process.",
   },
 ];
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ETIA Technology",
+  url: "https://www.etiatech.com",
+  logo: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg",
+  description:
+    "Authorized distributor of UV curing systems with 20 years of application expertise.",
+  address: [
+    { "@type": "PostalAddress", addressLocality: "Shanghai", addressCountry: "CN" },
+    { "@type": "PostalAddress", addressLocality: "Hong Kong", addressCountry: "HK" },
+    { "@type": "PostalAddress", addressLocality: "Bangkok", addressCountry: "TH" },
+    { "@type": "PostalAddress", addressLocality: "Bac Ninh", addressCountry: "VN" },
+  ],
+};
 
 const BASE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/homepageproduct";
 
@@ -77,6 +101,10 @@ const techRoutes = [
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       {/* HERO — left-aligned, banner-ready (swap the section background for a banner image later) */}
       <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "#0f2444" }}>
         <HeroBackdrop images={heroBannerImages} />
@@ -117,7 +145,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyEtia.map((item) => (
               <div key={item.title} className="rounded-xl p-6 border border-gray-100 hover:border-[#1A56DB]/30 hover:shadow-md transition-all bg-gray-50">
-                <div className="text-3xl mb-4">{item.icon}</div>
+                <item.Icon className="mb-4" size={32} strokeWidth={1.75} style={{ color: "#1A56DB" }} />
                 <h3 className="font-semibold text-base mb-2" style={{ color: "#1A56DB" }}>{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -165,7 +193,7 @@ export default function Home() {
                 <div className="bg-gray-50 relative flex-1" style={{ minHeight: "120px" }}>
                   <Image
                     src={t.img}
-                    alt={t.label}
+                    alt={`${t.label} from ${t.brands.join(", ")} — ${t.desc}`}
                     fill
                     sizes="(max-width: 768px) 50vw, 16vw"
                     className="object-contain p-3"

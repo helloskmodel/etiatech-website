@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "S2000 Elite | OmniCure UV Curing System | ETIA",
+  description:
+    "OmniCure S2000 Elite — the industry's most advanced lamp-based UV spot curing system. Up to 30 W/cm², closed-loop feedback, 30 ms shutter, Industry 4.0 ready.",
+};
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
 const VIDEO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/VIDEO/OMNICURE%202000%20ENLIGH%20VERSION%20.mp4";

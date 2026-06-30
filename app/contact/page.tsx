@@ -211,12 +211,11 @@ export default function ContactPage() {
                 {c.en && (
                   <p className="text-xs text-gray-400 leading-relaxed mb-2">{c.en}</p>
                 )}
-                <p className="text-sm text-gray-600 mb-1">📞 {c.phone}</p>
                 <a href={`mailto:${c.email}`} className="text-xs hover:underline" style={{ color: "#44B549" }}>{c.email}</a>
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-6">* Phone numbers to be confirmed. Contact us by email for immediate response.</p>
+          <p className="text-xs text-gray-400 mt-6">* Contact us by email for the fastest response — our team typically replies within one business day.</p>
         </div>
       </section>
 
