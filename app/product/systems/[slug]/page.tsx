@@ -51,7 +51,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <p className="text-base text-gray-600 leading-relaxed mb-8">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>Request a Quote</Link>
-              <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">Talk to an Engineer</a>
+              <a href="mailto:guoren_wang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">Talk to an Engineer</a>
             </div>
           </div>
           {/* Product image */}
