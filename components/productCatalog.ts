@@ -1499,6 +1499,7 @@ const productImageFile: Record<string, string> = {
   "s2000-elite": "S2E.png",
   "s1500-pro": "S1500.png",
   "nexus-ii": "nexusII.png",
+  "nexus-ii-ac": "nexusII-air cooled.png",
   "fl200": "fl200.png",
   "fl400": "fl400.png",
   "fl400-i": "fl400i.png",
