@@ -182,7 +182,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
               {
-                region: "China · Shanghai", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "support@etiatech.com",
+                region: "China · Shanghai", flag: "🇨🇳", phone: "+86 10 0000 0000", email: "13579@etia-tech.com",
                 local: "上海市普陀区中江路388弄国盛中心2号楼1903室",
                 en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China",
               },
