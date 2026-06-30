@@ -21,6 +21,20 @@ export const industryImage: Record<string, string> = Object.fromEntries(
   Object.entries(slug).map(([k, v]) => [k, `${BASE}/${v}.png`])
 );
 
+// Accent color per industry — shared by the Application page and home carousel.
+export const industryColors: Record<string, string> = {
+  "Medical Device": "#e11d48",
+  "Automotive": "#1e3a5f",
+  "Electronics & Semiconductor": "#1A56DB",
+  "Optical Fiber & Cable": "#0d9488",
+  "Optics & Optical Assembly": "#7c3aed",
+  "UV Printing": "#d97706",
+  "Wood Coatings": "#16a34a",
+  "Metal Coatings": "#92400e",
+  "Aerospace": "#475569",
+  "Photonics & Advanced Packaging": "#0891b2",
+};
+
 // Clean line-icon fallback, used if a photo is missing.
 export const industryFallbackIcon: Record<string, LucideIcon> = {
   "Medical Device": HeartPulse,

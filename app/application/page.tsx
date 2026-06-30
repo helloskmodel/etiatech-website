@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { industryImage, industryFallbackIcon } from "@/components/industryMedia";
+import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
+import { successStories, caseStudyImage, type CaseStudy } from "@/components/caseStudies";
 
 type App = {
   id: string;
@@ -97,100 +98,6 @@ const apps: App[] = [
 
 const industries = [...new Set(apps.map((a) => a.industry))];
 
-const industryColors: Record<string, string> = {
-  "Medical Device": "#e11d48",
-  "Automotive": "#1e3a5f",
-  "Electronics & Semiconductor": "#1A56DB",
-  "Optical Fiber & Cable": "#0d9488",
-  "Optics & Optical Assembly": "#7c3aed",
-  "UV Printing": "#d97706",
-  "Wood Coatings": "#16a34a",
-  "Metal Coatings": "#92400e",
-  "Aerospace": "#475569",
-  "Photonics & Advanced Packaging": "#0891b2",
-};
-
-type CaseStudy = {
-  id: string;
-  industry: string;
-  company: string;
-  title: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  keywords: string[];
-  metric: string;
-  metricLabel: string;
-  source: string;
-};
-
-const successStories: CaseStudy[] = [
-  {
-    id: "CS-001",
-    industry: "Electronics & Semiconductor",
-    company: "PCB Manufacturer",
-    title: "PCB Silkscreen & Solder Mask Printing",
-    challenge: "Increasing PCB silkscreen and solder mask printing demands required a stable, consistent UV curing solution capable of sustaining quality over extended high-volume production runs. Inconsistent cure from aging lamp systems caused yield variation and unplanned downtime.",
-    solution: "Phoseon FireJet FJ100 Air-Cooled UV LED system (OmniCure AC series equivalent) deployed on PCB printing line. LED technology delivers consistent irradiance with zero warm-up time, eliminating lamp-aging drift. Instant on/off control reduces energy consumption during line stops.",
-    results: "Stable solder mask and silkscreen printing maintained across full extended production runs. Yield variation eliminated. Throughput increased and planned maintenance intervals extended significantly vs. lamp-based predecessor system.",
-    keywords: ["PCB Silkscreen & Solder Mask", "Phoseon FireJet FJ100", "Air-Cooled UV LED", "Zero Warm-Up", "Yield Variation Eliminated"],
-    metric: "↑ Throughput",
-    metricLabel: "Yield variation eliminated. Uptime improved.",
-    source: "Excelitas Case Study",
-  },
-  {
-    id: "CS-002",
-    industry: "Medical Device",
-    company: "Cardiovascular Device OEM",
-    title: "Balloon Catheter UV Spot Curing",
-    challenge: "A cardiovascular device OEM required repeatable UV spot curing across multiple parallel production lines for balloon catheter tip bonding. The critical challenge was ensuring identical UV dose on every unit across all lines, and generating a full FDA-compliant process validation audit trail with NIST-traceable calibration records.",
-    solution: "OmniCure S2000 Elite with CLF (Closed Loop Feedback) intensity control, Cure Ring attachment for 360° balloon tip irradiance, R2000 Radiometer for NIST-traceable dose measurement, and Intelli-Tap NFC logging. CLF ensures dose stays within ±5% regardless of lamp age.",
-    results: "Identical UV dose confirmed across all production lines. Full NIST-traceable calibration records generated per unit. Process validation package supported 510(k) submission with complete dose traceability. Zero rework attributable to UV cure inconsistency.",
-    keywords: ["Balloon Catheter Bonding", "OmniCure S2000 Elite", "CLF ±5% Dose Control", "NIST-Traceable", "510(k) Validation"],
-    metric: "100% Traceability",
-    metricLabel: "510(k) submission supported. Zero rework from cure inconsistency.",
-    source: "Excelitas Application Note: Bonding of Balloon Catheters (Feb 2026)",
-  },
-  {
-    id: "CS-003",
-    industry: "Automotive",
-    company: "EV Battery Module Supplier",
-    title: "EV Battery Cell Structural Bonding",
-    challenge: "An EV battery module supplier needed to accelerate structural adhesive bonding of battery cell tabs and pack components to meet increasing production volume targets. Thermal-only cure processes required 30–60 minute oven cycles that created assembly line bottlenecks.",
-    solution: "OmniCure AC7/AC8 LED Large-Area curing system deployed inline with UV + dual-cure adhesive formulation. UV cure achieves immediate handling strength in seconds; secondary thermal or moisture cure completes bonding in shadow zones. Zero warm-up, PLC-triggered, inline integration with existing assembly conveyor.",
-    results: "60% cycle time reduction vs. thermal-only process. Zero VOC emissions from UV-curable adhesive system. Improved cell alignment consistency due to immediate-fixture UV snap-cure. Production throughput scaled to meet EV ramp targets.",
-    keywords: ["EV Battery Cell Bonding", "OmniCure AC7/AC8 LED", "UV Dual-Cure Adhesive", "60% Faster Cycle", "Zero VOC"],
-    metric: "60% Faster",
-    metricLabel: "Cycle time cut by 60%. Zero VOC. Output scaled to meet EV ramp.",
-    source: "Excelitas Application Note: UV Curing for EV Battery Manufacturing",
-  },
-  {
-    id: "CS-004",
-    industry: "Optics & Optical Assembly",
-    company: "Automotive Camera Module Manufacturer",
-    title: "ADAS Camera Module Active Alignment",
-    challenge: "An automotive Tier 1 supplier manufacturing ADAS camera modules required sub-micron lens alignment accuracy to be maintained throughout the UV cure step. The previous broad-spectrum lamp system introduced thermal warm-up drift that destabilised the 6-axis active alignment platform, causing MTF failures at final test.",
-    solution: "OmniCure LX500 V2 UV LED spot curing system (365 nm, 0 ms warm-up) with StepCure® 2.0 ramped cure profile. Integrated directly with the 6-axis active alignment platform. Zero warm-up eliminates thermal drift. StepCure® ramp controls adhesive shrinkage rate during cure to prevent lens position shift.",
-    results: "Sub-micron alignment (≤0.5 µm) maintained through full cure cycle. 35% faster cycle time vs. lamp predecessor system. 100% of modules meet MTF specification at final test — MTF failure rate from cure-induced misalignment reduced to zero.",
-    keywords: ["ADAS Camera Alignment", "OmniCure LX500 V2", "365 nm · 0 ms Warm-Up", "StepCure® 2.0", "Sub-Micron ≤0.5µm"],
-    metric: "≤0.5µm",
-    metricLabel: "Sub-micron alignment. 35% faster cycle. MTF failures from cure → zero.",
-    source: "ETIA Application Knowledge Base (Excelitas OmniCure documentation)",
-  },
-  {
-    id: "CS-005",
-    industry: "Wood Coatings",
-    company: "Major Furniture Panel Manufacturer",
-    title: "UV Lacquer Line — Furniture Panel Finishing",
-    challenge: "A large furniture panel manufacturer was operating a traditional solvent-based lacquer finishing line requiring 30–60 minute drying time per coating layer, high VOC emissions requiring costly extraction infrastructure, and a maximum throughput of 150 panels per hour.",
-    solution: "OmniCure AC7 LED Large-Area system installed on conveyor finishing line with UV-curable primer, sealer, and topcoat system (solvent-free formulation). Multi-pass UV cure replaces oven drying at each coat stage. LED system provides instant cure with zero warm-up and low heat output compatible with MDF substrate.",
-    results: "Cure time per coat: 30–60 minutes → <30 seconds. VOC emissions eliminated. Throughput: 150 panels/hour → 400+ panels/hour. Scratch resistance improved 40% vs. solvent lacquer. Energy cost per m² reduced through LED efficiency.",
-    keywords: ["Furniture Panel Finishing", "OmniCure AC7 LED", "Solvent-Free UV Lacquer", "150 → 400+ panels/hr", "VOC Eliminated"],
-    metric: "167% Throughput",
-    metricLabel: "150 → 400+ panels/hr. Cure: 45 min → 30 sec. VOC eliminated.",
-    source: "ETIA Application Knowledge Base (Excelitas OmniCure + wood coatings industry data)",
-  },
-];
 
 export default function ApplicationPage() {
   const [activeIndustry, setActiveIndustry] = useState<string>("All");
