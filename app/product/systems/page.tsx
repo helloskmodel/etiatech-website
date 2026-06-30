@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { products, technologies, productHref, productImage, brandAccent } from "@/components/productCatalog";
 
 export const metadata: Metadata = {
@@ -50,11 +51,11 @@ export default function AllSystemsPage() {
                       href={productHref(p)}
                       className="rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-all bg-white flex flex-col group"
                     >
-                      <div className="relative h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                      <div className="relative h-40 overflow-hidden bg-gray-50">
                         {productImage(p) ? (
-                          <img src={productImage(p)} alt={p.name} className="object-contain max-h-full w-full group-hover:scale-105 transition-transform duration-300" />
+                          <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-contain p-4 group-hover:scale-105 transition-transform duration-300" />
                         ) : (
-                          <span className="text-sm font-semibold text-center px-3" style={{ color: brandAccent[p.brandId] }}>{p.brand}</span>
+                          <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-center px-3" style={{ color: brandAccent[p.brandId] }}>{p.brand}</span>
                         )}
                         <span className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded text-white" style={{ background: brandAccent[p.brandId] }}>{p.brand}</span>
                       </div>

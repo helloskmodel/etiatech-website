@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import CaseStudyCarousel from "@/components/CaseStudyCarousel";
 
 const whyEtia = [
@@ -159,12 +160,13 @@ export default function Home() {
                   {t.label}
                 </div>
                 {/* Product image */}
-                <div className="bg-gray-50 flex items-center justify-center p-3 flex-1" style={{ minHeight: "120px" }}>
-                  <img
+                <div className="bg-gray-50 relative flex-1" style={{ minHeight: "120px" }}>
+                  <Image
                     src={t.img}
                     alt={t.label}
-                    className="object-contain w-full"
-                    style={{ maxHeight: "110px" }}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 16vw"
+                    className="object-contain p-3"
                   />
                 </div>
               </div>

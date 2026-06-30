@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { products, getProduct, productImage, brandAccent } from "@/components/productCatalog";
 
@@ -54,11 +55,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
           {/* Product image */}
-          <div className="rounded-2xl bg-white border border-gray-200 shadow-sm p-6 flex items-center justify-center" style={{ minHeight: "300px" }}>
+          <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
             {productImage(p) ? (
-              <img src={productImage(p)} alt={p.name} className="object-contain w-full" style={{ maxHeight: "360px" }} />
+              <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" priority />
             ) : (
-              <span className="text-lg font-bold" style={{ color: accent }}>{p.brand}</span>
+              <span className="absolute inset-0 flex items-center justify-center text-lg font-bold" style={{ color: accent }}>{p.brand}</span>
             )}
           </div>
         </div>
