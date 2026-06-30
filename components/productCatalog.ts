@@ -15,6 +15,8 @@ export type Product = {
   specs: [string, string][];
   // Optional override link (e.g. products with a dedicated rich page)
   href?: string;
+  // Optional full image URL override (when the asset is not in the default folder)
+  imageUrl?: string;
 };
 
 export const brandAccent: Record<Product["brandId"], string> = {
@@ -282,6 +284,80 @@ export const products: Product[] = [
       ["Communication", "USB Type B, SD card"],
       ["NFC", "Intelli-Tap keycards (Admin, Supervisor)"],
       ["Cleanroom Ready", "Yes (dedicated duct attachment area)"],
+    ],
+  },
+  {
+    slug: "s2e-network-module",
+    name: "OmniCure S2E Network Module",
+    brand: "OmniCure®",
+    brandId: "omnicure",
+    tech: "UV Spot Curing",
+    sub: "S-Series Accessory",
+    accent: "#1A56DB",
+    imageUrl:
+      "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2E%20NETWORK%20MODULE.png",
+    intro:
+      "The OmniCure® S2E Network Module is designed to save time on maintenance and keep production running smoothly with remote process monitoring and UV curing equipment control. The S2E complements the OmniCure family of S-Series spot UV curing systems, offering the same high level of innovation, quality and reliability that customers expect. The S2E Ethernet adapter enables production facilities to remotely access up to 300 UV curing systems within a local area network, while simultaneously monitoring their activity and maintenance requirements through the OmniCure Monitoring Station software.",
+    features: [
+      "Save maintenance time and keep production running smoothly with OmniCure Monitoring Station software",
+      "Proactively trend and predict maintenance requirements with continuous operational data logging",
+      "Enhance visibility of production activity and quickly isolate issues that result in potential waste/rework",
+      "Increase productivity and eliminate time lost identifying system faults with real-time email alerts",
+      "Remotely access and monitor up to 300 UV curing systems on a local area network",
+      "Adds StepCure® process functionality to the S1500",
+    ],
+    applications: [
+      "Remote process monitoring of OmniCure S2000 and S1500 spot curing systems",
+      "Multi-station production floors requiring centralized UV equipment oversight",
+      "Predictive maintenance and operational data logging",
+      "Production environments requiring real-time fault email alerts and electronic records",
+    ],
+    specs: [
+      ["Compatible OmniCure Systems", "S2000 and S1500 (*S2E adds StepCure® to the S1500)"],
+      ["Power Supply (Included)", "DC input: 12 VDC, 0.5 A max"],
+      ["Ethernet Interface", "10/100 Mbps (auto-sensing), RJ45 connector"],
+      ["Remote Ethernet Functions", "HTTP web interface; auto TCP/IP device-find; XML data logging; SMTP email (up to 7 recipients); optional Modbus TCP PLC control"],
+      ["Ambient Operating Temperature", "15°C to 35°C (59°F to 95°F)"],
+      ["Storage Temperature", "-10°C to 60°C (14°F to 140°F)"],
+      ["Humidity Range", "Up to 85% max (non-condensing)"],
+      ["Operating Voltage", "100–240 VAC (±10%), 50/60 Hz, 0.06/0.025 A"],
+      ["Dimensions (L×W×H)", '32 × 89 × 114 mm (1¼" × 3½" × 4½")'],
+      ["Weight", "181 g (0.4 lb)"],
+      ["Warranty", "1 year"],
+    ],
+  },
+  {
+    slug: "s-series-light-guides",
+    name: "OmniCure S Series Light Guides & Adapters",
+    brand: "OmniCure®",
+    brandId: "omnicure",
+    tech: "UV Spot Curing",
+    sub: "S-Series Accessory",
+    accent: "#1A56DB",
+    intro:
+      "The OmniCure® S Series offers a variety of light guides ranging from single and multi-legged to liquid-filled or fiber light guides, as well as a range of optical adapters to best meet customer requirements.",
+    features: [
+      "Liquid Light Guide: 3, 5 and 8 mm tip diameters; standard lengths 750–3000 mm; dual and triple-leg configurations for multi-site curing",
+      "High-Power Fiber Light Guide: equal distribution of light energy to multiple cure sites from a single light source",
+      "High-Power Fiber Light Line: high-output linear beam; continuous fibers from input to termination eliminate coupling losses",
+      "UV Cure-Ring Optical Adapter: 360° curing power; solid or slotted versions for Liquid Light Guides",
+      'UV Light-Line Optical Adapter: focused linear beam for small rows of components, tubing and cables (up to 2" line length)',
+      'Adjustable Spot Collimating Adapter: uniform spot from 1" up to 6" (2.54–15.2 cm) for even power distribution',
+    ],
+    applications: [
+      "Multi-site simultaneous curing with multi-leg light guides",
+      "360° radial curing of catheters and tubing via Cure-Ring adapter",
+      "Linear curing of component rows, tubing and cables via Light-Line adapter",
+      "Uniform large-spot curing via the adjustable collimating adapter",
+    ],
+    specs: [
+      ["Liquid Light Guide Tips", "3, 5, 8 mm diameters"],
+      ["Liquid Light Guide Lengths", "750–3000 mm (standard)"],
+      ["Multi-Leg Configurations", "Dual and triple-leg"],
+      ["Fiber Options", "High-Power Fiber Light Guide; High-Power Fiber Light Line"],
+      ["Cure-Ring Adapter", "360° curing; solid or slotted"],
+      ["Light-Line Adapter", 'Up to 2" line length'],
+      ["Collimating Adapter", 'Adjustable uniform spot 1"–6" (2.54–15.2 cm)'],
     ],
   },
 
@@ -1268,6 +1344,8 @@ export const modelToSlug: Record<string, string> = {
   "LS200 Radiometer": "ls200",
   "UV LED Heads (V3)": "v3-led-heads",
   "R2000 Radiometer": "r2000",
+  "S2E Network Module": "s2e-network-module",
+  "S Series Light Guide": "s-series-light-guides",
   "AC2": "ac2",
   "AC5": "ac5",
   "AC7": "ac7",
@@ -1303,7 +1381,7 @@ export function productHref(p: Product): string {
 // The object keys there do NOT follow the slug convention (and are
 // case-sensitive), so we map each slug to its real filename explicitly.
 const PRODUCT_IMG_BASE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/products";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product";
 
 // slug → actual object key in the bucket.
 const productImageFile: Record<string, string> = {
@@ -1344,6 +1422,7 @@ const productImageFile: Record<string, string> = {
 // Full image URL for a product, or "" when no asset is available (the UI
 // renders a branded placeholder instead of a broken image in that case).
 export function productImage(p: Product): string {
+  if (p.imageUrl) return p.imageUrl;
   const file = productImageFile[p.slug];
   return file ? `${PRODUCT_IMG_BASE}/${encodeURIComponent(file)}` : "";
 }
