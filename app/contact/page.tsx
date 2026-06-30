@@ -158,9 +158,9 @@ export default function ContactPage() {
                 ))}
               </div>
               <div className="mt-8 p-4 rounded-xl border border-gray-100 bg-white">
-                <p className="text-xs text-gray-400 mb-1">Service Email</p>
-                <a href="mailto:support@etiatech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
-                  support@etiatech.com
+                <p className="text-xs text-gray-400 mb-1">Service Email (Technical Manager)</p>
+                <a href="mailto:guoren_wang@etia-tech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
+                  guoren_wang@etia-tech.com
                 </a>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                 en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China",
               },
               {
-                region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "support@etiatech.com",
+                region: "Hong Kong", flag: "🇭🇰", phone: "+852 0000 0000", email: "mark_tang@etia-tech.com",
                 en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong",
               },
               {
