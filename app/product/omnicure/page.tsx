@@ -57,7 +57,7 @@ export default function OmniCurePage() {
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <a href="#products" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>Explore Products ↓</a>
-            <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">Talk to Engineers</a>
+            <a href="mailto:guoren_wang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">Talk to Engineers</a>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -126,7 +126,7 @@ export default function OmniCurePage() {
           ))}
           <div className="mt-8 text-center text-sm text-gray-500">
             Not sure which system is right for you?{" "}
-            <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="hover:underline font-medium" style={{ color: "#1A56DB" }}>Talk to ETIA Engineers →</a>
+            <a href="mailto:guoren_wang@etia-tech.com?subject=Engineering%20Inquiry" className="hover:underline font-medium" style={{ color: "#1A56DB" }}>Talk to ETIA Engineers →</a>
           </div>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function OmniCurePage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Need help selecting the right system?</h2>
           <p className="text-gray-300 mb-8">Our UV curing engineers are ready to help you find the best solution for your process — from spot to area, lamp to LED.</p>
-          <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>Talk to ETIA Engineers →</a>
+          <a href="mailto:guoren_wang@etia-tech.com?subject=Engineering%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>Talk to ETIA Engineers →</a>
         </div>
       </section>
     </>

@@ -96,7 +96,7 @@ export default function Home() {
               <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
                 Explore Products →
               </Link>
-              <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
+              <a href="mailto:guoren_wang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
                 Talk to an Engineer
               </a>
             </div>
@@ -207,7 +207,7 @@ export default function Home() {
           <p className="text-gray-300 mb-8">
             Our engineers are ready to help — from spot to area, lamp to LED, selection to validation.
           </p>
-          <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>
+          <a href="mailto:guoren_wang@etia-tech.com?subject=Engineering%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>
             Talk to ETIA Engineers →
           </a>
         </div>
