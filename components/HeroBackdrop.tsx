@@ -3,11 +3,23 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 // Rotating hero background. To stay fast on mobile, it only loads the
-// CURRENT image (priority) plus PRELOADS the next one — instead of
-// downloading the whole set up front. Each new image fades in, with a
-// blue gradient overlay on top so hero text stays readable.
+// CURRENT image (priority) and defers preloading the next one until the
+// current image has loaded AND the browser is idle — so the second
+// download never competes with the LCP image on first paint.
+// The image sits under a heavy blue gradient, so a low quality is
+// visually indistinguishable but much lighter.
 
-function Fader({ src, priority }: { src: string; priority?: boolean }) {
+const HERO_QUALITY = 50;
+
+function Fader({
+  src,
+  priority,
+  onReady,
+}: {
+  src: string;
+  priority?: boolean;
+  onReady?: () => void;
+}) {
   const [on, setOn] = useState(false);
   useEffect(() => {
     const r = requestAnimationFrame(() => setOn(true));
@@ -19,8 +31,9 @@ function Fader({ src, priority }: { src: string; priority?: boolean }) {
       alt=""
       fill
       priority={priority}
-      quality={68}
+      quality={HERO_QUALITY}
       sizes="100vw"
+      onLoad={onReady}
       className="object-cover transition-opacity duration-700 ease-in-out"
       style={{ opacity: on ? 1 : 0 }}
     />
@@ -35,6 +48,9 @@ export default function HeroBackdrop({
   interval?: number;
 }) {
   const [i, setI] = useState(0);
+  // Only start preloading upcoming images once the first image is on screen
+  // and the main thread is idle — keeps the critical path clear for LCP.
+  const [canPreload, setCanPreload] = useState(false);
   const n = images.length;
 
   useEffect(() => {
@@ -43,22 +59,36 @@ export default function HeroBackdrop({
     return () => clearInterval(t);
   }, [n, interval]);
 
+  const armPreload = () => {
+    if (canPreload) return;
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void) => void;
+    };
+    if (typeof w.requestIdleCallback === "function") {
+      w.requestIdleCallback(() => setCanPreload(true));
+    } else {
+      setTimeout(() => setCanPreload(true), 1200);
+    }
+  };
+
   const next = n > 1 ? (i + 1) % n : i;
 
   return (
     <>
-      {/* Current image (fades in) */}
-      {images[i] && <Fader key={i} src={images[i]} priority />}
+      {/* Current image (fades in). Preloading of the next image is armed
+          only after this one finishes loading. */}
+      {images[i] && <Fader key={i} src={images[i]} priority onReady={armPreload} />}
 
-      {/* Preload the next image off-screen so the swap is instant —
-          but never more than one extra download in flight. */}
-      {n > 1 && (
+      {/* Preload the next image off-screen so the swap is instant — but
+          never before the LCP image has loaded, and never more than one
+          extra download in flight. */}
+      {n > 1 && canPreload && (
         <Image
           key={`pre-${next}`}
           src={images[next]}
           alt=""
           fill
-          quality={68}
+          quality={HERO_QUALITY}
           sizes="100vw"
           aria-hidden
           className="object-cover opacity-0 pointer-events-none"
