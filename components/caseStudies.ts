@@ -255,7 +255,7 @@ export const successStories: CaseStudy[] = [
     industry: "Automotive & ADAS",
     company: "ADAS Camera Module",
     title: "UV Curing for ADAS Camera Module Manufacturing",
-    image: "ADAS Camera.jpg",
+    image: "ADAS Camera Module.jpg",
     overview:
       "Advanced Driver Assistance Systems (ADAS) and autonomous driving require automotive-grade camera modules that maintain optical alignment to ±10 µm across –40°C to +105°C thermal environments and 15G mechanical shock. A modern vehicle may contain 8–12 cameras for 360° surround view, lane keeping, traffic sign recognition, and pedestrian detection. Each camera module requires UV-cured adhesive bonds that must maintain alignment through the 15-year service life of the vehicle, with IATF 16949 process validation and full traceability mandatory for automotive tier-1 qualification.",
     challenge:
@@ -346,9 +346,11 @@ export const successStories: CaseStudy[] = [
   },
 ];
 
-// Case study hero images live in the COS bucket under IMAGE/casestudies/.
+// Case study hero images live in the COS bucket under "IMAGE/case studies "
+// (note: a space inside the folder name AND a trailing space — encoded as
+// %20). Filenames are appended URL-encoded by caseStudyImage().
 const CASE_IMG_BASE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/casestudies";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20";
 
 export function caseStudyImage(c: CaseStudy): string {
   return c.image ? `${CASE_IMG_BASE}/${encodeURIComponent(c.image)}` : "";
