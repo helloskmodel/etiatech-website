@@ -874,11 +874,38 @@ export function productHref(p: Product): string {
   return p.href ?? `/product/systems/${p.slug}`;
 }
 
-// Each product has exactly one image, named by its slug:
-//   IMAGE/products/<slug>.png
+// Product hero images live in the COS bucket under IMAGE/products/.
+// The object keys there do NOT follow the slug convention (and are
+// case-sensitive), so we map each slug to its real filename explicitly.
 const PRODUCT_IMG_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/products";
 
+// slug → actual object key in the bucket.
+const productImageFile: Record<string, string> = {
+  "lx500": "LX500.png",
+  "v3-led-heads": "V3.png",
+  "ls200": "LS200.png",
+  "s2000-elite": "S2E.png",
+  "s1500-pro": "S1500.png",
+  "nexus-ii": "nexusII.png",
+  "fl200": "fl200.png",
+  "fl400": "fl400.png",
+  "fl400-i": "fl400i.png",
+  "fl440": "fl440.png",
+  "ac2": "AC2.png",
+  "ac4": "AC4.png",
+  "ac5": "AC5.png",
+  "fj800": "fj800.png",
+  "fj801": "fj801.png",
+  "f-series": "f300.png",
+  "lighthammer-6": "6markII.png",
+  "lighthammer-10": "10markIII.png",
+  // No asset yet in the bucket for: vericure, fe400, fe410, drf-series.
+};
+
+// Full image URL for a product, or "" when no asset is available (the UI
+// renders a branded placeholder instead of a broken image in that case).
 export function productImage(p: Product): string {
-  return `${PRODUCT_IMG_BASE}/${p.slug}.png`;
+  const file = productImageFile[p.slug];
+  return file ? `${PRODUCT_IMG_BASE}/${encodeURIComponent(file)}` : "";
 }
