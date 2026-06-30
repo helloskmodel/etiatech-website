@@ -39,7 +39,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Hero */}
-      <section className="py-12 relative overflow-hidden border-b border-gray-200" style={{ background: "#f8fafc" }}>
+      <section className="py-12 relative overflow-hidden border-b border-gray-200" style={{ background: "#f1f5f9" }}>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-3">
