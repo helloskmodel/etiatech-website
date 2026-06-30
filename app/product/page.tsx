@@ -38,7 +38,7 @@ const brands = [
             series: "AC LARGE · AIR-COOLED LED · >75MM WIDTH",
             name: "Air-Cooled UV LED Large Area",
             desc: "High-output LED area curing for wide substrates. Conveyor-integrated, uniform irradiance across full panel width.",
-            models: ["ACT", "AC8", "AC8-HD", "ACN225-F", "AC UVC LED – 275nm"],
+            models: ["AC7", "AC8", "AC8-HD", "AC9225", "AC UVC LED – 275nm"],
             bg: "#1A56DB",
           },
           {

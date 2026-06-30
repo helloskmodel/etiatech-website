@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { industryFallbackIcon } from "@/components/industryMedia";
+import CaseStudyCarousel from "@/components/CaseStudyCarousel";
 
 const whyEtia = [
   {
     icon: "🧠",
     title: "Deep Application Expertise",
-    desc: "20 years of validated industry cases across 9 industries. From medical device bonding to EV battery encapsulation — we've proven the process so you don't have to.",
+    desc: "20 years of validated industry cases across 10 industries. From medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
   },
   {
     icon: "📦",
@@ -71,42 +71,32 @@ const techRoutes = [
   },
 ];
 
-const industries = [
-  { name: "Medical Device", icon: "🏥", count: 10 },
-  { name: "Automotive", icon: "🚗", count: 7 },
-  { name: "Electronics", icon: "💡", count: 9 },
-  { name: "Cable & Fiber", icon: "🔌", count: 6 },
-  { name: "Precision Optics", icon: "🔬", count: 3 },
-  { name: "UV Printing", icon: "🖨️", count: 3 },
-  { name: "Wood Coatings", icon: "🪵", count: 6 },
-  { name: "Metal Coatings", icon: "⚙️", count: 4 },
-  { name: "Aerospace", icon: "✈️", count: 3 },
-];
-
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
-            Authorized Distributor · Genuine Products Guaranteed
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-            Trusted Expertise.<br />
-            <span style={{ color: "#44B549" }}>Responsive Solutions.</span>
-          </h1>
-          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
-            ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-              Explore Products →
-            </Link>
-            <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
-              Talk to an Engineer
-            </Link>
+      {/* HERO — left-aligned, banner-ready (swap the section background for a banner image later) */}
+      <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 75% 50%, #1A56DB 0%, transparent 60%)" }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl text-left">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
+              Authorized Distributor · Genuine Products Guaranteed
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+              Trusted Expertise.<br />
+              <span style={{ color: "#44B549" }}>Responsive Solutions.</span>
+            </h1>
+            <p className="text-base text-gray-200 mb-8 leading-relaxed">
+              ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+                Explore Products →
+              </Link>
+              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
+                Talk to an Engineer
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -116,10 +106,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Why ETIA</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1A56DB" }}>
-            20 Years of UV Curing —<br />Built Into Every Sale, Every Visit, Every Fix.
+            ETIA — 20 Years of UV Curing Expertise,<br />Delivered in Every Sale, Every Visit, Every Fix.
           </h2>
           <p className="text-gray-500 max-w-2xl mb-12">
-            Rooted in engineering excellence, ETIA partners with the world&apos;s leading UV curing brands to deliver solutions that are validated, reliable, and backed end-to-end.
+            Rooted in engineering excellence, ETIA partners with the world&apos;s leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyEtia.map((item) => (
@@ -189,28 +179,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* APPLICATIONS PREVIEW — white */}
+      {/* CASE STUDIES — white */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Applications</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>9 Industries · 51 Application Notes</h2>
-          <p className="text-gray-500 mb-10">Browse UV curing solutions validated across the most demanding manufacturing environments.</p>
-          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3">
-            {industries.map((ind) => {
-              const Icon = industryFallbackIcon[ind.name];
-              return (
-                <Link
-                  key={ind.name}
-                  href="/application"
-                  className="flex flex-col items-center gap-2 p-4 rounded-xl border border-gray-100 hover:border-[#1A56DB]/40 hover:shadow-md transition-all group text-center bg-gray-50"
-                >
-                  {Icon && <Icon className="w-7 h-7" strokeWidth={1.5} style={{ color: "#1A56DB" }} />}
-                  <span className="text-xs text-gray-600 group-hover:text-[#1A56DB] leading-tight">{ind.name}</span>
-                  <span className="text-xs font-medium" style={{ color: "#44B549" }}>{ind.count} apps</span>
-                </Link>
-              );
-            })}
-          </div>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Case Studies</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>Real Results, Real Manufacturing</h2>
+          <p className="text-gray-500 mb-10">Proven UV curing outcomes — from EV batteries and AI-data-center photonics to medical and aerospace assembly.</p>
+          <CaseStudyCarousel />
           <div className="mt-10 text-center">
             <Link href="/application" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold border-2 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white transition-all">
               Explore All Applications →

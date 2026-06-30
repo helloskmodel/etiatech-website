@@ -39,7 +39,7 @@ function ContactForm({ type, fields }: { type: string; fields: string[] }) {
           <label className="text-xs text-gray-500 block mb-1">{f}</label>
           <select className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-600 text-sm focus:outline-none focus:border-[#1A56DB]">
             <option value="">Select…</option>
-            {f === "Industry" && ["Medical Device", "Automotive", "Electronics", "Cable & Fiber", "Precision Optics", "UV Printing", "Wood Coatings", "Metal Coatings", "Aerospace", "Other"].map((o) => <option key={o}>{o}</option>)}
+            {f === "Industry" && ["Medical Device Assembly", "Automotive & ADAS", "Electronics & PCB Assembly", "Photonics & Advanced Packaging", "Optical Fiber & Cable Manufacturing", "Optics & Imaging Systems", "Printing & Graphic Arts", "Wood & Furniture Coatings", "Metal & Industrial Coatings", "Aerospace & Defense", "Other"].map((o) => <option key={o}>{o}</option>)}
             {f === "Request Type" && ["Equipment Repair", "Radiometer Calibration", "Preventive Maintenance", "Spare Parts", "Other"].map((o) => <option key={o}>{o}</option>)}
           </select>
         </div>
