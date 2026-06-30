@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { HeartPulse, Car, Cpu, Cable, Aperture, Newspaper, Layers, Cog, Plane } from "lucide-react";
+import { HeartPulse, Car, Cpu, Cable, Aperture, Newspaper, Layers, Cog, Plane, CircuitBoard } from "lucide-react";
 
 // Industry photos live in the COS bucket under: IMAGE/industries/<slug>.png
 // Clean, lowercase, hyphenated filenames — no spaces.
@@ -32,4 +32,5 @@ export const industryFallbackIcon: Record<string, LucideIcon> = {
   "Wood Coatings": Layers,
   "Metal Coatings": Cog,
   "Aerospace": Plane,
+  "Photonics & Advanced Packaging": CircuitBoard,
 };
