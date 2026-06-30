@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
 import { successStories, caseStudyImage, type CaseStudy } from "@/components/caseStudies";
 import { apps, type App } from "@/components/applicationNotes";
@@ -115,7 +116,7 @@ export default function ApplicationPage() {
                 {/* Visual header — real industry photo (icon fallback) */}
                 <div className="relative h-32 overflow-hidden bg-gray-100">
                   {(caseStudyImage(s) || industryImage[s.industry]) ? (
-                    <img src={caseStudyImage(s) || industryImage[s.industry]} alt={s.industry} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <Image src={caseStudyImage(s) || industryImage[s.industry]} alt={s.industry} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${industryColors[s.industry]} 0%, ${industryColors[s.industry]}cc 100%)` }}>
                       {(() => { const Icon = industryFallbackIcon[s.industry]; return Icon ? <Icon className="w-10 h-10 text-white/90" strokeWidth={1.5} /> : null; })()}
@@ -239,7 +240,7 @@ export default function ApplicationPage() {
             {/* Visual header — real industry photo (icon fallback) */}
             <div className="relative h-36 overflow-hidden rounded-t-2xl bg-gray-100">
               {(caseStudyImage(selectedCase) || industryImage[selectedCase.industry]) ? (
-                <img src={caseStudyImage(selectedCase) || industryImage[selectedCase.industry]} alt={selectedCase.industry} className="w-full h-full object-cover" />
+                <Image src={caseStudyImage(selectedCase) || industryImage[selectedCase.industry]} alt={selectedCase.industry} fill sizes="(max-width: 768px) 100vw, 32rem" className="object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${industryColors[selectedCase.industry]} 0%, ${industryColors[selectedCase.industry]}cc 100%)` }}>
                   {(() => { const Icon = industryFallbackIcon[selectedCase.industry]; return Icon ? <Icon className="w-12 h-12 text-white/90" strokeWidth={1.5} /> : null; })()}

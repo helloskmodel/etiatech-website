@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
 const VIDEO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/VIDEO/OMNICURE%202000%20ENLIGH%20VERSION%20.mp4";
@@ -140,8 +141,8 @@ export default function S2000ElitePage() {
               <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">⬇ Download Datasheet</Link>
             </div>
           </div>
-          <div className="rounded-2xl bg-white/95 p-6 flex items-center justify-center" style={{ minHeight: "280px" }}>
-            <img src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" className="object-contain w-full" style={{ maxHeight: "340px" }} />
+          <div className="rounded-2xl bg-white/95 relative" style={{ height: "340px" }}>
+            <Image src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" priority />
           </div>
         </div>
       </section>
@@ -160,8 +161,8 @@ export default function S2000ElitePage() {
               Closed-Loop Feedback technology continuously monitors and adjusts output, maintaining irradiance within ±5% of set point throughout the lamp&apos;s lifetime. Combined with a 30 ms precision electromechanical shutter, the S2000 Elite ensures every exposure delivers an exact, repeatable UV dose — critical for validated medical device and electronics manufacturing processes.
             </p>
           </div>
-          <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 flex items-center justify-center" style={{ minHeight: "360px" }}>
-            <img src={img.lcd} alt="OmniCure S2000 Elite LCD touchscreen interface" className="object-contain w-full" style={{ maxHeight: "440px" }} />
+          <div className="rounded-2xl border border-gray-100 bg-gray-50 relative" style={{ height: "440px" }}>
+            <Image src={img.lcd} alt="OmniCure S2000 Elite LCD touchscreen interface" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" />
           </div>
         </div>
       </section>
@@ -207,8 +208,8 @@ export default function S2000ElitePage() {
           <div className="flex flex-col gap-12">
             {features.map((f, i) => (
               <div key={f.no} className="grid lg:grid-cols-2 gap-8 items-center">
-                <div className={`rounded-2xl border border-gray-100 bg-gray-50 p-6 flex items-center justify-center ${i % 2 === 1 ? "lg:order-2" : ""}`} style={{ minHeight: "300px" }}>
-                  <img src={f.image} alt={f.title} className="object-contain w-full" style={{ maxHeight: "360px" }} />
+                <div className={`rounded-2xl border border-gray-100 bg-gray-50 relative ${i % 2 === 1 ? "lg:order-2" : ""}`} style={{ height: "360px" }}>
+                  <Image src={f.image} alt={f.title} fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" />
                 </div>
                 <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                   <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-3 text-white" style={{ background: "#44B549" }}>{f.no}</span>
