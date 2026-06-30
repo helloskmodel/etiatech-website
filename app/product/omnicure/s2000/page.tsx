@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
+const VIDEO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/VIDEO/OMNICURE%202000%20ENLIGH%20VERSION%20.mp4";
 
 const img = {
   intro: `${PROMO}/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp`,
@@ -161,6 +162,20 @@ export default function S2000ElitePage() {
           </div>
           <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 flex items-center justify-center" style={{ minHeight: "360px" }}>
             <img src={img.lcd} alt="OmniCure S2000 Elite LCD touchscreen interface" className="object-contain w-full" style={{ maxHeight: "440px" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* Product Video — dark */}
+      <section className="py-16" style={{ background: "#0a1628" }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Product Video</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">See the S2000 Elite in Action</h2>
+          <div className="rounded-2xl overflow-hidden shadow-xl border border-white/10">
+            <video controls preload="metadata" poster={img.intro} className="w-full bg-black" style={{ aspectRatio: "16 / 9" }}>
+              <source src={VIDEO} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
