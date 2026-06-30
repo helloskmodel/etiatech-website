@@ -1,22 +1,23 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { successStories, caseStudyImage } from "@/components/caseStudies";
+import { successStories, caseStudyImage, type CaseStudy } from "@/components/caseStudies";
 import { industryColors, industryFallbackIcon } from "@/components/industryMedia";
+import CaseStudyModal from "@/components/CaseStudyModal";
 
 export default function CaseStudyCarousel() {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [selected, setSelected] = useState<CaseStudy | null>(null);
   const n = successStories.length;
 
   const go = useCallback((d: number) => setI((p) => (p + d + n) % n), [n]);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || selected) return;
     const t = setInterval(() => setI((p) => (p + 1) % n), 6000);
     return () => clearInterval(t);
-  }, [paused, n]);
+  }, [paused, selected, n]);
 
   const c = successStories[i];
   const color = industryColors[c.industry] || "#1A56DB";
@@ -24,6 +25,7 @@ export default function CaseStudyCarousel() {
   const Icon = industryFallbackIcon[c.industry];
 
   return (
+    <>
     <div
       className="relative rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm"
       onMouseEnter={() => setPaused(true)}
@@ -31,7 +33,7 @@ export default function CaseStudyCarousel() {
     >
       <div className="grid md:grid-cols-2">
         {/* Image / fallback */}
-        <div className="relative h-56 md:h-auto md:min-h-[20rem]">
+        <div className="relative h-56 md:h-auto md:min-h-[20rem] cursor-pointer" onClick={() => setSelected(c)}>
           {img ? (
             <Image
               key={c.id}
@@ -54,7 +56,7 @@ export default function CaseStudyCarousel() {
         {/* Content */}
         <div className="p-6 md:p-8 flex flex-col">
           <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color }}>{c.company}</p>
-          <h3 className="text-lg md:text-xl font-bold mb-3 leading-snug" style={{ color: "#1A56DB" }}>{c.title}</h3>
+          <h3 onClick={() => setSelected(c)} className="text-lg md:text-xl font-bold mb-3 leading-snug cursor-pointer hover:underline" style={{ color: "#1A56DB" }}>{c.title}</h3>
           <div className="flex items-baseline gap-3 mb-4">
             <span className="text-2xl font-bold" style={{ color }}>{c.metric}</span>
             <span className="text-xs text-gray-500 leading-snug">{c.metricLabel}</span>
@@ -64,9 +66,9 @@ export default function CaseStudyCarousel() {
               <span key={k} className="text-[11px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${color}40`, color, background: `${color}0d` }}>{k}</span>
             ))}
           </div>
-          <Link href="/application" className="mt-auto inline-flex items-center gap-2 text-sm font-semibold hover:underline" style={{ color }}>
-            Explore all case studies →
-          </Link>
+          <button onClick={() => setSelected(c)} className="mt-auto inline-flex items-center gap-2 text-sm font-semibold hover:underline self-start" style={{ color }}>
+            Read this case study →
+          </button>
         </div>
       </div>
 
@@ -87,5 +89,7 @@ export default function CaseStudyCarousel() {
         ))}
       </div>
     </div>
+    {selected && <CaseStudyModal caseStudy={selected} onClose={() => setSelected(null)} />}
+    </>
   );
 }
