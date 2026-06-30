@@ -44,10 +44,10 @@ export default function ApplicationPage() {
 
       {/* Filter Tabs */}
       <section className="sticky top-16 z-40 border-b border-gray-200 bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap gap-1.5">
           <button
             onClick={() => setActiveIndustry("All")}
-            className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${activeIndustry === "All" ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
+            className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all ${activeIndustry === "All" ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
             style={activeIndustry === "All" ? { background: "#1A56DB" } : {}}
           >
             All ({apps.length})
@@ -56,11 +56,11 @@ export default function ApplicationPage() {
             <button
               key={ind}
               onClick={() => setActiveIndustry(ind)}
-              className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${activeIndustry === ind ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
+              className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all flex items-center gap-1 ${activeIndustry === ind ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
               style={activeIndustry === ind ? { background: industryColors[ind] } : {}}
             >
-              <span className={`w-2 h-2 rounded-full`} style={{ background: industryColors[ind] }} />
-              {ind} ({apps.filter((a) => a.industry === ind).length})
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: industryColors[ind] }} />
+              {ind}
             </button>
           ))}
         </div>

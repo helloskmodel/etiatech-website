@@ -642,6 +642,44 @@ export const products: Product[] = [
       ["Brand / Series", "Noblelight® — Semray®"],
     ],
   },
+  {
+    slug: "semray-uv5052m",
+    name: "Noblelight Semray UV5052M High-Intensity UV LED System",
+    brand: "Noblelight®",
+    brandId: "noblelight",
+    tech: "Water-Cooled UV LED Area Curing",
+    sub: "Customized · High-Intensity",
+    accent: "#7c3aed",
+    intro:
+      "The Semray® UV5052M is a customized, high-intensity variant of the Excelitas / Noblelight Semray UV LED platform, equipped with dedicated optics that deliver more energy to the process — including at larger working distances. Available across 365, 385, 395 and 405 nm with peak irradiance up to 20 W/cm² at the emission window and a wide 1300 × 84 mm emission window, it is engineered for demanding industrial curing where high dose and flexible integration are essential.",
+    features: [
+      "Customized high-intensity Semray UV LED variant with dedicated optics",
+      "Special optical concepts direct more energy to larger working distances",
+      "Multiple wavelengths: 365, 385, 395 and 405 nm",
+      "Peak irradiance up to 20 W/cm² at the emission window (395 nm)",
+      "Wide 1300 × 84 mm emission window",
+      "Flexible in size/length, peripheral connections and optical concepts",
+      "UV LED efficiency — energy saving, long lifetime, no mercury, no ozone",
+    ],
+    applications: [
+      "High-dose industrial UV LED curing",
+      "Applications requiring high intensity at large working distances",
+      "Wide-format coating and printing processes",
+      "Custom-engineered production line integration",
+    ],
+    specs: [
+      ["Peak Wavelengths", "365, 385, 395, 405 nm"],
+      ["Irradiance @ 365 nm", "15 W/cm² (at emission window)"],
+      ["Irradiance @ 385 nm", "17 W/cm² (at emission window)"],
+      ["Irradiance @ 395 nm", "20 W/cm² (at emission window)"],
+      ["Irradiance @ 405 nm", "19 W/cm² (at emission window)"],
+      ["Emission Window Size", "1300 × 84 mm"],
+      ["Outer Dimensions", "1316 (W) × 100 (D) × 100 (H) mm"],
+      ["Cooling Method", "Water-cooled"],
+      ["Optics", "Dedicated optics for high intensity at large working distances"],
+      ["Brand / Series", "Noblelight® — Semray® (customized UV5052M)"],
+    ],
+  },
 
   // ──────────── TECHNOLOGY 3: AIR-COOLED UV LED ────────────
   {
