@@ -605,6 +605,43 @@ export const products: Product[] = [
       ["Integration", "Compact; retrofits into existing printing presses"],
     ],
   },
+  {
+    slug: "semray-pc6003",
+    name: "Noblelight Semray UV PC6003 360° UV LED System",
+    brand: "Noblelight®",
+    brandId: "noblelight",
+    tech: "Water-Cooled UV LED Area Curing",
+    sub: "Optical Fiber Draw · Wire Marking · 360°",
+    accent: "#7c3aed",
+    intro:
+      "The Semray® UV PC6003 is a UV LED curing system designed from the ground up for optical fiber draw and wire marking manufacturing processes, delivering full 360° curing coverage around the substrate. Part of the Excelitas / Noblelight Semray UV LED portfolio, it brings the efficiency, long lifetime and energy savings of UV LED to high-speed fiber and wire production, with a high radiance of 65–70 W/cm² at the target and a 165 mm emission length at 395 nm.",
+    features: [
+      "Purpose-built for optical fiber draw and wire marking manufacturing",
+      "Full 360° curing coverage around the fiber/wire",
+      "High radiance at target: 65–70 W/cm²",
+      "395 nm peak wavelength",
+      "165 mm emission length",
+      "UV LED efficiency — energy saving, long lifetime, no mercury, no ozone",
+      "Engineered for continuous high-speed production processes",
+    ],
+    applications: [
+      "Optical fiber draw tower coating cure",
+      "Wire marking and wire coating cure",
+      "360° cure of cylindrical substrates",
+      "High-speed continuous fiber/wire production lines",
+    ],
+    specs: [
+      ["Type", "UV LED Lamp Assembly (Semray® UV PC6003)"],
+      ["Peak Wavelength", "395 nm"],
+      ["Radiance at Target", "65–70 W/cm²"],
+      ["Emission Length", "165 mm"],
+      ["Curing Coverage", "360°"],
+      ["Maximum Dimensions", "364 (W) × 265 (H) × 543 (L) mm"],
+      ["Cooling Method", "Water-cooled"],
+      ["Primary Applications", "Optical fiber draw, wire marking"],
+      ["Brand / Series", "Noblelight® — Semray®"],
+    ],
+  },
 
   // ──────────── TECHNOLOGY 3: AIR-COOLED UV LED ────────────
   {

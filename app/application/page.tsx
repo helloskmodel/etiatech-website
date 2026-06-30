@@ -44,7 +44,7 @@ export default function ApplicationPage() {
 
       {/* Filter Tabs */}
       <section className="sticky top-16 z-40 border-b border-gray-200 bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex gap-2 overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap gap-2">
           <button
             onClick={() => setActiveIndustry("All")}
             className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${activeIndustry === "All" ? "text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
