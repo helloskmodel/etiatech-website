@@ -157,11 +157,11 @@ export default function ApplicationPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16" style={{ background: "#1e3a5f" }}>
+      <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Find the Right UV Curing Solution for Your Process</h2>
           <p className="text-gray-300 mb-6">Our engineers are ready to help — from application validation to system selection.</p>
-          <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#2563eb" }}>
+          <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             Talk to Our Sales →
           </a>
         </div>

@@ -115,33 +115,33 @@ export default function S2000ElitePage() {
         </div>
       </div>
 
-      {/* Hero — dark */}
-      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2444 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 75% 40%, #1A56DB 0%, transparent 60%)" }} />
+      {/* Hero — light */}
+      <section className="py-12 relative overflow-hidden border-b border-gray-200" style={{ background: "#f1f5f9" }}>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
-              OmniCure® S Series · Lamp-Based UV Spot Curing
-            </p>
-            <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-2">S2000 Elite</h1>
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded text-white" style={{ background: "#1A56DB" }}>OmniCure®</span>
+              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">S Series · Lamp-Based UV Spot Curing</span>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2" style={{ color: "#1A56DB" }}>S2000 Elite</h1>
             <p className="text-lg md:text-xl font-semibold mb-3" style={{ color: "#44B549" }}>Maximum Power. Total Control.</p>
-            <p className="text-base text-gray-300 max-w-xl mb-6 leading-relaxed line-clamp-2">
+            <p className="text-base text-gray-600 max-w-xl mb-6 leading-relaxed">
               The industry&apos;s most advanced lamp-based UV spot curing system — up to 30 W/cm² with closed-loop precision for medical, electronics, and EV manufacturing.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
               {heroStats.map((s) => (
-                <div key={s.label} className="rounded-lg p-3 border border-white/10" style={{ background: "rgba(255,255,255,0.05)" }}>
-                  <p className="text-xl font-bold" style={{ color: "#44B549" }}>{s.val}</p>
-                  <p className="text-xs text-gray-400 leading-tight mt-0.5">{s.label}</p>
+                <div key={s.label} className="rounded-lg p-3 border border-gray-200 bg-white">
+                  <p className="text-xl font-bold" style={{ color: "#1A56DB" }}>{s.val}</p>
+                  <p className="text-xs text-gray-500 leading-tight mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>Request a Quote</a>
-              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">⬇ Download Datasheet</Link>
+              <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>Request a Quote</a>
+              <a href="mailto:support@etiatech.com?subject=S2000%20Elite%20Datasheet" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ Request Datasheet</a>
             </div>
           </div>
-          <div className="rounded-2xl bg-white/95 relative" style={{ height: "340px" }}>
+          <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
             <Image src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" priority />
           </div>
         </div>
