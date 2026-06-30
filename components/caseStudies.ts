@@ -60,7 +60,7 @@ export const successStories: CaseStudy[] = [
     industry: "Photonics & Advanced Packaging",
     company: "Optical Transceiver (400G–1.6T)",
     title: "UV Curing for Next-Generation Optical Transceiver Manufacturing (400G–1.6T)",
-    image: "optical-transceiver.png",
+    image: "optical-transceiver.jpg",
     overview:
       "Optical transceivers are the 'killer application' driving the silicon photonics and PIC market, according to IDTechEx research. Data rates have doubled approximately every few years — 2026 has seen commercialization of 1.6 Tbps optical transceivers, enabling the latest generation of AI accelerator architectures with high-bandwidth, low-latency chip-to-chip communication. IDTechEx anticipates this doubling trend continuing, with 3.2T transceivers emerging toward the end of the decade. Every transceiver module — whether pluggable (QSFP-DD, OSFP) or co-packaged — depends on precision UV-cured bonding between lasers, photodiodes, lenses, and optical fiber.",
     challenge:
@@ -126,7 +126,7 @@ export const successStories: CaseStudy[] = [
     industry: "Photonics & Advanced Packaging",
     company: "Photonic IC (PIC) Packaging",
     title: "UV Curing in Photonic Integrated Circuit (PIC) Packaging for AI Infrastructure",
-    image: "pic-packaging.png",
+    image: "pic-packaging.jpg",
     overview:
       "Photonic Integrated Circuits (PICs) — silicon photonic chips that process data using light rather than electrons — are the foundational technology behind AI data centers, 5G optical networks, LiDAR systems, and medical imaging. A silicon photonic chip may carry 100+ optical input/output ports, each requiring fiber-to-chip coupling at alignment tolerances below ±100 nm. Despite enormous advances in PIC fabrication at the wafer level, packaging remains the most challenging and cost-intensive step in PIC manufacturing — and UV-curable adhesives are the primary method for permanently locking fiber arrays into aligned position on the chip.",
     challenge:
@@ -160,7 +160,7 @@ export const successStories: CaseStudy[] = [
     industry: "Photonics & Advanced Packaging",
     company: "Advanced Packaging (Chiplet / 2.5D / 3D)",
     title: "UV Curing in Advanced Semiconductor Packaging — Chiplets, 2.5D and 3D Integration",
-    image: "advanced-packaging.png",
+    image: "advanced-packaging.jpg",
     overview:
       "The semiconductor industry's response to the physical limits of monolithic scaling has been to evolve packaging technology — integrating multiple chiplets, memory dies, and photonic engines into a single heterogeneous package. Technologies such as TSMC's CoWoS, Intel's Foveros, and the UCIe (Universal Chiplet Interconnect Express) open standard are transforming chip packaging from a commodity process step into a primary technology differentiator. NVIDIA's Blackwell architecture, AMD's MI300X, and Intel's Ponte Vecchio all rely on chiplet integration with dense interconnects between compute dies, HBM memory stacks, and (increasingly) photonic I/O engines.",
     challenge:
@@ -192,7 +192,7 @@ export const successStories: CaseStudy[] = [
     industry: "Photonics & Advanced Packaging",
     company: "Automotive LiDAR Sensor",
     title: "UV Curing for Automotive LiDAR Sensor Assembly",
-    image: "automotive-lidar.png",
+    image: "Automotive LiDAR.jpg",
     overview:
       "LiDAR (Light Detection and Ranging) sensors are a critical enabling technology for autonomous vehicles, advanced driver assistance systems (ADAS), robotics, and industrial 3D mapping. A single automotive-grade LiDAR unit contains 16–128 precisely aligned laser transmitter and receiver channels, each bonded with UV-curable adhesives that must maintain optical alignment across automotive thermal and vibration environments (–40°C to +105°C, 15G vibration). The automotive LiDAR market is forecast to grow at approximately 25% CAGR through 2030, driven by SAE L2+ and L3 autonomous driving system adoption across both traditional OEMs and autonomous vehicle developers.",
     challenge:
@@ -224,7 +224,7 @@ export const successStories: CaseStudy[] = [
     industry: "Optical Fiber & Cable Manufacturing",
     company: "Optical Fiber Draw Tower",
     title: "UV Curing for High-Speed Optical Fiber Draw Tower Manufacturing",
-    image: "fiber-draw-tower.png",
+    image: "Optical Fiber Draw Tower.jpg",
     overview:
       "Optical fiber production begins with drawing glass fiber from a heated preform at speeds up to 3,500 m/min, immediately coating the bare fiber with dual UV-curable acrylate layers (primary and secondary coatings) within the draw tower. Global optical fiber demand is accelerating due to three converging trends: 5G network densification requiring fiber-to-the-antenna backhaul, hyperscale data center buildouts for AI training infrastructure, and national broadband expansion programs across multiple regions. Corning alone has announced multi-billion-dollar fiber capacity expansion investments to meet this demand.",
     challenge:
@@ -255,7 +255,7 @@ export const successStories: CaseStudy[] = [
     industry: "Automotive & ADAS",
     company: "ADAS Camera Module",
     title: "UV Curing for ADAS Camera Module Manufacturing",
-    image: "adas-camera.png",
+    image: "ADAS Camera.jpg",
     overview:
       "Advanced Driver Assistance Systems (ADAS) and autonomous driving require automotive-grade camera modules that maintain optical alignment to ±10 µm across –40°C to +105°C thermal environments and 15G mechanical shock. A modern vehicle may contain 8–12 cameras for 360° surround view, lane keeping, traffic sign recognition, and pedestrian detection. Each camera module requires UV-cured adhesive bonds that must maintain alignment through the 15-year service life of the vehicle, with IATF 16949 process validation and full traceability mandatory for automotive tier-1 qualification.",
     challenge:
@@ -287,7 +287,7 @@ export const successStories: CaseStudy[] = [
     industry: "Medical Device Assembly",
     company: "Cardiovascular Catheter",
     title: "UV Curing for Cardiovascular Catheter Manufacturing",
-    image: "cardiovascular-catheter.png",
+    image: "cardiovascular-catheter.jpg",
     overview:
       "Catheters are plastic tubes, sometimes coated, inserted into vessels or cavities to facilitate drainage, injection, or surgical access. Key applications include cardiovascular, urological, and intravenous. While urological catheters lead in unit sales, cardiovascular catheters hold the largest revenue share due to the severity and prevalence of cardiovascular disease — the leading cause of death globally, accounting for approximately 30% of disease worldwide (WHO). Percutaneous transluminal coronary angioplasty (PTCA), a minimally invasive procedure using balloon catheters to open obstructed coronary arteries, represents one of the fastest-growing catheter segments.",
     challenge:
@@ -318,7 +318,7 @@ export const successStories: CaseStudy[] = [
     industry: "Aerospace & Defense",
     company: "Structural Composite Bonding",
     title: "UV Curing for Aerospace Structural Composite Bonding",
-    image: "aerospace-composite.png",
+    image: "Aerospace Composite.jpeg",
     overview:
       "Aerospace structural composites — carbon fiber reinforced polymer (CFRP) and fiberglass — are increasingly used in airframe, interior, and unmanned aerial system (UAS/drone) structures to reduce weight while maintaining structural integrity. UV-curable structural adhesives offer rapid, documented cure for composite bonding operations, but aerospace's stringent airworthiness certification requirements (FAA, EASA) demand a level of process documentation and traceability beyond most other industrial UV curing applications.",
     challenge:
