@@ -946,7 +946,9 @@ const productImageFile: Record<string, string> = {
   "f-series": "f300.png",
   "lighthammer-6": "6markII.png",
   "lighthammer-10": "10markIII.png",
-  // No asset yet in the bucket for: vericure, fe400, fe410, drf-series.
+  "vericure": "vericure.jpg",
+  "drf-series": "phoseon optical fiber.jpg",
+  // No asset yet in the bucket for: fe400, fe410.
 };
 
 // Full image URL for a product, or "" when no asset is available (the UI
