@@ -74,27 +74,29 @@ const techRoutes = [
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
-            Authorized Distributor · Genuine Products Guaranteed
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-            Trusted Expertise.<br />
-            <span style={{ color: "#44B549" }}>Responsive Solutions.</span>
-          </h1>
-          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
-            ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-              Explore Products →
-            </Link>
-            <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
-              Talk to an Engineer
-            </Link>
+      {/* HERO — left-aligned, banner-ready (swap the section background for a banner image later) */}
+      <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 75% 50%, #1A56DB 0%, transparent 60%)" }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl text-left">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
+              Authorized Distributor · Genuine Products Guaranteed
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+              Trusted Expertise.<br />
+              <span style={{ color: "#44B549" }}>Responsive Solutions.</span>
+            </h1>
+            <p className="text-base text-gray-200 mb-8 leading-relaxed">
+              ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+                Explore Products →
+              </Link>
+              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
+                Talk to an Engineer
+              </Link>
+            </div>
           </div>
         </div>
       </section>
