@@ -278,7 +278,7 @@ export default function ApplicationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Customer Success</p>
           <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>Real Results from Real Manufacturers</h2>
-          <p className="text-gray-500 mb-10 max-w-3xl">See how ETIA brings unmatched technical expertise in UV curing solutions to meet specific application challenges.</p>
+          <p className="text-gray-500 mb-10 max-w-3xl">ETIA brings unmatched technical expertise in light-cure technology to specific application challenges. We provide full system solutions where chemistry, material, and equipment work seamlessly together to create maximum efficiency.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {successStories.map((s) => (
               <button
