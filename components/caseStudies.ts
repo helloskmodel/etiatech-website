@@ -363,7 +363,7 @@ export const heroBannerImage = heroCase ? caseStudyImage(heroCase) : "";
 
 // Rotating banner set for the home hero — curated "latest industry tech"
 // photos. Edit this id list to change which photos rotate / their order.
-export const heroBannerImages: string[] = ["B2", "B3", "B5", "B6", "B1", "B7"]
+export const heroBannerImages: string[] = ["B5", "B1"]
   .map((id) => successStories.find((s) => s.id === id))
   .filter((c): c is CaseStudy => Boolean(c))
   .map(caseStudyImage)
