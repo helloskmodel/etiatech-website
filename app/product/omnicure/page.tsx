@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "OmniCure UV Curing Systems | Spot & Area | ETIA",
+  description:
+    "OmniCure UV spot and area curing systems — LED and lamp-based, with closed-loop feedback and I4.0 control for medical, electronics, and EV manufacturing.",
+};
 
 const benefits = [
   { icon: "⚡", title: "Faster Production", desc: "Cure in seconds, not hours. Eliminate thermal oven bottlenecks and run inline at full line speed." },
