@@ -25,7 +25,7 @@ export type CaseStudy = {
 export const successStories: CaseStudy[] = [
   {
     id: "B1",
-    industry: "Automotive",
+    industry: "Automotive & ADAS",
     company: "EV Battery Manufacturing",
     title: "Using UV Curing to Improve EV Battery Manufacturing Reliability and Costs",
     image: "ev-battery.png",
@@ -221,7 +221,7 @@ export const successStories: CaseStudy[] = [
   },
   {
     id: "B7",
-    industry: "Optical Fiber & Cable",
+    industry: "Optical Fiber & Cable Manufacturing",
     company: "Optical Fiber Draw Tower",
     title: "UV Curing for High-Speed Optical Fiber Draw Tower Manufacturing",
     image: "fiber-draw-tower.png",
@@ -252,7 +252,7 @@ export const successStories: CaseStudy[] = [
   },
   {
     id: "B8",
-    industry: "Automotive",
+    industry: "Automotive & ADAS",
     company: "ADAS Camera Module",
     title: "UV Curing for ADAS Camera Module Manufacturing",
     image: "adas-camera.png",
@@ -284,7 +284,7 @@ export const successStories: CaseStudy[] = [
   },
   {
     id: "B9",
-    industry: "Medical Device",
+    industry: "Medical Device Assembly",
     company: "Cardiovascular Catheter",
     title: "UV Curing for Cardiovascular Catheter Manufacturing",
     image: "cardiovascular-catheter.png",
@@ -315,7 +315,7 @@ export const successStories: CaseStudy[] = [
   },
   {
     id: "B10",
-    industry: "Aerospace",
+    industry: "Aerospace & Defense",
     company: "Structural Composite Bonding",
     title: "UV Curing for Aerospace Structural Composite Bonding",
     image: "aerospace-composite.png",

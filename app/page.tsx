@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { industryFallbackIcon } from "@/components/industryMedia";
+import CaseStudyCarousel from "@/components/CaseStudyCarousel";
 
 const whyEtia = [
   {
     icon: "🧠",
     title: "Deep Application Expertise",
-    desc: "20 years of validated industry cases across 9 industries. From medical device bonding to EV battery encapsulation — we've proven the process so you don't have to.",
+    desc: "20 years of validated industry cases across 10 industries. From medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
   },
   {
     icon: "📦",
@@ -69,18 +69,6 @@ const techRoutes = [
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT6-MERCURY%20UVC%20LAMPS.png`,
     group: "broad",
   },
-];
-
-const industries = [
-  { name: "Medical Device", icon: "🏥", count: 10 },
-  { name: "Automotive", icon: "🚗", count: 7 },
-  { name: "Electronics & Semiconductor", icon: "💡", count: 9 },
-  { name: "Optical Fiber & Cable", icon: "🔌", count: 6 },
-  { name: "Optics & Optical Assembly", icon: "🔬", count: 3 },
-  { name: "UV Printing", icon: "🖨️", count: 3 },
-  { name: "Wood Coatings", icon: "🪵", count: 6 },
-  { name: "Metal Coatings", icon: "⚙️", count: 4 },
-  { name: "Aerospace", icon: "✈️", count: 3 },
 ];
 
 export default function Home() {
@@ -189,28 +177,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* APPLICATIONS PREVIEW — white */}
+      {/* CASE STUDIES — white */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Applications</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>9 Industries · 51 Application Notes</h2>
-          <p className="text-gray-500 mb-10">Browse UV curing solutions validated across the most demanding manufacturing environments.</p>
-          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3">
-            {industries.map((ind) => {
-              const Icon = industryFallbackIcon[ind.name];
-              return (
-                <Link
-                  key={ind.name}
-                  href="/application"
-                  className="flex flex-col items-center gap-2 p-4 rounded-xl border border-gray-100 hover:border-[#1A56DB]/40 hover:shadow-md transition-all group text-center bg-gray-50"
-                >
-                  {Icon && <Icon className="w-7 h-7" strokeWidth={1.5} style={{ color: "#1A56DB" }} />}
-                  <span className="text-xs text-gray-600 group-hover:text-[#1A56DB] leading-tight">{ind.name}</span>
-                  <span className="text-xs font-medium" style={{ color: "#44B549" }}>{ind.count} apps</span>
-                </Link>
-              );
-            })}
-          </div>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>Case Studies</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>Real Results, Real Manufacturing</h2>
+          <p className="text-gray-500 mb-10">Proven UV curing outcomes — from EV batteries and AI-data-center photonics to medical and aerospace assembly.</p>
+          <CaseStudyCarousel />
           <div className="mt-10 text-center">
             <Link href="/application" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold border-2 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white transition-all">
               Explore All Applications →

@@ -6,15 +6,15 @@ import { HeartPulse, Car, Cpu, Cable, Aperture, Newspaper, Layers, Cog, Plane, C
 const BASE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/industries";
 
 const slug: Record<string, string> = {
-  "Medical Device": "medical-device",
-  "Automotive": "automotive",
-  "Electronics & Semiconductor": "electronics",
-  "Optical Fiber & Cable": "cable-fiber",
-  "Optics & Optical Assembly": "precision-optics",
-  "UV Printing": "uv-printing",
-  "Wood Coatings": "wood-coatings",
-  "Metal Coatings": "metal-coatings",
-  "Aerospace": "aerospace",
+  "Medical Device Assembly": "medical-device",
+  "Automotive & ADAS": "automotive",
+  "Electronics & PCB Assembly": "electronics",
+  "Optical Fiber & Cable Manufacturing": "cable-fiber",
+  "Optics & Imaging Systems": "precision-optics",
+  "Printing & Graphic Arts": "uv-printing",
+  "Wood & Furniture Coatings": "wood-coatings",
+  "Metal & Industrial Coatings": "metal-coatings",
+  "Aerospace & Defense": "aerospace",
 };
 
 export const industryImage: Record<string, string> = Object.fromEntries(
@@ -23,28 +23,28 @@ export const industryImage: Record<string, string> = Object.fromEntries(
 
 // Accent color per industry — shared by the Application page and home carousel.
 export const industryColors: Record<string, string> = {
-  "Medical Device": "#e11d48",
-  "Automotive": "#1e3a5f",
-  "Electronics & Semiconductor": "#1A56DB",
-  "Optical Fiber & Cable": "#0d9488",
-  "Optics & Optical Assembly": "#7c3aed",
-  "UV Printing": "#d97706",
-  "Wood Coatings": "#16a34a",
-  "Metal Coatings": "#92400e",
-  "Aerospace": "#475569",
+  "Medical Device Assembly": "#e11d48",
+  "Automotive & ADAS": "#1e3a5f",
+  "Electronics & PCB Assembly": "#1A56DB",
   "Photonics & Advanced Packaging": "#0891b2",
+  "Optical Fiber & Cable Manufacturing": "#0d9488",
+  "Optics & Imaging Systems": "#7c3aed",
+  "Printing & Graphic Arts": "#d97706",
+  "Wood & Furniture Coatings": "#16a34a",
+  "Metal & Industrial Coatings": "#92400e",
+  "Aerospace & Defense": "#475569",
 };
 
 // Clean line-icon fallback, used if a photo is missing.
 export const industryFallbackIcon: Record<string, LucideIcon> = {
-  "Medical Device": HeartPulse,
-  "Automotive": Car,
-  "Electronics & Semiconductor": Cpu,
-  "Optical Fiber & Cable": Cable,
-  "Optics & Optical Assembly": Aperture,
-  "UV Printing": Newspaper,
-  "Wood Coatings": Layers,
-  "Metal Coatings": Cog,
-  "Aerospace": Plane,
+  "Medical Device Assembly": HeartPulse,
+  "Automotive & ADAS": Car,
+  "Electronics & PCB Assembly": Cpu,
   "Photonics & Advanced Packaging": CircuitBoard,
+  "Optical Fiber & Cable Manufacturing": Cable,
+  "Optics & Imaging Systems": Aperture,
+  "Printing & Graphic Arts": Newspaper,
+  "Wood & Furniture Coatings": Layers,
+  "Metal & Industrial Coatings": Cog,
+  "Aerospace & Defense": Plane,
 };
