@@ -275,10 +275,13 @@ export default function ProductPage() {
                 {/* Brand heading */}
                 <div className="flex items-center gap-3 mb-6 pb-3 border-b border-gray-100">
                   <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0" style={{ background: brand.color }}>{brand.logo}</div>
-                  <div>
+                  <div className="flex-1">
                     <h2 className="text-xl font-bold leading-tight" style={{ color: brand.color }}>{brand.name}</h2>
                     <p className="text-xs text-gray-400">{tr(brand.tagline)}</p>
                   </div>
+                  <Link href={`/product/${brand.id === "fusionuv" ? "fusion-uv" : brand.id}`} className="text-xs font-semibold whitespace-nowrap hover:underline" style={{ color: brand.color }}>
+                    {t({ en: "Brand page →", zh: "品牌主页 →" }, locale)}
+                  </Link>
                 </div>
                 {brand.families.map((group) => (
                   <div key={group.category} className="mb-10">

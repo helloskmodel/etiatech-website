@@ -10,7 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE}/product`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/product/systems`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${SITE}/product/omnicure`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    // Brand landing pages
+    { url: `${SITE}/product/omnicure`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/product/phoseon`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/product/fusion-uv`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/product/noblelight`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/application`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },

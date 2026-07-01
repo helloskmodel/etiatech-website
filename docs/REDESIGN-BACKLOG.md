@@ -37,22 +37,23 @@
 
 ---
 
-## 品牌落地页(新增) — §5  ★SEO 价值最高
+## 品牌落地页(新增) — §5  ★SEO 价值最高 — **PR #49**
 
-- [ ] `/product/omnicure`、`/product/phoseon`、`/product/fusion-uv`、`/product/noblelight`
-- [ ] 每页结构:品牌 Logo + Authorized Distributor badge + 品牌介绍 + 技术路线分区(含型号) + 典型应用行业 + 复用 Why ETIA
-- [ ] 中英双语
-- 注:`/product/omnicure` 目前是旧的品牌页,需重做并接入此结构 + 中文
+- [x] `/product/omnicure`、`/product/phoseon`、`/product/fusion-uv`、`/product/noblelight`
+- [x] 每页结构:品牌 Logo + Authorized Distributor badge + 品牌介绍 + 技术路线分区(含型号,数据驱动自 catalog) + 典型应用行业 + 复用 Why ETIA
+- [x] 中英双语
+- [x] `/product/omnicure` 旧页已重做为品牌落地页结构 + 中文
+- [x] 产品列表页各品牌加"品牌主页 →"链接
 
 ---
 
 ## SEO 架构 — §6
 
-- [ ] 6.1 Title 模板:产品子页 `{型号} | {品牌} {技术路线} | ETIA`;品牌页 `{品牌} … Authorized Distributor | ETIA`
-- [ ] 6.2 Meta description 模板(产品子页/品牌页)
-- [ ] 6.3 Breadcrumb JSON-LD(每个产品子页)
-- [ ] 6.4 Product JSON-LD(含 brand / category / manufacturer / offers.seller=ETIA / areaServed=[CN,HK,TH,VN])
-- [ ] 6.5 sitemap 加:4 个品牌落地页 + 所有产品子页
+- [x] 6.1 Title 模板:品牌页 `{品牌} … Authorized Distributor | ETIA` — **PR #49**;产品子页模板待 §4
+- [x] 6.2 Meta description(品牌页)— **PR #49**;产品子页待 §4
+- [x] 6.3 Breadcrumb JSON-LD(品牌页)— **PR #49**;产品子页待 §4
+- [ ] 6.4 Product JSON-LD(产品子页,含 brand / category / manufacturer / offers.seller=ETIA / areaServed=[CN,HK,TH,VN])
+- [x] 6.5 sitemap 加 4 个品牌落地页 — **PR #49**(产品子页已在 sitemap)
 
 ---
 
