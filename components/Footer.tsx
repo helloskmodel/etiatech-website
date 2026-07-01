@@ -38,8 +38,8 @@ export default function Footer() {
         </div>
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Contact", zh: "联系方式" }, locale)}</p>
-          <a href="mailto:support@etiatech.com" className="text-xs hover:underline" style={{ color: "#44B549" }}>
-            support@etiatech.com
+          <a href="mailto:mark_tang@etia-tech.com" className="text-xs hover:underline" style={{ color: "#44B549" }}>
+            mark_tang@etia-tech.com
           </a>
         </div>
       </div>

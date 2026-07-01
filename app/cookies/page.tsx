@@ -87,7 +87,7 @@ export default function CookiePolicyPage() {
             <h2 className="text-lg font-bold mb-2" style={{ color: "#1A56DB" }}>Contact</h2>
             <p>
               Questions about this Cookie Policy? Email{" "}
-              <a href="mailto:support@etiatech.com" className="font-medium hover:underline" style={{ color: "#44B549" }}>support@etiatech.com</a>.
+              <a href="mailto:mark_tang@etia-tech.com" className="font-medium hover:underline" style={{ color: "#44B549" }}>mark_tang@etia-tech.com</a>.
             </p>
           </div>
 

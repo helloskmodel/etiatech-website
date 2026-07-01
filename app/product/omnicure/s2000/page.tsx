@@ -144,8 +144,8 @@ export default function S2000ElitePage() {
               ))}
             </div>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>Request a Quote</a>
-              <a href="mailto:support@etiatech.com?subject=S2000%20Elite%20Datasheet" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ Request Datasheet</a>
+              <a href="mailto:mark_tang@etia-tech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>Request a Quote</a>
+              <a href="mailto:mark_tang@etia-tech.com?subject=S2000%20Elite%20Datasheet" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ Request Datasheet</a>
             </div>
           </div>
           <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
@@ -293,7 +293,7 @@ export default function S2000ElitePage() {
               <div className="text-2xl mb-3">💬</div>
               <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>Not sure what you need?</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Our engineers will recommend the right accessories for your application, working distance, and light guide configuration.</p>
-              <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to an Engineer →</a>
+              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>Talk to an Engineer →</a>
             </div>
           </div>
         </div>
@@ -326,7 +326,7 @@ export default function S2000ElitePage() {
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to specify the S2000 Elite?</h2>
           <p className="text-gray-300 mb-8">Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>Request a Quote →</a>
+            <a href="mailto:mark_tang@etia-tech.com?subject=Quote%20Request" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>Request a Quote →</a>
             <Link href="/product/omnicure" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">Back to OmniCure</Link>
           </div>
         </div>
