@@ -5,6 +5,7 @@ import { productImage, localizeProduct, type Product } from "@/components/produc
 import { appNotesForProduct } from "@/components/productApplications";
 import { localizeApp } from "@/components/applicationNotes";
 import { industryColors } from "@/components/industryMedia";
+import { localizeSpecLabel } from "@/components/specLabels.zh";
 import { useLocale, t } from "@/components/LocaleContext";
 
 const brandPageSlug: Record<Product["brandId"], string> = {
@@ -128,7 +129,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
               <tbody>
                 {p.specs.map(([label, value], i) => (
                   <tr key={label} className={i % 2 === 1 ? "bg-gray-50" : "bg-white"}>
-                    <td className="px-5 py-3 font-medium text-gray-700 align-top w-2/5">{label}</td>
+                    <td className="px-5 py-3 font-medium text-gray-700 align-top w-2/5">{localizeSpecLabel(label, locale)}</td>
                     <td className="px-5 py-3 text-gray-500">{value}</td>
                   </tr>
                 ))}
