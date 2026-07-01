@@ -84,7 +84,7 @@ export default function ContactPage() {
     local?: string;
     en?: string;
   }[] = [
-    { region: { en: "China · Shanghai", zh: "中国 · 上海" }, contact: "Mark Tang", phone: "400 990 8448 · +86-21-6432-7144 转106", email: "mark.tang@etia-tech.com", local: "上海市普陀区中江路388弄国盛中心2号楼1903室", en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China" },
+    { region: { en: "China · Shanghai", zh: "中国 · 上海" }, contact: "Mark Tang", phone: "400 990 8448 · +86-21-6432-7144 转106", email: "mark_tang@etia-tech.com", local: "上海市普陀区中江路388弄国盛中心2号楼1903室", en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China" },
     { region: { en: "Hong Kong", zh: "中国 · 香港" }, contact: "Mark Tang", phone: "+86 151 2119 7091", email: "mark_tang@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
     { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷" }, contact: "Mr. Sompoch Ratchakom (Job)", title: { en: "Sales Director", zh: "销售总监" }, phone: "+66 811 746 947", email: "sompoch@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
     { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁" }, contact: "Tien Nguyen", title: { en: "Technical Engineer", zh: "技术工程师" }, phone: "+84 344 590 091", email: "ts_vn@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
@@ -151,8 +151,8 @@ export default function ContactPage() {
               </div>
               <div className="mt-8 p-4 rounded-xl border border-gray-100 bg-gray-50">
                 <p className="text-xs text-gray-400 mb-1">{t({ en: "Direct Email", zh: "直接邮箱" }, locale)}</p>
-                <a href="mailto:support@etiatech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
-                  support@etiatech.com
+                <a href="mailto:mark_tang@etia-tech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
+                  mark_tang@etia-tech.com
                 </a>
               </div>
             </div>

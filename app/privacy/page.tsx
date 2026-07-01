@@ -112,7 +112,7 @@ export default function PrivacyPage() {
               <strong>ETIA-TECH (ASIA) Co., Limited</strong><br />
               Hong Kong<br />
               Email:{" "}
-              <a href="mailto:support@etiatech.com" className="font-medium hover:underline" style={{ color: "#44B549" }}>support@etiatech.com</a>
+              <a href="mailto:mark_tang@etia-tech.com" className="font-medium hover:underline" style={{ color: "#44B549" }}>mark_tang@etia-tech.com</a>
             </p>
           </Section>
 

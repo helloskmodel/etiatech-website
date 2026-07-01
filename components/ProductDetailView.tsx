@@ -35,8 +35,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "#1A56DB" }}>{p.name}</h1>
             <p className="text-base text-gray-600 leading-relaxed mb-8">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Request a Quote", zh: "获取报价" }, locale)}</a>
-              <a href="mailto:support@etiatech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
+              <a href="mailto:mark_tang@etia-tech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Request a Quote", zh: "获取报价" }, locale)}</a>
+              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
             </div>
           </div>
           {/* Product image */}
@@ -106,7 +106,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
           <h2 className="text-2xl font-bold text-white mb-4">{t({ en: `Interested in the ${product.name.split(" ").slice(0, 3).join(" ")}?`, zh: "对该产品感兴趣?" }, locale)}</h2>
           <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:support@etiatech.com?subject=Quote%20Request" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote →", zh: "获取报价 →" }, locale)}</a>
+            <a href="mailto:mark_tang@etia-tech.com?subject=Quote%20Request" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote →", zh: "获取报价 →" }, locale)}</a>
             <Link href="/product/systems" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "All Systems", zh: "全部系统" }, locale)}</Link>
           </div>
         </div>

@@ -87,7 +87,7 @@ export default function SystemsIndexView() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">{t({ en: "Not sure which system fits your process?", zh: "不确定哪款系统适合您的工艺?" }, locale)}</h2>
           <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV固化系统。" }, locale)}</p>
-          <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
+          <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
         </div>
       </section>
     </>

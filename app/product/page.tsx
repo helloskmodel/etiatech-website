@@ -236,7 +236,7 @@ export default function ProductPage() {
               {t({ en: "Advanced UV curing systems engineered for precise output, stable performance, and repeatable manufacturing results.", zh: "先进UV固化系统，为精准输出、稳定性能与可重复的制造结果而设计。" }, locale)}
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+              <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
                 {t({ en: "Talk to Our Sales", zh: "联系我们的销售" }, locale)}
               </a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -329,7 +329,7 @@ export default function ProductPage() {
               ))}
               <div className="text-center mt-4 text-sm text-gray-400">
                 {t({ en: "*Custom Engineering Solutions Available ·", zh: "*提供定制工程解决方案 ·" }, locale)}{" "}
-                <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
+                <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
               </div>
             </div>
           ) : (
@@ -371,7 +371,7 @@ export default function ProductPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Not sure which system is right for you?", zh: "不确定哪款系统适合您?" }, locale)}</h2>
           <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.", zh: "我们的工程师将为您的具体应用匹配合适的UV固化系统——从选型到验证。" }, locale)}</p>
-          <a href="mailto:support@etiatech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
+          <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}
           </a>
         </div>
