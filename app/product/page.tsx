@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { Microscope, Leaf, Zap } from "lucide-react";
 import { modelToSlug, getProduct, productHref } from "@/components/productCatalog";
 import { heroBannerImage } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -207,17 +207,20 @@ const brands = [
   },
 ];
 
+// Ordered by ETIA's core buyers' primary driver: precision first, then
+// clean/safe, then speed.
 const uvCuringBenefits = [
-  { icon: "⚡", title: "Speed", desc: "UV curing converts liquid formulations to solid materials in seconds — eliminating thermal ovens, long cure queues, and handling delays that slow production lines." },
-  { icon: "🌿", title: "Clean & Safe", desc: "UV curable materials are 100% solid with no solvents — zero VOC emissions, no hazardous waste disposal, and no fumes in the clean room." },
-  { icon: "🔬", title: "Precision", desc: "Spectral output, peak irradiance, and energy dose precisely determine the physical properties of the cured material. The right equipment controls all three." },
+  { Icon: Microscope, title: "Precision", desc: "Spectral output, peak irradiance, and energy dose precisely determine the physical properties of the cured material. The right equipment controls all three." },
+  { Icon: Leaf, title: "Clean & Safe", desc: "UV curable materials are 100% solid with no solvents — zero VOC emissions, no hazardous waste disposal, and no fumes in the clean room." },
+  { Icon: Zap, title: "Speed", desc: "UV curing converts liquid formulations to solid materials in seconds — eliminating thermal ovens, long cure queues, and handling delays that slow production lines." },
 ];
 
 export default function ProductPage() {
-  const [activeBrand, setActiveBrand] = useState("omnicure");
-  const brand = brands.find((b) => b.id === activeBrand)!;
   const { locale } = useLocale();
   const tr = (s: string) => (locale === "zh" ? zhDict[s] ?? s : s);
+  const availableBrands = brands.filter((b) => b.available);
+  const scrollToId = (id: string) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
     <>
@@ -227,20 +230,20 @@ export default function ProductPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "UV Curing Systems · 4 Product Lines", zh: "UV固化系统 · 4大产品线" }, locale)}</p>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "4 World-Class Brands · 6 Technology Routes", zh: "4大世界级品牌 · 6条技术路线" }, locale)}</p>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-              {t({ en: "Precision Cures.", zh: "精准固化。" }, locale)}<br />
-              <span style={{ color: "#44B549" }}>{t({ en: "Supreme Control.", zh: "极致掌控。" }, locale)}</span>
+              {t({ en: "The Right System for Your Process.", zh: "为您的工艺，匹配对的系统。" }, locale)}<br />
+              <span style={{ color: "#44B549" }}>{t({ en: "Not Just a Product List.", zh: "而不只是一份产品清单。" }, locale)}</span>
             </h1>
             <p className="text-base text-gray-200 mb-6 leading-relaxed">
-              {t({ en: "Advanced UV curing systems engineered for precise output, stable performance, and repeatable manufacturing results.", zh: "先进UV固化系统，为精准输出、稳定性能与可重复的制造结果而设计。" }, locale)}
+              {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年现场验证经验的工程师，为您的具体应用精准匹配。" }, locale)}
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-                {t({ en: "Talk to Our Sales", zh: "联系我们的销售" }, locale)}
+              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+                {t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}
               </a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
-                {t({ en: "Browse Applications", zh: "浏览应用" }, locale)}
+                {t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}
               </Link>
             </div>
           </div>
@@ -250,98 +253,91 @@ export default function ProductPage() {
       {/* Brand Selector + Products — light */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <Link href="/product/systems" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>
-              {t({ en: "Browse the full product catalog — every system with specs →", zh: "浏览完整产品目录——每个系统含规格 →" }, locale)}
-            </Link>
-          </div>
-
-          {/* 4 Brand Icons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {brands.map((b) => (
-              <button
-                key={b.id}
-                onClick={() => b.available && setActiveBrand(b.id)}
-                className={`relative flex items-center gap-3 px-5 py-3 rounded-xl border-2 transition-all ${
-                  activeBrand === b.id
-                    ? "shadow-md"
-                    : b.available
-                    ? "border-gray-200 hover:border-gray-300 hover:shadow-sm bg-white"
-                    : "border-gray-100 bg-gray-50 opacity-40 cursor-default"
-                }`}
-                style={activeBrand === b.id ? { borderColor: b.color, background: `${b.color}0d` } : {}}
-              >
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-base font-bold flex-shrink-0" style={{ background: b.color }}>
-                  {b.logo}
-                </div>
-                <span className="font-bold text-sm" style={{ color: activeBrand === b.id ? b.color : b.available ? "#374151" : "#9ca3af" }}>{b.name}</span>
-                {!b.available && (
-                  <span className="text-xs px-1.5 py-0.5 rounded-full bg-gray-100 text-gray-400">{t({ en: "Soon", zh: "即将上线" }, locale)}</span>
-                )}
+          {/* Brand tabs — smooth-scroll to each brand block */}
+          <nav className="flex flex-wrap justify-center gap-2 mb-10">
+            <button onClick={() => scrollToId("brand-top")} className="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB] transition-all">
+              {t({ en: "All", zh: "全部" }, locale)}
+            </button>
+            {availableBrands.map((b) => (
+              <button key={b.id} onClick={() => scrollToId(`brand-${b.id}`)} className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB] transition-all">
+                <span className="w-2 h-2 rounded-full" style={{ background: b.color }} />
+                {b.name}
               </button>
+            ))}
+          </nav>
+
+          <div id="brand-top" className="scroll-mt-28" />
+
+          {/* All brand blocks, stacked */}
+          <div className="space-y-16">
+            {availableBrands.map((brand) => (
+              <div key={brand.id} id={`brand-${brand.id}`} className="scroll-mt-28">
+                {/* Brand heading */}
+                <div className="flex items-center gap-3 mb-6 pb-3 border-b border-gray-100">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0" style={{ background: brand.color }}>{brand.logo}</div>
+                  <div>
+                    <h2 className="text-xl font-bold leading-tight" style={{ color: brand.color }}>{brand.name}</h2>
+                    <p className="text-xs text-gray-400">{tr(brand.tagline)}</p>
+                  </div>
+                </div>
+                {brand.families.map((group) => (
+                  <div key={group.category} className="mb-10">
+                    <span className="inline-block whitespace-nowrap text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#1A56DB" }}>
+                      {tr(group.category)}
+                    </span>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      {group.items.map((item) => (
+                        <div key={item.name} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                          {/* Card header */}
+                          <div className="p-5 text-white" style={{ background: item.bg }}>
+                            <p className="text-xs opacity-70 mb-1 tracking-wider font-medium">{item.series}</p>
+                            <h3 className="text-lg font-bold">{tr(item.name)}</h3>
+                          </div>
+                          {/* Card body */}
+                          <div className="p-5 bg-white">
+                            <p className="text-gray-500 text-sm mb-4 leading-relaxed">{tr(item.desc)}</p>
+                            <div className="flex flex-wrap gap-2">
+                              {item.models.map((m) => {
+                                const slug = modelToSlug[m];
+                                const product = slug ? getProduct(slug) : undefined;
+                                return product ? (
+                                  <Link
+                                    key={m}
+                                    href={productHref(product)}
+                                    className="text-xs px-3 py-1 rounded-full border font-medium hover:text-white transition-colors"
+                                    style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}
+                                  >
+                                    {m} →
+                                  </Link>
+                                ) : (
+                                  <span key={m} className="text-xs px-3 py-1 rounded-full border font-medium" style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}>
+                                    {m}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             ))}
           </div>
 
-          {/* Product Cards */}
-          {brand.available ? (
+          {/* Footer note + full catalog link (moved to bottom per audit 3.6) */}
+          <div className="text-center mt-14 space-y-5">
+            <p className="text-sm text-gray-400">
+              {t({ en: "*Custom Engineering Solutions Available ·", zh: "*提供定制工程解决方案 ·" }, locale)}{" "}
+              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
+            </p>
             <div>
-              {brand.families.map((group) => (
-                <div key={group.category} className="mb-10">
-                  <span className="inline-block whitespace-nowrap text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#1A56DB" }}>
-                    {tr(group.category)}
-                  </span>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {group.items.map((item) => (
-                      <div key={item.name} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                        {/* Card header */}
-                        <div className="p-5 text-white" style={{ background: item.bg }}>
-                          <p className="text-xs opacity-70 mb-1 tracking-wider font-medium">{item.series}</p>
-                          <h3 className="text-lg font-bold">{tr(item.name)}</h3>
-                        </div>
-                        {/* Card body */}
-                        <div className="p-5 bg-white">
-                          <p className="text-gray-500 text-sm mb-4 leading-relaxed">{tr(item.desc)}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {item.models.map((m) => {
-                              const slug = modelToSlug[m];
-                              const product = slug ? getProduct(slug) : undefined;
-                              return product ? (
-                                <Link
-                                  key={m}
-                                  href={productHref(product)}
-                                  className="text-xs px-3 py-1 rounded-full border font-medium hover:text-white transition-colors"
-                                  style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}
-                                >
-                                  {m} →
-                                </Link>
-                              ) : (
-                                <span key={m} className="text-xs px-3 py-1 rounded-full border font-medium" style={{ borderColor: item.bg, color: item.bg, background: `${item.bg}10` }}>
-                                  {m}
-                                </span>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-              <div className="text-center mt-4 text-sm text-gray-400">
-                {t({ en: "*Custom Engineering Solutions Available ·", zh: "*提供定制工程解决方案 ·" }, locale)}{" "}
-                <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
-              </div>
-            </div>
-          ) : (
-            <div className="text-center py-20 rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50">
-              <div className="text-5xl mb-4">🔧</div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: "#1A56DB" }}>{brand.name} — {t({ en: "Coming Soon", zh: "即将上线" }, locale)}</h3>
-              <p className="text-gray-400 mb-6">{t({ en: `Product details for ${brand.name} are being prepared. Contact us for information.`, zh: `${brand.name} 的产品详情正在准备中，欢迎联系我们获取信息。` }, locale)}</p>
-              <Link href="/contact" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
-                {t({ en: `Enquire About ${brand.name} →`, zh: `咨询 ${brand.name} →` }, locale)}
+              <Link href="/product/systems" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+                {t({ en: "Browse the Full Product Catalog — All Models with Specs →", zh: "浏览完整产品目录——全部型号含规格 →" }, locale)}
               </Link>
             </div>
-          )}
+          </div>
         </div>
       </section>
 
@@ -357,7 +353,7 @@ export default function ProductPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {uvCuringBenefits.map((b) => (
               <div key={b.title} className="rounded-xl p-6 border border-gray-100 bg-white hover:shadow-md transition-all">
-                <div className="text-3xl mb-3">{b.icon}</div>
+                <b.Icon className="mb-3" size={28} strokeWidth={1.75} style={{ color: "#1A56DB" }} />
                 <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>{tr(b.title)}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{tr(b.desc)}</p>
               </div>
