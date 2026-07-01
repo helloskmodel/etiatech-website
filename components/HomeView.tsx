@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FlaskConical, Package, Wrench, ClipboardCheck } from "lucide-react";
-import CaseStudyGrid from "@/components/CaseStudyGrid";
+import CaseStudyStrip from "@/components/CaseStudyStrip";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -194,7 +194,7 @@ export default function HomeView() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Case Studies", zh: "案例研究" }, locale)}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "Where Performance Is Proven", zh: "实力，经得起验证" }, locale)}</h2>
           <p className="text-gray-500 mb-10">{t({ en: "See how our UV curing systems deliver where precision and reliability matter most.", zh: "看我们的UV固化系统如何在最看重精度与可靠性的场景中交付成果。" }, locale)}</p>
-          <CaseStudyGrid />
+          <CaseStudyStrip />
         </div>
       </section>
 
