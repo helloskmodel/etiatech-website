@@ -105,8 +105,8 @@ export default function ContactPage() {
           <div className="max-w-2xl text-left">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-            {t({ en: "Expert Guidance.", zh: "专业指导。" }, locale)}<br />
-            <span style={{ color: "#44B549" }}>{t({ en: "We're Here to Help.", zh: "我们随时为您服务。" }, locale)}</span>
+            {t({ en: "Dedicated Support,", zh: "专属支持" }, locale)}<br />
+            <span style={{ color: "#44B549" }}>{t({ en: "Always Available.", zh: "全程相伴" }, locale)}</span>
           </h1>
           <p className="text-base text-gray-200 mb-6">
             {t({ en: "From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answer and keep production moving.", zh: "从产品选型、工艺建议到定制方案与设备服务，ETIA团队帮助客户找到正确答案，让生产持续运转。" }, locale)}
