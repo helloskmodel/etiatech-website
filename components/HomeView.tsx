@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FlaskConical, Package, Wrench, ClipboardCheck } from "lucide-react";
-import CaseStudyCarousel from "@/components/CaseStudyCarousel";
+import CaseStudyGrid from "@/components/CaseStudyGrid";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -194,12 +194,7 @@ export default function HomeView() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Case Studies", zh: "案例研究" }, locale)}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "Where Performance Is Proven", zh: "实力，经得起验证" }, locale)}</h2>
           <p className="text-gray-500 mb-10">{t({ en: "See how our UV curing systems deliver where precision and reliability matter most.", zh: "看我们的UV固化系统如何在最看重精度与可靠性的场景中交付成果。" }, locale)}</p>
-          <CaseStudyCarousel />
-          <div className="mt-10 text-center">
-            <Link href="/application" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold border-2 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white transition-all">
-              {t({ en: "Explore All Applications →", zh: "浏览全部应用 →" }, locale)}
-            </Link>
-          </div>
+          <CaseStudyGrid />
         </div>
       </section>
 

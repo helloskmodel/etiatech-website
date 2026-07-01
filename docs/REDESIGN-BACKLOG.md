@@ -7,7 +7,7 @@
 
 ## 首页 (Home)
 
-- [ ] **2. Case Study 区块:轮播 → 3列静态卡片网格**
+- [x] **2. Case Study 区块:轮播 → 3列静态卡片网格** — **PR #46**
   - 固定展示 3 个案例,突出核心数字:
     - AUTOMOTIVE & EV — **Up to 80% Cost Reduction** — EV Battery Manufacturing (B1)
     - PHOTONICS — **±5% Dose Stability · 400G→1.6T** — Optical Transceiver (B2)
