@@ -61,8 +61,8 @@ export default function HomeView() {
               {t({ en: "Authorized Distributor · Genuine Products Guaranteed", zh: "授权代理商 · 正品保证" }, locale)}
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-              {t({ en: "Trusted Expertise.", zh: "值得信赖的专业。" }, locale)}<br />
-              <span style={{ color: "#44B549" }}>{t({ en: "Responsive Solutions.", zh: "快速响应的方案。" }, locale)}</span>
+              {t({ en: "Trusted Expertise.", zh: "深耕积淀" }, locale)}<br />
+              <span style={{ color: "#44B549" }}>{t({ en: "Responsive Solutions.", zh: "高效响应" }, locale)}</span>
             </h1>
             <p className="text-base text-gray-200 mb-8 leading-relaxed">
               {t({ en: "ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.", zh: "ETIA将20年UV固化实战经验，转化为覆盖选型、工艺验证、故障排查、保养与自有维修的全方位实用支持。" }, locale)}
