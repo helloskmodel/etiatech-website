@@ -117,12 +117,9 @@ export default function CaseStudyModal({
             )}
           </div>
 
-          <div className="flex items-center justify-between mb-5 px-1">
-            <div>
-              <p className="text-2xl font-bold" style={{ color: "#1A56DB" }}>{c.metric}</p>
-              <p className="text-xs text-gray-400 mt-0.5">{c.metricLabel}</p>
-            </div>
-            <p className="text-[11px] text-gray-400 text-right max-w-[45%]">{t({ en: "Source", zh: "来源" }, locale)}: {c.source}</p>
+          <div className="mb-5 px-1">
+            <p className="text-2xl font-bold" style={{ color: "#1A56DB" }}>{c.metric}</p>
+            <p className="text-xs text-gray-400 mt-0.5">{c.metricLabel}</p>
           </div>
 
           <a
