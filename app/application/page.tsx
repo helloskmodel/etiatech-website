@@ -133,7 +133,7 @@ export default function ApplicationPage() {
                       {(() => { const Icon = industryFallbackIcon[s.industry]; return Icon ? <Icon className="w-10 h-10 text-white/90" strokeWidth={1.5} /> : null; })()}
                     </div>
                   )}
-                  <span className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[s.industry] }}>{s.industry.toUpperCase()}</span>
+                  <span className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[s.industry] }}>{s.sector.toUpperCase()}</span>
                   <span className="absolute top-2 right-2 text-[10px] text-white bg-black/30 px-1.5 py-0.5 rounded">{s.id}</span>
                 </div>
                 {/* Title */}

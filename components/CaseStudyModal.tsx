@@ -38,7 +38,7 @@ export default function CaseStudyModal({
               {Icon ? <Icon className="w-12 h-12 text-white/90" strokeWidth={1.5} /> : null}
             </div>
           )}
-          <span className="absolute top-3 left-3 text-[11px] font-bold px-2 py-0.5 rounded text-white" style={{ background: color }}>{c.industry.toUpperCase()}</span>
+          <span className="absolute top-3 left-3 text-[11px] font-bold px-2 py-0.5 rounded text-white" style={{ background: color }}>{c.sector.toUpperCase()}</span>
           <button onClick={onClose} className="absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/50 text-lg leading-none">✕</button>
         </div>
         <div className="p-6">

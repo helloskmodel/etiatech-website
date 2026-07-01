@@ -62,7 +62,7 @@ export default function CaseStudyStrip() {
                   {img && (
                     <Image src={img} alt={c.title} fill sizes="(max-width: 640px) 82vw, (max-width: 1024px) 45vw, 30vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   )}
-                  <span className="absolute top-3 left-3 text-[11px] font-bold px-2 py-0.5 rounded text-white" style={{ background: color }}>{c.industry.toUpperCase()}</span>
+                  <span className="absolute top-3 left-3 text-[11px] font-bold px-2 py-0.5 rounded text-white" style={{ background: color }}>{c.sector.toUpperCase()}</span>
                   <span className="absolute top-3 right-3 text-[11px] text-white bg-black/40 px-2 py-0.5 rounded">CASE STUDY {c.id}</span>
                 </div>
                 {/* Body — metric forward */}

@@ -6,7 +6,8 @@ export type MaterialRow = { application: string; system: string; category: strin
 
 export type CaseStudy = {
   id: string;
-  industry: string;
+  industry: string; // broad taxonomy (drives the chip color)
+  sector: string; // concise detailed application name shown on the card chip
   company: string;
   title: string;
   image?: string; // filename under IMAGE/casestudies/ in the COS bucket
@@ -27,6 +28,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B1",
     industry: "Automotive & ADAS",
+    sector: "EV Battery Manufacturing",
     company: "EV Battery Manufacturing",
     title: "Using UV Curing to Improve EV Battery Manufacturing Reliability and Costs",
     image: "ev-battery.png",
@@ -59,6 +61,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B2",
     industry: "Photonics & Advanced Packaging",
+    sector: "Optical Transceivers (400G–1.6T)",
     company: "Optical Transceiver (400G–1.6T)",
     title: "UV Curing for Next-Generation Optical Transceiver Manufacturing (400G–1.6T)",
     image: "optical-transceiver.jpg",
@@ -93,6 +96,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B3",
     industry: "Photonics & Advanced Packaging",
+    sector: "Co-Packaged Optics (CPO)",
     company: "Co-Packaged Optics (CPO)",
     title: "UV Curing for Co-Packaged Optics — Enabling AI Data Center Infrastructure",
     image: "co-packaged-optics.png",
@@ -125,6 +129,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B4",
     industry: "Photonics & Advanced Packaging",
+    sector: "Photonic IC (PIC) Packaging",
     company: "Photonic IC (PIC) Packaging",
     title: "UV Curing in Photonic Integrated Circuit (PIC) Packaging for AI Infrastructure",
     image: "pic-packaging.jpg",
@@ -159,6 +164,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B5",
     industry: "Photonics & Advanced Packaging",
+    sector: "Advanced Packaging (Chiplet / 2.5D / 3D)",
     company: "Advanced Packaging (Chiplet / 2.5D / 3D)",
     title: "UV Curing in Advanced Semiconductor Packaging — Chiplets, 2.5D and 3D Integration",
     image: "advanced-packaging.jpg",
@@ -190,7 +196,8 @@ export const successStories: CaseStudy[] = [
   },
   {
     id: "B6",
-    industry: "Photonics & Advanced Packaging",
+    industry: "Automotive & ADAS",
+    sector: "Automotive LiDAR Sensor",
     company: "Automotive LiDAR Sensor",
     title: "UV Curing for Automotive LiDAR Sensor Assembly",
     image: "Automotive LiDAR.jpg",
@@ -223,6 +230,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B7",
     industry: "Optical Fiber & Cable Manufacturing",
+    sector: "Optical Fiber Draw Tower",
     company: "Optical Fiber Draw Tower",
     title: "UV Curing for High-Speed Optical Fiber Draw Tower Manufacturing",
     image: "Optical Fiber Draw Tower.jpg",
@@ -254,6 +262,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B8",
     industry: "Automotive & ADAS",
+    sector: "ADAS Camera Module",
     company: "ADAS Camera Module",
     title: "UV Curing for ADAS Camera Module Manufacturing",
     image: "ADAS Camera Module.jpg",
@@ -286,6 +295,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B9",
     industry: "Medical Device Assembly",
+    sector: "Cardiovascular Catheter",
     company: "Cardiovascular Catheter",
     title: "UV Curing for Cardiovascular Catheter Manufacturing",
     image: "cardiovascular-catheter.jpg",
@@ -317,6 +327,7 @@ export const successStories: CaseStudy[] = [
   {
     id: "B10",
     industry: "Aerospace & Defense",
+    sector: "Aerospace Composite Bonding",
     company: "Structural Composite Bonding",
     title: "UV Curing for Aerospace Structural Composite Bonding",
     image: "Aerospace Composite.jpeg",

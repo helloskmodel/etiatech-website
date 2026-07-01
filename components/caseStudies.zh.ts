@@ -5,6 +5,7 @@ import type { CaseStudy } from "./caseStudies";
 
 export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
   B1: {
+    sector: "动力电池制造",
     title: "利用UV固化提升EV电池制造可靠性并降低成本",
     overview:
       "全球EV销量从2012年不到2.5万辆增长至2021年超过850万辆（IEA数据）。电池组可靠性和制造成本降低是核心挑战，电极制造（粘合剂涂覆）占电池电芯成本的63%。",
@@ -20,6 +21,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
     ],
   },
   B2: {
+    sector: "光收发器（400G–1.6T）",
     title: "面向新一代光收发器制造（400G–1.6T）的UV固化",
     overview:
       "光收发器是推动硅光子学和PIC市场的「杀手级应用」，据IDTechEx研究指出。数据速率大约每数年翻倍——2026年已实现1.6 Tbps光收发器商业化，为最新一代AI加速器架构提供高带宽、低延迟的芯片到芯片通信。IDTechEx预计这一倍增趋势将持续，3.2T收发器将在本十年末出现。无论是可插拔模块（QSFP-DD、OSFP）还是协同封装模块，每个收发器都依赖激光器、光电二极管、镜头与光纤之间的精密UV粘接。",
@@ -37,6 +39,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
       "IDTechEx预计硅光子和PIC收发器市场将是2035年前更广泛光子产业的主要增长驱动力，AI加速器带宽需求为主要催化因素。",
   },
   B3: {
+    sector: "协同封装光学（CPO）",
     title: "面向协同封装光学的UV固化——赋能AI数据中心基础设施",
     overview:
       "协同封装光学（CPO）将光收发器直接与交换机ASIC或AI加速器共同封装在同一基板上，消除连接可插拔光模块与传统交换机端口之间的铜质电气走线。CPO市场2024年规模约4600万美元，预计2030年将达到81亿美元——复合年增长率137%——由可插拔模块向CPO转型、铜走线向光学转型驱动整个AI数据中心基础设施。在GTC 2025上，NVIDIA发布了Spectrum-X和Quantum-X硅光子交换机平台，使用CPO以1.6 Tbps端口连接GPU。Broadcom、Cisco、Intel和Marvell正在为超大规模数据中心部署平行的CPO架构。",
@@ -52,6 +55,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
     ],
   },
   B4: {
+    sector: "光子集成电路（PIC）封装",
     title: "面向AI基础设施的光子集成电路（PIC）封装中的UV固化",
     overview:
       "光子集成电路（PIC）——使用光而非电子处理数据的硅光子芯片——是AI数据中心、5G光网络、LiDAR系统和医学影像背后的基础技术。一枚硅光子芯片可能携带100多个光学输入/输出端口，每个端口都需要在低于±100纳米的对准公差下完成光纤到芯片耦合。尽管PIC晶圆级制造取得巨大进展，封装仍是PIC制造中最具挑战性和成本密集的环节——UV固化胶是将光纤阵列永久锁定在芯片对准位置的主要方法。",
@@ -69,6 +73,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
       "NVIDIA在GTC 2025上发布的Spectrum-X/Quantum-X CPO交换机，以及更广泛的AI基础设施建设（Meta、Google、Microsoft、Amazon共宣布2025-2026年AI数据中心资本支出超过3000亿美元），正在推动TSMC、Intel和GlobalFoundries对PIC封装产能的空前需求。",
   },
   B5: {
+    sector: "先进封装（Chiplet / 2.5D / 3D）",
     title: "先进半导体封装中的UV固化——Chiplet、2.5D与3D集成",
     overview:
       "半导体行业对单芯片缩放物理极限的应对，是封装技术的演进——将多个Chiplet、内存芯片和光子引擎集成至单一异质封装中。TSMC的CoWoS、Intel的Foveros以及UCIe（通用Chiplet互连标准）开放标准等技术，正将芯片封装从一个商品化工艺步骤转变为主要技术差异化要素。NVIDIA的Blackwell架构、AMD的MI300X、Intel的Ponte Vecchio均依赖Chiplet集成，实现计算芯片、HBM内存堆叠及（日益增多的）光子I/O引擎之间的密集互连。",
@@ -84,6 +89,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
     ],
   },
   B6: {
+    sector: "汽车LiDAR传感器",
     title: "面向汽车LiDAR传感器装配的UV固化",
     overview:
       "LiDAR（光探测与测距）传感器是自动驾驶汽车、高级驾驶辅助系统（ADAS）、机器人技术和工业三维测绘的关键支撑技术。单台车规级LiDAR单元包含16-128个精密对准的激光发射和接收通道，每个均使用UV固化胶粘接，须在汽车热振环境（-40°C至+105°C，15G振动）下保持光学对准。汽车LiDAR市场预计将以约25%的复合年增长率增长至2030年，受SAE L2+和L3自动驾驶系统在传统OEM及自动驾驶汽车开发商中的采用驱动。",
@@ -99,6 +105,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
     ],
   },
   B7: {
+    sector: "光纤拉丝塔",
     title: "面向高速光纤拉丝塔制造的UV固化",
     overview:
       "光纤生产始于在拉丝塔上以高达3500米/分钟的速度从加热预制棒拉制玻璃纤维，并立即在拉丝塔内为裸纤施加双层UV固化丙烯酸酯涂层（一次和二次涂层）。全球光纤需求正受三大趋势汇聚驱动加速增长：5G网络密集化要求光纤到天线回传，超大规模数据中心建设支撑AI训练基础设施，以及多地区国家宽带扩展计划。Corning一家就宣布了数十亿美元的光纤产能扩张投资以满足这一需求。",
@@ -114,6 +121,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
     ],
   },
   B8: {
+    sector: "ADAS摄像头模组",
     title: "面向ADAS摄像头模组制造的UV固化",
     overview:
       "高级驾驶辅助系统（ADAS）和自动驾驶要求车规级摄像头模组在-40°C至+105°C热环境及15G机械冲击下保持±10微米的光学对准。现代车辆可能配备8-12个摄像头，用于360°环视、车道保持、交通标志识别和行人检测。每个摄像头模组都需要UV固化粘接，须在车辆15年使用寿命内保持对准，IATF 16949工艺验证及完整可追溯性是汽车一级供应商认证的强制要求。",
@@ -129,6 +137,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
     ],
   },
   B9: {
+    sector: "心血管导管",
     title: "面向心血管导管制造的UV固化",
     overview:
       "导管是塑料管材，有时带涂层，插入血管或体腔以实现引流、注射或手术通道。主要应用包括心血管、泌尿科和静脉用途。虽然泌尿科导管在单位销量上领先，但心血管导管因心血管疾病的严重性和普遍性而占据最大的营收份额——心血管疾病是全球头号死因，约占全球疾病的30%（WHO数据）。经皮冠状动脉腔内血管成形术（PTCA）是一种使用球囊导管开通阻塞冠状动脉的微创手术，是增长最快的导管细分市场之一，受人口老龄化和导管技术改进推动，扩大了治疗适应人群。",
@@ -144,6 +153,7 @@ export const caseStudiesZh: Record<string, Partial<CaseStudy>> = {
     ],
   },
   B10: {
+    sector: "航空复合材料粘接",
     title: "面向航空航天结构复合材料粘接的UV固化",
     overview:
       "航空航天结构复合材料——碳纤维增强聚合物（CFRP）和玻璃纤维——日益用于机身、内饰及无人机（UAS/无人机）结构以减重并保持结构完整性。UV固化结构胶为复合材料粘接操作提供快速、文档化的固化，但航空航天严格的适航认证要求（FAA、EASA）要求达到远超大多数其他工业UV固化应用的工艺文档记录和可追溯性水平。",
