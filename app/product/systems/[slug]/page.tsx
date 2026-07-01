@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { products, getProduct, brandAccent } from "@/components/productCatalog";
+import { products, getProduct, brandAccent, productJsonLd, productBreadcrumbJsonLd } from "@/components/productCatalog";
 import ProductDetailView from "@/components/ProductDetailView";
 
 export function generateStaticParams() {
@@ -25,5 +25,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
   const accent = brandAccent[p.brandId];
 
-  return <ProductDetailView product={p} accent={accent} />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(p)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productBreadcrumbJsonLd(p)) }} />
+      <ProductDetailView product={p} accent={accent} />
+    </>
+  );
 }

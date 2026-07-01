@@ -2,7 +2,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { productImage, localizeProduct, type Product } from "@/components/productCatalog";
+import { appNotesForProduct } from "@/components/productApplications";
+import { localizeApp } from "@/components/applicationNotes";
+import { industryColors } from "@/components/industryMedia";
 import { useLocale, t } from "@/components/LocaleContext";
+
+const brandPageSlug: Record<Product["brandId"], string> = {
+  omnicure: "omnicure",
+  phoseon: "phoseon",
+  fusionuv: "fusion-uv",
+  noblelight: "noblelight",
+};
 
 // Client view for the generic product detail page. The server page supplies
 // the catalog product + brand accent; this component localizes the copy
@@ -10,6 +20,8 @@ import { useLocale, t } from "@/components/LocaleContext";
 export default function ProductDetailView({ product, accent }: { product: Product; accent: string }) {
   const { locale } = useLocale();
   const p = localizeProduct(product, locale);
+  // Matched on the English catalog fields, then localized for display.
+  const appNotes = appNotesForProduct(product);
 
   return (
     <>
@@ -29,7 +41,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="text-[11px] font-bold px-2.5 py-1 rounded text-white" style={{ background: accent }}>{p.brand}</span>
+              <Link href={`/product/${brandPageSlug[product.brandId]}`} className="text-[11px] font-bold px-2.5 py-1 rounded text-white hover:opacity-90 transition-opacity" style={{ background: accent }}>{p.brand} →</Link>
               <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{p.tech}{p.sub ? ` · ${p.sub}` : ""}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "#1A56DB" }}>{p.name}</h1>
@@ -76,6 +88,32 @@ export default function ProductDetailView({ product, accent }: { product: Produc
                 </li>
               ))}
             </ul>
+
+            {/* Typical application notes — deep-link to the Application page (3.4) */}
+            {appNotes.length > 0 && (
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <p className="text-xs font-semibold text-gray-500 mb-3">{t({ en: "Validated in these applications:", zh: "已在以下应用中验证:" }, locale)}</p>
+                <div className="flex flex-wrap gap-2">
+                  {appNotes.slice(0, 8).map((raw) => {
+                    const a = localizeApp(raw, locale);
+                    const color = industryColors[raw.industry] || "#1A56DB";
+                    return (
+                      <Link
+                        key={a.id}
+                        href={`/application#${a.id}`}
+                        className="text-xs font-medium px-3 py-1 rounded-full border hover:underline transition-colors"
+                        style={{ borderColor: `${color}66`, color, background: `${color}0d` }}
+                      >
+                        {a.title} →
+                      </Link>
+                    );
+                  })}
+                </div>
+                <Link href="/application" className="inline-block mt-4 text-sm font-semibold hover:underline" style={{ color: accent }}>
+                  {t({ en: "Browse all applications →", zh: "浏览全部应用 →" }, locale)}
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </section>
