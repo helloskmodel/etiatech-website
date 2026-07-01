@@ -24,7 +24,7 @@
 - [x] 3.3 四个品牌全部展示(堆叠) — **PR #44**
 - [x] 3.5 Why-UV 顺序(精准→清洁→速度)+ lucide 图标 — **PR #44**
 - [x] 3.6 完整目录链接移到底部 — **PR #44**
-- [ ] **3.4 产品卡"典型应用"标签** → 链接到应用页对应锚点(依赖:应用页锚点)
+- [x] **3.4 产品"典型应用"标签** → 链接到应用页对应锚点 — **PR #51**(标签放在产品子页,数据驱动匹配)
 - [ ] (可选)3.3 各品牌区块内容按审计原文精调
 
 ---
@@ -52,15 +52,16 @@
 - [x] 6.1 Title 模板:品牌页 `{品牌} … Authorized Distributor | ETIA` — **PR #49**;产品子页模板待 §4
 - [x] 6.2 Meta description(品牌页)— **PR #49**;产品子页待 §4
 - [x] 6.3 Breadcrumb JSON-LD(品牌页)— **PR #49**;产品子页待 §4
-- [ ] 6.4 Product JSON-LD(产品子页,含 brand / category / manufacturer / offers.seller=ETIA / areaServed=[CN,HK,TH,VN])
+- [x] 6.4 Product JSON-LD(产品子页,含 brand / category / manufacturer / offers.seller=ETIA / areaServed=[CN,HK,TH,VN])— **PR #51**(附 Breadcrumb JSON-LD)
 - [x] 6.5 sitemap 加 4 个品牌落地页 — **PR #49**(产品子页已在 sitemap)
 
 ---
 
 ## 内链逻辑 — §7
 
-- [ ] 首页 ↔ 产品 ↔ 品牌页 ↔ 产品子页 ↔ 应用页 双向打通
-- [ ] **前置依赖**:应用页给 62 个 AN-note 加锚点(`#AN-MED-001` 等),供产品/子页链接
+- [x] 产品子页 ↔ 应用页 ↔ 品牌页 双向打通 — **PR #51**(产品子页→应用锚点/品牌页;应用弹窗推荐系统→产品子页)
+- [x] **前置依赖**:应用页给 62 个 AN-note 加锚点(`#AN-MED-001` 等)+ `?ind=` 预筛选 — **PR #51**
+- [ ] (余)首页 ↔ 产品列表 更细的双向内链(如首页按行业直达应用锚点)
 
 ---
 
