@@ -136,8 +136,8 @@ export default function ApplicationPage() {
       <section id="case-studies" className="py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Customer Success", zh: "客户成功案例" }, locale)}</p>
-          <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "From Application Know-How to Real Results", zh: "从应用专知到真实成果" }, locale)}</h2>
-          <p className="text-gray-500 mb-10 max-w-3xl">{t({ en: "Unmatched light-cure expertise — full system solutions where chemistry, material, and equipment work as one.", zh: "无可比拟的光固化专业能力——化学、材料与设备协同一体的完整系统解决方案。" }, locale)}</p>
+          <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "From Application Know-How to Real Results", zh: "从应用专业积淀，到落地实效成果" }, locale)}</h2>
+          <p className="text-gray-500 mb-10 max-w-3xl text-balance">{t({ en: "Unmatched light-cure expertise — full system solutions where chemistry, material, and equipment work as one.", zh: "积累丰富的UV光固化的经验—— 为客户制定融合耗材、胶粘剂与设备一体化解决方案。" }, locale)}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {successStories.map((raw) => {
               const s = localizeCase(raw, locale);
