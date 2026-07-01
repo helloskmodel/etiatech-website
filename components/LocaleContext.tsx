@@ -50,8 +50,12 @@ export function useLocale() {
   return useContext(LocaleCtx);
 }
 
+// A string localized into any supported locale. `en` is required and used
+// as the fallback; add zh/vi/th as translations become available.
+export type LangText = { en: string; zh?: string; vi?: string; th?: string };
+
 // Tiny helper for inline UI strings: t({ en: "...", zh: "..." }, locale).
-export function t(s: { en: string; zh?: string }, locale: Locale): string {
-  if (locale === "zh" && s.zh) return s.zh;
-  return s.en;
+// Returns the active locale's text, falling back to English.
+export function t(s: LangText, locale: Locale): string {
+  return s[locale] ?? s.en;
 }
