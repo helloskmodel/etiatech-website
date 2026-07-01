@@ -1577,6 +1577,62 @@ export function productImage(p: Product): string {
   return file ? `${PRODUCT_IMG_BASE}/${encodeURIComponent(file)}` : "";
 }
 
+// ───────────────────────── Product SEO (JSON-LD) ─────────────────────────
+const SITE = "https://www.etiatech.com";
+
+const BRAND_MANUFACTURER: Record<Product["brandId"], string> = {
+  omnicure: "OmniCure (Excelitas Technologies)",
+  phoseon: "Phoseon Technology (Excelitas)",
+  fusionuv: "Fusion UV (Excelitas Technologies)",
+  noblelight: "Excelitas Noblelight",
+};
+
+const brandRouteSlug: Record<Product["brandId"], string> = {
+  omnicure: "omnicure",
+  phoseon: "phoseon",
+  fusionuv: "fusion-uv",
+  noblelight: "noblelight",
+};
+
+// Product JSON-LD (schema.org/Product) for a product detail page. ETIA is the
+// distributor/seller; the brand is the manufacturer. areaServed reflects the
+// Asia-Pacific territories ETIA covers.
+export function productJsonLd(p: Product) {
+  const img = productImage(p);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    ...(img ? { image: img } : {}),
+    description: p.intro.slice(0, 300),
+    category: p.tech,
+    brand: { "@type": "Brand", name: p.brand.replace(/®/g, "") },
+    manufacturer: { "@type": "Organization", name: BRAND_MANUFACTURER[p.brandId] },
+    url: `${SITE}${productHref(p)}`,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: "ETIA Technology" },
+      areaServed: ["CN", "HK", "TH", "VN"],
+    },
+  };
+}
+
+// BreadcrumbList JSON-LD: Home > Products > {Brand} > {Model}.
+export function productBreadcrumbJsonLd(p: Product) {
+  const brandName = p.brand.replace(/®/g, "");
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Products", item: `${SITE}/product` },
+      { "@type": "ListItem", position: 3, name: brandName, item: `${SITE}/product/${brandRouteSlug[p.brandId]}` },
+      { "@type": "ListItem", position: 4, name: p.name, item: `${SITE}${productHref(p)}` },
+    ],
+  };
+}
+
 // Returns the product with intro + feature bullets translated for the given
 // locale. English is returned unchanged (no regression); zh/vi overlay the
 // translated copy where available, falling back to the catalog text.

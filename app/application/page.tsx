@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
 import { successStories, caseStudyImage, heroBannerImage, localizeCase, type CaseStudy } from "@/components/caseStudies";
 import { apps, localizeApp, localizeIndustry, type App } from "@/components/applicationNotes";
+import { productForAppNote } from "@/components/productApplications";
+import { productHref } from "@/components/productCatalog";
 import CaseStudyModal from "@/components/CaseStudyModal";
 import { useLocale, t } from "@/components/LocaleContext";
 
@@ -17,6 +19,26 @@ export default function ApplicationPage() {
   const [selectedApp, setSelectedApp] = useState<App | null>(null);
   const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);
   const { locale } = useLocale();
+
+  // Deep-linking: /application?ind=<Industry> pre-selects a filter tab, and
+  // /application#AN-XXX-001 opens that application note's detail modal and
+  // scrolls it into view. Runs once on mount.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const ind = params.get("ind");
+    if (ind && industries.includes(ind)) setActiveIndustry(ind);
+
+    const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+    if (!hash) return;
+    const app = apps.find((a) => a.id === hash);
+    if (app) {
+      setActiveIndustry("All");
+      setSelectedApp(localizeApp(app, locale));
+    }
+    window.setTimeout(() => document.getElementById(hash)?.scrollIntoView({ block: "center" }), 120);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const filtered = activeIndustry === "All" ? apps : apps.filter((a) => a.industry === activeIndustry);
 
@@ -78,8 +100,9 @@ export default function ApplicationPage() {
               return (
               <button
                 key={app.id}
+                id={app.id}
                 onClick={() => setSelectedApp(app)}
-                className="text-left rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all group overflow-hidden"
+                className="text-left rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all group overflow-hidden scroll-mt-32"
               >
                 {/* Colored top bar */}
                 <div className="h-1" style={{ background: industryColors[app.industry] }} />
@@ -222,6 +245,14 @@ export default function ApplicationPage() {
               <div className="rounded-lg p-4 bg-gray-50 border border-gray-100">
                 <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">{t({ en: "Recommended System", zh: "推荐系统" }, locale)}</p>
                 <p className="text-sm font-semibold" style={{ color: "#1A56DB" }}>{selectedApp.recommended}</p>
+                {(() => {
+                  const rp = productForAppNote(selectedApp);
+                  return rp ? (
+                    <Link href={productHref(rp)} className="inline-flex items-center gap-1 mt-2 text-xs font-semibold hover:underline" style={{ color: "#1A56DB" }} onClick={() => setSelectedApp(null)}>
+                      {t({ en: `View ${rp.name.split(" ").slice(0, 3).join(" ")} specs →`, zh: "查看产品规格 →" }, locale)}
+                    </Link>
+                  ) : null;
+                })()}
               </div>
             </div>
 
