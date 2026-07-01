@@ -110,7 +110,7 @@ export default function ApplicationPage() {
       </section>
 
       {/* Customer Success */}
-      <section className="py-20 bg-white">
+      <section id="case-studies" className="py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Customer Success", zh: "客户成功案例" }, locale)}</p>
           <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "From Application Know-How to Real Results", zh: "从应用专知到真实成果" }, locale)}</h2>
