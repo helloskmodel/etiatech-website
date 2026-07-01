@@ -67,9 +67,17 @@
 
 ## 其余中文化(i18n 收尾)
 
-- [ ] OmniCure 品牌页中文(并入 §5 一起做)
-- [ ] 隐私 / Cookie 法律页中文
-- [ ] 产品规格表"标签"中文(数值已通用,标签仍英文)
+- [x] OmniCure 品牌页中文(并入 §5 一起做)— **PR #49**
+- [x] 隐私 / Cookie 法律页中文 — **PR #54**
+- [x] 产品规格表"标签"中文(数值通用,标签已中文化,172 条)— **PR #54**
+
+---
+
+## 内容 / SEO 博客(新增)
+
+- [x] `/insights` 博客区块:Markdown 发文,每周一篇,自动上线 + 进 sitemap — **PR #53**
+- [x] 每篇文章:Article + Breadcrumb JSON-LD、canonical、OpenGraph、中英双语
+- [x] 作者流程文档 `content/insights/README.md` + 双语样板文
 
 ---
 
