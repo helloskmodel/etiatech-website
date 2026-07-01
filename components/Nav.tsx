@@ -11,6 +11,7 @@ const links = [
   { href: "/", label: { en: "Home", zh: "首页" } },
   { href: "/product", label: { en: "Products", zh: "产品" } },
   { href: "/application", label: { en: "Applications", zh: "应用" } },
+  { href: "/insights", label: { en: "Insights", zh: "洞察" } },
   { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持" } },
 ];
 

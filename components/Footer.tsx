@@ -8,6 +8,7 @@ export default function Footer() {
     { en: "Home", zh: "首页" },
     { en: "Products", zh: "产品" },
     { en: "Applications", zh: "应用" },
+    { en: "Insights", zh: "洞察" },
     { en: "Sales & Support", zh: "销售与支持" },
   ];
   return (
@@ -22,7 +23,7 @@ export default function Footer() {
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Navigation", zh: "导航" }, locale)}</p>
           <div className="flex flex-col gap-1">
-            {["/", "/product", "/application", "/contact"].map((href, i) => (
+            {["/", "/product", "/application", "/insights", "/contact"].map((href, i) => (
               <Link key={href} href={href} className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">
                 {t(navLabels[i], locale)}
               </Link>
