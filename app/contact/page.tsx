@@ -75,11 +75,19 @@ export default function ContactPage() {
     { icon: "📡", title: { en: "Radiometer Calibration", zh: "辐射计校准" }, desc: { en: "NIST-traceable calibration for R2000, LS200 and third-party radiometers. Calibration certificate provided.", zh: "为R2000、LS200及第三方辐射计提供NIST溯源校准，并出具校准证书。" } },
     { icon: "🔩", title: { en: "Preventive Maintenance", zh: "预防性保养" }, desc: { en: "Scheduled maintenance programs to extend equipment life and prevent unexpected failures on production lines.", zh: "定期保养计划，延长设备寿命，防止产线意外故障。" } },
   ];
-  const offices = [
+  const offices: {
+    region: { en: string; zh: string };
+    contact?: string;
+    title?: { en: string; zh: string };
+    phone?: string;
+    email: string;
+    local?: string;
+    en?: string;
+  }[] = [
     { region: { en: "China · Shanghai", zh: "中国 · 上海" }, email: "13579@etia-tech.com", local: "上海市普陀区中江路388弄国盛中心2号楼1903室", en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China" },
     { region: { en: "Hong Kong", zh: "中国 · 香港" }, email: "mark_tang@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
-    { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷" }, email: "sompoch@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
-    { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁" }, email: "ts_vn@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
+    { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷" }, contact: "Mr. Sompoch Ratchakom (Job)", title: { en: "Sales Director", zh: "销售总监" }, phone: "+66 811 746 947", email: "sompoch@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
+    { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁" }, contact: "Tien Nguyen", title: { en: "Technical Engineer", zh: "技术工程师" }, phone: "+84 344 590 091", email: "ts_vn@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
   ];
   const bottomStrip = [
     { icon: "⚡", title: { en: "Fast Response", zh: "快速响应" }, desc: { en: "Within 1 business day", zh: "1个工作日内" } },
@@ -205,11 +213,20 @@ export default function ContactPage() {
                 <div className="flex items-center gap-2 mb-3">
                   <span className="font-bold" style={{ color: "#1A56DB" }}>{t(c.region, locale)}</span>
                 </div>
+                {c.contact && (
+                  <p className="text-xs text-gray-600 mb-1">
+                    <span className="font-semibold">{c.contact}</span>
+                    {c.title && <span className="text-gray-400"> · {t(c.title, locale)}</span>}
+                  </p>
+                )}
                 {c.local && (
                   <p className="text-xs text-gray-500 leading-relaxed mb-1">📍 {c.local}</p>
                 )}
                 {c.en && (
                   <p className="text-xs text-gray-400 leading-relaxed mb-2">{c.en}</p>
+                )}
+                {c.phone && (
+                  <p className="text-xs text-gray-600 mb-1">📞 <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="hover:underline">{c.phone}</a></p>
                 )}
                 <a href={`mailto:${c.email}`} className="text-xs hover:underline" style={{ color: "#44B549" }}>{c.email}</a>
               </div>
