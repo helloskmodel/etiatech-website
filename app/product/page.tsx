@@ -236,7 +236,7 @@ export default function ProductPage() {
               <span style={{ color: "#44B549" }}>{t({ en: "Perfect Fit.", zh: "完美匹配" }, locale)}</span>
             </h1>
             <p className="text-base text-gray-200 mb-6 leading-relaxed">
-              {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年现场验证经验的工程师，为您的具体应用精准匹配。" }, locale)}
+              {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV 固化方案。" }, locale)}
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>

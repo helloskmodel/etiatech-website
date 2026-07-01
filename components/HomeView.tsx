@@ -84,10 +84,10 @@ export default function HomeView() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Why ETIA", zh: "为何选择 ETIA" }, locale)}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1A56DB" }}>
-            {t({ en: "ETIA — 20 Years of UV Curing Expertise, Delivered in Every Sale, Every Visit, Every Fix.", zh: "ETIA — 20年UV固化专业积淀，融入每一次销售、每一次到访、每一次维修。" }, locale)}
+            {t({ en: "ETIA — 20 Years of UV Curing Expertise, Delivered in Every Sale, Every Visit, Every Fix.", zh: "ETIA—— 深耕 UV 固化二十载，售前选型、上门服务、售后维保，专业实力全程相伴。" }, locale)}
           </h2>
           <p className="text-gray-500 max-w-2xl mb-12">
-            {t({ en: "Rooted in engineering excellence, ETIA partners with the world's leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.", zh: "以卓越工程为根基，ETIA携手全球领先UV固化品牌，提供经过验证、可靠、并从选型到支持全程护航的解决方案。" }, locale)}
+            {t({ en: "Rooted in engineering excellence, ETIA partners with the world's leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.", zh: "立足硬核工程技术，携手全球头部 UV 固化品牌，提供经过市场验证、性能稳定、全流程保障的一体化方案，从设备选型到终身售后全程护航。" }, locale)}
           </p>
           <WhyEtiaCards />
         </div>
