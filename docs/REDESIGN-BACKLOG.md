@@ -1,0 +1,88 @@
+# ETIA 网站改版需求清单 (Redesign Backlog)
+
+> 逐条实现、逐条勾选。每完成一块单独 build + PR + merge。
+> 全站改动均保持中英双语(EN/CN),并为未来越南语/泰语预留(`LangText` 结构)。
+
+---
+
+## 首页 (Home)
+
+- [ ] **2. Case Study 区块:轮播 → 3列静态卡片网格**
+  - 固定展示 3 个案例,突出核心数字:
+    - AUTOMOTIVE & EV — **Up to 80% Cost Reduction** — EV Battery Manufacturing (B1)
+    - PHOTONICS — **±5% Dose Stability · 400G→1.6T** — Optical Transceiver (B2)
+    - MEDICAL DEVICE — **NIST-Traceable 360° Cure · Patient Safety** — Cardiovascular Catheter (B9)
+  - 底部按钮:`Explore All 10 Case Studies →`(点开仍可看全部案例)
+  - 保留点击进案例详情弹窗的能力
+
+---
+
+## 产品列表页 (/product)
+
+- [x] 3.1 Hero 差异化文案 — **PR #44**
+- [x] 3.2 品牌 Tab 栏 + 平滑滚动 — **PR #44**
+- [x] 3.3 四个品牌全部展示(堆叠) — **PR #44**
+- [x] 3.5 Why-UV 顺序(精准→清洁→速度)+ lucide 图标 — **PR #44**
+- [x] 3.6 完整目录链接移到底部 — **PR #44**
+- [ ] **3.4 产品卡"典型应用"标签** → 链接到应用页对应锚点(依赖:应用页锚点)
+- [ ] (可选)3.3 各品牌区块内容按审计原文精调
+
+---
+
+## 产品子页面 (/product/systems/[model] 及 S2000)  — §4
+
+- [ ] 4.2 Breadcrumb 导航(Home > Products > Brand > Tech > Model)
+- [ ] 4.3 H1 上方加 品牌 Badge + 技术路线 Badge
+- [ ] 4.4 底部三模块:A 同系列产品 · B 适用应用场景(→应用页) · C 咨询工程师 CTA
+
+---
+
+## 品牌落地页(新增) — §5  ★SEO 价值最高
+
+- [ ] `/product/omnicure`、`/product/phoseon`、`/product/fusion-uv`、`/product/noblelight`
+- [ ] 每页结构:品牌 Logo + Authorized Distributor badge + 品牌介绍 + 技术路线分区(含型号) + 典型应用行业 + 复用 Why ETIA
+- [ ] 中英双语
+- 注:`/product/omnicure` 目前是旧的品牌页,需重做并接入此结构 + 中文
+
+---
+
+## SEO 架构 — §6
+
+- [ ] 6.1 Title 模板:产品子页 `{型号} | {品牌} {技术路线} | ETIA`;品牌页 `{品牌} … Authorized Distributor | ETIA`
+- [ ] 6.2 Meta description 模板(产品子页/品牌页)
+- [ ] 6.3 Breadcrumb JSON-LD(每个产品子页)
+- [ ] 6.4 Product JSON-LD(含 brand / category / manufacturer / offers.seller=ETIA / areaServed=[CN,HK,TH,VN])
+- [ ] 6.5 sitemap 加:4 个品牌落地页 + 所有产品子页
+
+---
+
+## 内链逻辑 — §7
+
+- [ ] 首页 ↔ 产品 ↔ 品牌页 ↔ 产品子页 ↔ 应用页 双向打通
+- [ ] **前置依赖**:应用页给 62 个 AN-note 加锚点(`#AN-MED-001` 等),供产品/子页链接
+
+---
+
+## 其余中文化(i18n 收尾)
+
+- [ ] OmniCure 品牌页中文(并入 §5 一起做)
+- [ ] 隐私 / Cookie 法律页中文
+- [ ] 产品规格表"标签"中文(数值已通用,标签仍英文)
+
+---
+
+## 需要你操作(非代码)
+
+- [ ] Google Search Console:HTML 标记验证(标记已在网站,待你点「验证」)
+- [ ] GSC 提交 `sitemap.xml`
+- [ ] PageSpeed 重测,确认性能
+- [ ] 补 4 个办公室真实电话(已完成)/ 其他联系信息如有更新
+
+---
+
+### 建议实现顺序
+1. **首页 Case Study 3列网格**(小、独立、见效快)
+2. **§5 品牌落地页 + §6 SEO**(SEO 回报最高)
+3. **§4 产品子页面模块**(Breadcrumb / Badge / 关联模块)
+4. **应用页锚点** → 然后 **3.4 + §7 内链**
+5. 法律页 + 规格标签中文收尾
