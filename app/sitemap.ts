@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
-import { getAllArticles } from "@/components/insights";
 
 const SITE = "https://www.etiatech.com";
 
@@ -17,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/product/fusion-uv`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/application`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE}/insights`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/cookies`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
@@ -33,13 +31,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     productPages.push({ url, lastModified: now, changeFrequency: "monthly", priority: 0.7 });
   }
 
-  // One entry per published insights article.
-  const articlePages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({
-    url: `${SITE}/insights/${a.slug}`,
-    lastModified: a.date ? new Date(a.date) : now,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
-  return [...core, ...productPages, ...articlePages];
+  return [...core, ...productPages];
 }
