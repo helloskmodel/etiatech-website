@@ -1494,6 +1494,7 @@ export const modelToSlug: Record<string, string> = {
   "S2E Network Module": "s2e-network-module",
   "S Series Light Guide": "s-series-light-guides",
   "AC2": "ac2",
+  "AC4": "ac4",
   "AC5": "ac5",
   "AC7": "ac7",
   "AC8": "ac8",
