@@ -1534,6 +1534,29 @@ export function productHref(p: Product): string {
   return p.href ?? `/product/systems/${p.slug}`;
 }
 
+// Display order on the brand shop pages — most popular / best-selling first.
+// (Sensible flagship-first default; adjust freely as real demand data comes in.)
+// Products not listed fall to the end, in catalog order. The first few of each
+// brand are badged "Popular" in the UI.
+export const productPopularity: string[] = [
+  // OmniCure
+  "s2000-elite", "lx500", "ac8", "s1500-pro", "ac8-hd", "v3-led-heads", "ac5", "ac7",
+  "r2000", "ls200", "ac9225", "ac4", "ac2", "ac9225-f", "s-series-light-guides", "s2e-network-module",
+  // Phoseon
+  "firejet-one", "fl400", "fj800", "nexus-ii", "vericure", "fe400", "fl440", "fl200",
+  "fl400-i", "fj100", "fj240", "fj801", "fe100", "fe410", "nexus-ii-ac",
+  // Fusion UV
+  "lighthammer-10", "lighthammer-6", "f-series", "drf-series",
+  // Noblelight
+  "semray-5000", "semray-pc6003", "semray-uv5052m",
+];
+
+// Rank helper: index in productPopularity (unlisted → large number → sorts last).
+export function popularityRank(slug: string): number {
+  const i = productPopularity.indexOf(slug);
+  return i === -1 ? 9999 : i;
+}
+
 // Shop-style highlight tags shown on product cards (short, spec-forward,
 // language-neutral). Keyed by slug; products without an entry show none.
 export const productHighlights: Record<string, string[]> = {

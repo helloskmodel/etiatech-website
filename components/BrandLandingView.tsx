@@ -1,46 +1,21 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { products, technologies, productHref, productImage, localizeProduct, productHighlights } from "@/components/productCatalog";
+import { products, productHref, productImage, localizeProduct, productHighlights, popularityRank } from "@/components/productCatalog";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { useLocale, t } from "@/components/LocaleContext";
 
-const techZh: Record<string, string> = {
-  "UV Spot Curing": "UV 点固化",
-  "UV Lamp Spot Curing": "UV 灯式点固化",
-  "UV LED Spot Curing": "UV LED 点固化",
-  "Water-Cooled UV LED Area Curing": "水冷式 UV LED 面固化",
-  "Air-Cooled UV LED Curing": "风冷式 UV LED 固化",
-  "Microwave UV Curing": "微波 UV 固化",
-};
-
-// Within "UV Spot Curing", split into the two commercial routes — lamp-based
-// (S-Series + its radiometer/accessories) vs UV LED (LX-Series). Other
-// technologies stay as a single group.
-function routeGroups(brandProducts: import("@/components/productCatalog").Product[]) {
-  const groups: { label: string; items: typeof brandProducts }[] = [];
-  for (const tech of technologies) {
-    const inTech = brandProducts.filter((p) => p.tech === tech);
-    if (!inTech.length) continue;
-    if (tech === "UV Spot Curing") {
-      const isLed = (p: (typeof inTech)[number]) => /LED/i.test(p.sub ?? "");
-      const lamp = inTech.filter((p) => !isLed(p));
-      const led = inTech.filter((p) => isLed(p));
-      if (lamp.length) groups.push({ label: "UV Lamp Spot Curing", items: lamp });
-      if (led.length) groups.push({ label: "UV LED Spot Curing", items: led });
-    } else {
-      groups.push({ label: tech, items: inTech });
-    }
-  }
-  return groups;
-}
+// Number of top products (per brand) that get the "Popular" badge.
+const POPULAR_COUNT = 3;
 
 export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
   const { locale } = useLocale();
   const b = brandLanding[slug];
-  const techLabel = (tech: string) => (locale === "zh" ? techZh[tech] ?? tech : tech);
-  const brandProducts = products.filter((p) => p.brandId === b.catalogBrandId);
+  // Flat shop grid ordered by popularity (best-selling first), not by technology.
+  const brandProducts = products
+    .filter((p) => p.brandId === b.catalogBrandId)
+    .sort((a, c) => popularityRank(a.slug) - popularityRank(c.slug));
 
   return (
     <>
@@ -77,44 +52,35 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Products", zh: "产品" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `Shop ${b.name} Systems`, zh: `${b.name} 全系产品` }, locale)}</h2>
-          <div className="space-y-12">
-            {routeGroups(brandProducts).map((g) => {
-              const group = g.items;
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {brandProducts.map((raw, i) => {
+              const p = localizeProduct(raw, locale);
+              const tags = productHighlights[p.slug] ?? [];
+              const popular = i < POPULAR_COUNT;
               return (
-                <div key={g.label}>
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="inline-block text-xs font-bold px-3 py-1 rounded text-white" style={{ background: b.color }}>{techLabel(g.label).toUpperCase()}</span>
-                    <span className="text-xs text-gray-400">{group.length} {t({ en: "systems", zh: "款系统" }, locale)}</span>
+                <Link key={p.slug} href={productHref(p)} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
+                  <div className="relative h-32 sm:h-36 bg-white">
+                    {popular && (
+                      <span className="absolute top-2 left-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: "#44B549" }}>★ {t({ en: "POPULAR", zh: "热门" }, locale)}</span>
+                    )}
+                    {productImage(p) ? (
+                      <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-300" />
+                    ) : (
+                      <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-center px-3" style={{ color: b.color }}>{p.brand}</span>
+                    )}
                   </div>
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    {group.map((raw) => {
-                      const p = localizeProduct(raw, locale);
-                      const tags = productHighlights[p.slug] ?? [];
-                      return (
-                        <Link key={p.slug} href={productHref(p)} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
-                          <div className="relative h-32 sm:h-36 bg-white">
-                            {productImage(p) ? (
-                              <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-300" />
-                            ) : (
-                              <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-center px-3" style={{ color: b.color }}>{p.brand}</span>
-                            )}
-                          </div>
-                          <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
-                            <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{p.name}</h3>
-                            {tags.length > 0 && (
-                              <div className="flex flex-wrap gap-1 mb-3">
-                                {tags.slice(0, 3).map((h) => (
-                                  <span key={h} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{h}</span>
-                                ))}
-                              </div>
-                            )}
-                            <span className="mt-auto text-xs font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
-                          </div>
-                        </Link>
-                      );
-                    })}
+                  <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
+                    <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{p.name}</h3>
+                    {tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mb-3">
+                        {tags.slice(0, 3).map((h) => (
+                          <span key={h} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{h}</span>
+                        ))}
+                      </div>
+                    )}
+                    <span className="mt-auto text-xs font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
