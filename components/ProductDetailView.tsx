@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { productImage, localizeProduct, type Product } from "@/components/productCatalog";
+import { productImage, localizeProduct, productTagline, type Product } from "@/components/productCatalog";
 import { appNotesForProduct } from "@/components/productApplications";
 import { localizeApp } from "@/components/applicationNotes";
 import { industryColors } from "@/components/industryMedia";
@@ -45,7 +45,10 @@ export default function ProductDetailView({ product, accent }: { product: Produc
               <Link href={`/product/${brandPageSlug[product.brandId]}`} className="text-[11px] font-bold px-2.5 py-1 rounded text-white hover:opacity-90 transition-opacity" style={{ background: accent }}>{p.brand} →</Link>
               <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{p.tech}{p.sub ? ` · ${p.sub}` : ""}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "#1A56DB" }}>{p.name}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3" style={{ color: "#1A56DB" }}>{p.name}</h1>
+            {productTagline[product.slug] && (
+              <p className="text-lg md:text-xl font-semibold leading-snug mb-4" style={{ color: accent }}>{t(productTagline[product.slug], locale)}</p>
+            )}
             <p className="text-base text-gray-600 leading-relaxed mb-8">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
               <a href="mailto:mark_tang@etia-tech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Request a Quote", zh: "获取报价" }, locale)}</a>

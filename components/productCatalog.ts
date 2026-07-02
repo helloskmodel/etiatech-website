@@ -1557,6 +1557,15 @@ export function popularityRank(slug: string): number {
   return i === -1 ? 9999 : i;
 }
 
+// Eye-catching product tagline (from the official datasheets) shown under the
+// H1 on the product detail hero. Bilingual; keyed by slug.
+export const productTagline: Record<string, { en: string; zh: string }> = {
+  "s2000-elite": { en: "The Most Reliable, Highest-Quality Lamp Spot Curing", zh: "最可靠、最高品质的灯式点固化" },
+  "s1500-pro": { en: "High-Throughput UV Curing for Micro- & Opto-Electronics", zh: "面向微电子与光电子的高通量 UV 固化" },
+  "lx500": { en: "Ultra-Compact UV LED Spot Curing — Consistent, Repeatable Results", zh: "超紧凑 UV LED 点固化——一致、可重复的固化效果" },
+  "ac9225": { en: "High-Power UV LED Curing for Adhesives, Coatings & Inks", zh: "面向胶粘剂、涂层与油墨的高功率 UV LED 固化" },
+};
+
 // Shop-style highlight tags shown on product cards (short, spec-forward,
 // language-neutral). Keyed by slug; products without an entry show none.
 export const productHighlights: Record<string, string[]> = {
