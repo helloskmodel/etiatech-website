@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { products, technologies, productHref, productImage, localizeProduct } from "@/components/productCatalog";
+import { products, technologies, productHref, productImage, localizeProduct, productHighlights } from "@/components/productCatalog";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -75,8 +75,8 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       {/* Technology routes */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Technology Routes", zh: "技术路线" }, locale)}</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: "Systems by Technology", zh: "按技术路线浏览" }, locale)}</h2>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Products", zh: "产品" }, locale)}</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `Shop ${b.name} Systems`, zh: `${b.name} 全系产品` }, locale)}</h2>
           <div className="space-y-12">
             {routeGroups(brandProducts).map((g) => {
               const group = g.items;
@@ -86,21 +86,29 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                     <span className="inline-block text-xs font-bold px-3 py-1 rounded text-white" style={{ background: b.color }}>{techLabel(g.label).toUpperCase()}</span>
                     <span className="text-xs text-gray-400">{group.length} {t({ en: "systems", zh: "款系统" }, locale)}</span>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     {group.map((raw) => {
                       const p = localizeProduct(raw, locale);
+                      const tags = productHighlights[p.slug] ?? [];
                       return (
-                        <Link key={p.slug} href={productHref(p)} className="rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-all bg-white flex flex-col group">
-                          <div className="relative h-36 overflow-hidden bg-gray-50">
+                        <Link key={p.slug} href={productHref(p)} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
+                          <div className="relative h-32 sm:h-36 bg-white">
                             {productImage(p) ? (
-                              <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-contain p-4 group-hover:scale-105 transition-transform duration-300" />
+                              <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-300" />
                             ) : (
                               <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-center px-3" style={{ color: b.color }}>{p.brand}</span>
                             )}
                           </div>
-                          <div className="p-5 flex flex-col flex-1">
-                            <h3 className="font-bold text-sm leading-snug mb-2" style={{ color: "#1A56DB" }}>{p.name}</h3>
-                            <span className="mt-auto text-sm font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
+                          <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
+                            <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{p.name}</h3>
+                            {tags.length > 0 && (
+                              <div className="flex flex-wrap gap-1 mb-3">
+                                {tags.slice(0, 3).map((h) => (
+                                  <span key={h} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{h}</span>
+                                ))}
+                              </div>
+                            )}
+                            <span className="mt-auto text-xs font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
                           </div>
                         </Link>
                       );
