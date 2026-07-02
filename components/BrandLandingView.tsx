@@ -8,10 +8,33 @@ import { useLocale, t } from "@/components/LocaleContext";
 
 const techZh: Record<string, string> = {
   "UV Spot Curing": "UV 点固化",
+  "UV Lamp Spot Curing": "UV 灯式点固化",
+  "UV LED Spot Curing": "UV LED 点固化",
   "Water-Cooled UV LED Area Curing": "水冷式 UV LED 面固化",
   "Air-Cooled UV LED Curing": "风冷式 UV LED 固化",
   "Microwave UV Curing": "微波 UV 固化",
 };
+
+// Within "UV Spot Curing", split into the two commercial routes — lamp-based
+// (S-Series + its radiometer/accessories) vs UV LED (LX-Series). Other
+// technologies stay as a single group.
+function routeGroups(brandProducts: import("@/components/productCatalog").Product[]) {
+  const groups: { label: string; items: typeof brandProducts }[] = [];
+  for (const tech of technologies) {
+    const inTech = brandProducts.filter((p) => p.tech === tech);
+    if (!inTech.length) continue;
+    if (tech === "UV Spot Curing") {
+      const isLed = (p: (typeof inTech)[number]) => /LED/i.test(p.sub ?? "");
+      const lamp = inTech.filter((p) => !isLed(p));
+      const led = inTech.filter((p) => isLed(p));
+      if (lamp.length) groups.push({ label: "UV Lamp Spot Curing", items: lamp });
+      if (led.length) groups.push({ label: "UV LED Spot Curing", items: led });
+    } else {
+      groups.push({ label: tech, items: inTech });
+    }
+  }
+  return groups;
+}
 
 export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
   const { locale } = useLocale();
@@ -55,13 +78,12 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Technology Routes", zh: "技术路线" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: "Systems by Technology", zh: "按技术路线浏览" }, locale)}</h2>
           <div className="space-y-12">
-            {technologies.map((tech) => {
-              const group = brandProducts.filter((p) => p.tech === tech);
-              if (!group.length) return null;
+            {routeGroups(brandProducts).map((g) => {
+              const group = g.items;
               return (
-                <div key={tech}>
+                <div key={g.label}>
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="inline-block text-xs font-bold px-3 py-1 rounded text-white" style={{ background: b.color }}>{techLabel(tech).toUpperCase()}</span>
+                    <span className="inline-block text-xs font-bold px-3 py-1 rounded text-white" style={{ background: b.color }}>{techLabel(g.label).toUpperCase()}</span>
                     <span className="text-xs text-gray-400">{group.length} {t({ en: "systems", zh: "款系统" }, locale)}</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
