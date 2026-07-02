@@ -1438,12 +1438,12 @@ export const products: Product[] = [
   },
   {
     slug: "drf-series",
-    name: "DRF Series Optical Fiber UV Curing Systems",
-    brand: "Noblelight®",
-    brandId: "noblelight",
+    name: "Fusion UV DRF Series Optical Fiber UV Curing Systems",
+    brand: "Fusion UV®",
+    brandId: "fusionuv",
     tech: "Microwave UV Curing",
     sub: "Optical Fiber",
-    accent: "#7c3aed",
+    accent: "#f59e0b",
     intro:
       "The Fusion UV DRF Series cure photoresponsive coatings, coloring inks, and ribbon matrix polymers in the production of optical fiber and cable. The DRF Series has been the UV curing system of choice for fiber manufacturing worldwide, thanks to its patented secondary elliptical reflector system that delivers highly focused, intense UV energy. The optical fiber passes through a sealed quartz tube aligned at the secondary focal point of the elliptical reflector for full-surface UV exposure. DRF systems support power levels from 1.8 kW (F300S) to 6 kW.",
     features: [
@@ -1503,6 +1503,9 @@ export const modelToSlug: Record<string, string> = {
   "Nexus II": "nexus-ii",
   "Nexus II Air-Cooled": "nexus-ii-ac",
   "Semray 5000+": "semray-5000",
+  "Semray UV5000+": "semray-5000",
+  "Semray UV PC6003": "semray-pc6003",
+  "Customized UV LED Solutions": "semray-uv5052m",
   "FireJet FJ100": "fj100",
   "FireJet FJ240": "fj240",
   "FireLine FL200": "fl200",
