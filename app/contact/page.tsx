@@ -236,6 +236,32 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Authorized Distributor Certificates */}
+      <section id="certificates" className="py-20" style={{ background: "#f5f7fa" }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理" }, locale)}</p>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Officially Authorized Across Asia-Pacific", zh: "亚太地区官方授权" }, locale)}</h2>
+          <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
+          <p className="text-gray-500 mb-10 max-w-2xl">{t({ en: "ETIA is an officially authorized distributor — your guarantee of genuine products, valid warranty, and factory-backed technical support.", zh: "ETIA 为官方授权代理商——正品保证、质保有效、并享原厂技术支持。" }, locale)}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { country: { en: "Thailand", zh: "泰国" }, url: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/CERTIFICATE/authorized%20TH%20DISTRIBUTOR.jpg" },
+              { country: { en: "Vietnam", zh: "越南" }, url: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/CERTIFICATE/authorized%20VN%20DISTRIBUTOR.jpg" },
+            ].map((cert) => (
+              <a key={cert.country.en} href={cert.url} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all">
+                <div className="relative w-full bg-gray-50 rounded-lg overflow-hidden" style={{ aspectRatio: "1 / 1.414" }}>
+                  <Image src={cert.url} alt={`ETIA Authorized Distributor Certificate — ${cert.country.en}`} fill sizes="(max-width: 640px) 100vw, 40vw" className="object-contain p-2 group-hover:scale-[1.02] transition-transform" />
+                </div>
+                <div className="flex items-center justify-between mt-3">
+                  <span className="font-semibold" style={{ color: "#1A56DB" }}>{t({ en: `Authorized Distributor · ${cert.country.en}`, zh: `授权代理 · ${t(cert.country, "zh")}` }, locale)}</span>
+                  <span className="text-xs font-semibold whitespace-nowrap group-hover:underline" style={{ color: "#44B549" }}>{t({ en: "View →", zh: "查看 →" }, locale)}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Bottom strip */}
       <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
