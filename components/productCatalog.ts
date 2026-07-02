@@ -213,6 +213,10 @@ export const products: Product[] = [
     sub: "UV Lamp Spot",
     accent: "#1A56DB",
     href: "/product/omnicure/s2000",
+    // The S2E.png asset is actually the S2E Network Module; use the real
+    // S2000 Elite product photo (same one the dedicated S2000 page uses).
+    imageUrl:
+      "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp",
     intro:
       "OmniCure® S2000 Elite is a new generation of lamp-based UV spot curing system designed for the most demanding manufacturing applications. Equipped with proprietary Closed-Loop Feedback and Intelli-Lamp® 2.0 technologies, it automatically monitors and maintains optical output within ±5%. The system features a high-speed mechanical shutter with 30 ms response and is Industry 4.0-ready with Ethernet, USB, SD card, NFC, and programmable PLC I/O.",
     features: [
@@ -1541,7 +1545,6 @@ const productImageFile: Record<string, string> = {
   "lx500": "LX500.png",
   "v3-led-heads": "V3.png",
   "ls200": "LS200.png",
-  "s2000-elite": "S2E.png",
   "s1500-pro": "S1500.png",
   "nexus-ii": "nexusII.png",
   "nexus-ii-ac": "nexusII-air cooled.png",
