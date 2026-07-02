@@ -1560,6 +1560,8 @@ const productImageFile: Record<string, string> = {
   "fe400": "fe400.png",
   "fe410": "fe410.png",
   "semray-5000": "semray5000.png",
+  "semray-pc6003": "PC6003.png",
+  "semray-uv5052m": "noblelight customer-specific.png",
   "fj100": "fj100.png",
   "fj240": "fj240.png",
   "ac7": "AC7.png",
