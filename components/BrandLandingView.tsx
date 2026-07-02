@@ -7,7 +7,22 @@ import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { useLocale, t } from "@/components/LocaleContext";
 
 // Number of top products (per brand) that get the "Popular" badge.
-const POPULAR_COUNT = 3;
+const POPULAR_COUNT = 2;
+
+// Short technology tag shown on each product card (English + Chinese).
+const tagZh: Record<string, string> = {
+  "UV Lamp Spot": "UV 灯式点固化",
+  "UV LED Spot": "UV LED 点固化",
+  "UV Radiometer": "UV 辐射计",
+  "S-Series Accessory": "S 系列配件",
+  "Small-Area": "小面积",
+  "Large-Area": "大面积",
+  "Large-Area · High-Dose": "大面积 · 高剂量",
+  "UV Spot Curing": "UV 点固化",
+  "Air-Cooled UV LED Curing": "风冷 UV LED",
+  "Water-Cooled UV LED Area Curing": "水冷 UV LED 面固化",
+  "Microwave UV Curing": "微波 UV 固化",
+};
 
 export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
   const { locale } = useLocale();
@@ -70,6 +85,11 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                     )}
                   </div>
                   <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
+                    {(p.sub || p.tech) && (
+                      <span className="inline-block self-start text-[9px] font-bold uppercase tracking-wide px-2 py-0.5 rounded mb-2" style={{ background: `${b.color}12`, color: b.color }}>
+                        {(() => { const s = p.sub || p.tech; return locale === "zh" ? tagZh[s] ?? s : s; })()}
+                      </span>
+                    )}
                     <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{p.name}</h3>
                     {tags.length > 0 && (
                       <div className="flex flex-wrap gap-1 mb-3">
