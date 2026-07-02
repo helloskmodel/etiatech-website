@@ -1534,6 +1534,30 @@ export function productHref(p: Product): string {
   return p.href ?? `/product/systems/${p.slug}`;
 }
 
+// Shop-style highlight tags shown on product cards (short, spec-forward,
+// language-neutral). Keyed by slug; products without an entry show none.
+export const productHighlights: Record<string, string[]> = {
+  // OmniCure — UV Lamp Spot
+  "s2000-elite": ["200 W · 30 W/cm²", "±5% Closed-Loop", "30 ms shutter", "Industry 4.0"],
+  "s1500-pro": ["200 W · 30 W/cm²", "Intelli-Lamp® 2.0", "StepCure® 2.0", "4.3-inch LCD"],
+  "r2000": ["NIST-traceable", "Real-time calibration", "S-Series"],
+  "s2e-network-module": ["Up to 300 systems", "Remote monitoring", "Ethernet"],
+  "s-series-light-guides": ["Single / multi-leg", "360° Cure-Ring", "Light-Line"],
+  // OmniCure — UV LED Spot
+  "lx500": ["365–405 nm", "Up to 27 W/cm²", "2 / 4-channel", "±5% stability"],
+  "v3-led-heads": ["Up to 22 W/cm²", "1,100 mW", "+120% vs MAX"],
+  "ls200": ["±10% accuracy", "NRC-traceable", "320–750 nm"],
+  // OmniCure — Air-Cooled UV LED Area
+  "ac2": [">2.5 W/cm²", "Small-area", "Air-cooled"],
+  "ac4": [">8 W/cm²", "Long working distance", "Air-cooled"],
+  "ac5": ["14 W/cm²", "'P' power measurement", "Air-cooled"],
+  "ac7": [">5 W/cm²", "150 / 300 mm", "Adjoinable"],
+  "ac8": [">8 W/cm²", "150 / 225 / 300 mm", "'P' print optics"],
+  "ac8-hd": [">15 W/cm² high-dose", "385 / 395 / 405 nm", "150–300 mm"],
+  "ac9225": [">14 W/cm²", "150 / 225 / 300 mm", "Patented uniformity"],
+  "ac9225-f": ["Up to 88 W/cm² at fiber", "Fiber curing", "40,000+ h LED"],
+};
+
 // Product hero images live in the COS bucket under IMAGE/products/.
 // The object keys there do NOT follow the slug convention (and are
 // case-sensitive), so we map each slug to its real filename explicitly.
