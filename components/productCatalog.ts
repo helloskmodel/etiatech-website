@@ -1652,12 +1652,32 @@ const BRAND_MANUFACTURER: Record<Product["brandId"], string> = {
   noblelight: "Excelitas Noblelight",
 };
 
-const brandRouteSlug: Record<Product["brandId"], string> = {
+export const brandRouteSlug: Record<Product["brandId"], string> = {
   omnicure: "omnicure",
   phoseon: "phoseon",
   fusionuv: "fusion-uv",
   noblelight: "noblelight",
 };
+
+// Chinese labels for the top-level technology values.
+const techZh: Record<string, string> = {
+  "UV Spot Curing": "UV 点固化",
+  "Air-Cooled UV LED Curing": "风冷 UV LED 固化",
+  "Water-Cooled UV LED Area Curing": "水冷 UV LED 面固化",
+  "Microwave UV Curing": "微波 UV 固化",
+};
+
+// Friendly "technology route" sticker label for a product. Spot-curing systems
+// are split into lamp vs LED by their `sub` field (matching the brand pages),
+// so an S-Series reads "UV Lamp Spot Curing" and an LX-Series "UV LED Spot
+// Curing"; everything else uses its top-level `tech` value.
+export function techRouteLabel(p: Product): { en: string; zh: string } {
+  if (p.tech === "UV Spot Curing") {
+    if (p.sub === "UV Lamp Spot") return { en: "UV Lamp Spot Curing", zh: "UV 灯式点固化" };
+    if (p.sub === "UV LED Spot") return { en: "UV LED Spot Curing", zh: "UV LED 点固化" };
+  }
+  return { en: p.tech, zh: techZh[p.tech] ?? p.tech };
+}
 
 // Product JSON-LD (schema.org/Product) for a product detail page. ETIA is the
 // distributor/seller; the brand is the manufacturer. areaServed reflects the

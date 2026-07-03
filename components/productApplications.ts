@@ -4,8 +4,9 @@
 // token against each note's `product` / `recommended` text. This keeps the
 // "typical applications" tags on product pages and the "recommended system"
 // links on the Application page in sync automatically as data changes.
-import { products, type Product } from "./productCatalog";
+import { products, techRouteLabel, type Product } from "./productCatalog";
 import { apps, type App } from "./applicationNotes";
+import type { CaseStudy } from "./caseStudies";
 
 // [slug, matcher] ordered by priority: primary systems first, accessories last.
 // productForAppNote() returns the FIRST match, so a note recommending a combo
@@ -51,4 +52,49 @@ export function productForAppNote(a: App): Product | undefined {
     if (re.test(text)) return products.find((p) => p.slug === slug);
   }
   return undefined;
+}
+
+// Every product whose model token appears anywhere in a block of text
+// (unlike productForAppNote, which returns only the first/primary match).
+export function productsInText(text: string): Product[] {
+  const out: Product[] = [];
+  for (const [slug, re] of PRODUCT_MATCHERS) {
+    if (re.test(text)) {
+      const p = products.find((x) => x.slug === slug);
+      if (p) out.push(p);
+    }
+  }
+  return out;
+}
+
+// The OmniCure systems referenced by a case study, detected from its keyword
+// chips, solution copy, and compatible-materials table. Used to render the
+// brand + UV-technology-route stickers on the case-study landing page.
+export function systemsForCase(c: CaseStudy): Product[] {
+  const text = [
+    c.keywords.join(" "),
+    c.solution,
+    c.materials?.rows.map((r) => r.system).join(" ") ?? "",
+  ].join(" ");
+  return productsInText(text);
+}
+
+// Unique brands referenced by a case study (one representative product each).
+export function brandsForCase(c: CaseStudy): Product[] {
+  const seen = new Map<string, Product>();
+  for (const p of systemsForCase(c)) if (!seen.has(p.brandId)) seen.set(p.brandId, p);
+  return [...seen.values()];
+}
+
+// Unique UV-technology-route labels for a case study. Accessories (radiometers,
+// light guides) that resolve to the generic "UV Spot Curing" are dropped — only
+// the actual curing routes (lamp spot / LED spot / area) are kept.
+export function techRoutesForCase(c: CaseStudy): { en: string; zh: string }[] {
+  const seen = new Map<string, { en: string; zh: string }>();
+  for (const p of systemsForCase(c)) {
+    const label = techRouteLabel(p);
+    if (label.en === "UV Spot Curing") continue;
+    if (!seen.has(label.en)) seen.set(label.en, label);
+  }
+  return [...seen.values()];
 }
