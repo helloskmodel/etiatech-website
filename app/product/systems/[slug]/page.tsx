@@ -56,7 +56,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
           {/* Product image */}
           <div className="rounded-2xl bg-white/95 p-6 flex items-center justify-center" style={{ minHeight: "300px" }}>
-            <img src={productImage(p)} alt={p.name} className="object-contain w-full" style={{ maxHeight: "360px" }} />
+            {productImage(p) ? (
+              <img src={productImage(p)!} alt={p.name} className="object-contain w-full" style={{ maxHeight: "360px" }} />
+            ) : (
+              <span className="text-sm font-medium text-gray-400 text-center px-4">{p.name}</span>
+            )}
           </div>
         </div>
       </section>

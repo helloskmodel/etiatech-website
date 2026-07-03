@@ -874,11 +874,36 @@ export function productHref(p: Product): string {
   return p.href ?? `/product/systems/${p.slug}`;
 }
 
-// Each product has exactly one image, named by its slug:
-//   IMAGE/products/<slug>.png
+// Product images live in the COS bucket under: IMAGE/products/<file>
+// The uploaded files use model-code names (not the catalog slug), so map
+// each slug to its actual filename. Slugs without an image return null.
 const PRODUCT_IMG_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/products";
 
-export function productImage(p: Product): string {
-  return `${PRODUCT_IMG_BASE}/${p.slug}.png`;
+const productFile: Record<string, string> = {
+  "lx500": "LX500.png",
+  "v3-led-heads": "V3.png",
+  "ls200": "LS200.png",
+  "s2000-elite": "PRODUCT-UV LAMP SPOT-S2000 HERO.png",
+  "s1500-pro": "S1500.png",
+  "nexus-ii": "nexusII.png",
+  "fl200": "fl200.png",
+  "fl400": "fl400.png",
+  "fl400-i": "fl400i.png",
+  "fl440": "fl440.png",
+  "ac2": "AC2.png",
+  "ac4": "AC4.png",
+  "ac5": "AC5.png",
+  "fj800": "fj800.png",
+  "fj801": "fj801.png",
+  "f-series": "f600.png",
+  "lighthammer-6": "6markII.png",
+  "lighthammer-10": "10markIII.png",
+  "drf-series": "phoseon optical fiber.jpg",
+  // No image uploaded yet: vericure, fe400, fe410
+};
+
+export function productImage(p: Product): string | null {
+  const file = productFile[p.slug];
+  return file ? `${PRODUCT_IMG_BASE}/${encodeURIComponent(file)}` : null;
 }

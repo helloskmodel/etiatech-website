@@ -51,7 +51,11 @@ export default function AllSystemsPage() {
                       className="rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-all bg-white flex flex-col group"
                     >
                       <div className="relative h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
-                        <img src={productImage(p)} alt={p.name} className="object-contain max-h-full w-full group-hover:scale-105 transition-transform duration-300" />
+                        {productImage(p) ? (
+                          <img src={productImage(p)!} alt={p.name} className="object-contain max-h-full w-full group-hover:scale-105 transition-transform duration-300" />
+                        ) : (
+                          <span className="text-xs font-medium text-gray-400 text-center px-2">{p.name}</span>
+                        )}
                         <span className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded text-white" style={{ background: brandAccent[p.brandId] }}>{p.brand}</span>
                       </div>
                       <div className="p-5 flex flex-col flex-1">
