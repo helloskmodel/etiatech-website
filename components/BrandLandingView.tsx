@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { products, productHref, productImage, localizeProduct, productHighlights, popularityRank } from "@/components/productCatalog";
+import { products, productHref, productImage, localizeProduct, productHighlights, popularityRank, techRouteFor } from "@/components/productCatalog";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { inquiryMailto } from "@/components/contact";
@@ -86,11 +86,17 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                     )}
                   </div>
                   <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
-                    {(p.sub || p.tech) && (
-                      <span className="inline-block self-start text-[9px] font-bold uppercase tracking-wide px-2 py-0.5 rounded mb-2" style={{ background: `${b.color}12`, color: b.color }}>
-                        {(() => { const s = p.sub || p.tech; return locale === "zh" ? tagZh[s] ?? s : s; })()}
-                      </span>
-                    )}
+                    {(() => {
+                      // Canonical technology route (one of the six). Accessories
+                      // (no curing route) fall back to their short sub label.
+                      const r = techRouteFor(p);
+                      const label = r ? t(r, locale) : (locale === "zh" ? tagZh[p.sub || p.tech] ?? (p.sub || p.tech) : (p.sub || p.tech));
+                      return label ? (
+                        <span className="inline-block self-start text-[9px] font-bold uppercase tracking-wide px-2 py-0.5 rounded mb-2" style={{ background: `${b.color}12`, color: b.color }}>
+                          {label}
+                        </span>
+                      ) : null;
+                    })()}
                     <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{p.name}</h3>
                     {tags.length > 0 && (
                       <div className="flex flex-wrap gap-1 mb-3">

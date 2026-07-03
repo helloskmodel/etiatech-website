@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { successStories, caseSlug, getCaseBySlug, caseStudyImage } from "@/components/caseStudies";
+import { brandsForCase, systemsForCase, techRoutesForCase } from "@/components/productApplications";
+import { productModel } from "@/components/productCatalog";
 import CaseStudyPageView from "@/components/CaseStudyPageView";
 
 const SITE = "https://www.etiatech.com";
@@ -33,6 +35,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   const url = `${SITE}/case-studies/${slug}`;
   const img = caseStudyImage(c);
 
+  // Brand · Product · Technology terms derived from the systems this case uses,
+  // folded into the JSON-LD keywords alongside the marketing chips.
+  const brandTerms = brandsForCase(c).map((p) => p.brand.replace(/®/g, ""));
+  const productTerms = systemsForCase(c).map((p) => productModel(p));
+  const techTerms = techRoutesForCase(c).map((tr) => tr.en);
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -40,7 +48,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     description: c.overview || c.challenge,
     articleSection: c.industry,
     about: c.sector,
-    keywords: c.keywords.join(", "),
+    keywords: [...c.keywords, ...brandTerms, ...productTerms, ...techTerms].join(", "),
     image: img || undefined,
     author: { "@type": "Organization", name: "ETIA Technology" },
     publisher: { "@type": "Organization", name: "ETIA Technology" },

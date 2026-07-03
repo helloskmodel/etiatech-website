@@ -1652,12 +1652,66 @@ const BRAND_MANUFACTURER: Record<Product["brandId"], string> = {
   noblelight: "Excelitas Noblelight",
 };
 
-const brandRouteSlug: Record<Product["brandId"], string> = {
+export const brandRouteSlug: Record<Product["brandId"], string> = {
   omnicure: "omnicure",
   phoseon: "phoseon",
   fusionuv: "fusion-uv",
   noblelight: "noblelight",
 };
+
+// ─────────────────────────────────────────────────────────────────────────
+// Canonical UV technology taxonomy — the SINGLE source of truth for ETIA's
+// six technology categories. Use these exact names everywhere (case studies,
+// application notes, product & brand pages) and as SEO keywords. `id` is a
+// stable slug for future faceted/tag pages.
+// ─────────────────────────────────────────────────────────────────────────
+export type TechRoute = { id: string; en: string; zh: string };
+
+export const TECH_ROUTES: TechRoute[] = [
+  { id: "uv-lamp-spot-curing", en: "UV Lamp Spot Curing System", zh: "UV 灯点光源固化系统" },
+  { id: "uv-led-spot-curing", en: "UV LED Spot Curing System", zh: "UV LED 点光源固化系统" },
+  { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing System", zh: "风冷 UV LED 大面积固化系统" },
+  { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing System", zh: "风冷 UV LED 小面积固化系统" },
+  { id: "water-cooled-uv-led-large-area-curing", en: "Water-Cooled UV LED Large Area Curing System", zh: "水冷 UV LED 大面积固化系统" },
+  { id: "microwave-uv-curing", en: "Microwave UV Curing System", zh: "微波 UV 固化系统" },
+];
+
+const TECH_BY_ID: Record<string, TechRoute> = Object.fromEntries(TECH_ROUTES.map((r) => [r.id, r]));
+
+// Maps a product to exactly one of the six canonical technology routes, or
+// undefined for pure accessories (radiometers, light guides, network modules)
+// that don't cure. Spot curing splits lamp vs LED by `sub`; air-cooled splits
+// large vs small area by `sub`.
+export function techRouteFor(p: Product): TechRoute | undefined {
+  switch (p.tech) {
+    case "UV Spot Curing":
+      if (p.sub?.startsWith("UV Lamp Spot")) return TECH_BY_ID["uv-lamp-spot-curing"];
+      if (p.sub?.startsWith("UV LED Spot")) return TECH_BY_ID["uv-led-spot-curing"];
+      return undefined; // radiometer / accessory
+    case "Air-Cooled UV LED Curing":
+      return p.sub?.includes("Small-Area")
+        ? TECH_BY_ID["air-cooled-uv-led-small-area-curing"]
+        : TECH_BY_ID["air-cooled-uv-led-large-area-curing"];
+    case "Water-Cooled UV LED Area Curing":
+      return TECH_BY_ID["water-cooled-uv-led-large-area-curing"];
+    case "Microwave UV Curing":
+      return TECH_BY_ID["microwave-uv-curing"];
+    default:
+      return undefined;
+  }
+}
+
+// Short product model name for a "Product" ticket — strips the brand prefix and
+// the trailing marketing/technology descriptor from the full catalog name.
+// e.g. "OmniCure S2000 Elite UV Spot Curing System" → "S2000 Elite".
+export function productModel(p: Product): string {
+  let s = p.name;
+  for (const b of ["OmniCure", "Phoseon", "Noblelight", "Fusion UV"]) {
+    if (s.startsWith(b + " ")) { s = s.slice(b.length + 1); break; }
+  }
+  s = s.replace(/\s(UV (LED|Spot|Curing|Radiomet)|Water-Cooled|Air-Cooled|Microwave|High-Dose|High-Intensity).*$/i, "");
+  return s.trim();
+}
 
 // Product JSON-LD (schema.org/Product) for a product detail page. ETIA is the
 // distributor/seller; the brand is the manufacturer. areaServed reflects the

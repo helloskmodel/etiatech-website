@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { apps, appSlug, localizeApp, localizeIndustry, type App } from "@/components/applicationNotes";
 import { productForAppNote } from "@/components/productApplications";
-import { productHref, type Product } from "@/components/productCatalog";
+import { productHref, productModel, techRouteFor, type Product } from "@/components/productCatalog";
 import { industryColors } from "@/components/industryMedia";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -24,6 +24,7 @@ export default function AppNoteView({ note }: { note: App }) {
   const color = industryColors[note.industry] || "#1A56DB";
   // Product / brand / tech derived from the English catalog, then displayed.
   const product = productForAppNote(note);
+  const techRoute = product ? techRouteFor(product) : undefined;
 
   // Other notes in the same industry (for internal linking).
   const related = apps
@@ -47,19 +48,24 @@ export default function AppNoteView({ note }: { note: App }) {
       {/* Header */}
       <header className="py-12 border-b border-gray-200" style={{ background: "#f1f5f9" }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Four-tag taxonomy */}
+          {/* Taxonomy tickets: Industry · Application · Brand · Product · Technology */}
           <div className="flex flex-wrap items-center gap-1.5 mb-4">
             <Link href={`/application?ind=${encodeURIComponent(note.industry)}`} className="text-[11px] font-bold px-2 py-0.5 rounded text-white hover:opacity-90 transition-opacity" style={{ background: color }}>
               {localizeIndustry(note.industry, locale).toUpperCase()}
             </Link>
             <span className="text-[11px] font-medium px-2 py-0.5 rounded-full border border-gray-300 text-gray-600 bg-white">{a.subCategory}</span>
             {product && (
-              <span className="text-[11px] font-medium px-2 py-0.5 rounded-full border border-gray-300 text-gray-600 bg-white">{product.tech}</span>
-            )}
-            {product && (
               <Link href={`/product/${brandPageSlug[product.brandId]}`} className="text-[11px] font-semibold px-2 py-0.5 rounded-full border hover:opacity-90 transition-opacity" style={{ borderColor: `${color}55`, color, background: `${color}0d` }}>
                 {product.brand}
               </Link>
+            )}
+            {product && (
+              <Link href={productHref(product)} className="text-[11px] font-semibold px-2 py-0.5 rounded-full border border-gray-300 text-gray-700 bg-white hover:border-gray-500 transition-colors">
+                {productModel(product)}
+              </Link>
+            )}
+            {techRoute && (
+              <span className="text-[11px] font-medium px-2 py-0.5 rounded-full border border-gray-300 text-gray-600 bg-white">{t(techRoute, locale)}</span>
             )}
             {note.hot && <span className="text-[11px] px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ {t({ en: "Hot", zh: "热门" }, locale)}</span>}
           </div>

@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
-import { successStories, caseStudyImage, heroBannerImage, localizeCase, type CaseStudy } from "@/components/caseStudies";
-import { apps, appSlug, localizeApp, localizeIndustry, type App } from "@/components/applicationNotes";
-import { productForAppNote } from "@/components/productApplications";
-import { productHref } from "@/components/productCatalog";
-import CaseStudyModal from "@/components/CaseStudyModal";
+import { successStories, caseStudyImage, caseSlug, heroBannerImage, localizeCase } from "@/components/caseStudies";
+import { apps, appSlug, localizeApp, localizeIndustry } from "@/components/applicationNotes";
+import { productForAppNote, brandsForCase, techRoutesForCase } from "@/components/productApplications";
+import { techRouteFor, brandAccent } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
 
@@ -17,28 +16,15 @@ const industries = [...new Set(apps.map((a) => a.industry))];
 
 export default function ApplicationPage() {
   const [activeIndustry, setActiveIndustry] = useState<string>("All");
-  const [selectedApp, setSelectedApp] = useState<App | null>(null);
-  const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);
   const { locale } = useLocale();
 
-  // Deep-linking: /application?ind=<Industry> pre-selects a filter tab, and
-  // /application#AN-XXX-001 opens that application note's detail modal and
-  // scrolls it into view. Runs once on mount.
+  // Deep-linking: /application?ind=<Industry> pre-selects a filter tab.
+  // (Individual notes now live on their own /application/<slug> pages.)
   useEffect(() => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     const ind = params.get("ind");
     if (ind && industries.includes(ind)) setActiveIndustry(ind);
-
-    const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
-    if (!hash) return;
-    const app = apps.find((a) => a.id === hash);
-    if (app) {
-      setActiveIndustry("All");
-      setSelectedApp(localizeApp(app, locale));
-    }
-    window.setTimeout(() => document.getElementById(hash)?.scrollIntoView({ block: "center" }), 120);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filtered = activeIndustry === "All" ? apps : apps.filter((a) => a.industry === activeIndustry);
@@ -99,10 +85,10 @@ export default function ApplicationPage() {
             {filtered.map((rawApp) => {
               const app = localizeApp(rawApp, locale);
               return (
-              <button
+              <Link
                 key={app.id}
                 id={app.id}
-                onClick={() => setSelectedApp(app)}
+                href={`/application/${appSlug(rawApp)}`}
                 className="text-left rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all group overflow-hidden scroll-mt-32"
               >
                 {/* Colored top bar */}
@@ -116,6 +102,14 @@ export default function ApplicationPage() {
                     <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">{app.product}</span>
                     {app.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ {t({ en: "Hot", zh: "热门" }, locale)}</span>}
                   </div>
+                  {/* Canonical UV technology hint */}
+                  {(() => {
+                    const rp = productForAppNote(rawApp);
+                    const r = rp ? techRouteFor(rp) : undefined;
+                    return r ? (
+                      <span className="inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 mb-2">{t(r, locale)}</span>
+                    ) : null;
+                  })()}
                   {/* Title */}
                   <h3 className="font-bold text-gray-900 text-sm leading-snug mb-1 group-hover:text-[#1A56DB] transition-colors">{app.title}</h3>
                   {/* Subcategory */}
@@ -126,7 +120,7 @@ export default function ApplicationPage() {
                     <span className="text-xs text-[#1A56DB] opacity-0 group-hover:opacity-100 transition-opacity font-medium">{t({ en: "View →", zh: "查看 →" }, locale)}</span>
                   </div>
                 </div>
-              </button>
+              </Link>
               );
             })}
           </div>
@@ -143,9 +137,9 @@ export default function ApplicationPage() {
             {successStories.map((raw) => {
               const s = localizeCase(raw, locale);
               return (
-              <button
+              <Link
                 key={s.id}
-                onClick={() => setSelectedCase(s)}
+                href={`/case-studies/${caseSlug(raw)}`}
                 className="text-left rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-all bg-white flex flex-col group"
               >
                 {/* Visual header — real industry photo (icon fallback) */}
@@ -164,6 +158,21 @@ export default function ApplicationPage() {
                 <div className="px-5 pt-4 pb-2">
                   <h3 className="font-bold text-base leading-snug" style={{ color: "#1A56DB" }}>{s.title}</h3>
                   <p className="text-gray-400 text-xs mt-1">{s.company}</p>
+                  {/* Brand + primary UV technology hint */}
+                  <div className="flex flex-wrap items-center gap-1 mt-2">
+                    {brandsForCase(raw).map((bp) => (
+                      <span key={bp.brandId} className="text-[10px] font-bold px-1.5 py-0.5 rounded text-white" style={{ background: brandAccent[bp.brandId] }}>{bp.brand}</span>
+                    ))}
+                    {(() => {
+                      const routes = techRoutesForCase(raw);
+                      if (!routes.length) return null;
+                      return (
+                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full border border-gray-200 text-gray-500">
+                          {t(routes[0], locale)}{routes.length > 1 ? ` +${routes.length - 1}` : ""}
+                        </span>
+                      );
+                    })()}
+                  </div>
                 </div>
                 {/* Keywords */}
                 <div className="px-5 pb-4 flex flex-wrap gap-1.5 flex-1 content-start">
@@ -181,7 +190,7 @@ export default function ApplicationPage() {
                   </div>
                   <span className="text-xs font-semibold whitespace-nowrap group-hover:underline" style={{ color: industryColors[s.industry] }}>{locale === "zh" ? "查看案例 →" : "Read case →"}</span>
                 </div>
-              </button>
+              </Link>
               );
             })}
           </div>
@@ -199,88 +208,6 @@ export default function ApplicationPage() {
         </div>
       </section>
 
-      {/* Modal */}
-      {selectedApp && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: "rgba(0,0,0,0.85)" }}
-          onClick={() => setSelectedApp(null)}
-        >
-          <div
-            className="w-full max-w-lg rounded-2xl bg-white relative max-h-[90vh] overflow-y-auto shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Colored top bar */}
-            <div className="h-1.5 rounded-t-2xl" style={{ background: industryColors[selectedApp.industry] }} />
-            <div className="p-6">
-            <button onClick={() => setSelectedApp(null)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl leading-none">✕</button>
-
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[selectedApp.industry] }}>{localizeIndustry(selectedApp.industry, locale).toUpperCase()}</span>
-              <span className="text-xs text-gray-400">{selectedApp.subCategory}</span>
-              {selectedApp.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ {t({ en: "Hot", zh: "热门" }, locale)}</span>}
-            </div>
-            <h2 className="text-xl font-bold mt-2 mb-1 pr-6" style={{ color: "#1A56DB" }}>{selectedApp.title}</h2>
-            <p className="text-xs text-gray-400 mb-3">{selectedApp.id}</p>
-            <p className="text-sm text-gray-600 leading-relaxed mb-5">{selectedApp.intro}</p>
-
-            <div className="space-y-3 mb-5">
-              <div className="rounded-lg p-4 bg-red-50 border border-red-100">
-                <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">{t({ en: "The Challenge", zh: "挑战" }, locale)}</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.challenge}</p>
-              </div>
-              <div className="rounded-lg p-4 border" style={{ background: "#f0f5ff", borderColor: "#c7d9ff" }}>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#1A56DB" }}>{t({ en: "The Solution", zh: "解决方案" }, locale)}</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.solution}</p>
-              </div>
-              <div className="rounded-lg p-4 bg-green-50 border border-green-100">
-                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">{t({ en: "The Benefit", zh: "效益" }, locale)}</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{selectedApp.benefit}</p>
-              </div>
-              <div className="rounded-lg p-4 border" style={{ background: "#fafafa", borderColor: "#eee" }}>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: industryColors[selectedApp.industry] }}>{t({ en: "Technology Highlights", zh: "技术亮点" }, locale)}</p>
-                <ul className="text-sm text-gray-700 leading-relaxed list-disc pl-5 space-y-1">
-                  {selectedApp.highlights.map((h, i) => <li key={i}>{h}</li>)}
-                </ul>
-              </div>
-              <div className="rounded-lg p-4 bg-gray-50 border border-gray-100">
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">{t({ en: "Recommended System", zh: "推荐系统" }, locale)}</p>
-                <p className="text-sm font-semibold" style={{ color: "#1A56DB" }}>{selectedApp.recommended}</p>
-                {(() => {
-                  const rp = productForAppNote(selectedApp);
-                  return rp ? (
-                    <Link href={productHref(rp)} className="inline-flex items-center gap-1 mt-2 text-xs font-semibold hover:underline" style={{ color: "#1A56DB" }} onClick={() => setSelectedApp(null)}>
-                      {t({ en: `View ${rp.name.split(" ").slice(0, 3).join(" ")} specs →`, zh: "查看产品规格 →" }, locale)}
-                    </Link>
-                  ) : null;
-                })()}
-              </div>
-            </div>
-
-            <Link
-              href={`/application/${appSlug(apps.find((a) => a.id === selectedApp.id) ?? selectedApp)}`}
-              className="block text-center py-2 mb-2 rounded font-semibold text-sm border transition-colors hover:bg-gray-50"
-              style={{ color: "#1A56DB", borderColor: "#c7d9ff" }}
-            >
-              {t({ en: "View full application note →", zh: "查看完整应用页 →" }, locale)}
-            </Link>
-            <a
-              href={inquiryMailto(locale, { subject: "Sales Inquiry" })}
-              className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"
-              style={{ background: "#2563eb" }}
-              onClick={() => setSelectedApp(null)}
-            >
-              {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}
-            </a>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Case Study Modal */}
-      {selectedCase && (
-        <CaseStudyModal caseStudy={selectedCase} onClose={() => setSelectedCase(null)} />
-      )}
     </>
   );
 }

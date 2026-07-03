@@ -4,6 +4,8 @@ import Image from "next/image";
 import { type CaseStudy, caseStudyImage, localizeCase, successStories, caseSlug } from "@/components/caseStudies";
 import { industryColors, industryImage, industryFallbackIcon } from "@/components/industryMedia";
 import { localizeIndustry } from "@/components/applicationNotes";
+import { brandsForCase, systemsForCase, techRoutesForCase } from "@/components/productApplications";
+import { brandAccent, brandRouteSlug, productHref, productModel } from "@/components/productCatalog";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 
@@ -21,6 +23,12 @@ export default function CaseStudyPageView({ caseStudy }: { caseStudy: CaseStudy 
     .filter((x) => x.industry === caseStudy.industry && x.id !== caseStudy.id)
     .slice(0, 3)
     .map((x) => ({ raw: x, loc: localizeCase(x, locale) }));
+
+  // Brand · Product · Technology stickers, derived from the systems this case
+  // study uses (deduplicated).
+  const brands = brandsForCase(caseStudy);
+  const systems = systemsForCase(caseStudy);
+  const techRoutes = techRoutesForCase(caseStudy);
 
   return (
     <>
@@ -61,6 +69,25 @@ export default function CaseStudyPageView({ caseStudy }: { caseStudy: CaseStudy 
       {/* Body */}
       <div className="py-12 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Brand · Product · Technology tickets (derived from the systems used) */}
+          {(brands.length > 0 || systems.length > 0 || techRoutes.length > 0) && (
+            <div className="flex flex-wrap items-center gap-1.5 mb-3">
+              {brands.map((p) => (
+                <Link key={p.brandId} href={`/product/${brandRouteSlug[p.brandId]}`} className="text-[11px] font-bold px-2.5 py-0.5 rounded-full text-white hover:opacity-90 transition-opacity" style={{ background: brandAccent[p.brandId] }}>
+                  {p.brand}
+                </Link>
+              ))}
+              {systems.map((p) => (
+                <Link key={p.slug} href={productHref(p)} className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full border border-gray-300 text-gray-700 bg-white hover:border-gray-500 transition-colors">
+                  {productModel(p)}
+                </Link>
+              ))}
+              {techRoutes.map((tr) => (
+                <span key={tr.en} className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full border border-gray-300 text-gray-600 bg-white">{t(tr, locale)}</span>
+              ))}
+            </div>
+          )}
+
           {/* Keyword tags */}
           <div className="flex flex-wrap gap-1.5 mb-6">
             {c.keywords.map((k) => (

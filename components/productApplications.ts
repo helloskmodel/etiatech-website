@@ -4,8 +4,9 @@
 // token against each note's `product` / `recommended` text. This keeps the
 // "typical applications" tags on product pages and the "recommended system"
 // links on the Application page in sync automatically as data changes.
-import { products, type Product } from "./productCatalog";
+import { products, techRouteFor, type Product, type TechRoute } from "./productCatalog";
 import { apps, type App } from "./applicationNotes";
+import type { CaseStudy } from "./caseStudies";
 
 // [slug, matcher] ordered by priority: primary systems first, accessories last.
 // productForAppNote() returns the FIRST match, so a note recommending a combo
@@ -51,4 +52,51 @@ export function productForAppNote(a: App): Product | undefined {
     if (re.test(text)) return products.find((p) => p.slug === slug);
   }
   return undefined;
+}
+
+// Every product whose model token appears anywhere in a block of text
+// (unlike productForAppNote, which returns only the first/primary match).
+export function productsInText(text: string): Product[] {
+  const out: Product[] = [];
+  for (const [slug, re] of PRODUCT_MATCHERS) {
+    if (re.test(text)) {
+      const p = products.find((x) => x.slug === slug);
+      if (p) out.push(p);
+    }
+  }
+  return out;
+}
+
+// Accessories / sub-components that aren't standalone curing systems — excluded
+// from the "Product" tickets so a case shows its curing systems, not radiometers.
+const ACCESSORY_RE = /Radiometer|Radiometry|Network Module|Light Guide|UV LED Heads/i;
+
+// The OmniCure curing systems referenced by a case study, detected from its
+// keyword chips, solution copy, and compatible-materials table. Used to render
+// the brand · product · technology tickets on the case-study landing page.
+export function systemsForCase(c: CaseStudy): Product[] {
+  const text = [
+    c.keywords.join(" "),
+    c.solution,
+    c.materials?.rows.map((r) => r.system).join(" ") ?? "",
+  ].join(" ");
+  return productsInText(text).filter((p) => !ACCESSORY_RE.test(p.name));
+}
+
+// Unique brands referenced by a case study (one representative product each).
+export function brandsForCase(c: CaseStudy): Product[] {
+  const seen = new Map<string, Product>();
+  for (const p of systemsForCase(c)) if (!seen.has(p.brandId)) seen.set(p.brandId, p);
+  return [...seen.values()];
+}
+
+// Unique canonical UV-technology routes used by a case study (accessories that
+// don't map to a curing route are skipped).
+export function techRoutesForCase(c: CaseStudy): TechRoute[] {
+  const seen = new Map<string, TechRoute>();
+  for (const p of systemsForCase(c)) {
+    const r = techRouteFor(p);
+    if (r && !seen.has(r.id)) seen.set(r.id, r);
+  }
+  return [...seen.values()];
 }

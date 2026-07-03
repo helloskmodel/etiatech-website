@@ -1,18 +1,18 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { successStories, caseStudyImage, localizeCase, type CaseStudy } from "@/components/caseStudies";
+import { successStories, caseStudyImage, caseSlug, localizeCase } from "@/components/caseStudies";
 import { industryColors } from "@/components/industryMedia";
-import CaseStudyModal from "@/components/CaseStudyModal";
+import { brandsForCase, techRoutesForCase } from "@/components/productApplications";
+import { brandAccent } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
 
 // Horizontal, swipeable strip of all 10 case studies. Shows ~3 per screen on
 // desktop; native touch-swipe on mobile plus arrow buttons on desktop.
-// Tapping a card opens its full case-study modal (does NOT navigate away).
+// Tapping a card navigates to that case study's landing page.
 export default function CaseStudyStrip() {
   const { locale } = useLocale();
-  const [selected, setSelected] = useState<CaseStudy | null>(null);
   const scroller = useRef<HTMLDivElement>(null);
 
   const scrollByCards = (dir: number) => {
@@ -52,9 +52,9 @@ export default function CaseStudyStrip() {
             const color = industryColors[c.industry] || "#1A56DB";
             const img = caseStudyImage(c);
             return (
-              <button
+              <Link
                 key={c.id}
-                onClick={() => setSelected(c)}
+                href={`/case-studies/${caseSlug(raw)}`}
                 className="text-left snap-start shrink-0 w-[82%] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)] rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all group flex flex-col"
               >
                 {/* Photo header */}
@@ -70,9 +70,24 @@ export default function CaseStudyStrip() {
                   <p className="text-2xl font-extrabold leading-none mb-1" style={{ color }}>{c.metric}</p>
                   <p className="text-xs text-gray-400 leading-snug mb-3">{c.metricLabel}</p>
                   <h3 className="font-bold text-sm leading-snug text-gray-800 line-clamp-2 flex-1">{c.title}</h3>
+                  {/* Brand + primary UV technology hint */}
+                  <div className="flex flex-wrap items-center gap-1 mt-3">
+                    {brandsForCase(raw).map((bp) => (
+                      <span key={bp.brandId} className="text-[10px] font-bold px-1.5 py-0.5 rounded text-white" style={{ background: brandAccent[bp.brandId] }}>{bp.brand}</span>
+                    ))}
+                    {(() => {
+                      const routes = techRoutesForCase(raw);
+                      if (!routes.length) return null;
+                      return (
+                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full border border-gray-200 text-gray-500">
+                          {t(routes[0], locale)}{routes.length > 1 ? ` +${routes.length - 1}` : ""}
+                        </span>
+                      );
+                    })()}
+                  </div>
                   <span className="mt-3 text-sm font-semibold group-hover:underline" style={{ color }}>{t({ en: "Read this case study →", zh: "查看此案例 →" }, locale)}</span>
                 </div>
-              </button>
+              </Link>
             );
           })}
         </div>
@@ -85,8 +100,6 @@ export default function CaseStudyStrip() {
           {t({ en: "Explore All Case Studies →", zh: "查看全部案例 →" }, locale)}
         </Link>
       </div>
-
-      {selected && <CaseStudyModal caseStudy={selected} onClose={() => setSelected(null)} />}
     </>
   );
 }
