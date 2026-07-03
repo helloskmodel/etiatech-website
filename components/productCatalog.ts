@@ -1668,12 +1668,12 @@ export const brandRouteSlug: Record<Product["brandId"], string> = {
 export type TechRoute = { id: string; en: string; zh: string };
 
 export const TECH_ROUTES: TechRoute[] = [
-  { id: "uv-lamp-spot-curing", en: "UV Lamp Spot Curing", zh: "UV 灯式点固化" },
-  { id: "uv-led-spot-curing", en: "UV LED Spot Curing", zh: "UV LED 点固化" },
-  { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing", zh: "风冷 UV LED 大面积固化" },
-  { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing", zh: "风冷 UV LED 小面积固化" },
-  { id: "water-cooled-uv-led-area-curing", en: "Water-Cooled UV LED Area Curing", zh: "水冷 UV LED 区域固化" },
-  { id: "microwave-uv-curing", en: "Microwave UV Curing", zh: "微波 UV 固化" },
+  { id: "uv-lamp-spot-curing", en: "UV Lamp Spot Curing System", zh: "UV 灯点光源固化系统" },
+  { id: "uv-led-spot-curing", en: "UV LED Spot Curing System", zh: "UV LED 点光源固化系统" },
+  { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing System", zh: "风冷 UV LED 大面积固化系统" },
+  { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing System", zh: "风冷 UV LED 小面积固化系统" },
+  { id: "water-cooled-uv-led-large-area-curing", en: "Water-Cooled UV LED Large Area Curing System", zh: "水冷 UV LED 大面积固化系统" },
+  { id: "microwave-uv-curing", en: "Microwave UV Curing System", zh: "微波 UV 固化系统" },
 ];
 
 const TECH_BY_ID: Record<string, TechRoute> = Object.fromEntries(TECH_ROUTES.map((r) => [r.id, r]));
@@ -1693,7 +1693,7 @@ export function techRouteFor(p: Product): TechRoute | undefined {
         ? TECH_BY_ID["air-cooled-uv-led-small-area-curing"]
         : TECH_BY_ID["air-cooled-uv-led-large-area-curing"];
     case "Water-Cooled UV LED Area Curing":
-      return TECH_BY_ID["water-cooled-uv-led-area-curing"];
+      return TECH_BY_ID["water-cooled-uv-led-large-area-curing"];
     case "Microwave UV Curing":
       return TECH_BY_ID["microwave-uv-curing"];
     default:
