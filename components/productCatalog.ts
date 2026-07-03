@@ -1701,6 +1701,18 @@ export function techRouteFor(p: Product): TechRoute | undefined {
   }
 }
 
+// Short product model name for a "Product" ticket — strips the brand prefix and
+// the trailing marketing/technology descriptor from the full catalog name.
+// e.g. "OmniCure S2000 Elite UV Spot Curing System" → "S2000 Elite".
+export function productModel(p: Product): string {
+  let s = p.name;
+  for (const b of ["OmniCure", "Phoseon", "Noblelight", "Fusion UV"]) {
+    if (s.startsWith(b + " ")) { s = s.slice(b.length + 1); break; }
+  }
+  s = s.replace(/\s(UV (LED|Spot|Curing|Radiomet)|Water-Cooled|Air-Cooled|Microwave|High-Dose|High-Intensity).*$/i, "");
+  return s.trim();
+}
+
 // Product JSON-LD (schema.org/Product) for a product detail page. ETIA is the
 // distributor/seller; the brand is the manufacturer. areaServed reflects the
 // Asia-Pacific territories ETIA covers.

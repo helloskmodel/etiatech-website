@@ -67,16 +67,20 @@ export function productsInText(text: string): Product[] {
   return out;
 }
 
-// The OmniCure systems referenced by a case study, detected from its keyword
-// chips, solution copy, and compatible-materials table. Used to render the
-// brand + UV-technology-route stickers on the case-study landing page.
+// Accessories / sub-components that aren't standalone curing systems — excluded
+// from the "Product" tickets so a case shows its curing systems, not radiometers.
+const ACCESSORY_RE = /Radiometer|Radiometry|Network Module|Light Guide|UV LED Heads/i;
+
+// The OmniCure curing systems referenced by a case study, detected from its
+// keyword chips, solution copy, and compatible-materials table. Used to render
+// the brand · product · technology tickets on the case-study landing page.
 export function systemsForCase(c: CaseStudy): Product[] {
   const text = [
     c.keywords.join(" "),
     c.solution,
     c.materials?.rows.map((r) => r.system).join(" ") ?? "",
   ].join(" ");
-  return productsInText(text);
+  return productsInText(text).filter((p) => !ACCESSORY_RE.test(p.name));
 }
 
 // Unique brands referenced by a case study (one representative product each).

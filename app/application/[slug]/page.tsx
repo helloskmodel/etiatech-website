@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { apps, appSlug, getAppBySlug } from "@/components/applicationNotes";
 import { productForAppNote } from "@/components/productApplications";
+import { productModel, techRouteFor } from "@/components/productCatalog";
 import AppNoteView from "@/components/AppNoteView";
 
 const SITE = "https://www.etiatech.com";
@@ -31,6 +32,7 @@ export default async function ApplicationNotePage({ params }: { params: Promise<
   if (!a) notFound();
 
   const product = productForAppNote(a);
+  const techRoute = product ? techRouteFor(product) : undefined;
   const url = `${SITE}/application/${slug}`;
 
   // TechArticle describes the application note itself; BreadcrumbList gives
@@ -42,7 +44,7 @@ export default async function ApplicationNotePage({ params }: { params: Promise<
     description: a.intro,
     articleSection: a.industry,
     about: a.subCategory,
-    keywords: [a.industry, a.subCategory, "UV curing", product?.brand, product?.tech].filter(Boolean).join(", "),
+    keywords: [a.industry, a.subCategory, "UV curing", product?.brand?.replace(/®/g, ""), product && productModel(product), techRoute?.en].filter(Boolean).join(", "),
     author: { "@type": "Organization", name: "ETIA Technology" },
     publisher: { "@type": "Organization", name: "ETIA Technology" },
     mainEntityOfPage: url,
