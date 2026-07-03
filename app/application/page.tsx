@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
 import { successStories, caseStudyImage, heroBannerImage, localizeCase, type CaseStudy } from "@/components/caseStudies";
-import { apps, localizeApp, localizeIndustry, type App } from "@/components/applicationNotes";
+import { apps, appSlug, localizeApp, localizeIndustry, type App } from "@/components/applicationNotes";
 import { productForAppNote } from "@/components/productApplications";
 import { productHref } from "@/components/productCatalog";
 import CaseStudyModal from "@/components/CaseStudyModal";
@@ -257,6 +257,13 @@ export default function ApplicationPage() {
               </div>
             </div>
 
+            <Link
+              href={`/application/${appSlug(apps.find((a) => a.id === selectedApp.id) ?? selectedApp)}`}
+              className="block text-center py-2 mb-2 rounded font-semibold text-sm border transition-colors hover:bg-gray-50"
+              style={{ color: "#1A56DB", borderColor: "#c7d9ff" }}
+            >
+              {t({ en: "View full application note →", zh: "查看完整应用页 →" }, locale)}
+            </Link>
             <a
               href={inquiryMailto(locale, { subject: "Sales Inquiry" })}
               className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"

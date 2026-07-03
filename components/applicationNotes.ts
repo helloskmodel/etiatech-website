@@ -115,3 +115,12 @@ export function localizeIndustry(industry: string, locale: "en" | "zh" | "vi" | 
   if (locale === "zh") return industryZh[industry] ?? industry;
   return industry;
 }
+
+// Readable, SEO-friendly slug for an application note's landing page.
+export function appSlug(a: App): string {
+  return a.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+export function getAppBySlug(slug: string): App | undefined {
+  return apps.find((a) => appSlug(a) === slug);
+}
