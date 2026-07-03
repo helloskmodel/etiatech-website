@@ -6,6 +6,7 @@ import HeroBackdrop from "@/components/HeroBackdrop";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { heroBannerImages } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
+import { inquiryMailto } from "@/components/contact";
 
 const BASE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/homepageproduct";
 
@@ -71,7 +72,7 @@ export default function HomeView() {
               <Link href="/product" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
                 {t({ en: "Explore Products →", zh: "浏览产品 →" }, locale)}
               </Link>
-              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
+              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
                 {t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}
               </a>
             </div>
@@ -164,7 +165,7 @@ export default function HomeView() {
           <p className="text-gray-300 mb-8">
             {t({ en: "Our engineers are ready to help — from spot to area, lamp to LED, selection to validation.", zh: "我们的工程师随时待命——从点固化到面固化，从灯式到LED，从选型到验证。" }, locale)}
           </p>
-          <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>
+          <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>
             {t({ en: "Talk to ETIA Engineers →", zh: "联系ETIA工程师 →" }, locale)}
           </a>
         </div>

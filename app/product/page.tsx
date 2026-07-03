@@ -5,6 +5,7 @@ import { Microscope, Leaf, Zap } from "lucide-react";
 import { modelToSlug, getProduct, productHref } from "@/components/productCatalog";
 import { heroBannerImage } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
+import { inquiryMailto } from "@/components/contact";
 
 // Chinese translations for the curated brand/family marketing copy, keyed by
 // the English source string. Anything not present falls back to English.
@@ -239,7 +240,7 @@ export default function ProductPage() {
               {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV 固化方案。" }, locale)}
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
                 {t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}
               </a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -333,7 +334,7 @@ export default function ProductPage() {
           <div className="text-center mt-14 space-y-5">
             <p className="text-sm text-gray-400">
               {t({ en: "*Custom Engineering Solutions Available ·", zh: "*提供定制工程解决方案 ·" }, locale)}{" "}
-              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
             </p>
             <div>
               <Link href="/product/systems" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
@@ -370,7 +371,7 @@ export default function ProductPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Not sure which system is right for you?", zh: "不确定哪款系统适合您?" }, locale)}</h2>
           <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.", zh: "我们的工程师将为您的具体应用匹配合适的UV固化系统——从选型到验证。" }, locale)}</p>
-          <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
+          <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}
           </a>
         </div>
