@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
@@ -140,8 +141,8 @@ export default function S2000View() {
               ))}
             </div>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:mark_tang@etia-tech.com?subject=Quote%20Request" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote", zh: "获取报价" }, locale)}</a>
-              <a href="mailto:mark_tang@etia-tech.com?subject=S2000%20Elite%20Datasheet" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "Quote Request", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote", zh: "获取报价" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
             </div>
           </div>
           <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
@@ -239,7 +240,7 @@ export default function S2000View() {
           <p className="text-gray-500 mb-6 max-w-2xl">
             {t({ en: "Full technical specifications. For complete dimensional drawings and installation data, download the official datasheet.", zh: "完整技术规格。如需完整尺寸图纸与安装数据,请下载官方数据表。" }, locale)}
           </p>
-          <a href="mailto:mark_tang@etia-tech.com?subject=S2000%20Elite%20Datasheet" className="inline-block px-5 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all mb-4" style={{ background: "#1A56DB" }}>
+          <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="inline-block px-5 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all mb-4" style={{ background: "#1A56DB" }}>
             📄 {t({ en: "Download Datasheet (PDF)", zh: "下载数据表(PDF)" }, locale)}
           </a>
           <p className="text-xs text-gray-400 mb-8">
@@ -282,14 +283,14 @@ export default function S2000View() {
                 <div className="text-2xl mb-3">{a.icon}</div>
                 <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>{t(a.title, locale)}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{t(a.desc, locale)}</p>
-                <a href="mailto:mark_tang@etia-tech.com?subject=Accessory%20Inquiry" className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>{t(a.cta, locale)}</a>
+                <a href={inquiryMailto(locale, { subject: "Accessory Inquiry", context: "OmniCure S2000 Elite" })} className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>{t(a.cta, locale)}</a>
               </div>
             ))}
             <div className="rounded-xl p-6 border-2 border-dashed border-[#1A56DB]/30 bg-[#1A56DB]/5 flex flex-col">
               <div className="text-2xl mb-3">💬</div>
               <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Not sure what you need?", zh: "不确定需要什么?" }, locale)}</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{t({ en: "Our engineers will recommend the right accessories for your application, working distance, and light guide configuration.", zh: "我们的工程师将根据您的应用、工作距离与导光管配置,推荐合适的配件。" }, locale)}</p>
-              <a href="mailto:mark_tang@etia-tech.com?subject=Engineering%20Inquiry" className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: "OmniCure S2000 Elite" })} className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
             </div>
           </div>
         </div>
@@ -322,7 +323,7 @@ export default function S2000View() {
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Ready to specify the S2000 Elite?", zh: "准备选型 S2000 Elite?" }, locale)}</h2>
           <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:mark_tang@etia-tech.com?subject=Quote%20Request" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote →", zh: "获取报价 →" }, locale)}</a>
+            <a href={inquiryMailto(locale, { subject: "Quote Request", context: "OmniCure S2000 Elite" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote →", zh: "获取报价 →" }, locale)}</a>
             <Link href="/product/omnicure" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Back to OmniCure", zh: "返回 OmniCure" }, locale)}</Link>
           </div>
         </div>

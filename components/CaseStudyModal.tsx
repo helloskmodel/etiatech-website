@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { type CaseStudy, caseStudyImage, localizeCase } from "@/components/caseStudies";
 import { industryColors, industryImage, industryFallbackIcon } from "@/components/industryMedia";
+import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 
 // Rich case-study detail modal, shared by the Application page and the
@@ -123,7 +124,7 @@ export default function CaseStudyModal({
           </div>
 
           <a
-            href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry"
+            href={inquiryMailto(locale, { subject: "Sales Inquiry", context: c.company })}
             className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"
             style={{ background: "#2563eb" }}
             onClick={onClose}

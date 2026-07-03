@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useLocale, t } from "@/components/LocaleContext";
+import { inquiryMailto } from "@/components/contact";
 import type { Article } from "@/components/insights";
 
 function fmtDate(iso: string, locale: string): string {
@@ -90,7 +91,7 @@ export default function ArticleView({ article }: { article: Article }) {
             <h2 className="text-xl font-bold text-white mb-2">{t({ en: "Have a UV curing challenge?", zh: "有 UV 固化难题?" }, locale)}</h2>
             <p className="text-gray-200 text-sm mb-5">{t({ en: "Our engineers match the right system to your exact process — from selection to validation.", zh: "我们的工程师将为您的具体工艺匹配合适的系统——从选型到验证。" }, locale)}</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-6 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-6 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
               <Link href="/product" className="px-6 py-2.5 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Explore Products", zh: "浏览产品" }, locale)}</Link>
             </div>
           </div>

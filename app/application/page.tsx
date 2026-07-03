@@ -9,6 +9,7 @@ import { productForAppNote } from "@/components/productApplications";
 import { productHref } from "@/components/productCatalog";
 import CaseStudyModal from "@/components/CaseStudyModal";
 import { useLocale, t } from "@/components/LocaleContext";
+import { inquiryMailto } from "@/components/contact";
 
 
 const industries = [...new Set(apps.map((a) => a.industry))];
@@ -56,7 +57,7 @@ export default function ApplicationPage() {
             {t({ en: "UV curing solutions proven across 10 industries and 62 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.", zh: "经10大行业、62个应用场景验证的UV固化解决方案——帮助制造商在严苛的生产环境中获得稳定的固化效果。" }, locale)}
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+            <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
               {t({ en: "Talk to Our Sales", zh: "联系我们的销售" }, locale)}
             </a>
             <Link href="/product" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -192,7 +193,7 @@ export default function ApplicationPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Find the Right UV Curing Solution for Your Process</h2>
           <p className="text-gray-300 mb-6">Our engineers are ready to help — from application validation to system selection.</p>
-          <a href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry" className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
+          <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             Talk to Our Sales →
           </a>
         </div>
@@ -257,7 +258,7 @@ export default function ApplicationPage() {
             </div>
 
             <a
-              href="mailto:mark_tang@etia-tech.com?subject=Sales%20Inquiry"
+              href={inquiryMailto(locale, { subject: "Sales Inquiry" })}
               className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"
               style={{ background: "#2563eb" }}
               onClick={() => setSelectedApp(null)}
