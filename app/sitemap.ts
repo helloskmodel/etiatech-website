@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
+import { apps, appSlug } from "@/components/applicationNotes";
+import { successStories, caseSlug } from "@/components/caseStudies";
 
 const SITE = "https://www.etiatech.com";
 
@@ -33,5 +35,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     productPages.push({ url, changeFrequency: "monthly", priority: 0.7 });
   }
 
-  return [...core, ...productPages];
+  // Individual application-note landing pages (one per application point).
+  const appPages: MetadataRoute.Sitemap = apps.map((a) => ({
+    url: `${SITE}/application/${appSlug(a)}`,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  // Individual case-study landing pages.
+  const casePages: MetadataRoute.Sitemap = successStories.map((c) => ({
+    url: `${SITE}/case-studies/${caseSlug(c)}`,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...core, ...productPages, ...appPages, ...casePages];
 }

@@ -368,6 +368,15 @@ export function caseStudyImage(c: CaseStudy): string {
   return c.image ? `${CASE_IMG_BASE}/${encodeURIComponent(c.image)}` : "";
 }
 
+// Readable, SEO-friendly slug for a case study's landing page.
+export function caseSlug(c: CaseStudy): string {
+  return c.company.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+export function getCaseBySlug(slug: string): CaseStudy | undefined {
+  return successStories.find((c) => caseSlug(c) === slug);
+}
+
 // Returns the case study with translated fields merged in for the given
 // locale. Any field not translated falls back to the English source.
 export function localizeCase(c: CaseStudy, locale: "en" | "zh" | "vi" | "th"): CaseStudy {

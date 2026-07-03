@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { type CaseStudy, caseStudyImage, localizeCase } from "@/components/caseStudies";
+import Link from "next/link";
+import { type CaseStudy, caseStudyImage, caseSlug, localizeCase } from "@/components/caseStudies";
 import { industryColors, industryImage, industryFallbackIcon } from "@/components/industryMedia";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -123,6 +124,13 @@ export default function CaseStudyModal({
             <p className="text-xs text-gray-400 mt-0.5">{c.metricLabel}</p>
           </div>
 
+          <Link
+            href={`/case-studies/${caseSlug(caseStudy)}`}
+            className="block text-center py-2 mb-2 rounded font-semibold text-sm border transition-colors hover:bg-gray-50"
+            style={{ color: "#1A56DB", borderColor: "#c7d9ff" }}
+          >
+            {t({ en: "View full case study →", zh: "查看完整案例页 →" }, locale)}
+          </Link>
           <a
             href={inquiryMailto(locale, { subject: "Sales Inquiry", context: c.company })}
             className="block text-center py-2.5 rounded font-semibold text-white text-sm hover:opacity-90"
