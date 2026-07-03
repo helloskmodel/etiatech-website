@@ -1672,7 +1672,7 @@ export const TECH_ROUTES: TechRoute[] = [
   { id: "uv-led-spot-curing", en: "UV LED Spot Curing", zh: "UV LED 点固化" },
   { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing", zh: "风冷 UV LED 大面积固化" },
   { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing", zh: "风冷 UV LED 小面积固化" },
-  { id: "water-cooled-uv-led-area-curing", en: "Water-Cooled UV LED Area Curing", zh: "水冷 UV LED 面固化" },
+  { id: "water-cooled-uv-led-area-curing", en: "Water-Cooled UV LED Area Curing", zh: "水冷 UV LED 区域固化" },
   { id: "microwave-uv-curing", en: "Microwave UV Curing", zh: "微波 UV 固化" },
 ];
 
