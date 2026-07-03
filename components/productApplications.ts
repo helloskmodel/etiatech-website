@@ -4,7 +4,7 @@
 // token against each note's `product` / `recommended` text. This keeps the
 // "typical applications" tags on product pages and the "recommended system"
 // links on the Application page in sync automatically as data changes.
-import { products, techRouteLabel, type Product } from "./productCatalog";
+import { products, techRouteFor, type Product, type TechRoute } from "./productCatalog";
 import { apps, type App } from "./applicationNotes";
 import type { CaseStudy } from "./caseStudies";
 
@@ -86,15 +86,13 @@ export function brandsForCase(c: CaseStudy): Product[] {
   return [...seen.values()];
 }
 
-// Unique UV-technology-route labels for a case study. Accessories (radiometers,
-// light guides) that resolve to the generic "UV Spot Curing" are dropped — only
-// the actual curing routes (lamp spot / LED spot / area) are kept.
-export function techRoutesForCase(c: CaseStudy): { en: string; zh: string }[] {
-  const seen = new Map<string, { en: string; zh: string }>();
+// Unique canonical UV-technology routes used by a case study (accessories that
+// don't map to a curing route are skipped).
+export function techRoutesForCase(c: CaseStudy): TechRoute[] {
+  const seen = new Map<string, TechRoute>();
   for (const p of systemsForCase(c)) {
-    const label = techRouteLabel(p);
-    if (label.en === "UV Spot Curing") continue;
-    if (!seen.has(label.en)) seen.set(label.en, label);
+    const r = techRouteFor(p);
+    if (r && !seen.has(r.id)) seen.set(r.id, r);
   }
   return [...seen.values()];
 }

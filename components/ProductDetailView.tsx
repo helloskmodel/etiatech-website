@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { productImage, localizeProduct, productTagline, type Product } from "@/components/productCatalog";
+import { productImage, localizeProduct, productTagline, techRouteFor, type Product } from "@/components/productCatalog";
 import { appNotesForProduct } from "@/components/productApplications";
 import { localizeApp } from "@/components/applicationNotes";
 import { inquiryMailto } from "@/components/contact";
@@ -44,7 +44,12 @@ export default function ProductDetailView({ product, accent }: { product: Produc
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <Link href={`/product/${brandPageSlug[product.brandId]}`} className="text-[11px] font-bold px-2.5 py-1 rounded text-white hover:opacity-90 transition-opacity" style={{ background: accent }}>{p.brand} →</Link>
-              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{p.tech}{p.sub ? ` · ${p.sub}` : ""}</span>
+              {(() => {
+                const r = techRouteFor(product);
+                return (
+                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{r ? t(r, locale) : p.tech}</span>
+                );
+              })()}
             </div>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3" style={{ color: "#1A56DB" }}>{p.name}</h1>
             {productTagline[product.slug] && (

@@ -1,20 +1,18 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { products, technologies, productHref, productImage, brandAccent, localizeProduct } from "@/components/productCatalog";
+import { products, TECH_ROUTES, techRouteFor, productHref, productImage, brandAccent, localizeProduct, type Product } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
 
-const techZh: Record<string, string> = {
-  "UV Spot Curing": "UV点固化",
-  "Water-Cooled UV LED Area Curing": "水冷式UV LED面固化",
-  "Air-Cooled UV LED Curing": "风冷式UV LED固化",
-  "Microwave UV Curing": "微波UV固化",
-};
+// The six canonical technology groups, plus a catch-all Accessories bucket for
+// products that don't cure (radiometers, light guides, network modules).
+const ACCESSORIES = { id: "accessories", en: "Accessories", zh: "配件" };
+const groupsInOrder = [...TECH_ROUTES, ACCESSORIES];
+const groupOf = (p: Product) => techRouteFor(p)?.id ?? ACCESSORIES.id;
 
 export default function SystemsIndexView() {
   const { locale } = useLocale();
-  const techLabel = (tech: string) => (locale === "zh" ? techZh[tech] ?? tech : tech);
 
   return (
     <>
@@ -42,13 +40,13 @@ export default function SystemsIndexView() {
       {/* Products grouped by technology */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          {technologies.map((tech) => {
-            const group = products.filter((p) => p.tech === tech);
+          {groupsInOrder.map((route) => {
+            const group = products.filter((p) => groupOf(p) === route.id);
             if (!group.length) return null;
             return (
-              <div key={tech}>
+              <div key={route.id}>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="inline-block text-xs font-bold px-3 py-1 rounded text-white" style={{ background: "#1A56DB" }}>{techLabel(tech).toUpperCase()}</span>
+                  <span className="inline-block text-xs font-bold px-3 py-1 rounded text-white" style={{ background: "#1A56DB" }}>{t(route, locale).toUpperCase()}</span>
                   <span className="text-xs text-gray-400">{group.length} {t({ en: "systems", zh: "款系统" }, locale)}</span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

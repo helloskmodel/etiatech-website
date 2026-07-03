@@ -5,6 +5,8 @@ import Image from "next/image";
 import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
 import { successStories, caseStudyImage, caseSlug, heroBannerImage, localizeCase } from "@/components/caseStudies";
 import { apps, appSlug, localizeApp, localizeIndustry } from "@/components/applicationNotes";
+import { productForAppNote, brandsForCase, techRoutesForCase } from "@/components/productApplications";
+import { techRouteFor, brandAccent } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
 
@@ -100,6 +102,14 @@ export default function ApplicationPage() {
                     <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">{app.product}</span>
                     {app.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ {t({ en: "Hot", zh: "热门" }, locale)}</span>}
                   </div>
+                  {/* Canonical UV technology hint */}
+                  {(() => {
+                    const rp = productForAppNote(rawApp);
+                    const r = rp ? techRouteFor(rp) : undefined;
+                    return r ? (
+                      <span className="inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 mb-2">{t(r, locale)}</span>
+                    ) : null;
+                  })()}
                   {/* Title */}
                   <h3 className="font-bold text-gray-900 text-sm leading-snug mb-1 group-hover:text-[#1A56DB] transition-colors">{app.title}</h3>
                   {/* Subcategory */}
@@ -148,6 +158,21 @@ export default function ApplicationPage() {
                 <div className="px-5 pt-4 pb-2">
                   <h3 className="font-bold text-base leading-snug" style={{ color: "#1A56DB" }}>{s.title}</h3>
                   <p className="text-gray-400 text-xs mt-1">{s.company}</p>
+                  {/* Brand + primary UV technology hint */}
+                  <div className="flex flex-wrap items-center gap-1 mt-2">
+                    {brandsForCase(raw).map((bp) => (
+                      <span key={bp.brandId} className="text-[10px] font-bold px-1.5 py-0.5 rounded text-white" style={{ background: brandAccent[bp.brandId] }}>{bp.brand}</span>
+                    ))}
+                    {(() => {
+                      const routes = techRoutesForCase(raw);
+                      if (!routes.length) return null;
+                      return (
+                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full border border-gray-200 text-gray-500">
+                          {t(routes[0], locale)}{routes.length > 1 ? ` +${routes.length - 1}` : ""}
+                        </span>
+                      );
+                    })()}
+                  </div>
                 </div>
                 {/* Keywords */}
                 <div className="px-5 pb-4 flex flex-wrap gap-1.5 flex-1 content-start">

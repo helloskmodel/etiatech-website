@@ -1659,24 +1659,46 @@ export const brandRouteSlug: Record<Product["brandId"], string> = {
   noblelight: "noblelight",
 };
 
-// Chinese labels for the top-level technology values.
-const techZh: Record<string, string> = {
-  "UV Spot Curing": "UV 点固化",
-  "Air-Cooled UV LED Curing": "风冷 UV LED 固化",
-  "Water-Cooled UV LED Area Curing": "水冷 UV LED 面固化",
-  "Microwave UV Curing": "微波 UV 固化",
-};
+// ─────────────────────────────────────────────────────────────────────────
+// Canonical UV technology taxonomy — the SINGLE source of truth for ETIA's
+// six technology categories. Use these exact names everywhere (case studies,
+// application notes, product & brand pages) and as SEO keywords. `id` is a
+// stable slug for future faceted/tag pages.
+// ─────────────────────────────────────────────────────────────────────────
+export type TechRoute = { id: string; en: string; zh: string };
 
-// Friendly "technology route" sticker label for a product. Spot-curing systems
-// are split into lamp vs LED by their `sub` field (matching the brand pages),
-// so an S-Series reads "UV Lamp Spot Curing" and an LX-Series "UV LED Spot
-// Curing"; everything else uses its top-level `tech` value.
-export function techRouteLabel(p: Product): { en: string; zh: string } {
-  if (p.tech === "UV Spot Curing") {
-    if (p.sub === "UV Lamp Spot") return { en: "UV Lamp Spot Curing", zh: "UV 灯式点固化" };
-    if (p.sub === "UV LED Spot") return { en: "UV LED Spot Curing", zh: "UV LED 点固化" };
+export const TECH_ROUTES: TechRoute[] = [
+  { id: "uv-lamp-spot-curing", en: "UV Lamp Spot Curing", zh: "UV 灯式点固化" },
+  { id: "uv-led-spot-curing", en: "UV LED Spot Curing", zh: "UV LED 点固化" },
+  { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing", zh: "风冷 UV LED 大面积固化" },
+  { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing", zh: "风冷 UV LED 小面积固化" },
+  { id: "water-cooled-uv-led-area-curing", en: "Water-Cooled UV LED Area Curing", zh: "水冷 UV LED 面固化" },
+  { id: "microwave-uv-curing", en: "Microwave UV Curing", zh: "微波 UV 固化" },
+];
+
+const TECH_BY_ID: Record<string, TechRoute> = Object.fromEntries(TECH_ROUTES.map((r) => [r.id, r]));
+
+// Maps a product to exactly one of the six canonical technology routes, or
+// undefined for pure accessories (radiometers, light guides, network modules)
+// that don't cure. Spot curing splits lamp vs LED by `sub`; air-cooled splits
+// large vs small area by `sub`.
+export function techRouteFor(p: Product): TechRoute | undefined {
+  switch (p.tech) {
+    case "UV Spot Curing":
+      if (p.sub?.startsWith("UV Lamp Spot")) return TECH_BY_ID["uv-lamp-spot-curing"];
+      if (p.sub?.startsWith("UV LED Spot")) return TECH_BY_ID["uv-led-spot-curing"];
+      return undefined; // radiometer / accessory
+    case "Air-Cooled UV LED Curing":
+      return p.sub?.includes("Small-Area")
+        ? TECH_BY_ID["air-cooled-uv-led-small-area-curing"]
+        : TECH_BY_ID["air-cooled-uv-led-large-area-curing"];
+    case "Water-Cooled UV LED Area Curing":
+      return TECH_BY_ID["water-cooled-uv-led-area-curing"];
+    case "Microwave UV Curing":
+      return TECH_BY_ID["microwave-uv-curing"];
+    default:
+      return undefined;
   }
-  return { en: p.tech, zh: techZh[p.tech] ?? p.tech };
 }
 
 // Product JSON-LD (schema.org/Product) for a product detail page. ETIA is the

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { apps, appSlug, localizeApp, localizeIndustry, type App } from "@/components/applicationNotes";
 import { productForAppNote } from "@/components/productApplications";
-import { productHref, type Product } from "@/components/productCatalog";
+import { productHref, techRouteFor, type Product } from "@/components/productCatalog";
 import { industryColors } from "@/components/industryMedia";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -24,6 +24,7 @@ export default function AppNoteView({ note }: { note: App }) {
   const color = industryColors[note.industry] || "#1A56DB";
   // Product / brand / tech derived from the English catalog, then displayed.
   const product = productForAppNote(note);
+  const techRoute = product ? techRouteFor(product) : undefined;
 
   // Other notes in the same industry (for internal linking).
   const related = apps
@@ -53,8 +54,8 @@ export default function AppNoteView({ note }: { note: App }) {
               {localizeIndustry(note.industry, locale).toUpperCase()}
             </Link>
             <span className="text-[11px] font-medium px-2 py-0.5 rounded-full border border-gray-300 text-gray-600 bg-white">{a.subCategory}</span>
-            {product && (
-              <span className="text-[11px] font-medium px-2 py-0.5 rounded-full border border-gray-300 text-gray-600 bg-white">{product.tech}</span>
+            {techRoute && (
+              <span className="text-[11px] font-medium px-2 py-0.5 rounded-full border border-gray-300 text-gray-600 bg-white">{t(techRoute, locale)}</span>
             )}
             {product && (
               <Link href={`/product/${brandPageSlug[product.brandId]}`} className="text-[11px] font-semibold px-2 py-0.5 rounded-full border hover:opacity-90 transition-opacity" style={{ borderColor: `${color}55`, color, background: `${color}0d` }}>
