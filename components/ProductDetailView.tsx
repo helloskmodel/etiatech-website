@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { productImage, localizeProduct, productTagline, techRouteFor, type Product } from "@/components/productCatalog";
+import { productImage, localizeProduct, productTagline, productPdf, techRouteFor, type Product } from "@/components/productCatalog";
 import { appNotesForProduct } from "@/components/productApplications";
 import { localizeApp } from "@/components/applicationNotes";
 import { inquiryMailto } from "@/components/contact";
@@ -59,6 +59,22 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             <div className="flex flex-wrap gap-4">
               <a href={inquiryMailto(locale, { subject: "Quote Request", context: product.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Request a Quote", zh: "获取报价" }, locale)}</a>
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
+              {productPdf[product.slug] && (
+                <a
+                  href={productPdf[product.slug]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 rounded font-semibold border transition-all inline-flex items-center gap-2 hover:opacity-90"
+                  style={{ color: accent, borderColor: `${accent}66`, background: `${accent}0d` }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  {t({ en: "Download Brochure", zh: "下载产品手册", vi: "Tải brochure" }, locale)}
+                </a>
+              )}
             </div>
           </div>
           {/* Product image */}

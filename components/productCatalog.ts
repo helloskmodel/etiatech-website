@@ -1566,6 +1566,28 @@ export const productTagline: Record<string, { en: string; zh: string }> = {
   "ac9225": { en: "High-Power UV LED Curing for Adhesives, Coatings & Inks", zh: "面向胶粘剂、涂层与油墨的高功率 UV LED 固化" },
 };
 
+// Official manufacturer brochure (PDF) per product, hosted in the COS bucket
+// under PRODUCTPDF/. Keyed by catalog slug. Products without an entry simply
+// render no "Download Brochure" button. Filenames are stored URL-encoded
+// exactly as they exist in the bucket (note ac9225-f uses an en-dash "–"
+// separator, unlike the hyphen used by the rest).
+const PRODUCT_PDF_BASE =
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PRODUCTPDF";
+
+export const productPdf: Record<string, string> = {
+  // OmniCure family (10 official brochures)
+  "lx500": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20LX500%20LED%20Spot%20UV%20Curing%20System.pdf`,
+  "r2000": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20R2000%20UV%20Radiometer.pdf`,
+  "s2000-elite": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf`,
+  "s1500-pro": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20S1500%20Pro.pdf`,
+  "s2e-network-module": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20S2E%20Network%20Module.pdf`,
+  "ac2": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20AC2%20LED%20UV%20Curing%20System.pdf`,
+  "ac4": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20AC4%20LED%20UV%20Curing%20System.pdf`,
+  "ac5": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20AC5%20LED%20UV%20Curing%20System.pdf`,
+  "ac9225": `${PRODUCT_PDF_BASE}/Brochure%20-%20OmniCure%20AC9%20LED%20UV%20Curing%20System.pdf`,
+  "ac9225-f": `${PRODUCT_PDF_BASE}/Brochure%20%E2%80%93%20OmniCure%20AC9225F%20UV%20LED%20Fiber%20Curing%20Systems.pdf`,
+};
+
 // Shop-style highlight tags shown on product cards (short, spec-forward,
 // language-neutral). Keyed by slug; products without an entry show none.
 export const productHighlights: Record<string, string[]> = {
