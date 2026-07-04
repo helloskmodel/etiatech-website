@@ -1762,5 +1762,6 @@ export function localizeProduct(p: Product, locale: "en" | "zh" | "vi" | "th"): 
   if (!o) return p;
   const intro = o.intro ? (locale === "zh" ? o.intro.zh : locale === "vi" ? o.intro.vi : "") || p.intro : p.intro;
   const features = o.features ? (locale === "zh" ? o.features.zh : locale === "vi" ? o.features.vi : null) || p.features : p.features;
-  return { ...p, intro, features };
+  const applications = o.applications ? (locale === "zh" ? o.applications.zh : locale === "vi" ? o.applications.vi : null) || p.applications : p.applications;
+  return { ...p, intro, features, applications };
 }
