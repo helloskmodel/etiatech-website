@@ -1619,6 +1619,18 @@ export const productDocs: Record<string, ProductDoc[]> = {
   "ac8-hd": [
     { file: "Brochure - OmniCure AC8-HD LED UV Curing System.pdf", kind: DOC_BROCHURE },
   ],
+  // Fusion UV — the F-Series product covers both F300 (3 kW) and F600 (6 kW)
+  // power classes, so both brochures live here.
+  "f-series": [
+    { file: "Brochure Fusion-F300 Series UV Curing System.pdf", kind: { en: "F300 Series Brochure", zh: "F300 系列产品手册" } },
+    { file: "Brochure Fusion-F600 Series UV Curing Systems.pdf", kind: { en: "F600 Series Brochure", zh: "F600 系列产品手册" } },
+  ],
+  "lighthammer-6": [
+    { file: "Brochure Fusion-LightHammer 6 Mark II UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+  "lighthammer-10": [
+    { file: "Brochure Fusion-LightHammer 10 Mark III UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
 };
 
 // Full, browser-ready URL for a product document (spaces → %20, etc.).
