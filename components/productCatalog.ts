@@ -1667,6 +1667,7 @@ const productImageFile: Record<string, string> = {
   "ac8": "AC8.png",
   "ac8-hd": "AC8-HD.png",
   "ac9225": "ac9225.png",
+  "ac9225-f": "AC9225-F.png",
   "r2000": "R2000.png",
 };
 
