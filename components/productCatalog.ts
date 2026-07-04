@@ -1590,6 +1590,42 @@ export const productHighlights: Record<string, string[]> = {
   "ac9225-f": ["Fiber-Optimized Optics", "Replaceable Window", "40,000+ h LED Life"],
 };
 
+// ───────────────────────── Product documents ─────────────────────────
+// Official Excelitas / OmniCure product literature (brochures, quick-start
+// guides) hosted in the COS bucket under PRODUCTPDF/. Rendered as downloads on
+// the product detail page. Keyed by slug; the `file` values are the real
+// (case-sensitive, space-bearing) object keys in the bucket.
+export type ProductDoc = {
+  file: string;
+  kind: { en: string; zh: string };
+};
+
+const PRODUCT_PDF_BASE =
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PRODUCTPDF";
+
+const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" };
+const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" };
+
+export const productDocs: Record<string, ProductDoc[]> = {
+  "ls200": [
+    { file: "Brochure - OmniCure LS200 UV LED Radiometry and Calibration System.pdf", kind: DOC_BROCHURE },
+  ],
+  "ac7": [
+    { file: "Quick Start Guide - OmniCure AC7 LED UV Curing System.pdf", kind: DOC_QUICK_START },
+  ],
+  "ac8": [
+    { file: "Brochure - OmniCure AC8 LED UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+  "ac8-hd": [
+    { file: "Brochure - OmniCure AC8-HD LED UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+};
+
+// Full, browser-ready URL for a product document (spaces → %20, etc.).
+export function productDocUrl(file: string): string {
+  return `${PRODUCT_PDF_BASE}/${encodeURIComponent(file)}`;
+}
+
 // Product hero images live in the COS bucket under IMAGE/products/.
 // The object keys there do NOT follow the slug convention (and are
 // case-sensitive), so we map each slug to its real filename explicitly.
