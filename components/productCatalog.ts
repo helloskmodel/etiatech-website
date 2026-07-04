@@ -1635,6 +1635,17 @@ export const productDocs: Record<string, ProductDoc[]> = {
   "semray-5000": [
     { file: "Brochure - Noblelight-Semray 5000+ UV LED Water-Cooled System.pdf", kind: DOC_BROCHURE },
   ],
+  // Phoseon — one Nexus II brochure covers both the water-cooled and
+  // air-cooled variants, so it is listed on both product pages.
+  "nexus-ii": [
+    { file: "Brochure -Phoseon Nexus II water-cooled n air-cooled large-area curing system.pdf", kind: DOC_BROCHURE },
+  ],
+  "nexus-ii-ac": [
+    { file: "Brochure -Phoseon Nexus II water-cooled n air-cooled large-area curing system.pdf", kind: DOC_BROCHURE },
+  ],
+  "vericure": [
+    { file: "Brochure - Phoseon VeriCure Water-Cooled UV LED Large-Area Curing System.pdf", kind: DOC_BROCHURE },
+  ],
 };
 
 // Full, browser-ready URL for a product document (spaces → %20, etc.).
