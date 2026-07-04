@@ -1631,6 +1631,10 @@ export const productDocs: Record<string, ProductDoc[]> = {
   "lighthammer-10": [
     { file: "Brochure Fusion-LightHammer 10 Mark III UV Curing System.pdf", kind: DOC_BROCHURE },
   ],
+  // Noblelight
+  "semray-5000": [
+    { file: "Brochure - Noblelight-Semray 5000+ UV LED Water-Cooled System.pdf", kind: DOC_BROCHURE },
+  ],
 };
 
 // Full, browser-ready URL for a product document (spaces → %20, etc.).
