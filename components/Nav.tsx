@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, t, type Locale, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
 
@@ -19,6 +19,15 @@ export default function Nav() {
   const [langOpen, setLangOpen] = useState(false);
   const pathname = usePathname();
   const { locale, setLocale } = useLocale();
+
+  // Nav is mounted in the layout and persists across client-side navigations,
+  // so the mobile menu / language dropdown would otherwise stay open after
+  // following any link that isn't one of the menu's own (e.g. a product chip
+  // on a case-study page). Close both whenever the route changes.
+  useEffect(() => {
+    setOpen(false);
+    setLangOpen(false);
+  }, [pathname]);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 shadow-sm" style={{ background: "#ffffff" }}>
