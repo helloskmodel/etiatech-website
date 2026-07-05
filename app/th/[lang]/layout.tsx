@@ -5,6 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { TH_LOCALES, isThLocale, HTML_LANG, getDict, getAuthDict, COMPANY, type ThLocale } from "../dictionaries";
 import { inquiryMailto } from "@/components/contact";
+import Analytics from "@/components/Analytics";
 
 const LOGO =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
@@ -49,6 +50,7 @@ export default async function ThailandLayout({
   return (
     <html lang={HTML_LANG[lang]}>
       <body className="min-h-screen flex flex-col" style={{ background: "#ffffff", color: "#111827" }}>
+        <Analytics />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         {/* Authorized-distributor trust bar */}
         <div className="text-center text-xs font-semibold py-1.5 px-4 text-white" style={{ background: "#166534" }}>

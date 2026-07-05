@@ -3,6 +3,7 @@ import "../globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import Analytics from "@/components/Analytics";
 import { LocaleProvider } from "@/components/LocaleContext";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col" style={{ background: "#ffffff", color: "#111827" }}>
+        <Analytics />
         <LocaleProvider>
           <Nav />
           <main className="flex-1">{children}</main>
