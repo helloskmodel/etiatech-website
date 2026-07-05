@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
 import { apps, appSlug } from "@/components/applicationNotes";
 import { successStories, caseSlug } from "@/components/caseStudies";
-import { markets, marketApps, marketCases } from "@/components/markets";
+import { markets, marketApps, marketCases, marketProducts } from "@/components/markets";
 
 const SITE = "https://www.etiatech.com";
 
@@ -77,6 +77,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly" as const,
         priority: 0.6,
         alternates: { languages: langAlternates(`/application/${appSlug(app)}`) },
+      }))
+    ),
+    // One entry per scoped product, per language.
+    ...marketProducts("th").flatMap((p) =>
+      thLangs.map((l) => ({
+        url: `${SITE}/th/${l}/product/${p.slug}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        alternates: { languages: langAlternates(`/product/${p.slug}`) },
       }))
     ),
     // One entry per scoped case study, per language.

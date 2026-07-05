@@ -50,9 +50,12 @@ export async function generateMetadata({
   };
 }
 
-function ProductCard({ p, l, specsLabel, inquire }: { p: Product; l: ThLocale; specsLabel: string; inquire: string }) {
+function ProductCard({ p, l, specsLabel, details }: { p: Product; l: ThLocale; specsLabel: string; details: string }) {
   return (
-    <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all flex flex-col">
+    <Link
+      href={`/th/${l}/product/${p.slug}`}
+      className="group rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-[#1A56DB] transition-all flex flex-col"
+    >
       <div className="p-5 text-white" style={{ background: p.accent }}>
         <p className="text-xs opacity-80 mb-1 tracking-wider font-medium">{p.sub}</p>
         <h3 className="text-lg font-bold">{p.name}</h3>
@@ -67,15 +70,11 @@ function ProductCard({ p, l, specsLabel, inquire }: { p: Product; l: ThLocale; s
             </div>
           ))}
         </dl>
-        <a
-          href={inquiryMailto(l, { subject: "Thailand Inquiry", context: p.name })}
-          className="mt-auto inline-block text-center text-sm font-semibold text-white rounded px-4 py-2 hover:opacity-90"
-          style={{ background: "#1A56DB" }}
-        >
-          {inquire} →
-        </a>
+        <span className="mt-auto text-sm font-semibold group-hover:underline" style={{ color: "#1A56DB" }}>
+          {details} →
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -177,7 +176,7 @@ export default async function ThailandHome({
               <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#44B549" }}>{d.products.ledFamily}</span>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {led.map((p) => (
-                  <ProductCard key={p.slug} p={p} l={l} specsLabel={d.products.specsLabel} inquire={d.products.inquire} />
+                  <ProductCard key={p.slug} p={p} l={l} specsLabel={d.products.specsLabel} details={d.products.details} />
                 ))}
               </div>
             </div>
@@ -188,7 +187,7 @@ export default async function ThailandHome({
               <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#166534" }}>{d.products.lampFamily}</span>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {lamp.map((p) => (
-                  <ProductCard key={p.slug} p={p} l={l} specsLabel={d.products.specsLabel} inquire={d.products.inquire} />
+                  <ProductCard key={p.slug} p={p} l={l} specsLabel={d.products.specsLabel} details={d.products.details} />
                 ))}
               </div>
             </div>

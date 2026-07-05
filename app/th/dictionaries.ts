@@ -32,7 +32,7 @@ export type ThDict = {
   metaDescription: string;
   nav: { home: string; products: string; applications: string; contact: string };
   hero: { kicker: string; title: string; subtitle: string; cta: string; ctaProducts: string };
-  products: { heading: string; subheading: string; lampFamily: string; ledFamily: string; inquire: string; specsLabel: string };
+  products: { heading: string; subheading: string; lampFamily: string; ledFamily: string; inquire: string; specsLabel: string; details: string; featuresLabel: string; fullSpecsLabel: string };
   cta: { heading: string; body: string; button: string };
   footer: { tagline: string; rights: string };
 };
@@ -91,6 +91,9 @@ const tri = {
   } as Tri,
   inquire: { th: "สอบถามรุ่นนี้", en: "Inquire", zh: "咨询此型号" } as Tri,
   specsLabel: { th: "ข้อมูลจำเพาะ", en: "Key specs", zh: "主要规格" } as Tri,
+  details: { th: "ดูรายละเอียด", en: "View details", zh: "查看详情" } as Tri,
+  featuresLabel: { th: "คุณสมบัติเด่น", en: "Key Features", zh: "主要特性" } as Tri,
+  fullSpecsLabel: { th: "ข้อมูลจำเพาะทางเทคนิค", en: "Technical Specifications", zh: "技术规格" } as Tri,
   ctaHeading: {
     th: "ไม่แน่ใจว่าระบบไหนเหมาะกับงานของคุณ?",
     en: "Not sure which system is right for you?",
@@ -138,6 +141,9 @@ export function getDict(lang: ThLocale): ThDict {
       ledFamily: tri.ledFamily[lang],
       inquire: tri.inquire[lang],
       specsLabel: tri.specsLabel[lang],
+      details: tri.details[lang],
+      featuresLabel: tri.featuresLabel[lang],
+      fullSpecsLabel: tri.fullSpecsLabel[lang],
     },
     cta: { heading: tri.ctaHeading[lang], body: tri.ctaBody[lang], button: tri.ctaButton[lang] },
     footer: { tagline: tri.footerTagline[lang], rights: tri.footerRights[lang] },
