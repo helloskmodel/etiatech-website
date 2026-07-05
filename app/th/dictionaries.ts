@@ -196,6 +196,18 @@ const homeTri = {
     zh: "我们的工程师随时待命——从点固化到面固化，从灯式到LED，从选型到验证。",
   } as Tri,
   ctaButton: { th: "ปรึกษาวิศวกร ETIA →", en: "Talk to ETIA Engineers →", zh: "联系ETIA工程师 →" } as Tri,
+  casesEyebrow: { th: "กรณีศึกษา", en: "Case Studies", zh: "案例研究" } as Tri,
+  casesHeading: {
+    th: "ที่ซึ่งประสิทธิภาพได้รับการพิสูจน์",
+    en: "Where Performance Is Proven",
+    zh: "实力，经得起验证",
+  } as Tri,
+  casesSubtitle: {
+    th: "ดูว่าระบบ UV curing ของเราส่งมอบผลลัพธ์อย่างไร ในงานที่ความแม่นยำและความน่าเชื่อถือสำคัญที่สุด",
+    en: "See how our UV curing systems deliver where precision and reliability matter most.",
+    zh: "看我们的UV固化系统如何在最看重精度与可靠性的场景中交付成果。",
+  } as Tri,
+  casesReadOne: { th: "อ่านกรณีศึกษานี้ →", en: "Read this case study →", zh: "阅读此案例 →" } as Tri,
 };
 
 const whyCards: { title: Tri; desc: Tri }[] = [
@@ -237,6 +249,7 @@ export type ThHomeDict = {
   hero: { eyebrow: string; titleA: string; titleB: string; subtitle: string; btnProducts: string; btnEngineer: string };
   why: { eyebrow: string; heading: string; intro: string; cards: { title: string; desc: string }[] };
   spectrum: { eyebrow: string; heading: string; subtitle: string; viewAll: string };
+  cases: { eyebrow: string; heading: string; subtitle: string; readOne: string };
   cta: { heading: string; body: string; button: string };
 };
 
@@ -262,7 +275,43 @@ export function getHomeDict(lang: ThLocale): ThHomeDict {
       subtitle: homeTri.spectrumSubtitle[lang],
       viewAll: homeTri.spectrumViewAll[lang],
     },
+    cases: {
+      eyebrow: homeTri.casesEyebrow[lang],
+      heading: homeTri.casesHeading[lang],
+      subtitle: homeTri.casesSubtitle[lang],
+      readOne: homeTri.casesReadOne[lang],
+    },
     cta: { heading: homeTri.ctaHeading[lang], body: homeTri.ctaBody[lang], button: homeTri.ctaButton[lang] },
+  };
+}
+
+// ─── Case-study detail labels ───────────────────────────────────────────
+const caseTri = {
+  overview: { th: "ภาพรวมการใช้งาน", en: "Application Overview", zh: "应用概览" } as Tri,
+  challenge: { th: "ความท้าทาย", en: "The Challenge", zh: "挑战" } as Tri,
+  solution: { th: "โซลูชัน", en: "The Solution", zh: "解决方案" } as Tri,
+  benefit: { th: "ประโยชน์ที่ได้", en: "The Benefit", zh: "收益" } as Tri,
+  marketContext: { th: "บริบทตลาด", en: "Market Context", zh: "市场背景" } as Tri,
+  back: { th: "← กลับไปหน้ากรณีศึกษา", en: "← Back to Case Studies", zh: "← 返回案例" } as Tri,
+};
+
+export type ThCaseDict = {
+  overview: string;
+  challenge: string;
+  solution: string;
+  benefit: string;
+  marketContext: string;
+  back: string;
+};
+
+export function getCaseDict(lang: ThLocale): ThCaseDict {
+  return {
+    overview: caseTri.overview[lang],
+    challenge: caseTri.challenge[lang],
+    solution: caseTri.solution[lang],
+    benefit: caseTri.benefit[lang],
+    marketContext: caseTri.marketContext[lang],
+    back: caseTri.back[lang],
   };
 }
 

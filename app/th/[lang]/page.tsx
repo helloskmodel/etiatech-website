@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { FlaskConical, Package, Wrench, ClipboardCheck } from "lucide-react";
-import { marketProducts } from "@/components/markets";
+import { marketProducts, marketCases } from "@/components/markets";
+import { localizeCase } from "@/components/caseStudies";
 import { inquiryMailto } from "@/components/contact";
 import { isThLocale, getDict, getHomeDict, type ThLocale } from "../dictionaries";
+import { caseContentTh } from "../caseContentTh";
 import type { Product } from "@/components/productCatalog";
+
+const caseSlugTh = (id: string) => id.toLowerCase();
 
 const SITE = "https://www.etiatech.com";
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/homepageproduct";
@@ -88,6 +92,7 @@ export default async function ThailandHome({
   const products = marketProducts("th");
   const led = products.filter((p) => p.sub === "UV LED Spot");
   const lamp = products.filter((p) => p.sub !== "UV LED Spot");
+  const cases = marketCases("th");
 
   return (
     <>
@@ -188,6 +193,36 @@ export default async function ThailandHome({
               </div>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* CASE STUDIES */}
+      <section id="case-studies" className="py-20 bg-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{h.cases.eyebrow}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: "#1A56DB" }}>{h.cases.heading}</h2>
+          <p className="text-gray-500 mb-10 max-w-2xl">{h.cases.subtitle}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {cases.map((c) => {
+              const loc = localizeCase(c, l);
+              const th = l === "th" ? caseContentTh[c.id] : undefined;
+              return (
+                <Link
+                  key={c.id}
+                  href={`/th/${l}/case-studies/${caseSlugTh(c.id)}`}
+                  className="group rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#1A56DB] transition-all p-5 flex flex-col"
+                >
+                  <p className="text-xs font-semibold text-gray-400 mb-2">{c.sector}</p>
+                  <h3 className="text-base font-bold text-gray-800 group-hover:text-[#1A56DB] mb-3 flex-1">
+                    {th?.title ?? loc.title}
+                  </h3>
+                  <p className="text-xl font-bold mb-1" style={{ color: "#1A56DB" }}>{c.metric}</p>
+                  <p className="text-xs text-gray-500 mb-3">{c.metricLabel}</p>
+                  <span className="text-xs font-semibold" style={{ color: "#1A56DB" }}>{h.cases.readOne}</span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
