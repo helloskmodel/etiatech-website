@@ -1,11 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { FlaskConical, Package, Wrench, ClipboardCheck } from "lucide-react";
 import { marketProducts } from "@/components/markets";
 import { inquiryMailto } from "@/components/contact";
-import { isThLocale, getDict, type ThLocale } from "../dictionaries";
+import { isThLocale, getDict, getHomeDict, type ThLocale } from "../dictionaries";
 import type { Product } from "@/components/productCatalog";
 
 const SITE = "https://www.etiatech.com";
+const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/homepageproduct";
+
+// Full-spectrum technology overview (brand capability). Category names stay in
+// English per the Thailand team's SEO guidance. Informational — the products
+// actually sold in Thailand are the scoped UV Spot grid below.
+const TECH_ROUTES = [
+  { label: "UV LED SPOT CURING SYSTEMS", img: `${IMG}/HOME%20PAGE%20PRODUCT-LEFT1-UV%20LED%20CURING.png` },
+  { label: "UV LED AIR-COOLED SYSTEMS", img: `${IMG}/HOME%20PAGE%20PRODUCT-LEFT%202-UV%20LED%20AIR-COOLED.png` },
+  { label: "UV LED WATER-COOLED SYSTEMS", img: `${IMG}/HOME%20PAGE%20PRODUCT-LEFT%203-UV-LED%20WATER-COOLED%20SYSTEM.png` },
+  { label: "UV LAMP SPOT CURING SYSTEMS", img: `${IMG}/HOME%20PAGE%20PRODUCT-LEFT4-UV%20LAMP%20SPOT%20CURING%20SYSTEM.png` },
+  { label: "MICROWAVE UV CURING SYSTEMS", img: `${IMG}/HOME%20PAGE%20PRODUCT-LEFT5-MICROWAVE%20UV%20CURING.png` },
+  { label: "MERCURY ARC LAMPS", img: `${IMG}/HOME%20PAGE%20PRODUCT-LEFT6-MERCURY%20UVC%20LAMPS.png` },
+];
+const WHY_ICONS = [FlaskConical, Package, Wrench, ClipboardCheck];
 
 export async function generateMetadata({
   params,
@@ -20,8 +36,6 @@ export async function generateMetadata({
     description: d.metaDescription,
     alternates: {
       canonical: `${SITE}/th/${l}`,
-      // hreflang: one URL per language + x-default, so Google indexes each
-      // language version separately for Thailand.
       languages: {
         th: `${SITE}/th/th`,
         en: `${SITE}/th/en`,
@@ -40,7 +54,6 @@ function ProductCard({ p, l, specsLabel, inquire }: { p: Product; l: ThLocale; s
         <h3 className="text-lg font-bold">{p.name}</h3>
       </div>
       <div className="p-5 bg-white flex flex-col flex-1">
-        {/* Specs are numeric / units — language-neutral, no translation needed */}
         <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">{specsLabel}</p>
         <dl className="text-sm text-gray-600 space-y-1 mb-5">
           {p.specs.slice(0, 4).map(([k, v]) => (
@@ -70,6 +83,7 @@ export default async function ThailandHome({
   const { lang } = await params;
   const l: ThLocale = isThLocale(lang) ? lang : "th";
   const d = getDict(l);
+  const h = getHomeDict(l);
 
   const products = marketProducts("th");
   const led = products.filter((p) => p.sub === "UV LED Spot");
@@ -77,47 +91,85 @@ export default async function ThailandHome({
 
   return (
     <>
-      {/* Hero */}
-      <section className="py-16 md:py-24" style={{ background: "#0f2444" }}>
+      {/* HERO */}
+      <section className="py-20 md:py-28" style={{ background: "#0f2444" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
-            {d.hero.kicker}
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">{d.hero.title}</h1>
-          <p className="text-base text-gray-200 mb-8 leading-relaxed">{d.hero.subtitle}</p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href={inquiryMailto(l, { subject: "Thailand Inquiry" })}
-              className="px-6 py-3 rounded font-semibold text-white hover:opacity-90"
-              style={{ background: "#1A56DB" }}
-            >
-              {d.hero.cta} →
-            </a>
-            <Link
-              href="#products"
-              className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60"
-            >
-              {d.hero.ctaProducts} →
-            </Link>
-          </div>
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
+              {h.hero.eyebrow}
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+              {h.hero.titleA}
+              <br />
+              <span style={{ color: "#44B549" }}>{h.hero.titleB}</span>
+            </h1>
+            <p className="text-base text-gray-200 mb-8 leading-relaxed">{h.hero.subtitle}</p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="#products" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
+                {h.hero.btnProducts}
+              </Link>
+              <a href={inquiryMailto(l, { subject: "Thailand Inquiry" })} className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60">
+                {h.hero.btnEngineer}
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Products — scoped to what ETIA sells in Thailand */}
+      {/* WHY ETIA */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{h.why.eyebrow}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1A56DB" }}>{h.why.heading}</h2>
+          <p className="text-gray-500 max-w-2xl mb-12">{h.why.intro}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {h.why.cards.map((c, i) => {
+              const Icon = WHY_ICONS[i];
+              return (
+                <div key={i} className="rounded-xl p-6 border border-gray-100 hover:border-[#1A56DB]/30 hover:shadow-md transition-all bg-gray-50">
+                  <Icon className="mb-4" size={32} strokeWidth={1.75} style={{ color: "#1A56DB" }} />
+                  <h3 className="font-semibold text-base mb-2" style={{ color: "#1A56DB" }}>{c.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FULL SPECTRUM (brand capability) */}
+      <section className="py-20" style={{ background: "#f0f4f8" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{h.spectrum.eyebrow}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{h.spectrum.heading}</h2>
+          <p className="text-gray-500 mb-8">{h.spectrum.subtitle}</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {TECH_ROUTES.map((route) => (
+              <div key={route.label} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm flex flex-col">
+                <div className="px-3 py-2 text-white text-xs font-bold leading-tight" style={{ background: "#44B549" }}>{route.label}</div>
+                <div className="bg-gray-50 relative flex-1" style={{ minHeight: "120px" }}>
+                  <Image src={route.img} alt={route.label} fill sizes="(max-width: 768px) 50vw, 16vw" className="object-contain p-3" />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
+              {h.spectrum.viewAll}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCTS SOLD IN THAILAND — scoped to OmniCure UV Spot */}
       <section id="products" className="py-16 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>
-            {d.products.heading}
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{d.products.heading}</h2>
           <p className="text-gray-500 mb-10">{d.products.subheading}</p>
 
           {led.length > 0 && (
             <div className="mb-12">
-              <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#44B549" }}>
-                {d.products.ledFamily}
-              </span>
+              <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#44B549" }}>{d.products.ledFamily}</span>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {led.map((p) => (
                   <ProductCard key={p.slug} p={p} l={l} specsLabel={d.products.specsLabel} inquire={d.products.inquire} />
@@ -128,9 +180,7 @@ export default async function ThailandHome({
 
           {lamp.length > 0 && (
             <div>
-              <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#166534" }}>
-                {d.products.lampFamily}
-              </span>
+              <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: "#166534" }}>{d.products.lampFamily}</span>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {lamp.map((p) => (
                   <ProductCard key={p.slug} p={p} l={l} specsLabel={d.products.specsLabel} inquire={d.products.inquire} />
@@ -144,14 +194,10 @@ export default async function ThailandHome({
       {/* CTA */}
       <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{d.cta.heading}</h2>
-          <p className="text-gray-200 mb-8">{d.cta.body}</p>
-          <a
-            href={inquiryMailto(l, { subject: "Thailand Sales Inquiry" })}
-            className="px-8 py-3 rounded font-semibold text-white hover:opacity-90"
-            style={{ background: "#44B549" }}
-          >
-            {d.cta.button} →
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{h.cta.heading}</h2>
+          <p className="text-gray-200 mb-8">{h.cta.body}</p>
+          <a href={inquiryMailto(l, { subject: "Thailand Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
+            {h.cta.button}
           </a>
         </div>
       </section>

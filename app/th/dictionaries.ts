@@ -51,7 +51,7 @@ const tri = {
   navHome: { th: "หน้าแรก", en: "Home", zh: "首页" } as Tri,
   navProducts: { th: "ผลิตภัณฑ์", en: "Products", zh: "产品" } as Tri,
   navApplications: { th: "การใช้งาน", en: "Applications", zh: "应用" } as Tri,
-  navContact: { th: "ติดต่อเรา", en: "Contact", zh: "联系我们" } as Tri,
+  navContact: { th: "ฝ่ายขายและบริการ", en: "Sales & Support", zh: "销售与支持" } as Tri,
   heroKicker: {
     th: "OmniCure · ระบบบ่มยูวีแบบจุด",
     en: "OmniCure · UV Spot Curing",
@@ -103,9 +103,9 @@ const tri = {
   } as Tri,
   ctaButton: { th: "ติดต่อฝ่ายขาย", en: "Talk to Our Sales", zh: "联系我们的销售" } as Tri,
   footerTagline: {
-    th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบบ่มยูวี OmniCure ในประเทศไทย",
-    en: "Authorized distributor of OmniCure UV curing systems in Thailand.",
-    zh: "OmniCure UV 固化系统泰国授权代理。",
+    th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบ UV curing ระดับโลก ประสบการณ์ความเชี่ยวชาญเชิงการใช้งานกว่า 20 ปี ใน 10 อุตสาหกรรม",
+    en: "Authorized distributor of world-class UV curing systems. 20 years of application expertise across 10 industries.",
+    zh: "世界级 UV 固化系统授权代理，20 年应用专业经验，覆盖 10 大行业。",
   } as Tri,
   footerRights: {
     th: "สงวนลิขสิทธิ์",
@@ -141,6 +141,128 @@ export function getDict(lang: ThLocale): ThDict {
     },
     cta: { heading: tri.ctaHeading[lang], body: tri.ctaBody[lang], button: tri.ctaButton[lang] },
     footer: { tagline: tri.footerTagline[lang], rights: tri.footerRights[lang] },
+  };
+}
+
+// ─── Home page ──────────────────────────────────────────────────────────
+// Full home copy supplied by the ETIA Thailand team (EN + TH); ZH reuses the
+// main-site home strings. Structure mirrors the main site's HomeView.
+const homeTri = {
+  heroEyebrow: {
+    th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต · รับประกันสินค้าของแท้",
+    en: "Authorized Distributor · Genuine Products Guaranteed",
+    zh: "授权代理商 · 正品保证",
+  } as Tri,
+  heroTitleA: { th: "ความเชี่ยวชาญที่ไว้วางใจได้", en: "Trusted Expertise.", zh: "深耕积淀" } as Tri,
+  heroTitleB: { th: "โซลูชันที่ตอบสนองรวดเร็ว", en: "Responsive Solutions.", zh: "高效响应" } as Tri,
+  heroSubtitle: {
+    th: "ETIA เปลี่ยนประสบการณ์ตรงด้าน UV curing กว่า 20 ปี ให้เป็นการสนับสนุนที่ใช้ได้จริง ครอบคลุมตั้งแต่การเลือกผลิตภัณฑ์ การตรวจสอบกระบวนการ การแก้ไขปัญหา การบำรุงรักษา ไปจนถึงการซ่อมโดยทีมงานของเราเอง",
+    en: "ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.",
+    zh: "ETIA将20年UV固化实战经验，转化为覆盖选型、工艺验证、故障排查、保养与自有维修的全方位实用支持。",
+  } as Tri,
+  heroBtnProducts: { th: "ดูผลิตภัณฑ์ →", en: "Explore Products →", zh: "浏览产品 →" } as Tri,
+  heroBtnEngineer: { th: "ปรึกษาวิศวกร", en: "Talk to an Engineer", zh: "咨询工程师" } as Tri,
+  whyEyebrow: { th: "ทำไมต้อง ETIA", en: "Why ETIA", zh: "为何选择 ETIA" } as Tri,
+  whyHeading: {
+    th: "ETIA — ความเชี่ยวชาญด้าน UV Curing กว่า 20 ปี ส่งมอบในทุกการขาย ทุกการเข้าพบ ทุกการซ่อม",
+    en: "ETIA — 20 Years of UV Curing Expertise, Delivered in Every Sale, Every Visit, Every Fix.",
+    zh: "ETIA—— 深耕 UV 固化二十载，售前选型、上门服务、售后维保，专业实力全程相伴。",
+  } as Tri,
+  whyIntro: {
+    th: "ด้วยรากฐานความเป็นเลิศทางวิศวกรรม ETIA ร่วมมือกับแบรนด์ UV curing ชั้นนำระดับโลก เพื่อส่งมอบโซลูชันที่พิสูจน์แล้ว เชื่อถือได้ และดูแลครบวงจร — ตั้งแต่การเลือกจนถึงการสนับสนุน",
+    en: "Rooted in engineering excellence, ETIA partners with the world's leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.",
+    zh: "立足硬核工程技术，携手全球头部 UV 固化品牌，提供经过市场验证、性能稳定、全流程保障的一体化方案，从设备选型到终身售后全程护航。",
+  } as Tri,
+  spectrumEyebrow: { th: "เทคโนโลยี UV Curing", en: "UV Curing Technology", zh: "UV固化技术" } as Tri,
+  spectrumHeading: {
+    th: "โซลูชัน UV Curing ครบทุกสเปกตรัม",
+    en: "The Full Spectrum of UV Curing Solutions",
+    zh: "全光谱UV固化解决方案",
+  } as Tri,
+  spectrumSubtitle: {
+    th: "200–600 nm · 6 เส้นทางเทคโนโลยี · 4 แบรนด์ระดับโลก",
+    en: "200–600 nm · 6 Technology Routes · 4 World-Class Brands",
+    zh: "200–600 nm · 6条技术路线 · 4大世界级品牌",
+  } as Tri,
+  spectrumViewAll: { th: "ดูผลิตภัณฑ์ทั้งหมด →", en: "View All Products →", zh: "查看全部产品 →" } as Tri,
+  ctaHeading: {
+    th: "ต้องการความช่วยเหลือในการเลือกระบบ UV curing ที่เหมาะสม?",
+    en: "Need help selecting the right UV curing system?",
+    zh: "需要帮助挑选合适的UV固化系统?",
+  } as Tri,
+  ctaBody: {
+    th: "วิศวกรของเราพร้อมช่วยเหลือ — ตั้งแต่ spot ถึง area, lamp ถึง LED, การเลือกจนถึงการตรวจสอบ",
+    en: "Our engineers are ready to help — from spot to area, lamp to LED, selection to validation.",
+    zh: "我们的工程师随时待命——从点固化到面固化，从灯式到LED，从选型到验证。",
+  } as Tri,
+  ctaButton: { th: "ปรึกษาวิศวกร ETIA →", en: "Talk to ETIA Engineers →", zh: "联系ETIA工程师 →" } as Tri,
+};
+
+const whyCards: { title: Tri; desc: Tri }[] = [
+  {
+    title: { th: "ความเชี่ยวชาญเชิงการใช้งานอย่างลึกซึ้ง", en: "Deep Application Expertise", zh: "深厚的应用专业能力" },
+    desc: {
+      th: "กรณีใช้งานจริงที่ผ่านการพิสูจน์กว่า 20 ปี ใน 10 อุตสาหกรรม ตั้งแต่การยึดติดอุปกรณ์การแพทย์ ไปจนถึงการแพ็กเกจโฟโตนิกส์สำหรับศูนย์ข้อมูล AI — เราพิสูจน์กระบวนการมาแล้ว คุณจึงไม่ต้องเริ่มจากศูนย์",
+      en: "20 years of validated industry cases across 10 industries. From medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
+      zh: "20年、覆盖10大行业的验证案例。从医疗器械粘接到AI数据中心光子封装——工艺我们已替你验证。",
+    },
+  },
+  {
+    title: { th: "สต็อกในพื้นที่ · จัดส่งรวดเร็ว", en: "Local Supply & Fast Delivery", zh: "本地备货 · 快速交付" },
+    desc: {
+      th: "อุปกรณ์และวัสดุสิ้นเปลืองมีสต็อกในพื้นที่ ไม่ต้องรอนาน ไม่มีปัญหาการนำเข้าที่คาดไม่ถึง — ได้ระบบที่คุณต้องการ ในเวลาที่คุณต้องการ",
+      en: "Equipment and consumables in local stock. No long lead times, no import surprises — the system you need, when you need it.",
+      zh: "设备与耗材本地备货。无漫长货期、无进口意外——你需要的系统，随需即得。",
+    },
+  },
+  {
+    title: { th: "ศูนย์ซ่อมของเราเอง", en: "In-House Repair Factory", zh: "自有维修工厂" },
+    desc: {
+      th: "ศูนย์ซ่อมของเราเองพร้อมทีมช่างเทคนิคที่ผ่านการฝึกอบรม ดูแลการบำรุงรักษา การรับประกันแบบขยาย และการซ่อมด่วน — ลดเวลาหยุดทำงานของสายการผลิตของคุณ",
+      en: "Our own repair facility with a trained technical team handles maintenance, extended warranty, and urgent repairs — minimizing downtime on your production line.",
+      zh: "自有维修工厂与专业技术团队，承接保养、延保与紧急维修——最大限度降低产线停机。",
+    },
+  },
+  {
+    title: { th: "บริการให้คำปรึกษาครบทุกกระบวนการ", en: "Full-Process Consulting Service", zh: "全流程咨询服务" },
+    desc: {
+      th: "ตั้งแต่การเลือกเริ่มต้นและการตรวจสอบการใช้งาน ไปจนถึงการแก้ไขปัญหาและการจัดการตลอดอายุการใช้งาน — วิศวกรของเราคือพันธมิตรของคุณในทุกขั้นตอน",
+      en: "From initial selection and application validation to troubleshooting and lifecycle management — our engineers are your partners at every stage of the process.",
+      zh: "从选型、应用验证到故障排查与全生命周期管理——我们的工程师是你每个环节的伙伴。",
+    },
+  },
+];
+
+export type ThHomeDict = {
+  hero: { eyebrow: string; titleA: string; titleB: string; subtitle: string; btnProducts: string; btnEngineer: string };
+  why: { eyebrow: string; heading: string; intro: string; cards: { title: string; desc: string }[] };
+  spectrum: { eyebrow: string; heading: string; subtitle: string; viewAll: string };
+  cta: { heading: string; body: string; button: string };
+};
+
+export function getHomeDict(lang: ThLocale): ThHomeDict {
+  return {
+    hero: {
+      eyebrow: homeTri.heroEyebrow[lang],
+      titleA: homeTri.heroTitleA[lang],
+      titleB: homeTri.heroTitleB[lang],
+      subtitle: homeTri.heroSubtitle[lang],
+      btnProducts: homeTri.heroBtnProducts[lang],
+      btnEngineer: homeTri.heroBtnEngineer[lang],
+    },
+    why: {
+      eyebrow: homeTri.whyEyebrow[lang],
+      heading: homeTri.whyHeading[lang],
+      intro: homeTri.whyIntro[lang],
+      cards: whyCards.map((c) => ({ title: c.title[lang], desc: c.desc[lang] })),
+    },
+    spectrum: {
+      eyebrow: homeTri.spectrumEyebrow[lang],
+      heading: homeTri.spectrumHeading[lang],
+      subtitle: homeTri.spectrumSubtitle[lang],
+      viewAll: homeTri.spectrumViewAll[lang],
+    },
+    cta: { heading: homeTri.ctaHeading[lang], body: homeTri.ctaBody[lang], button: homeTri.ctaButton[lang] },
   };
 }
 
