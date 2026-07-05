@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
   // must come last.
   async redirects() {
     return [
+      // Thailand market: bare /th enters the default (Thai) locale.
+      { source: "/th", destination: "/th/th", permanent: false },
       { source: "/en/contact", destination: "/contact", permanent: true },
       { source: "/en/applications", destination: "/application", permanent: true },
       // Any old product URL (incl. /en/products/uv-lamps, /en/products/microwave)

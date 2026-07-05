@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
 import { apps, appSlug } from "@/components/applicationNotes";
 import { successStories, caseSlug } from "@/components/caseStudies";
+import { markets } from "@/components/markets";
 
 const SITE = "https://www.etiatech.com";
 
@@ -49,5 +50,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...core, ...productPages, ...appPages, ...casePages];
+  // Thailand market microsite — one URL per language, each declaring its
+  // hreflang alternates so Google indexes all three for Thailand.
+  const thLangs = markets.th.locales;
+  const thAlternates = Object.fromEntries(thLangs.map((l) => [l, `${SITE}/th/${l}`]));
+  const thPages: MetadataRoute.Sitemap = thLangs.map((l) => ({
+    url: `${SITE}/th/${l}`,
+    changeFrequency: "weekly",
+    priority: 0.9,
+    alternates: { languages: thAlternates },
+  }));
+
+  return [...core, ...thPages, ...productPages, ...appPages, ...casePages];
 }
