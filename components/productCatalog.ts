@@ -1,6 +1,6 @@
 // Authoritative Excelitas UV curing product catalog.
 // Organized by technology → brand. Used by the product index and detail pages.
-import { productI18n } from "./productCatalog.zh";
+import { productI18n, productAppsI18n } from "./productCatalog.zh";
 
 export type Product = {
   slug: string;
@@ -377,12 +377,14 @@ export const products: Product[] = [
     intro:
       "The Nexus II™ water-cooled UV LED curing system is ideally suited for flexographic printing applications and delivers the best-performing solution in the industry. With patented thermal management techniques and ValidCure™ Technology, the Nexus II delivers the highest total UV energy for flexographic printing, bringing increased system reliability, improved performance in high-temperature environments, and an optional high-airflow model for enhanced cooling.",
     features: [
-      "Patented thermal management for superior high-temperature performance",
+      "Highest total UV energy (dose) for flexographic printing — higher dose than the air-cooled variant",
+      "Wider web: up to 675 mm, with print speeds up to 1050 ft (320 m)/min",
+      "90 W per cm maximum electrical power for sustained high-output curing",
       "ValidCure™ Technology for reliable, consistent UV output and process control",
-      "Highest total UV energy output for flexographic printing in the industry",
-      "Increased system reliability vs. previous generation",
-      "Optional high-airflow model for enhanced cooling",
-      "Water-cooled design for sustained high-performance operation",
+      "Patented thermal management for superior high-temperature performance",
+      "108 diodes per 25 mm segment — highest diode count in the industry (>60,000 h at L90)",
+      "Up to 60% less energy consumption; quick, easy retrofit to any press",
+      "5-year warranty on the full system",
     ],
     applications: [
       "Flexographic printing (primary application)",
@@ -392,10 +394,17 @@ export const products: Product[] = [
     ],
     specs: [
       ["Cooling Method", "Water-cooled"],
-      ["Technology", "UV LED"],
+      ["Web Width", "300 – 675 mm"],
+      ["Max Electrical Power", "90 W per cm"],
+      ["Max Print Speed", "1050 ft (320 m)/min"],
+      ["Energy Savings", "Up to 60% less kWh"],
+      ["Diode Count", "108 diodes per 25 mm segment"],
+      ["Diode Lifetime", ">60,000 h at L90"],
+      ["Cross Section", "110 mm W × 190 mm H"],
+      ["Communication", "Modbus over TCP/IP"],
       ["Key Technology", "ValidCure™, patented thermal management"],
+      ["Warranty", "5-year full-system warranty"],
       ["Primary Application", "Flexographic printing"],
-      ["Cooling Enhancement", "Optional high-airflow model"],
     ],
   },
   {
@@ -409,12 +418,14 @@ export const products: Product[] = [
     intro:
       "The Nexus II™ Air-Cooled (AC) UV LED curing system brings Phoseon's flexographic-printing performance to production lines that need simple, chiller-free integration. Air cooling reduces routine maintenance and removes the need for a chiller, while a common form factor makes mounting easy. Available in emitting widths from 300 mm to 600 mm with Ethernet communications, it is purpose-built for flexographic printing applications.",
     features: [
-      "Air-cooled — no chiller needed, reduced routine maintenance",
-      "Emitting widths from 300 mm to 600 mm (× 20 mm)",
-      "Up to 90 W UV power per 25 mm length",
-      "Easy mounting with the common Nexus II form factor",
-      "Ethernet communications",
-      "Optimized for flexographic printing applications",
+      "Air-cooled — no chiller or fan blower needed, reduced routine maintenance",
+      "Up to 70% less energy consumption — the most efficient of the Nexus II range",
+      "Web width 300 – 600 mm; print speeds up to 720 ft (220 m)/min",
+      "65 W per cm maximum electrical power; 45 °C maximum operating temperature",
+      "108 diodes per 25 mm segment — highest diode count in the industry (>60,000 h at L90)",
+      "Quick, easy retrofit to any press with the common Nexus II form factor",
+      "ValidCure™ Technology; approved with all UV LED inks",
+      "5-year warranty on the full system",
     ],
     applications: [
       "Flexographic printing (primary application)",
@@ -422,12 +433,17 @@ export const products: Product[] = [
       "Lines requiring chiller-free, low-maintenance integration",
     ],
     specs: [
-      ["Cooling Method", "Air-cooled (no chiller)"],
-      ["Emitting Widths", "300 / 375 / 450 / 525 / 600 mm × 20 mm"],
-      ["UV Power", "90 W per 25 mm length"],
-      ["Communication", "Ethernet"],
+      ["Cooling Method", "Air-cooled (no chiller / blower)"],
+      ["Web Width", "300 – 600 mm"],
+      ["Max Electrical Power", "65 W per cm"],
+      ["Max Print Speed", "720 ft (220 m)/min"],
+      ["Max Operating Temp", "45 °C (air-cooled lamps)"],
+      ["Energy Savings", "Up to 70% less kWh"],
+      ["Diode Count", "108 diodes per 25 mm segment"],
+      ["Diode Lifetime", ">60,000 h at L90"],
+      ["Communication", "Modbus over TCP/IP (Ethernet)"],
+      ["Warranty", "5-year full-system warranty"],
       ["Primary Application", "Flexographic printing"],
-      ["Family", "Phoseon® Nexus II™ (AC variant)"],
     ],
   },
   {
@@ -1588,7 +1604,73 @@ export const productHighlights: Record<string, string[]> = {
   "ac8-hd": ["Double the Dose", "Highest UV Energy", "Adjoinable"],
   "ac9225": ["High-Power UV LED", "Patented Uniformity", "Scalable Width"],
   "ac9225-f": ["Fiber-Optimized Optics", "Replaceable Window", "40,000+ h LED Life"],
+  // Phoseon — Nexus II (water-cooled vs air-cooled differ on dose, width & speed)
+  "nexus-ii": ["Higher Dose · 90 W/cm", "Up to 320 m/min", "Web Width to 675 mm"],
+  "nexus-ii-ac": ["No Chiller · Air-Cooled", "70% Less Energy", "Up to 220 m/min"],
 };
+
+// ───────────────────────── Product documents ─────────────────────────
+// Official Excelitas / OmniCure product literature (brochures, quick-start
+// guides) hosted in the COS bucket under PRODUCTPDF/. Rendered as downloads on
+// the product detail page. Keyed by slug; the `file` values are the real
+// (case-sensitive, space-bearing) object keys in the bucket.
+export type ProductDoc = {
+  file: string;
+  kind: { en: string; zh: string };
+};
+
+const PRODUCT_PDF_BASE =
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PRODUCTPDF";
+
+const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" };
+const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" };
+
+export const productDocs: Record<string, ProductDoc[]> = {
+  "ls200": [
+    { file: "Brochure - OmniCure LS200 UV LED Radiometry and Calibration System.pdf", kind: DOC_BROCHURE },
+  ],
+  "ac7": [
+    { file: "Quick Start Guide - OmniCure AC7 LED UV Curing System.pdf", kind: DOC_QUICK_START },
+  ],
+  "ac8": [
+    { file: "Brochure - OmniCure AC8 LED UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+  "ac8-hd": [
+    { file: "Brochure - OmniCure AC8-HD LED UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+  // Fusion UV — the F-Series product covers both F300 (3 kW) and F600 (6 kW)
+  // power classes, so both brochures live here.
+  "f-series": [
+    { file: "Brochure Fusion-F300 Series UV Curing System.pdf", kind: { en: "F300 Series Brochure", zh: "F300 系列产品手册" } },
+    { file: "Brochure Fusion-F600 Series UV Curing Systems.pdf", kind: { en: "F600 Series Brochure", zh: "F600 系列产品手册" } },
+  ],
+  "lighthammer-6": [
+    { file: "Brochure Fusion-LightHammer 6 Mark II UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+  "lighthammer-10": [
+    { file: "Brochure Fusion-LightHammer 10 Mark III UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+  // Noblelight
+  "semray-5000": [
+    { file: "Brochure - Noblelight-Semray 5000+ UV LED Water-Cooled System.pdf", kind: DOC_BROCHURE },
+  ],
+  // Phoseon — one Nexus II brochure covers both the water-cooled and
+  // air-cooled variants, so it is listed on both product pages.
+  "nexus-ii": [
+    { file: "Brochure -Phoseon Nexus II water-cooled n air-cooled large-area curing system.pdf", kind: DOC_BROCHURE },
+  ],
+  "nexus-ii-ac": [
+    { file: "Brochure -Phoseon Nexus II water-cooled n air-cooled large-area curing system.pdf", kind: DOC_BROCHURE },
+  ],
+  "vericure": [
+    { file: "Brochure - Phoseon VeriCure Water-Cooled UV LED Large-Area Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+};
+
+// Full, browser-ready URL for a product document (spaces → %20, etc.).
+export function productDocUrl(file: string): string {
+  return `${PRODUCT_PDF_BASE}/${encodeURIComponent(file)}`;
+}
 
 // Product hero images live in the COS bucket under IMAGE/products/.
 // The object keys there do NOT follow the slug convention (and are
@@ -1631,6 +1713,7 @@ const productImageFile: Record<string, string> = {
   "ac8": "AC8.png",
   "ac8-hd": "AC8-HD.png",
   "ac9225": "ac9225.png",
+  "ac9225-f": "AC9225-F.png",
   "r2000": "R2000.png",
 };
 
@@ -1752,15 +1835,19 @@ export function productBreadcrumbJsonLd(p: Product) {
   };
 }
 
-// Returns the product with intro + feature bullets translated for the given
-// locale. English is returned unchanged (no regression); zh/vi overlay the
-// translated copy where available, falling back to the catalog text.
-// Spec tables are intentionally left as-is (values are language-neutral).
+// Returns the product with intro + feature + application bullets translated
+// for the given locale. English is returned unchanged (no regression); zh/vi
+// overlay the translated copy where available, falling back to the catalog
+// text. Spec tables are intentionally left as-is (values are language-neutral).
 export function localizeProduct(p: Product, locale: "en" | "zh" | "vi" | "th"): Product {
   if (locale === "en") return p;
+  const pick = (l?: { zh: string[]; vi: string[] }) =>
+    l ? (locale === "zh" ? l.zh : locale === "vi" ? l.vi : null) : null;
+  // Applications live in a parallel map so intro/feature entries stay untouched.
+  const applications = pick(productAppsI18n[p.slug]) || p.applications;
   const o = productI18n[p.slug];
-  if (!o) return p;
+  if (!o) return { ...p, applications };
   const intro = o.intro ? (locale === "zh" ? o.intro.zh : locale === "vi" ? o.intro.vi : "") || p.intro : p.intro;
-  const features = o.features ? (locale === "zh" ? o.features.zh : locale === "vi" ? o.features.vi : null) || p.features : p.features;
-  return { ...p, intro, features };
+  const features = pick(o.features) || p.features;
+  return { ...p, intro, features, applications };
 }

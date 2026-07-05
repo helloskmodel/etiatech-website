@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { productImage, localizeProduct, productTagline, techRouteFor, type Product } from "@/components/productCatalog";
+import { FileText, Download } from "lucide-react";
+import { productImage, localizeProduct, productTagline, techRouteFor, productDocs, productDocUrl, type Product } from "@/components/productCatalog";
 import { appNotesForProduct } from "@/components/productApplications";
 import { localizeApp } from "@/components/applicationNotes";
 import { inquiryMailto } from "@/components/contact";
@@ -24,6 +25,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
   const p = localizeProduct(product, locale);
   // Matched on the English catalog fields, then localized for display.
   const appNotes = appNotesForProduct(product);
+  const docs = productDocs[product.slug] ?? [];
 
   return (
     <>
@@ -147,6 +149,36 @@ export default function ProductDetailView({ product, accent }: { product: Produc
           </div>
         </div>
       </section>
+
+      {/* Documents & Downloads */}
+      {docs.length > 0 && (
+        <section className="py-16 bg-white border-t border-gray-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Documents", zh: "资料下载" }, locale)}</p>
+            <h2 className="text-2xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Brochures & Guides", zh: "产品手册与指南" }, locale)}</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {docs.map((d) => (
+                <a
+                  key={d.file}
+                  href={productDocUrl(d.file)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-gray-400 hover:shadow-sm transition-all"
+                >
+                  <span className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center text-white" style={{ background: accent }}>
+                    <FileText className="w-5 h-5" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-gray-800">{t(d.kind, locale)}</span>
+                    <span className="block text-xs text-gray-400">{t({ en: "PDF · opens in a new tab", zh: "PDF · 新标签页打开" }, locale)}</span>
+                  </span>
+                  <Download className="w-4 h-4 text-gray-300 group-hover:text-gray-600 flex-shrink-0 transition-colors" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-14" style={{ background: "#1A56DB" }}>
