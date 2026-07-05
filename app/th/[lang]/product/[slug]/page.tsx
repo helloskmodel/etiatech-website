@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { marketProducts } from "@/components/markets";
 import { localizeProduct } from "@/components/productCatalog";
 import { inquiryMailto } from "@/components/contact";
-import { isThLocale, getDict, type ThLocale } from "../../../dictionaries";
+import { isThLocale, getDict, getAuthDict, COMPANY, type ThLocale } from "../../../dictionaries";
 import { productContentTh } from "../../../productContentTh";
 
 const SITE = "https://www.etiatech.com";
@@ -30,7 +30,7 @@ export async function generateMetadata({
   const th = l === "th" ? productContentTh[p.slug] : undefined;
   const loc = localizeProduct(p, l);
   return {
-    title: `${p.name} | ETIA Thailand`,
+    title: `${p.name} | Authorized OmniCure® Distributor Thailand`,
     description: th?.subtitle ?? loc.intro?.slice(0, 160),
     alternates: {
       canonical: `${SITE}/th/${l}/product/${slug}`,
@@ -55,11 +55,27 @@ export default async function ThailandProductDetail({
   if (!p) notFound();
 
   const d = getDict(l);
+  const auth = getAuthDict(l);
   const loc = localizeProduct(p, l);
   const th = l === "th" ? productContentTh[p.slug] : undefined;
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    brand: { "@type": "Brand", name: "OmniCure" },
+    description: th?.subtitle ?? loc.intro,
+    category: p.tech,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: COMPANY.legalName, areaServed: "TH" },
+    },
+  };
+
   return (
     <article className="bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       {/* Header */}
       <div className="py-12 md:py-16" style={{ background: "#0f2444" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,6 +89,9 @@ export default async function ThailandProductDetail({
           ) : (
             loc.intro && <p className="text-base text-gray-200 mt-3 leading-relaxed">{loc.intro}</p>
           )}
+          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white rounded px-3 py-1.5" style={{ background: "#16653480", border: "1px solid #44B549" }}>
+            ✓ {auth.badge}
+          </p>
         </div>
       </div>
 
@@ -120,11 +139,11 @@ export default async function ThailandProductDetail({
         )}
 
         <a
-          href={inquiryMailto(l, { subject: "Thailand Product Inquiry", context: p.name })}
+          href={inquiryMailto(l, { subject: "Request a Quote — Thailand", context: p.name })}
           className="inline-block text-sm font-semibold text-white rounded px-6 py-3 hover:opacity-90"
           style={{ background: "#1A56DB" }}
         >
-          {d.products.inquire} →
+          {auth.requestQuote} →
         </a>
       </div>
     </article>

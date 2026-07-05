@@ -3,7 +3,7 @@ import "../../globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { TH_LOCALES, isThLocale, HTML_LANG, getDict, type ThLocale } from "../dictionaries";
+import { TH_LOCALES, isThLocale, HTML_LANG, getDict, getAuthDict, COMPANY, type ThLocale } from "../dictionaries";
 import { inquiryMailto } from "@/components/contact";
 
 const LOGO =
@@ -26,10 +26,34 @@ export default async function ThailandLayout({
   const { lang } = await params;
   if (!isThLocale(lang)) notFound();
   const d = getDict(lang);
+  const auth = getAuthDict(lang);
+
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: COMPANY.legalName,
+    url: `https://www.etiatech.com/th/${lang}`,
+    logo: LOGO,
+    description: auth.statement,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: COMPANY.address,
+      addressLocality: COMPANY.addressLocality,
+      postalCode: COMPANY.postalCode,
+      addressCountry: COMPANY.country,
+    },
+    areaServed: "TH",
+    brand: { "@type": "Brand", name: "OmniCure" },
+  };
 
   return (
     <html lang={HTML_LANG[lang]}>
       <body className="min-h-screen flex flex-col" style={{ background: "#ffffff", color: "#111827" }}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+        {/* Authorized-distributor trust bar */}
+        <div className="text-center text-xs font-semibold py-1.5 px-4 text-white" style={{ background: "#166534" }}>
+          ✓ {auth.badge}
+        </div>
         {/* Scoped Thailand nav — only the products ETIA sells in Thailand */}
         <nav className="sticky top-0 z-50 border-b border-gray-200 shadow-sm bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -73,8 +97,13 @@ export default async function ThailandLayout({
         <footer className="border-t border-gray-200 bg-[#0f2444] text-gray-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <Image src={LOGO} alt="ETIA Technology" width={140} height={48} className="object-contain bg-white rounded px-2 py-1 mb-4" unoptimized />
-            <p className="text-sm max-w-xl mb-4">{d.footer.tagline}</p>
-            <p className="text-xs text-gray-400">© 2026 ETIA Technology. {d.footer.rights}</p>
+            <p className="text-sm font-semibold text-white mb-1">✓ {auth.badge}</p>
+            <p className="text-sm max-w-2xl mb-4 text-gray-300">{auth.statement}</p>
+            <div className="text-xs text-gray-400 space-y-0.5 mb-4">
+              <p className="font-medium text-gray-300">{COMPANY.legalName}</p>
+              <p>{COMPANY.address}</p>
+            </div>
+            <p className="text-xs text-gray-400">© 2026 {COMPANY.legalName}. {d.footer.rights}</p>
           </div>
         </footer>
       </body>
