@@ -5,6 +5,7 @@ import { marketApps } from "@/components/markets";
 import { localizeApp, appSlug } from "@/components/applicationNotes";
 import { inquiryMailto } from "@/components/contact";
 import { isThLocale, getAppDict, getDict, type ThLocale } from "../../../dictionaries";
+import { appContentTh } from "../../../appContentTh";
 
 const SITE = "https://www.etiatech.com";
 
@@ -28,9 +29,11 @@ export async function generateMetadata({
   const app = findApp(slug);
   if (!app) return {};
   const loc = localizeApp(app, l);
+  const th = l === "th" ? appContentTh[app.id] : undefined;
   return {
-    title: `${loc.title} | ETIA Thailand`,
-    description: loc.intro,
+    title: th?.seoTitle ?? `${loc.title} | ETIA Thailand`,
+    description: th?.metaDescription ?? loc.intro,
+    keywords: th?.keywords,
     alternates: {
       canonical: `${SITE}/th/${l}/application/${slug}`,
       languages: {
@@ -56,8 +59,15 @@ export default async function ThailandApplicationDetail({
   const a = getAppDict(l);
   const d = getDict(l);
   const loc = localizeApp(app, l);
-  // TH bodies are not translated yet — localizeApp falls back to English.
-  const showPending = l === "th";
+  // Thai pages render the Thailand team's landing-page copy; en/zh render the
+  // full application note. Any Thai note without supplied copy falls back to
+  // English with the pending-translation notice.
+  const th = l === "th" ? appContentTh[app.id] : undefined;
+  const title = th?.title ?? loc.title;
+  const challenge = th?.challenge ?? loc.challenge;
+  const highlights = th?.highlights ?? loc.highlights;
+  const recommended = app.recommended;
+  const showPending = l === "th" && !th;
 
   return (
     <article className="py-12 md:py-16 bg-white">
@@ -69,7 +79,7 @@ export default async function ThailandApplicationDetail({
         <p className="mt-6 text-xs font-semibold uppercase tracking-wide" style={{ color: "#44B549" }}>
           {app.subCategory}
         </p>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mt-1 mb-4">{loc.title}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mt-1 mb-4">{title}</h1>
 
         {showPending && (
           <p className="text-xs bg-amber-50 border border-amber-200 text-amber-800 rounded px-3 py-2 mb-6">
@@ -77,24 +87,30 @@ export default async function ThailandApplicationDetail({
           </p>
         )}
 
-        <p className="text-lg text-gray-600 leading-relaxed mb-8">{loc.intro}</p>
-
         <div className="space-y-6">
           <section>
             <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{a.challenge}</h2>
-            <p className="text-gray-700 leading-relaxed">{loc.challenge}</p>
+            <p className="text-gray-700 leading-relaxed">{challenge}</p>
           </section>
-          <section>
-            <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{a.solution}</h2>
-            <p className="text-gray-700 leading-relaxed">{loc.solution}</p>
-          </section>
-          <section>
-            <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{a.benefit}</h2>
-            <p className="text-gray-700 leading-relaxed">{loc.benefit}</p>
-          </section>
-          {loc.highlights?.length > 0 && (
+
+          {/* en/zh carry separate solution + benefit fields; Thai landing copy
+              folds these into challenge + highlights, so only show when present. */}
+          {!th && (
+            <>
+              <section>
+                <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{a.solution}</h2>
+                <p className="text-gray-700 leading-relaxed">{loc.solution}</p>
+              </section>
+              <section>
+                <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{a.benefit}</h2>
+                <p className="text-gray-700 leading-relaxed">{loc.benefit}</p>
+              </section>
+            </>
+          )}
+
+          {highlights?.length > 0 && (
             <ul className="list-disc pl-5 space-y-1 text-gray-700">
-              {loc.highlights.map((h, i) => (
+              {highlights.map((h, i) => (
                 <li key={i}>{h}</li>
               ))}
             </ul>
@@ -103,9 +119,9 @@ export default async function ThailandApplicationDetail({
 
         <div className="mt-10 rounded-xl border border-gray-100 bg-gray-50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">{a.recommended}</p>
-          <p className="text-lg font-bold" style={{ color: "#1A56DB" }}>{app.recommended}</p>
+          <p className="text-lg font-bold" style={{ color: "#1A56DB" }}>{recommended}</p>
           <a
-            href={inquiryMailto(l, { subject: "Thailand Application Inquiry", context: `${loc.title} — ${app.recommended}` })}
+            href={inquiryMailto(l, { subject: "Thailand Application Inquiry", context: `${title} — ${recommended}` })}
             className="mt-4 inline-block text-sm font-semibold text-white rounded px-5 py-2.5 hover:opacity-90"
             style={{ background: "#1A56DB" }}
           >

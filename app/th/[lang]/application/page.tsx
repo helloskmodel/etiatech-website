@@ -3,6 +3,7 @@ import Link from "next/link";
 import { marketApps } from "@/components/markets";
 import { localizeApp, localizeIndustry, appSlug, type App } from "@/components/applicationNotes";
 import { isThLocale, getAppDict, thIndustryLabel, type ThLocale } from "../../dictionaries";
+import { appContentTh } from "../../appContentTh";
 
 const SITE = "https://www.etiatech.com";
 
@@ -72,6 +73,7 @@ export default async function ThailandApplications({
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {list.map((app) => {
                   const loc = localizeApp(app, l);
+                  const th = l === "th" ? appContentTh[app.id] : undefined;
                   return (
                     <Link
                       key={app.id}
@@ -80,9 +82,9 @@ export default async function ThailandApplications({
                     >
                       <p className="text-xs font-semibold text-gray-400 mb-1">{app.subCategory}</p>
                       <h3 className="text-base font-bold text-gray-800 group-hover:text-[#1A56DB] mb-2">
-                        {loc.title}
+                        {th?.title ?? loc.title}
                       </h3>
-                      <p className="text-sm text-gray-500 line-clamp-3 flex-1">{loc.challenge}</p>
+                      <p className="text-sm text-gray-500 line-clamp-3 flex-1">{th?.challenge ?? loc.challenge}</p>
                       <p className="mt-3 text-xs font-semibold" style={{ color: app ? "#1A56DB" : undefined }}>
                         {app.recommended}
                       </p>
