@@ -30,7 +30,7 @@ type Tri = Record<ThLocale, string>;
 export type ThDict = {
   metaTitle: string;
   metaDescription: string;
-  nav: { home: string; products: string; contact: string };
+  nav: { home: string; products: string; applications: string; contact: string };
   hero: { kicker: string; title: string; subtitle: string; cta: string; ctaProducts: string };
   products: { heading: string; subheading: string; lampFamily: string; ledFamily: string; inquire: string; specsLabel: string };
   cta: { heading: string; body: string; button: string };
@@ -50,6 +50,7 @@ const tri = {
   } as Tri,
   navHome: { th: "หน้าแรก", en: "Home", zh: "首页" } as Tri,
   navProducts: { th: "ผลิตภัณฑ์", en: "Products", zh: "产品" } as Tri,
+  navApplications: { th: "การใช้งาน", en: "Applications", zh: "应用" } as Tri,
   navContact: { th: "ติดต่อเรา", en: "Contact", zh: "联系我们" } as Tri,
   heroKicker: {
     th: "OmniCure · ระบบบ่มยูวีแบบจุด",
@@ -117,7 +118,12 @@ export function getDict(lang: ThLocale): ThDict {
   return {
     metaTitle: tri.metaTitle[lang],
     metaDescription: tri.metaDescription[lang],
-    nav: { home: tri.navHome[lang], products: tri.navProducts[lang], contact: tri.navContact[lang] },
+    nav: {
+      home: tri.navHome[lang],
+      products: tri.navProducts[lang],
+      applications: tri.navApplications[lang],
+      contact: tri.navContact[lang],
+    },
     hero: {
       kicker: tri.heroKicker[lang],
       title: tri.heroTitle[lang],
@@ -136,4 +142,70 @@ export function getDict(lang: ThLocale): ThDict {
     cta: { heading: tri.ctaHeading[lang], body: tri.ctaBody[lang], button: tri.ctaButton[lang] },
     footer: { tagline: tri.footerTagline[lang], rights: tri.footerRights[lang] },
   };
+}
+
+// ─── Applications section ───────────────────────────────────────────────
+// Scoped to Electronics, Medical, and automotive connectors. Application NOTE
+// bodies (challenge/solution/benefit) are localized separately via
+// localizeApp(): EN + ZH are final; TH bodies currently fall back to EN and are
+// pending translation. The labels below are final in all three languages.
+const appTri = {
+  heading: {
+    th: "การใช้งานตามอุตสาหกรรม",
+    en: "Applications by Industry",
+    zh: "按行业应用",
+  } as Tri,
+  subheading: {
+    th: "โซลูชันการบ่มยูวีแบบจุดสำหรับงานอิเล็กทรอนิกส์ การแพทย์ และขั้วต่อยานยนต์",
+    en: "UV spot curing solutions for electronics, medical, and automotive connector assembly.",
+    zh: "面向电子、医疗与汽车接口装配的 UV 点固化方案。",
+  } as Tri,
+  challenge: { th: "โจทย์/ความท้าทาย", en: "Challenge", zh: "痛点/挑战" } as Tri,
+  solution: { th: "โซลูชัน", en: "Solution", zh: "解决方案" } as Tri,
+  benefit: { th: "ประโยชน์ที่ได้", en: "Benefit", zh: "收益" } as Tri,
+  recommended: { th: "ผลิตภัณฑ์ที่แนะนำ", en: "Recommended", zh: "推荐产品" } as Tri,
+  back: { th: "← กลับไปหน้าการใช้งาน", en: "← Back to Applications", zh: "← 返回应用" } as Tri,
+  pendingTh: {
+    th: "⚠️ เนื้อหาส่วนนี้อยู่ระหว่างการแปลเป็นภาษาไทย — แสดงเป็นภาษาอังกฤษชั่วคราว",
+    en: "",
+    zh: "",
+  } as Tri,
+};
+
+export type ThAppDict = {
+  nav: string;
+  heading: string;
+  subheading: string;
+  challenge: string;
+  solution: string;
+  benefit: string;
+  recommended: string;
+  back: string;
+  pendingTh: string;
+};
+
+export function getAppDict(lang: ThLocale): ThAppDict {
+  return {
+    nav: tri.navApplications[lang],
+    heading: appTri.heading[lang],
+    subheading: appTri.subheading[lang],
+    challenge: appTri.challenge[lang],
+    solution: appTri.solution[lang],
+    benefit: appTri.benefit[lang],
+    recommended: appTri.recommended[lang],
+    back: appTri.back[lang],
+    pendingTh: appTri.pendingTh[lang],
+  };
+}
+
+// Localized label for the three focus industries. ZH comes from the main-site
+// industry map; TH is provided here (short, reviewed labels).
+const INDUSTRY_TH: Record<string, string> = {
+  "Medical Device Assembly": "การประกอบอุปกรณ์การแพทย์",
+  "Electronics & PCB Assembly": "อิเล็กทรอนิกส์และการประกอบ PCB",
+  "Automotive & ADAS": "ยานยนต์และ ADAS",
+};
+export function thIndustryLabel(industry: string, lang: ThLocale): string {
+  if (lang === "th") return INDUSTRY_TH[industry] ?? industry;
+  return industry; // en/zh handled by the caller via localizeIndustry
 }

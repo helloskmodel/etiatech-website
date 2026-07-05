@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
 import { apps, appSlug } from "@/components/applicationNotes";
 import { successStories, caseSlug } from "@/components/caseStudies";
-import { markets } from "@/components/markets";
+import { markets, marketApps } from "@/components/markets";
 
 const SITE = "https://www.etiatech.com";
 
@@ -53,13 +53,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Thailand market microsite — one URL per language, each declaring its
   // hreflang alternates so Google indexes all three for Thailand.
   const thLangs = markets.th.locales;
-  const thAlternates = Object.fromEntries(thLangs.map((l) => [l, `${SITE}/th/${l}`]));
-  const thPages: MetadataRoute.Sitemap = thLangs.map((l) => ({
-    url: `${SITE}/th/${l}`,
-    changeFrequency: "weekly",
-    priority: 0.9,
-    alternates: { languages: thAlternates },
-  }));
+  const langAlternates = (path: string) =>
+    Object.fromEntries(thLangs.map((l) => [l, `${SITE}/th/${l}${path}`]));
+
+  const thPages: MetadataRoute.Sitemap = [
+    // Home + applications index, per language.
+    ...thLangs.map((l) => ({
+      url: `${SITE}/th/${l}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      alternates: { languages: langAlternates("") },
+    })),
+    ...thLangs.map((l) => ({
+      url: `${SITE}/th/${l}/application`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: { languages: langAlternates("/application") },
+    })),
+    // One entry per scoped application note, per language.
+    ...marketApps("th").flatMap((app) =>
+      thLangs.map((l) => ({
+        url: `${SITE}/th/${l}/application/${appSlug(app)}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+        alternates: { languages: langAlternates(`/application/${appSlug(app)}`) },
+      }))
+    ),
+  ];
 
   return [...core, ...thPages, ...productPages, ...appPages, ...casePages];
 }

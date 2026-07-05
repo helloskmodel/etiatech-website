@@ -43,6 +43,9 @@ export default async function ThailandLayout({
               <Link href={`/th/${lang}#products`} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
                 {d.nav.products}
               </Link>
+              <Link href={`/th/${lang}/application`} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
+                {d.nav.applications}
+              </Link>
               <a href={inquiryMailto(lang, { subject: "Thailand Inquiry" })} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
                 {d.nav.contact}
               </a>
