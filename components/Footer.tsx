@@ -28,11 +28,6 @@ export default function Footer() {
                 {t(navLabels[i], locale)}
               </Link>
             ))}
-            {/* Regional site — internal link so crawlers discover /th and it
-                gains relevance for "OmniCure Thailand". */}
-            <a href="/th/th" className="text-xs font-medium text-gray-600 hover:text-[#1A56DB] transition-colors mt-1">
-              OmniCure ประเทศไทย (Thailand) →
-            </a>
             <a href="/omnicure-thailand" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">
               OmniCure UV Curing — Thailand
             </a>
