@@ -47,7 +47,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     name: "Phoseon",
     logo: "◆",
     color: "#0ea5e9",
-    tagline: { en: "UV LED Air & Water-Cooled · Printing & Industrial", zh: "UV LED 风冷与水冷 · 印刷与工业" },
+    tagline: { en: "", zh: "" },
     intro: {
       en: "Phoseon pioneered high-power UV LED curing for printing and industrial processes. Its air-cooled FireJet/FireEdge and water-cooled FireLine, VeriCure and Nexus II families deliver high irradiance and dose in rugged, easy-to-integrate form factors — from narrow-web flexo and inkjet to demanding wide-format and coating lines.",
       zh: "Phoseon 是印刷与工业领域高功率 UV LED 固化的开创者。其风冷 FireJet/FireEdge 与水冷 FireLine、VeriCure、Nexus II 系列,以坚固、易集成的结构提供高辐照度与高剂量——覆盖窄幅柔印、喷墨,以及严苛的宽幅与涂层产线。",
