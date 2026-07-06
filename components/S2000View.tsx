@@ -191,19 +191,8 @@ export default function S2000View() {
               {t({ en: "Closed-Loop Feedback technology continuously monitors and adjusts output, maintaining irradiance within ±5% of set point throughout the lamp's lifetime. Combined with a 30 ms precision electromechanical shutter, the S2000 Elite ensures every exposure delivers an exact, repeatable UV dose — critical for validated medical device and electronics manufacturing processes.", zh: "闭环反馈技术持续监测并调整输出,在灯管整个寿命周期内将辐照度维持在设定值±5%以内。配合30毫秒精密机电快门,S2000 Elite确保每次曝光都输出精确、可重复的UV剂量——这对验证级医疗器械与电子制造工艺至关重要。" }, locale)}
             </p>
           </div>
-          <div className="rounded-2xl border border-gray-100 bg-gray-50 relative" style={{ height: "440px" }}>
-            <Image src={img.lcd} alt="OmniCure S2000 Elite LCD touchscreen interface" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" />
-          </div>
-        </div>
-      </section>
-
-      {/* Product Video — dark */}
-      <section className="py-16" style={{ background: "#0a1628" }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Product Video", zh: "产品视频" }, locale)}</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">{t({ en: "See the S2000 Elite in Action", zh: "观看 S2000 Elite 实机演示" }, locale)}</h2>
-          <div className="rounded-2xl overflow-hidden shadow-xl border border-white/10">
-            <video controls preload="metadata" poster={img.intro} className="w-full bg-black" style={{ aspectRatio: "16 / 9" }}>
+          <div className="rounded-2xl border border-gray-100 bg-gray-50 relative overflow-hidden" style={{ height: "440px" }}>
+            <video controls preload="metadata" poster={img.lcd} className="absolute inset-0 w-full h-full object-contain bg-black">
               <source src={VIDEO} type="video/mp4" />
               {t({ en: "Your browser does not support the video tag.", zh: "您的浏览器不支持视频播放。" }, locale)}
             </video>
