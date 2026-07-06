@@ -46,6 +46,16 @@ export async function generateMetadata({
   };
 }
 
+function CaseSection({ label, body }: { label: string; body?: string }) {
+  if (!body) return null;
+  return (
+    <section>
+      <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{label}</h2>
+      <p className="text-gray-700 leading-relaxed">{body}</p>
+    </section>
+  );
+}
+
 export default async function ThailandCaseDetail({
   params,
 }: {
@@ -68,14 +78,6 @@ export default async function ThailandCaseDetail({
   const benefits = th?.benefits ?? loc.benefits;
   const marketContext = th?.marketContext ?? loc.marketContext;
 
-  const Section = ({ label, body }: { label: string; body?: string }) =>
-    body ? (
-      <section>
-        <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{label}</h2>
-        <p className="text-gray-700 leading-relaxed">{body}</p>
-      </section>
-    ) : null;
-
   return (
     <article className="py-12 md:py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,9 +94,9 @@ export default async function ThailandCaseDetail({
         </div>
 
         <div className="space-y-6">
-          <Section label={a.overview} body={overview} />
-          <Section label={a.challenge} body={challenge} />
-          <Section label={a.solution} body={solution} />
+          <CaseSection label={a.overview} body={overview} />
+          <CaseSection label={a.challenge} body={challenge} />
+          <CaseSection label={a.solution} body={solution} />
           {benefits && benefits.length > 0 && (
             <section>
               <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-1">{a.benefit}</h2>
@@ -105,7 +107,7 @@ export default async function ThailandCaseDetail({
               </ul>
             </section>
           )}
-          <Section label={a.marketContext} body={marketContext} />
+          <CaseSection label={a.marketContext} body={marketContext} />
         </div>
 
         <div className="mt-10">

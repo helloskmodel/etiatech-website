@@ -1,15 +1,14 @@
 import type { ReactNode } from "react";
 import "../../globals.css";
-import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { TH_LOCALES, isThLocale, HTML_LANG, getDict, getAuthDict, COMPANY, type ThLocale } from "../dictionaries";
-import { thMailto, TH_CONTACTS } from "../thContact";
+import { TH_LOCALES, isThLocale, HTML_LANG, getDict, getAuthDict, COMPANY } from "../dictionaries";
+import { TH_CONTACTS } from "../thContact";
 import Analytics from "@/components/Analytics";
+import ThaiNav from "../ThaiNav";
 
 const LOGO =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
-const LANG_LABEL: Record<ThLocale, string> = { th: "ไทย", en: "EN", zh: "中文" };
 
 // Only th/en/zh are generated; any other /th/<x> is a 404.
 export const dynamicParams = false;
@@ -56,42 +55,12 @@ export default async function ThailandLayout({
         <div className="text-center text-xs font-semibold py-1.5 px-4 text-white" style={{ background: "#166534" }}>
           ✓ {auth.badge}
         </div>
-        {/* Scoped Thailand nav — only the products ETIA sells in Thailand */}
-        <nav className="sticky top-0 z-50 border-b border-gray-200 shadow-sm bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <Link href={`/th/${lang}`} className="flex items-center gap-2">
-              <Image src={LOGO} alt="ETIA Technology" width={130} height={44} className="object-contain" unoptimized />
-            </Link>
-            <div className="flex items-center gap-6">
-              <Link href={`/th/${lang}`} className="hidden sm:block text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
-                {d.nav.home}
-              </Link>
-              <Link href={`/th/${lang}#products`} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
-                {d.nav.products}
-              </Link>
-              <Link href={`/th/${lang}/application`} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
-                {d.nav.applications}
-              </Link>
-              <a href={thMailto(lang, { subject: "Thailand Inquiry" })} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
-                {d.nav.contact}
-              </a>
-              {/* Language switch — one URL per language for hreflang/SEO */}
-              <div className="flex items-center gap-1 border-l border-gray-200 pl-4">
-                {TH_LOCALES.map((l) => (
-                  <Link
-                    key={l}
-                    href={`/th/${l}`}
-                    className={`px-2 py-1 text-xs font-semibold rounded ${
-                      l === lang ? "text-[#1A56DB] bg-blue-50" : "text-gray-500 hover:text-[#1A56DB]"
-                    }`}
-                  >
-                    {LANG_LABEL[l]}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </nav>
+        {/* Scoped Thailand nav (responsive; hamburger on mobile) */}
+        <ThaiNav
+          lang={lang}
+          labels={{ home: d.nav.home, products: d.nav.products, applications: d.nav.applications, salesSupport: d.nav.contact }}
+          contactHref={`/th/${lang}/contact`}
+        />
 
         <main className="flex-1">{children}</main>
 
