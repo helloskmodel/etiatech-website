@@ -15,6 +15,7 @@ const img = {
   remote: `${PROMO}/PROMOTION-OMNICURE%202000%20ELITE-REMOTE%20CONTROL.webp`,
   calibration: `${PROMO}/PROMOTION-OMNICURE%20S2000%20ELITE%20-CALIBRATION%20AND%20RADIOMETRY.webp`,
   stepcure: `${PROMO}/PROMOTION-OMNICURE-2000%20ELITE%20-STEPCURE%202.0%20WITH%20PLC%20CONTROL.webp`,
+  nfc: `${PROMO}/PROMOTION-OMNICURE%20S2000%20ELITE%20-NFC%20CARD.webp`,
 };
 
 const heroStats: { val: string; label: LangText }[] = [
@@ -32,41 +33,63 @@ const benefits: { icon: string; title: LangText; desc: LangText }[] = [
   { icon: "🔗", title: { en: "Industry 4.0 Ready", zh: "支持工业4.0" }, desc: { en: "PLC, Ethernet, NFC, and Web UI connect seamlessly into modern automated manufacturing lines — zero integration headaches.", zh: "PLC、以太网、NFC与Web UI无缝接入现代自动化产线——零集成烦恼。" } },
 ];
 
-const features: { no: LangText; title: LangText; desc: LangText; tags: LangText[]; image: string }[] = [
+const features: { no: LangText; title: LangText; desc: LangText; tags: LangText[]; image?: string; note?: LangText }[] = [
   {
     no: { en: "Feature 01", zh: "技术 01" },
-    title: { en: "Closed-Loop Feedback (CLF)", zh: "闭环反馈(CLF)" },
-    desc: { en: "Real-time irradiance monitoring and automatic output compensation maintain set-point intensity within ±5% — even as the lamp ages. Eliminates the need for manual re-calibration and guarantees batch-to-batch process consistency required in validated manufacturing environments.", zh: "实时辐照度监测与自动输出补偿,即使灯管老化也能将强度维持在设定值±5%以内。免去手动重新校准,保证验证级制造环境所需的批次间工艺一致性。" },
-    tags: [{ en: "±5% Stability", zh: "±5% 稳定性" }, { en: "Auto Compensation", zh: "自动补偿" }, { en: "No Recalibration", zh: "免重新校准" }],
+    title: { en: "Closed-Loop Feedback (CLF)", zh: "闭环反馈 (CLF)" },
+    desc: { en: "Over time, the output of all mercury lamps decreases, which left uncorrected can negatively impact curing efficiency. The S2000 Elite's Closed-Loop Feedback technology uses an internal optical sensor to monitor lamp output in real time and adjust the iris to automatically maintain irradiance to within ±5% of the set point — ensuring repeatable, measurable doses of curing energy for increased yields and quality. An on-screen indicator, light ring and audible alarm signal when the lamp can no longer generate the set irradiance level, eliminating frequent manual checks while prolonging lamp lifetime. Calibration with the OmniCure R2000 Radiometer offers real-time display of irradiance on the S2000 Elite — the only system that can be calibrated in real time for NIST accuracy. Excelitas proprietary technology: often imitated, never duplicated.", zh: "随着时间的推移，汞灯输出降低，会降低固化过程的有效性。OmniCure S2000 Elite 闭环反馈技术包括一个内部光学传感器，用于实时监控灯输出，并调整光圈，以自动将辐照度水平保持在设定点的 ±5% 以内，确保可重复和可测量的固化能量剂量，从而提高产量和质量。当灯不能再产生设定的辐照度水平时，屏幕上的指示灯、光环和声音警报会发出警告。现在，您可以使用灯具直到其寿命结束，而无需经常检查辐照度水平。使用 OmniCure R2000 辐射计进行校准，可在 OmniCure S2000 Elite 上实时显示辐照度。唯一能够实时校准 NIST 精度的系统；非常适合自动化或半自动化环境；经常模仿，从不重复；Excelitas Technologies 的专有技术。" },
+    tags: [{ en: "±5% Stability", zh: "±5% 稳定性" }, { en: "Real-Time NIST Calibration", zh: "实时NIST校准" }, { en: "Auto Iris", zh: "自动光阑" }],
     image: img.loop,
   },
   {
     no: { en: "Feature 02", zh: "技术 02" },
-    title: { en: "30 ms Precision Shutter", zh: "30毫秒精密快门" },
-    desc: { en: "The electromechanical shutter actuates in just 30 milliseconds, delivering precisely controlled UV energy doses. Critical for processes where over-exposure causes stress cracking, shrinkage, or delamination — such as optical bonding and catheter assembly.", zh: "机电快门仅需30毫秒即可动作,精确控制UV能量剂量。对于过曝会导致应力开裂、收缩或分层的工艺(如光学粘接与导管装配)至关重要。" },
-    tags: [{ en: "30 ms Actuation", zh: "30毫秒动作" }, { en: "Zero Over-Cure", zh: "零过固化" }, { en: "Electromechanical", zh: "机电式" }],
-    image: img.calibration,
+    title: { en: "Web UI — Remote Control", zh: "Web UI — 远程控制" },
+    desc: { en: "Remote control, management and monitoring of single or multiple systems is available from almost any device through the WEB UI, expanding all of the options and features from the system touchscreen to a larger laptop or tablet screen. The WEB UI enables you to run exposures, build and manage curing profiles, review and download system logs, and download and push software updates to multiple units from the comfort of your office. Advanced control for troubleshooting is also available through the command line interface.", zh: "几乎任何设备都可以通过 WEB UI 对单个或多个系统进行远程控制、管理和监控，从而将系统触摸屏上的所有选项和功能扩展到更大的笔记本电脑或平板电脑屏幕。WEB UI 允许用户在舒适的办公室内运行曝光、构建和管理固化配置文件、查看和下载系统日志，以及下载软件更新并将其推送到多个单元。WEB UI 还通过命令行界面为故障排除提供高级控制。" },
+    tags: [{ en: "Multi-System", zh: "多系统" }, { en: "Any Device", zh: "任意设备" }, { en: "CLI Troubleshooting", zh: "命令行排障" }],
+    image: img.remote,
   },
   {
     no: { en: "Feature 03", zh: "技术 03" },
-    title: { en: "StepCure 2.0", zh: "StepCure 2.0" },
-    desc: { en: "Programme up to multiple intensity steps within a single cure cycle — ramp up, hold, ramp down — with full PLC synchronisation. Ideal for stress-sensitive assemblies, multi-component substrates, and processes requiring a tack-free surface cure followed by a deep bulk cure.", zh: "可在单个固化周期内编程多个强度台阶——升高、保持、降低——并完全由PLC同步。适合应力敏感组件、多组分基材,以及需要先表面无粘性固化、再深层固化的工艺。" },
-    tags: [{ en: "Multi-Step Profiles", zh: "多台阶曲线" }, { en: "PLC Sync", zh: "PLC同步" }, { en: "Industry 4.0", zh: "工业4.0" }],
-    image: img.stepcure,
+    title: { en: "LCD & Touch Screen UI", zh: "LCD 触摸屏界面" },
+    desc: { en: "A new 4.3\" LCD touch screen display provides easy access to all system functionality. The intuitive, easy-to-use UI makes it simple to access and navigate through system information, settings and run screens.", zh: "新的 4.3 英寸 LCD 触摸屏显示器可轻松访问所有系统功能。直观易用的用户界面使访问和浏览系统信息、设置和运行屏幕变得简单。" },
+    tags: [{ en: "4.3\" Touchscreen", zh: "4.3英寸触屏" }, { en: "Intuitive UI", zh: "直观界面" }],
+    image: img.lcd,
   },
   {
     no: { en: "Feature 04", zh: "技术 04" },
-    title: { en: "Intelli-Lamp Technology", zh: "Intelli-Lamp 智能灯管技术" },
-    desc: { en: "Embedded lamp intelligence logs cumulative operating hours and tracks output degradation over time. The system alerts operators when lamp replacement is approaching — enabling planned maintenance rather than unplanned downtime. Lamp exchange data is automatically logged.", zh: "内嵌灯管智能记录累计运行时长并追踪输出衰减。系统在灯管临近更换时提醒操作员——实现计划性维护而非意外停机。灯管更换数据自动记录。" },
-    tags: [{ en: "Hour Tracking", zh: "时长追踪" }, { en: "Output Monitoring", zh: "输出监测" }, { en: "Predictive Alert", zh: "预测性提醒" }],
-    image: img.lamp,
+    title: { en: "StepCure 2.0 with PLC Control", zh: "StepCure 2.0 + PLC 控制" },
+    desc: { en: "The OmniCure S2000 Elite was designed with automation in mind. The built-in StepCure 2.0 software allows users to upload a customized multi-phase cure profile directly to the system, offering greater cure control. By providing integrated PLC controller functionality and up to 7 programmable PLC output channels through the ladder-logic based StepCure program, the S2000 Elite helps simplify and lower the cost of automating assembly lines.", zh: "OmniCure S2000 Elite 的设计考虑到了自动化。内置的 StepCure 软件可以将定制的多相固化配置文件直接下载到系统中；此选项以前仅在连接到外部桌面 PC 时可用，它为用户提供了更好的控制。OmniCure S2000 Elite 作为 PLC 控制器，通过基于梯形逻辑的 StepCure 程序提供多达 8 个可编程 PLC 输出通道，有助于简化并降低自动化装配线的成本。" },
+    tags: [{ en: "Multi-Phase Profiles", zh: "多阶段曲线" }, { en: "PLC Control", zh: "PLC控制" }, { en: "Ladder Logic", zh: "梯形逻辑" }],
+    image: img.stepcure,
   },
   {
     no: { en: "Feature 05", zh: "技术 05" },
-    title: { en: "Intelli-Tap NFC + Web UI", zh: "Intelli-Tap NFC + Web UI" },
-    desc: { en: "Contactless NFC keycard technology locks cure parameters to prevent unauthorised modification. Each operator's access level is configurable. Combined with full Web UI remote monitoring from any browser — the S2000 Elite meets GMP and ISO process security requirements without friction.", zh: "非接触式NFC钥匙卡技术锁定固化参数,防止未经授权的修改。每位操作员的权限等级可配置。结合可从任意浏览器进行的完整Web UI远程监控——S2000 Elite轻松满足GMP与ISO工艺安全要求。" },
-    tags: [{ en: "NFC Keycard", zh: "NFC钥匙卡" }, { en: "Web UI", zh: "Web UI" }, { en: "GMP Compliant", zh: "符合GMP" }],
-    image: img.remote,
+    title: { en: "30 ms Precision Shutter", zh: "30毫秒精密快门" },
+    desc: { en: "The lightning-fast 30 ms shutter delivers a precise dosage to every single exposure for the most repeatable cure. With StepCure, the shutter enables precise exposures as low as 100 ms with minimal ramp-up and ramp-down times.", zh: "闪电般的 30 毫秒快门为每次曝光提供精确的剂量，以实现最可重复的固化。使用 StepCure，快门允许曝光间隔短至 100 ms，且上升和下降时间最小。" },
+    tags: [{ en: "30 ms Actuation", zh: "30毫秒动作" }, { en: "Exposures from 100 ms", zh: "低至100毫秒曝光" }, { en: "Repeatable Dose", zh: "可重复剂量" }],
+  },
+  {
+    no: { en: "Feature 06", zh: "技术 06" },
+    title: { en: "Calibration & Radiometry", zh: "校准与辐射测量" },
+    desc: { en: "Radiometry is an essential consideration for any repeatable curing process. Combine the OmniCure S2000 Elite with an OmniCure R2000 radiometer to measure and calibrate the light output, allowing cure profiles to be set in absolute peak irradiance (W/cm²) or optical power (W). The R2000 requires calibration every 12 months (NIST traceable) and can be used to set the output of multiple S2000 Elite systems at the identical irradiance level.", zh: "光强度测量是任何可重复固化过程的重要环节。将 OmniCure S2000 Elite 与 OmniCure R2000 辐射计相结合，以测量和校准光输出，从而将系统的固化轮廓设置为绝对峰值辐照度（W/cm²）或光功率（W）。OmniCure R2000 辐射计要求每 12 个月校准一次（NIST 可追踪），并可用于将多个 S2000 系统的输出设置为相同的辐照度水平。" },
+    tags: [{ en: "W/cm² or W", zh: "W/cm² 或 W" }, { en: "NIST Traceable", zh: "NIST溯源" }, { en: "Multi-System Match", zh: "多机一致" }],
+    image: img.calibration,
+  },
+  {
+    no: { en: "Feature 07", zh: "技术 07" },
+    title: { en: "Intelli-Tap NFC Communication", zh: "Intelli-Tap NFC 通信" },
+    desc: { en: "Intelli-Tap Near-Field Communication (NFC) enabled keycards let users reach the next level in process control. Two Intelli-Tap keycards are available — Admin and Supervisor — each with their own set of functionalities to cater to specific process requirements.", zh: "Intelli-Tap 支持 NFC 的钥匙卡使用户能够达到过程控制的下一个级别。提供两个 Intelli-Tap 钥匙卡——管理员和主管，每个卡都有自己的一套功能，以满足特定的流程要求。" },
+    tags: [{ en: "NFC Keycard", zh: "NFC钥匙卡" }, { en: "Admin / Supervisor", zh: "管理员/主管" }, { en: "Process Security", zh: "工艺安全" }],
+    note: { en: "Part numbers — 019-00406R: S2000 Elite Intelli-Tap Supervisor NFC card · 019-00407R: S2000 Elite Intelli-Tap Admin NFC card.", zh: "部件号 — 019-00406R:S2000 Elite Intelli-Tap Supervisor NFC 卡 · 019-00407R:S2000 Elite Intelli-Tap Admin NFC 卡。" },
+    image: img.nfc,
+  },
+  {
+    no: { en: "Feature 08", zh: "技术 08" },
+    title: { en: "Field-Replaceable Lamp & Filter", zh: "现场可换灯管与滤光片" },
+    desc: { en: "Ideal for academic, development or laboratory applications, the OmniCure S2000 Elite can quickly be user-reconfigured with a different optical band-pass filter or lamp type. The system automatically detects the new configuration and adjusts operating parameters depending on the components installed. Choose from seven optical band-pass filters and two lamp types.", zh: "OmniCure S2000 Elite 非常适合学术、开发或实验室应用，可根据安装的组件自动检测和调整其参数，从而使用不同的光学带通滤波器或灯型快速重新配置。可从 7 种不同的光学带通滤波器或 2 种不同的灯具类型中选择。" },
+    tags: [{ en: "7 Filters", zh: "7种滤光片" }, { en: "2 Lamp Types", zh: "2种灯管" }, { en: "Auto-Detect", zh: "自动识别" }],
+    note: { en: "Lamps — 012-68000R (Standard), 012-69000R (Surface Cure). Filters — 019-00387R (400–500 nm), 019-00388R (365 nm), 019-00389R (320–390 nm), 019-00390R (250–450 nm), 019-00391R (320–500 nm), 019-00392R (Blank).", zh: "灯管 — 012-68000R(标准)、012-69000R(表面固化)。滤光片 — 019-00387R(400–500 nm)、019-00388R(365 nm)、019-00389R(320–390 nm)、019-00390R(250–450 nm)、019-00391R(320–500 nm)、019-00392R(空白)。" },
+    image: img.lamp,
   },
 ];
 
@@ -210,18 +233,21 @@ export default function S2000View() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Technology", zh: "核心技术" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "5 Technologies That Set the S2000 Elite Apart", zh: "让 S2000 Elite 脱颖而出的5大技术" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "8 Technologies That Set the S2000 Elite Apart", zh: "让 S2000 Elite 脱颖而出的8大技术" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-12" style={{ background: "#44B549" }} />
           <div className="flex flex-col gap-12">
             {features.map((f, i) => (
-              <div key={f.no.en} className="grid lg:grid-cols-2 gap-8 items-center">
-                <div className={`rounded-2xl border border-gray-100 bg-gray-50 relative ${i % 2 === 1 ? "lg:order-2" : ""}`} style={{ height: "360px" }}>
-                  <Image src={f.image} alt={t(f.title, locale)} fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" />
-                </div>
-                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+              <div key={f.no.en} className={f.image ? "grid lg:grid-cols-2 gap-8 items-center" : "max-w-3xl"}>
+                {f.image && (
+                  <div className={`rounded-2xl border border-gray-100 bg-gray-50 relative ${i % 2 === 1 ? "lg:order-2" : ""}`} style={{ height: "360px" }}>
+                    <Image src={f.image} alt={t(f.title, locale)} fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" />
+                  </div>
+                )}
+                <div className={f.image && i % 2 === 1 ? "lg:order-1" : ""}>
                   <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-3 text-white" style={{ background: "#44B549" }}>{t(f.no, locale)}</span>
                   <h3 className="text-2xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t(f.title, locale)}</h3>
                   <p className="text-gray-500 leading-relaxed mb-5">{t(f.desc, locale)}</p>
+                  {f.note && <p className="text-xs text-gray-400 mb-5 leading-relaxed">{t(f.note, locale)}</p>}
                   <div className="flex flex-wrap gap-2">
                     {f.tags.map((tag) => (
                       <span key={tag.en} className="text-xs font-medium px-3 py-1 rounded-full border" style={{ borderColor: "#1A56DB", color: "#1A56DB", background: "#1A56DB10" }}>{t(tag, locale)}</span>

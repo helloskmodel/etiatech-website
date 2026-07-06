@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...[
       { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
       { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
+      { en: "/omnicure-s2000-lamp", th: "/th/omnicure-s2000-lamp" },
     ].flatMap((pair) => {
       const langs = { en: `${SITE}${pair.en}`, th: `${SITE}${pair.th}`, "x-default": `${SITE}${pair.en}` };
       return [
