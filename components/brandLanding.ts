@@ -49,8 +49,8 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     color: "#0ea5e9",
     tagline: { en: "", zh: "" },
     intro: {
-      en: "Phoseon pioneered high-power UV LED curing for printing and industrial processes. Its air-cooled FireJet/FireEdge and water-cooled FireLine, VeriCure and Nexus II families deliver high irradiance and dose in rugged, easy-to-integrate form factors — from narrow-web flexo and inkjet to demanding wide-format and coating lines.",
-      zh: "Phoseon 是印刷与工业领域高功率 UV LED 固化的开创者。其风冷 FireJet/FireEdge 与水冷 FireLine、VeriCure、Nexus II 系列,以坚固、易集成的结构提供高辐照度与高剂量——覆盖窄幅柔印、喷墨,以及严苛的宽幅与涂层产线。",
+      en: "Phoseon® is a UV LED technology brand under Excelitas, known for high-performance UV curing and life science illumination solutions.\n\nIts air-cooled and water-cooled UV LED systems support curing and drying of inks, coatings and adhesives across labels, packaging, digital printing, electronics, automotive and medical device applications.\n\nPhoseon also provides advanced LED illumination systems for fluorescence imaging, microscopy, laboratory instruments and life science applications.",
+      zh: "Phoseon® 是 Excelitas 旗下的 UV LED 技术品牌,以高性能 UV 固化与生命科学照明解决方案著称。\n\n其风冷与水冷 UV LED 系统,支持油墨、涂层与胶粘剂的固化与干燥,广泛应用于标签、包装、数码印刷、电子、汽车及医疗器械等领域。\n\nPhoseon 还提供先进的 LED 照明系统,用于荧光成像、显微镜、实验室仪器及生命科学应用。",
     },
     applications: [
       { en: "Printing & Packaging", zh: "印刷与包装" },
