@@ -4,6 +4,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import type { ThLocale } from "./dictionaries";
+import ThaiSearch, { type SearchLabels } from "./ThaiSearch";
+import type { SearchEntry } from "./searchIndex";
 
 const LOGO =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
@@ -14,10 +16,14 @@ export default function ThaiNav({
   lang,
   labels,
   contactHref,
+  searchIndex,
+  searchLabels,
 }: {
   lang: ThLocale;
   labels: { home: string; products: string; applications: string; salesSupport: string };
   contactHref: string;
+  searchIndex: SearchEntry[];
+  searchLabels: SearchLabels;
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname() || `/th/${lang}`;
@@ -67,6 +73,7 @@ export default function ThaiNav({
               {l.label}
             </Link>
           ))}
+          <ThaiSearch index={searchIndex} labels={searchLabels} />
           <div className="flex items-center gap-1 border-l border-gray-200 pl-4">
             {LOCALES.map((l) => (
               <Link
@@ -80,8 +87,10 @@ export default function ThaiNav({
           </div>
         </div>
 
-        {/* Mobile hamburger */}
-        <button className="md:hidden text-gray-700 p-2 -mr-2" aria-label="Menu" onClick={() => setOpen(!open)}>
+        {/* Mobile: search + hamburger */}
+        <div className="md:hidden flex items-center gap-1 -mr-2">
+        <ThaiSearch index={searchIndex} labels={searchLabels} />
+        <button className="text-gray-700 p-2" aria-label="Menu" onClick={() => setOpen(!open)}>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -90,6 +99,7 @@ export default function ThaiNav({
             )}
           </svg>
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

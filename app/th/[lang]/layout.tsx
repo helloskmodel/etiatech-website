@@ -6,9 +6,19 @@ import { TH_LOCALES, isThLocale, HTML_LANG, getDict, getAuthDict, COMPANY } from
 import { TH_CONTACTS } from "../thContact";
 import Analytics from "@/components/Analytics";
 import ThaiNav from "../ThaiNav";
+import { buildThaiSearchIndex } from "../searchIndex";
+import type { ThLocale } from "../dictionaries";
+import type { SearchLabels } from "../ThaiSearch";
 
 const LOGO =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
+
+// Trilingual labels for the nav search.
+const SEARCH_LABELS: Record<ThLocale, SearchLabels> = {
+  th: { search: "ค้นหา", placeholder: "ค้นหาสินค้า, รหัสชิ้นส่วน, การใช้งาน…", noResults: "ไม่พบผลลัพธ์", hint: "พิมพ์ชื่อรุ่น รหัสชิ้นส่วน (เช่น 012-64000R) หรือการใช้งาน", product: "สินค้า", application: "การใช้งาน", case: "กรณีศึกษา" },
+  en: { search: "Search", placeholder: "Search products, part numbers, applications…", noResults: "No results", hint: "Type a model, part number (e.g. 012-64000R), or application", product: "Product", application: "Application", case: "Case" },
+  zh: { search: "搜索", placeholder: "搜索产品、零件号、应用…", noResults: "无结果", hint: "输入型号、零件号（如 012-64000R）或应用", product: "产品", application: "应用", case: "案例" },
+};
 
 // Only th/en/zh are generated; any other /th/<x> is a 404.
 export const dynamicParams = false;
@@ -56,6 +66,8 @@ export default async function ThailandLayout({
           lang={lang}
           labels={{ home: d.nav.home, products: d.nav.products, applications: d.nav.applications, salesSupport: d.nav.contact }}
           contactHref={`/th/${lang}/contact`}
+          searchIndex={buildThaiSearchIndex(lang)}
+          searchLabels={SEARCH_LABELS[lang]}
         />
 
         <main className="flex-1">{children}</main>
