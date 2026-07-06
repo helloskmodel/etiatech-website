@@ -84,10 +84,13 @@ const specs: { param: LangText; value: LangText; verify?: boolean }[] = [
   { param: { en: "Display", zh: "显示屏" }, value: { en: '4.3" colour touchscreen LCD', zh: "4.3英寸彩色触摸屏LCD" } },
   { param: { en: "Light Guide", zh: "导光管" }, value: { en: "All OmniCure S Series liquid light guides", zh: "全系列 OmniCure S 系列液体导光管" } },
   { param: { en: "Radiometer", zh: "辐射计" }, value: { en: "OmniCure R2000 NIST-traceable radiometer", zh: "OmniCure R2000 NIST溯源辐射计" } },
-  { param: { en: "Operating Voltage", zh: "工作电压" }, value: { en: "100–240V AC, 50/60 Hz", zh: "100–240V 交流,50/60 Hz" }, verify: true },
-  { param: { en: "Dimensions (W×D×H)", zh: "尺寸(宽×深×高)" }, value: { en: "Fill from official Datasheet", zh: "以官方数据表为准" }, verify: true },
-  { param: { en: "Weight", zh: "重量" }, value: { en: "Fill from official Datasheet", zh: "以官方数据表为准" }, verify: true },
-  { param: { en: "Certifications", zh: "认证" }, value: { en: "CE — verify additional (UL/CSA/RoHS)", zh: "CE — 其他待核实(UL/CSA/RoHS)" }, verify: true },
+  { param: { en: "Input Voltage", zh: "输入电压" }, value: { en: "100–240V AC, 50/60 Hz", zh: "100–240V 交流,50/60 Hz" } },
+  { param: { en: "Input Current", zh: "输入电流" }, value: { en: "3.5 A max at 120 VAC / 2.0 A max at 240 VAC", zh: "120VAC 最大 3.5A / 240VAC 最大 2.0A" } },
+  { param: { en: "Lamp Life", zh: "灯管寿命" }, value: { en: "2,000 h guaranteed; typically 3,500–4,000 h", zh: "保证 2,000 小时;通常 3,500–4,000 小时" } },
+  { param: { en: "Dimensions (H×W×D)", zh: "尺寸(高×宽×深)" }, value: { en: "268 × 139 × 289 mm (10.54 × 5.45 × 11.38 in)", zh: "268 × 139 × 289 mm(10.54 × 5.45 × 11.38 in)" } },
+  { param: { en: "Weight", zh: "重量" }, value: { en: "3 kg (6.6 lb)", zh: "3 千克(6.6 磅)" } },
+  { param: { en: "Operating Temperature", zh: "工作温度" }, value: { en: "15°C to 40°C, dry location, 15–95% RH (non-condensing)", zh: "15°C 至 40°C,干燥环境,15–95% 相对湿度(无冷凝)" } },
+  { param: { en: "Warranty", zh: "保修" }, value: { en: "System 1 year; lamp 2,000 h", zh: "系统 1 年;灯管 2,000 小时" } },
 ];
 
 const accessories: { icon: string; title: LangText; desc: LangText; cta: LangText }[] = [
