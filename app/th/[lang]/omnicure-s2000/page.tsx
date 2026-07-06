@@ -32,14 +32,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: pick3(meta.title, l),
     description: pick3(meta.description, l),
+    // Deduped: canonicalize to the standalone S2000 SEM landing pages.
     alternates: {
-      canonical: `${SITE}/th/${l}/${SLUG}`,
-      languages: {
-        th: `${SITE}/th/th/${SLUG}`,
-        en: `${SITE}/th/en/${SLUG}`,
-        zh: `${SITE}/th/zh/${SLUG}`,
-        "x-default": `${SITE}/th/th/${SLUG}`,
-      },
+      canonical:
+        l === "en" ? `${SITE}/omnicure-s2000` : l === "th" ? `${SITE}/th/omnicure-s2000` : `${SITE}/th/zh/product`,
     },
   };
 }

@@ -35,6 +35,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
     },
+    // Standalone product SEM landing pages (S2000, LX500), en + th.
+    ...[
+      { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
+      { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
+    ].flatMap((pair) => {
+      const langs = { en: `${SITE}${pair.en}`, th: `${SITE}${pair.th}`, "x-default": `${SITE}${pair.en}` };
+      return [
+        { url: `${SITE}${pair.en}`, changeFrequency: "weekly" as const, priority: 0.9, alternates: { languages: langs } },
+        { url: `${SITE}${pair.th}`, changeFrequency: "weekly" as const, priority: 0.9, alternates: { languages: langs } },
+      ];
+    }),
     { url: `${SITE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
   ];
@@ -72,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // SEM landing pages (skeletons; content filled later).
   // omnicure-thailand + uv-curing-system-thailand are canonicalized to the SEM
   // pages / products hub, so they're omitted here to avoid duplicate URLs.
-  const landingSlugs = ["omnicure-s2000", "omnicure-lx500", "omnicure-s1500-pro", "contact"];
+  const landingSlugs = ["omnicure-s1500-pro", "contact"];
 
   const thPages: MetadataRoute.Sitemap = [
     // Home + applications index, per language.
