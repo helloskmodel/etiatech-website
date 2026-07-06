@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products, productHref, productImage, localizeProduct, productHighlights, popularityRank, techRouteFor } from "@/components/productCatalog";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
+import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -110,6 +111,28 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                 </Link>
               );
             })}
+
+            {/* Consumable — OmniCure S2000 Elite replacement lamp (links to the SEM landing page) */}
+            {slug === "omnicure" && (
+              <Link href={LAMP_PATHS.en} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
+                <div className="relative h-32 sm:h-36 bg-white">
+                  <span className="absolute top-2 left-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: "#0d9488" }}>{t({ en: "CONSUMABLE", zh: "耗材" }, locale)}</span>
+                  <Image src={LAMP.heroImage} alt={LAMP.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
+                  <span className="inline-block self-start text-[9px] font-bold uppercase tracking-wide px-2 py-0.5 rounded mb-2" style={{ background: `${b.color}12`, color: b.color }}>
+                    {t({ en: "Replacement Lamp", zh: "替换灯管" }, locale)}
+                  </span>
+                  <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{LAMP.name}</h3>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {["012-64000R", "200W", t({ en: "Genuine", zh: "原厂正品" }, locale)].map((h) => (
+                      <span key={h} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{h}</span>
+                    ))}
+                  </div>
+                  <span className="mt-auto text-xs font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       </section>
