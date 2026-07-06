@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { inquiryMailto } from "@/components/contact";
+import { thMailto } from "./thContact";
 import { getAuthDict, type ThLocale } from "./dictionaries";
 
 export type Tri3 = { th: string; en: string; zh: string };
@@ -38,7 +38,7 @@ export default function LandingShell({
           </p>
           <div>
             <a
-              href={inquiryMailto(lang, { subject: "Request a Quote — Thailand", context: title })}
+              href={thMailto(lang, { subject: "Request a Quote — Thailand", context: title })}
               className="inline-block px-6 py-3 rounded font-semibold text-white hover:opacity-90"
               style={{ background: "#1A56DB" }}
             >

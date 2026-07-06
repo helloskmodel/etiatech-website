@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { TH_LOCALES, isThLocale, HTML_LANG, getDict, getAuthDict, COMPANY, type ThLocale } from "../dictionaries";
-import { inquiryMailto } from "@/components/contact";
+import { thMailto, TH_CONTACTS } from "../thContact";
 import Analytics from "@/components/Analytics";
 
 const LOGO =
@@ -72,7 +72,7 @@ export default async function ThailandLayout({
               <Link href={`/th/${lang}/application`} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
                 {d.nav.applications}
               </Link>
-              <a href={inquiryMailto(lang, { subject: "Thailand Inquiry" })} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
+              <a href={thMailto(lang, { subject: "Thailand Inquiry" })} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB]">
                 {d.nav.contact}
               </a>
               {/* Language switch — one URL per language for hreflang/SEO */}
@@ -101,9 +101,16 @@ export default async function ThailandLayout({
             <Image src={LOGO} alt="ETIA Technology" width={140} height={48} className="object-contain bg-white rounded px-2 py-1 mb-4" unoptimized />
             <p className="text-sm font-semibold text-white mb-1">✓ {auth.badge}</p>
             <p className="text-sm max-w-2xl mb-4 text-gray-300">{auth.statement}</p>
-            <div className="text-xs text-gray-400 space-y-0.5 mb-4">
+            <div className="text-xs text-gray-400 space-y-0.5 mb-6">
               <p className="font-medium text-gray-300">{COMPANY.legalName}</p>
               <p>{COMPANY.address}</p>
+            </div>
+            {/* Contact */}
+            <div className="text-xs mb-6">
+              <p className="font-semibold text-white">{TH_CONTACTS.sales.name}</p>
+              <p className="text-gray-400 mb-1">{TH_CONTACTS.sales.role[lang]}</p>
+              <p><a href={`tel:${TH_CONTACTS.sales.phoneHref}`} className="text-gray-300 hover:text-white">📞 {TH_CONTACTS.sales.phone}</a></p>
+              <p><a href={`mailto:${TH_CONTACTS.sales.email}`} className="text-gray-300 hover:text-white">✉️ {TH_CONTACTS.sales.email}</a></p>
             </div>
             <p className="text-xs text-gray-400">© 2026 {COMPANY.legalName}. {d.footer.rights}</p>
           </div>

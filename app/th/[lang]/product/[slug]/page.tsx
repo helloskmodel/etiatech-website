@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marketProducts } from "@/components/markets";
 import { localizeProduct } from "@/components/productCatalog";
-import { inquiryMailto } from "@/components/contact";
+import { thMailto } from "../../../thContact";
 import { isThLocale, getDict, getAuthDict, COMPANY, type ThLocale } from "../../../dictionaries";
 import { productContentTh } from "../../../productContentTh";
 
@@ -139,7 +139,7 @@ export default async function ThailandProductDetail({
         )}
 
         <a
-          href={inquiryMailto(l, { subject: "Request a Quote — Thailand", context: p.name })}
+          href={thMailto(l, { subject: "Request a Quote — Thailand", context: p.name })}
           className="inline-block text-sm font-semibold text-white rounded px-6 py-3 hover:opacity-90"
           style={{ background: "#1A56DB" }}
         >

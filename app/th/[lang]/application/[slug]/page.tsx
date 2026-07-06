@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marketApps } from "@/components/markets";
 import { localizeApp, appSlug } from "@/components/applicationNotes";
-import { inquiryMailto } from "@/components/contact";
+import { thMailto } from "../../../thContact";
 import { isThLocale, getAppDict, getDict, type ThLocale } from "../../../dictionaries";
 import { appContentTh } from "../../../appContentTh";
 
@@ -121,7 +121,7 @@ export default async function ThailandApplicationDetail({
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">{a.recommended}</p>
           <p className="text-lg font-bold" style={{ color: "#1A56DB" }}>{recommended}</p>
           <a
-            href={inquiryMailto(l, { subject: "Thailand Application Inquiry", context: `${title} — ${recommended}` })}
+            href={thMailto(l, { subject: "Thailand Application Inquiry", context: `${title} — ${recommended}` })}
             className="mt-4 inline-block text-sm font-semibold text-white rounded px-5 py-2.5 hover:opacity-90"
             style={{ background: "#1A56DB" }}
           >

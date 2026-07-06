@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FlaskConical, Package, Wrench, ClipboardCheck } from "lucide-react";
 import { marketProducts, marketCases } from "@/components/markets";
 import { localizeCase } from "@/components/caseStudies";
-import { inquiryMailto } from "@/components/contact";
+import { thMailto } from "../thContact";
 import { isThLocale, getDict, getHomeDict, type ThLocale } from "../dictionaries";
 import { caseContentTh } from "../caseContentTh";
 import type { Product } from "@/components/productCatalog";
@@ -112,7 +112,7 @@ export default async function ThailandHome({
               <Link href="#products" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
                 {h.hero.btnProducts}
               </Link>
-              <a href={inquiryMailto(l, { subject: "Thailand Inquiry" })} className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60">
+              <a href={thMailto(l, { subject: "Thailand Inquiry" })} className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60">
                 {h.hero.btnEngineer}
               </a>
             </div>
@@ -230,7 +230,7 @@ export default async function ThailandHome({
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{h.cta.heading}</h2>
           <p className="text-gray-200 mb-8">{h.cta.body}</p>
-          <a href={inquiryMailto(l, { subject: "Thailand Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
+          <a href={thMailto(l, { subject: "Thailand Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             {h.cta.button}
           </a>
         </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marketCases } from "@/components/markets";
 import { localizeCase } from "@/components/caseStudies";
-import { inquiryMailto } from "@/components/contact";
+import { thMailto } from "../../../thContact";
 import { isThLocale, getCaseDict, getDict, type ThLocale } from "../../../dictionaries";
 import { caseContentTh } from "../../../caseContentTh";
 
@@ -110,7 +110,7 @@ export default async function ThailandCaseDetail({
 
         <div className="mt-10">
           <a
-            href={inquiryMailto(l, { subject: "Thailand Case Study Inquiry", context: title })}
+            href={thMailto(l, { subject: "Thailand Case Study Inquiry", context: title })}
             className="inline-block text-sm font-semibold text-white rounded px-5 py-2.5 hover:opacity-90"
             style={{ background: "#1A56DB" }}
           >

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { isThLocale, type ThLocale } from "../../dictionaries";
 import LandingShell, { pick3, type Tri3 } from "../../LandingShell";
+import { TH_CONTACTS, thMailto } from "../../thContact";
 
 const SLUG = "contact";
 const meta = {
@@ -52,9 +53,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const l: ThLocale = isThLocale(lang) ? lang : "th";
   return (
     <LandingShell lang={l} eyebrow={pick3(meta.eyebrow, l)} title={pick3(meta.h1, l)} subtitle={pick3(meta.subtitle, l)}>
-      {/* PLACEHOLDER — inquiry form to be added (needs GA4/Ads conversion wiring) */}
-      <div className="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-10 text-center text-gray-400">
-        แบบฟอร์มขอใบเสนอราคา (เร็ว ๆ นี้) · Quote form coming soon · 询价表单即将上线
+      <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 max-w-md">
+        <p className="text-lg font-bold text-gray-900">{TH_CONTACTS.sales.name}</p>
+        <p className="text-sm text-gray-500 mb-4">{TH_CONTACTS.sales.role[l]}</p>
+        <div className="space-y-2 text-sm">
+          <a href={`tel:${TH_CONTACTS.sales.phoneHref}`} className="block font-medium text-[#1A56DB] hover:underline">📞 {TH_CONTACTS.sales.phone}</a>
+          <a href={`mailto:${TH_CONTACTS.sales.email}`} className="block font-medium text-[#1A56DB] hover:underline">✉️ {TH_CONTACTS.sales.email}</a>
+        </div>
+        <a
+          href={thMailto(l, { subject: "Request a Quote — Thailand" })}
+          className="mt-5 inline-block text-sm font-semibold text-white rounded px-5 py-2.5 hover:opacity-90"
+          style={{ background: "#1A56DB" }}
+        >
+          {pick3(meta.eyebrow, l)} →
+        </a>
       </div>
     </LandingShell>
   );
