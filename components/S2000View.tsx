@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
+import { HeartPulse, CircuitBoard, Car } from "lucide-react";
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
 const VIDEO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/VIDEO/OMNICURE%202000%20ENLIGH%20VERSION%20.mp4";
@@ -115,18 +116,10 @@ const specs: { param: LangText; value: LangText; verify?: boolean }[] = [
   { param: { en: "Warranty", zh: "保修" }, value: { en: "System 1 year; lamp 2,000 h", zh: "系统 1 年;灯管 2,000 小时" } },
 ];
 
-const accessories: { icon: string; title: LangText; desc: LangText; cta: LangText }[] = [
-  { icon: "📏", title: { en: "R2000 Radiometer", zh: "R2000 辐射计" }, desc: { en: "NIST-traceable UV radiometer — measures irradiance (W/cm²) and dose (mJ/cm²) at point of cure. Essential for process validation and regulatory compliance.", zh: "NIST溯源UV辐射计——在固化点测量辐照度(W/cm²)与剂量(mJ/cm²)。工艺验证与法规合规的必备工具。" }, cta: { en: "View R2000 Radiometer →", zh: "查看 R2000 辐射计 →" } },
-  { icon: "🔗", title: { en: "S2E Network Module", zh: "S2E 网络模块" }, desc: { en: "Ethernet connectivity module for seamless integration with legacy automation systems. Enables remote monitoring and control without replacing existing PLC setups.", zh: "以太网连接模块,与旧有自动化系统无缝集成。无需更换现有PLC即可实现远程监控与控制。" }, cta: { en: "View S2E Module →", zh: "查看 S2E 模块 →" } },
-  { icon: "💡", title: { en: "S Series Light Guides", zh: "S 系列导光管" }, desc: { en: "Liquid light guides in various lengths and tip diameters — single branch and multi-branch configurations. Delivers UV energy precisely to the cure point.", zh: "多种长度与端头直径的液体导光管——单支与多支配置。将UV能量精确传递至固化点。" }, cta: { en: "View Light Guides →", zh: "查看导光管 →" } },
-  { icon: "🔭", title: { en: "Collimating Adaptors", zh: "准直适配器" }, desc: { en: "Extends working distance while maintaining irradiance uniformity. Ideal for applications requiring standoff clearance from sensitive components.", zh: "在保持辐照均匀性的同时延长工作距离。适合需要与敏感元件保持间距的应用。" }, cta: { en: "Enquire →", zh: "咨询 →" } },
-  { icon: "🎯", title: { en: "Spot Size Adaptors", zh: "光斑尺寸适配器" }, desc: { en: "Adjusts the cure spot diameter to match bond line geometry. Available in multiple aperture sizes for precision spotting on small components.", zh: "调整固化光斑直径以匹配粘接线几何。提供多种孔径,用于小型元件的精密点固化。" }, cta: { en: "Enquire →", zh: "咨询 →" } },
-];
-
-const applications: { icon: string; title: LangText; desc: LangText; bg: string }[] = [
-  { icon: "🏥", title: { en: "Medical Devices", zh: "医疗器械" }, desc: { en: "Catheter tip bonding, needle assembly, sensor encapsulation, surgical instrument bonding — where validated, repeatable processes are regulatory requirements.", zh: "导管尖端粘接、针头装配、传感器封装、手术器械粘接——这些场景对验证、可重复的工艺有法规要求。" }, bg: "linear-gradient(135deg, #0d9488 0%, #0f766e 100%)" },
-  { icon: "💻", title: { en: "Electronics", zh: "电子" }, desc: { en: "PCB conformal coating cure, component bonding, display assembly, wire tacking — high throughput with precise dose control for every board.", zh: "PCB三防漆固化、元件粘接、显示屏装配、线材点固——高产能且对每块板都精确控制剂量。" }, bg: "linear-gradient(135deg, #1A56DB 0%, #1241a3 100%)" },
-  { icon: "🔋", title: { en: "EV Battery & Automotive", zh: "电动汽车电池与汽车" }, desc: { en: "Battery tab bonding, cell assembly, sensor potting, connector sealing — demanding cure specs in high-volume EV production lines.", zh: "电池极耳粘接、电芯装配、传感器灌封、连接器密封——满足大批量EV产线的严苛固化规范。" }, bg: "linear-gradient(135deg, #44B549 0%, #166534 100%)" },
+const applications: { Icon: typeof HeartPulse; title: LangText; desc: LangText }[] = [
+  { Icon: HeartPulse, title: { en: "Medical Devices", zh: "医疗器械" }, desc: { en: "Catheter tip bonding, needle assembly, sensor encapsulation, surgical instrument bonding — where validated, repeatable processes are regulatory requirements.", zh: "导管尖端粘接、针头装配、传感器封装、手术器械粘接——这些场景对验证、可重复的工艺有法规要求。" } },
+  { Icon: CircuitBoard, title: { en: "Electronics", zh: "电子" }, desc: { en: "PCB conformal coating cure, component bonding, display assembly, wire tacking — high throughput with precise dose control for every board.", zh: "PCB三防漆固化、元件粘接、显示屏装配、线材点固——高产能且对每块板都精确控制剂量。" } },
+  { Icon: Car, title: { en: "EV Battery & Automotive", zh: "电动汽车电池与汽车" }, desc: { en: "Battery tab bonding, cell assembly, sensor potting, connector sealing — demanding cure specs in high-volume EV production lines.", zh: "电池极耳粘接、电芯装配、传感器灌封、连接器密封——满足大批量EV产线的严苛固化规范。" } },
 ];
 
 export default function S2000View() {
@@ -254,14 +247,8 @@ export default function S2000View() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Specifications", zh: "规格参数" }, locale)}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications · S2000 Elite", zh: "技术规格 · S2000 Elite" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-6" style={{ background: "#44B549" }} />
-          <p className="text-gray-500 mb-6 max-w-2xl">
-            {t({ en: "Full technical specifications. For complete dimensional drawings and installation data, download the official datasheet.", zh: "完整技术规格。如需完整尺寸图纸与安装数据,请下载官方数据表。" }, locale)}
-          </p>
-          <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="inline-block px-5 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all mb-4" style={{ background: "#1A56DB" }}>
-            📄 {t({ en: "Download Datasheet (PDF)", zh: "下载数据表(PDF)" }, locale)}
-          </a>
-          <p className="text-xs text-gray-400 mb-8">
-            {t({ en: "Note: Values marked ⚠ Verify should be confirmed against the official OmniCure datasheet before publishing.", zh: "注:标记 ⚠ 待核实 的数值应在发布前对照 OmniCure 官方数据表确认。" }, locale)}
+          <p className="text-gray-500 mb-8 max-w-2xl">
+            {t({ en: "Full technical specifications for the OmniCure S2000 Elite lamp-based UV spot curing system. For complete dimensional drawings and installation data, contact our engineering team.", zh: "OmniCure S2000 Elite 灯式UV点固化系统的完整技术规格。如需完整尺寸图纸与安装数据,请联系我们的工程团队。" }, locale)}
           </p>
           <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
             <table className="w-full text-sm">
@@ -287,32 +274,6 @@ export default function S2000View() {
         </div>
       </section>
 
-      {/* Accessories — white */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Accessories", zh: "配件" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Compatible Accessories", zh: "兼容配件" }, locale)}</h2>
-          <div className="w-12 h-1 rounded mb-4" style={{ background: "#44B549" }} />
-          <p className="text-gray-500 max-w-2xl mb-10">{t({ en: "Complete your S2000 Elite system with OmniCure-approved accessories for measurement, connectivity, and light delivery.", zh: "用 OmniCure 认可的测量、连接与光传输配件,完善您的 S2000 Elite 系统。" }, locale)}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {accessories.map((a) => (
-              <div key={a.title.en} className="rounded-xl p-6 border border-gray-100 bg-gray-50 hover:shadow-md hover:border-[#1A56DB]/30 transition-all flex flex-col">
-                <div className="text-2xl mb-3">{a.icon}</div>
-                <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>{t(a.title, locale)}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{t(a.desc, locale)}</p>
-                <a href={inquiryMailto(locale, { subject: "Accessory Inquiry", context: "OmniCure S2000 Elite" })} className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>{t(a.cta, locale)}</a>
-              </div>
-            ))}
-            <div className="rounded-xl p-6 border-2 border-dashed border-[#1A56DB]/30 bg-[#1A56DB]/5 flex flex-col">
-              <div className="text-2xl mb-3">💬</div>
-              <h3 className="font-semibold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Not sure what you need?", zh: "不确定需要什么?" }, locale)}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{t({ en: "Our engineers will recommend the right accessories for your application, working distance, and light guide configuration.", zh: "我们的工程师将根据您的应用、工作距离与导光管配置,推荐合适的配件。" }, locale)}</p>
-              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: "OmniCure S2000 Elite" })} className="text-sm font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Applications — light gray */}
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -322,12 +283,14 @@ export default function S2000View() {
           <p className="text-gray-500 max-w-2xl mb-10">{t({ en: "The S2000 Elite's combination of high irradiance, validated dose control, and Industry 4.0 connectivity makes it the system of choice across demanding manufacturing sectors.", zh: "S2000 Elite 集高辐照度、验证级剂量控制与工业4.0连接于一身,成为严苛制造领域的首选系统。" }, locale)}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {applications.map((a) => (
-              <div key={a.title.en} className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all">
-                <div className="h-40 flex items-center justify-center text-6xl" style={{ background: a.bg }}>{a.icon}</div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg mb-2" style={{ color: "#1A56DB" }}>{t(a.title, locale)}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{t(a.desc, locale)}</p>
+              <div key={a.title.en} className="rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-[#1A56DB]/30 transition-all p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="flex items-center justify-center w-11 h-11 rounded-lg shrink-0" style={{ background: "#1A56DB14", color: "#1A56DB" }}>
+                    <a.Icon size={24} strokeWidth={1.75} />
+                  </span>
+                  <h3 className="font-bold text-lg" style={{ color: "#1A56DB" }}>{t(a.title, locale)}</h3>
                 </div>
+                <p className="text-gray-500 text-sm leading-relaxed">{t(a.desc, locale)}</p>
               </div>
             ))}
           </div>
