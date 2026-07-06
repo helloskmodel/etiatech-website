@@ -15,8 +15,13 @@ const nextConfig: NextConfig = {
   // must come last.
   async redirects() {
     return [
-      // Thailand market: bare /th enters the default (Thai) locale.
-      { source: "/th", destination: "/th/th", permanent: false },
+      // Thailand /th/{th,en,zh} language microsite retired — redirect its old
+      // indexed URLs to the (English) main site so they don't 404. The
+      // /th/omnicure* SEM landing pages are NOT matched by these rules and stay.
+      { source: "/th/th/:path*", destination: "/", permanent: true },
+      { source: "/th/en/:path*", destination: "/", permanent: true },
+      { source: "/th/zh/:path*", destination: "/", permanent: true },
+      { source: "/th", destination: "/", permanent: true },
       { source: "/en/contact", destination: "/contact", permanent: true },
       { source: "/en/applications", destination: "/application", permanent: true },
       // Any old product URL (incl. /en/products/uv-lamps, /en/products/microwave)

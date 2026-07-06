@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
 import { apps, appSlug } from "@/components/applicationNotes";
 import { successStories, caseSlug } from "@/components/caseStudies";
-import { markets, marketApps, marketCases, marketProducts } from "@/components/markets";
 
 const SITE = "https://www.etiatech.com";
 
@@ -75,76 +74,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  // Thailand market microsite — one URL per language, each declaring its
-  // hreflang alternates so Google indexes all three for Thailand.
-  const thLangs = markets.th.locales;
-  const langAlternates = (path: string) =>
-    Object.fromEntries(thLangs.map((l) => [l, `${SITE}/th/${l}${path}`]));
-
-  // SEM landing pages (skeletons; content filled later).
-  // omnicure-thailand + uv-curing-system-thailand are canonicalized to the SEM
-  // pages / products hub, so they're omitted here to avoid duplicate URLs.
-  const landingSlugs = ["omnicure-s1500-pro", "contact"];
-
-  const thPages: MetadataRoute.Sitemap = [
-    // Home + applications index, per language.
-    ...thLangs.map((l) => ({
-      url: `${SITE}/th/${l}`,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-      alternates: { languages: langAlternates("") },
-    })),
-    // SEM landing pages, per language.
-    ...landingSlugs.flatMap((slug) =>
-      thLangs.map((l) => ({
-        url: `${SITE}/th/${l}/${slug}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.8,
-        alternates: { languages: langAlternates(`/${slug}`) },
-      }))
-    ),
-    // Thailand products index, per language.
-    ...thLangs.map((l) => ({
-      url: `${SITE}/th/${l}/product`,
-      changeFrequency: "weekly" as const,
-      priority: 0.85,
-      alternates: { languages: langAlternates("/product") },
-    })),
-    ...thLangs.map((l) => ({
-      url: `${SITE}/th/${l}/application`,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      alternates: { languages: langAlternates("/application") },
-    })),
-    // One entry per scoped application note, per language.
-    ...marketApps("th").flatMap((app) =>
-      thLangs.map((l) => ({
-        url: `${SITE}/th/${l}/application/${appSlug(app)}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-        alternates: { languages: langAlternates(`/application/${appSlug(app)}`) },
-      }))
-    ),
-    // One entry per scoped product, per language.
-    ...marketProducts("th").flatMap((p) =>
-      thLangs.map((l) => ({
-        url: `${SITE}/th/${l}/product/${p.slug}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-        alternates: { languages: langAlternates(`/product/${p.slug}`) },
-      }))
-    ),
-    // One entry per scoped case study, per language.
-    ...marketCases("th").flatMap((c) => {
-      const slug = c.id.toLowerCase();
-      return thLangs.map((l) => ({
-        url: `${SITE}/th/${l}/case-studies/${slug}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-        alternates: { languages: langAlternates(`/case-studies/${slug}`) },
-      }));
-    }),
-  ];
-
-  return [...core, ...thPages, ...productPages, ...appPages, ...casePages];
+  return [...core, ...productPages, ...appPages, ...casePages];
 }
