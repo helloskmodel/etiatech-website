@@ -6,21 +6,21 @@ import { ProductLandingBody } from "../../LandingBody";
 const SLUG = "omnicure-lx500";
 const meta = {
   title: {
-    th: "OmniCure® LX500 UV LED บ่มแบบจุด | ตัวแทนจำหน่ายที่ได้รับอนุญาต ไทย",
-    en: "OmniCure® LX500 UV LED Spot Curing | Authorized Distributor Thailand",
-    zh: "OmniCure® LX500 UV LED 点固化 | 泰国授权分销商",
+    th: "OmniCure LX500 UV LED บ่มแบบจุด | ตัวแทนจำหน่ายที่ได้รับอนุญาต ไทย",
+    en: "OmniCure LX500 UV LED Spot Curing | Authorized Distributor Thailand",
+    zh: "OmniCure LX500 UV LED 点固化 | 泰国授权分销商",
   } as Tri3,
   description: {
-    th: "OmniCure® LX500 — คอนโทรลเลอร์ UV LED บ่มแบบจุด 2/4 ช่อง จาก Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต ขอใบเสนอราคา",
-    en: "OmniCure® LX500 — 2/4-channel UV LED spot curing controller from Etiatec (Thailand), the authorized distributor. Request a quote.",
-    zh: "OmniCure® LX500——2/4 通道 UV LED 点固化控制器，来自授权分销商 Etiatec (Thailand)，索取报价。",
+    th: "OmniCure LX500 — คอนโทรลเลอร์ UV LED บ่มแบบจุด 2/4 ช่อง จาก Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต ขอใบเสนอราคา",
+    en: "OmniCure LX500 — 2/4-channel UV LED spot curing controller from Etiatec (Thailand), the authorized distributor. Request a quote.",
+    zh: "OmniCure LX500——2/4 通道 UV LED 点固化控制器，来自授权分销商 Etiatec (Thailand)，索取报价。",
   } as Tri3,
-  eyebrow: { th: "OmniCure® · UV LED Spot", en: "OmniCure® · UV LED Spot", zh: "OmniCure® · UV LED 点固化" } as Tri3,
-  h1: { th: "OmniCure® LX500 — UV LED บ่มแบบจุด", en: "OmniCure® LX500 — UV LED Spot Curing", zh: "OmniCure® LX500 — UV LED 点固化" } as Tri3,
+  eyebrow: { th: "OmniCure · UV LED Spot", en: "OmniCure · UV LED Spot", zh: "OmniCure · UV LED 点固化" } as Tri3,
+  h1: { th: "OmniCure LX500 — UV LED บ่มแบบจุด", en: "OmniCure LX500 — UV LED Spot Curing", zh: "OmniCure LX500 — UV LED 点固化" } as Tri3,
   subtitle: {
-    th: "เสถียรภาพเชิงแสง ±5% ด้วย Intelli-Lamp® ควบคุมได้ถึง 4 หัวพร้อมกัน สำหรับการผลิตที่ทำซ้ำได้และคุ้มค่า",
-    en: "±5% optical stability with Intelli-Lamp®, controlling up to four heads for repeatable, cost-effective production.",
-    zh: "Intelli-Lamp® 提供 ±5% 光学稳定性，可同时控制多达 4 个头，实现可重复且高性价比的生产。",
+    th: "เสถียรภาพเชิงแสง ±5% ด้วย Intelli-Lamp ควบคุมได้ถึง 4 หัวพร้อมกัน สำหรับการผลิตที่ทำซ้ำได้และคุ้มค่า",
+    en: "±5% optical stability with Intelli-Lamp, controlling up to four heads for repeatable, cost-effective production.",
+    zh: "Intelli-Lamp 提供 ±5% 光学稳定性，可同时控制多达 4 个头，实现可重复且高性价比的生产。",
   } as Tri3,
 };
 

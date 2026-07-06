@@ -14,7 +14,7 @@ const SITE = "https://www.etiatech.com";
 const KEY_STATS: Record<string, [string, string][]> = {
   "s2000-elite": [["30 W/cm²", "Peak Irradiance"], ["±5%", "CLF Stability"], ["30 ms", "Shutter"], ["200 W", "Hg Lamp"]],
   lx500: [["27 W/cm²", "Peak @385nm"], ["±5%", "Optical Stability"], ["2 / 4", "Channels"], ["1%", "Intensity Steps"]],
-  "s1500-pro": [["37 W/cm²", "Peak Irradiance"], ["Intelli-Lamp® 2.0", "Lamp Mgmt"], ['4.3"', "Touchscreen"], ["2000 h", "Lamp Warranty"]],
+  "s1500-pro": [["37 W/cm²", "Peak Irradiance"], ["Intelli-Lamp 2.0", "Lamp Mgmt"], ['4.3"', "Touchscreen"], ["2000 h", "Lamp Warranty"]],
   r2000: [["±5%", "Accuracy"], ["250 nm–1 µm", "Wavelength"], ["60 W/cm²", "Max Irradiance"], ["NIST", "Traceable"]],
   ls200: [["±10%", "Accuracy"], ["320–750 nm", "Selectable"], ["40 W/cm²", "Max Irradiance"], ["NRC", "Traceable"]],
   "s2e-network-module": [["300", "Stations / LAN"], ["10/100 Mbps", "Ethernet"], ["7", "Email Alerts"], ["Modbus TCP", "PLC"]],
@@ -41,7 +41,7 @@ export async function generateMetadata({
   const th = l === "th" ? productContentTh[p.slug] : undefined;
   const loc = localizeProduct(p, l);
   return {
-    title: `${p.name} | Authorized OmniCure® Distributor Thailand`,
+    title: `${p.name} | Authorized OmniCure Distributor Thailand`,
     description: th?.subtitle ?? loc.intro?.slice(0, 160),
     alternates: {
       canonical: `${SITE}/th/${l}/product/${slug}`,

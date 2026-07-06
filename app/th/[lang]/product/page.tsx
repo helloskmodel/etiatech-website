@@ -10,11 +10,11 @@ const meta = {
     zh: "OmniCure 泰国产品 — UV 点固化系统与辐照测量 | ETIA",
   } as Tri3,
   description: {
-    th: "ผลิตภัณฑ์ OmniCure® ที่จำหน่ายในประเทศไทยโดย Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต — ระบบบ่มยูวีแบบจุด UV LED และหลอดยูวี พร้อมเรดิโอเมทรีและการสอบเทียบ",
-    en: "The OmniCure® products ETIA carries in Thailand as the authorized distributor — UV LED and UV lamp spot curing systems, plus radiometry and calibration.",
-    zh: "Etiatec (Thailand) 作为授权分销商在泰国供应的 OmniCure® 产品——UV LED 与 UV 灯式点固化系统，以及辐照测量与校准。",
+    th: "ผลิตภัณฑ์ OmniCure ที่จำหน่ายในประเทศไทยโดย Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต — ระบบบ่มยูวีแบบจุด UV LED และหลอดยูวี พร้อมเรดิโอเมทรีและการสอบเทียบ",
+    en: "The OmniCure products ETIA carries in Thailand as the authorized distributor — UV LED and UV lamp spot curing systems, plus radiometry and calibration.",
+    zh: "Etiatec (Thailand) 作为授权分销商在泰国供应的 OmniCure 产品——UV LED 与 UV 灯式点固化系统，以及辐照测量与校准。",
   } as Tri3,
-  eyebrow: { th: "OmniCure® · ประเทศไทย", en: "OmniCure® · Thailand", zh: "OmniCure® · 泰国" } as Tri3,
+  eyebrow: { th: "OmniCure · ประเทศไทย", en: "OmniCure · Thailand", zh: "OmniCure · 泰国" } as Tri3,
   h1: {
     th: "ผลิตภัณฑ์ OmniCure ในประเทศไทย",
     en: "OmniCure Products in Thailand",
@@ -26,9 +26,9 @@ const meta = {
     zh: "我们在泰国供应的完整 OmniCure UV 点固化产品线——UV LED 点固化、UV 灯式点固化与辐照测量。",
   } as Tri3,
   intro: {
-    th: "ในประเทศไทย ETIA มุ่งเน้นตระกูลบ่มยูวีแบบจุดของ OmniCure® ด้านล่างนี้คือรุ่นทั้งหมดที่เราจำหน่ายและสนับสนุนในพื้นที่ คลิกที่รุ่นใดก็ได้เพื่อดูข้อมูลจำเพาะฉบับเต็ม",
-    en: "In Thailand, ETIA focuses on the OmniCure® UV spot curing family. Below are all the models we sell and support locally — click any model for full specifications.",
-    zh: "在泰国，ETIA 专注于 OmniCure® UV 点固化产品线。以下是我们在本地销售并支持的全部型号——点击任意型号查看完整规格。",
+    th: "ในประเทศไทย ETIA มุ่งเน้นตระกูลบ่มยูวีแบบจุดของ OmniCure ด้านล่างนี้คือรุ่นทั้งหมดที่เราจำหน่ายและสนับสนุนในพื้นที่ คลิกที่รุ่นใดก็ได้เพื่อดูข้อมูลจำเพาะฉบับเต็ม",
+    en: "In Thailand, ETIA focuses on the OmniCure UV spot curing family. Below are all the models we sell and support locally — click any model for full specifications.",
+    zh: "在泰国，ETIA 专注于 OmniCure UV 点固化产品线。以下是我们在本地销售并支持的全部型号——点击任意型号查看完整规格。",
   } as Tri3,
 };
 

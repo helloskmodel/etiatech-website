@@ -22,7 +22,7 @@ export default function OmniCureLanding({ lang }: { lang: Lang }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-start">
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: BRAND.green }}>
-              OmniCure® · Thailand
+              OmniCure · Thailand
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">{c.hero.h1}</h1>
             <p className="text-base md:text-lg text-white/80 mb-6 leading-relaxed">{c.hero.subhead}</p>
@@ -165,7 +165,7 @@ export default function OmniCureLanding({ lang }: { lang: Lang }) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-xs flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <Image src={LOGO} alt="ETIA Technology" width={90} height={30} className="object-contain bg-white rounded px-1.5 py-0.5" unoptimized />
-            <span>© {new Date().getFullYear()} ETIA · Authorized OmniCure® Distributor in Thailand</span>
+            <span>© {new Date().getFullYear()} ETIA · Authorized OmniCure Distributor in Thailand</span>
           </div>
           <span>📍 {CONTACT.address}</span>
         </div>

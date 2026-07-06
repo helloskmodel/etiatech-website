@@ -44,7 +44,7 @@ export default async function ApplicationNotePage({ params }: { params: Promise<
     description: a.intro,
     articleSection: a.industry,
     about: a.subCategory,
-    keywords: [a.industry, a.subCategory, "UV curing", product?.brand?.replace(/®/g, ""), product && productModel(product), techRoute?.en].filter(Boolean).join(", "),
+    keywords: [a.industry, a.subCategory, "UV curing", product?.brand, product && productModel(product), techRoute?.en].filter(Boolean).join(", "),
     author: { "@type": "Organization", name: "ETIA Technology" },
     publisher: { "@type": "Organization", name: "ETIA Technology" },
     mainEntityOfPage: url,

@@ -11,9 +11,9 @@ const meta = {
     zh: "索取报价 / 联系 — OmniCure 泰国 | ETIA",
   } as Tri3,
   description: {
-    th: "ขอใบเสนอราคาระบบบ่มยูวี OmniCure® จาก Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต — รองรับ RFQ และงานประมูล",
-    en: "Request a quote for OmniCure® UV curing from Etiatec (Thailand), the authorized distributor — RFQ & tender ready.",
-    zh: "向授权分销商 Etiatec (Thailand) 索取 OmniCure® UV 固化系统报价——支持 RFQ 与招标。",
+    th: "ขอใบเสนอราคาระบบบ่มยูวี OmniCure จาก Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต — รองรับ RFQ และงานประมูล",
+    en: "Request a quote for OmniCure UV curing from Etiatec (Thailand), the authorized distributor — RFQ & tender ready.",
+    zh: "向授权分销商 Etiatec (Thailand) 索取 OmniCure UV 固化系统报价——支持 RFQ 与招标。",
   } as Tri3,
   eyebrow: { th: "ขอใบเสนอราคา", en: "Request a Quote", zh: "索取报价" } as Tri3,
   h1: {

@@ -5,23 +5,23 @@ import { FamilyOverviewBody } from "../../LandingBody";
 
 const SLUG = "omnicure-thailand";
 const intro: Tri3 = {
-  th: "Etiatec (Thailand) เป็นตัวแทนจำหน่าย OmniCure® ที่ได้รับอนุญาตในประเทศไทย จำหน่ายระบบบ่มยูวีแบบจุด OmniCure ครบตระกูล — ทั้งระบบ UV LED Spot และ UV Lamp Spot พร้อมเรดิโอเมทรีและการสอบเทียบ รับประกันจากโรงงานและบริการติดตั้งในพื้นที่",
-  en: "Etiatec (Thailand) is the authorized OmniCure® distributor in Thailand, supplying the complete OmniCure UV spot curing line — UV LED Spot and UV Lamp Spot systems, plus radiometry and calibration — with full factory warranty and local installation.",
-  zh: "Etiatec (Thailand) 是 OmniCure® 在泰国的授权分销商，供应完整的 OmniCure UV 点固化产品线——UV LED 点固化与 UV 灯式点固化系统，以及辐照测量与校准，提供原厂保修与本地安装。",
+  th: "Etiatec (Thailand) เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย จำหน่ายระบบบ่มยูวีแบบจุด OmniCure ครบตระกูล — ทั้งระบบ UV LED Spot และ UV Lamp Spot พร้อมเรดิโอเมทรีและการสอบเทียบ รับประกันจากโรงงานและบริการติดตั้งในพื้นที่",
+  en: "Etiatec (Thailand) is the authorized OmniCure distributor in Thailand, supplying the complete OmniCure UV spot curing line — UV LED Spot and UV Lamp Spot systems, plus radiometry and calibration — with full factory warranty and local installation.",
+  zh: "Etiatec (Thailand) 是 OmniCure 在泰国的授权分销商，供应完整的 OmniCure UV 点固化产品线——UV LED 点固化与 UV 灯式点固化系统，以及辐照测量与校准，提供原厂保修与本地安装。",
 };
 const meta = {
   title: {
-    th: "OmniCure® ประเทศไทย — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
-    en: "OmniCure® Thailand — Authorized Distributor (Excelitas) | ETIA",
-    zh: "OmniCure® 泰国授权分销商（Excelitas）| ETIA",
+    th: "OmniCure ประเทศไทย — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
+    en: "OmniCure Thailand — Authorized Distributor (Excelitas) | ETIA",
+    zh: "OmniCure 泰国授权分销商（Excelitas）| ETIA",
   } as Tri3,
   description: {
-    th: "Etiatec (Thailand) ตัวแทนจำหน่าย OmniCure® อย่างเป็นทางการในไทย — ระบบบ่มยูวี รับประกัน + ติดตั้งในพื้นที่ ขอใบเสนอราคา",
-    en: "Etiatec (Thailand) — the authorized OmniCure® distributor in Thailand. UV curing systems with local warranty & installation. Request a quote.",
-    zh: "Etiatec (Thailand)——OmniCure® 泰国官方授权分销商，UV 固化系统，本地保修与安装，索取报价。",
+    th: "Etiatec (Thailand) ตัวแทนจำหน่าย OmniCure อย่างเป็นทางการในไทย — ระบบบ่มยูวี รับประกัน + ติดตั้งในพื้นที่ ขอใบเสนอราคา",
+    en: "Etiatec (Thailand) — the authorized OmniCure distributor in Thailand. UV curing systems with local warranty & installation. Request a quote.",
+    zh: "Etiatec (Thailand)——OmniCure 泰国官方授权分销商，UV 固化系统，本地保修与安装，索取报价。",
   } as Tri3,
-  eyebrow: { th: "OmniCure® · Excelitas", en: "OmniCure® · Excelitas", zh: "OmniCure® · Excelitas" } as Tri3,
-  h1: { th: "OmniCure® ในประเทศไทย", en: "OmniCure® in Thailand", zh: "OmniCure® 泰国" } as Tri3,
+  eyebrow: { th: "OmniCure · Excelitas", en: "OmniCure · Excelitas", zh: "OmniCure · Excelitas" } as Tri3,
+  h1: { th: "OmniCure ในประเทศไทย", en: "OmniCure in Thailand", zh: "OmniCure 泰国" } as Tri3,
   subtitle: {
     th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตอย่างเป็นทางการ พร้อมการรับประกันจากโรงงานและบริการติดตั้งในพื้นที่",
     en: "The officially authorized distributor, with full factory guarantee and local installation support.",

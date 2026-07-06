@@ -155,9 +155,9 @@ export function getDict(lang: ThLocale): ThDict {
 // main-site home strings. Structure mirrors the main site's HomeView.
 const homeTri = {
   heroEyebrow: {
-    th: "ตัวแทนจำหน่าย OmniCure® ที่ได้รับอนุญาตในประเทศไทย · รับประกันสินค้าของแท้",
-    en: "Authorized OmniCure® Distributor in Thailand · Genuine Products Guaranteed",
-    zh: "泰国 OmniCure® 授权分销商 · 正品保证",
+    th: "ตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย · รับประกันสินค้าของแท้",
+    en: "Authorized OmniCure Distributor in Thailand · Genuine Products Guaranteed",
+    zh: "泰国 OmniCure 授权分销商 · 正品保证",
   } as Tri,
   heroTitleA: { th: "ความเชี่ยวชาญที่ไว้วางใจได้", en: "Trusted Expertise.", zh: "深耕积淀" } as Tri,
   heroTitleB: { th: "โซลูชันที่ตอบสนองรวดเร็ว", en: "Responsive Solutions.", zh: "高效响应" } as Tri,
@@ -292,7 +292,7 @@ export function getHomeDict(lang: ThLocale): ThHomeDict {
 }
 
 // ─── Authorized-distributor trust block ─────────────────────────────────
-// Etiatec (Thailand) is the Excelitas-appointed authorized OmniCure® distributor
+// Etiatec (Thailand) is the Excelitas-appointed authorized OmniCure distributor
 // for Thailand (cert. dated 2026-05-28, valid one year). Surfacing this on every
 // page is both a conversion driver and an E-E-A-T trust signal.
 export const COMPANY = {
@@ -307,14 +307,14 @@ export const COMPANY = {
 
 const authTri = {
   badge: {
-    th: "ตัวแทนจำหน่าย OmniCure® ที่ได้รับอนุญาตในประเทศไทย",
-    en: "Authorized OmniCure® Distributor in Thailand",
-    zh: "泰国 OmniCure® 授权分销商",
+    th: "ตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย",
+    en: "Authorized OmniCure Distributor in Thailand",
+    zh: "泰国 OmniCure 授权分销商",
   } as Tri,
   statement: {
-    th: "Etiatec (Thailand) Co., Ltd. เป็นตัวแทนจำหน่ายที่ได้รับอนุญาตอย่างเป็นทางการของผลิตภัณฑ์ OmniCure® ในประเทศไทย แต่งตั้งโดย Excelitas Canada Inc. พร้อมการรับประกันจากโรงงานเต็มรูปแบบและบริการติดตั้งในพื้นที่ รองรับงานประมูลและ RFQ",
-    en: "Etiatec (Thailand) Co., Ltd. is the authorized OmniCure® distributor for Thailand, appointed by Excelitas Canada Inc., with full factory guarantee and local installation support — RFQ & tender ready.",
-    zh: "Etiatec (Thailand) Co., Ltd. 是 OmniCure® 产品在泰国的官方授权分销商，由 Excelitas Canada Inc. 授权，提供原厂完整保修与本地安装支持，支持招标与 RFQ。",
+    th: "Etiatec (Thailand) Co., Ltd. เป็นตัวแทนจำหน่ายที่ได้รับอนุญาตอย่างเป็นทางการของผลิตภัณฑ์ OmniCure ในประเทศไทย แต่งตั้งโดย Excelitas Canada Inc. พร้อมการรับประกันจากโรงงานเต็มรูปแบบและบริการติดตั้งในพื้นที่ รองรับงานประมูลและ RFQ",
+    en: "Etiatec (Thailand) Co., Ltd. is the authorized OmniCure distributor for Thailand, appointed by Excelitas Canada Inc., with full factory guarantee and local installation support — RFQ & tender ready.",
+    zh: "Etiatec (Thailand) Co., Ltd. 是 OmniCure 产品在泰国的官方授权分销商，由 Excelitas Canada Inc. 授权，提供原厂完整保修与本地安装支持，支持招标与 RFQ。",
   } as Tri,
   requestQuote: { th: "ขอใบเสนอราคา", en: "Request a Quote", zh: "索取报价" } as Tri,
 };

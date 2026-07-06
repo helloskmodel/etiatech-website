@@ -37,7 +37,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
   // Brand · Product · Technology terms derived from the systems this case uses,
   // folded into the JSON-LD keywords alongside the marketing chips.
-  const brandTerms = brandsForCase(c).map((p) => p.brand.replace(/®/g, ""));
+  const brandTerms = brandsForCase(c).map((p) => p.brand);
   const productTerms = systemsForCase(c).map((p) => productModel(p));
   const techTerms = techRoutesForCase(c).map((tr) => tr.en);
 

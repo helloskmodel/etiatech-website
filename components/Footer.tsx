@@ -34,7 +34,7 @@ export default function Footer() {
               OmniCure ประเทศไทย (Thailand) →
             </a>
             <a href="/omnicure-thailand" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">
-              OmniCure® UV Curing — Thailand
+              OmniCure UV Curing — Thailand
             </a>
           </div>
         </div>

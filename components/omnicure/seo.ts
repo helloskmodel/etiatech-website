@@ -31,7 +31,7 @@ export function landingJsonLd(lang: Lang) {
     name: "ETIA Technology",
     url: URLS[lang],
     description:
-      "Authorized OmniCure® distributor in Thailand, appointed by Excelitas Canada — genuine UV curing systems with local stock, installation and service.",
+      "Authorized OmniCure distributor in Thailand, appointed by Excelitas Canada — genuine UV curing systems with local stock, installation and service.",
     address: {
       "@type": "PostalAddress",
       streetAddress: CONTACT.address,

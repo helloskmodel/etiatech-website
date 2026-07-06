@@ -5,9 +5,9 @@ import { FamilyOverviewBody } from "../../LandingBody";
 
 const SLUG = "uv-curing-system-thailand";
 const intro: Tri3 = {
-  th: "เลือกระบบบ่มยูวี (UV curing system) ที่เหมาะกับกระบวนการผลิตของคุณ จากตัวแทนจำหน่าย OmniCure® ที่ได้รับอนุญาตในประเทศไทย — ครอบคลุมการบ่มแบบจุดด้วย UV LED และหลอดยูวี พร้อมเรดิโอเมทรีสำหรับควบคุมกระบวนการให้ทำซ้ำได้",
-  en: "Choose the right UV curing system for your process from the authorized OmniCure® distributor in Thailand — covering UV LED and UV lamp spot curing, with radiometry for repeatable process control.",
-  zh: "从 OmniCure® 泰国授权分销商为您的工艺挑选合适的 UV 固化系统——涵盖 UV LED 与灯式点固化，并配备用于可重复工艺控制的辐照测量。",
+  th: "เลือกระบบบ่มยูวี (UV curing system) ที่เหมาะกับกระบวนการผลิตของคุณ จากตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย — ครอบคลุมการบ่มแบบจุดด้วย UV LED และหลอดยูวี พร้อมเรดิโอเมทรีสำหรับควบคุมกระบวนการให้ทำซ้ำได้",
+  en: "Choose the right UV curing system for your process from the authorized OmniCure distributor in Thailand — covering UV LED and UV lamp spot curing, with radiometry for repeatable process control.",
+  zh: "从 OmniCure 泰国授权分销商为您的工艺挑选合适的 UV 固化系统——涵盖 UV LED 与灯式点固化，并配备用于可重复工艺控制的辐照测量。",
 };
 const meta = {
   title: {
@@ -27,9 +27,9 @@ const meta = {
     zh: "泰国工业 UV 固化系统",
   } as Tri3,
   subtitle: {
-    th: "จากตัวแทนจำหน่าย OmniCure® ที่ได้รับอนุญาต — เลือกระบบที่เหมาะกับงานของคุณ พร้อมการสนับสนุนจากวิศวกร",
-    en: "From the authorized OmniCure® distributor — matched to your application with engineer support.",
-    zh: "来自 OmniCure® 授权分销商——按您的应用匹配系统，并提供工程师支持。",
+    th: "จากตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาต — เลือกระบบที่เหมาะกับงานของคุณ พร้อมการสนับสนุนจากวิศวกร",
+    en: "From the authorized OmniCure distributor — matched to your application with engineer support.",
+    zh: "来自 OmniCure 授权分销商——按您的应用匹配系统，并提供工程师支持。",
   } as Tri3,
 };
 
