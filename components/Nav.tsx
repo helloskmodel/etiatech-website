@@ -9,8 +9,8 @@ const languages: Locale[] = ["en", "zh", "vi", "th"];
 
 const links = [
   { href: "/", label: { en: "Home", zh: "首页" } },
-  { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
   { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
+  { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
   { href: "/application", label: { en: "Applications", zh: "应用" } },
   { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持" } },
 ];
