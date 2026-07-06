@@ -56,7 +56,22 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
               <div className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0" style={{ background: b.color }}>{b.logo}</div>
               <span className="text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6 text-white">{b.name} {t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}</h1>
+            {b.hero && (
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t(b.hero.eyebrow, locale)}</p>
+            )}
+            <h1 className={`text-3xl md:text-5xl font-bold leading-tight text-white ${b.hero ? "mb-4" : "mb-6"}`}>
+              {b.hero
+                ? t(b.hero.headline, locale).split("\n").map((line, i, arr) => (
+                    <span key={i}>
+                      {arr.length > 1 && i === arr.length - 1 ? <span style={{ color: "#44B549" }}>{line}</span> : line}
+                      {i < arr.length - 1 && <br />}
+                    </span>
+                  ))
+                : `${b.name} ${t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}`}
+            </h1>
+            {b.hero && (
+              <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-6 max-w-2xl">{t(b.hero.subline, locale)}</p>
+            )}
             <div className="flex flex-wrap gap-4">
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: b.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: b.color }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}</Link>
