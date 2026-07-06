@@ -55,7 +55,9 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
             </div>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2" style={{ color: b.color }}>{b.name} {t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}</h1>
             <p className="text-sm font-semibold mb-4" style={{ color: "#44B549" }}>{t(b.tagline, locale)}</p>
-            <p className="text-base text-gray-600 leading-relaxed mb-6">{t(b.intro, locale)}</p>
+            {t(b.intro, locale).split("\n\n").map((para, i, arr) => (
+              <p key={i} className={`text-base text-gray-600 leading-relaxed ${i === arr.length - 1 ? "mb-6" : "mb-4"}`}>{para}</p>
+            ))}
             <div className="flex flex-wrap gap-4">
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: b.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: b.color }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">{t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}</Link>

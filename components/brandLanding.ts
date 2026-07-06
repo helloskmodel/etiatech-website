@@ -29,8 +29,8 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     color: "#1A56DB",
     tagline: { en: "UV Spot & Area Curing · Excelitas", zh: "UV 点固化与面固化 · Excelitas" },
     intro: {
-      en: "OmniCure (Excelitas) is the benchmark for lamp-based and UV LED spot curing, with closed-loop feedback and Industry 4.0 control trusted across validated medical, electronics, and EV manufacturing. Its AC-Series air-cooled UV LED area systems extend the same precision to inline and wide-substrate curing.",
-      zh: "OmniCure(Excelitas)是灯式与 UV LED 点固化的标杆,凭借闭环反馈与工业 4.0 控制,广泛应用于经验证的医疗、电子与电动汽车制造。其 AC 系列风冷 UV LED 面固化系统,将同样的精度延伸至在线固化与宽幅基材固化。",
+      en: "OmniCure® is a trusted UV curing brand under Excelitas, offering LED and lamp-based spot, small-area and large-area curing systems for adhesives, coatings and inks.\n\nWith stable optical power, uniform curing performance and reliable process control, OmniCure supports precision manufacturing in medical devices, electronics, optoelectronics and other demanding applications.",
+      zh: "OmniCure® 是 Excelitas 旗下值得信赖的 UV 固化品牌,提供 LED 与灯式的点固化、小面积及大面积固化系统,适用于胶粘剂、涂层与油墨。\n\n凭借稳定的光输出、均匀的固化性能与可靠的工艺控制,OmniCure 为医疗器械、电子、光电子等高要求领域的精密制造提供支持。",
     },
     applications: [
       { en: "Medical Device", zh: "医疗器械" },
