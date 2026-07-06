@@ -100,9 +100,9 @@ function ProductCard({ p, lang }: { p: Product; lang: ThLocale }) {
   return (
     <Link
       href={`/th/${lang}/product/${p.slug}`}
-      className="group rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-[#1A56DB] transition-all flex flex-col"
+      className="group rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-[#1A3DAD] transition-all flex flex-col"
     >
-      <div className="p-5 text-white" style={{ background: p.accent }}>
+      <div className="p-5 text-white" style={{ background: ({ "#1A56DB": "#1A3DAD", "#44B549": "#4CAF3E" } as Record<string, string>)[p.accent] ?? p.accent }}>
         <p className="text-xs opacity-80 mb-1 tracking-wider font-medium">{p.sub}</p>
         <h3 className="text-lg font-bold leading-snug">{p.name}</h3>
       </div>
@@ -117,7 +117,7 @@ function ProductCard({ p, lang }: { p: Product; lang: ThLocale }) {
             </div>
           ))}
         </dl>
-        <span className="mt-auto text-sm font-semibold group-hover:underline" style={{ color: "#1A56DB" }}>
+        <span className="mt-auto text-sm font-semibold group-hover:underline" style={{ color: "#1A3DAD" }}>
           {d.products.details} →
         </span>
       </div>
@@ -140,7 +140,7 @@ export function FamilyOverviewBody({ lang, intro }: { lang: ThLocale; intro?: st
 
       {grouped.map(({ fam, items }) => (
         <section key={fam} className="mb-12">
-          <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: fam === "lamp" ? "#166534" : fam === "radiometry" ? "#0f2444" : fam === "accessory" ? "#64748b" : "#44B549" }}>
+          <span className="inline-block text-xs font-bold px-3 py-1 rounded mb-5 text-white" style={{ background: fam === "lamp" ? "#2e7d32" : fam === "radiometry" ? "#0f2444" : fam === "accessory" ? "#64748b" : "#4CAF3E" }}>
             {t(FAMILY_LABEL[fam], lang)}
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -157,7 +157,7 @@ export function FamilyOverviewBody({ lang, intro }: { lang: ThLocale; intro?: st
       <section className="mt-12">
         <h2 className="text-lg font-bold text-gray-900 mb-1">{t(APPS_HEADING, lang)}</h2>
         <p className="text-sm text-gray-600 mb-4 max-w-2xl">{app.subheading}</p>
-        <Link href={`/th/${lang}/application`} className="text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>
+        <Link href={`/th/${lang}/application`} className="text-sm font-semibold hover:underline" style={{ color: "#1A3DAD" }}>
           {t(VIEW_ALL_APPS, lang)}
         </Link>
       </section>
@@ -222,7 +222,7 @@ export function ProductLandingBody({ lang, slug, matchToken }: { lang: ThLocale;
               </tbody>
             </table>
           </div>
-          <Link href={`/th/${lang}/product/${p.slug}`} className="inline-block mt-4 text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>
+          <Link href={`/th/${lang}/product/${p.slug}`} className="inline-block mt-4 text-sm font-semibold hover:underline" style={{ color: "#1A3DAD" }}>
             {t(FULL_SPECS, lang)}
           </Link>
         </section>
@@ -239,14 +239,14 @@ export function ProductLandingBody({ lang, slug, matchToken }: { lang: ThLocale;
               <Link
                 key={a.id}
                 href={`/th/${lang}/application/${appSlug(a)}`}
-                className="group rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#1A56DB] transition-all p-4"
+                className="group rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#1A3DAD] transition-all p-4"
               >
                 <p className="text-xs font-semibold text-gray-400 mb-1">{a.subCategory}</p>
-                <h3 className="text-sm font-bold text-gray-800 group-hover:text-[#1A56DB]">{a.title}</h3>
+                <h3 className="text-sm font-bold text-gray-800 group-hover:text-[#1A3DAD]">{a.title}</h3>
               </Link>
             ))}
           </div>
-          <Link href={`/th/${lang}/application`} className="inline-block mt-5 text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>
+          <Link href={`/th/${lang}/application`} className="inline-block mt-5 text-sm font-semibold hover:underline" style={{ color: "#1A3DAD" }}>
             {t(VIEW_ALL_APPS, lang)}
           </Link>
         </section>
@@ -257,7 +257,7 @@ export function ProductLandingBody({ lang, slug, matchToken }: { lang: ThLocale;
         <a
           href={thMailto(lang, { subject: "Request a Quote — Thailand", context: p.name })}
           className="inline-block text-sm font-semibold text-white rounded px-6 py-3 hover:opacity-90"
-          style={{ background: "#1A56DB" }}
+          style={{ background: "#1A3DAD" }}
         >
           {getAuthDict(lang).requestQuote} →
         </a>

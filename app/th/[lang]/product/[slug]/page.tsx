@@ -93,14 +93,14 @@ export default async function ThailandProductDetail({
           <Link href={`/th/${l}/product`} className="text-sm font-medium text-gray-300 hover:text-white">
             {d.nav.products}
           </Link>
-          <p className="mt-4 text-xs font-semibold uppercase tracking-wide" style={{ color: "#44B549" }}>{p.sub}</p>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-wide" style={{ color: "#4CAF3E" }}>{p.sub}</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mt-1">{p.name}</h1>
           {th ? (
             <p className="text-base text-gray-200 mt-3 leading-relaxed">{th.subtitle}</p>
           ) : (
             loc.intro && <p className="text-base text-gray-200 mt-3 leading-relaxed">{loc.intro}</p>
           )}
-          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white rounded px-3 py-1.5" style={{ background: "#16653480", border: "1px solid #44B549" }}>
+          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white rounded px-3 py-1.5" style={{ background: "#2e7d3280", border: "1px solid #4CAF3E" }}>
             ✓ {auth.badge}
           </p>
           {KEY_STATS[p.slug] && (
@@ -214,7 +214,7 @@ export default async function ThailandProductDetail({
         <a
           href={thMailto(l, { subject: "Request a Quote — Thailand", context: p.name })}
           className="inline-block text-sm font-semibold text-white rounded px-6 py-3 hover:opacity-90"
-          style={{ background: "#1A56DB" }}
+          style={{ background: "#1A3DAD" }}
         >
           {auth.requestQuote} →
         </a>

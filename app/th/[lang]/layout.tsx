@@ -51,10 +51,6 @@ export default async function ThailandLayout({
       <body className="min-h-screen flex flex-col" style={{ background: "#ffffff", color: "#111827" }}>
         <Analytics />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
-        {/* Authorized-distributor trust bar */}
-        <div className="text-center text-xs font-semibold py-1.5 px-4 text-white" style={{ background: "#166534" }}>
-          ✓ {auth.badge}
-        </div>
         {/* Scoped Thailand nav (responsive; hamburger on mobile) */}
         <ThaiNav
           lang={lang}

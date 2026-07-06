@@ -170,9 +170,9 @@ const homeTri = {
   heroBtnEngineer: { th: "ปรึกษาวิศวกร", en: "Talk to an Engineer", zh: "咨询工程师" } as Tri,
   whyEyebrow: { th: "ทำไมต้อง ETIA", en: "Why ETIA", zh: "为何选择 ETIA" } as Tri,
   whyHeading: {
-    th: "ETIA — ความเชี่ยวชาญด้าน UV Curing กว่า 20 ปี ส่งมอบในทุกการขาย ทุกการเข้าพบ ทุกการซ่อม",
-    en: "ETIA — 20 Years of UV Curing Expertise, Delivered in Every Sale, Every Visit, Every Fix.",
-    zh: "ETIA—— 深耕 UV 固化二十载，售前选型、上门服务、售后维保，专业实力全程相伴。",
+    th: "ETIA Thailand เป็นตัวแทนจำหน่ายผลิตภัณฑ์ OmniCure ที่ได้รับอนุญาตในประเทศไทย",
+    en: "ETIA Thailand is an authorized distributor of OmniCure products in Thailand.",
+    zh: "ETIA Thailand 是 OmniCure 产品在泰国的授权分销商。",
   } as Tri,
   whyIntro: {
     th: "ด้วยรากฐานความเป็นเลิศทางวิศวกรรม ETIA ร่วมมือกับแบรนด์ UV curing ชั้นนำระดับโลก เพื่อส่งมอบโซลูชันที่พิสูจน์แล้ว เชื่อถือได้ และดูแลครบวงจร — ตั้งแต่การเลือกจนถึงการสนับสนุน",
