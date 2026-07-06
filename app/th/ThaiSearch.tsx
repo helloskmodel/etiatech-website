@@ -13,7 +13,7 @@ export type SearchLabels = {
   case: string;
 };
 
-const BRAND = "#1A3DAD";
+const BRAND = "#1A56DB";
 
 export default function ThaiSearch({ index, labels }: { index: SearchEntry[]; labels: SearchLabels }) {
   const [open, setOpen] = useState(false);
@@ -48,7 +48,7 @@ export default function ThaiSearch({ index, labels }: { index: SearchEntry[]; la
         type="button"
         aria-label={labels.search}
         onClick={() => setOpen(true)}
-        className="p-2 rounded text-gray-500 hover:text-[#1A3DAD] transition-colors"
+        className="p-2 rounded text-gray-500 hover:text-[#1A56DB] transition-colors"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
@@ -89,7 +89,7 @@ export default function ThaiSearch({ index, labels }: { index: SearchEntry[]; la
                         onClick={() => setOpen(false)}
                         className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50"
                       >
-                        <span className="mt-0.5 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded shrink-0" style={{ background: "#1A3DAD10", color: BRAND }}>
+                        <span className="mt-0.5 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded shrink-0" style={{ background: "#1A56DB10", color: BRAND }}>
                           {typeLabel(r.type)}
                         </span>
                         <span className="min-w-0">

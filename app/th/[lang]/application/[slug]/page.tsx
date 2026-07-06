@@ -72,11 +72,11 @@ export default async function ThailandApplicationDetail({
   return (
     <article className="py-12 md:py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href={`/th/${l}/application`} className="text-sm font-medium text-gray-500 hover:text-[#1A3DAD]">
+        <Link href={`/th/${l}/application`} className="text-sm font-medium text-gray-500 hover:text-[#1A56DB]">
           {a.back}
         </Link>
 
-        <p className="mt-6 text-xs font-semibold uppercase tracking-wide" style={{ color: "#4CAF3E" }}>
+        <p className="mt-6 text-xs font-semibold uppercase tracking-wide" style={{ color: "#44B549" }}>
           {app.subCategory}
         </p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mt-1 mb-4">{title}</h1>
@@ -119,11 +119,11 @@ export default async function ThailandApplicationDetail({
 
         <div className="mt-10 rounded-xl border border-gray-100 bg-gray-50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">{a.recommended}</p>
-          <p className="text-lg font-bold" style={{ color: "#1A3DAD" }}>{recommended}</p>
+          <p className="text-lg font-bold" style={{ color: "#1A56DB" }}>{recommended}</p>
           <a
             href={thMailto(l, { subject: "Thailand Application Inquiry", context: `${title} — ${recommended}` })}
             className="mt-4 inline-block text-sm font-semibold text-white rounded px-5 py-2.5 hover:opacity-90"
-            style={{ background: "#1A3DAD" }}
+            style={{ background: "#1A56DB" }}
           >
             {d.hero.cta} →
           </a>

@@ -170,14 +170,14 @@ const homeTri = {
   heroBtnEngineer: { th: "ปรึกษาวิศวกร", en: "Talk to an Engineer", zh: "咨询工程师" } as Tri,
   whyEyebrow: { th: "ทำไมต้อง ETIA", en: "Why ETIA", zh: "为何选择 ETIA" } as Tri,
   whyHeading: {
-    th: "ETIA Thailand เป็นตัวแทนจำหน่ายผลิตภัณฑ์ OmniCure ที่ได้รับอนุญาตในประเทศไทย",
-    en: "ETIA Thailand is an authorized distributor of OmniCure products in Thailand.",
-    zh: "ETIA Thailand 是 OmniCure 产品在泰国的授权分销商。",
+    th: "ตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย — แต่งตั้งโดย Excelitas Canada",
+    en: "The Authorized OmniCure Distributor in Thailand — appointed by Excelitas Canada.",
+    zh: "泰国授权的 OmniCure 分销商 —— 由 Excelitas Canada 委任。",
   } as Tri,
   whyIntro: {
-    th: "ด้วยรากฐานความเป็นเลิศทางวิศวกรรม ETIA ร่วมมือกับแบรนด์ UV curing ชั้นนำระดับโลก เพื่อส่งมอบโซลูชันที่พิสูจน์แล้ว เชื่อถือได้ และดูแลครบวงจร — ตั้งแต่การเลือกจนถึงการสนับสนุน",
-    en: "Rooted in engineering excellence, ETIA partners with the world's leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.",
-    zh: "立足硬核工程技术，携手全球头部 UV 固化品牌，提供经过市场验证、性能稳定、全流程保障的一体化方案，从设备选型到终身售后全程护航。",
+    th: "ETIA ส่งมอบโซลูชันการบ่มยูวีที่พิสูจน์แล้วและเชื่อถือได้ — ดูแลครบวงจร ตั้งแต่การเลือกจนถึงการสนับสนุน",
+    en: "ETIA delivers proven, reliable UV curing solutions — backed end-to-end, from selection to support.",
+    zh: "ETIA 提供经过验证、稳定可靠的 UV 固化解决方案 —— 从选型到售后，全程保障。",
   } as Tri,
   spectrumEyebrow: { th: "เทคโนโลยี UV Curing", en: "UV Curing Technology", zh: "UV固化技术" } as Tri,
   spectrumHeading: {
@@ -214,39 +214,44 @@ const homeTri = {
     zh: "看我们的UV固化系统如何在最看重精度与可靠性的场景中交付成果。",
   } as Tri,
   casesReadOne: { th: "อ่านกรณีศึกษานี้ →", en: "Read this case study →", zh: "阅读此案例 →" } as Tri,
+  casesSwipe: {
+    th: "← ปัดเพื่อดูกรณีศึกษาทั้งหมด →",
+    en: "← swipe to see all cases →",
+    zh: "← 左右滑动查看全部案例 →",
+  } as Tri,
 };
 
 const whyCards: { title: Tri; desc: Tri }[] = [
   {
-    title: { th: "ความเชี่ยวชาญเชิงการใช้งานอย่างลึกซึ้ง", en: "Deep Application Expertise", zh: "深厚的应用专业能力" },
+    title: { th: "ความเชี่ยวชาญที่พิสูจน์แล้ว", en: "Proven Expertise", zh: "成熟的专业经验" },
     desc: {
-      th: "กรณีใช้งานจริงที่ผ่านการพิสูจน์กว่า 20 ปี ใน 10 อุตสาหกรรม ตั้งแต่การยึดติดอุปกรณ์การแพทย์ ไปจนถึงการแพ็กเกจโฟโตนิกส์สำหรับศูนย์ข้อมูล AI — เราพิสูจน์กระบวนการมาแล้ว คุณจึงไม่ต้องเริ่มจากศูนย์",
-      en: "20 years of validated industry cases across 10 industries. From medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
-      zh: "20年、覆盖10大行业的验证案例。从医疗器械粘接到AI数据中心光子封装——工艺我们已替你验证。",
+      th: "ประสบการณ์ของกลุ่ม ETIA กว่า 20 ปี ครอบคลุม 10 อุตสาหกรรม ตั้งแต่การยึดติดอุปกรณ์การแพทย์ไปจนถึงการแพ็กเกจโฟโตนิกส์",
+      en: "20 years of ETIA group experience across 10 industries, from medical device bonding to photonics packaging.",
+      zh: "ETIA 集团 20 年经验，覆盖 10 大行业，从医疗器械粘接到光子封装。",
     },
   },
   {
-    title: { th: "สต็อกในพื้นที่ · จัดส่งรวดเร็ว", en: "Local Supply & Fast Delivery", zh: "本地备货 · 快速交付" },
+    title: { th: "สต็อกในประเทศ", en: "Local Stock", zh: "本地备货" },
     desc: {
-      th: "อุปกรณ์และวัสดุสิ้นเปลืองมีสต็อกในพื้นที่ ไม่ต้องรอนาน ไม่มีปัญหาการนำเข้าที่คาดไม่ถึง — ได้ระบบที่คุณต้องการ ในเวลาที่คุณต้องการ",
-      en: "Equipment and consumables in local stock. No long lead times, no import surprises — the system you need, when you need it.",
-      zh: "设备与耗材本地备货。无漫长货期、无进口意外——你需要的系统，随需即得。",
+      th: "อุปกรณ์และวัสดุสิ้นเปลืองมีสต็อกในประเทศไทย ไม่ต้องรอนาน ไม่มีปัญหาการนำเข้าที่คาดไม่ถึง",
+      en: "Equipment and consumables stocked in Thailand. No long lead times, no import surprises.",
+      zh: "设备与耗材在泰国本地备货。无漫长货期，无进口意外。",
     },
   },
   {
-    title: { th: "ศูนย์ซ่อมของเราเอง", en: "In-House Repair Factory", zh: "自有维修工厂" },
+    title: { th: "ศูนย์ซ่อมในประเทศ", en: "Local Repair Lab", zh: "本地维修实验室" },
     desc: {
-      th: "ศูนย์ซ่อมของเราเองพร้อมทีมช่างเทคนิคที่ผ่านการฝึกอบรม ดูแลการบำรุงรักษา การรับประกันแบบขยาย และการซ่อมด่วน — ลดเวลาหยุดทำงานของสายการผลิตของคุณ",
-      en: "Our own repair facility with a trained technical team handles maintenance, extended warranty, and urgent repairs — minimizing downtime on your production line.",
-      zh: "自有维修工厂与专业技术团队，承接保养、延保与紧急维修——最大限度降低产线停机。",
+      th: "บริการซ่อมและบำรุงรักษาในประเทศ สายการผลิตของคุณเดินหน้าต่อได้โดยไม่ต้องส่งเครื่องไปต่างประเทศ",
+      en: "In-country repair and service, so your line stays up without shipping units abroad.",
+      zh: "本地维修与服务，让您的产线持续运转，无需将设备运往国外。",
     },
   },
   {
-    title: { th: "บริการให้คำปรึกษาครบทุกกระบวนการ", en: "Full-Process Consulting Service", zh: "全流程咨询服务" },
+    title: { th: "การสนับสนุนครบทุกกระบวนการ", en: "Full-Process Support", zh: "全流程支持" },
     desc: {
-      th: "ตั้งแต่การเลือกเริ่มต้นและการตรวจสอบการใช้งาน ไปจนถึงการแก้ไขปัญหาและการจัดการตลอดอายุการใช้งาน — วิศวกรของเราคือพันธมิตรของคุณในทุกขั้นตอน",
-      en: "From initial selection and application validation to troubleshooting and lifecycle management — our engineers are your partners at every stage of the process.",
-      zh: "从选型、应用验证到故障排查与全生命周期管理——我们的工程师是你每个环节的伙伴。",
+      th: "ตั้งแต่การเลือกจนถึงการจัดการตลอดอายุการใช้งาน วิศวกรของเราอยู่เคียงข้างคุณในทุกขั้นตอน",
+      en: "From selection to lifecycle management, our engineers are with you at every stage.",
+      zh: "从选型到全生命周期管理，我们的工程师在每个阶段与您同行。",
     },
   },
 ];
@@ -255,7 +260,7 @@ export type ThHomeDict = {
   hero: { eyebrow: string; titleA: string; titleB: string; subtitle: string; btnProducts: string; btnEngineer: string };
   why: { eyebrow: string; heading: string; intro: string; cards: { title: string; desc: string }[] };
   spectrum: { eyebrow: string; heading: string; subtitle: string; viewAll: string };
-  cases: { eyebrow: string; heading: string; subtitle: string; readOne: string };
+  cases: { eyebrow: string; heading: string; subtitle: string; readOne: string; swipe: string };
   cta: { heading: string; body: string; button: string };
 };
 
@@ -286,6 +291,7 @@ export function getHomeDict(lang: ThLocale): ThHomeDict {
       heading: homeTri.casesHeading[lang],
       subtitle: homeTri.casesSubtitle[lang],
       readOne: homeTri.casesReadOne[lang],
+      swipe: homeTri.casesSwipe[lang],
     },
     cta: { heading: homeTri.ctaHeading[lang], body: homeTri.ctaBody[lang], button: homeTri.ctaButton[lang] },
   };

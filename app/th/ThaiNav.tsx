@@ -66,8 +66,8 @@ export default function ThaiNav({
               aria-current={isActive(l.href) ? "page" : undefined}
               className={`text-sm font-medium whitespace-nowrap border-b-2 pb-0.5 transition-colors ${
                 isActive(l.href)
-                  ? "text-[#1A3DAD] border-[#1A3DAD]"
-                  : "text-gray-600 border-transparent hover:text-[#1A3DAD] hover:border-[#1A3DAD]/40"
+                  ? "text-[#1A56DB] border-[#1A56DB]"
+                  : "text-gray-600 border-transparent hover:text-[#1A56DB] hover:border-[#1A56DB]/40"
               }`}
             >
               {l.label}
@@ -79,7 +79,7 @@ export default function ThaiNav({
               <Link
                 key={l}
                 href={langHref(l)}
-                className={`px-2 py-1 text-xs font-semibold rounded ${l === lang ? "text-[#1A3DAD] bg-blue-50" : "text-gray-500 hover:text-[#1A3DAD]"}`}
+                className={`px-2 py-1 text-xs font-semibold rounded ${l === lang ? "text-[#1A56DB] bg-blue-50" : "text-gray-500 hover:text-[#1A56DB]"}`}
               >
                 {LANG_LABEL[l]}
               </Link>
@@ -112,7 +112,7 @@ export default function ThaiNav({
               onClick={() => setOpen(false)}
               aria-current={isActive(l.href) ? "page" : undefined}
               className={`py-3 text-base font-medium border-b border-gray-100 ${
-                isActive(l.href) ? "text-[#1A3DAD] font-semibold" : "text-gray-700 hover:text-[#1A3DAD]"
+                isActive(l.href) ? "text-[#1A56DB] font-semibold" : "text-gray-700 hover:text-[#1A56DB]"
               }`}
             >
               {l.label}
@@ -124,7 +124,7 @@ export default function ThaiNav({
                 key={l}
                 href={langHref(l)}
                 onClick={() => setOpen(false)}
-                className={`px-4 py-2 text-sm font-semibold rounded border ${l === lang ? "text-[#1A3DAD] border-[#1A3DAD] bg-blue-50" : "text-gray-600 border-gray-200"}`}
+                className={`px-4 py-2 text-sm font-semibold rounded border ${l === lang ? "text-[#1A56DB] border-[#1A56DB] bg-blue-50" : "text-gray-600 border-gray-200"}`}
               >
                 {LANG_LABEL[l]}
               </Link>

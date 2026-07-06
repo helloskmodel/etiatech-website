@@ -72,22 +72,22 @@ export default async function ThailandLayout({
 
         <main className="flex-1">{children}</main>
 
-        {/* Scoped Thailand footer */}
-        <footer className="border-t border-gray-200 bg-[#0f2444] text-gray-300">
+        {/* Scoped Thailand footer — matches the main site's light footer */}
+        <footer className="border-t border-gray-200" style={{ background: "#f8f9fb" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <Image src={LOGO} alt="ETIA Technology" width={140} height={48} className="object-contain bg-white rounded px-2 py-1 mb-4" unoptimized />
-            <p className="text-sm font-semibold text-white mb-1">✓ {auth.badge}</p>
-            <p className="text-sm max-w-2xl mb-4 text-gray-300">{auth.statement}</p>
-            <div className="text-xs text-gray-400 space-y-0.5 mb-6">
-              <p className="font-medium text-gray-300">{COMPANY.legalName}</p>
+            <Image src={LOGO} alt="ETIA Technology" width={140} height={48} className="object-contain mb-4" unoptimized />
+            <p className="text-sm font-semibold mb-1" style={{ color: "#1A56DB" }}>✓ {auth.badge}</p>
+            <p className="text-sm max-w-2xl mb-4 text-gray-600">{auth.statement}</p>
+            <div className="text-xs text-gray-500 space-y-0.5 mb-6">
+              <p className="font-medium text-gray-600">{COMPANY.legalName}</p>
               <p>{COMPANY.address}</p>
             </div>
             {/* Contact */}
             <div className="text-xs mb-6">
-              <p className="font-semibold text-white">{TH_CONTACTS.sales.name}</p>
-              <p className="text-gray-400 mb-1">{TH_CONTACTS.sales.role[lang]}</p>
-              <p><a href={`tel:${TH_CONTACTS.sales.phoneHref}`} className="text-gray-300 hover:text-white">📞 {TH_CONTACTS.sales.phone}</a></p>
-              <p><a href={`mailto:${TH_CONTACTS.sales.email}`} className="text-gray-300 hover:text-white">✉️ {TH_CONTACTS.sales.email}</a></p>
+              <p className="font-semibold text-gray-800">{TH_CONTACTS.sales.name}</p>
+              <p className="text-gray-500 mb-1">{TH_CONTACTS.sales.role[lang]}</p>
+              <p><a href={`tel:${TH_CONTACTS.sales.phoneHref}`} className="text-gray-600 hover:text-[#1A56DB]">📞 {TH_CONTACTS.sales.phone}</a></p>
+              <p><a href={`mailto:${TH_CONTACTS.sales.email}`} className="text-gray-600 hover:text-[#1A56DB]">✉️ {TH_CONTACTS.sales.email}</a></p>
             </div>
             <p className="text-xs text-gray-400">© 2026 {COMPANY.legalName}. {d.footer.rights}</p>
           </div>
