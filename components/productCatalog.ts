@@ -1687,7 +1687,9 @@ const productImageFile: Record<string, string> = {
   "nexus-ii": "nexusII.png",
   "nexus-ii-ac": "nexusII-air cooled.png",
   "fl200": "fl200.png",
-  "fl400": "fl400.png",
+  // FL400 and FL400-i are visually similar — share the FL400-i image
+  // (a standalone fl400.png is not available in the asset bucket).
+  "fl400": "fl400i.png",
   "fl400-i": "fl400i.png",
   "fl440": "fl440.png",
   "ac2": "AC2.png",
