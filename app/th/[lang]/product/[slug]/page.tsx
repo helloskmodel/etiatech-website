@@ -140,16 +140,30 @@ export default async function ThailandProductDetail({
             ))}
           </div>
         ) : (
-          loc.features?.length > 0 && (
-            <section className="mb-12">
-              <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-3">{d.products.featuresLabel}</h2>
-              <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                {loc.features.map((f, i) => (
-                  <li key={i}>{f}</li>
-                ))}
-              </ul>
-            </section>
-          )
+          <div className="mb-12 space-y-8">
+            {loc.features?.length > 0 && (
+              <section>
+                <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-3">{d.products.featuresLabel}</h2>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  {loc.features.map((f, i) => (
+                    <li key={i}>{f}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+            {loc.applications?.length > 0 && (
+              <section>
+                <h2 className="text-sm font-bold uppercase tracking-wide text-gray-400 mb-3">
+                  {l === "zh" ? "应用" : "Applications"}
+                </h2>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  {loc.applications.map((a, i) => (
+                    <li key={i}>{a}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
         )}
 
         {/* Specs — TH renders the authoritative brochure spec groups; en/zh
