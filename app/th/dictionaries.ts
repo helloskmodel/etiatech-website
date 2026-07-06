@@ -297,7 +297,7 @@ export function getHomeDict(lang: ThLocale): ThHomeDict {
 // page is both a conversion driver and an E-E-A-T trust signal.
 export const COMPANY = {
   legalName: "Etiatec (Thailand) Co., Ltd.",
-  address: "22/41 H Cape biz Sector, Sukapibal 2 Rd, Pravet, Bangkok 10250",
+  address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250",
   addressLocality: "Bangkok",
   postalCode: "10250",
   country: "TH",
