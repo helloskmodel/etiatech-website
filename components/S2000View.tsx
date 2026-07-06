@@ -191,7 +191,7 @@ export default function S2000View() {
               {t({ en: "Closed-Loop Feedback technology continuously monitors and adjusts output, maintaining irradiance within ±5% of set point throughout the lamp's lifetime. Combined with a 30 ms precision electromechanical shutter, the S2000 Elite ensures every exposure delivers an exact, repeatable UV dose — critical for validated medical device and electronics manufacturing processes.", zh: "闭环反馈技术持续监测并调整输出,在灯管整个寿命周期内将辐照度维持在设定值±5%以内。配合30毫秒精密机电快门,S2000 Elite确保每次曝光都输出精确、可重复的UV剂量——这对验证级医疗器械与电子制造工艺至关重要。" }, locale)}
             </p>
           </div>
-          <div className="rounded-2xl border border-gray-100 bg-gray-50 relative overflow-hidden" style={{ height: "440px" }}>
+          <div className="rounded-2xl border border-gray-100 bg-gray-50 relative overflow-hidden" style={{ height: "320px" }}>
             <video controls preload="metadata" poster={img.lcd} className="absolute inset-0 w-full h-full object-contain bg-black">
               <source src={VIDEO} type="video/mp4" />
               {t({ en: "Your browser does not support the video tag.", zh: "您的浏览器不支持视频播放。" }, locale)}
