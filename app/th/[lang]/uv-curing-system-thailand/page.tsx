@@ -41,14 +41,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: pick3(meta.title, l),
     description: pick3(meta.description, l),
+    // Deduped: same product-grid body as the products hub → canonicalize to it.
     alternates: {
-      canonical: `${SITE}/th/${l}/${SLUG}`,
-      languages: {
-        th: `${SITE}/th/th/${SLUG}`,
-        en: `${SITE}/th/en/${SLUG}`,
-        zh: `${SITE}/th/zh/${SLUG}`,
-        "x-default": `${SITE}/th/th/${SLUG}`,
-      },
+      canonical: `${SITE}/th/${l}/product`,
     },
   };
 }

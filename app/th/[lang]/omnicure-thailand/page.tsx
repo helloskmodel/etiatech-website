@@ -37,14 +37,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: pick3(meta.title, l),
     description: pick3(meta.description, l),
+    // Deduped: this microsite grid overlaps the standalone SEM landing pages,
+    // so it canonicalizes to them (zh has no SEM page → the zh products hub).
     alternates: {
-      canonical: `${SITE}/th/${l}/${SLUG}`,
-      languages: {
-        th: `${SITE}/th/th/${SLUG}`,
-        en: `${SITE}/th/en/${SLUG}`,
-        zh: `${SITE}/th/zh/${SLUG}`,
-        "x-default": `${SITE}/th/th/${SLUG}`,
-      },
+      canonical:
+        l === "en" ? `${SITE}/omnicure-thailand` : l === "th" ? `${SITE}/th/omnicure` : `${SITE}/th/zh/product`,
     },
   };
 }

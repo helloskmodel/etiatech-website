@@ -70,7 +70,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     Object.fromEntries(thLangs.map((l) => [l, `${SITE}/th/${l}${path}`]));
 
   // SEM landing pages (skeletons; content filled later).
-  const landingSlugs = ["omnicure-thailand", "omnicure-s2000", "omnicure-lx500", "omnicure-s1500-pro", "uv-curing-system-thailand", "contact"];
+  // omnicure-thailand + uv-curing-system-thailand are canonicalized to the SEM
+  // pages / products hub, so they're omitted here to avoid duplicate URLs.
+  const landingSlugs = ["omnicure-s2000", "omnicure-lx500", "omnicure-s1500-pro", "contact"];
 
   const thPages: MetadataRoute.Sitemap = [
     // Home + applications index, per language.
