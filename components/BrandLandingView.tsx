@@ -56,18 +56,24 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
               <div className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0" style={{ background: b.color }}>{b.logo}</div>
               <span className="text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-3 text-white">{b.name} {t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}</h1>
-            {t(b.tagline, locale) && (
-              <p className="text-sm font-semibold mb-4" style={{ color: "#44B549" }}>{t(b.tagline, locale)}</p>
-            )}
-            {t(b.intro, locale).split("\n\n").map((para, i, arr) => (
-              <p key={i} className={`text-base text-gray-200 leading-relaxed ${i === arr.length - 1 ? "mb-6" : "mb-4"}`}>{para}</p>
-            ))}
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6 text-white">{b.name} {t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}</h1>
             <div className="flex flex-wrap gap-4">
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: b.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: b.color }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Overview — brand body copy */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Overview", zh: "品牌概述" }, locale)}</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: b.color }}>{t({ en: `About ${b.name}`, zh: `关于 ${b.name}` }, locale)}</h2>
+          <div className="w-12 h-1 rounded mb-6" style={{ background: "#44B549" }} />
+          {t(b.intro, locale).split("\n\n").map((para, i) => (
+            <p key={i} className="text-base text-gray-600 leading-relaxed mb-4 last:mb-0">{para}</p>
+          ))}
         </div>
       </section>
 
