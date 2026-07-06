@@ -27,7 +27,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     name: "OmniCure",
     logo: "●",
     color: "#1A56DB",
-    tagline: { en: "UV Spot & Area Curing · Excelitas", zh: "UV 点固化与面固化 · Excelitas" },
+    tagline: { en: "", zh: "" },
     intro: {
       en: "OmniCure® is a trusted UV curing brand under Excelitas, offering LED and lamp-based spot, small-area and large-area curing systems for adhesives, coatings and inks.\n\nWith stable optical power, uniform curing performance and reliable process control, OmniCure supports precision manufacturing in medical devices, electronics, optoelectronics and other demanding applications.",
       zh: "OmniCure® 是 Excelitas 旗下值得信赖的 UV 固化品牌,提供 LED 与灯式的点固化、小面积及大面积固化系统,适用于胶粘剂、涂层与油墨。\n\n凭借稳定的光输出、均匀的固化性能与可靠的工艺控制,OmniCure 为医疗器械、电子、光电子等高要求领域的精密制造提供支持。",

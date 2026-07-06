@@ -4,6 +4,8 @@ import Image from "next/image";
 import { products, productHref, productImage, localizeProduct, productHighlights, popularityRank, techRouteFor } from "@/components/productCatalog";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
+import HeroBackdrop from "@/components/HeroBackdrop";
+import { heroBannerImages } from "@/components/caseStudies";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -46,21 +48,24 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       </div>
 
       {/* Hero */}
-      <section className="py-14 border-b border-gray-200" style={{ background: "#f1f5f9" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: "#0f2444" }}>
+        <HeroBackdrop images={heroBannerImages} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0" style={{ background: b.color }}>{b.logo}</div>
               <span className="text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2" style={{ color: b.color }}>{b.name} {t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}</h1>
-            <p className="text-sm font-semibold mb-4" style={{ color: "#44B549" }}>{t(b.tagline, locale)}</p>
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-3 text-white">{b.name} {t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}</h1>
+            {t(b.tagline, locale) && (
+              <p className="text-sm font-semibold mb-4" style={{ color: "#44B549" }}>{t(b.tagline, locale)}</p>
+            )}
             {t(b.intro, locale).split("\n\n").map((para, i, arr) => (
-              <p key={i} className={`text-base text-gray-600 leading-relaxed ${i === arr.length - 1 ? "mb-6" : "mb-4"}`}>{para}</p>
+              <p key={i} className={`text-base text-gray-200 leading-relaxed ${i === arr.length - 1 ? "mb-6" : "mb-4"}`}>{para}</p>
             ))}
             <div className="flex flex-wrap gap-4">
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: b.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: b.color }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
-              <Link href="/application" className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">{t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}</Link>
+              <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}</Link>
             </div>
           </div>
         </div>
