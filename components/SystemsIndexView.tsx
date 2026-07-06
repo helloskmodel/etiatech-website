@@ -32,7 +32,7 @@ export default function SystemsIndexView() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Complete Product Reference", zh: "完整产品索引" }, locale)}</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "All UV Curing Systems", zh: "全部UV固化系统" }, locale)}</h1>
           <p className="text-base text-gray-300 max-w-2xl mx-auto leading-relaxed line-clamp-2">
-            {t({ en: "The complete Excelitas portfolio — OmniCure®, Phoseon®, Fusion UV® and Noblelight® — organized by curing technology.", zh: "完整的Excelitas产品组合——OmniCure®、Phoseon®、Fusion UV® 与 Noblelight®——按固化技术分类。" }, locale)}
+            {t({ en: "The complete Excelitas portfolio — OmniCure, Phoseon, Fusion UV and Noblelight — organized by curing technology.", zh: "完整的Excelitas产品组合——OmniCure、Phoseon、Fusion UV 与 Noblelight——按固化技术分类。" }, locale)}
           </p>
         </div>
       </section>

@@ -56,7 +56,7 @@ const zhDict: Record<string, string> = {
 const brands = [
   {
     id: "omnicure",
-    name: "OmniCure®",
+    name: "OmniCure",
     tagline: "UV Spot & Area Curing",
     logo: "●",
     color: "#1A56DB",
@@ -104,7 +104,7 @@ const brands = [
   },
   {
     id: "phoseon",
-    name: "Phoseon®",
+    name: "Phoseon",
     tagline: "UV LED Air & Water-Cooled",
     logo: "◆",
     color: "#0ea5e9",
@@ -145,7 +145,7 @@ const brands = [
   },
   {
     id: "fusionuv",
-    name: "Fusion®",
+    name: "Fusion",
     tagline: "Microwave UV Curing",
     logo: "▲",
     color: "#f59e0b",
@@ -174,7 +174,7 @@ const brands = [
   },
   {
     id: "noblelight",
-    name: "NobleLight®",
+    name: "NobleLight",
     tagline: "UV LED High-Intensity Systems",
     logo: "■",
     color: "#7c3aed",

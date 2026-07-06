@@ -22,6 +22,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/application`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
+    // Standalone OmniCure Thailand SEM landing pages (en + th, hreflang-linked).
+    {
+      url: `${SITE}/omnicure-thailand`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
+    },
+    {
+      url: `${SITE}/th/omnicure`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
+    },
+    // Standalone product SEM landing pages (S2000, LX500), en + th.
+    ...[
+      { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
+      { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
+    ].flatMap((pair) => {
+      const langs = { en: `${SITE}${pair.en}`, th: `${SITE}${pair.th}`, "x-default": `${SITE}${pair.en}` };
+      return [
+        { url: `${SITE}${pair.en}`, changeFrequency: "weekly" as const, priority: 0.9, alternates: { languages: langs } },
+        { url: `${SITE}${pair.th}`, changeFrequency: "weekly" as const, priority: 0.9, alternates: { languages: langs } },
+      ];
+    }),
     { url: `${SITE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
   ];
@@ -57,7 +81,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     Object.fromEntries(thLangs.map((l) => [l, `${SITE}/th/${l}${path}`]));
 
   // SEM landing pages (skeletons; content filled later).
-  const landingSlugs = ["omnicure-thailand", "omnicure-s2000", "omnicure-lx500", "uv-curing-system-thailand", "contact"];
+  // omnicure-thailand + uv-curing-system-thailand are canonicalized to the SEM
+  // pages / products hub, so they're omitted here to avoid duplicate URLs.
+  const landingSlugs = ["omnicure-s1500-pro", "contact"];
 
   const thPages: MetadataRoute.Sitemap = [
     // Home + applications index, per language.
@@ -76,6 +102,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: langAlternates(`/${slug}`) },
       }))
     ),
+    // Thailand products index, per language.
+    ...thLangs.map((l) => ({
+      url: `${SITE}/th/${l}/product`,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+      alternates: { languages: langAlternates("/product") },
+    })),
     ...thLangs.map((l) => ({
       url: `${SITE}/th/${l}/application`,
       changeFrequency: "monthly" as const,

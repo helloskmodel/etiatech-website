@@ -24,7 +24,7 @@ export type BrandLanding = {
 export const brandLanding: Record<BrandSlug, BrandLanding> = {
   omnicure: {
     catalogBrandId: "omnicure",
-    name: "OmniCure®",
+    name: "OmniCure",
     logo: "●",
     color: "#1A56DB",
     tagline: { en: "UV Spot & Area Curing · Excelitas", zh: "UV 点固化与面固化 · Excelitas" },
@@ -38,13 +38,13 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Photonics & Advanced Packaging", zh: "光子学与先进封装" },
       { en: "EV Battery & Automotive", zh: "动力电池与汽车" },
     ],
-    metaTitle: "OmniCure® UV Curing Systems — Authorized Distributor | ETIA",
+    metaTitle: "OmniCure UV Curing Systems — Authorized Distributor | ETIA",
     metaDescription:
       "OmniCure UV spot & area curing systems (lamp + UV LED) with closed-loop feedback. ETIA is an Asia-Pacific authorized distributor — local stock, selection support, and in-house repair.",
   },
   phoseon: {
     catalogBrandId: "phoseon",
-    name: "Phoseon®",
+    name: "Phoseon",
     logo: "◆",
     color: "#0ea5e9",
     tagline: { en: "UV LED Air & Water-Cooled · Printing & Industrial", zh: "UV LED 风冷与水冷 · 印刷与工业" },
@@ -58,13 +58,13 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Industrial Coatings", zh: "工业涂层" },
       { en: "Optical Fiber & Cable", zh: "光纤与线缆" },
     ],
-    metaTitle: "Phoseon® UV LED Systems — Authorized Distributor | ETIA",
+    metaTitle: "Phoseon UV LED Systems — Authorized Distributor | ETIA",
     metaDescription:
       "Phoseon high-power UV LED curing — air-cooled FireJet/FireEdge and water-cooled FireLine/VeriCure/Nexus II for printing and industrial lines. ETIA: Asia-Pacific authorized distributor.",
   },
   "fusion-uv": {
     catalogBrandId: "fusionuv",
-    name: "Fusion UV®",
+    name: "Fusion UV",
     logo: "▲",
     color: "#f59e0b",
     tagline: { en: "Microwave UV · Broad Spectrum 200–600 nm", zh: "微波 UV · 宽光谱 200–600 nm" },
@@ -78,16 +78,16 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Wide-Web & Converting", zh: "宽幅卷材与加工" },
       { en: "Industrial", zh: "工业" },
     ],
-    metaTitle: "Fusion UV® Microwave UV Systems — Authorized Distributor | ETIA",
+    metaTitle: "Fusion UV Microwave UV Systems — Authorized Distributor | ETIA",
     metaDescription:
       "Fusion UV electrodeless microwave UV lamps — broad-spectrum 200–600 nm, F Series & LightHammer, for printing, coatings and optical fiber. ETIA: Asia-Pacific authorized distributor.",
   },
   noblelight: {
     catalogBrandId: "noblelight",
-    name: "NobleLight®",
+    name: "NobleLight",
     logo: "■",
     color: "#7c3aed",
-    tagline: { en: "Semray® UV LED · Large Area & Fiber", zh: "Semray® UV LED · 大面积与光纤" },
+    tagline: { en: "Semray UV LED · Large Area & Fiber", zh: "Semray UV LED · 大面积与光纤" },
     intro: {
       en: "Excelitas Noblelight Semray delivers scalable, water-cooled UV LED systems for large-area industrial curing, with emission widths from 400 to 1300 mm and purpose-built solutions for optical fiber draw and wire marking. Customized optics bring high intensity even at large working distances.",
       zh: "Excelitas Noblelight Semray 提供可扩展的水冷 UV LED 系统,用于大面积工业固化,发光宽度 400 至 1300 毫米,并为光纤拉丝与线材标识打造专用方案。定制光学设计即使在大工作距离下也能保持高强度。",
@@ -98,7 +98,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Wire Marking", zh: "线材标识" },
       { en: "Custom UV LED Solutions", zh: "定制 UV LED 方案" },
     ],
-    metaTitle: "NobleLight® Semray UV LED Systems — Authorized Distributor | ETIA",
+    metaTitle: "NobleLight Semray UV LED Systems — Authorized Distributor | ETIA",
     metaDescription:
       "Excelitas Noblelight Semray water-cooled UV LED systems — scalable 400–1300 mm width, plus 360° optical-fiber curing. ETIA: Asia-Pacific authorized distributor.",
   },
@@ -119,7 +119,7 @@ export function brandBreadcrumbJsonLd(slug: BrandSlug) {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE },
       { "@type": "ListItem", position: 2, name: "Products", item: `${SITE}/product` },
-      { "@type": "ListItem", position: 3, name: b.name.replace(/®/g, ""), item: `${SITE}/product/${slug}` },
+      { "@type": "ListItem", position: 3, name: b.name, item: `${SITE}/product/${slug}` },
     ],
   };
 }

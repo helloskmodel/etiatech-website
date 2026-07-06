@@ -28,7 +28,7 @@ const benefits: { icon: string; title: LangText; desc: LangText }[] = [
   { icon: "⚡", title: { en: "Highest Irradiance", zh: "最高辐照度" }, desc: { en: "Up to 30 W/cm² peak irradiance drives faster cure cycles and reliable bonding even with low-sensitivity adhesives.", zh: "最高30 W/cm²峰值辐照度,即使面对低敏感度胶粘剂也能实现更快的固化周期与可靠粘接。" } },
   { icon: "🎯", title: { en: "Repeatable Process", zh: "可重复工艺" }, desc: { en: "Closed-Loop Feedback maintains ±5% irradiance stability across the lamp's entire service life — no recalibration between runs.", zh: "闭环反馈在灯管整个使用寿命内保持±5%辐照度稳定性——批次之间无需重新校准。" } },
   { icon: "⏱️", title: { en: "Exact Dose", zh: "精确剂量" }, desc: { en: "30 ms precision electromechanical shutter prevents over-cure and ensures validated dose delivery on every single exposure.", zh: "30毫秒精密机电快门防止过固化,确保每一次曝光都输出经验证的剂量。" } },
-  { icon: "💡", title: { en: "Smart Lamp Management", zh: "智能灯管管理" }, desc: { en: "Intelli-Lamp® tracks lamp hours and output trend, alerting you before intensity drops affect production quality.", zh: "Intelli-Lamp®追踪灯管使用时长与输出趋势,在强度下降影响生产质量之前提醒您。" } },
+  { icon: "💡", title: { en: "Smart Lamp Management", zh: "智能灯管管理" }, desc: { en: "Intelli-Lamp tracks lamp hours and output trend, alerting you before intensity drops affect production quality.", zh: "Intelli-Lamp追踪灯管使用时长与输出趋势,在强度下降影响生产质量之前提醒您。" } },
   { icon: "🔗", title: { en: "Industry 4.0 Ready", zh: "支持工业4.0" }, desc: { en: "PLC, Ethernet, NFC, and Web UI connect seamlessly into modern automated manufacturing lines — zero integration headaches.", zh: "PLC、以太网、NFC与Web UI无缝接入现代自动化产线——零集成烦恼。" } },
 ];
 
@@ -49,21 +49,21 @@ const features: { no: LangText; title: LangText; desc: LangText; tags: LangText[
   },
   {
     no: { en: "Feature 03", zh: "技术 03" },
-    title: { en: "StepCure® 2.0", zh: "StepCure® 2.0" },
+    title: { en: "StepCure 2.0", zh: "StepCure 2.0" },
     desc: { en: "Programme up to multiple intensity steps within a single cure cycle — ramp up, hold, ramp down — with full PLC synchronisation. Ideal for stress-sensitive assemblies, multi-component substrates, and processes requiring a tack-free surface cure followed by a deep bulk cure.", zh: "可在单个固化周期内编程多个强度台阶——升高、保持、降低——并完全由PLC同步。适合应力敏感组件、多组分基材,以及需要先表面无粘性固化、再深层固化的工艺。" },
     tags: [{ en: "Multi-Step Profiles", zh: "多台阶曲线" }, { en: "PLC Sync", zh: "PLC同步" }, { en: "Industry 4.0", zh: "工业4.0" }],
     image: img.stepcure,
   },
   {
     no: { en: "Feature 04", zh: "技术 04" },
-    title: { en: "Intelli-Lamp® Technology", zh: "Intelli-Lamp® 智能灯管技术" },
+    title: { en: "Intelli-Lamp Technology", zh: "Intelli-Lamp 智能灯管技术" },
     desc: { en: "Embedded lamp intelligence logs cumulative operating hours and tracks output degradation over time. The system alerts operators when lamp replacement is approaching — enabling planned maintenance rather than unplanned downtime. Lamp exchange data is automatically logged.", zh: "内嵌灯管智能记录累计运行时长并追踪输出衰减。系统在灯管临近更换时提醒操作员——实现计划性维护而非意外停机。灯管更换数据自动记录。" },
     tags: [{ en: "Hour Tracking", zh: "时长追踪" }, { en: "Output Monitoring", zh: "输出监测" }, { en: "Predictive Alert", zh: "预测性提醒" }],
     image: img.lamp,
   },
   {
     no: { en: "Feature 05", zh: "技术 05" },
-    title: { en: "Intelli-Tap™ NFC + Web UI", zh: "Intelli-Tap™ NFC + Web UI" },
+    title: { en: "Intelli-Tap NFC + Web UI", zh: "Intelli-Tap NFC + Web UI" },
     desc: { en: "Contactless NFC keycard technology locks cure parameters to prevent unauthorised modification. Each operator's access level is configurable. Combined with full Web UI remote monitoring from any browser — the S2000 Elite meets GMP and ISO process security requirements without friction.", zh: "非接触式NFC钥匙卡技术锁定固化参数,防止未经授权的修改。每位操作员的权限等级可配置。结合可从任意浏览器进行的完整Web UI远程监控——S2000 Elite轻松满足GMP与ISO工艺安全要求。" },
     tags: [{ en: "NFC Keycard", zh: "NFC钥匙卡" }, { en: "Web UI", zh: "Web UI" }, { en: "GMP Compliant", zh: "符合GMP" }],
     image: img.remote,
@@ -76,18 +76,21 @@ const specs: { param: LangText; value: LangText; verify?: boolean }[] = [
   { param: { en: "Spectral Output", zh: "光谱输出" }, value: { en: "320–500 nm (UVA + visible)", zh: "320–500 nm(UVA + 可见光)" } },
   { param: { en: "Shutter", zh: "快门" }, value: { en: "Electromechanical precision shutter, 30 ms actuation", zh: "机电精密快门,30毫秒动作" } },
   { param: { en: "Irradiance Control", zh: "辐照度控制" }, value: { en: "Closed-Loop Feedback (CLF), ±5% stability", zh: "闭环反馈(CLF),±5% 稳定性" } },
-  { param: { en: "Cure Modes", zh: "固化模式" }, value: { en: "Timer / Energy (dose) / StepCure® 2.0 multi-step", zh: "定时 / 能量(剂量)/ StepCure® 2.0 多台阶" } },
-  { param: { en: "Lamp Intelligence", zh: "灯管智能" }, value: { en: "Intelli-Lamp® — hour tracking, output monitoring, replacement alert", zh: "Intelli-Lamp® — 时长追踪、输出监测、更换提醒" } },
-  { param: { en: "Access Control", zh: "访问控制" }, value: { en: "Intelli-Tap™ NFC keycard (configurable access levels)", zh: "Intelli-Tap™ NFC钥匙卡(权限等级可配置)" } },
+  { param: { en: "Cure Modes", zh: "固化模式" }, value: { en: "Timer / Energy (dose) / StepCure 2.0 multi-step", zh: "定时 / 能量(剂量)/ StepCure 2.0 多台阶" } },
+  { param: { en: "Lamp Intelligence", zh: "灯管智能" }, value: { en: "Intelli-Lamp — hour tracking, output monitoring, replacement alert", zh: "Intelli-Lamp — 时长追踪、输出监测、更换提醒" } },
+  { param: { en: "Access Control", zh: "访问控制" }, value: { en: "Intelli-Tap NFC keycard (configurable access levels)", zh: "Intelli-Tap NFC钥匙卡(权限等级可配置)" } },
   { param: { en: "Connectivity", zh: "连接性" }, value: { en: "Ethernet (TCP/IP), USB, RS-232, PLC I/O", zh: "以太网(TCP/IP)、USB、RS-232、PLC I/O" } },
   { param: { en: "Remote Monitoring", zh: "远程监控" }, value: { en: "Web UI — browser-based, no software installation", zh: "Web UI——基于浏览器,无需安装软件" } },
   { param: { en: "Display", zh: "显示屏" }, value: { en: '4.3" colour touchscreen LCD', zh: "4.3英寸彩色触摸屏LCD" } },
   { param: { en: "Light Guide", zh: "导光管" }, value: { en: "All OmniCure S Series liquid light guides", zh: "全系列 OmniCure S 系列液体导光管" } },
   { param: { en: "Radiometer", zh: "辐射计" }, value: { en: "OmniCure R2000 NIST-traceable radiometer", zh: "OmniCure R2000 NIST溯源辐射计" } },
-  { param: { en: "Operating Voltage", zh: "工作电压" }, value: { en: "100–240V AC, 50/60 Hz", zh: "100–240V 交流,50/60 Hz" }, verify: true },
-  { param: { en: "Dimensions (W×D×H)", zh: "尺寸(宽×深×高)" }, value: { en: "Fill from official Datasheet", zh: "以官方数据表为准" }, verify: true },
-  { param: { en: "Weight", zh: "重量" }, value: { en: "Fill from official Datasheet", zh: "以官方数据表为准" }, verify: true },
-  { param: { en: "Certifications", zh: "认证" }, value: { en: "CE — verify additional (UL/CSA/RoHS)", zh: "CE — 其他待核实(UL/CSA/RoHS)" }, verify: true },
+  { param: { en: "Input Voltage", zh: "输入电压" }, value: { en: "100–240V AC, 50/60 Hz", zh: "100–240V 交流,50/60 Hz" } },
+  { param: { en: "Input Current", zh: "输入电流" }, value: { en: "3.5 A max at 120 VAC / 2.0 A max at 240 VAC", zh: "120VAC 最大 3.5A / 240VAC 最大 2.0A" } },
+  { param: { en: "Lamp Life", zh: "灯管寿命" }, value: { en: "2,000 h guaranteed; typically 3,500–4,000 h", zh: "保证 2,000 小时;通常 3,500–4,000 小时" } },
+  { param: { en: "Dimensions (H×W×D)", zh: "尺寸(高×宽×深)" }, value: { en: "268 × 139 × 289 mm (10.54 × 5.45 × 11.38 in)", zh: "268 × 139 × 289 mm(10.54 × 5.45 × 11.38 in)" } },
+  { param: { en: "Weight", zh: "重量" }, value: { en: "3 kg (6.6 lb)", zh: "3 千克(6.6 磅)" } },
+  { param: { en: "Operating Temperature", zh: "工作温度" }, value: { en: "15°C to 40°C, dry location, 15–95% RH (non-condensing)", zh: "15°C 至 40°C,干燥环境,15–95% 相对湿度(无冷凝)" } },
+  { param: { en: "Warranty", zh: "保修" }, value: { en: "System 1 year; lamp 2,000 h", zh: "系统 1 年;灯管 2,000 小时" } },
 ];
 
 const accessories: { icon: string; title: LangText; desc: LangText; cta: LangText }[] = [
@@ -113,7 +116,7 @@ export default function S2000View() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-gray-400">
           <Link href="/product" className="hover:text-[#1A56DB]">{t({ en: "Products", zh: "产品" }, locale)}</Link>
           <span className="mx-2">›</span>
-          <Link href="/product/omnicure" className="hover:text-[#1A56DB]">OmniCure®</Link>
+          <Link href="/product/omnicure" className="hover:text-[#1A56DB]">OmniCure</Link>
           <span className="mx-2">›</span>
           <span style={{ color: "#1A56DB" }}>S2000 Elite</span>
         </div>
@@ -124,7 +127,7 @@ export default function S2000View() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="text-[11px] font-bold px-2.5 py-1 rounded text-white" style={{ background: "#1A56DB" }}>OmniCure®</span>
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded text-white" style={{ background: "#1A56DB" }}>OmniCure</span>
               <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{t({ en: "S Series · Lamp-Based UV Spot Curing", zh: "S 系列 · 灯式 UV 点固化" }, locale)}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2" style={{ color: "#1A56DB" }}>S2000 Elite</h1>

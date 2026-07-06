@@ -13,37 +13,37 @@ const BASE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/ho
 const techRoutes = [
   {
     label: { en: "UV LED SPOT CURING SYSTEMS", zh: "UV LED 点固化系统" },
-    brands: ["OmniCure®"],
+    brands: ["OmniCure"],
     desc: "UV LED spot curing systems are ideal for precision adhesive spot curing applications.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT1-UV%20LED%20CURING.png`,
   },
   {
     label: { en: "UV LED AIR-COOLED SYSTEMS", zh: "UV LED 风冷系统" },
-    brands: ["Phoseon®", "OmniCure®"],
+    brands: ["Phoseon", "OmniCure"],
     desc: "Air-cooled UV LED curing systems allow for easy and cost-effective integration into automated systems without a separate chiller.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT%202-UV%20LED%20AIR-COOLED.png`,
   },
   {
     label: { en: "UV LED WATER-COOLED SYSTEMS", zh: "UV LED 水冷系统" },
-    brands: ["Phoseon®", "NobleLight®"],
+    brands: ["Phoseon", "NobleLight"],
     desc: "Water-cooled UV LED curing systems for environments with extreme temperatures and debris. Ideal for heat-sensitive substrates.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT%203-UV-LED%20WATER-COOLED%20SYSTEM.png`,
   },
   {
     label: { en: "UV LAMP SPOT CURING SYSTEMS", zh: "UV 灯式点固化系统" },
-    brands: ["OmniCure®"],
+    brands: ["OmniCure"],
     desc: "UV lamp spot curing systems are ideal for precision adhesive spot curing for broad spectrum applications.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT4-UV%20LAMP%20SPOT%20CURING%20SYSTEM.png`,
   },
   {
     label: { en: "MICROWAVE UV CURING SYSTEMS", zh: "微波 UV 固化系统" },
-    brands: ["Fusion®"],
+    brands: ["Fusion"],
     desc: "Microwave UV curing systems use electrodeless bulbs offering longer life, consistent output and less heat. Ideal for broad spectrum and UVC applications.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT5-MICROWAVE%20UV%20CURING.png`,
   },
   {
     label: { en: "MERCURY ARC LAMPS", zh: "汞弧灯" },
-    brands: ["NobleLight®"],
+    brands: ["NobleLight"],
     desc: "Broad spectrum medium pressure mercury arc lamps in various lengths and power classes. Ideal for replacement lamps.",
     img: `${BASE}/HOME%20PAGE%20PRODUCT-LEFT6-MERCURY%20UVC%20LAMPS.png`,
   },

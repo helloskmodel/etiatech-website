@@ -34,10 +34,15 @@ export default function ThaiNav({
 
   const links = [
     { href: `/th/${lang}`, label: labels.home },
-    { href: `/th/${lang}#products`, label: labels.products },
+    { href: `/th/${lang}/product`, label: labels.products },
     { href: `/th/${lang}/application`, label: labels.applications },
     { href: contactHref, label: labels.salesSupport },
   ];
+
+  // Current-page highlight. Home matches exactly; sections match their subtree.
+  const base = `/th/${lang}`;
+  const isActive = (href: string) =>
+    href === base ? pathname === base : pathname === href || pathname.startsWith(href + "/");
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 shadow-sm bg-white">
@@ -49,7 +54,16 @@ export default function ThaiNav({
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
-            <Link key={l.label} href={l.href} className="text-sm font-medium text-gray-600 hover:text-[#1A56DB] whitespace-nowrap">
+            <Link
+              key={l.label}
+              href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              className={`text-sm font-medium whitespace-nowrap border-b-2 pb-0.5 transition-colors ${
+                isActive(l.href)
+                  ? "text-[#1A3DAD] border-[#1A3DAD]"
+                  : "text-gray-600 border-transparent hover:text-[#1A3DAD] hover:border-[#1A3DAD]/40"
+              }`}
+            >
               {l.label}
             </Link>
           ))}
@@ -58,7 +72,7 @@ export default function ThaiNav({
               <Link
                 key={l}
                 href={langHref(l)}
-                className={`px-2 py-1 text-xs font-semibold rounded ${l === lang ? "text-[#1A56DB] bg-blue-50" : "text-gray-500 hover:text-[#1A56DB]"}`}
+                className={`px-2 py-1 text-xs font-semibold rounded ${l === lang ? "text-[#1A3DAD] bg-blue-50" : "text-gray-500 hover:text-[#1A3DAD]"}`}
               >
                 {LANG_LABEL[l]}
               </Link>
@@ -86,7 +100,10 @@ export default function ThaiNav({
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="py-3 text-base font-medium text-gray-700 hover:text-[#1A56DB] border-b border-gray-100"
+              aria-current={isActive(l.href) ? "page" : undefined}
+              className={`py-3 text-base font-medium border-b border-gray-100 ${
+                isActive(l.href) ? "text-[#1A3DAD] font-semibold" : "text-gray-700 hover:text-[#1A3DAD]"
+              }`}
             >
               {l.label}
             </Link>
@@ -97,7 +114,7 @@ export default function ThaiNav({
                 key={l}
                 href={langHref(l)}
                 onClick={() => setOpen(false)}
-                className={`px-4 py-2 text-sm font-semibold rounded border ${l === lang ? "text-[#1A56DB] border-[#1A56DB] bg-blue-50" : "text-gray-600 border-gray-200"}`}
+                className={`px-4 py-2 text-sm font-semibold rounded border ${l === lang ? "text-[#1A3DAD] border-[#1A3DAD] bg-blue-50" : "text-gray-600 border-gray-200"}`}
               >
                 {LANG_LABEL[l]}
               </Link>

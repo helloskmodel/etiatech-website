@@ -81,15 +81,15 @@ export default async function ThailandCaseDetail({
   return (
     <article className="py-12 md:py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href={`/th/${l}#case-studies`} className="text-sm font-medium text-gray-500 hover:text-[#1A56DB]">
+        <Link href={`/th/${l}#case-studies`} className="text-sm font-medium text-gray-500 hover:text-[#1A3DAD]">
           {a.back}
         </Link>
 
-        <p className="mt-6 text-xs font-semibold uppercase tracking-wide" style={{ color: "#44B549" }}>{c.sector}</p>
+        <p className="mt-6 text-xs font-semibold uppercase tracking-wide" style={{ color: "#4CAF3E" }}>{c.sector}</p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mt-1 mb-4">{title}</h1>
 
         <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 mb-8">
-          <p className="text-2xl font-bold" style={{ color: "#1A56DB" }}>{c.metric}</p>
+          <p className="text-2xl font-bold" style={{ color: "#1A3DAD" }}>{c.metric}</p>
           <p className="text-sm text-gray-500">{c.metricLabel}</p>
         </div>
 
@@ -114,7 +114,7 @@ export default async function ThailandCaseDetail({
           <a
             href={thMailto(l, { subject: "Thailand Case Study Inquiry", context: title })}
             className="inline-block text-sm font-semibold text-white rounded px-5 py-2.5 hover:opacity-90"
-            style={{ background: "#1A56DB" }}
+            style={{ background: "#1A3DAD" }}
           >
             {d.hero.cta} →
           </a>

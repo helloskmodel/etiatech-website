@@ -11,9 +11,9 @@ const meta = {
     zh: "索取报价 / 联系 — OmniCure 泰国 | ETIA",
   } as Tri3,
   description: {
-    th: "ขอใบเสนอราคาระบบบ่มยูวี OmniCure® จาก Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต — รองรับ RFQ และงานประมูล",
-    en: "Request a quote for OmniCure® UV curing from Etiatec (Thailand), the authorized distributor — RFQ & tender ready.",
-    zh: "向授权分销商 Etiatec (Thailand) 索取 OmniCure® UV 固化系统报价——支持 RFQ 与招标。",
+    th: "ขอใบเสนอราคาระบบบ่มยูวี OmniCure จาก Etiatec (Thailand) ตัวแทนจำหน่ายที่ได้รับอนุญาต — รองรับ RFQ และงานประมูล",
+    en: "Request a quote for OmniCure UV curing from Etiatec (Thailand), the authorized distributor — RFQ & tender ready.",
+    zh: "向授权分销商 Etiatec (Thailand) 索取 OmniCure UV 固化系统报价——支持 RFQ 与招标。",
   } as Tri3,
   eyebrow: { th: "ขอใบเสนอราคา", en: "Request a Quote", zh: "索取报价" } as Tri3,
   h1: {
@@ -57,13 +57,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-lg font-bold text-gray-900">{TH_CONTACTS.sales.name}</p>
         <p className="text-sm text-gray-500 mb-4">{TH_CONTACTS.sales.role[l]}</p>
         <div className="space-y-2 text-sm">
-          <a href={`tel:${TH_CONTACTS.sales.phoneHref}`} className="block font-medium text-[#1A56DB] hover:underline">📞 {TH_CONTACTS.sales.phone}</a>
-          <a href={`mailto:${TH_CONTACTS.sales.email}`} className="block font-medium text-[#1A56DB] hover:underline">✉️ {TH_CONTACTS.sales.email}</a>
+          <a href={`tel:${TH_CONTACTS.sales.phoneHref}`} className="block font-medium text-[#1A3DAD] hover:underline">📞 {TH_CONTACTS.sales.phone}</a>
+          <a href={`mailto:${TH_CONTACTS.sales.email}`} className="block font-medium text-[#1A3DAD] hover:underline">✉️ {TH_CONTACTS.sales.email}</a>
         </div>
         <a
           href={thMailto(l, { subject: "Request a Quote — Thailand" })}
           className="mt-5 inline-block text-sm font-semibold text-white rounded px-5 py-2.5 hover:opacity-90"
-          style={{ background: "#1A56DB" }}
+          style={{ background: "#1A3DAD" }}
         >
           {pick3(meta.eyebrow, l)} →
         </a>
