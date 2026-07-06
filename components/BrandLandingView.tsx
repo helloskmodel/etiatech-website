@@ -52,9 +52,8 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
         <HeroBackdrop images={heroBannerImages} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0" style={{ background: b.color }}>{b.logo}</div>
-              <span className="text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
+            <div className="mb-4">
+              <span className="inline-block text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
             </div>
             {b.hero && (
               <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t(b.hero.eyebrow, locale)}</p>
