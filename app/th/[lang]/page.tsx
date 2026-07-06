@@ -109,7 +109,7 @@ export default async function ThailandHome({
             </h1>
             <p className="text-base text-gray-200 mb-8 leading-relaxed">{h.hero.subtitle}</p>
             <div className="flex flex-wrap gap-4">
-              <Link href="#products" className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
+              <Link href={`/th/${l}/product`} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
                 {h.hero.btnProducts}
               </Link>
               <a href={thMailto(l, { subject: "Thailand Inquiry" })} className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60">
@@ -158,7 +158,7 @@ export default async function ThailandHome({
             ))}
           </div>
           <div className="mt-8">
-            <Link href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
+            <Link href={`/th/${l}/product`} className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#1A56DB" }}>
               {h.spectrum.viewAll}
             </Link>
           </div>

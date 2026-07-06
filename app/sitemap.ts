@@ -57,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     Object.fromEntries(thLangs.map((l) => [l, `${SITE}/th/${l}${path}`]));
 
   // SEM landing pages (skeletons; content filled later).
-  const landingSlugs = ["omnicure-thailand", "omnicure-s2000", "omnicure-lx500", "uv-curing-system-thailand", "contact"];
+  const landingSlugs = ["omnicure-thailand", "omnicure-s2000", "omnicure-lx500", "omnicure-s1500-pro", "uv-curing-system-thailand", "contact"];
 
   const thPages: MetadataRoute.Sitemap = [
     // Home + applications index, per language.
@@ -76,6 +76,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: langAlternates(`/${slug}`) },
       }))
     ),
+    // Thailand products index, per language.
+    ...thLangs.map((l) => ({
+      url: `${SITE}/th/${l}/product`,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+      alternates: { languages: langAlternates("/product") },
+    })),
     ...thLangs.map((l) => ({
       url: `${SITE}/th/${l}/application`,
       changeFrequency: "monthly" as const,

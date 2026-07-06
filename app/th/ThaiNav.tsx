@@ -34,7 +34,7 @@ export default function ThaiNav({
 
   const links = [
     { href: `/th/${lang}`, label: labels.home },
-    { href: `/th/${lang}#products`, label: labels.products },
+    { href: `/th/${lang}/product`, label: labels.products },
     { href: `/th/${lang}/application`, label: labels.applications },
     { href: contactHref, label: labels.salesSupport },
   ];
