@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { isThLocale, type ThLocale } from "../../dictionaries";
 import LandingShell, { pick3, type Tri3 } from "../../LandingShell";
+import { ProductLandingBody } from "../../LandingBody";
 
 const SLUG = "omnicure-s2000";
 const meta = {
@@ -46,5 +47,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const l: ThLocale = isThLocale(lang) ? lang : "th";
-  return <LandingShell lang={l} eyebrow={pick3(meta.eyebrow, l)} title={pick3(meta.h1, l)} subtitle={pick3(meta.subtitle, l)} />;
+  return (
+    <LandingShell lang={l} eyebrow={pick3(meta.eyebrow, l)} title={pick3(meta.h1, l)} subtitle={pick3(meta.subtitle, l)}>
+      <ProductLandingBody lang={l} slug="s2000-elite" matchToken="S2000" />
+    </LandingShell>
+  );
 }

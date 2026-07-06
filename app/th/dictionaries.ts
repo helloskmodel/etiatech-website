@@ -39,9 +39,9 @@ export type ThDict = {
 
 const tri = {
   metaTitle: {
-    th: "ระบบบ่มยูวีแบบจุด OmniCure | ETIA Technology ประเทศไทย",
-    en: "OmniCure UV Spot Curing Systems | ETIA Technology Thailand",
-    zh: "OmniCure UV 点固化系统 | ETIA Technology 泰国",
+    th: "OmniCure ประเทศไทย — ตัวแทนจำหน่ายที่ได้รับอนุญาต UV Curing | ETIA",
+    en: "OmniCure Thailand — Authorized UV Curing Distributor | ETIA",
+    zh: "OmniCure 泰国授权分销商 — UV 固化系统 | ETIA",
   } as Tri,
   metaDescription: {
     th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบบ่มยูวีแบบจุด OmniCure ในประเทศไทย — ทั้งระบบหลอดยูวีและ UV LED พร้อมการควบคุม การวัดค่าความเข้มแสง และทีมวิศวกรที่ช่วยเลือกรุ่นและสนับสนุนทางเทคนิค",

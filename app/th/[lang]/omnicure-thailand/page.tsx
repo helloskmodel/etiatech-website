@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { isThLocale, type ThLocale } from "../../dictionaries";
 import LandingShell, { pick3, type Tri3 } from "../../LandingShell";
+import { FamilyOverviewBody } from "../../LandingBody";
 
 const SLUG = "omnicure-thailand";
+const intro: Tri3 = {
+  th: "Etiatec (Thailand) เป็นตัวแทนจำหน่าย OmniCure® ที่ได้รับอนุญาตในประเทศไทย จำหน่ายระบบบ่มยูวีแบบจุด OmniCure ครบตระกูล — ทั้งระบบ UV LED Spot และ UV Lamp Spot พร้อมเรดิโอเมทรีและการสอบเทียบ รับประกันจากโรงงานและบริการติดตั้งในพื้นที่",
+  en: "Etiatec (Thailand) is the authorized OmniCure® distributor in Thailand, supplying the complete OmniCure UV spot curing line — UV LED Spot and UV Lamp Spot systems, plus radiometry and calibration — with full factory warranty and local installation.",
+  zh: "Etiatec (Thailand) 是 OmniCure® 在泰国的授权分销商，供应完整的 OmniCure UV 点固化产品线——UV LED 点固化与 UV 灯式点固化系统，以及辐照测量与校准，提供原厂保修与本地安装。",
+};
 const meta = {
   title: {
     th: "OmniCure® ประเทศไทย — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
@@ -46,5 +52,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const l: ThLocale = isThLocale(lang) ? lang : "th";
-  return <LandingShell lang={l} eyebrow={pick3(meta.eyebrow, l)} title={pick3(meta.h1, l)} subtitle={pick3(meta.subtitle, l)} />;
+  return (
+    <LandingShell lang={l} eyebrow={pick3(meta.eyebrow, l)} title={pick3(meta.h1, l)} subtitle={pick3(meta.subtitle, l)}>
+      <FamilyOverviewBody lang={l} intro={pick3(intro, l)} />
+    </LandingShell>
+  );
 }
