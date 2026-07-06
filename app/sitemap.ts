@@ -22,6 +22,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/application`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
+    // Standalone OmniCure Thailand SEM landing pages (en + th, hreflang-linked).
+    {
+      url: `${SITE}/omnicure-thailand`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
+    },
+    {
+      url: `${SITE}/th/omnicure`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
+    },
     { url: `${SITE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
   ];
