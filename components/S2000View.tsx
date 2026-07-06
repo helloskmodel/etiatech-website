@@ -73,7 +73,6 @@ const features: { no: LangText; title: LangText; desc: LangText; tags: LangText[
     title: { en: "Calibration & Radiometry", zh: "校准与辐射测量" },
     desc: { en: "Radiometry is an essential consideration for any repeatable curing process. Combine the OmniCure S2000 Elite with an OmniCure R2000 radiometer to measure and calibrate the light output, allowing cure profiles to be set in absolute peak irradiance (W/cm²) or optical power (W). The R2000 requires calibration every 12 months (NIST traceable) and can be used to set the output of multiple S2000 Elite systems at the identical irradiance level.", zh: "光强度测量是任何可重复固化过程的重要环节。将 OmniCure S2000 Elite 与 OmniCure R2000 辐射计相结合，以测量和校准光输出，从而将系统的固化轮廓设置为绝对峰值辐照度（W/cm²）或光功率（W）。OmniCure R2000 辐射计要求每 12 个月校准一次（NIST 可追踪），并可用于将多个 S2000 系统的输出设置为相同的辐照度水平。" },
     tags: [{ en: "W/cm² or W", zh: "W/cm² 或 W" }, { en: "NIST Traceable", zh: "NIST溯源" }, { en: "Multi-System Match", zh: "多机一致" }],
-    image: img.calibration,
   },
   {
     no: { en: "Feature 07", zh: "技术 07" },
