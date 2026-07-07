@@ -3,20 +3,26 @@ import { useState } from "react";
 import { BRAND, MODELS, getCopy, type Lang } from "./copy";
 import { track } from "./track";
 
+// Inquiries are delivered by opening the visitor's mail client (mailto),
+// consistent with the rest of the site — no server-side mailer is wired.
+const LEAD_EMAIL = "mark_tang@etia-tech.com";
+
 export default function LeadForm({
   lang,
   page,
   compact = false,
+  showModel = true,
 }: {
   lang: Lang;
   page: string;
   compact?: boolean;
+  showModel?: boolean;
 }) {
   const c = getCopy(lang).form;
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [err, setErr] = useState("");
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const payload = {
@@ -25,29 +31,27 @@ export default function LeadForm({
       phone: String(fd.get("phone") || "").trim(),
       model: String(fd.get("model") || ""),
       message: String(fd.get("message") || "").trim(),
-      page,
-      lang,
     };
     if (!payload.name || !payload.phone) {
       setErr(c.required);
       setStatus("error");
       return;
     }
-    setStatus("sending");
     setErr("");
-    try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("bad");
-      track("generate_lead", { page, lang, model: payload.model });
-      setStatus("done");
-    } catch {
-      setErr(c.required);
-      setStatus("error");
-    }
+    const subject = `Quote request — ${page}`;
+    const body = [
+      `Name: ${payload.name}`,
+      payload.company && `Company: ${payload.company}`,
+      `Phone: ${payload.phone}`,
+      payload.model && `Model: ${payload.model}`,
+      payload.message && `Message: ${payload.message}`,
+      `Page: ${page} · Lang: ${lang}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    track("generate_lead", { page, lang, model: payload.model });
+    window.location.href = `mailto:${LEAD_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("done");
   }
 
   if (status === "done") {
@@ -77,14 +81,16 @@ export default function LeadForm({
           <label htmlFor={`phone-${page}`} className="block text-xs font-medium text-gray-600 mb-1">{c.phone} *</label>
           <input id={`phone-${page}`} name="phone" type="tel" required className={field} />
         </div>
-        <div>
-          <label htmlFor={`model-${page}`} className="block text-xs font-medium text-gray-600 mb-1">{c.model}</label>
-          <select id={`model-${page}`} name="model" defaultValue={MODELS[0]} className={field}>
-            {MODELS.map((m) => (
-              <option key={m} value={m}>{m}</option>
-            ))}
-          </select>
-        </div>
+        {showModel && (
+          <div>
+            <label htmlFor={`model-${page}`} className="block text-xs font-medium text-gray-600 mb-1">{c.model}</label>
+            <select id={`model-${page}`} name="model" defaultValue={MODELS[0]} className={field}>
+              {MODELS.map((m) => (
+                <option key={m} value={m}>{m}</option>
+              ))}
+            </select>
+          </div>
+        )}
         {!compact && (
           <div>
             <label htmlFor={`message-${page}`} className="block text-xs font-medium text-gray-600 mb-1">{c.message}</label>

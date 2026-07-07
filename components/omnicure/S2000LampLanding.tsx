@@ -5,8 +5,6 @@ import { track } from "./track";
 import LeadForm from "./LeadForm";
 import { LAMP, getLampContent } from "./s2000Lamp";
 
-const LINE_URL = CONTACT.lineId && CONTACT.lineId !== "TODO_FILL" ? `https://line.me/R/ti/p/${CONTACT.lineId}` : "#line";
-
 export default function S2000LampLanding({ lang }: { lang: Lang }) {
   const page = `s2000-lamp-${lang}`;
   const th = lang === "th";
@@ -14,7 +12,6 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
   const L = {
     eyebrow: "OmniCure · Replacement Lamp",
     request: th ? "ขอราคา / สั่งซื้อหลอด" : "Request a Quote / Re-order",
-    line: th ? "สั่งซื้อทาง LINE" : "Order on LINE",
     overview: th ? "ข้อมูลผลิตภัณฑ์" : "Overview",
     features: th ? "คุณสมบัติ" : "Features",
     benefits: th ? "ประโยชน์" : "Benefits",
@@ -27,11 +24,9 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
     closing: th ? "ต้องเปลี่ยนหลอด S2000? ขอราคาวันนี้" : "Need a replacement S2000 lamp? Get pricing today.",
     askPrice: th ? "สอบถามราคา →" : "Ask price →",
   };
-  const onCall = () => track("click_call", { page, lang });
-  const onLine = () => track("click_line", { page, lang });
 
   return (
-    <div className="pb-20 md:pb-0">
+    <div>
       {/* HERO */}
       <section style={{ background: BRAND.blue }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-start">
@@ -49,18 +44,16 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
               ))}
             </div>
             <p className="inline-flex items-center gap-2 text-xs font-semibold text-white rounded-full px-3 py-1.5 mb-6" style={{ background: "#ffffff1a", border: "1px solid #ffffff33" }}>✓ {L.authorized}</p>
-            <div className="hidden md:flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3">
               <a href="#quote" className="rounded-lg px-6 py-3 text-sm font-bold text-white hover:opacity-90" style={{ background: BRAND.green }}>{L.request}</a>
-              <a href={LINE_URL} onClick={onLine} className="rounded-lg px-6 py-3 text-sm font-bold text-white border border-white/40 hover:border-white/70">{L.line}</a>
             </div>
           </div>
-          <div id="quote">
-            <div className="rounded-2xl bg-white p-4 mb-4 shadow-lg">
-              <div className="relative w-full" style={{ height: 200 }}>
+          <div>
+            <div className="rounded-2xl bg-white p-4 shadow-lg">
+              <div className="relative w-full" style={{ height: 260 }}>
                 <Image src={LAMP.heroImage} alt={LAMP.heroAlt} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-contain" unoptimized />
               </div>
             </div>
-            <LeadForm lang={lang} page={`${page}-hero`} compact />
           </div>
         </div>
       </section>
@@ -162,14 +155,10 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{L.closing}</h2>
-            <p className="text-sm text-white/80 mb-6">☎ {CONTACT.phone} · ✉ {CONTACT.email} · 📍 Bangkok, Thailand</p>
-            <div className="flex flex-wrap gap-3">
-              <a href={`tel:${CONTACT.phoneHref}`} onClick={onCall} className="rounded-lg px-5 py-3 text-sm font-bold text-white hover:opacity-90" style={{ background: BRAND.green }}>☎ {CONTACT.phone}</a>
-              <a href={LINE_URL} onClick={onLine} className="rounded-lg px-5 py-3 text-sm font-bold text-white border border-white/40 hover:border-white/70">💬 LINE</a>
-            </div>
+            <p className="text-sm text-white/80">✉ {CONTACT.email} · 📍 Bangkok, Thailand</p>
           </div>
-          <div id="quote-bottom">
-            <LeadForm lang={lang} page={`${page}-closing`} compact />
+          <div id="quote" className="scroll-mt-24">
+            <LeadForm lang={lang} page={`${page}-closing`} compact showModel={false} />
           </div>
         </div>
       </section>
@@ -191,12 +180,6 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
-
-      {/* Sticky mobile call / LINE bar */}
-      <div className="md:hidden fixed bottom-0 inset-x-0 z-50 grid grid-cols-2 border-t border-gray-200 bg-white">
-        <a href={`tel:${CONTACT.phoneHref}`} onClick={onCall} className="py-3.5 text-center text-sm font-bold text-white" style={{ background: BRAND.blue }}>☎ Call</a>
-        <a href={LINE_URL} onClick={onLine} className="py-3.5 text-center text-sm font-bold text-white" style={{ background: BRAND.green }}>💬 LINE</a>
-      </div>
     </div>
   );
 }
