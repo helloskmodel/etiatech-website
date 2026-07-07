@@ -5,11 +5,12 @@ import { useLocale, t } from "@/components/LocaleContext";
 
 export default function Footer() {
   const { locale } = useLocale();
-  const navLabels = [
-    { en: "Home", zh: "首页" },
-    { en: "Products", zh: "产品" },
-    { en: "Applications", zh: "应用" },
-    { en: "Sales & Support", zh: "销售与支持" },
+  const navLinks = [
+    { href: "/", label: { en: "Home", zh: "首页" } },
+    { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
+    { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
+    { href: "/application", label: { en: "Applications", zh: "应用" } },
+    { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持" } },
   ];
   return (
     <footer className="border-t border-gray-200 mt-20" style={{ background: "#f8f9fb" }}>
@@ -23,9 +24,9 @@ export default function Footer() {
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Navigation", zh: "导航" }, locale)}</p>
           <div className="flex flex-col gap-1">
-            {["/", "/product", "/application", "/contact"].map((href, i) => (
-              <Link key={href} href={href} className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">
-                {t(navLabels[i], locale)}
+            {navLinks.map((l) => (
+              <Link key={l.href} href={l.href} className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">
+                {t(l.label, locale)}
               </Link>
             ))}
             <a href="/omnicure-thailand" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">
