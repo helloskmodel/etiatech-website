@@ -4,6 +4,7 @@ import Image from "next/image";
 import { heroBannerImage } from "@/components/caseStudies";
 import { useLocale, t, type Locale } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
+import SalesSupportContent from "@/components/SalesSupportContent";
 import { BadgeCheck, Mail, Wrench, Globe } from "lucide-react";
 
 function ContactForm({ fields, locale }: { fields: string[]; locale: Locale }) {
@@ -104,13 +105,15 @@ export default function ContactPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
-              {t({ en: "Dedicated Support,", zh: "专属支持" }, locale)}<br />
-              <span className="text-[#41A62A]">{t({ en: "Always Available.", zh: "全程相伴" }, locale)}</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
-              {t({ en: "From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answer and keep production moving.", zh: "从产品选型、工艺建议到定制方案与设备服务，ETIA团队帮助客户找到正确答案，让生产持续运转。" }, locale)}
+            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "From Selection to Service.", zh: "从选型到服务。" }, locale)}</h1>
+            <p className="mt-4 text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "Reliable UV Curing Support Across China and Southeast Asia.", zh: "覆盖中国与东南亚的可靠 UV 固化支持。" }, locale)}</p>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
+              {t({ en: "ETIA helps manufacturers select, implement, and maintain reliable curing solutions for demanding production environments.", zh: "ETIA 帮助制造商为严苛的生产环境选型、导入并维护可靠的固化解决方案。" }, locale)}
             </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师" }, locale)}</a>
+              <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Request Service Support", zh: "申请服务支持" }, locale)}</a>
+            </div>
           </div>
           <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
@@ -136,6 +139,8 @@ export default function ContactPage() {
       </section>
 
       <TrustStrip />
+
+      <SalesSupportContent />
 
       {/* Part 1 — Sales Inquiry */}
       <section id="sales" className="py-20 bg-white">
@@ -269,6 +274,9 @@ export default function ContactPage() {
               </a>
             ))}
           </div>
+          <p className="mt-8 max-w-4xl text-xs leading-6 text-gray-400">
+            {t({ en: "OmniCure® is a registered trademark of Excelitas Technologies. ETIA is an authorized distributor of OmniCure® products in selected markets. ETIA also supplies selected UV curing technologies including Phoseon and other leading brands through authorized or trusted supply channels. Brand availability and authorization status may vary by country or region. Please contact ETIA for local availability and support.", zh: "OmniCure® 是 Excelitas Technologies 的注册商标。ETIA 是 OmniCure® 产品在特定市场的授权代理商。ETIA 亦通过授权或可信供应渠道供应包括 Phoseon 在内的精选 UV 固化技术及其他领先品牌。品牌供货与授权状态可能因国家或地区而异。请联系 ETIA 了解当地供货与支持。" }, locale)}
+          </p>
         </div>
       </section>
 
