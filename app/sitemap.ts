@@ -30,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/applications`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
+    // OmniCure S2000 Elite technical support / knowledge base page.
+    { url: `${SITE}/product/omnicure/s2000/support`, changeFrequency: "monthly", priority: 0.75 },
     // Standalone OmniCure Thailand SEM landing pages (en + th, hreflang-linked).
     {
       url: `${SITE}/omnicure-thailand`,

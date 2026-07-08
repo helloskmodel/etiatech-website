@@ -60,6 +60,7 @@ export default function CaseStudyPageView({ caseStudy }: { caseStudy: CaseStudy 
                 {localizeIndustry(caseStudy.industry, locale).toUpperCase()}
               </Link>
               <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-white/90 text-gray-700">{c.sector}</span>
+              <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-white/90 text-[#1A56DB]">{t({ en: "Case Study", zh: "案例" }, locale)} {caseStudy.id}</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-white leading-tight">{c.title}</h1>
           </div>

@@ -71,7 +71,7 @@ export default function AppNoteView({ note }: { note: App }) {
           </div>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "#1A56DB" }}>{a.title}</h1>
           <p className="text-base text-gray-600 leading-relaxed">{a.intro}</p>
-          <p className="text-xs text-gray-400 mt-4">{note.id}</p>
+          <p className="mt-4"><span className="inline-block text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-[#1A56DB]/10 text-[#1A56DB]">{t({ en: "Ref.", zh: "编号" }, locale)} {note.id}</span></p>
         </div>
       </header>
 

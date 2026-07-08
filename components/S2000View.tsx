@@ -124,6 +124,7 @@ const applications: { Icon: typeof HeartPulse; title: LangText; desc: LangText }
 ];
 
 const LAMP_PATH = "/product/omnicure/s2000-lamp";
+const SUPPORT_PATH = "/product/omnicure/s2000/support";
 
 // Decision-oriented "is it right for you"
 const fitYes: LangText[] = [
@@ -424,6 +425,19 @@ export default function S2000View() {
           <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
             <Link href={LAMP_PATH} className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#1A56DB] transition hover:-translate-y-0.5">{t({ en: "Order S2000 Lamp →", zh: "订购 S2000 灯管 →" }, locale)}</Link>
             <a href={inquiryMailto(locale, { subject: "S2000 Lamp / Accessories", context: "System model / serial number / lamp photo" })} className="inline-flex items-center justify-center rounded-xl border border-white/40 px-6 py-3 text-sm font-bold text-white transition hover:border-white">{t({ en: "Talk to Support", zh: "联系支持" }, locale)}</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Installation & Support callout — internal link to the support page */}
+      <section className="py-14 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-gray-200 bg-[#f6f9ff] p-6 md:p-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Installation & Operation Guidance", zh: "安装与操作指导" }, locale)}</h2>
+              <p className="text-gray-500 max-w-2xl leading-relaxed">{t({ en: "Need installation and operation guidance for the OmniCure S2000 Elite? See our detailed installation guide page — startup, light guide and lamp module installation, optical filter changes, status light-ring colours, troubleshooting, safety and regulatory information.", zh: "需要 OmniCure S2000 Elite 的安装与操作指导？请查看我们的详细安装指南页面——开机、导光管与灯管模块安装、光学滤光片更换、状态光环颜色、故障排查、安全与合规信息。" }, locale)}</p>
+            </div>
+            <Link href={SUPPORT_PATH} className="shrink-0 inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5" style={{ background: "#1A56DB" }}>{t({ en: "Installation & Support Guide →", zh: "安装与支持指南 →" }, locale)}</Link>
           </div>
         </div>
       </section>
