@@ -4,16 +4,19 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, t, type Locale, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
+import { inquiryMailto } from "@/components/contact";
 
 const languages: Locale[] = ["en", "zh", "vi", "th"];
 
 const links = [
-  { href: "/", label: { en: "Home", zh: "首页" } },
+  { href: "/", label: { en: "Home", zh: "首页", vi: "Trang chủ", th: "หน้าหลัก" } },
   { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
   { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
-  { href: "/application", label: { en: "Applications", zh: "应用" } },
-  { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持" } },
+  { href: "/applications", label: { en: "Applications", zh: "应用", vi: "Ứng dụng", th: "การใช้งาน" } },
+  { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
 ];
+
+const localeHome: Record<Locale, string> = { en: "/", zh: "/zh", vi: "/vi", th: "/th" };
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -75,7 +78,7 @@ export default function Nav() {
                     <button
                       key={l}
                       disabled={!active}
-                      onClick={() => { if (active) { setLocale(l); setLangOpen(false); } }}
+                      onClick={() => { if (active) { setLocale(l); setLangOpen(false); window.location.href = localeHome[l]; } }}
                       className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
                         !active
                           ? "text-gray-300 cursor-not-allowed"
@@ -91,6 +94,9 @@ export default function Nav() {
               </div>
             )}
           </div>
+          <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#358B22]">
+            {t({ en: "Talk to an Engineer", zh: "咨询工程师", vi: "Trao đổi với kỹ sư", th: "ปรึกษาวิศวกร" }, locale)}
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -120,7 +126,7 @@ export default function Nav() {
                 <button
                   key={l}
                   disabled={!active}
-                  onClick={() => { if (active) { setLocale(l); setOpen(false); } }}
+                  onClick={() => { if (active) { setLocale(l); setOpen(false); window.location.href = localeHome[l]; } }}
                   className={`px-3 py-1.5 rounded text-sm font-semibold transition-all ${
                     !active
                       ? "border border-gray-100 text-gray-300 cursor-not-allowed"
@@ -135,6 +141,9 @@ export default function Nav() {
               );
             })}
           </div>
+          <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-3 text-center text-sm font-bold text-white">
+            {t({ en: "Talk to an Engineer", zh: "咨询工程师", vi: "Trao đổi với kỹ sư", th: "ปรึกษาวิศวกร" }, locale)}
+          </a>
         </div>
       )}
     </nav>

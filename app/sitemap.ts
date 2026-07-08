@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
-import { apps, appSlug } from "@/components/applicationNotes";
 import { successStories, caseSlug } from "@/components/caseStudies";
+import { applicationsData } from "@/data/applicationsData";
 
 const SITE = "https://www.etiatech.com";
 
@@ -11,15 +11,24 @@ const SITE = "https://www.etiatech.com";
 // providing a wrong date. changeFrequency + priority still guide crawlers.
 export default function sitemap(): MetadataRoute.Sitemap {
   const core: MetadataRoute.Sitemap = [
-    { url: SITE, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${SITE}/product`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE}/product/systems`, changeFrequency: "weekly", priority: 0.8 },
+    {
+      url: SITE,
+      changeFrequency: "weekly",
+      priority: 1.0,
+      alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
+    },
+    ...["zh", "vi", "th"].map((locale) => ({
+      url: `${SITE}/${locale}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
+    })),
     // Brand landing pages
     { url: `${SITE}/product/omnicure`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/phoseon`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/application`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE}/applications`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
     // Standalone OmniCure Thailand SEM landing pages (en + th, hreflang-linked).
     {
@@ -38,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...[
       { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
       { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
-      { en: "/omnicure-s2000-lamp", th: "/th/omnicure-s2000-lamp" },
+      { en: "/product/omnicure/s2000-lamp", th: "/th/omnicure-s2000-lamp" },
     ].flatMap((pair) => {
       const langs = { en: `${SITE}${pair.en}`, th: `${SITE}${pair.th}`, "x-default": `${SITE}${pair.en}` };
       return [
@@ -60,13 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     productPages.push({ url, changeFrequency: "monthly", priority: 0.7 });
   }
 
-  // Individual application-note landing pages (one per application point).
-  const appPages: MetadataRoute.Sitemap = apps.map((a) => ({
-    url: `${SITE}/application/${appSlug(a)}`,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
   // Individual case-study landing pages.
   const casePages: MetadataRoute.Sitemap = successStories.map((c) => ({
     url: `${SITE}/case-studies/${caseSlug(c)}`,
@@ -74,5 +76,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...core, ...productPages, ...appPages, ...casePages];
+  const applicationCasePages: MetadataRoute.Sitemap = applicationsData.map((application) => ({
+    url: `${SITE}/applications/${application.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  return [...core, ...productPages, ...applicationCasePages, ...casePages];
 }

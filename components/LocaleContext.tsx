@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 // Supported locales. EN + ZH are live; VI/TH are reserved for later.
 export type Locale = "en" | "zh" | "vi" | "th";
-export const ACTIVE_LOCALES: Locale[] = ["en", "zh"];
+export const ACTIVE_LOCALES: Locale[] = ["en", "zh", "vi", "th"];
 
 // Maps the Nav button labels to locale codes.
 export const LOCALE_LABELS: Record<Locale, string> = {
@@ -24,14 +24,15 @@ function readCookie(): Locale | null {
   return (m?.[1] as Locale) ?? null;
 }
 
-export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
+export function LocaleProvider({ children, initialLocale = "en" }: { children: React.ReactNode; initialLocale?: Locale }) {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale);
 
   // Restore saved choice on mount (client-only to avoid hydration mismatch).
   useEffect(() => {
     const saved = readCookie();
-    if (saved) setLocaleState(saved);
-  }, []);
+    if (initialLocale === "en" && saved) setLocaleState(saved);
+    document.documentElement.lang = initialLocale === "zh" ? "zh-CN" : initialLocale;
+  }, [initialLocale]);
 
   const setLocale = (l: Locale) => {
     setLocaleState(l);

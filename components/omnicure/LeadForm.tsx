@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { BRAND, MODELS, getCopy, type Lang } from "./copy";
 import { track } from "./track";
+import ServiceCommitment from "@/components/ServiceCommitment";
 
 // Inquiries are delivered by opening the visitor's mail client (mailto),
 // consistent with the rest of the site — no server-side mailer is wired.
@@ -107,6 +108,7 @@ export default function LeadForm({
       >
         {status === "sending" ? "…" : c.submit}
       </button>
+      <ServiceCommitment compact />
     </form>
   );
 }

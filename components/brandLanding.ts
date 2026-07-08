@@ -53,7 +53,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     ],
     metaTitle: "OmniCure UV Curing Systems — Authorized Distributor | ETIA",
     metaDescription:
-      "OmniCure UV spot & area curing systems (lamp + UV LED) with closed-loop feedback. ETIA is an Asia-Pacific authorized distributor — local stock, selection support, and in-house repair.",
+      "OmniCure precision UV curing systems for assembly, bonding, medical devices and electronics. ETIA supplies genuine systems, lamps, application support and service.",
   },
   phoseon: {
     catalogBrandId: "phoseon",

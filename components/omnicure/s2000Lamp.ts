@@ -11,7 +11,7 @@ import type { Lang } from "./copy";
 const SITE = "https://www.etiatech.com";
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product";
 
-export const LAMP_PATHS = { en: "/omnicure-s2000-lamp", th: "/th/omnicure-s2000-lamp" };
+export const LAMP_PATHS = { en: "/product/omnicure/s2000-lamp", th: "/th/omnicure-s2000-lamp" };
 export const PRIMARY_CODE = "012-64000R";
 
 export const LAMP = {

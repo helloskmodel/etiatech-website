@@ -9,6 +9,7 @@ import { inquiryMailto } from "@/components/contact";
 import { industryColors } from "@/components/industryMedia";
 import { localizeSpecLabel } from "@/components/specLabels.zh";
 import { useLocale, t } from "@/components/LocaleContext";
+import RelatedApplications from "@/components/RelatedApplications";
 
 const brandPageSlug: Record<Product["brandId"], string> = {
   omnicure: "omnicure",
@@ -129,6 +130,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
           </div>
         </div>
       </section>
+
+      <RelatedApplications productSlug={product.slug} />
 
       {/* Specifications */}
       <section className="py-16" style={{ background: "#f0f4f8" }}>

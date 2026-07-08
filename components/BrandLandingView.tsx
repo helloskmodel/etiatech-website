@@ -9,9 +9,21 @@ import { heroBannerImages } from "@/components/caseStudies";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
+import { APPLICATION_CATEGORIES, getApplicationsForProduct } from "@/data/applicationsData";
+import OmniCureBrandLanding from "@/components/OmniCureBrandLanding";
+import PhoseonBrandLanding from "@/components/PhoseonBrandLanding";
 
 // Number of top products (per brand) that get the "Popular" badge.
 const POPULAR_COUNT = 2;
+
+// Mirrors the sequence in the current OmniCure UV Curing Product Catalog:
+// lamp spot systems → LED spot systems → area systems → fiber system.
+const OMNICURE_CATALOG_ORDER = [
+  "s2000-elite", "s1500-pro", "r2000", "s-series-light-guides",
+  "lx500", "v3-led-heads", "ls200",
+  "ac2", "ac4", "ac5", "ac7", "ac8", "ac8-hd", "ac9225", "ac9225-f",
+  "s2e-network-module",
+];
 
 // Short technology tag shown on each product card (English + Chinese).
 const tagZh: Record<string, string> = {
@@ -31,10 +43,24 @@ const tagZh: Record<string, string> = {
 export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
   const { locale } = useLocale();
   const b = brandLanding[slug];
+  // Keep the generic brand renderer available for the other Excelitas brands;
+  // OmniCure uses its dedicated decision-page experience.
+  if ((slug as string) === "omnicure") return <OmniCureBrandLanding />;
+  if ((slug as string) === "phoseon") return <PhoseonBrandLanding />;
   // Flat shop grid ordered by popularity (best-selling first), not by technology.
   const brandProducts = products
     .filter((p) => p.brandId === b.catalogBrandId)
-    .sort((a, c) => popularityRank(a.slug) - popularityRank(c.slug));
+    .sort((a, c) => {
+      if (slug !== "omnicure") return popularityRank(a.slug) - popularityRank(c.slug);
+      const ai = OMNICURE_CATALOG_ORDER.indexOf(a.slug);
+      const ci = OMNICURE_CATALOG_ORDER.indexOf(c.slug);
+      return (ai === -1 ? 999 : ai) - (ci === -1 ? 999 : ci);
+    });
+  const brandApplications = Array.from(
+    new Map(
+      brandProducts.flatMap((product) => getApplicationsForProduct(product.slug)).map((application) => [application.slug, application])
+    ).values()
+  );
 
   return (
     <>
@@ -95,15 +121,17 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Products", zh: "产品" }, locale)}</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `Shop ${b.name} Systems`, zh: `${b.name} 全系产品` }, locale)}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: slug === "omnicure" ? "OmniCure UV Curing Product Catalog" : `Shop ${b.name} Systems`, zh: slug === "omnicure" ? "OmniCure UV 固化产品清单" : `${b.name} 全系产品` }, locale)}</h2>
+          <p className="mb-8 text-sm text-gray-500">{t({ en: slug === "omnicure" ? "Lamp and LED spot curing, small- and large-area UV LED systems, fiber curing, radiometry, and accessories." : "Browse systems by product and technology.", zh: slug === "omnicure" ? "涵盖灯式与 LED 点固化、小面积与大面积 UV LED、光纤固化、辐射测量及配件。" : "按产品与技术浏览系统。" }, locale)}</p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {brandProducts.map((raw, i) => {
               const p = localizeProduct(raw, locale);
               const tags = productHighlights[p.slug] ?? [];
               const popular = i < POPULAR_COUNT;
+              const relatedApplications = getApplicationsForProduct(p.slug, 2);
               return (
-                <Link key={p.slug} href={productHref(p)} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
-                  <div className="relative h-32 sm:h-36 bg-white">
+                <div key={p.slug} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
+                  <Link href={productHref(p)} className="relative block h-32 sm:h-36 bg-white">
                     {popular && (
                       <span className="absolute top-2 left-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: "#44B549" }}>★ {t({ en: "POPULAR", zh: "热门" }, locale)}</span>
                     )}
@@ -112,7 +140,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                     ) : (
                       <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-center px-3" style={{ color: b.color }}>{p.brand}</span>
                     )}
-                  </div>
+                  </Link>
                   <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
                     {(() => {
                       // Canonical technology route (one of the six). Accessories
@@ -125,7 +153,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                         </span>
                       ) : null;
                     })()}
-                    <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{p.name}</h3>
+                    <Link href={productHref(p)} className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3 hover:text-[#1A56DB]">{p.name}</Link>
                     {tags.length > 0 && (
                       <div className="flex flex-wrap gap-1 mb-3">
                         {tags.slice(0, 3).map((h) => (
@@ -133,9 +161,15 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                         ))}
                       </div>
                     )}
-                    <span className="mt-auto text-xs font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
+                    {relatedApplications.length > 0 && (
+                      <div className="mb-3 border-t border-gray-100 pt-3">
+                        <p className="mb-1 text-[9px] font-bold uppercase tracking-wide text-[#44B549]">Related applications</p>
+                        {relatedApplications.map((application) => <Link key={application.slug} href={`/applications/${application.slug}`} className="block line-clamp-1 text-[10px] font-medium leading-relaxed text-gray-500 hover:text-[#1A56DB] hover:underline">{application.title}</Link>)}
+                      </div>
+                    )}
+                    <Link href={productHref(p)} className="mt-auto text-xs font-semibold hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</Link>
                   </div>
-                </Link>
+                </div>
               );
             })}
 
@@ -178,6 +212,38 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
           </div>
         </div>
       </section>
+
+      {brandApplications.length > 0 && (
+        <section className="border-t border-gray-100 bg-white py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#44B549]">Application Case Studies</p>
+            <h2 className="text-2xl font-bold text-[#1A56DB] md:text-3xl">{b.name} applications by industry</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-500">Explore practical applications connected to the recommended {b.name} systems, including the customer challenge, solution, benefits, and ETIA support.</p>
+            <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {APPLICATION_CATEGORIES.map((category) => {
+                const categoryApplications = brandApplications.filter((application) => application.industryCategory === category);
+                if (!categoryApplications.length) return null;
+                return (
+                  <div key={category} className="rounded-xl border border-gray-200 bg-[#f8fafc] p-5">
+                    <div className="mb-4 flex items-center justify-between gap-3">
+                      <h3 className="text-sm font-bold text-[#1A56DB]">{category}</h3>
+                      <span className="rounded-full bg-white px-2 py-1 text-[10px] font-bold text-gray-400">{categoryApplications.length}</span>
+                    </div>
+                    <div className="space-y-2.5">
+                      {categoryApplications.map((application) => (
+                        <Link key={application.slug} href={`/applications/${application.slug}`} className="block text-xs font-medium leading-relaxed text-gray-600 hover:text-[#1A56DB] hover:underline">
+                          {application.title} →
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <Link href="/applications" className="mt-8 inline-block text-sm font-semibold text-[#1A56DB] hover:underline">Browse all application case studies →</Link>
+          </div>
+        </section>
+      )}
 
       {/* Why buy through ETIA */}
       <section className="py-16 bg-white">

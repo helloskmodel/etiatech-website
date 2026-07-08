@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { inquiryMailto } from "@/components/contact";
+import RelatedApplications from "@/components/RelatedApplications";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import { HeartPulse, CircuitBoard, Car } from "lucide-react";
 
@@ -296,6 +297,8 @@ export default function S2000View() {
           </div>
         </div>
       </section>
+
+      <RelatedApplications productSlug="s2000-elite" />
 
       {/* CTA */}
       <section className="py-16" style={{ background: "#1A56DB" }}>
