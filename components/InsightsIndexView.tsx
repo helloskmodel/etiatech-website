@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { BadgeCheck } from "lucide-react";
 import { useLocale, t } from "@/components/LocaleContext";
 
 type CardLocale = { title: string; description: string };
@@ -32,16 +33,18 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
 
   return (
     <>
-      {/* Hero */}
-      <section className="py-16 md:py-20" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
-            {t({ en: "ETIA Insights", zh: "ETIA 洞察" }, locale)}
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-            {t({ en: "UV Curing Insights & Application Guides", zh: "UV 固化洞察与应用指南" }, locale)}
+      {/* Hero — site standard (matches Sales & Support) */}
+      <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF] py-16 md:py-24">
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm">
+            <BadgeCheck className="h-4 w-4" /> {t({ en: "ETIA Insights", zh: "ETIA 洞察" }, locale)}
+          </div>
+          <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
+            {t({ en: "UV Curing Insights & ", zh: "UV 固化洞察与" }, locale)}<span className="text-[#41A62A]">{t({ en: "Application Guides", zh: "应用指南" }, locale)}</span>
           </h1>
-          <p className="text-base text-gray-200 max-w-2xl leading-relaxed">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
             {t(
               {
                 en: "Technical guides, market analysis, and application know-how across photonics, medical, automotive, electronics and industrial UV curing — from ETIA's engineering team.",

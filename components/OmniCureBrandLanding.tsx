@@ -165,30 +165,30 @@ export default function OmniCureBrandLanding() {
 
   return (
     <div className="bg-white text-[#14213D]">
-      <section className="relative overflow-hidden border-b border-[#E3EAF2] bg-white">
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#1A56DB]/10 blur-3xl" />
-        <div className="absolute -bottom-40 left-1/3 h-80 w-80 rounded-full bg-[#44B549]/10 blur-3xl" />
+      <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -bottom-40 left-1/3 h-80 w-80 rounded-full bg-[#63C94A]/10 blur-3xl" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.25fr_.75fr] lg:items-center lg:px-8">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1A56DB]/15 bg-[#F3F7FF] px-3 py-1.5 text-xs font-bold text-[#1A56DB]">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm">
               <BadgeCheck className="h-4 w-4" /> Authorized OmniCure® Distributor
             </div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">OmniCure UV Curing Solutions</h1>
-            <p className="mt-5 text-3xl font-bold leading-tight text-[#1A56DB] md:text-5xl">Precision Cures.<br /><span className="text-[#44B549]">Supreme Control.</span></p>
-            <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#334E68] md:text-lg">Precision UV curing for assembly, bonding, medical devices and electronics.</p>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#5F6C7B]">Genuine OmniCure® systems, replacement lamps and accessories — supplied with local application support by ETIA.</p>
+            <p className="mt-5 text-3xl font-bold leading-tight text-[#143C96] md:text-5xl">Precision Cures.<br /><span className="text-[#41A62A]">Supreme Control.</span></p>
+            <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#41A62A] md:text-lg">Precision UV curing for assembly, bonding, medical devices and electronics.</p>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#667085]">Genuine OmniCure® systems, replacement lamps and accessories — supplied with local application support by ETIA.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#choose-technology" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1A56DB] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#1649BE]">Choose Your Technology <ArrowRight className="h-4 w-4" /></a>
-              <a href={mailto} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#102A43] transition hover:border-[#1A56DB] hover:text-[#1A56DB]">Talk to an Engineer</a>
+              <a href="#choose-technology" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Choose Your Technology <ArrowRight className="h-4 w-4" /></a>
+              <a href={mailto} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">Talk to an Engineer</a>
             </div>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#5F6C7B]">
-              {["Genuine Products", "Official Supply Channel", "Local Technical Support"].map((item) => <span key={item} className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-[#44B549]" />{item}</span>)}
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#667085]">
+              {["Genuine Products", "Official Supply Channel", "Local Technical Support"].map((item) => <span key={item} className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-[#41A62A]" />{item}</span>)}
             </div>
           </div>
 
           <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
-              <div><p className="text-sm font-bold text-[#1A56DB]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#44B549]">System</p></div>
+              <div><p className="text-sm font-bold text-[#143C96]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#41A62A]">System</p></div>
             </div>
             <div className="grid gap-2.5 sm:grid-cols-2">
               {routes.map((route) => {
