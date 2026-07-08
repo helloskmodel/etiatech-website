@@ -74,7 +74,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       </div>
 
       {/* Hero */}
-      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: "#0f2444" }}>
+      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
         <HeroBackdrop images={heroBannerImages} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

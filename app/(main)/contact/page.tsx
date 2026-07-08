@@ -98,9 +98,9 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: "#0f2444" }}>
+      <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: "#123C94" }}>
         {heroBannerImage && <Image src={heroBannerImage} alt="" fill priority sizes="100vw" className="object-cover" />}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(18,60,148,0.92) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</p>
