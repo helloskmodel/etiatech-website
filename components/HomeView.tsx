@@ -32,6 +32,7 @@ import { useLocale } from "@/components/LocaleContext";
 import { caseSlug, caseStudyImage, successStories } from "@/components/caseStudies";
 import { productImage, products } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
+import FinalCta from "@/components/FinalCta";
 
 const whyCards = [
   { title: "20 Years of Application Experience", body: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", icon: GraduationCap },
@@ -117,6 +118,6 @@ export default function HomeView() {
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">Long-Term Support</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">ETIA Service Commitment</h2><p className="mt-4 max-w-3xl text-[#667085]">Genuine products. Application-driven solutions. Local technical support. Long-term service.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{services.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#D9E4EA] bg-white p-6"><span className="inline-flex rounded-xl bg-[#F1FAEF] p-3 text-[#41A62A]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#143C96]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#667085]">{item.body}</p></article>})}</div></div></section>
 
-    <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-16 text-white sm:px-6 lg:px-8"><div className="mx-auto max-w-4xl text-center"><Zap className="mx-auto h-9 w-9 text-[#8BE172]"/><h2 className="mt-5 text-3xl font-bold md:text-4xl">Need help choosing the right UV curing system?</h2><p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers will help you find the right solution.</p><div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><a href={engineerMail} className="rounded-xl bg-[#41A62A] px-7 py-3.5 text-sm font-bold text-white">Talk to an Engineer</a><a href={inquiryMailto(locale,{subject:"UV Curing Application Review",context:"Application / adhesive / area / wavelength / production requirements"})} className="rounded-xl border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white">Send Your Application</a></div></div></section>
+    <FinalCta heading="Need help choosing the right UV curing system?" body="Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers will help you find the right solution." primary={{ label: "Talk to an Engineer", href: engineerMail }} secondary={{ label: "Send Your Application", href: inquiryMailto(locale, { subject: "UV Curing Application Review", context: "Application / adhesive / area / wavelength / production requirements" }) }} />
   </div>;
 }

@@ -29,6 +29,7 @@ import { inquiryMailto } from "@/components/contact";
 import { useLocale } from "@/components/LocaleContext";
 import { productHref, productImage, products, type Product } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
+import FinalCta from "@/components/FinalCta";
 
 const green = "#6BBF3A";
 const deepGreen = "#087F6B";
@@ -95,21 +96,21 @@ export default function PhoseonBrandLanding() {
   const nexus = findProduct("nexus-ii") ?? findProduct("nexus-ii-ac");
 
   return <div className="bg-white text-[#14213D]">
-    <section className="relative overflow-hidden border-b border-[#E3EAF2] bg-white">
-      <div className="absolute -right-32 -top-40 h-[34rem] w-[34rem] rounded-full bg-[#6BBF3A]/15 blur-3xl" />
-      <div className="absolute -bottom-48 left-1/3 h-96 w-96 rounded-full bg-[#39A0FF]/10 blur-3xl" />
+    <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+      <div className="absolute -right-32 -top-40 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+      <div className="absolute -bottom-48 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.25fr_.75fr] lg:items-center lg:px-8">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#087F6B]/15 bg-[#F2FBF8] px-3 py-1.5 text-xs font-bold text-[#087F6B]"><BadgeCheck className="h-4 w-4" /> Phoseon® UV LED Curing Solutions</div>
-          <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">Industrial UV LED Curing.<br /><span className="text-[#6BBF3A]">Built for Production Performance.</span></h1>
-          <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#334E68]">High-performance UV LED curing for inks, coatings, adhesives, electronics, fiber & cable, and industrial manufacturing.</p>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-[#5F6C7B]">High UV energy, controlled curing intensity, long service life and efficient operation for demanding production environments.</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#phoseon-families" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#087F6B] px-6 py-3.5 text-sm font-bold text-white hover:bg-[#076B5B]">Explore Phoseon Solutions <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D3E1E8] bg-white px-6 py-3.5 text-sm font-bold text-[#102A43] hover:border-[#087F6B] hover:text-[#087F6B]">Talk to an Engineer</a></div>
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#5F6C7B]">{["UV LED Technology", "Industrial Applications", "Local ETIA Support"].map((item) => <span key={item} className="inline-flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-[#6BBF3A]" />{item}</span>)}</div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> Phoseon® UV LED Curing Solutions</div>
+          <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">Industrial UV LED Curing.<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">Built for Production Performance.</span></h1>
+          <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#41A62A]">High-performance UV LED curing for inks, coatings, adhesives, electronics, fiber & cable, and industrial manufacturing.</p>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-[#667085]">High UV energy, controlled curing intensity, long service life and efficient operation for demanding production environments.</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#phoseon-families" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Explore Phoseon Solutions <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">Talk to an Engineer</a></div>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#667085]">{["UV LED Technology", "Industrial Applications", "Local ETIA Support"].map((item) => <span key={item} className="inline-flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-[#41A62A]" />{item}</span>)}</div>
         </div>
-        <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DDEADF] bg-gradient-to-br from-white via-[#F2FBF8] to-[#F3F7FF] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
-          <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(8,127,107,.16)]">
-            <div><p className="text-sm font-bold text-[#087F6B]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#6BBF3A]">System</p></div>
+        <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
+          <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
+            <div><p className="text-sm font-bold text-[#143C96]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#41A62A]">System</p></div>
           </div>
           <div className="grid gap-2.5">
             {phoseonTech.map((tech) => {
@@ -139,6 +140,6 @@ export default function PhoseonBrandLanding() {
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#6BBF3A]">Local Implementation</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">ETIA Support for Phoseon UV LED Solutions</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Evaluate requirements, select suitable systems and support local implementation.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{support.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#E3EAF2] p-6"><span className="inline-flex rounded-xl bg-[#F2FBF8] p-3 text-[#087F6B]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#102A43]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#5F6C7B]">{item.body}</p></article>})}</div></div></section>
 
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#1A56DB] to-[#123C94] px-4 py-20 text-white sm:px-6 lg:px-8"><div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#6BBF3A]/25 blur-3xl"/><div className="absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-white/10 blur-3xl"/><div className="relative mx-auto max-w-4xl text-center"><Zap className="mx-auto h-9 w-9 text-[#8BE172]"/><h2 className="mt-5 text-3xl font-bold md:text-4xl">Need Help Selecting a Phoseon UV LED System?</h2><p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">Tell us your material, curing width, line speed, cooling preference and production process. ETIA can recommend the right Phoseon direction.</p><div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><a href={engineerMail} className="rounded-xl bg-[#6BBF3A] px-7 py-3.5 text-sm font-bold text-white">Talk to an Engineer</a><a href={inquiryMailto(locale,{subject:"Phoseon Product Recommendation",context:"Material / curing width / line speed / cooling"})} className="rounded-xl border border-white/25 px-7 py-3.5 text-sm font-bold text-white hover:border-white/60">Request Product Recommendation</a></div></div></section>
+    <FinalCta heading="Need Help Selecting a Phoseon UV LED System?" body="Tell us your material, curing width, line speed, cooling preference and production process. ETIA can recommend the right Phoseon direction." primary={{ label: "Talk to an Engineer", href: engineerMail }} secondary={{ label: "Request Product Recommendation", href: inquiryMailto(locale, { subject: "Phoseon Product Recommendation", context: "Material / curing width / line speed / cooling" }) }} />
   </div>;
 }
