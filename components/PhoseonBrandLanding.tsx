@@ -99,7 +99,7 @@ export default function PhoseonBrandLanding() {
       <div className="absolute -bottom-48 left-1/3 h-96 w-96 rounded-full bg-[#39A0FF]/10 blur-3xl" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.25fr_.75fr] lg:items-center lg:px-8">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#087F6B]">Phoseon® UV LED Curing Solutions</p>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#087F6B]/15 bg-[#F2FBF8] px-3 py-1.5 text-xs font-bold text-[#087F6B]"><BadgeCheck className="h-4 w-4" /> Phoseon® UV LED Curing Solutions</div>
           <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#102A43] md:text-6xl">Industrial UV LED Curing.<br /><span className="text-[#6BBF3A]">Built for Production Performance.</span></h1>
           <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#334E68]">High-performance UV LED curing for inks, coatings, adhesives, electronics, fiber & cable, and industrial manufacturing.</p>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-[#5F6C7B]">High UV energy, controlled curing intensity, long service life and efficient operation for demanding production environments.</p>
