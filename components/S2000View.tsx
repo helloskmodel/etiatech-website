@@ -4,6 +4,7 @@ import Image from "next/image";
 import { inquiryMailto } from "@/components/contact";
 import RelatedApplications from "@/components/RelatedApplications";
 import TrustStrip from "@/components/TrustStrip";
+import FinalCta from "@/components/FinalCta";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import { HeartPulse, CircuitBoard, Car, BadgeCheck, ArrowRight } from "lucide-react";
 
@@ -476,17 +477,12 @@ export default function S2000View() {
 
       <RelatedApplications productSlug="s2000-elite" />
 
-      {/* CTA */}
-      <section className="py-16" style={{ background: "#1A56DB" }}>
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Ready to specify the S2000 Elite?", zh: "准备选型 S2000 Elite?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href={inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
-            <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
-          </div>
-        </div>
-      </section>
+      <FinalCta
+        heading={t({ en: "Ready to specify the S2000 Elite?", zh: "准备选型 S2000 Elite?" }, locale)}
+        body={t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" }) }}
+        secondary={{ label: t({ en: "Request Datasheet", zh: "索取数据表" }, locale), href: inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" }) }}
+      />
     </>
   );
 }

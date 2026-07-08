@@ -34,6 +34,7 @@ import {
 } from "@/components/productCatalog";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
 import ServiceCommitmentCards from "@/components/ServiceCommitmentCards";
+import FinalCta from "@/components/FinalCta";
 import { getApplicationsForProduct } from "@/data/applicationsData";
 
 type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
@@ -277,7 +278,7 @@ export default function OmniCureBrandLanding() {
 
       <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Beyond Equipment Supply</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">ETIA Service Commitment</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">From product selection to installation and maintenance, ETIA supports your curing process for the long term.</p><div className="mt-10"><ServiceCommitmentCards /></div></div></section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1A56DB] to-[#123C94] px-4 py-20 text-white sm:px-6 lg:px-8"><div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl" /><div className="absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-[#44B549]/20 blur-3xl" /><div className="relative mx-auto max-w-4xl text-center"><Lightbulb className="mx-auto h-9 w-9 text-[#A4E78F]" /><h2 className="mt-5 text-3xl font-bold md:text-4xl">Not Sure Which OmniCure System Fits Your Process?</h2><p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution.</p><div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><a href={mailto} className="rounded-xl bg-[#44B549] px-7 py-3.5 text-sm font-bold text-white">Talk to an Engineer</a><a href={inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" })} className="rounded-xl border border-white/25 px-7 py-3.5 text-sm font-bold text-white hover:border-white/60">Request Product Recommendation</a></div></div></section>
+      <FinalCta heading="Not Sure Which OmniCure System Fits Your Process?" body="Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution." primary={{ label: "Talk to an Engineer", href: mailto }} secondary={{ label: "Request Product Recommendation", href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />
     </div>
   );
 }
