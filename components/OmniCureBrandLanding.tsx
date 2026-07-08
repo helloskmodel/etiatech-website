@@ -76,7 +76,7 @@ const routes: Array<{
 }> = [
   {
     id: "lamp-spot",
-    eyebrow: "UV Spot Curing · Lamp-Based",
+    eyebrow: "UV Lamp Spot Curing",
     title: "High-Intensity Spot Curing",
     body: "Broad-spectrum UV output for precise adhesive bonding and established production processes.",
     bestFor: ["Medical devices", "Optical adhesives", "Existing S2000 processes"],
@@ -87,7 +87,7 @@ const routes: Array<{
   },
   {
     id: "led-spot",
-    eyebrow: "UV Spot Curing · LED-Based",
+    eyebrow: "UV LED Spot Curing",
     title: "LED Precision, Flexible Control",
     body: "Wavelength-specific LED spot curing with long life, modular control and low maintenance.",
     bestFor: ["Automated assembly", "Electronics", "Process development"],
@@ -98,7 +98,7 @@ const routes: Array<{
   },
   {
     id: "large-area",
-    eyebrow: "UV Area Curing · Large Area",
+    eyebrow: "UV LED Air-Cooled Large-Area",
     title: "Uniform Exposure for Wider Areas",
     body: "Scalable UV LED curing for fixtures, larger bonding zones and production assemblies.",
     bestFor: ["Displays", "EV components", "Coatings and industrial adhesives"],
@@ -108,7 +108,7 @@ const routes: Array<{
   },
   {
     id: "small-area",
-    eyebrow: "UV Area Curing · Small Area",
+    eyebrow: "UV LED Air-Cooled Small-Area",
     title: "Compact Curing, Controlled Zones",
     body: "Compact area curing for small components, controlled windows and laboratory workflows.",
     bestFor: ["Precision parts", "R&D", "Compact production cells"],
@@ -162,7 +162,7 @@ export default function OmniCureBrandLanding() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:px-8">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1A56DB]/15 bg-[#F3F7FF] px-3 py-1.5 text-xs font-bold text-[#1A56DB]">
-              <BadgeCheck className="h-4 w-4" /> Authorized OmniCure® Distributor in Thailand
+              <BadgeCheck className="h-4 w-4" /> Authorized OmniCure® Distributor
             </div>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-[#102A43] md:text-6xl">OmniCure UV Curing Solutions</h1>
             <p className="mt-5 text-3xl font-bold leading-tight text-[#1A56DB] md:text-5xl">Precision Cures.<br /><span className="text-[#44B549]">Supreme Control.</span></p>
@@ -185,7 +185,7 @@ export default function OmniCureBrandLanding() {
               {routes.map((route) => {
                 const Icon = route.icon;
                 return <button key={route.id} onClick={() => chooseRoute(route.id)} className="group rounded-2xl border border-[#E3EAF2] bg-white p-4 text-left transition hover:-translate-y-1 hover:shadow-lg" style={{ borderTopColor: route.color, borderTopWidth: 3 }}>
-                  <div className="flex items-start gap-3"><span className="rounded-xl p-2" style={{ background: route.soft, color: route.color }}><Icon className="h-5 w-5" strokeWidth={1.8} /></span><div><p className="text-xs font-bold" style={{ color: route.color }}>{route.id.includes("spot") ? "Spot Curing" : "Area Curing"}</p><p className="mt-1 text-sm font-bold text-[#102A43]">{route.id === "lamp-spot" ? "Lamp-Based" : route.id === "led-spot" ? "LED-Based" : route.id === "large-area" ? "Large Area" : "Small Area"}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="rounded-xl p-2" style={{ background: route.soft, color: route.color }}><Icon className="h-5 w-5" strokeWidth={1.8} /></span><div><p className="text-xs font-bold" style={{ color: route.color }}>{route.id === "lamp-spot" ? "UV Lamp" : route.id === "led-spot" ? "UV LED" : "UV LED Air-Cooled"}</p><p className="mt-1 text-sm font-bold text-[#102A43]">{route.id === "large-area" ? "Large-Area" : route.id === "small-area" ? "Small-Area" : "Spot Curing"}</p></div></div>
                 </button>;
               })}
             </div>
@@ -195,7 +195,7 @@ export default function OmniCureBrandLanding() {
 
       <section className="bg-[#F7FAFC] px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-2xl border border-[#DDE8F3] bg-white px-5 py-5 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm font-semibold text-[#102A43]">ETIA Thailand is an authorized distributor of OmniCure® products in Thailand.</p>
+          <p className="text-sm font-semibold text-[#102A43]">ETIA is an authorized distributor of OmniCure® products.</p>
           <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#5F6C7B]">{["Genuine Products", "Official Supply Channel", "Local Installation Support"].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><BadgeCheck className="h-4 w-4 text-[#44B549]" />{item}</span>)}</div>
           <p className="text-xs text-[#7B8794]">Authorized by Excelitas Canada Inc.</p>
         </div>

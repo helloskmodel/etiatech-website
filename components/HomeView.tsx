@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { ComponentType } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -11,17 +11,16 @@ import {
   Cable,
   Car,
   Check,
+  ChevronLeft,
+  ChevronRight,
   CircuitBoard,
   Crosshair,
   GraduationCap,
   HeartPulse,
-  Lightbulb,
   Microscope,
   PackageCheck,
   Paintbrush,
   Printer,
-  ScanLine,
-  Settings,
   ShieldCheck,
   Sparkles,
   Warehouse,
@@ -33,10 +32,6 @@ import { useLocale } from "@/components/LocaleContext";
 import { caseSlug, caseStudyImage, successStories } from "@/components/caseStudies";
 import { productImage, products } from "@/components/productCatalog";
 
-const BLUE = "#143C96";
-const BRIGHT_BLUE = "#1F63D6";
-const GREEN = "#41A62A";
-
 const whyCards = [
   { title: "20 Years of Application Experience", body: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", icon: GraduationCap },
   { title: "Authorized & Genuine Supply", body: "Genuine systems, replacement lamps and accessories through authorized supply channels.", icon: BadgeCheck },
@@ -44,12 +39,8 @@ const whyCards = [
   { title: "In-House Repair & Lifecycle Support", body: "Troubleshooting, maintenance and repair coordination to keep your process running.", icon: Wrench },
 ];
 
-const technologyCards = [
-  { title: "UV LED Spot Curing", body: "Wavelength-specific, precise UV output for automated adhesive bonding.", href: "/product/omnicure#omnicure-products", icon: Crosshair, color: BLUE, soft: "#EEF6FF" },
-  { title: "UV Lamp Spot Curing", body: "High-intensity broad-spectrum curing for demanding precision assembly.", href: "/product/omnicure#omnicure-products", icon: Lightbulb, color: BRIGHT_BLUE, soft: "#EEF6FF" },
-  { title: "UV LED Area Curing", body: "Uniform UV LED exposure for components, coatings and industrial production.", href: "/product/phoseon", icon: ScanLine, color: GREEN, soft: "#F1FAEF" },
-  { title: "UV Lamps & Accessories", body: "Genuine replacement lamps, light guides, radiometry and system accessories.", href: "/product/omnicure/s2000-lamp", icon: Settings, color: "#2F8F35", soft: "#F1FAEF" },
-];
+// OmniCure systems featured in the hero product carousel (all have COS assets).
+const heroProductSlugs = ["s1500-pro", "lx500", "v3-led-heads", "ac8", "ac5", "ls200"];
 
 const applications: Array<{ title: string; icon: ComponentType<{ className?: string; strokeWidth?: number }> }> = [
   { title: "Medical Devices", icon: HeartPulse },
@@ -74,15 +65,21 @@ function product(slug: string) {
 export default function HomeView() {
   const { locale } = useLocale();
   const engineerMail = inquiryMailto(locale, { subject: "UV Curing Engineering Inquiry", context: "Application / adhesive / curing area / wavelength / production requirements" });
-  const heroProduct = product("lx500") ?? product("s2000-elite");
   const omnicureProduct = product("s2000-elite") ?? product("lx500");
   const phoseonProduct = product("nexus-ii") ?? product("firejet-one");
-  const featuredCases = [
-    successStories.find((story) => story.sector.includes("EV Battery")),
-    successStories.find((story) => story.sector.includes("Optical Transceiver")),
-    successStories.find((story) => /catheter/i.test(`${story.sector} ${story.title}`)),
-    successStories.find((story) => /lidar/i.test(`${story.sector} ${story.title}`)),
-  ].filter(Boolean) as typeof successStories;
+
+  const heroProducts = heroProductSlugs
+    .map((slug) => product(slug))
+    .filter((p): p is NonNullable<typeof p> => !!p && !!productImage(p));
+  const [heroIndex, setHeroIndex] = useState(0);
+  useEffect(() => {
+    if (heroProducts.length <= 1) return;
+    const timer = setInterval(() => setHeroIndex((i) => (i + 1) % heroProducts.length), 3500);
+    return () => clearInterval(timer);
+  }, [heroProducts.length]);
+
+  const caseScrollRef = useRef<HTMLDivElement>(null);
+  const scrollCases = (dir: number) => caseScrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
 
   return <div className="bg-white text-[#102038]">
     <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
@@ -97,7 +94,8 @@ export default function HomeView() {
         </div>
         <div className="relative min-h-[410px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
           <div className="absolute left-10 right-10 top-1/2 h-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1F63D6]/20 via-[#63C94A]/35 to-transparent blur-2xl" />
-          {heroProduct && productImage(heroProduct) && <Image src={productImage(heroProduct)} alt="Advanced ETIA UV curing equipment" fill priority sizes="(max-width: 1024px) 100vw, 46vw" className="object-contain p-16" />}
+          {heroProducts.map((p, i) => <Image key={p.slug} src={productImage(p)} alt={p.name} fill priority={i === 0} sizes="(max-width: 1024px) 100vw, 46vw" className={`object-contain p-16 transition-opacity duration-700 ${i === heroIndex ? "opacity-100" : "opacity-0"}`} />)}
+          {heroProducts.length > 1 && <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">{heroProducts.map((p, i) => <button key={p.slug} type="button" aria-label={`Show ${p.name}`} onClick={() => setHeroIndex(i)} className={`h-2 rounded-full transition-all ${i === heroIndex ? "w-6 bg-[#143C96]" : "w-2 bg-[#143C96]/25"}`} />)}</div>}
           <div className="absolute left-4 top-5 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg sm:left-6"><p className="text-xs font-bold text-[#143C96]">Genuine Products</p><p className="mt-1 text-[10px] text-[#667085]">Authorized supply</p></div>
           <div className="absolute right-4 top-1/3 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg sm:right-6"><p className="text-xs font-bold text-[#143C96]">Application Support</p><p className="mt-1 text-[10px] text-[#667085]">Engineer-led selection</p></div>
           <div className="absolute bottom-5 left-8 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg"><p className="text-xs font-bold text-[#41A62A]">In-House Repair</p><p className="mt-1 text-[10px] text-[#667085]">Lifecycle support</p></div>
@@ -107,15 +105,14 @@ export default function HomeView() {
 
     <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8"><div className="mx-auto grid max-w-7xl gap-3 text-center text-xs font-bold sm:grid-cols-5 sm:text-sm">{["Authorized Supply","Genuine Equipment","Local Stock","Application Engineering","Repair Support"].map(item=><span key={item} className="inline-flex items-center justify-center gap-2"><Check className="h-4 w-4 text-[#8BE172]" />{item}</span>)}</div></section>
 
-    <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">Why ETIA</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">Why Manufacturers Choose ETIA</h2><p className="mt-4 max-w-3xl leading-7 text-[#667085]">We combine authorized supply, hands-on application experience, and local technical service to keep your UV curing process stable, repeatable, and production-ready.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{whyCards.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#D9E4EA] bg-white p-6 shadow-[0_10px_35px_rgba(20,60,150,.06)]"><span className="inline-flex rounded-xl bg-[#EEF6FF] p-3 text-[#143C96]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#143C96]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#667085]">{item.body}</p></article>})}</div></div></section>
+    <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><h2 className="text-3xl font-bold text-[#143C96] md:text-4xl">Why Manufacturers Choose ETIA</h2><p className="mt-4 max-w-3xl leading-7 text-[#667085]">We combine authorized supply, hands-on application experience, and local technical service to keep your UV curing process stable, repeatable, and production-ready.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{whyCards.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#D9E4EA] bg-white p-6 shadow-[0_10px_35px_rgba(20,60,150,.06)]"><span className="inline-flex rounded-xl bg-[#EEF6FF] p-3 text-[#143C96]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#143C96]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#667085]">{item.body}</p></article>})}</div></div></section>
 
-    <section className="bg-[#EEF6FF] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">UV Curing Technology</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">Choose Your UV Curing Technology</h2><p className="mt-4 max-w-3xl text-[#667085]">Start with the curing method, then move directly to the relevant systems and application guidance.</p><div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">{technologyCards.map(item=>{const Icon=item.icon;return <Link href={item.href} key={item.title} className="group rounded-3xl border bg-white p-6 transition hover:-translate-y-1 hover:shadow-xl" style={{borderColor:`${item.color}35`,borderTopColor:item.color,borderTopWidth:4}}><span className="inline-flex rounded-xl p-3" style={{background:item.soft,color:item.color}}><Icon className="h-7 w-7" strokeWidth={1.7}/></span><h3 className="mt-6 text-xl font-bold" style={{color:item.color}}>{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#667085]">{item.body}</p><span className="mt-6 inline-flex items-center gap-2 text-sm font-bold" style={{color:item.color}}>Explore technology <ArrowRight className="h-4 w-4"/></span></Link>})}</div></div></section>
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">Authorized Brand Solutions</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">Authorized UV Curing Brands We Support</h2><div className="mt-10 grid gap-6 lg:grid-cols-2"><Link href="/product/omnicure" className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#EEF6FF] sm:grid-cols-[1fr_.9fr]"><div className="p-8"><span className="text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">Precision Manufacturing</span><h3 className="mt-3 text-2xl font-bold text-[#143C96]">OmniCure UV Curing Systems</h3><p className="mt-4 text-sm leading-6 text-[#667085]">Precision UV curing for assembly, bonding, medical devices and electronics.</p><span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#143C96]">Explore OmniCure <ArrowRight className="h-4 w-4"/></span></div><div className="relative min-h-64 bg-white/60">{omnicureProduct&&productImage(omnicureProduct)&&<Image src={productImage(omnicureProduct)} alt="OmniCure UV curing system" fill sizes="(max-width:1024px) 100vw, 45vw" className="object-contain p-7 transition group-hover:scale-105"/>}</div></Link><Link href="/product/phoseon" className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#F1FAEF] sm:grid-cols-[1fr_.9fr]"><div className="p-8"><span className="text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">Industrial UV LED</span><h3 className="mt-3 text-2xl font-bold text-[#143C96]">Phoseon UV LED Curing Systems</h3><p className="mt-4 text-sm leading-6 text-[#667085]">Industrial UV LED curing for inks, coatings, printing, packaging and production lines.</p><span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#41A62A]">Explore Phoseon <ArrowRight className="h-4 w-4"/></span></div><div className="relative min-h-64 bg-white/60">{phoseonProduct&&productImage(phoseonProduct)&&<Image src={productImage(phoseonProduct)} alt="Phoseon industrial UV LED curing system" fill sizes="(max-width:1024px) 100vw, 45vw" className="object-contain p-7 transition group-hover:scale-105"/>}</div></Link></div></div></section>
 
     <section className="bg-[#F1FAEF] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">Manufacturing Applications</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">Built for Demanding Manufacturing Applications</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{applications.map(item=>{const Icon=item.icon;return <Link href="/applications" key={item.title} className="group flex items-center gap-4 rounded-2xl border border-[#D9E4EA] bg-white p-5 transition hover:-translate-y-1 hover:shadow-lg"><span className="rounded-xl bg-[#EEF6FF] p-3 text-[#143C96]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><span className="font-bold text-[#143C96] group-hover:text-[#41A62A]">{item.title}</span><ArrowRight className="ml-auto h-4 w-4 text-[#41A62A]"/></Link>})}</div></div></section>
 
-    <section className="bg-gradient-to-br from-[#143C96] to-[#1F63D6] px-4 py-20 text-white sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#A4E78F]">Case Studies</p><div className="mt-3 flex items-end justify-between gap-4"><div><h2 className="text-3xl font-bold md:text-4xl">Where Performance Is Proven</h2><p className="mt-3 max-w-3xl text-blue-100">Real UV curing processes in precision and high-reliability manufacturing.</p></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-white sm:inline-flex">View Applications <ArrowRight className="h-4 w-4"/></Link></div><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{featuredCases.map(story=><Link href={`/case-studies/${caseSlug(story)}`} key={story.id} className="group overflow-hidden rounded-2xl bg-white text-[#102038] shadow-xl"><div className="relative h-40 bg-[#EEF6FF]">{caseStudyImage(story)&&<Image src={caseStudyImage(story)} alt={story.sector} fill sizes="(max-width:640px) 100vw,25vw" className="object-cover transition group-hover:scale-105"/>}</div><div className="p-5"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#41A62A]">{story.sector}</p><h3 className="mt-2 line-clamp-3 font-bold leading-snug text-[#143C96]">{story.title}</h3><span className="mt-5 inline-flex items-center gap-1 text-xs font-bold text-[#143C96]">Read case <ArrowRight className="h-3.5 w-3.5"/></span></div></Link>)}</div></div></section>
+    <section className="bg-gradient-to-br from-[#143C96] to-[#1F63D6] px-4 py-20 text-white sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#A4E78F]">Case Studies</p><div className="mt-3 flex items-end justify-between gap-4"><div><h2 className="text-3xl font-bold md:text-4xl">Where Performance Is Proven</h2><p className="mt-3 max-w-3xl text-blue-100">Real UV curing processes in precision and high-reliability manufacturing.</p></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-white sm:inline-flex">View Applications <ArrowRight className="h-4 w-4"/></Link></div><div className="mt-10"><div ref={caseScrollRef} className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">{successStories.map(story=><Link href={`/case-studies/${caseSlug(story)}`} key={story.id} className="group w-[280px] shrink-0 snap-start overflow-hidden rounded-2xl bg-white text-[#102038] shadow-xl"><div className="relative h-40 bg-[#EEF6FF]">{caseStudyImage(story)&&<Image src={caseStudyImage(story)} alt={story.sector} fill sizes="280px" className="object-cover transition group-hover:scale-105"/>}</div><div className="p-5"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#41A62A]">{story.sector}</p><h3 className="mt-2 line-clamp-3 font-bold leading-snug text-[#143C96]">{story.title}</h3><span className="mt-5 inline-flex items-center gap-1 text-xs font-bold text-[#143C96]">Read case <ArrowRight className="h-3.5 w-3.5"/></span></div></Link>)}</div><div className="mt-6 flex justify-end gap-3"><button type="button" aria-label="Previous case studies" onClick={()=>scrollCases(-1)} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"><ChevronLeft className="h-5 w-5"/></button><button type="button" aria-label="Next case studies" onClick={()=>scrollCases(1)} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"><ChevronRight className="h-5 w-5"/></button></div></div></div></section>
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">Long-Term Support</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">ETIA Service Commitment</h2><p className="mt-4 max-w-3xl text-[#667085]">Genuine products. Application-driven solutions. Local technical support. Long-term service.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{services.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#D9E4EA] bg-white p-6"><span className="inline-flex rounded-xl bg-[#F1FAEF] p-3 text-[#41A62A]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#143C96]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#667085]">{item.body}</p></article>})}</div></div></section>
 
