@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ClipboardCheck, Settings2, LifeBuoy } from "lucide-react";
+import ServiceCommitmentCards from "@/components/ServiceCommitmentCards";
 
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
 
@@ -49,21 +49,12 @@ export default function SalesSupportContent() {
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">ETIA Service Commitment</p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">Service means more than supplying equipment</h2>
-          <div className="mt-5 grid max-w-4xl gap-4 text-[#5F6C7B]">
-            <p className="leading-7">At ETIA, service means more than supplying equipment. We support UV curing customers with <span className="font-semibold text-[#102A43]">genuine products</span>, <span className="font-semibold text-[#102A43]">application-driven solutions</span>, a <span className="font-semibold text-[#102A43]">dependable local supply chain</span>, and <span className="font-semibold text-[#102A43]">long-term service</span>.</p>
+          <h2 className="mt-3 max-w-4xl text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">Service means more than supplying equipment</h2>
+          <div className="mt-5 grid gap-x-12 gap-y-4 text-[#5F6C7B] md:grid-cols-2">
+            <p className="leading-7">At ETIA, service means more than supplying equipment. We support UV curing customers with <span className="font-semibold text-[#102A43]">genuine products</span>, <span className="font-semibold text-[#102A43]">application-driven solutions</span>, a <span className="font-semibold text-[#102A43]">dependable local supply chain</span>, and <span className="font-semibold text-[#102A43]">long-term service</span> — helping manufacturers keep their UV curing processes stable, repeatable, and production-ready.</p>
             <p className="leading-7">From product selection and application review to local stock support, online technical service, onsite troubleshooting, maintenance, and repair support, ETIA helps manufacturers build reliable UV curing processes for medical devices, electronics, automotive, PCB, CPO, optics, and precision assembly.</p>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {serviceCards.map((c) => (
-              <div key={c.title} className="flex flex-col items-center rounded-3xl border border-[#E6EAF0] bg-[#FAFBFC] p-6 text-center">
-                <div className="relative h-24 w-24">
-                  <Image src={c.img} alt={c.title} fill sizes="96px" className="object-contain" />
-                </div>
-                <h3 className="mt-4 font-bold text-[#102A43]">{c.title}</h3>
-              </div>
-            ))}
-          </div>
+          <div className="mt-10"><ServiceCommitmentCards /></div>
         </div>
       </section>
 
