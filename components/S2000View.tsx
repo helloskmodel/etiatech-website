@@ -3,8 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { inquiryMailto } from "@/components/contact";
 import RelatedApplications from "@/components/RelatedApplications";
+import TrustStrip from "@/components/TrustStrip";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
-import { HeartPulse, CircuitBoard, Car } from "lucide-react";
+import { HeartPulse, CircuitBoard, Car, BadgeCheck, ArrowRight } from "lucide-react";
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
 const VIDEO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/VIDEO/OMNICURE%202000%20ENLIGH%20VERSION%20.mp4";
@@ -186,37 +187,40 @@ export default function S2000View() {
         </div>
       </div>
 
-      {/* Hero — light */}
-      <section className="py-12 relative overflow-hidden border-b border-gray-200" style={{ background: "#f1f5f9" }}>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      {/* Hero — site standard (matches Sales & Support) */}
+      <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
-            <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="text-[11px] font-bold px-2.5 py-1 rounded text-white" style={{ background: "#1A56DB" }}>OmniCure</span>
-              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{t({ en: "S Series · Lamp-Based UV Spot Curing", zh: "S 系列 · 灯式 UV 点固化" }, locale)}</span>
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2" style={{ color: "#1A56DB" }}>S2000 Elite</h1>
-            <p className="text-lg md:text-xl font-semibold mb-3" style={{ color: "#44B549" }}>{t({ en: "Maximum Power. Total Control.", zh: "极致功率，全面掌控。" }, locale)}</p>
-            <p className="text-base text-gray-600 max-w-xl mb-6 leading-relaxed">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "OmniCure · Lamp-Based UV Spot Curing", zh: "OmniCure · 灯式 UV 点固化" }, locale)}</div>
+            <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
+              {t({ en: "OmniCure S2000 ", zh: "OmniCure S2000 " }, locale)}<span className="text-[#41A62A]">Elite</span>
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "Maximum Power. Total Control.", zh: "极致功率，全面掌控。" }, locale)}</p>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
               {t({ en: "The industry's most advanced lamp-based UV spot curing system — up to 30 W/cm² with closed-loop precision for medical, electronics, and EV manufacturing.", zh: "业界最先进的灯式UV点固化系统——最高30 W/cm²,以闭环精度服务于医疗、电子与电动汽车制造。" }, locale)}
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {heroStats.map((s) => (
-                <div key={s.label.en} className="rounded-lg p-3 border border-gray-200 bg-white">
-                  <p className="text-xl font-bold" style={{ color: "#1A56DB" }}>{s.val}</p>
-                  <p className="text-xs text-gray-500 leading-tight mt-0.5">{t(s.label, locale)}</p>
+                <div key={s.label.en} className="rounded-xl border border-[#DCE7F5] bg-white/70 p-3 backdrop-blur">
+                  <p className="text-xl font-bold text-[#143C96]">{s.val}</p>
+                  <p className="mt-0.5 text-xs leading-tight text-gray-500">{t(s.label, locale)}</p>
                 </div>
               ))}
             </div>
-            <div className="flex flex-wrap gap-4">
-              <a href={inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
-              <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href={inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)} <ArrowRight className="h-4 w-4" /></a>
+              <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
             </div>
           </div>
-          <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
-            <Image src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" priority />
+          <div className="relative min-h-[410px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
+            <Image src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-8" priority />
           </div>
         </div>
       </section>
+
+      <TrustStrip />
 
       {/* Is it right for you — decision */}
       <section className="py-20 bg-white">
