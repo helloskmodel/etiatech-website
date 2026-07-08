@@ -1014,6 +1014,7 @@ export const products: Product[] = [
     tech: "Air-Cooled UV LED Curing",
     sub: "Fiber Curing · 225 mm",
     accent: "#60a5fa",
+    href: "/product/omnicure/ac9225-f",
     intro:
       "OmniCure AC9225-F UV LED curing systems are specifically designed for fiber curing applications. An innovative optical design enhances output and optimizes delivery of UV onto the fiber, providing an air-cooled, high-output solution to meet the demand for increased process speeds. The AC9225-F delivers up to 88 W/cm² peak irradiance at the fiber (in a typical face-to-face configuration) at 10–18 mm working distance. A replaceable outer window lets customers scale production speeds without complex integration changes, and innovative LED control technology delivers exceptional uniformity — with multiple systems joinable to increase cure-area width while maintaining uniformity across all systems.",
     features: [
