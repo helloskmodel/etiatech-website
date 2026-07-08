@@ -429,7 +429,7 @@ export default function S2000View() {
         </div>
       </section>
 
-      {/* Trust bar — OmniCure brand variant */}
+      {/* Trust bar — OmniCure brand variant (4 trust points) */}
       <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
           <p className="text-sm font-semibold">
@@ -437,9 +437,10 @@ export default function S2000View() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-xs font-semibold text-blue-100">
             {[
-              { en: "Genuine Products", zh: "正品产品" },
-              { en: "Official Supply Channel", zh: "官方供货渠道" },
-              { en: "Local Installation Support", zh: "本地安装支持" },
+              { en: "Genuine OmniCure Products", zh: "正品 OmniCure 产品" },
+              { en: "Application-Driven Selection", zh: "应用导向选型" },
+              { en: "Local Supply & Fast Response", zh: "本地供货 · 快速响应" },
+              { en: "Long-Term Service Support", zh: "长期服务支持" },
             ].map((i) => (
               <span key={i.en} className="inline-flex items-center gap-1.5">
                 <BadgeCheck className="h-4 w-4 text-[#8BE172]" />
