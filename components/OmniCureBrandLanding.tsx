@@ -201,11 +201,11 @@ export default function OmniCureBrandLanding() {
         </div>
       </section>
 
-      <section className="bg-[#F7FAFC] px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-2xl border border-[#DDE8F3] bg-white px-5 py-5 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm font-semibold text-[#102A43]">ETIA is an authorized distributor of OmniCure® products.</p>
-          <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#5F6C7B]">{["Genuine Products", "Official Supply Channel", "Local Installation Support"].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><BadgeCheck className="h-4 w-4 text-[#44B549]" />{item}</span>)}</div>
-          <p className="text-xs text-[#7B8794]">Authorized by Excelitas Canada Inc.</p>
+      <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
+          <p className="text-sm font-semibold">ETIA is an authorized distributor of OmniCure® products.</p>
+          <div className="flex flex-wrap justify-center gap-4 text-xs font-semibold text-blue-100">{["Genuine Products", "Official Supply Channel", "Local Installation Support"].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><BadgeCheck className="h-4 w-4 text-[#8BE172]" />{item}</span>)}</div>
+          <p className="text-xs text-blue-200">Authorized by Excelitas Canada Inc.</p>
         </div>
       </section>
 

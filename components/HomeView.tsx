@@ -31,6 +31,7 @@ import { inquiryMailto } from "@/components/contact";
 import { useLocale } from "@/components/LocaleContext";
 import { caseSlug, caseStudyImage, successStories } from "@/components/caseStudies";
 import { productImage, products } from "@/components/productCatalog";
+import TrustStrip from "@/components/TrustStrip";
 
 const whyCards = [
   { title: "20 Years of Application Experience", body: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", icon: GraduationCap },
@@ -103,7 +104,7 @@ export default function HomeView() {
       </div>
     </section>
 
-    <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8"><div className="mx-auto grid max-w-7xl gap-3 text-center text-xs font-bold sm:grid-cols-5 sm:text-sm">{["Authorized Supply","Genuine Equipment","Local Stock","Application Engineering","Repair Support"].map(item=><span key={item} className="inline-flex items-center justify-center gap-2"><Check className="h-4 w-4 text-[#8BE172]" />{item}</span>)}</div></section>
+    <TrustStrip />
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><h2 className="text-3xl font-bold text-[#143C96] md:text-4xl">Why Manufacturers Choose ETIA</h2><p className="mt-4 max-w-3xl leading-7 text-[#667085]">We combine authorized supply, hands-on application experience, and local technical service to keep your UV curing process stable, repeatable, and production-ready.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{whyCards.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#D9E4EA] bg-white p-6 shadow-[0_10px_35px_rgba(20,60,150,.06)]"><span className="inline-flex rounded-xl bg-[#EEF6FF] p-3 text-[#143C96]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#143C96]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#667085]">{item.body}</p></article>})}</div></div></section>
 

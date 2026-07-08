@@ -28,6 +28,7 @@ import {
 import { inquiryMailto } from "@/components/contact";
 import { useLocale } from "@/components/LocaleContext";
 import { productHref, productImage, products, type Product } from "@/components/productCatalog";
+import TrustStrip from "@/components/TrustStrip";
 
 const green = "#6BBF3A";
 const deepGreen = "#087F6B";
@@ -121,6 +122,8 @@ export default function PhoseonBrandLanding() {
         </div>
       </div>
     </section>
+
+    <TrustStrip />
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#6BBF3A]">Industrial UV LED Platform</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">UV LED Curing for Industrial Manufacturing</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Designed for production environments requiring high output, controlled intensity, efficient operation and long lifetime.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{benefits.map((item) => { const Icon=item.icon; return <article key={item.title} className="rounded-2xl border border-[#E3EAF2] p-6"><span className="inline-flex rounded-xl bg-[#F2FBF8] p-3 text-[#087F6B]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#102A43]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#5F6C7B]">{item.body}</p></article>})}</div></div></section>
 

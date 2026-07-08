@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import ApplicationCard from "@/components/ApplicationCard";
+import TrustStrip from "@/components/TrustStrip";
 import { APPLICATION_CATEGORIES, getListedApplications } from "@/data/applicationsData";
 
 const listedApplications = getListedApplications();
@@ -36,6 +37,8 @@ export default function ApplicationsIndexView() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
         </div>
       </header>
+
+      <TrustStrip />
 
       <main className="bg-[#f6f8fb] py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

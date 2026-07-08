@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { heroBannerImage } from "@/components/caseStudies";
 import { useLocale, t, type Locale } from "@/components/LocaleContext";
+import TrustStrip from "@/components/TrustStrip";
 
 function ContactForm({ fields, locale }: { fields: string[]; locale: Locale }) {
   const [submitted, setSubmitted] = useState(false);
@@ -126,6 +127,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <TrustStrip />
 
       {/* Part 1 — Sales Inquiry */}
       <section id="sales" className="py-20 bg-white">
