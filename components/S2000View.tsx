@@ -123,6 +123,53 @@ const applications: { Icon: typeof HeartPulse; title: LangText; desc: LangText }
   { Icon: Car, title: { en: "EV Battery & Automotive", zh: "电动汽车电池与汽车" }, desc: { en: "Battery tab bonding, cell assembly, sensor potting, connector sealing — demanding cure specs in high-volume EV production lines.", zh: "电池极耳粘接、电芯装配、传感器灌封、连接器密封——满足大批量EV产线的严苛固化规范。" } },
 ];
 
+const LAMP_PATH = "/product/omnicure/s2000-lamp";
+
+// Decision-oriented "is it right for you"
+const fitYes: LangText[] = [
+  { en: "You need the highest broad-spectrum irradiance — up to 30 W/cm² — for low-sensitivity, thick or pigmented adhesives.", zh: "您需要最高的宽光谱辐照度（最高 30 W/cm²），用于低敏感、厚层或含颜料的胶粘剂。" },
+  { en: "Your process must be validated and audited (medical, EV) with ±5% closed-loop dose stability.", zh: "您的工艺需要验证与审计（医疗、电动汽车），并要求 ±5% 闭环剂量稳定性。" },
+  { en: "You cure many chemistries and want 7 selectable band-pass filters and 2 lamp types.", zh: "您固化多种化学体系，需要 7 种可选带通滤光片与 2 种灯管。" },
+  { en: "You are automating — StepCure 2.0, PLC I/O, Web UI and NFC access control.", zh: "您正在推进自动化 —— StepCure 2.0、PLC I/O、Web UI 与 NFC 权限控制。" },
+  { en: "You must match multiple stations to identical, NIST-traceable output with the R2000.", zh: "您需要用 R2000 将多台设备匹配到一致、NIST 可溯源的输出。" },
+];
+const fitConsider: { text: LangText; href: string; label: LangText }[] = [
+  { text: { en: "You want a wavelength-specific UV LED source (365 / 385 / 405 nm) with long life and low maintenance.", zh: "您需要特定波长的 UV LED 光源（365 / 385 / 405 nm），寿命长、维护低。" }, href: "/product/systems/lx500", label: { en: "See OmniCure LX500", zh: "查看 OmniCure LX500" } },
+  { text: { en: "You run a simpler, cost-sensitive lamp-based spot-curing process.", zh: "您的灯式点固化工艺更简单、对成本敏感。" }, href: "/product/systems/s1500-pro", label: { en: "See OmniCure S1500 Pro", zh: "查看 OmniCure S1500 Pro" } },
+];
+
+// Comparison: S2000 Elite vs S1500 Pro vs LX500
+const compare: { feature: LangText; s2000: LangText; s1500: LangText; lx500: LangText }[] = [
+  { feature: { en: "Curing type", zh: "固化类型" }, s2000: { en: "Lamp · broad spectrum", zh: "灯式 · 宽光谱" }, s1500: { en: "Lamp · broad spectrum", zh: "灯式 · 宽光谱" }, lx500: { en: "UV LED · wavelength-specific", zh: "UV LED · 特定波长" } },
+  { feature: { en: "Peak irradiance", zh: "峰值辐照度" }, s2000: { en: "Up to 30 W/cm²", zh: "最高 30 W/cm²" }, s1500: { en: "High", zh: "高" }, lx500: { en: "High (LED)", zh: "高（LED）" } },
+  { feature: { en: "Spectral output", zh: "光谱输出" }, s2000: { en: "320–500 nm · 7 selectable filters", zh: "320–500 nm · 7 种可选滤光片" }, s1500: { en: "Broad spectrum", zh: "宽光谱" }, lx500: { en: "365 / 385 / 405 nm", zh: "365 / 385 / 405 nm" } },
+  { feature: { en: "Dose control", zh: "剂量控制" }, s2000: { en: "Closed-Loop Feedback ±5% + R2000", zh: "闭环反馈 ±5% + R2000" }, s1500: { en: "Essential control", zh: "基础控制" }, lx500: { en: "Stable LED output + LS200", zh: "稳定 LED 输出 + LS200" } },
+  { feature: { en: "Automation", zh: "自动化" }, s2000: { en: "StepCure 2.0 · PLC · NFC · Web UI", zh: "StepCure 2.0 · PLC · NFC · Web UI" }, s1500: { en: "Standard I/O", zh: "标准 I/O" }, lx500: { en: "Multi-channel · modular heads", zh: "多通道 · 模块化灯头" } },
+  { feature: { en: "Maintenance", zh: "维护" }, s2000: { en: "Field-replaceable lamp (2,000 h+)", zh: "现场可换灯管（2,000 小时+）" }, s1500: { en: "Replaceable lamp", zh: "可换灯管" }, lx500: { en: "Long-life LED · low maintenance", zh: "长寿命 LED · 低维护" } },
+  { feature: { en: "Best for", zh: "最适合" }, s2000: { en: "Validated high-power lamp curing", zh: "验证级高功率灯式固化" }, s1500: { en: "Cost-effective lamp curing", zh: "高性价比灯式固化" }, lx500: { en: "Automated / wavelength-specific LED spot", zh: "自动化 / 特定波长 LED 点固化" } },
+];
+
+// Lamps, filters & accessories (all genuine OmniCure part numbers)
+const accessories: { title: LangText; items: LangText[]; href?: string; cta?: LangText }[] = [
+  { title: { en: "Replacement Lamps", zh: "替换灯管" }, items: [{ en: "012-68000R — Lamp Module (Standard)", zh: "012-68000R — 灯管模块（标准）" }, { en: "012-69000R — Lamp Module (Surface Cure)", zh: "012-69000R — 灯管模块（表面固化）" }, { en: "012-64000R / 012-54000R — 200 W spare lamps", zh: "012-64000R / 012-54000R — 200W 备用灯管" }], href: LAMP_PATH, cta: { en: "Order lamps", zh: "订购灯管" } },
+  { title: { en: "Optical Band-Pass Filters (7)", zh: "光学带通滤光片（7 种）" }, items: [{ en: "019-00387R (400–500 nm) · 019-00388R (365 nm) · 019-00389R (320–390 nm)", zh: "019-00387R (400–500 nm) · 019-00388R (365 nm) · 019-00389R (320–390 nm)" }, { en: "019-00390R (250–450 nm) · 019-00391R (320–500 nm) · 019-00392R (Blank)", zh: "019-00390R (250–450 nm) · 019-00391R (320–500 nm) · 019-00392R (空白)" }] },
+  { title: { en: "Liquid Light Guides & Adapters", zh: "液体导光管与适配器" }, items: [{ en: "OmniCure S Series — 3 / 5 / 8 mm; single, dual & triple-leg; Cure-Ring and Light-Line adapters", zh: "OmniCure S 系列 — 3 / 5 / 8 mm；单/双/三支；Cure-Ring 与 Light-Line 适配器" }], href: "/product/systems/s-series-light-guides", cta: { en: "View light guides", zh: "查看导光管" } },
+  { title: { en: "Radiometer & Calibration", zh: "辐射计与校准" }, items: [{ en: "OmniCure R2000 — NIST-traceable, real-time irradiance calibration for the S2000 Elite", zh: "OmniCure R2000 — NIST 可溯源，为 S2000 Elite 实时校准辐照度" }], href: "/product/systems/r2000", cta: { en: "View R2000", zh: "查看 R2000" } },
+  { title: { en: "NFC Access Keycards", zh: "NFC 权限卡" }, items: [{ en: "019-00406R — Intelli-Tap Supervisor · 019-00407R — Intelli-Tap Admin", zh: "019-00406R — Intelli-Tap 主管卡 · 019-00407R — Intelli-Tap 管理员卡" }] },
+  { title: { en: "Service & Support", zh: "服务与支持" }, items: [{ en: "Lamp compatibility check, installation, calibration and process validation support by ETIA.", zh: "由 ETIA 提供灯管兼容性核对、安装、校准与工艺验证支持。" }], href: "/contact", cta: { en: "Talk to Support", zh: "联系支持" } },
+];
+
+// Specific application chips
+const appChips: LangText[] = [
+  { en: "Catheter tip bonding", zh: "导管尖端粘接" },
+  { en: "Needle & cannula assembly", zh: "针头与套管装配" },
+  { en: "Sensor encapsulation", zh: "传感器封装" },
+  { en: "PCB component bonding", zh: "PCB 元件粘接" },
+  { en: "Wire tacking", zh: "线材点固" },
+  { en: "EV battery sensor potting", zh: "EV 电池传感器灌封" },
+  { en: "Connector sealing", zh: "连接器密封" },
+];
+
 export default function S2000View() {
   const { locale } = useLocale();
   return (
@@ -160,12 +207,42 @@ export default function S2000View() {
               ))}
             </div>
             <div className="flex flex-wrap gap-4">
-              <a href={inquiryMailto(locale, { subject: "Quote Request", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote", zh: "获取报价" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
               <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
             </div>
           </div>
           <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
             <Image src={img.intro} alt="OmniCure S2000 Elite UV spot curing system" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" priority />
+          </div>
+        </div>
+      </section>
+
+      {/* Is it right for you — decision */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Decision Guide", zh: "选型指南" }, locale)}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Is S2000 Elite Right for Your Process?", zh: "S2000 Elite 适合您的工艺吗？" }, locale)}</h2>
+          <div className="w-12 h-1 rounded mb-10" style={{ background: "#44B549" }} />
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-gray-100 bg-[#f0f7f0] p-7">
+              <h3 className="font-bold text-lg mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Choose the S2000 Elite if…", zh: "如果符合以下情况，请选择 S2000 Elite：" }, locale)}</h3>
+              <ul className="space-y-3">
+                {fitYes.map((f) => (
+                  <li key={f.en} className="flex items-start gap-2.5 text-sm text-gray-600 leading-relaxed"><span className="mt-0.5 shrink-0 font-bold" style={{ color: "#44B549" }}>✓</span>{t(f, locale)}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-gray-100 bg-gray-50 p-7">
+              <h3 className="font-bold text-lg mb-4 text-gray-700">{t({ en: "Consider an alternative if…", zh: "如果符合以下情况，可考虑其他型号：" }, locale)}</h3>
+              <ul className="space-y-4">
+                {fitConsider.map((f) => (
+                  <li key={f.href} className="text-sm text-gray-600 leading-relaxed">
+                    <span className="flex items-start gap-2.5"><span className="mt-0.5 shrink-0 text-gray-400">→</span>{t(f.text, locale)}</span>
+                    <Link href={f.href} className="ml-6 mt-1 inline-block font-semibold hover:underline" style={{ color: "#1A56DB" }}>{t(f.label, locale)} →</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -207,6 +284,43 @@ export default function S2000View() {
                 <p className="text-gray-500 text-sm leading-relaxed">{t(b.desc, locale)}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison — white */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Compare", zh: "对比选型" }, locale)}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Lamp vs LED — S2000 Elite · S1500 Pro · LX500", zh: "灯式 vs LED —— S2000 Elite · S1500 Pro · LX500" }, locale)}</h2>
+          <div className="w-12 h-1 rounded mb-8" style={{ background: "#44B549" }} />
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm min-w-[720px]">
+              <thead>
+                <tr className="text-white" style={{ background: "#1A56DB" }}>
+                  <th className="text-left font-semibold px-5 py-3 w-1/4">{t({ en: "Feature", zh: "特性" }, locale)}</th>
+                  <th className="text-left font-semibold px-5 py-3">S2000 Elite</th>
+                  <th className="text-left font-semibold px-5 py-3">S1500 Pro</th>
+                  <th className="text-left font-semibold px-5 py-3">LX500</th>
+                </tr>
+              </thead>
+              <tbody>
+                {compare.map((row, i) => (
+                  <tr key={row.feature.en} className={i % 2 === 1 ? "bg-gray-50" : "bg-white"}>
+                    <td className="px-5 py-3 font-medium text-gray-700 align-top">{t(row.feature, locale)}</td>
+                    <td className="px-5 py-3 align-top font-semibold" style={{ color: "#1A56DB" }}>{t(row.s2000, locale)}</td>
+                    <td className="px-5 py-3 align-top text-gray-500">{t(row.s1500, locale)}</td>
+                    <td className="px-5 py-3 align-top text-gray-500">{t(row.lx500, locale)}</td>
+                  </tr>
+                ))}
+                <tr className="bg-white border-t border-gray-200">
+                  <td className="px-5 py-3" />
+                  <td className="px-5 py-3"><span className="text-xs font-bold" style={{ color: "#1A56DB" }}>{t({ en: "You are here", zh: "当前页面" }, locale)}</span></td>
+                  <td className="px-5 py-3"><Link href="/product/systems/s1500-pro" className="text-xs font-bold hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "View S1500 Pro →", zh: "查看 S1500 Pro →" }, locale)}</Link></td>
+                  <td className="px-5 py-3"><Link href="/product/systems/lx500" className="text-xs font-bold hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "View LX500 →", zh: "查看 LX500 →" }, locale)}</Link></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -275,13 +389,57 @@ export default function S2000View() {
         </div>
       </section>
 
+      {/* Lamps, Filters & Accessories — white */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Consumables & Accessories", zh: "耗材与配件" }, locale)}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "S2000 Elite Lamps, Filters & Accessories", zh: "S2000 Elite 灯管、滤光片与配件" }, locale)}</h2>
+          <div className="w-12 h-1 rounded mb-4" style={{ background: "#44B549" }} />
+          <p className="text-gray-500 max-w-3xl mb-10">{t({ en: "Genuine OmniCure replacement lamps, optical filters, liquid light guides, radiometry and calibration — supplied and supported locally by ETIA.", zh: "正品 OmniCure 替换灯管、光学滤光片、液体导光管、辐射测量与校准 —— 由 ETIA 本地供货与支持。" }, locale)}</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {accessories.map((a) => (
+              <div key={a.title.en} className="flex flex-col rounded-2xl border border-gray-100 bg-gray-50 p-6">
+                <h3 className="font-bold mb-3" style={{ color: "#1A56DB" }}>{t(a.title, locale)}</h3>
+                <ul className="space-y-2 mb-4">
+                  {a.items.map((it) => (
+                    <li key={it.en} className="text-xs leading-relaxed text-gray-500">{t(it, locale)}</li>
+                  ))}
+                </ul>
+                {a.href && a.cta && (
+                  <Link href={a.href} className="mt-auto inline-flex items-center gap-1 text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>{t(a.cta, locale)} →</Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Parts CTA — teal band */}
+      <section className="py-14" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #087F6B 100%)" }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-5 text-center md:flex-row md:items-center md:justify-between md:text-left">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">{t({ en: "Need S2000 Lamp or Accessories?", zh: "需要 S2000 灯管或配件？" }, locale)}</h2>
+            <p className="mt-2 text-blue-100 max-w-2xl">{t({ en: "Order genuine replacement lamps by part number, or send us your model and serial for a compatibility check.", zh: "按料号订购正品替换灯管，或发送型号与序列号进行兼容性核对。" }, locale)}</p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
+            <Link href={LAMP_PATH} className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#1A56DB] transition hover:-translate-y-0.5">{t({ en: "Order S2000 Lamp →", zh: "订购 S2000 灯管 →" }, locale)}</Link>
+            <a href={inquiryMailto(locale, { subject: "S2000 Lamp / Accessories", context: "System model / serial number / lamp photo" })} className="inline-flex items-center justify-center rounded-xl border border-white/40 px-6 py-3 text-sm font-bold text-white transition hover:border-white">{t({ en: "Talk to Support", zh: "联系支持" }, locale)}</a>
+          </div>
+        </div>
+      </section>
+
       {/* Applications — light gray */}
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Applications", zh: "应用领域" }, locale)}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Industries We Serve", zh: "我们服务的行业" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-4" style={{ background: "#44B549" }} />
-          <p className="text-gray-500 max-w-2xl mb-10">{t({ en: "The S2000 Elite's combination of high irradiance, validated dose control, and Industry 4.0 connectivity makes it the system of choice across demanding manufacturing sectors.", zh: "S2000 Elite 集高辐照度、验证级剂量控制与工业4.0连接于一身,成为严苛制造领域的首选系统。" }, locale)}</p>
+          <p className="text-gray-500 max-w-2xl mb-6">{t({ en: "The S2000 Elite's combination of high irradiance, validated dose control, and Industry 4.0 connectivity makes it the system of choice across demanding manufacturing sectors.", zh: "S2000 Elite 集高辐照度、验证级剂量控制与工业4.0连接于一身,成为严苛制造领域的首选系统。" }, locale)}</p>
+          <div className="flex flex-wrap gap-2 mb-10">
+            {appChips.map((c) => (
+              <span key={c.en} className="text-xs font-semibold px-3 py-1.5 rounded-full border" style={{ borderColor: "#1A56DB33", color: "#1A56DB", background: "#1A56DB0d" }}>{t(c, locale)}</span>
+            ))}
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {applications.map((a) => (
               <div key={a.title.en} className="rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-[#1A56DB]/30 transition-all p-6">
@@ -306,8 +464,8 @@ export default function S2000View() {
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Ready to specify the S2000 Elite?", zh: "准备选型 S2000 Elite?" }, locale)}</h2>
           <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href={inquiryMailto(locale, { subject: "Quote Request", context: "OmniCure S2000 Elite" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Request a Quote →", zh: "获取报价 →" }, locale)}</a>
-            <Link href="/product/omnicure" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Back to OmniCure", zh: "返回 OmniCure" }, locale)}</Link>
+            <a href={inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
+            <a href={inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" })} className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
           </div>
         </div>
       </section>
