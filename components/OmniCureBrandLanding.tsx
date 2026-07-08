@@ -185,7 +185,7 @@ export default function OmniCureBrandLanding() {
             </div>
           </div>
 
-          <div className="w-full rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:max-w-sm">
+          <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
               <div><p className="text-sm font-bold text-[#1A56DB]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#44B549]">System</p></div>
             </div>

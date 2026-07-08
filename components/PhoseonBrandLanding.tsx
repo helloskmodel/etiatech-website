@@ -107,7 +107,7 @@ export default function PhoseonBrandLanding() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#phoseon-families" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#087F6B] px-6 py-3.5 text-sm font-bold text-white hover:bg-[#076B5B]">Explore Phoseon Solutions <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D3E1E8] bg-white px-6 py-3.5 text-sm font-bold text-[#102A43] hover:border-[#087F6B] hover:text-[#087F6B]">Talk to an Engineer</a></div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#5F6C7B]">{["UV LED Technology", "Industrial Applications", "Local ETIA Support"].map((item) => <span key={item} className="inline-flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-[#6BBF3A]" />{item}</span>)}</div>
         </div>
-        <div className="w-full self-start rounded-[28px] border border-[#DDEADF] bg-gradient-to-br from-white via-[#F2FBF8] to-[#F3F7FF] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:max-w-sm">
+        <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DDEADF] bg-gradient-to-br from-white via-[#F2FBF8] to-[#F3F7FF] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
           <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(8,127,107,.16)]">
             <div><p className="text-sm font-bold text-[#087F6B]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#6BBF3A]">System</p></div>
           </div>
