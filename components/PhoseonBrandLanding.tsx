@@ -70,6 +70,14 @@ const support = [
   { title: "Local Technical Support", body: "Local communication, troubleshooting and after-sales coordination.", icon: Wrench },
 ];
 
+// Hero technology selector (mirrors the OmniCure page): three Phoseon UV LED
+// curing technologies by cooling method and curing area.
+const phoseonTech = [
+  { kicker: "Water-Cooled", name: "UV LED Area Curing Systems", icon: Droplets, color: "#1E5BFF", soft: "#EEF3FF" },
+  { kicker: "Air-Cooled", name: "UV LED Small-Area Curing Systems", icon: ThermometerSun, color: "#6BBF3A", soft: "#F1FBEC" },
+  { kicker: "Air-Cooled", name: "UV LED Large-Area Curing Systems", icon: Layers3, color: "#087F6B", soft: "#F2FBF8" },
+];
+
 function findProduct(slug: string): Product | undefined {
   return products.find((product) => product.brandId === "phoseon" && product.slug === slug);
 }
@@ -89,7 +97,7 @@ export default function PhoseonBrandLanding() {
     <section className="relative overflow-hidden border-b border-[#E3EAF2] bg-white">
       <div className="absolute -right-32 -top-40 h-[34rem] w-[34rem] rounded-full bg-[#6BBF3A]/15 blur-3xl" />
       <div className="absolute -bottom-48 left-1/3 h-96 w-96 rounded-full bg-[#39A0FF]/10 blur-3xl" />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.25fr_.75fr] lg:items-center lg:px-8">
         <div>
           <p className="text-xs font-bold uppercase tracking-[.18em] text-[#087F6B]">Phoseon® UV LED Curing Solutions</p>
           <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#102A43] md:text-6xl">Industrial UV LED Curing.<br /><span className="text-[#6BBF3A]">Built for Production Performance.</span></h1>
@@ -98,9 +106,18 @@ export default function PhoseonBrandLanding() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#phoseon-families" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#087F6B] px-6 py-3.5 text-sm font-bold text-white hover:bg-[#076B5B]">Explore Phoseon Solutions <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D3E1E8] bg-white px-6 py-3.5 text-sm font-bold text-[#102A43] hover:border-[#087F6B] hover:text-[#087F6B]">Talk to an Engineer</a></div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#5F6C7B]">{["UV LED Technology", "Industrial Applications", "Local ETIA Support"].map((item) => <span key={item} className="inline-flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-[#6BBF3A]" />{item}</span>)}</div>
         </div>
-        <div className="rounded-[32px] border border-[#DDEADF] bg-gradient-to-br from-white via-[#F2FBF8] to-[#F3F7FF] p-6 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-8">
-          <div className="rounded-2xl border border-white bg-white/90 p-5 shadow-sm"><div className="flex items-center justify-between"><span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#087F6B]"><Factory className="h-4 w-4" />Production line</span><span className="text-xs font-semibold text-[#6BBF3A]">UV LED Curing Zone</span></div><div className="relative mt-8 h-24 overflow-hidden rounded-xl bg-[#F7FAFC]"><div className="absolute left-0 right-0 top-1/2 h-6 -translate-y-1/2 bg-[#DCE6EC]" /><div className="absolute left-[36%] top-0 h-16 w-28 rounded-b-2xl bg-[#102A43] shadow-lg" /><div className="absolute left-[39%] top-12 h-12 w-20 bg-gradient-to-b from-[#6BBF3A]/65 to-transparent blur-sm" /><div className="absolute bottom-6 left-4 right-4 h-2 rounded-full bg-[#1E5BFF]/30" /></div></div>
-          <div className="mt-4 grid grid-cols-2 gap-3">{[{t:"Printing & Packaging",i:Printer},{t:"Electronics",i:CircuitBoard},{t:"Industrial Coatings",i:Paintbrush},{t:"Fiber & Cable",i:Cable}].map(({t,i:Icon}) => <div key={t} className="flex items-center gap-2 rounded-xl border border-[#E3EAF2] bg-white p-3 text-xs font-bold text-[#334E68]"><Icon className="h-4 w-4 text-[#6BBF3A]" />{t}</div>)}</div>
+        <div className="w-full self-start rounded-[28px] border border-[#DDEADF] bg-gradient-to-br from-white via-[#F2FBF8] to-[#F3F7FF] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:max-w-sm">
+          <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(8,127,107,.16)]">
+            <div><p className="text-sm font-bold text-[#087F6B]">Phoseon®</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#6BBF3A]">Technology</p></div>
+          </div>
+          <div className="grid gap-2.5">
+            {phoseonTech.map((tech) => {
+              const Icon = tech.icon;
+              return <a key={tech.name} href="#phoseon-families" className="group rounded-xl border border-[#E3EAF2] bg-white p-3 text-left transition hover:-translate-y-1 hover:shadow-lg" style={{ borderTopColor: tech.color, borderTopWidth: 3 }}>
+                <div className="flex items-center gap-2.5"><span className="rounded-lg p-1.5" style={{ background: tech.soft, color: tech.color }}><Icon className="h-4 w-4" strokeWidth={1.8} /></span><div><p className="text-[11px] font-bold" style={{ color: tech.color }}>{tech.kicker}</p><p className="mt-0.5 text-xs font-bold leading-snug text-[#102A43]">{tech.name}</p></div></div>
+              </a>;
+            })}
+          </div>
         </div>
       </div>
     </section>
