@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
-import ServiceCommitment from "@/components/ServiceCommitment";
 
 export default function Footer() {
   const { locale } = useLocale();
@@ -47,7 +46,6 @@ export default function Footer() {
           <a href={inquiryMailto(locale, {})} className="text-xs hover:underline" style={{ color: "#44B549" }}>
             mark_tang@etia-tech.com
           </a>
-          <ServiceCommitment compact />
         </div>
       </div>
       <div className="border-t border-gray-200 py-5">
