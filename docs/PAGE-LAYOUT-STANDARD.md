@@ -103,7 +103,7 @@ Spec (already implemented in `components/TrustStrip.tsx`):
 - Grid: `mx-auto grid max-w-7xl gap-3 text-center text-xs font-bold sm:grid-cols-5 sm:text-sm`
 - Item: `inline-flex items-center justify-center gap-2` + `<Check className="h-4 w-4 text-[#8BE172]"/>`
 - **Standard content** (Home / Applications / Phoseon / Sales & Support / **TH / VI**):
-  `Authorized Supply · Genuine Equipment · Local Stock · Application Engineering · Repair Support`
+  `Genuine Products · Application-Driven Solution · Local Supply Chain · Long-Term Service`
 
 ### Brand variant (OmniCure only)
 Same dark-blue bar, brand-specific line instead of the 5 items:
