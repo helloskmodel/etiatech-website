@@ -43,8 +43,8 @@ export default function ApplicationCaseStudyView({ application }: { application:
             <h1 className="text-3xl font-bold leading-tight text-[#1A56DB] md:text-5xl">{application.title}</h1>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">{application.subtitle}</p>
           </div>
-          <div className="relative h-64 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-            <Image src={application.image} alt={application.title} fill priority sizes="(max-width: 1024px) 100vw, 35vw" className="object-cover" />
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <Image src={application.image} alt={application.title} fill priority sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover" />
           </div>
         </div>
       </header>

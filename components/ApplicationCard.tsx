@@ -5,8 +5,8 @@ export default function ApplicationCard({ application, compact = false }: { appl
   return (
     <Link href={`/applications/${application.slug}`} className="group overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-[#1A56DB]/30 hover:shadow-md">
       {!compact && (
-        <div className="relative h-44 bg-gray-50">
-          <Image src={application.image} alt={application.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain p-5 transition-transform duration-300 group-hover:scale-105" />
+        <div className="relative aspect-video bg-gray-50">
+          <Image src={application.image} alt={application.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-300 group-hover:scale-105" />
         </div>
       )}
       <div className="border-t border-gray-100 p-5">

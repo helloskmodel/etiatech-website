@@ -142,7 +142,7 @@ export const applicationsData = [
       "lx500",
       "v3-led-heads"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/02-NEEDLE-CANNULA.webp",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/02-needle-cannula.jpg",
     "sections": {
       "application": [
         "Hypodermic needles and cannula assemblies are manufactured in extremely high volumes. A typical process requires bonding a stainless steel cannula into a plastic hub using a light-curable adhesive. UV LED curing is well suited for this application because it can deliver fast, repeatable curing in compact automated equipment."
@@ -327,7 +327,7 @@ export const applicationsData = [
       "s2000-elite",
       "lx500"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/04-ev-battery.png",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/04-ev-battery.jpg",
     "sections": {
       "application": [
         "EV battery manufacturing requires reliable bonding, sealing, and protection across cells, modules, and packs. UV-curable materials can support faster processing, reduced solvent use, lower energy demand, and improved production efficiency in battery assembly."
@@ -518,7 +518,7 @@ export const applicationsData = [
       "ac4",
       "ac5"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/06-ADAS%20Camera%20Module.jpg",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/06-adas-camera.jpg",
     "sections": {
       "application": [
         "ADAS camera modules are used for lane keeping, surround view, traffic sign recognition, pedestrian detection, and autonomous driving functions. Each module requires precise bonding and sealing steps that must maintain optical alignment throughout the vehicle service life."
@@ -613,7 +613,7 @@ export const applicationsData = [
       "ac7",
       "ac8"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/07-PCB-COATING.jpg",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/07-pcb-coating.jpg",
     "sections": {
       "application": [
         "PCB conformal coatings protect electronic assemblies from moisture, dust, chemicals, and harsh environmental exposure. UV LED curing allows manufacturers to cure protective coatings quickly and move boards to downstream inspection or assembly without long oven dwell times."
@@ -705,7 +705,7 @@ export const applicationsData = [
       "lx500",
       "v3-led-heads"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/08-OCA.jpg",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/08-oca.jpg",
     "sections": {
       "application": [
         "Display modules use optically clear adhesives to bond cover glass, touch sensors, and display panels. UV LED curing helps lock adhesive layers quickly while supporting optical clarity, low heat exposure, and production consistency."
@@ -989,7 +989,7 @@ export const applicationsData = [
       "ac4",
       "ac5"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/11-cpo-fiber-array.png",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/11-cpo-fiber-array.jpg",
     "sections": {
       "application": [
         "Co-packaged optics integrates optical engines close to switch ASICs or AI accelerators. Fiber array bonding is a critical process because optical coupling efficiency depends on precise alignment between fiber arrays and silicon photonic interfaces."
@@ -1087,7 +1087,7 @@ export const applicationsData = [
       "s2000-elite",
       "r2000"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/12-pic-packaging.jpg",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/12-pic-packing.jpg",
     "sections": {
       "application": [
         "Photonic Integrated Circuits use light to transmit and process data in optical networks, AI infrastructure, LiDAR, and sensing systems. Packaging often requires bonding fiber array units to chip edge couplers while preserving optical coupling performance."
@@ -1183,7 +1183,7 @@ export const applicationsData = [
       "ac7",
       "ac8"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/13-semiconductor-packing.jpg",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/13-semiconductor-packaging.jpg",
     "sections": {
       "application": [
         "Advanced semiconductor packaging integrates chiplets, HBM memory, interposers, and photonic components into high-performance devices. UV curing can support die attach, underfill cure, photonic interconnect bonding, and UV dicing tape release."
@@ -1276,7 +1276,7 @@ export const applicationsData = [
       "s2000-elite",
       "lx500"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/14-fiber-connector.png",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/14-fiber-connector.jpg",
     "sections": {
       "application": [
         "Fiber optic connectors such as LC, SC, and FC assemblies require consistent bonding between optical fibers and ferrules. UV curing helps support fast connector termination and repeatable adhesive cure in high-volume assembly environments."
