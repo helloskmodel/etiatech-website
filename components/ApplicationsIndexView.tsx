@@ -28,11 +28,11 @@ export default function ApplicationsIndexView() {
 
   return (
     <>
-      <header className="border-b border-gray-200 bg-[#0f2444] py-16 md:py-20">
+      <header className="bg-gradient-to-br from-[#1A56DB] to-[#123C94] py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#44B549]">5 Industries · 15 Application Case Studies</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#8BE172]">5 Industries · 15 Application Case Studies</p>
           <h1 className="max-w-3xl text-3xl font-bold leading-tight text-white md:text-5xl">Practical UV curing solutions for real production challenges</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-200">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
         </div>
       </header>
 
