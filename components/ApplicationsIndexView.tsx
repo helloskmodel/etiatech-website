@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import ApplicationCard from "@/components/ApplicationCard";
 import { APPLICATION_CATEGORIES, getListedApplications } from "@/data/applicationsData";
 
@@ -67,6 +68,25 @@ export default function ApplicationsIndexView() {
           )}
         </div>
       </main>
+
+      <section className="bg-gradient-to-br from-[#1A56DB] to-[#123C94] px-4 py-16 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Need Help Selecting a System?</h2>
+          <div className="mt-10 grid gap-5 text-left sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/15 bg-white/10 p-6">
+              <p className="text-xs font-bold uppercase tracking-[.18em] text-[#8BE172]">Applications</p>
+              <p className="mt-3 leading-7 text-blue-100">New applications, process validation, adhesive selection, wavelength and dose evaluation.</p>
+            </div>
+            <div className="rounded-2xl border border-white/15 bg-white/10 p-6">
+              <p className="text-xs font-bold uppercase tracking-[.18em] text-[#8BE172]">Recommended Support</p>
+              <p className="mt-3 leading-7 text-blue-100">Application review, system selection, testing guidance, installation and service support.</p>
+            </div>
+          </div>
+          <div className="mt-9 flex justify-center">
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-xl bg-[#44B549] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#3A9D3F]">Talk to an Engineer</Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
