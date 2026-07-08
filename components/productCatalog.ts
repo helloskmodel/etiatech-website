@@ -44,6 +44,7 @@ export const products: Product[] = [
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
     accent: "#44B549",
+    href: "/product/omnicure/lx500",
     intro:
       "The OmniCure LX500 UV LED Spot Curing system controller is uniquely designed with proprietary Intelli-Lamp technology that monitors LED head temperature and lifetime data, while automatically maintaining optical stability ±5% to provide greater process assurance. Available in either 2 or 4-channel configurations, the LX500 is the most flexible and cost-effective option for industrial manufacturing. The controller manages up to four UV LED Spot curing heads simultaneously or independently at wavelengths of 365, 385, 395 and 405 nm. The updated LX500 supports OmniCure's higher power V3 UV LED Heads delivering up to 27 W/cm² irradiance and up to 1,100 mW of optical power.",
     features: [
