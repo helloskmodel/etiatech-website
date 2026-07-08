@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "code": "zh",
+    "name": "简体中文",
+    "switcherLabel": "中文",
+    "dir": "ltr"
+  },
+  "languages": {
+    "en": "EN",
+    "zh": "中文",
+    "th": "ไทย",
+    "vi": "Tiếng Việt"
+  },
+  "nav": {
+    "home": "首页",
+    "omnicure": "OmniCure",
+    "phoseon": "Phoseon",
+    "applications": "应用",
+    "salesSupport": "销售与支持",
+    "talkToEngineer": "咨询工程师"
+  },
+  "cta": {
+    "talkToEngineer": "咨询工程师",
+    "requestDatasheet": "索取数据表",
+    "requestServiceSupport": "申请服务支持",
+    "viewUvCuringSystems": "查看 UV 固化系统",
+    "explore": "了解更多",
+    "readMore": "阅读更多"
+  },
+  "trustBar": {
+    "items": [
+      "正品保障",
+      "应用驱动解决方案",
+      "本地供应链",
+      "长期服务"
+    ]
+  },
+  "glossary": {
+    "genuineProducts": "正品保障",
+    "applicationDrivenSolutions": "应用驱动解决方案",
+    "localSupplyChain": "本地供应链",
+    "longTermService": "长期服务",
+    "authorizedDistributor": "授权经销商",
+    "technicalSupport": "技术支持",
+    "onsiteTroubleshooting": "现场故障排查",
+    "maintenanceAndRepairSupport": "维护与维修支持"
+  }
+}

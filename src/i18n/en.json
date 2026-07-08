@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "code": "en",
+    "name": "English",
+    "switcherLabel": "EN",
+    "dir": "ltr"
+  },
+  "languages": {
+    "en": "EN",
+    "zh": "中文",
+    "th": "ไทย",
+    "vi": "Tiếng Việt"
+  },
+  "nav": {
+    "home": "Home",
+    "omnicure": "OmniCure",
+    "phoseon": "Phoseon",
+    "applications": "Applications",
+    "salesSupport": "Sales & Support",
+    "talkToEngineer": "Talk to an Engineer"
+  },
+  "cta": {
+    "talkToEngineer": "Talk to an Engineer",
+    "requestDatasheet": "Request Datasheet",
+    "requestServiceSupport": "Request Service Support",
+    "viewUvCuringSystems": "View UV Curing Systems",
+    "explore": "Explore",
+    "readMore": "Read more"
+  },
+  "trustBar": {
+    "items": [
+      "Genuine Products",
+      "Application-Driven Solution",
+      "Local Supply Chain",
+      "Long-Term Service"
+    ]
+  },
+  "glossary": {
+    "genuineProducts": "Genuine Products",
+    "applicationDrivenSolutions": "Application-Driven Solutions",
+    "localSupplyChain": "Local Supply Chain",
+    "longTermService": "Long-Term Service",
+    "authorizedDistributor": "Authorized Distributor",
+    "technicalSupport": "Technical Support",
+    "onsiteTroubleshooting": "Onsite Troubleshooting",
+    "maintenanceAndRepairSupport": "Maintenance and Repair Support"
+  }
+}

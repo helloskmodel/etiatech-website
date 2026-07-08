@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "code": "th",
+    "name": "ไทย",
+    "switcherLabel": "ไทย",
+    "dir": "ltr"
+  },
+  "languages": {
+    "en": "EN",
+    "zh": "中文",
+    "th": "ไทย",
+    "vi": "Tiếng Việt"
+  },
+  "nav": {
+    "home": "หน้าแรก",
+    "omnicure": "OmniCure",
+    "phoseon": "Phoseon",
+    "applications": "การใช้งาน",
+    "salesSupport": "ฝ่ายขายและบริการ",
+    "talkToEngineer": "ปรึกษาวิศวกร"
+  },
+  "cta": {
+    "talkToEngineer": "ปรึกษาวิศวกร",
+    "requestDatasheet": "ขอเอกสารข้อมูล",
+    "requestServiceSupport": "ขอรับการสนับสนุนบริการ",
+    "viewUvCuringSystems": "ดูระบบบ่มยูวี",
+    "explore": "ดูเพิ่มเติม",
+    "readMore": "อ่านเพิ่มเติม"
+  },
+  "trustBar": {
+    "items": [
+      "ผลิตภัณฑ์ของแท้",
+      "โซลูชันตามการใช้งานจริง",
+      "ซัพพลายเชนในประเทศ",
+      "บริการระยะยาว"
+    ]
+  },
+  "glossary": {
+    "genuineProducts": "ผลิตภัณฑ์ของแท้",
+    "applicationDrivenSolutions": "โซลูชันตามการใช้งานจริง",
+    "localSupplyChain": "ซัพพลายเชนในประเทศ",
+    "longTermService": "บริการระยะยาว",
+    "authorizedDistributor": "ผู้จัดจำหน่ายที่ได้รับการแต่งตั้ง",
+    "technicalSupport": "การสนับสนุนด้านเทคนิค",
+    "onsiteTroubleshooting": "การแก้ไขปัญหาหน้างาน",
+    "maintenanceAndRepairSupport": "การบำรุงรักษาและการสนับสนุนงานซ่อม"
+  }
+}
