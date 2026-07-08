@@ -109,7 +109,7 @@ export default function PhoseonBrandLanding() {
         </div>
         <div className="w-full self-start rounded-[28px] border border-[#DDEADF] bg-gradient-to-br from-white via-[#F2FBF8] to-[#F3F7FF] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:max-w-sm">
           <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(8,127,107,.16)]">
-            <div><p className="text-sm font-bold text-[#087F6B]">Phoseon®</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#6BBF3A]">Technology</p></div>
+            <div><p className="text-sm font-bold text-[#087F6B]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#6BBF3A]">System</p></div>
           </div>
           <div className="grid gap-2.5">
             {phoseonTech.map((tech) => {
