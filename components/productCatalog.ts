@@ -44,6 +44,7 @@ export const products: Product[] = [
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
     accent: "#44B549",
+    href: "/product/omnicure/lx500",
     intro:
       "The OmniCure LX500 UV LED Spot Curing system controller is uniquely designed with proprietary Intelli-Lamp technology that monitors LED head temperature and lifetime data, while automatically maintaining optical stability ±5% to provide greater process assurance. Available in either 2 or 4-channel configurations, the LX500 is the most flexible and cost-effective option for industrial manufacturing. The controller manages up to four UV LED Spot curing heads simultaneously or independently at wavelengths of 365, 385, 395 and 405 nm. The updated LX500 supports OmniCure's higher power V3 UV LED Heads delivering up to 27 W/cm² irradiance and up to 1,100 mW of optical power.",
     features: [
@@ -257,6 +258,7 @@ export const products: Product[] = [
     tech: "UV Spot Curing",
     sub: "UV Lamp Spot",
     accent: "#1A56DB",
+    href: "/product/omnicure/s1500-pro",
     intro:
       "The OmniCure S1500 Pro is a revolutionary UV spot curing system designed for automated manufacturing. It features proprietary Intelli-Lamp 2.0 technology for enhanced lamp life (2,000 hours guaranteed) and integrated StepCure 2.0 for highly customizable multi-phase curing profiles. The intuitive 4.3\" LCD touch screen simplifies operation, while Industry 4.0 features include programmable PLC output, a Flight Recorder system event tracker, and Intelli-Tap NFC keycard capability.",
     features: [
@@ -1012,6 +1014,7 @@ export const products: Product[] = [
     tech: "Air-Cooled UV LED Curing",
     sub: "Fiber Curing · 225 mm",
     accent: "#60a5fa",
+    href: "/product/omnicure/ac9225-f",
     intro:
       "OmniCure AC9225-F UV LED curing systems are specifically designed for fiber curing applications. An innovative optical design enhances output and optimizes delivery of UV onto the fiber, providing an air-cooled, high-output solution to meet the demand for increased process speeds. The AC9225-F delivers up to 88 W/cm² peak irradiance at the fiber (in a typical face-to-face configuration) at 10–18 mm working distance. A replaceable outer window lets customers scale production speeds without complex integration changes, and innovative LED control technology delivers exceptional uniformity — with multiple systems joinable to increase cure-area width while maintaining uniformity across all systems.",
     features: [
