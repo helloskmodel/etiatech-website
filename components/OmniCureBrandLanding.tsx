@@ -33,6 +33,7 @@ import {
   products,
 } from "@/components/productCatalog";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
+import ServiceCommitmentCards from "@/components/ServiceCommitmentCards";
 import { getApplicationsForProduct } from "@/data/applicationsData";
 
 type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
@@ -172,7 +173,7 @@ export default function OmniCureBrandLanding() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1A56DB]/15 bg-[#F3F7FF] px-3 py-1.5 text-xs font-bold text-[#1A56DB]">
               <BadgeCheck className="h-4 w-4" /> Authorized OmniCure® Distributor
             </div>
-            <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-[#102A43] md:text-6xl">OmniCure UV Curing Solutions</h1>
+            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">OmniCure UV Curing Solutions</h1>
             <p className="mt-5 text-3xl font-bold leading-tight text-[#1A56DB] md:text-5xl">Precision Cures.<br /><span className="text-[#44B549]">Supreme Control.</span></p>
             <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#334E68] md:text-lg">Precision UV curing for assembly, bonding, medical devices and electronics.</p>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[#5F6C7B]">Genuine OmniCure® systems, replacement lamps and accessories — supplied with local application support by ETIA.</p>
@@ -204,7 +205,7 @@ export default function OmniCureBrandLanding() {
       <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
           <p className="text-sm font-semibold">ETIA is an authorized distributor of OmniCure® products.</p>
-          <div className="flex flex-wrap justify-center gap-4 text-xs font-semibold text-blue-100">{["Genuine Products", "Official Supply Channel", "Local Installation Support"].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><BadgeCheck className="h-4 w-4 text-[#8BE172]" />{item}</span>)}</div>
+          <div className="flex flex-wrap justify-center gap-4 text-xs font-semibold text-blue-100">{["Genuine Products", "Application-Driven Solution", "Local Supply Chain", "Long-Term Service"].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><BadgeCheck className="h-4 w-4 text-[#8BE172]" />{item}</span>)}</div>
           <p className="text-xs text-blue-200">Authorized by Excelitas Canada Inc.</p>
         </div>
       </section>
@@ -216,15 +217,17 @@ export default function OmniCureBrandLanding() {
             <div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">Choose by Technology</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Select the curing method that best matches your adhesive, curing area, production speed and process control requirements.</p></div>
             <div className="flex rounded-xl border border-[#E3EAF2] bg-[#F7FAFC] p-1 text-xs font-semibold"><span className="rounded-lg bg-white px-3 py-2 text-[#1A56DB] shadow-sm">Spot · Focused energy</span><span className="px-3 py-2 text-[#087F6B]">Area · Uniform exposure</span></div>
           </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {routes.map((route) => {
               const Icon = route.icon;
-              return <article key={route.id} className="group rounded-3xl border border-[#E3EAF2] bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(15,36,68,.09)] sm:p-8" style={{ borderTopColor: route.color, borderTopWidth: 4 }}>
-                <div className="flex items-start justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[.12em]" style={{ color: route.color }}>{route.eyebrow}</p><h3 className="mt-3 text-2xl font-bold text-[#102A43]">{route.title}</h3></div><span className="rounded-2xl p-3" style={{ color: route.color, background: route.soft }}><Icon className="h-7 w-7" strokeWidth={1.7} /></span></div>
-                <p className="mt-4 max-w-2xl text-sm leading-6 text-[#5F6C7B]">{route.body}</p>
-                <div className="mt-6 grid gap-5 sm:grid-cols-2"><div><p className="text-xs font-bold uppercase tracking-wider text-[#7B8794]">Best for</p><ul className="mt-3 space-y-2">{route.bestFor.map((item) => <li key={item} className="flex items-start gap-2 text-sm text-[#334E68]"><Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: route.color }} />{item}</li>)}</ul></div>{route.featured && <div className="rounded-2xl p-4" style={{ background: route.soft }}><p className="text-xs font-bold uppercase tracking-wider" style={{ color: route.color }}>Featured system</p><p className="mt-2 font-bold text-[#102A43]">OmniCure {route.featured}</p></div>}</div>
-                <button onClick={() => chooseRoute(route.id)} className="mt-7 inline-flex items-center gap-2 text-sm font-bold" style={{ color: route.color }}>View matching products <ArrowRight className="h-4 w-4" /></button>
-              </article>;
+              return <button key={route.id} onClick={() => chooseRoute(route.id)} className="group flex flex-col rounded-2xl border border-[#E3EAF2] bg-white p-5 text-left transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(15,36,68,.09)]" style={{ borderTopColor: route.color, borderTopWidth: 4 }}>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ color: route.color, background: route.soft }}><Icon className="h-5 w-5" strokeWidth={1.8} /></span>
+                <p className="mt-4 text-[11px] font-bold uppercase tracking-[.1em]" style={{ color: route.color }}>{route.eyebrow}</p>
+                <h3 className="mt-1.5 text-base font-bold leading-snug text-[#102A43]">{route.title}</h3>
+                <p className="mt-2 flex-1 text-xs leading-5 text-[#5F6C7B]">{route.body}</p>
+                {route.featured && <p className="mt-3 text-[11px] text-[#7B8794]">Featured: <span className="font-semibold text-[#102A43]">OmniCure {route.featured}</span></p>}
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold" style={{ color: route.color }}>View matching products <ArrowRight className="h-3.5 w-3.5" /></span>
+              </button>;
             })}
           </div>
         </div>
@@ -270,9 +273,9 @@ export default function OmniCureBrandLanding() {
         </div>}
       </section>
 
-      <section className="bg-[#F7FAFC] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Applications</p><div className="mt-3 flex items-end justify-between gap-5"><div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">Built for Demanding Applications</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Precision bonding, assembly and curing processes across advanced manufacturing industries.</p></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-[#1A56DB] sm:inline-flex">View Applications <ArrowRight className="h-4 w-4" /></Link></div><div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{applicationCards.map((item) => { const Icon = item.icon; return <Link key={item.title} href="/applications" className="group rounded-2xl border border-[#E3EAF2] bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"><Icon className="h-6 w-6 text-[#1A56DB]" strokeWidth={1.7} /><h3 className="mt-5 font-bold text-[#102A43] group-hover:text-[#1A56DB]">{item.title}</h3><p className="mt-2 text-sm text-[#5F6C7B]">{item.detail}</p></Link>; })}</div></div></section>
+      <section className="bg-[#F7FAFC] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Applications</p><div className="mt-3 flex items-end justify-between gap-5"><div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">Built for Demanding Applications</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Precision bonding, assembly and curing processes across advanced manufacturing industries.</p></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-[#1A56DB] sm:inline-flex">View Applications <ArrowRight className="h-4 w-4" /></Link></div><div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{applicationCards.map((item) => { const Icon = item.icon; return <Link key={item.title} href="/applications" className="group rounded-2xl border border-[#E3EAF2] bg-white p-4 text-center transition hover:-translate-y-1 hover:shadow-lg"><span className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#F3F7FF] text-[#1A56DB]"><Icon className="h-5 w-5" strokeWidth={1.7} /></span><h3 className="mt-3 text-sm font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{item.title}</h3><p className="mt-1 text-[11px] leading-4 text-[#5F6C7B]">{item.detail}</p></Link>; })}</div></div></section>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Beyond Equipment Supply</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">ETIA Service Commitment</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">From product selection to installation and maintenance, ETIA supports your curing process for the long term.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{services.map((service) => { const Icon = service.icon; return <article key={service.title} className="rounded-2xl border border-[#E3EAF2] p-6"><span className="inline-flex rounded-xl bg-[#F3F7FF] p-3 text-[#1A56DB]"><Icon className="h-6 w-6" strokeWidth={1.7} /></span><h3 className="mt-5 font-bold text-[#102A43]">{service.title}</h3><p className="mt-3 text-sm leading-6 text-[#5F6C7B]">{service.body}</p></article>; })}</div></div></section>
+      <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Beyond Equipment Supply</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">ETIA Service Commitment</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">From product selection to installation and maintenance, ETIA supports your curing process for the long term.</p><div className="mt-10"><ServiceCommitmentCards /></div></div></section>
 
       <section className="relative overflow-hidden bg-gradient-to-br from-[#1A56DB] to-[#123C94] px-4 py-20 text-white sm:px-6 lg:px-8"><div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl" /><div className="absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-[#44B549]/20 blur-3xl" /><div className="relative mx-auto max-w-4xl text-center"><Lightbulb className="mx-auto h-9 w-9 text-[#A4E78F]" /><h2 className="mt-5 text-3xl font-bold md:text-4xl">Not Sure Which OmniCure System Fits Your Process?</h2><p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution.</p><div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><a href={mailto} className="rounded-xl bg-[#44B549] px-7 py-3.5 text-sm font-bold text-white">Talk to an Engineer</a><a href={inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" })} className="rounded-xl border border-white/25 px-7 py-3.5 text-sm font-bold text-white hover:border-white/60">Request Product Recommendation</a></div></div></section>
     </div>

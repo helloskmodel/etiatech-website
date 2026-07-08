@@ -1,11 +1,9 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import { heroBannerImage } from "@/components/caseStudies";
 import { useLocale, t, type Locale } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
 import SalesSupportContent from "@/components/SalesSupportContent";
-import { BadgeCheck, Mail, Wrench, Globe } from "lucide-react";
+import { BadgeCheck, Mail, Wrench, Globe, Zap } from "lucide-react";
 
 function ContactForm({ fields, locale }: { fields: string[]; locale: Locale }) {
   const [submitted, setSubmitted] = useState(false);
@@ -92,16 +90,13 @@ export default function ContactPage() {
     { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷" }, contact: "Mr. Sompoch Ratchakom (Job)", title: { en: "Sales Director", zh: "销售总监" }, phone: "+66 811 746 947", email: "sompoch@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
     { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁" }, contact: "Tien Nguyen", title: { en: "Technical Engineer", zh: "技术工程师" }, phone: "+84 344 590 091", email: "ts_vn@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
   ];
-  const bottomStrip = [
-    { icon: "⚡", title: { en: "Fast Response", zh: "快速响应" }, desc: { en: "Within 1 business day", zh: "1个工作日内" } },
-    { icon: "🔧", title: { en: "Expert Engineers", zh: "专业工程师" }, desc: { en: "20 years of UV curing expertise", zh: "20年UV固化经验" } },
-    { icon: "📦", title: { en: "Local Stock", zh: "本地备货" }, desc: { en: "Ready for immediate delivery", zh: "随时即刻发货" } },
-  ];
 
   return (
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
@@ -257,39 +252,31 @@ export default function ContactPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理" }, locale)}</p>
           <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Officially Authorized Across Asia-Pacific", zh: "亚太地区官方授权" }, locale)}</h2>
           <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
-          <p className="text-gray-500 mb-10 max-w-2xl">{t({ en: "ETIA is an officially authorized distributor — your guarantee of genuine products, valid warranty, and factory-backed technical support.", zh: "ETIA 为官方授权代理商——正品保证、质保有效、并享原厂技术支持。" }, locale)}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {[
-              { country: { en: "Thailand", zh: "泰国" }, url: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/CERTIFICATE/authorized%20TH%20DISTRIBUTOR.jpg" },
-              { country: { en: "Vietnam", zh: "越南" }, url: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/CERTIFICATE/authorized%20VN%20DISTRIBUTOR.jpg" },
-            ].map((cert) => (
-              <a key={cert.country.en} href={cert.url} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all">
-                <div className="relative w-full bg-gray-50 rounded-lg overflow-hidden" style={{ aspectRatio: "1 / 1.414" }}>
-                  <Image src={cert.url} alt={`ETIA Authorized Distributor Certificate — ${cert.country.en}`} fill sizes="(max-width: 640px) 100vw, 40vw" className="object-contain p-2 group-hover:scale-[1.02] transition-transform" />
-                </div>
-                <div className="flex items-center justify-between mt-3">
-                  <span className="font-semibold" style={{ color: "#1A56DB" }}>{t({ en: `Authorized Distributor · ${cert.country.en}`, zh: `授权代理 · ${t(cert.country, "zh")}` }, locale)}</span>
-                  <span className="text-xs font-semibold whitespace-nowrap group-hover:underline" style={{ color: "#44B549" }}>{t({ en: "View →", zh: "查看 →" }, locale)}</span>
-                </div>
-              </a>
-            ))}
-          </div>
-          <p className="mt-8 max-w-4xl text-xs leading-6 text-gray-400">
-            {t({ en: "OmniCure® is a registered trademark of Excelitas Technologies. ETIA is an authorized distributor of OmniCure® products in selected markets. ETIA also supplies selected UV curing technologies including Phoseon and other leading brands through authorized or trusted supply channels. Brand availability and authorization status may vary by country or region. Please contact ETIA for local availability and support.", zh: "OmniCure® 是 Excelitas Technologies 的注册商标。ETIA 是 OmniCure® 产品在特定市场的授权代理商。ETIA 亦通过授权或可信供应渠道供应包括 Phoseon 在内的精选 UV 固化技术及其他领先品牌。品牌供货与授权状态可能因国家或地区而异。请联系 ETIA 了解当地供货与支持。" }, locale)}
+          <p className="text-gray-500 max-w-3xl">{t({ en: "ETIA is an officially authorized distributor — your guarantee of genuine products, valid warranty, and factory-backed technical support. Authorization certificates are available on request during the sales and qualification process.", zh: "ETIA 为官方授权代理商——正品保证、质保有效、并享原厂技术支持。授权证书可在销售与资质审核过程中应要求提供。" }, locale)}</p>
+        </div>
+      </section>
+
+      {/* Brand & authorization disclaimer (small print, above the CTA) */}
+      <section className="bg-white pt-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs leading-6 text-gray-400">
+            {t({ en: "( OmniCure® is a registered trademark of Excelitas Technologies. ETIA is an authorized distributor of OmniCure® products in selected markets. ) ETIA also supplies selected UV curing technologies including Phoseon and other leading brands through authorized or trusted supply channels. Brand availability and authorization status may vary by country or region. Please contact ETIA for local availability and support.", zh: "（OmniCure® 是 Excelitas Technologies 的注册商标。ETIA 是 OmniCure® 产品在特定市场的授权代理商。）ETIA 亦通过授权或可信供应渠道供应包括 Phoseon 在内的精选 UV 固化技术及其他领先品牌。品牌供货与授权状态可能因国家或地区而异。请联系 ETIA 了解当地供货与支持。" }, locale)}
           </p>
         </div>
       </section>
 
-      {/* Bottom strip */}
-      <section className="py-16" style={{ background: "#1A56DB" }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          {bottomStrip.map((item) => (
-            <div key={item.title.en}>
-              <div className="text-3xl mb-2">{item.icon}</div>
-              <p className="font-semibold text-white">{t(item.title, locale)}</p>
-              <p className="text-gray-400 text-sm">{t(item.desc, locale)}</p>
+      {/* Final CTA */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="overflow-hidden rounded-[32px] bg-gradient-to-br from-[#143C96] to-[#1F63D6] px-6 py-14 text-center text-white sm:px-10">
+            <Zap className="mx-auto h-9 w-9 text-[#8BE172]" />
+            <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-bold md:text-4xl">{t({ en: "Ready to build a reliable UV curing process?", zh: "准备好构建可靠的 UV 固化工艺了吗？" }, locale)}</h2>
+            <p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">{t({ en: "Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers help you select, implement, and maintain the right UV curing system — with local support across China and Southeast Asia.", zh: "告诉我们您的应用、胶粘剂、固化面积、波长与生产需求。ETIA 工程师协助您选型、导入并维护合适的 UV 固化系统——并在中国与东南亚提供本地支持。" }, locale)}</p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#44B549] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#3A9D3F]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师" }, locale)}</a>
+              <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white transition hover:border-white/70">{t({ en: "Request Service Support", zh: "申请服务支持" }, locale)}</a>
             </div>
-          ))}
+          </div>
         </div>
       </section>
     </>
