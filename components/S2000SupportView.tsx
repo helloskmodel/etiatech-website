@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { inquiryMailto } from "@/components/contact";
+import ServiceCommitmentCards from "@/components/ServiceCommitmentCards";
 import { useLocale, t } from "@/components/LocaleContext";
 import {
   quickStart,
@@ -317,6 +318,16 @@ export default function S2000SupportView() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ETIA Service Commitment */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Beyond Equipment Supply", zh: "不止于设备供应" }, locale)}</p>
+          <h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">{t({ en: "ETIA Service Commitment", zh: "ETIA 服务承诺" }, locale)}</h2>
+          <p className="mt-3 max-w-3xl text-[#5F6C7B]">{t({ en: "From product selection to installation and maintenance, ETIA supports your curing process for the long term.", zh: "从产品选型到安装与维护，ETIA 为您的固化工艺提供长期支持。" }, locale)}</p>
+          <div className="mt-10"><ServiceCommitmentCards /></div>
         </div>
       </section>
 
