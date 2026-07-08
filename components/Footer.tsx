@@ -2,15 +2,16 @@
 import Link from "next/link";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
+import ServiceCommitment from "@/components/ServiceCommitment";
 
 export default function Footer() {
   const { locale } = useLocale();
   const navLinks = [
-    { href: "/", label: { en: "Home", zh: "首页" } },
+    { href: "/", label: { en: "Home", zh: "首页", vi: "Trang chủ", th: "หน้าหลัก" } },
     { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
     { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
-    { href: "/application", label: { en: "Applications", zh: "应用" } },
-    { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持" } },
+    { href: "/applications", label: { en: "Applications", zh: "应用", vi: "Ứng dụng", th: "การใช้งาน" } },
+    { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
   ];
   return (
     <footer className="border-t border-gray-200 mt-20" style={{ background: "#f8f9fb" }}>
@@ -18,11 +19,11 @@ export default function Footer() {
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">ETIA Technology</p>
           <p className="text-xs text-gray-500 leading-relaxed">
-            {t({ en: "Authorized distributor of world-class UV curing systems. 20 years of application expertise across 10 industries.", zh: "世界级UV固化系统授权代理商。20年应用经验，覆盖10大行业。" }, locale)}
+            {t({ en: "Authorized distributor of world-class UV curing systems. 20 years of application expertise across 10 industries.", zh: "世界级 UV 固化系统授权代理商，拥有 20 年应用经验，服务 10 大行业。", vi: "Nhà phân phối ủy quyền hệ thống đóng rắn UV hàng đầu, với 20 năm kinh nghiệm ứng dụng trong 10 ngành công nghiệp.", th: "ตัวแทนจำหน่ายระบบบ่มยูวีชั้นนำอย่างเป็นทางการ พร้อมประสบการณ์ด้านงานประยุกต์กว่า 20 ปีใน 10 อุตสาหกรรม" }, locale)}
           </p>
         </div>
         <div>
-          <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Navigation", zh: "导航" }, locale)}</p>
+          <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Navigation", zh: "导航", vi: "Điều hướng", th: "เมนู" }, locale)}</p>
           <div className="flex flex-col gap-1">
             {navLinks.map((l) => (
               <Link key={l.href} href={l.href} className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">
@@ -42,10 +43,11 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Contact", zh: "联系方式" }, locale)}</p>
+          <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Contact", zh: "联系方式", vi: "Liên hệ", th: "ติดต่อ" }, locale)}</p>
           <a href={inquiryMailto(locale, {})} className="text-xs hover:underline" style={{ color: "#44B549" }}>
             mark_tang@etia-tech.com
           </a>
+          <ServiceCommitment compact />
         </div>
       </div>
       <div className="border-t border-gray-200 py-5">

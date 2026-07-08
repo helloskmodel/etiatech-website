@@ -23,7 +23,12 @@ const nextConfig: NextConfig = {
       { source: "/th/zh/:path*", destination: "/", permanent: true },
       { source: "/th", destination: "/", permanent: true },
       { source: "/en/contact", destination: "/contact", permanent: true },
-      { source: "/en/applications", destination: "/application", permanent: true },
+      { source: "/en/applications", destination: "/applications", permanent: true },
+      { source: "/application", destination: "/applications", permanent: true },
+      { source: "/application/:path*", destination: "/applications", permanent: true },
+      { source: "/omnicure-s2000-lamp", destination: "/product/omnicure/s2000-lamp", permanent: true },
+      { source: "/product", destination: "/product/omnicure", permanent: true },
+      { source: "/product/systems", destination: "/product/omnicure", permanent: true },
       // Any old product URL (incl. /en/products/uv-lamps, /en/products/microwave)
       { source: "/en/products/:path*", destination: "/product", permanent: true },
       { source: "/en/products", destination: "/product", permanent: true },

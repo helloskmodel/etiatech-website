@@ -20,7 +20,6 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
     partsHint: th ? "ค้นหาด้วยหมายเลขชิ้นส่วนได้เลย — สั่งหลอดที่ตรงรุ่น" : "Search by part number — order the exact lamp you need.",
     alsoSearched: th ? "ค้นหาด้วยรหัสอื่นได้: " : "Also searched as: ",
     faq: th ? "คำถามที่พบบ่อย" : "Frequently asked questions",
-    authorized: th ? "ตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย · สินค้าของแท้" : "Authorized OmniCure Distributor in Thailand · Genuine Lamps",
     closing: th ? "ต้องเปลี่ยนหลอด S2000? ขอราคาวันนี้" : "Need a replacement S2000 lamp? Get pricing today.",
     askPrice: th ? "สอบถามราคา →" : "Ask price →",
   };
@@ -43,7 +42,6 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
                 </div>
               ))}
             </div>
-            <p className="inline-flex items-center gap-2 text-xs font-semibold text-white rounded-full px-3 py-1.5 mb-6" style={{ background: "#ffffff1a", border: "1px solid #ffffff33" }}>✓ {L.authorized}</p>
             <div className="flex flex-wrap gap-3">
               <a href="#quote" className="rounded-lg px-6 py-3 text-sm font-bold text-white hover:opacity-90" style={{ background: BRAND.green }}>{L.request}</a>
             </div>

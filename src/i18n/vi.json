@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "code": "vi",
+    "name": "Tiếng Việt",
+    "switcherLabel": "Tiếng Việt",
+    "dir": "ltr"
+  },
+  "languages": {
+    "en": "EN",
+    "zh": "中文",
+    "th": "ไทย",
+    "vi": "Tiếng Việt"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "omnicure": "OmniCure",
+    "phoseon": "Phoseon",
+    "applications": "Ứng dụng",
+    "salesSupport": "Kinh doanh & Hỗ trợ",
+    "talkToEngineer": "Trao đổi với kỹ sư"
+  },
+  "cta": {
+    "talkToEngineer": "Trao đổi với kỹ sư",
+    "requestDatasheet": "Yêu cầu tài liệu kỹ thuật",
+    "requestServiceSupport": "Yêu cầu hỗ trợ dịch vụ",
+    "viewUvCuringSystems": "Xem hệ thống đóng rắn UV",
+    "explore": "Khám phá",
+    "readMore": "Xem thêm"
+  },
+  "trustBar": {
+    "items": [
+      "Sản phẩm chính hãng",
+      "Giải pháp dựa trên ứng dụng",
+      "Chuỗi cung ứng địa phương",
+      "Dịch vụ dài hạn"
+    ]
+  },
+  "glossary": {
+    "genuineProducts": "Sản phẩm chính hãng",
+    "applicationDrivenSolutions": "Giải pháp dựa trên ứng dụng",
+    "localSupplyChain": "Chuỗi cung ứng địa phương",
+    "longTermService": "Dịch vụ dài hạn",
+    "authorizedDistributor": "Nhà phân phối được ủy quyền",
+    "technicalSupport": "Hỗ trợ kỹ thuật",
+    "onsiteTroubleshooting": "Xử lý sự cố tại hiện trường",
+    "maintenanceAndRepairSupport": "Hỗ trợ bảo trì và sửa chữa"
+  }
+}

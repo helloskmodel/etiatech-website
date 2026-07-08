@@ -33,7 +33,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-20" style={{ background: "#0f2444" }}>
+      <section className="py-16 md:py-20" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>
             {t({ en: "ETIA Insights", zh: "ETIA 洞察" }, locale)}
@@ -74,7 +74,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
                       {a.cover ? (
                         <Image src={a.cover} alt={c.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #0f2444 100%)" }}>
+                        <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
                           <span className="text-white/90 text-4xl font-bold">ETIA</span>
                         </div>
                       )}
