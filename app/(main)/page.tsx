@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomeView from "@/components/HomeView";
+import { getAllArticles } from "@/components/insights";
 
 export const metadata: Metadata = {
   title: "ETIA Technology | UV Curing Systems & Solutions Distributor",
@@ -28,13 +29,22 @@ const orgJsonLd = {
 };
 
 export default function Home() {
+  const articles = getAllArticles().slice(0, 3).map((a) => ({
+    slug: a.slug,
+    title: a.locales.en.title,
+    description: a.locales.en.description,
+    date: a.date,
+    cover: a.cover,
+    tag: a.tags[0],
+    readingMinutes: a.readingMinutes,
+  }));
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
-      <HomeView />
+      <HomeView articles={articles} />
     </>
   );
 }
