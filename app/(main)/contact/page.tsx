@@ -256,15 +256,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Brand & authorization disclaimer (small print, above the CTA) */}
-      <section className="bg-white pt-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs leading-6 text-gray-400">
-            {t({ en: "( OmniCure® is a registered trademark of Excelitas Technologies. ETIA is an authorized distributor of OmniCure® products in selected markets. ) ETIA also supplies selected UV curing technologies including Phoseon and other leading brands through authorized or trusted supply channels. Brand availability and authorization status may vary by country or region. Please contact ETIA for local availability and support.", zh: "（OmniCure® 是 Excelitas Technologies 的注册商标。ETIA 是 OmniCure® 产品在特定市场的授权代理商。）ETIA 亦通过授权或可信供应渠道供应包括 Phoseon 在内的精选 UV 固化技术及其他领先品牌。品牌供货与授权状态可能因国家或地区而异。请联系 ETIA 了解当地供货与支持。" }, locale)}
-          </p>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
