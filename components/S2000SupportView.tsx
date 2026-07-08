@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { BadgeCheck, ArrowRight } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
-import ServiceCommitmentCards from "@/components/ServiceCommitmentCards";
+import TrustStrip from "@/components/TrustStrip";
 import { useLocale, t } from "@/components/LocaleContext";
 import {
   quickStart,
@@ -81,30 +82,32 @@ export default function S2000SupportView() {
         </div>
       </div>
 
-      {/* Hero */}
-      <section className="py-12 relative overflow-hidden border-b border-gray-200" style={{ background: "#f1f5f9" }}>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      {/* Hero — site standard (matches Sales & Support) */}
+      <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
-            <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="text-[11px] font-bold px-2.5 py-1 rounded text-white" style={{ background: "#1A56DB" }}>OmniCure</span>
-              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-300 text-gray-600">{t({ en: "Technical Support · Knowledge Base", zh: "技术支持 · 知识库" }, locale)}</span>
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3" style={{ color: "#1A56DB" }}>
-              {t({ en: "OmniCure S2000 Elite — Installation, Setup & Support Guide", zh: "OmniCure S2000 Elite — 安装、设置与技术支持指南" }, locale)}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Technical Support · Knowledge Base", zh: "技术支持 · 知识库" }, locale)}</div>
+            <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
+              {t({ en: "OmniCure S2000 Elite ", zh: "OmniCure S2000 Elite " }, locale)}<span className="text-[#41A62A]">{t({ en: "Installation & Support", zh: "安装与技术支持" }, locale)}</span>
             </h1>
-            <p className="text-base text-gray-600 max-w-xl mb-6 leading-relaxed">
+            <p className="mt-4 max-w-2xl text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "Startup, installation, configuration, troubleshooting and safety — in one place.", zh: "开机、安装、配置、故障排查与安全——一站汇总。" }, locale)}</p>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
               {t({ en: "Step-by-step start-up, light-guide and lamp-module installation, optical filter changes, status light-ring colour meanings, troubleshooting, safety precautions and regulatory information for the OmniCure S2000 Elite UV spot curing system.", zh: "OmniCure S2000 Elite 紫外点固化系统的分步开机、导光管与灯管模块安装、光学滤光片更换、状态光环颜色含义、故障排查、安全注意事项与合规信息。" }, locale)}
             </p>
-            <div className="flex flex-wrap gap-3">
-              <a href={inquiryMailto(locale, { subject: `Request: ${QUICK_START_PDF_FILENAME}`, context: "OmniCure S2000 Elite Quick Start Guide" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>⬇ {t({ en: "Request Quick Start Guide (PDF)", zh: "索取快速入门指南 (PDF)" }, locale)}</a>
-              <a href={inquiryMailto(locale, { subject: "S2000 Elite Technical Support", context: "OmniCure S2000 Elite" })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href={inquiryMailto(locale, { subject: `Request: ${QUICK_START_PDF_FILENAME}`, context: "OmniCure S2000 Elite Quick Start Guide" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Request Quick Start Guide (PDF)", zh: "索取快速入门指南 (PDF)" }, locale)} <ArrowRight className="h-4 w-4" /></a>
+              <a href={inquiryMailto(locale, { subject: "S2000 Elite Technical Support", context: "OmniCure S2000 Elite" })} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
             </div>
           </div>
-          <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "320px" }}>
-            <Image src={HERO_IMG} alt="OmniCure S2000 Elite UV spot curing system installation and support guide" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-6" priority />
+          <div className="relative min-h-[410px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
+            <Image src={HERO_IMG} alt="OmniCure S2000 Elite UV spot curing system installation and support guide" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-contain p-8" priority />
           </div>
         </div>
       </section>
+
+      <TrustStrip />
 
       {/* On-page table of contents */}
       <section className="py-6 bg-white border-b border-gray-100">
@@ -318,16 +321,6 @@ export default function S2000SupportView() {
               </details>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ETIA Service Commitment */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8 bg-white">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Beyond Equipment Supply", zh: "不止于设备供应" }, locale)}</p>
-          <h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">{t({ en: "ETIA Service Commitment", zh: "ETIA 服务承诺" }, locale)}</h2>
-          <p className="mt-3 max-w-3xl text-[#5F6C7B]">{t({ en: "From product selection to installation and maintenance, ETIA supports your curing process for the long term.", zh: "从产品选型到安装与维护，ETIA 为您的固化工艺提供长期支持。" }, locale)}</p>
-          <div className="mt-10"><ServiceCommitmentCards /></div>
         </div>
       </section>
 
