@@ -165,7 +165,106 @@ const lx500: ProductGuide = {
     "UV LED spot curing controller with 2- or 4-channel head control at 365/385/395/405 nm, Intelli-Lamp ±5% optical stability, StepCure multi-phase curing, Micro SD programming, and support for V3 UV LED heads up to 27 W/cm².",
 };
 
-export const productGuides: ProductGuide[] = [lx500];
+// ───────────────────────────── S1500 Pro ─────────────────────────────
+const s1500Pro: ProductGuide = {
+  slug: "s1500-pro",
+  productName: "OmniCure S1500 Pro",
+  breadcrumbName: "S1500 Pro",
+  eyebrow: { en: "OmniCure S Series · Lamp-Based UV Spot Curing", zh: "OmniCure S 系列 · 灯式 UV 点固化" },
+  h1: { en: "OmniCure S1500 Pro UV Spot Curing System", zh: "OmniCure S1500 Pro UV 点固化系统" },
+  headline: { en: "Automation-Ready UV Curing.", zh: "为自动化而生的 UV 固化。" },
+  subheadline: {
+    en: "Lamp-based UV spot curing with Intelli-Lamp 2.0, StepCure 2.0 multi-phase profiles, a 4.3-inch touchscreen, and Industry 4.0 traceability for automated manufacturing.",
+    zh: "灯式 UV 点固化,配备 Intelli-Lamp 2.0、StepCure 2.0 多阶段配置、4.3 英寸触摸屏与工业 4.0 可追溯性,适用于自动化制造。",
+  },
+  heroImage: `${IMG_BASE}/S1500.png`,
+  heroAlt: "OmniCure S1500 Pro UV Spot Curing System with 4.3-inch touchscreen",
+  stats: [
+    { val: "Up to 30 W/cm²", label: { en: "Output irradiance", zh: "输出辐照度" } },
+    { val: "2,000 h", label: { en: "Guaranteed lamp life", zh: "保证灯管寿命" } },
+    { val: "7 filters", label: { en: "User-interchangeable", zh: "用户可换" } },
+    { val: "PLC · NFC · SD", label: { en: "Industry 4.0 ready", zh: "工业 4.0 就绪" } },
+  ],
+  overview: {
+    en: "The OmniCure S1500 Pro is a lamp-based UV spot curing system designed for automated manufacturing. Intelli-Lamp 2.0 continuously monitors lamp parameters and optimizes lamp life (2,000 hours guaranteed), while integrated StepCure 2.0 enables customizable multi-phase curing profiles. A 4.3-inch LCD touchscreen simplifies operation, and Industry 4.0 features — programmable PLC output, a Flight Recorder event tracker, and Intelli-Tap NFC — support validated, traceable production.",
+    zh: "OmniCure S1500 Pro 是一款灯式 UV 点固化系统,专为自动化制造设计。Intelli-Lamp 2.0 持续监测灯管参数并优化灯管寿命(保证 2,000 小时),内置 StepCure 2.0 可创建定制的多阶段固化配置。4.3 英寸 LCD 触摸屏简化操作,工业 4.0 功能——可编程 PLC 输出、Flight Recorder 事件记录与 Intelli-Tap NFC——支持经验证、可追溯的生产。",
+  },
+  features: [
+    { icon: "lightbulb", title: { en: "OmniCure S1500 Pro Intelli-Lamp 2.0 Technology", zh: "OmniCure S1500 Pro Intelli-Lamp 2.0 技术" }, body: { en: "Intelli-Lamp 2.0 constantly monitors lamp parameters and optimizes lamp life, with 2,000 hours guaranteed.", zh: "Intelli-Lamp 2.0 持续监测灯管参数并优化灯管寿命,保证 2,000 小时。" } },
+    { icon: "cpu", title: { en: "OmniCure S1500 Pro StepCure 2.0 Curing Profiles", zh: "OmniCure S1500 Pro StepCure 2.0 固化配置" }, body: { en: "StepCure 2.0 enables precise programming of multi-phase curing profiles for repeatable, validated processes.", zh: "StepCure 2.0 可精确编程多阶段固化配置,实现可重复、经验证的工艺。" } },
+    { icon: "scan", title: { en: "OmniCure S1500 Pro Touchscreen User Interface", zh: "OmniCure S1500 Pro 触摸屏用户界面" }, body: { en: "A 4.3-inch high-resolution LCD touchscreen simplifies operation, settings, and exposure control.", zh: "4.3 英寸高分辨率 LCD 触摸屏简化操作、设置与曝光控制。" } },
+    { icon: "zap", title: { en: "OmniCure S1500 Pro High UV Output", zh: "OmniCure S1500 Pro 高 UV 输出" }, body: { en: "A 200-Watt UV lamp delivers outputs up to 30 W/cm² for demanding spot curing applications.", zh: "200 瓦 UV 灯管提供最高 30 W/cm² 输出,满足严苛的点固化应用。" } },
+    { icon: "aperture", title: { en: "OmniCure S1500 Pro Interchangeable Filters & Lamp", zh: "OmniCure S1500 Pro 可换滤光片与灯管" }, body: { en: "User-interchangeable optical filters (7 options) and lamp types allow fast configuration for different chemistries.", zh: "用户可更换的光学滤光片(7 种)与灯管类型,可针对不同化学体系快速配置。" } },
+    { icon: "settings", title: { en: "OmniCure S1500 Pro StepCure PLC Output", zh: "OmniCure S1500 Pro StepCure PLC 输出" }, body: { en: "A programmable PLC output via the DB50 port integrates the S1500 Pro into automated production lines.", zh: "通过 DB50 端口的可编程 PLC 输出,将 S1500 Pro 集成到自动化产线。" } },
+    { icon: "radio", title: { en: "OmniCure S1500 Pro Intelli-Tap NFC Access Control", zh: "OmniCure S1500 Pro Intelli-Tap NFC 访问控制" }, body: { en: "Intelli-Tap NFC keycards (Admin and Supervisor levels) protect and control validated process settings.", zh: "Intelli-Tap NFC 钥匙卡(管理员与主管等级)保护并控制经验证的工艺设置。" } },
+    { icon: "layers3", title: { en: "OmniCure S1500 Pro Flight Recorder Traceability", zh: "OmniCure S1500 Pro Flight Recorder 可追溯性" }, body: { en: "The Flight Recorder system event tracker plus USB and SD connectivity support Industry 4.0 traceability.", zh: "Flight Recorder 系统事件记录器配合 USB 与 SD 连接,支持工业 4.0 可追溯性。" } },
+  ],
+  pdfs: {
+    brochure: pdf("Brochure - OmniCure S1500 Pro.pdf"),
+    quickStart: pdf("Quick Start Guide - OmniCure S1500 Pro.pdf"),
+    userGuide: pdf("User Guide - OmniCure S1500 Pro - English.pdf"),
+  },
+  setup: [
+    { title: { en: "OmniCure S1500 Pro Startup", zh: "OmniCure S1500 Pro 启动" }, body: { en: "Install the lamp module, install the optical filter, connect power, turn on the system, and allow proper warm-up before operation.", zh: "安装灯管模块、安装光学滤光片、连接电源、开启系统,并在操作前进行充分预热。" } },
+    { title: { en: "OmniCure S1500 Pro Light Guide Installation", zh: "OmniCure S1500 Pro 导光管安装" }, body: { en: "Insert the light guide into the front light guide port until it clicks into place. The system is backward compatible with original S1500 light guides.", zh: "将导光管插入前部导光管端口,直至卡入到位。系统向后兼容原始 S1500 导光管。" } },
+    { title: { en: "OmniCure S1500 Pro Exposure Time Setting", zh: "OmniCure S1500 Pro 曝光时间设置" }, body: { en: "Set exposure time from the Run screen using the 4.3-inch touchscreen.", zh: "在运行界面上使用 4.3 英寸触摸屏设置曝光时间。" } },
+    { title: { en: "OmniCure S1500 Pro Intensity Setting", zh: "OmniCure S1500 Pro 强度设置" }, body: { en: "Set intensity from the touchscreen. Calibration with a radiometer is required for W/cm² control.", zh: "通过触摸屏设置强度。W/cm² 控制需要用辐射计校准。" } },
+    { title: { en: "OmniCure S1500 Pro StepCure Profile Setup", zh: "OmniCure S1500 Pro StepCure 配置设置" }, body: { en: "Build a multi-phase StepCure 2.0 profile on the touchscreen and assign the programmable PLC output for automation.", zh: "在触摸屏上创建多阶段 StepCure 2.0 配置,并分配可编程 PLC 输出用于自动化。" } },
+    { title: { en: "OmniCure S1500 Pro Lock and Unlock", zh: "OmniCure S1500 Pro 锁定与解锁" }, body: { en: "Use PIN or Intelli-Tap NFC keycard access control to protect validated curing settings.", zh: "使用 PIN 或 Intelli-Tap NFC 钥匙卡访问控制,保护经验证的固化设置。" } },
+  ],
+  troubleshooting: [
+    { title: { en: "OmniCure S1500 Pro Lamp Does Not Strike", zh: "OmniCure S1500 Pro 灯管无法点亮" }, body: { en: "Check lamp installation, optical filter installation, the lamp housing panel, the power connection, and system status. If the issue continues, contact ETIA technical support.", zh: "检查灯管安装、光学滤光片安装、灯罩面板、电源连接与系统状态。如问题持续,请联系 ETIA 技术支持。" } },
+    { title: { en: "OmniCure S1500 Pro Light Guide Not Detected", zh: "OmniCure S1500 Pro 未检测到导光管" }, body: { en: "Check whether the light guide is fully inserted and properly seated in the light guide port. If the issue continues, contact ETIA technical support.", zh: "检查导光管是否完全插入并正确安装在导光管端口中。如问题持续,请联系 ETIA 技术支持。" } },
+    { title: { en: "OmniCure S1500 Pro Filter Not Recognized", zh: "OmniCure S1500 Pro 无法识别滤光片" }, body: { en: "Confirm the optical filter cartridge is properly installed and fastened. If the filter is not properly installed, the system may not recognize it and the lamp may not strike.", zh: "确认光学滤光片卡盒已正确安装并固定。若滤光片未正确安装,系统可能无法识别,灯管也可能无法点亮。" } },
+    { title: { en: "OmniCure S1500 Pro Output Intensity Unstable", zh: "OmniCure S1500 Pro 输出强度不稳定" }, body: { en: "Allow sufficient warm-up, verify calibration, inspect the light guide, and check lamp life status via Intelli-Lamp 2.0. If the issue continues, contact ETIA technical support.", zh: "进行充分预热、核实校准、检查导光管,并通过 Intelli-Lamp 2.0 查看灯管寿命状态。如问题持续,请联系 ETIA 技术支持。" } },
+    { title: { en: "OmniCure S1500 Pro StepCure Not Running", zh: "OmniCure S1500 Pro StepCure 不运行" }, body: { en: "Confirm the StepCure 2.0 profile is programmed correctly and the exposure mode and trigger source match your setup. If the issue continues, contact ETIA technical support.", zh: "确认 StepCure 2.0 配置编程正确,且曝光模式与触发源与设置匹配。如问题持续,请联系 ETIA 技术支持。" } },
+    { title: { en: "OmniCure S1500 Pro System Locked", zh: "OmniCure S1500 Pro 系统锁定" }, body: { en: "Use the configured PIN or an Intelli-Tap Supervisor/Admin NFC keycard depending on the access-control setup. If the issue continues, contact ETIA technical support.", zh: "根据访问控制设置,使用配置的 PIN 或 Intelli-Tap 主管/管理员 NFC 钥匙卡。如问题持续,请联系 ETIA 技术支持。" } },
+  ],
+  support: [
+    { icon: "sun", title: { en: "OmniCure S1500 Pro Replacement Lamp Support", zh: "OmniCure S1500 Pro 替换灯管支持" }, body: { en: "Support for lamp type selection and genuine replacement lamp supply.", zh: "支持灯管类型选型与正品替换灯管供应。" } },
+    { icon: "aperture", title: { en: "OmniCure S1500 Pro Optical Filter Support", zh: "OmniCure S1500 Pro 光学滤光片支持" }, body: { en: "Support for selecting and replacing the 7 optical band-pass filters.", zh: "支持 7 种光学带通滤光片的选型与更换。" } },
+    { icon: "cable", title: { en: "OmniCure S1500 Pro Light Guide Support", zh: "OmniCure S1500 Pro 导光管支持" }, body: { en: "Support for light guide selection, installation, cleaning, and replacement.", zh: "支持导光管的选型、安装、清洁与更换。" } },
+    { icon: "crosshair", title: { en: "OmniCure S1500 Pro Calibration Support", zh: "OmniCure S1500 Pro 校准支持" }, body: { en: "Support for radiometer calibration and repeatable irradiance control.", zh: "支持辐射计校准与可重复的辐照度控制。" } },
+    { icon: "wrench", title: { en: "OmniCure S1500 Pro Maintenance & Repair Support", zh: "OmniCure S1500 Pro 维护与维修支持" }, body: { en: "Support for routine maintenance, troubleshooting, and repair coordination.", zh: "支持日常维护、故障排除与维修协调。" } },
+  ],
+  faqs: [
+    { q: { en: "Where can I download the OmniCure S1500 Pro user guide?", zh: "在哪里可以下载 OmniCure S1500 Pro 用户指南?" }, a: { en: "Download the OmniCure S1500 Pro User Guide, Quick Start Guide, and Brochure from the User Guides & Technical Resources section on this page. The User Guide covers setup, calibration, StepCure 2.0, PLC integration, maintenance, and troubleshooting.", zh: "可从本页面的“用户指南与技术资源”部分下载 OmniCure S1500 Pro 用户指南、快速入门指南与产品手册。用户指南涵盖设置、校准、StepCure 2.0、PLC 集成、维护与故障排除。" } },
+    { q: { en: "How long does the OmniCure S1500 Pro lamp last?", zh: "OmniCure S1500 Pro 灯管能用多久?" }, a: { en: "The OmniCure S1500 Pro uses a 200-Watt UV lamp with Intelli-Lamp 2.0, guaranteed for 2,000 hours. Intelli-Lamp 2.0 continuously monitors lamp parameters to optimize lamp life.", zh: "OmniCure S1500 Pro 采用 200 瓦 UV 灯管并配备 Intelli-Lamp 2.0,保证 2,000 小时。Intelli-Lamp 2.0 持续监测灯管参数以优化寿命。" } },
+    { q: { en: "How do I install the OmniCure S1500 Pro light guide?", zh: "如何安装 OmniCure S1500 Pro 导光管?" }, a: { en: "Insert the light guide into the front light guide port until it clicks into place. The S1500 Pro is backward compatible with original S1500 light guides. See the Quick Start Guide for details.", zh: "将导光管插入前部导光管端口,直至卡入到位。S1500 Pro 向后兼容原始 S1500 导光管。详情见快速入门指南。" } },
+    { q: { en: "Why does the OmniCure S1500 Pro lamp not strike?", zh: "为什么 OmniCure S1500 Pro 灯管无法点亮?" }, a: { en: "Check lamp installation, optical filter installation, the lamp housing panel, the power connection, and system status. If the issue continues, contact ETIA technical support.", zh: "检查灯管安装、光学滤光片安装、灯罩面板、电源连接与系统状态。如问题持续,请联系 ETIA 技术支持。" } },
+    { q: { en: "Does the OmniCure S1500 Pro support PLC automation?", zh: "OmniCure S1500 Pro 支持 PLC 自动化吗?" }, a: { en: "Yes. The S1500 Pro provides a programmable PLC output via the DB50 port and StepCure 2.0 multi-phase profiles for automated, repeatable production.", zh: "支持。S1500 Pro 通过 DB50 端口提供可编程 PLC 输出,并配备 StepCure 2.0 多阶段配置,实现自动化、可重复的生产。" } },
+    { q: { en: "How many optical filters does the OmniCure S1500 Pro support?", zh: "OmniCure S1500 Pro 支持多少种光学滤光片?" }, a: { en: "The S1500 Pro supports 7 user-interchangeable optical band-pass filters plus interchangeable lamp types, allowing fast configuration for different curing chemistries.", zh: "S1500 Pro 支持 7 种用户可换的光学带通滤光片以及可换灯管类型,可针对不同固化化学体系快速配置。" } },
+    { q: { en: "Is the OmniCure S1500 Pro cleanroom ready?", zh: "OmniCure S1500 Pro 适合洁净室吗?" }, a: { en: "Yes. The S1500 Pro is cleanroom-ready with a dedicated duct attachment area, making it suitable for medical device and micro-electronic manufacturing environments.", zh: "适合。S1500 Pro 洁净室就绪,配有专用导管连接区域,适用于医疗器械与微电子制造环境。" } },
+    { q: { en: "Can ETIA provide OmniCure S1500 Pro support?", zh: "ETIA 能提供 OmniCure S1500 Pro 支持吗?" }, a: { en: "Yes. ETIA supplies genuine OmniCure S1500 Pro lamps, optical filters, and light guides, and provides calibration, StepCure/PLC integration, maintenance, and troubleshooting across China, Thailand, Vietnam, and Southeast Asia.", zh: "可以。ETIA 供应正品 OmniCure S1500 Pro 灯管、光学滤光片与导光管,并在中国、泰国、越南及东南亚地区提供校准、StepCure/PLC 集成、维护与故障排除。" } },
+  ],
+  relatedLinks: [
+    { href: "/product/omnicure", label: { en: "OmniCure product family", zh: "OmniCure 产品系列" } },
+    { href: "/product/omnicure/s2000", label: { en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" } },
+    { href: "/product/systems/s2e-network-module", label: { en: "OmniCure S2E Network Module", zh: "OmniCure S2E 网络模块" } },
+    { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持" } },
+  ],
+  metaTitle: "OmniCure S1500 Pro UV Spot Curing System | User Guide & Support | ETIA",
+  metaDescription:
+    "OmniCure S1500 Pro lamp-based UV spot curing system — download the user guide, quick start guide, and brochure. Intelli-Lamp 2.0, StepCure 2.0, 4.3-inch touchscreen, 7 optical filters, PLC, NFC, calibration, troubleshooting, and ETIA technical support.",
+  keywords: [
+    "OmniCure S1500 Pro",
+    "OmniCure S1500 Pro UV Spot Curing System",
+    "OmniCure S1500 Pro user guide",
+    "OmniCure S1500 Pro quick start guide",
+    "OmniCure S1500 Pro troubleshooting",
+    "OmniCure S1500 Pro lamp replacement",
+    "OmniCure S1500 Pro optical filter",
+    "OmniCure S1500 Pro StepCure",
+    "OmniCure S1500 Pro PLC",
+    "OmniCure S1500 Pro calibration",
+    "OmniCure S1500 Pro technical support",
+  ],
+  schemaCategory: "UV Spot Curing System",
+  schemaDescription:
+    "Lamp-based UV spot curing system with Intelli-Lamp 2.0 (2,000 h guaranteed lamp life), StepCure 2.0 multi-phase curing, a 4.3-inch touchscreen, 7 user-interchangeable optical filters, programmable PLC output, and Intelli-Tap NFC access control.",
+};
+
+export const productGuides: ProductGuide[] = [lx500, s1500Pro];
 
 export const productGuideBySlug: Record<string, ProductGuide> = Object.fromEntries(
   productGuides.map((g) => [g.slug, g])

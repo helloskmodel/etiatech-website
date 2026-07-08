@@ -258,6 +258,7 @@ export const products: Product[] = [
     tech: "UV Spot Curing",
     sub: "UV Lamp Spot",
     accent: "#1A56DB",
+    href: "/product/omnicure/s1500-pro",
     intro:
       "The OmniCure S1500 Pro is a revolutionary UV spot curing system designed for automated manufacturing. It features proprietary Intelli-Lamp 2.0 technology for enhanced lamp life (2,000 hours guaranteed) and integrated StepCure 2.0 for highly customizable multi-phase curing profiles. The intuitive 4.3\" LCD touch screen simplifies operation, while Industry 4.0 features include programmable PLC output, a Flight Recorder system event tracker, and Intelli-Tap NFC keycard capability.",
     features: [
