@@ -179,3 +179,67 @@ Same dark-blue bar, brand-specific line instead of the 5 items:
 - [ ] Bottom CTA block matches section 5 exactly
 - [ ] All photos 16:9 via `next/image`
 - [ ] No `#0f2444` anywhere
+
+---
+
+## 9. Application Landing Pages — data-driven, already locked
+
+**Every application page is one template + one data record. This is what keeps
+FORMAT, STRUCTURE and SEO identical across all of them — and across languages.**
+
+| Layer | File | Rule |
+| --- | --- | --- |
+| Template (FORMAT/STRUCTURE) | `components/ApplicationCaseStudyView.tsx` | one component renders **all** application pages |
+| Route + SEO + JSON-LD | `app/(main)/applications/[slug]/page.tsx` | `generateStaticParams`, `generateMetadata`, `TechArticle` + `BreadcrumbList` JSON-LD — all generated from data |
+| Content (DATA) | `data/applicationsData.js` | one object per application |
+| Card on the index | `components/ApplicationCard.tsx` | one card component for all |
+
+### The one rule
+> **To add or localize an application, add/translate a DATA record — never
+> hand-write a page and never fork the template.** A new page that bypasses
+> `ApplicationCaseStudyView` is a bug, not a feature. (The old `/th/[lang]`
+> microsite drifted precisely because it forked the layout; it was retired.)
+
+### Required data schema (every record must have all keys)
+```js
+{
+  slug: "uv-...-bonding",              // URL segment, kebab-case
+  title: "…",                          // H1
+  subtitle: "…",                       // hero sub-paragraph
+  pageType: "Application Case Study",
+  industryCategory: "Medical Device Assembly", // must match APPLICATION_CATEGORIES
+  industry: ["…", "…"],                // meta column + JSON-LD articleSection
+  applicationPoints: ["…", "…"],       // "Application" meta column
+  technology: ["…", "…"],              // "Technology" meta column
+  recommendedProducts: ["…", "…"],     // "Recommended Product" meta column
+  image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/NN-name.jpg", // 16:9, COS
+  // full body content fields (partA/partB/sections) as used by the template
+  seo: {
+    title: "… | Product | ETIA",       // <title> + OG title
+    description: "…",                  // meta description + OG description
+    urlSlug: "applications/<slug>",    // canonical path (no leading slash)
+    keywords: ["…", "…"],              // meta keywords + JSON-LD keywords
+  },
+}
+```
+
+### SEO is automatic — do not hand-roll it
+For each record the route file already emits, identically for every page:
+`title`, `description`, `keywords`, `alternates.canonical`, OpenGraph (article,
+image), plus `TechArticle` and `BreadcrumbList` JSON-LD. You only fill the
+`seo` fields in data; the structure is fixed.
+
+### Localizing application pages (TH / VI)
+- **Do not** create `app/th/applications/...` as separate hand-built pages.
+- Add translated fields to each data record (e.g. `title_th`, `subtitle_th`, …)
+  **or** a parallel localized dataset, and render through the **same**
+  `ApplicationCaseStudyView` with the active locale. Same template → same
+  FORMAT/STRUCTURE/SEO in every language, by construction.
+
+### Checklist to add one application
+- [ ] New object in `data/applicationsData.js` with **all** schema keys
+- [ ] `image` is a real 16:9 COS URL (verify it returns HTTP 200)
+- [ ] `industryCategory` matches an existing `APPLICATION_CATEGORIES` value
+- [ ] `seo.urlSlug` === `applications/<slug>`
+- [ ] Did **not** create a page file or edit the template
+- [ ] `next build` regenerates the page under `/applications/<slug>`
