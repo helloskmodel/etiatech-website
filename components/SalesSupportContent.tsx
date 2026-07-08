@@ -14,7 +14,7 @@ const lifecycle = [
   {
     icon: ClipboardCheck,
     phase: "Before Purchase",
-    title: "Selection & Application Review",
+    title: "Selection & Application",
     lead: "We help customers choose the right UV curing system before purchase.",
     points: ["Application discussion", "UV curing requirement review", "Adhesive and material consideration", "Working distance and exposure area review", "Product and accessory recommendation", "OmniCure®, Phoseon, UV spot curing, UV LED, and area curing selection support"],
     accent: "#1A56DB",
