@@ -100,6 +100,7 @@ export default function ApplicationPage() {
                       {localizeIndustry(app.industry, locale).toUpperCase()}
                     </span>
                     <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">{app.product}</span>
+                    <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-[#1A56DB]/10 text-[#1A56DB]">{app.id}</span>
                     {app.hot && <span className="text-xs px-2 py-0.5 rounded-full bg-orange-50 text-orange-500 border border-orange-200 font-semibold">⭐ {t({ en: "Hot", zh: "热门" }, locale)}</span>}
                   </div>
                   {/* Canonical UV technology hint */}
@@ -115,8 +116,7 @@ export default function ApplicationPage() {
                   {/* Subcategory */}
                   <p className="text-xs text-gray-400 mb-3">{app.subCategory}</p>
                   {/* Footer */}
-                  <div className="flex items-center justify-between pt-2 border-t border-gray-50">
-                    <span className="text-xs text-gray-300">{app.id}</span>
+                  <div className="flex items-center justify-end pt-2 border-t border-gray-50">
                     <span className="text-xs text-[#1A56DB] opacity-0 group-hover:opacity-100 transition-opacity font-medium">{t({ en: "View →", zh: "查看 →" }, locale)}</span>
                   </div>
                 </div>
