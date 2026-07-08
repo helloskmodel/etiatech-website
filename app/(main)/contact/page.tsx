@@ -4,6 +4,7 @@ import Image from "next/image";
 import { heroBannerImage } from "@/components/caseStudies";
 import { useLocale, t, type Locale } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
+import { BadgeCheck, Mail, Wrench, Globe } from "lucide-react";
 
 function ContactForm({ fields, locale }: { fields: string[]; locale: Locale }) {
   const [submitted, setSubmitted] = useState(false);
@@ -99,31 +100,37 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: "#123C94" }}>
-        {heroBannerImage && <Image src={heroBannerImage} alt="" fill priority sizes="100vw" className="object-cover" />}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(18,60,148,0.92) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl text-left">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-            {t({ en: "Dedicated Support,", zh: "专属支持" }, locale)}<br />
-            <span style={{ color: "#44B549" }}>{t({ en: "Always Available.", zh: "全程相伴" }, locale)}</span>
-          </h1>
-          <p className="text-base text-gray-200 mb-6">
-            {t({ en: "From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answer and keep production moving.", zh: "从产品选型、工艺建议到定制方案与设备服务，ETIA团队帮助客户找到正确答案，让生产持续运转。" }, locale)}
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {[
-              { label: { en: "Sales Inquiry", zh: "销售咨询" }, href: "#sales" },
-              { label: { en: "Service & Repair", zh: "服务与维修" }, href: "#service" },
-              { label: { en: "Global Contacts", zh: "全球联系" }, href: "#global" },
-            ].map((chip) => (
-              <a key={chip.href} href={chip.href}
-                className="text-xs px-4 py-2 rounded-full border border-white/30 text-gray-300 hover:border-white/60 hover:text-white transition-all">
-                {t(chip.label, locale)}
-              </a>
-            ))}
+      <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
+              {t({ en: "Dedicated Support,", zh: "专属支持" }, locale)}<br />
+              <span className="text-[#41A62A]">{t({ en: "Always Available.", zh: "全程相伴" }, locale)}</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
+              {t({ en: "From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answer and keep production moving.", zh: "从产品选型、工艺建议到定制方案与设备服务，ETIA团队帮助客户找到正确答案，让生产持续运转。" }, locale)}
+            </p>
           </div>
+          <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
+            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
+              <div><p className="text-sm font-bold text-[#143C96]">ETIA</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#41A62A]">Support</p></div>
+            </div>
+            <div className="grid gap-2.5">
+              {[
+                { icon: Mail, href: "#sales", label: { en: "Sales Inquiry", zh: "销售咨询" }, sub: { en: "Selection, quotes & product advice", zh: "选型、报价与产品建议" } },
+                { icon: Wrench, href: "#service", label: { en: "Service & Repair", zh: "服务与维修" }, sub: { en: "Maintenance, repair & spare parts", zh: "维护、维修与备件" } },
+                { icon: Globe, href: "#global", label: { en: "Global Contacts", zh: "全球联系" }, sub: { en: "Local & international teams", zh: "本地与国际团队" } },
+              ].map((c) => {
+                const Icon = c.icon;
+                return (
+                  <a key={c.href} href={c.href} className="group flex items-center gap-2.5 rounded-xl border border-[#E3EAF2] bg-white p-3 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF6FF] text-[#143C96]"><Icon className="h-4 w-4" strokeWidth={1.8} /></span>
+                    <span><span className="block text-xs font-bold text-[#102A43]">{t(c.label, locale)}</span><span className="block text-[10px] text-[#7B8794]">{t(c.sub, locale)}</span></span>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

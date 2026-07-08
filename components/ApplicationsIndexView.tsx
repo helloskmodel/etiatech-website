@@ -2,11 +2,20 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { BadgeCheck, HeartPulse, Car, CircuitBoard, Sparkles, Cable } from "lucide-react";
 import ApplicationCard from "@/components/ApplicationCard";
 import TrustStrip from "@/components/TrustStrip";
 import { APPLICATION_CATEGORIES, getListedApplications } from "@/data/applicationsData";
 
 const listedApplications = getListedApplications();
+
+const heroIndustries = [
+  { icon: HeartPulse, label: "Medical Device Assembly" },
+  { icon: Car, label: "Automotive & ADAS" },
+  { icon: CircuitBoard, label: "Electronics & PCB" },
+  { icon: Sparkles, label: "Photonics & Packaging" },
+  { icon: Cable, label: "Fiber Optic & Cable" },
+];
 
 export default function ApplicationsIndexView() {
   const [query, setQuery] = useState("");
@@ -30,11 +39,29 @@ export default function ApplicationsIndexView() {
 
   return (
     <>
-      <header className="bg-gradient-to-br from-[#1A56DB] to-[#123C94] py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#8BE172]">5 Industries · 15 Application Case Studies</p>
-          <h1 className="max-w-3xl text-3xl font-bold leading-tight text-white md:text-5xl">Practical UV curing solutions for real production challenges</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
+      <header className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> 5 Industries · 15 Application Case Studies</div>
+            <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">Practical UV curing solutions for real production challenges</h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
+          </div>
+          <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
+            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
+              <div><p className="text-xl font-bold text-[#143C96]">15</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#41A62A]">Case Studies</p></div>
+            </div>
+            <div className="grid gap-2">
+              {heroIndustries.map((ind) => {
+                const Icon = ind.icon;
+                return (
+                  <div key={ind.label} className="flex items-center gap-2.5 rounded-xl border border-[#E3EAF2] bg-white px-3 py-2">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#EEF6FF] text-[#143C96]"><Icon className="h-4 w-4" strokeWidth={1.8} /></span>
+                    <span className="text-xs font-bold text-[#102A43]">{ind.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </header>
 
