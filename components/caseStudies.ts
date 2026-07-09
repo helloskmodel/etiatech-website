@@ -378,10 +378,10 @@ export function caseImageUrl(filename: string): string {
 // Change a filename here to swap that page's banner — no component edits needed.
 export const PAGE_BANNERS = {
   omnicure: caseImageUrl("advanced-packaging.jpg"),
-  phoseon: caseImageUrl("phoseon tin coating.png"),
-  applications: caseImageUrl("Optical Fiber Draw Tower.jpg"),
+  phoseon: caseImageUrl("PCB BY ROBOT.png"),
+  applications: caseImageUrl("ev-battery.png"),
   insights: caseImageUrl("co-packaged-optics.png"),
-  support: caseImageUrl("Aerospace Composite.jpeg"),
+  support: caseImageUrl("advanced-packaging.jpg"),
 } as const;
 
 // Readable, SEO-friendly slug for a case study's landing page.
