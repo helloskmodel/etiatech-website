@@ -7,7 +7,7 @@ const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/log
 
 // ETIA Service Commitment poster — one per language, shown on the right.
 const COMMITMENT_POSTER: Record<Locale, string> = {
-  en: `${IMG}/etia%20service%20commitment-EN.png`,
+  en: `${IMG}/ETIA%20SERVICE-EN.png`,
   zh: `${IMG}/ETIA%20SERVICE-CN.png`,
   th: `${IMG}/ETIA%20SERVICE-TH.png`,
   vi: `${IMG}/ETIA%20SERVICE-VN.png`,
