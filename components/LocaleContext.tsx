@@ -30,8 +30,12 @@ export function LocaleProvider({ children, initialLocale = "en" }: { children: R
   // Restore saved choice on mount (client-only to avoid hydration mismatch).
   useEffect(() => {
     const saved = readCookie();
-    if (initialLocale === "en" && saved) setLocaleState(saved);
-    document.documentElement.lang = initialLocale === "zh" ? "zh-CN" : initialLocale;
+    // On the default (en) routes, a saved cookie restores the chosen locale.
+    // Keep <html lang> in sync with the EFFECTIVE locale so language-specific
+    // CSS (e.g. CJK/Thai heading sizes) applies.
+    const effective = initialLocale === "en" && saved ? saved : initialLocale;
+    if (effective !== initialLocale) setLocaleState(effective);
+    document.documentElement.lang = effective === "zh" ? "zh-CN" : effective;
   }, [initialLocale]);
 
   const setLocale = (l: Locale) => {

@@ -176,7 +176,6 @@ export default function OmniCureBrandLanding() {
               <BadgeCheck className="h-4 w-4" /> Authorized OmniCure® Distributor
             </div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "OmniCure UV Curing Solutions", zh: "OmniCure UV 光固化解决方案", th: "โซลูชัน UV Curing ของ OmniCure", vi: "Giải pháp UV Curing OmniCure" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Precision Cures. Supreme Control.", zh: "精准固化，卓越掌控。", th: "การบ่มที่แม่นยำ ควบคุมเหนือระดับ", vi: "Đóng rắn chính xác. Kiểm soát tối ưu." }, locale)}</span></h1>
-            <p className="mt-6 max-w-2xl text-sm leading-6 text-[#667085]">Genuine OmniCure® systems, replacement lamps and accessories — supplied with local application support by ETIA.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#choose-technology" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Choose Your Technology <ArrowRight className="h-4 w-4" /></a>
               <a href={mailto} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">Talk to an Engineer</a>

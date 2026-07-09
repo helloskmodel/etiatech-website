@@ -198,9 +198,6 @@ export default function S2000View() {
             <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
               {t({ en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Maximum Power. Total Control.", zh: "极致功率，全面掌控。" }, locale)}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
-              {t({ en: "The industry's most advanced lamp-based UV spot curing system — up to 30 W/cm² with closed-loop precision for medical, electronics, and EV manufacturing.", zh: "业界最先进的灯式UV点固化系统——最高30 W/cm²,以闭环精度服务于医疗、电子与电动汽车制造。" }, locale)}
-            </p>
             <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {heroStats.map((s) => (
                 <div key={s.label.en} className="rounded-xl border border-[#DCE7F5] bg-white/70 p-3 backdrop-blur">
