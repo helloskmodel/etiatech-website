@@ -13,14 +13,14 @@ const zhDict: Record<string, string> = {
   // taglines
   "UV Spot & Area Curing": "UV点固化与面固化",
   "UV LED Air & Water-Cooled": "UV LED风冷与水冷",
-  "Microwave UV Curing": "微波UV Curing 光固化",
+  "Microwave UV Curing": "微波UV Curing 紫外线固化",
   "UV LED High-Intensity Systems": "UV LED高强度系统",
   // category headers
   "UV SPOT CURING SYSTEMS": "UV点固化系统",
   "UV AREA CURING SYSTEMS": "UV面固化系统",
   "WATER-COOLED UV LED AREA CURING SYSTEMS": "水冷式UV LED面固化系统",
   "AIR-COOLED UV LED AREA CURING SYSTEMS": "风冷式UV LED面固化系统",
-  "MICROWAVE UV CURING SYSTEMS": "微波UV Curing 光固化系统",
+  "MICROWAVE UV CURING SYSTEMS": "微波UV Curing 紫外线固化系统",
   "WATER-COOLED UV LED SYSTEMS": "水冷式UV LED系统",
   "UV LED CURING SYSTEMS": "UV LED固化系统",
   // family names
@@ -47,10 +47,10 @@ const zhDict: Record<string, string> = {
   "Speed": "高速",
   "Clean & Safe": "清洁与安全",
   "Precision": "精准",
-  "UV curing converts liquid formulations to solid materials in seconds — eliminating thermal ovens, long cure queues, and handling delays that slow production lines.": "UV Curing 光固化在数秒内将液态配方转化为固体材料——免去热风烤箱、漫长固化排队及拖慢产线的搬运延迟。",
-  "UV curable materials are 100% solid with no solvents — zero VOC emissions, no hazardous waste disposal, and no fumes in the clean room.": "UV Curing 光固化材料100%固含、无溶剂——零VOC排放、无危废处理、洁净室内无烟雾。",
+  "UV curing converts liquid formulations to solid materials in seconds — eliminating thermal ovens, long cure queues, and handling delays that slow production lines.": "UV Curing 紫外线固化在数秒内将液态配方转化为固体材料——免去热风烤箱、漫长固化排队及拖慢产线的搬运延迟。",
+  "UV curable materials are 100% solid with no solvents — zero VOC emissions, no hazardous waste disposal, and no fumes in the clean room.": "UV Curing 紫外线固化材料100%固含、无溶剂——零VOC排放、无危废处理、洁净室内无烟雾。",
   "Spectral output, peak irradiance, and energy dose precisely determine the physical properties of the cured material. The right equipment controls all three.": "光谱输出、峰值辐照度与能量剂量精确决定固化材料的物理性能。合适的设备可同时掌控这三者。",
-  "UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.": "UV Curing 光固化是一种光化学过程，在高强度UV能量照射下，将胶粘剂、涂层、油墨等液态配方瞬间转化为完全固化的固体材料。",
+  "UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.": "UV Curing 紫外线固化是一种光化学过程，在高强度UV能量照射下，将胶粘剂、涂层、油墨等液态配方瞬间转化为完全固化的固体材料。",
 };
 
 const brands = [
@@ -237,7 +237,7 @@ export default function ProductPage() {
               <span style={{ color: "#44B549" }}>{t({ en: "Perfect Fit.", zh: "完美匹配" }, locale)}</span>
             </h1>
             <p className="text-base text-gray-200 mb-6 leading-relaxed">
-              {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV Curing 光固化方案。" }, locale)}
+              {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV Curing 紫外线固化方案。" }, locale)}
             </p>
             <div className="flex flex-wrap gap-4">
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
@@ -348,8 +348,8 @@ export default function ProductPage() {
       {/* Why UV Curing — light gray */}
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "UV Curing Technology", zh: "UV Curing 光固化技术" }, locale)}</p>
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Why UV Curing?", zh: "为何选择UV Curing 光固化?" }, locale)}</h2>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "UV Curing Technology", zh: "UV Curing 紫外线固化技术" }, locale)}</p>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Why UV Curing?", zh: "为何选择UV Curing 紫外线固化?" }, locale)}</h2>
           <div className="w-10 h-1 rounded mb-8" style={{ background: "#44B549" }} />
           <p className="text-gray-500 max-w-2xl mb-10">
             {tr("UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.")}
@@ -370,7 +370,7 @@ export default function ProductPage() {
       <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Not sure which system is right for you?", zh: "不确定哪款系统适合您?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 光固化系统——从选型到验证。" }, locale)}</p>
+          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统——从选型到验证。" }, locale)}</p>
           <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
             {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}
           </a>
