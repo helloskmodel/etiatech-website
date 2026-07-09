@@ -225,16 +225,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Authorized Distributor Certificates */}
-      <section id="certificates" className="py-20" style={{ background: "#f5f7fa" }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理" }, locale)}</p>
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Officially Authorized Across Asia-Pacific", zh: "亚太地区官方授权" }, locale)}</h2>
-          <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
-          <p className="text-gray-500 max-w-3xl">{t({ en: "ETIA is an officially authorized distributor — your guarantee of genuine products, valid warranty, and factory-backed technical support. Authorization certificates are available on request during the sales and qualification process.", zh: "ETIA 为官方授权代理商——正品保证、质保有效、并享原厂技术支持。授权证书可在销售与资质审核过程中应要求提供。" }, locale)}</p>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
