@@ -46,8 +46,7 @@ export default function ApplicationsIndexView() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> 5 Industries · 15 Application Case Studies</div>
             <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">Practical UV curing solutions <span className="text-[#41A62A]">for real production challenges</span></h1>
-            <p className="mt-4 max-w-2xl text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">The right UV technology, product, and support — matched to your process.</p>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
           </div>
           <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
