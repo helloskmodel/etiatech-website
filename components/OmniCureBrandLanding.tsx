@@ -33,7 +33,6 @@ import {
   products,
 } from "@/components/productCatalog";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
-import ServiceCommitmentCards from "@/components/ServiceCommitmentCards";
 import FinalCta from "@/components/FinalCta";
 import { getApplicationsForProduct } from "@/data/applicationsData";
 
@@ -175,8 +174,7 @@ export default function OmniCureBrandLanding() {
               <BadgeCheck className="h-4 w-4" /> Authorized OmniCure® Distributor
             </div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">OmniCure UV Curing Solutions<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">Precision Cures. Supreme Control.</span></h1>
-            <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#41A62A] md:text-lg">Precision UV curing for assembly, bonding, medical devices and electronics.</p>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#667085]">Genuine OmniCure® systems, replacement lamps and accessories — supplied with local application support by ETIA.</p>
+            <p className="mt-6 max-w-2xl text-sm leading-6 text-[#667085]">Genuine OmniCure® systems, replacement lamps and accessories — supplied with local application support by ETIA.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#choose-technology" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Choose Your Technology <ArrowRight className="h-4 w-4" /></a>
               <a href={mailto} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">Talk to an Engineer</a>
@@ -275,7 +273,6 @@ export default function OmniCureBrandLanding() {
 
       <section className="bg-[#F7FAFC] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Applications</p><div className="mt-3 flex items-end justify-between gap-5"><div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">Built for Demanding Applications</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Precision bonding, assembly and curing processes across advanced manufacturing industries.</p></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-[#1A56DB] sm:inline-flex">View Applications <ArrowRight className="h-4 w-4" /></Link></div><div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{applicationCards.map((item) => { const Icon = item.icon; return <Link key={item.title} href="/applications" className="group rounded-2xl border border-[#E3EAF2] bg-white p-4 text-center transition hover:-translate-y-1 hover:shadow-lg"><span className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#F3F7FF] text-[#1A56DB]"><Icon className="h-5 w-5" strokeWidth={1.7} /></span><h3 className="mt-3 text-sm font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{item.title}</h3><p className="mt-1 text-[11px] leading-4 text-[#5F6C7B]">{item.detail}</p></Link>; })}</div></div></section>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Beyond Equipment Supply</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">ETIA Service Commitment</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">From product selection to installation and maintenance, ETIA supports your curing process for the long term.</p><div className="mt-10"><ServiceCommitmentCards /></div></div></section>
 
       <FinalCta heading="Not Sure Which OmniCure System Fits Your Process?" body="Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution." primary={{ label: "Talk to an Engineer", href: mailto }} secondary={{ label: "Request Product Recommendation", href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />
     </div>
