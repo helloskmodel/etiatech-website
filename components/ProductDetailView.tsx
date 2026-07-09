@@ -207,7 +207,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       <section className="py-14" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">{t({ en: `Interested in the ${shortName}?`, zh: "对该产品感兴趣?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}</p>
+          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV光固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
             <Link href="/product/systems" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "All Systems", zh: "全部系统" }, locale)}</Link>

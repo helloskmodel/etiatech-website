@@ -37,7 +37,7 @@ const tagZh: Record<string, string> = {
   "UV Spot Curing": "UV 点固化",
   "Air-Cooled UV LED Curing": "风冷 UV LED",
   "Water-Cooled UV LED Area Curing": "水冷 UV LED 面固化",
-  "Microwave UV Curing": "微波 UV 固化",
+  "Microwave UV Curing": "微波 UV 光固化",
 };
 
 export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
@@ -92,7 +92,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                       {i < arr.length - 1 && <br />}
                     </span>
                   ))
-                : `${b.name} ${t({ en: "UV Curing Systems", zh: "UV 固化系统" }, locale)}`}
+                : `${b.name} ${t({ en: "UV Curing Systems", zh: "UV 光固化系统" }, locale)}`}
             </h1>
             {b.hero && (
               <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-6 max-w-2xl">{t(b.hero.subline, locale)}</p>
@@ -121,7 +121,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Products", zh: "产品" }, locale)}</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: slug === "omnicure" ? "OmniCure UV Curing Product Catalog" : `Shop ${b.name} Systems`, zh: slug === "omnicure" ? "OmniCure UV 固化产品清单" : `${b.name} 全系产品` }, locale)}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: slug === "omnicure" ? "OmniCure UV Curing Product Catalog" : `Shop ${b.name} Systems`, zh: slug === "omnicure" ? "OmniCure UV 光固化产品清单" : `${b.name} 全系产品` }, locale)}</h2>
           <p className="mb-8 text-sm text-gray-500">{t({ en: slug === "omnicure" ? "Lamp and LED spot curing, small- and large-area UV LED systems, fiber curing, radiometry, and accessories." : "Browse systems by product and technology.", zh: slug === "omnicure" ? "涵盖灯式与 LED 点固化、小面积与大面积 UV LED、光纤固化、辐射测量及配件。" : "按产品与技术浏览系统。" }, locale)}</p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {brandProducts.map((raw, i) => {
@@ -258,7 +258,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       <section className="py-14" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">{t({ en: `Need help selecting a ${b.name} system?`, zh: `需要帮助挑选 ${b.name} 系统?` }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的 UV 固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}</p>
+          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的 UV 光固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href={inquiryMailto(locale, { subject: "Sales Inquiry", context: b.name })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
             <Link href="/product" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "All Products", zh: "全部产品" }, locale)}</Link>

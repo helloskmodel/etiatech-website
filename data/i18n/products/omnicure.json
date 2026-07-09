@@ -638,7 +638,7 @@
       },
       "description": {
         "en": "Radiometry is essential for measuring UV light output to maintain a repeatable curing process. The R2000 Radiometer combines with the S2000 Elite/S2000 UV Spot Curing System to provide a complete curing station with unmatched control and repeatability. Special electronics allow connection of custom sensors that measure light energy directly at the cure site or within cure ring bonding fixtures.",
-        "zh": "辐射测量是维持可重复UV固化工艺的关键技术，用于测量UV光输出。R2000辐射计可与S2000 Elite/S2000 UV点固化系统配合使用，组成具备无可比拟控制力与重复精度的完整固化工作站。其特殊电路设计支持连接定制传感器，可直接在固化点或固化环夹具内测量光能。",
+        "zh": "辐射测量是维持可重复UV光固化工艺的关键技术，用于测量UV光输出。R2000辐射计可与S2000 Elite/S2000 UV点固化系统配合使用，组成具备无可比拟控制力与重复精度的完整固化工作站。其特殊电路设计支持连接定制传感器，可直接在固化点或固化环夹具内测量光能。",
         "vi": "Đo bức xạ là kỹ thuật thiết yếu để đo đầu ra ánh sáng UV nhằm duy trì quy trình đóng rắn có thể lặp lại. Máy đo bức xạ R2000 có thể kết hợp với Hệ thống đóng rắn điểm UV S2000 Elite/S2000 để tạo thành trạm đóng rắn hoàn chỉnh với khả năng kiểm soát và độ lặp lại vượt trội. Mạch điện tử đặc biệt cho phép kết nối cảm biến tùy chỉnh để đo năng lượng ánh sáng trực tiếp tại điểm đóng rắn hoặc trong đồ gá vòng đóng rắn."
       },
       "features": [
@@ -727,7 +727,7 @@
       },
       "description": {
         "en": "Radiometry is essential for measuring light output from a UV curing system to maintain a precise, repeatable process. UV measuring systems must capture the narrow beam at the center of a detecting sensor at an exact focal height to determine peak irradiance. Two options are available: Irradiance (W/cm2) using the LS200 or Optical Power (W) using the LS200P, achieving unmatched control when used with a Beam Positioning Kit and LX500 controller.",
-        "zh": "辐射测量是维持精准、可重复UV固化工艺的关键，用于测量UV固化系统的光输出。UV测量系统必须在精确焦距高度内、于检测传感器中心捕获窄光束，才能确定峰值辐照度。提供两种测量方案：使用LS200测量辐照度（W/cm²），或使用LS200P测量光功率（W）；搭配光束定位套件与LX500控制器使用时，可实现无可比拟的控制精度。",
+        "zh": "辐射测量是维持精准、可重复UV光固化工艺的关键，用于测量UV光固化系统的光输出。UV测量系统必须在精确焦距高度内、于检测传感器中心捕获窄光束，才能确定峰值辐照度。提供两种测量方案：使用LS200测量辐照度（W/cm²），或使用LS200P测量光功率（W）；搭配光束定位套件与LX500控制器使用时，可实现无可比拟的控制精度。",
         "vi": "Đo bức xạ là kỹ thuật thiết yếu để đo đầu ra ánh sáng từ hệ thống đóng rắn UV nhằm duy trì quy trình chính xác, có thể lặp lại. Hệ thống đo UV phải bắt được chùm tia hẹp tại tâm cảm biến ở đúng độ cao tiêu cự để xác định độ rọi đỉnh. Có hai tùy chọn: đo độ rọi (W/cm²) bằng LS200 hoặc công suất quang (W) bằng LS200P, đạt khả năng kiểm soát vượt trội khi dùng cùng Bộ định vị chùm tia và bộ điều khiển LX500."
       },
       "features": [

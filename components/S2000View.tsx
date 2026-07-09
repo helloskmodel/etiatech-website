@@ -478,7 +478,7 @@ export default function S2000View() {
 
       <FinalCta
         heading={t({ en: "Ready to specify the S2000 Elite?", zh: "准备选型 S2000 Elite?" }, locale)}
-        body={t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}
+        body={t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV光固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}
         primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" }) }}
         secondary={{ label: t({ en: "Request Datasheet", zh: "索取数据表" }, locale), href: inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" }) }}
       />
