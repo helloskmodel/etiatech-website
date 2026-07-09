@@ -381,14 +381,21 @@ export function appImageUrl(filename: string): string {
   return `${APP_IMG_BASE}/${encodeURIComponent(filename)}`;
 }
 
+// Purpose-made wide hero banners (1926×600) under the /BANNERIMG/ bucket.
+const BANNER_BASE =
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/BANNERIMG";
+export function bannerUrl(filename: string): string {
+  return `${BANNER_BASE}/${encodeURIComponent(filename)}`;
+}
+
 // Per-page hero background banner (blurred, lightened case-study photo).
 // Change a filename here to swap that page's banner — no component edits needed.
 export const PAGE_BANNERS = {
-  omnicure: appImageUrl("13-semiconductor-packaging.jpg"),
-  phoseon: caseImageUrl("phoseon tin coating.png"),
-  applications: appImageUrl("05-lidar.jpg"),
-  insights: caseImageUrl("co-packaged-optics.png"),
-  support: caseImageUrl("advanced-packaging.jpg"),
+  omnicure: bannerUrl("BANNER-OMNICURE.jpg"),
+  phoseon: bannerUrl("BANNER-PHOSEON.jpg"),
+  applications: bannerUrl("BANNER-APPLICATION.jpg"),
+  insights: bannerUrl("BANNER-INSIGHT.jpg"),
+  support: bannerUrl("BANNER-SALES AND SUPPORT.jpg"),
 } as const;
 
 // Readable, SEO-friendly slug for a case study's landing page.
