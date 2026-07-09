@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { BadgeCheck, HeartPulse, Car, CircuitBoard, Sparkles, Cable } from "lucide-react";
+import Link from "next/link";
+import { BadgeCheck, HeartPulse, Car, CircuitBoard, Sparkles, Cable, ArrowRight } from "lucide-react";
 import ApplicationCard from "@/components/ApplicationCard";
+import { inquiryMailto } from "@/components/contact";
 import TrustStrip from "@/components/TrustStrip";
 import UvCuringSelector from "@/components/UvCuringSelector";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -49,6 +51,10 @@ export default function ApplicationsIndexView() {
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> 5 Industries · 15 Application Case Studies</div>
             <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Practical UV Curing Solutions", zh: "实用UV光固化方案", th: "โซลูชัน UV Curing ที่ใช้งานได้จริง", vi: "Giải pháp UV Curing thực tiễn" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "For Real Production Challenges.", zh: "应对一线生产挑战", th: "สำหรับความท้าทายการผลิตจริง", vi: "Cho các thách thức sản xuất thực tế." }, locale)}</span></h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href={inquiryMailto(locale, { subject: "UV Curing Application Inquiry", context: "Application / material / process requirements" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)} <ArrowRight className="h-4 w-4" /></a>
+              <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV光固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
+            </div>
           </div>
           <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
