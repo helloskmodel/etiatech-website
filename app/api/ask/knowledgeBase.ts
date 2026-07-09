@@ -1,7 +1,7 @@
 import "server-only";
 import { products, type Product } from "@/components/productCatalog";
 import { apps, type App } from "@/components/applicationNotes";
-import { successStories, type CaseStudy } from "@/components/caseStudies";
+import { caseStudiesCn, type CaseCn } from "@/data/caseStudiesCn";
 import { marketProducts } from "@/components/markets";
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -58,20 +58,17 @@ function appBlock(a: App): string {
   ].join("\n");
 }
 
-function caseBlock(c: CaseStudy): string {
-  const benefits = c.benefits?.length
-    ? "Benefits:\n" + c.benefits.map((b) => `    - ${b}`).join("\n")
-    : "";
+function caseBlock(c: CaseCn): string {
+  const list = (l?: { en: string[] }) => (l?.en?.length ? l.en.map((x) => `    - ${x}`).join("\n") : "");
   return [
-    `### [${c.id}] ${c.title}`,
-    `Industry: ${c.industry} | Sector: ${c.sector} | Customer: ${c.company}`,
-    c.overview ? `Overview: ${c.overview}` : "",
-    `Challenge: ${c.challenge}`,
-    `Solution: ${c.solution}`,
-    benefits,
-    c.results ? `Results: ${c.results}` : "",
-    `Headline metric: ${c.metric} — ${c.metricLabel}`,
-    c.source ? `Source: ${c.source}` : "",
+    `### [${c.id}] ${c.title.en}`,
+    `Industry: ${c.industry.en} | Product: ${c.product} | Tech: ${c.techRoute.en}`,
+    c.scene?.en ? `Scene: ${c.scene.en}` : "",
+    c.overview?.en?.length ? `Overview:\n${list(c.overview)}` : "",
+    c.challenge?.en?.length ? `Challenge:\n${list(c.challenge)}` : "",
+    c.solution?.en?.length ? `Solution:\n${list(c.solution)}` : "",
+    c.benefits?.en?.length ? `Benefits:\n${list(c.benefits)}` : "",
+    c.engineerTip?.en ? `Engineer tip: ${c.engineerTip.en}` : "",
   ]
     .filter(Boolean)
     .join("\n");
@@ -80,7 +77,7 @@ function caseBlock(c: CaseStudy): string {
 function build(): string {
   const productSection = products.map(productBlock).join("\n\n");
   const appSection = apps.map(appBlock).join("\n\n");
-  const caseSection = successStories.map(caseBlock).join("\n\n");
+  const caseSection = caseStudiesCn.map(caseBlock).join("\n\n");
 
   return [
     "# ETIA / OmniCure UV Curing Knowledge Base",

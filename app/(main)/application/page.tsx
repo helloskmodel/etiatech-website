@@ -2,11 +2,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { industryImage, industryFallbackIcon, industryColors } from "@/components/industryMedia";
-import { successStories, caseStudyImage, caseSlug, heroBannerImage, localizeCase } from "@/components/caseStudies";
+import { industryColors } from "@/components/industryMedia";
+import { heroBannerImage } from "@/components/caseStudies";
+import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { apps, appSlug, localizeApp, localizeIndustry } from "@/components/applicationNotes";
-import { productForAppNote, brandsForCase, techRoutesForCase } from "@/components/productApplications";
-import { techRouteFor, brandAccent } from "@/components/productCatalog";
+import { productForAppNote } from "@/components/productApplications";
+import { techRouteFor } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
 
@@ -134,65 +135,24 @@ export default function ApplicationPage() {
           <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "From UV Curing Know-How to Real Results", zh: "从 UV Curing 紫外线固化专业积淀，到落地实效成果" }, locale)}</h2>
           <p className="text-gray-500 mb-10 max-w-3xl text-balance">{t({ en: "Unmatched UV curing expertise — full system solutions where chemistry, material, and equipment work as one.", zh: "积累丰富的UV Curing 紫外线固化的经验—— 为客户制定融合耗材、胶粘剂与设备一体化解决方案。" }, locale)}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {successStories.map((raw) => {
-              const s = localizeCase(raw, locale);
-              return (
+            {caseStudiesCn.map((c) => (
               <Link
-                key={s.id}
-                href={`/case-studies/${caseSlug(raw)}`}
+                key={c.slug}
+                href={`/case-studies/${c.slug}`}
                 className="text-left rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-all bg-white flex flex-col group"
               >
-                {/* Visual header — real industry photo (icon fallback) */}
-                <div className="relative h-32 overflow-hidden bg-gray-100">
-                  {(caseStudyImage(s) || industryImage[s.industry]) ? (
-                    <Image src={caseStudyImage(s) || industryImage[s.industry]} alt={s.industry} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${industryColors[s.industry]} 0%, ${industryColors[s.industry]}cc 100%)` }}>
-                      {(() => { const Icon = industryFallbackIcon[s.industry]; return Icon ? <Icon className="w-10 h-10 text-white/90" strokeWidth={1.5} /> : null; })()}
-                    </div>
-                  )}
-                  <span className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded text-white" style={{ background: industryColors[s.industry] }}>{s.sector.toUpperCase()}</span>
-                  <span className="absolute top-2 right-2 text-[10px] text-white bg-black/30 px-1.5 py-0.5 rounded">{s.id}</span>
+                {/* Visual header — real industry photo */}
+                <div className="relative h-40 overflow-hidden bg-gray-100">
+                  <Image src={c.image} alt={t(c.title, locale)} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                {/* Title */}
-                <div className="px-5 pt-4 pb-2">
-                  <h3 className="font-bold text-base leading-snug" style={{ color: "#1A56DB" }}>{s.title}</h3>
-                  <p className="text-gray-400 text-xs mt-1">{s.company}</p>
-                  {/* Brand + primary UV technology hint */}
-                  <div className="flex flex-wrap items-center gap-1 mt-2">
-                    {brandsForCase(raw).map((bp) => (
-                      <span key={bp.brandId} className="text-[10px] font-bold px-1.5 py-0.5 rounded text-white" style={{ background: brandAccent[bp.brandId] }}>{bp.brand}</span>
-                    ))}
-                    {(() => {
-                      const routes = techRoutesForCase(raw);
-                      if (!routes.length) return null;
-                      return (
-                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full border border-gray-200 text-gray-500">
-                          {t(routes[0], locale)}{routes.length > 1 ? ` +${routes.length - 1}` : ""}
-                        </span>
-                      );
-                    })()}
-                  </div>
-                </div>
-                {/* Keywords */}
-                <div className="px-5 pb-4 flex flex-wrap gap-1.5 flex-1 content-start">
-                  {s.keywords.map((k) => (
-                    <span key={k} className="text-[11px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${industryColors[s.industry]}40`, color: industryColors[s.industry], background: `${industryColors[s.industry]}0d` }}>
-                      {k}
-                    </span>
-                  ))}
-                </div>
-                {/* Footer metric */}
-                <div className="px-5 py-3 border-t border-gray-100 flex items-center justify-between bg-gray-50">
-                  <div>
-                    <p className="text-xl font-bold" style={{ color: "#1A56DB" }}>{s.metric}</p>
-                    <p className="text-[11px] text-gray-400 mt-0.5 line-clamp-1">{s.metricLabel}</p>
-                  </div>
-                  <span className="text-xs font-semibold whitespace-nowrap group-hover:underline" style={{ color: industryColors[s.industry] }}>{locale === "zh" ? "查看案例 →" : "Read case →"}</span>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-[#44B549]">{t(c.industry, locale)} · {c.product}</p>
+                  <h3 className="font-bold text-base leading-snug text-gray-900 transition-colors group-hover:text-[#1A56DB]">{t(c.title, locale)}</h3>
+                  <p className="mt-3 line-clamp-2 flex-1 text-sm leading-relaxed text-gray-500">{t(c.scene, locale)}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#1A56DB]">{locale === "zh" ? "查看案例 →" : "Read case →"}</span>
                 </div>
               </Link>
-              );
-            })}
+            ))}
           </div>
         </div>
       </section>

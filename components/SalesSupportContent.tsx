@@ -40,11 +40,6 @@ const lifecycle = [
   },
 ];
 
-const supported = [
-  "Medical device bonding", "Catheter bonding", "PCB and electronics assembly", "Automotive electronics",
-  "CPO / photonics packaging", "Optical bonding", "Adhesive curing", "Component assembly", "Precision manufacturing",
-];
-
 export default function SalesSupportContent() {
   const { locale } = useLocale();
   return (
@@ -90,20 +85,6 @@ export default function SalesSupportContent() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* What We Support */}
-      <section className="bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">What We Support</p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">Applications across industrial and life science</h2>
-          <p className="mt-4 max-w-3xl leading-7 text-[#5F6C7B]">ETIA supports UV curing customers across a wide range of industrial and life science applications.</p>
-          <div className="mt-8 flex flex-wrap gap-2.5">
-            {supported.map((a) => (
-              <span key={a} className="rounded-full border border-[#1A56DB]/20 bg-[#1A56DB]/[.06] px-4 py-2 text-sm font-semibold text-[#1A56DB]">{a}</span>
-            ))}
           </div>
         </div>
       </section>

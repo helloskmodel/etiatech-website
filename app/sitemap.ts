@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
-import { successStories, caseSlug } from "@/components/caseStudies";
+import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
 
 const SITE = "https://www.etiatech.com";
@@ -72,8 +72,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Individual case-study landing pages.
-  const casePages: MetadataRoute.Sitemap = successStories.map((c) => ({
-    url: `${SITE}/case-studies/${caseSlug(c)}`,
+  const casePages: MetadataRoute.Sitemap = caseStudiesCn.map((c) => ({
+    url: `${SITE}/case-studies/${c.slug}`,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
