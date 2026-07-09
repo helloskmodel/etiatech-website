@@ -1,14 +1,17 @@
+"use client";
+import Image from "next/image";
 import { ClipboardCheck, Settings2, LifeBuoy } from "lucide-react";
-import ServiceCommitmentCards from "@/components/ServiceCommitmentCards";
+import { useLocale, t, type Locale } from "@/components/LocaleContext";
 
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
 
-const serviceCards = [
-  { title: "Genuine Products", img: `${IMG}/etiaservice-geniue%20product.png` },
-  { title: "Application-Driven Solution", img: `${IMG}/etiaservice-application-drive%20solution.png` },
-  { title: "Local Supply Chain", img: `${IMG}/etiaservice-local%20supply%20chain.png` },
-  { title: "Long-Term Service", img: `${IMG}/etiaservice-long%20term%20service.png` },
-];
+// ETIA Service Commitment poster — one per language, shown on the right.
+const COMMITMENT_POSTER: Record<Locale, string> = {
+  en: `${IMG}/etia%20service%20commitment-EN.png`,
+  zh: `${IMG}/ETIA%20SERVICE-CN.png`,
+  th: `${IMG}/ETIA%20SERVICE-TH.png`,
+  vi: `${IMG}/ETIA%20SERVICE-VN.png`,
+};
 
 const lifecycle = [
   {
@@ -43,18 +46,22 @@ const supported = [
 ];
 
 export default function SalesSupportContent() {
+  const { locale } = useLocale();
   return (
     <>
-      {/* ETIA Service Commitment */}
+      {/* ETIA Service Commitment — text left, poster right */}
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">ETIA Service Commitment</p>
-          <h2 className="mt-3 max-w-4xl text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">Service means more than supplying equipment</h2>
-          <div className="mt-5 grid gap-x-12 gap-y-4 text-[#5F6C7B] md:grid-cols-2">
-            <p className="leading-7">At ETIA, service means more than supplying equipment. We support UV curing customers with <span className="font-semibold text-[#102A43]">genuine products</span>, <span className="font-semibold text-[#102A43]">application-driven solutions</span>, a <span className="font-semibold text-[#102A43]">dependable local supply chain</span>, and <span className="font-semibold text-[#102A43]">long-term service</span> — helping manufacturers keep their UV curing processes stable, repeatable, and production-ready.</p>
-            <p className="leading-7">From product selection and application review to local stock support, online technical service, onsite troubleshooting, maintenance, and repair support, ETIA helps manufacturers build reliable UV curing processes for medical devices, electronics, automotive, PCB, CPO, optics, and precision assembly.</p>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "ETIA Service Commitment", zh: "ETIA 服务承诺", th: "คำมั่นสัญญาด้านบริการของ ETIA", vi: "Cam kết dịch vụ của ETIA" }, locale)}</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Service means more than supplying equipment", zh: "服务，不止于提供设备", th: "บริการที่มากกว่าการจัดหาอุปกรณ์", vi: "Dịch vụ không chỉ là cung cấp thiết bị" }, locale)}</h2>
+              <p className="mt-5 leading-7 text-[#5F6C7B]">{t({ en: "At ETIA, service means genuine products, application-driven solutions, a dependable local supply chain, and long-term service — keeping your UV curing process stable, repeatable, and production-ready.", zh: "在 ETIA，服务意味着正品保障、应用驱动的解决方案、可靠的本地供应链与长期服务——让您的 UV 光固化工艺保持稳定、可重复、随时可投入生产。", th: "ที่ ETIA บริการหมายถึงสินค้าของแท้ โซลูชันที่ขับเคลื่อนด้วยการใช้งานจริง ซัพพลายเชนในพื้นที่ที่เชื่อถือได้ และบริการระยะยาว เพื่อให้กระบวนการ UV Curing ของคุณเสถียร ทำซ้ำได้ และพร้อมสำหรับการผลิต", vi: "Tại ETIA, dịch vụ nghĩa là sản phẩm chính hãng, giải pháp theo ứng dụng, chuỗi cung ứng địa phương đáng tin cậy và dịch vụ dài hạn — giúp quy trình UV curing của bạn ổn định, lặp lại được và sẵn sàng sản xuất." }, locale)}</p>
+            </div>
+            <div className="relative">
+              <Image src={COMMITMENT_POSTER[locale]} alt={t({ en: "ETIA Service Commitment — genuine products, application-driven solutions, local supply chain, long-term service", zh: "ETIA 服务承诺——正品保障、应用驱动、本地供应、长期服务", th: "คำมั่นสัญญาด้านบริการของ ETIA", vi: "Cam kết dịch vụ của ETIA" }, locale)} width={1244} height={1244} sizes="(max-width: 1024px) 100vw, 46vw" className="h-auto w-full rounded-2xl" priority />
+            </div>
           </div>
-          <div className="mt-10"><ServiceCommitmentCards /></div>
         </div>
       </section>
 
