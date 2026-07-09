@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -16,10 +17,14 @@ export default function Footer() {
     <footer className="border-t border-gray-200 mt-20" style={{ background: "#f8f9fb" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <div>
-          <p className="text-sm font-semibold text-[#1A56DB] mb-2">ETIA Technology</p>
-          <p className="text-xs text-gray-500 leading-relaxed">
-            {t({ en: "Authorized distributor of world-class UV curing systems. 20 years of application expertise across 10 industries.", zh: "世界级 UV Curing 紫外线固化系统授权代理商，拥有 20 年应用经验，服务 10 大行业。", vi: "Nhà phân phối ủy quyền hệ thống đóng rắn UV hàng đầu, với 20 năm kinh nghiệm ứng dụng trong 10 ngành công nghiệp.", th: "ตัวแทนจำหน่ายระบบบ่มยูวีชั้นนำอย่างเป็นทางการ พร้อมประสบการณ์ด้านงานประยุกต์กว่า 20 ปีใน 10 อุตสาหกรรม" }, locale)}
-          </p>
+          <Image
+            src="https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg"
+            alt="ETIA Technology"
+            width={150}
+            height={50}
+            className="object-contain"
+            unoptimized
+          />
         </div>
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Navigation", zh: "导航", vi: "Điều hướng", th: "เมนู" }, locale)}</p>
