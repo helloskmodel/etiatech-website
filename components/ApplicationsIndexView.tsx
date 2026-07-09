@@ -16,12 +16,12 @@ const listedApplications = getListedApplications();
 
 // Localized labels for the industry categories (keys match applicationsData).
 const CATEGORY_LABEL: Record<string, LangText> = {
-  "All Applications": { en: "All Applications", zh: "全部应用" },
-  "Medical Device Assembly": { en: "Medical Device Assembly", zh: "医疗器械装配" },
-  "Automotive & ADAS": { en: "Automotive & ADAS", zh: "汽车与 ADAS" },
-  "Electronics & PCB Assembly": { en: "Electronics & PCB Assembly", zh: "电子与 PCB 组装" },
-  "Photonics & Advanced Packaging": { en: "Photonics & Advanced Packaging", zh: "光子与先进封装" },
-  "Fiber Optic & Cable Manufacturing": { en: "Fiber Optic & Cable Manufacturing", zh: "光纤与线缆制造" },
+  "All Applications": { en: "All Applications", zh: "全部应用", th: "การใช้งานทั้งหมด", vi: "Tất cả ứng dụng" },
+  "Medical Device Assembly": { en: "Medical Device Assembly", zh: "医疗器械装配", th: "การประกอบอุปกรณ์การแพทย์", vi: "Lắp ráp thiết bị y tế" },
+  "Automotive & ADAS": { en: "Automotive & ADAS", zh: "汽车与 ADAS", th: "ยานยนต์และ ADAS", vi: "Ô tô & ADAS" },
+  "Electronics & PCB Assembly": { en: "Electronics & PCB Assembly", zh: "电子与 PCB 组装", th: "อิเล็กทรอนิกส์และ PCB", vi: "Điện tử & PCB" },
+  "Photonics & Advanced Packaging": { en: "Photonics & Advanced Packaging", zh: "光子与先进封装", th: "โฟโตนิกส์และแพ็กเกจขั้นสูง", vi: "Quang tử & đóng gói tiên tiến" },
+  "Fiber Optic & Cable Manufacturing": { en: "Fiber Optic & Cable Manufacturing", zh: "光纤与线缆制造", th: "การผลิตไฟเบอร์ออปติกและสายเคเบิล", vi: "Sản xuất sợi quang & cáp" },
 };
 
 // Product filter bar — match against each case's recommendedProducts text.
@@ -86,7 +86,7 @@ export default function ApplicationsIndexView() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Product filter bar */}
           <div className="mb-4">
-            <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#44B549]">{t({ en: "Filter by Product", zh: "按产品筛选" }, locale)}</p>
+            <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#44B549]">{t({ en: "Filter by Product", zh: "按产品筛选", th: "กรองตามผลิตภัณฑ์", vi: "Lọc theo sản phẩm" }, locale)}</p>
             <div className="flex gap-2 overflow-x-auto pb-2">
               {PRODUCT_FILTERS.map((p) => {
                 const count = p.key === "All" ? listedApplications.length : listedApplications.filter((a) => matchesProduct(a, p.key)).length;
@@ -100,7 +100,7 @@ export default function ApplicationsIndexView() {
           </div>
 
           {/* Industry filter */}
-          <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#1A56DB]">{t({ en: "Filter by Industry", zh: "按行业筛选" }, locale)}</p>
+          <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#1A56DB]">{t({ en: "Filter by Industry", zh: "按行业筛选", th: "กรองตามอุตสาหกรรม", vi: "Lọc theo ngành" }, locale)}</p>
           <nav aria-label="Application industries" className="mb-8 flex gap-2 overflow-x-auto pb-2">
             {["All Applications", ...APPLICATION_CATEGORIES].map((item) => {
               const count = item === "All Applications" ? listedApplications.length : listedApplications.filter((application) => application.industryCategory === item).length;
@@ -113,12 +113,12 @@ export default function ApplicationsIndexView() {
           </nav>
           <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
             <div>
-              <p className="text-sm font-semibold text-gray-900">{t({ en: `${applications.length} of ${listedApplications.length} application case studies`, zh: `共 ${listedApplications.length} 个应用案例，当前显示 ${applications.length} 个` }, locale)}</p>
-              <p className="mt-1 text-xs text-gray-500">{t({ en: "Filter by industry, process, technology, or product.", zh: "可按行业、工艺、技术或产品筛选。" }, locale)}</p>
+              <p className="text-sm font-semibold text-gray-900">{t({ en: `${applications.length} of ${listedApplications.length} application case studies`, zh: `共 ${listedApplications.length} 个应用案例，当前显示 ${applications.length} 个`, th: `${applications.length} จาก ${listedApplications.length} กรณีศึกษา`, vi: `${applications.length} / ${listedApplications.length} case study ứng dụng` }, locale)}</p>
+              <p className="mt-1 text-xs text-gray-500">{t({ en: "Filter by industry, process, technology, or product.", zh: "可按行业、工艺、技术或产品筛选。", th: "กรองตามอุตสาหกรรม กระบวนการ เทคโนโลยี หรือผลิตภัณฑ์", vi: "Lọc theo ngành, quy trình, công nghệ hoặc sản phẩm." }, locale)}</p>
             </div>
             <label className="w-full sm:max-w-sm">
-              <span className="sr-only">{t({ en: "Search applications", zh: "搜索应用" }, locale)}</span>
-              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t({ en: "Search applications…", zh: "搜索应用…" }, locale)} className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 outline-none focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/15" />
+              <span className="sr-only">{t({ en: "Search applications", zh: "搜索应用", th: "ค้นหาการใช้งาน", vi: "Tìm ứng dụng" }, locale)}</span>
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t({ en: "Search applications…", zh: "搜索应用…", th: "ค้นหาการใช้งาน…", vi: "Tìm ứng dụng…" }, locale)} className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 outline-none focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/15" />
             </label>
           </div>
           {applications.length ? (
@@ -126,7 +126,7 @@ export default function ApplicationsIndexView() {
               {applications.map((application) => <ApplicationCard key={application.slug} application={application} />)}
             </div>
           ) : (
-            <div className="rounded-xl border border-gray-200 bg-white p-10 text-center text-sm text-gray-500">{t({ en: "No applications match this search.", zh: "没有符合条件的应用案例。" }, locale)}</div>
+            <div className="rounded-xl border border-gray-200 bg-white p-10 text-center text-sm text-gray-500">{t({ en: "No applications match this search.", zh: "没有符合条件的应用案例。", th: "ไม่พบการใช้งานที่ตรงกับการค้นหา", vi: "Không có ứng dụng phù hợp." }, locale)}</div>
           )}
         </div>
       </main>
