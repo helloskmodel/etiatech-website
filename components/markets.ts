@@ -1,6 +1,5 @@
 import { products, type Product } from "@/components/productCatalog";
 import { apps, type App } from "@/components/applicationNotes";
-import { successStories, type CaseStudy } from "@/components/caseStudies";
 import type { Locale } from "@/components/LocaleContext";
 
 // A "market" is a country/region-scoped instance of the site that lives under
@@ -23,8 +22,6 @@ export type Market = {
   // Selects which application notes this market features. Returns false when a
   // market shows no applications at all.
   sellsApp: (a: App) => boolean;
-  // Selects which case studies this market features.
-  sellsCase: (c: CaseStudy) => boolean;
 };
 
 // Products ETIA sells in Thailand (OmniCure UV Spot family) referenced in an
@@ -62,15 +59,8 @@ export const markets: Record<MarketId, Market> = {
         return a.subCategory === "Connectors & Sealing" || a.subCategory === "ADAS & Sensors";
       return false;
     },
-    // Featured case studies for Thailand: B1–B6.
-    sellsCase: (c) => ["B1", "B2", "B3", "B4", "B5", "B6"].includes(c.id),
   },
 };
-
-// The case studies a market features, in catalog order.
-export function marketCases(id: MarketId): CaseStudy[] {
-  return successStories.filter(markets[id].sellsCase);
-}
 
 // The application notes a market features, in catalog order.
 export function marketApps(id: MarketId): App[] {
