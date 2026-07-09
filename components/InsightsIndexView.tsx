@@ -42,7 +42,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
             <BadgeCheck className="h-4 w-4" /> {t({ en: "ETIA Insights", zh: "ETIA 洞察" }, locale)}
           </div>
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
-            {t({ en: "UV Curing Insights & ", zh: "UV 固化洞察与" }, locale)}<span className="text-[#41A62A]">{t({ en: "Application Guides", zh: "应用指南" }, locale)}</span>
+            {t({ en: "UV Curing Insights", zh: "UV 固化洞察" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "& Application Guides", zh: "与应用指南" }, locale)}</span>
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
             {t(
