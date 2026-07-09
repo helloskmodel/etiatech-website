@@ -10,8 +10,10 @@ export default function HeroBanner({ src }: { src: string }) {
   if (!src) return null;
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-      <Image src={src} alt="" fill priority sizes="100vw" className="scale-110 object-cover blur-[7px]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-white/92 via-white/86 to-[#EEF6FF]/88" />
+      <Image src={src} alt="" fill priority sizes="100vw" className="scale-105 object-cover blur-[2px]" />
+      {/* Left stays opaque-white so hero text is readable; the right fades out
+          so the high-tech photo shows through crisply. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-white/35" />
     </div>
   );
 }
