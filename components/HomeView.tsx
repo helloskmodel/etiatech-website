@@ -6,30 +6,16 @@ import { useEffect, useRef, useState, type ComponentType, type ReactNode } from 
 import {
   ArrowRight,
   BadgeCheck,
-  BatteryCharging,
-  Boxes,
-  Cable,
-  Car,
-  Check,
   ChevronLeft,
   ChevronRight,
-  CircuitBoard,
-  Crosshair,
   GraduationCap,
-  HeartPulse,
-  Microscope,
-  PackageCheck,
-  Paintbrush,
-  Printer,
-  ShieldCheck,
-  Sparkles,
   Warehouse,
   Wrench,
-  Zap,
 } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
 import { caseSlug, caseStudyImage, successStories } from "@/components/caseStudies";
+import { INDUSTRY_BLOCKS } from "@/components/industries";
 import { productImage, products } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
@@ -43,15 +29,6 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
 
 // OmniCure systems featured in the hero product carousel (all have COS assets).
 const heroProductSlugs = ["s1500-pro", "lx500", "v3-led-heads", "ac8", "ac5", "ls200"];
-
-const applications: Array<{ title: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }> = [
-  { title: { en: "Medical Devices", zh: "医疗器械", th: "อุปกรณ์การแพทย์" }, icon: HeartPulse },
-  { title: { en: "Electronics & Semiconductor", zh: "电子与半导体", th: "อิเล็กทรอนิกส์และเซมิคอนดักเตอร์" }, icon: CircuitBoard },
-  { title: { en: "Optics & Photonics", zh: "光学与光子", th: "ออปติกส์และโฟโตนิกส์" }, icon: Sparkles },
-  { title: { en: "Automotive & EV", zh: "汽车与电动车", th: "ยานยนต์และรถ EV" }, icon: Car },
-  { title: { en: "Printing & Packaging", zh: "印刷与包装", th: "การพิมพ์และบรรจุภัณฑ์" }, icon: Printer },
-  { title: { en: "Industrial Coating & Assembly", zh: "工业涂覆与装配", th: "การเคลือบและการประกอบทางอุตสาหกรรม" }, icon: Paintbrush },
-];
 
 // Chinese headings break between any two hanzi by default, which can split a
 // bound word (伙伴 / 品牌 / 应用说明 / 案例分享) awkwardly across two lines. For
@@ -112,7 +89,7 @@ export default function HomeView() {
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Authorized Brand Solutions", zh: "授权品牌解决方案", th: "โซลูชันแบรนด์ที่ได้รับอนุญาต" }, locale)}</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl"><CjkHeading locale={locale} text={{ en: "Industry-Leading UV Curing Brands", zh: "行业领先UV Curing 紫外线固化品牌", th: "แบรนด์ UV Curing ชั้นนำของอุตสาหกรรม", vi: "Thương hiệu UV Curing hàng đầu ngành" }} zh={<>行业领先<br className="md:hidden" />UV Curing 紫外线固化<span className="whitespace-nowrap">品牌</span></>} /></h2><div className="mt-10 grid gap-6 lg:grid-cols-2"><Link href="/product/omnicure" className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#EEF6FF] sm:grid-cols-[1fr_.9fr]"><div className="p-8"><span className="text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">{t({ en: "Precision Manufacturing", zh: "精密制造", th: "การผลิตที่แม่นยำ" }, locale)}</span><h3 className="mt-3 text-2xl font-bold text-[#143C96]">{t({ en: "OmniCure UV Curing Systems", zh: "OmniCure UV Curing 紫外线固化系统", th: "ระบบ UV Curing OmniCure" }, locale)}</h3><p className="mt-4 text-sm leading-6 text-[#667085]">{t({ en: "Precision UV curing for assembly, bonding, medical devices and electronics.", zh: "面向组装、粘接、医疗器械与电子的精密 UV Curing 紫外线固化。", th: "UV curing ที่แม่นยำสำหรับการประกอบ การยึดติด อุปกรณ์การแพทย์ และอิเล็กทรอนิกส์" }, locale)}</p><span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#143C96]">{t({ en: "Explore OmniCure", zh: "浏览 OmniCure", th: "ดู OmniCure" }, locale)} <ArrowRight className="h-4 w-4"/></span></div><div className="relative min-h-64 bg-white/60">{omnicureProduct&&productImage(omnicureProduct)&&<Image src={productImage(omnicureProduct)} alt="OmniCure UV curing system" fill sizes="(max-width:1024px) 100vw, 45vw" className="object-contain p-7 transition group-hover:scale-105"/>}</div></Link><Link href="/product/phoseon" className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#F1FAEF] sm:grid-cols-[1fr_.9fr]"><div className="p-8"><span className="text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">{t({ en: "Industrial UV LED", zh: "工业 UV LED", th: "UV LED อุตสาหกรรม" }, locale)}</span><h3 className="mt-3 text-2xl font-bold text-[#143C96]">{t({ en: "Phoseon UV LED Curing Systems", zh: "Phoseon UV LED 固化系统", th: "ระบบ UV LED Curing Phoseon" }, locale)}</h3><p className="mt-4 text-sm leading-6 text-[#667085]">{t({ en: "Industrial UV LED curing for inks, coatings, printing, packaging and production lines.", zh: "面向油墨、涂层、印刷、包装与产线的工业 UV LED 固化。", th: "UV LED curing อุตสาหกรรมสำหรับหมึก สารเคลือบ การพิมพ์ บรรจุภัณฑ์ และสายการผลิต" }, locale)}</p><span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#41A62A]">{t({ en: "Explore Phoseon", zh: "浏览 Phoseon", th: "ดู Phoseon" }, locale)} <ArrowRight className="h-4 w-4"/></span></div><div className="relative min-h-64 bg-white/60">{phoseonProduct&&productImage(phoseonProduct)&&<Image src={productImage(phoseonProduct)} alt="Phoseon industrial UV LED curing system" fill sizes="(max-width:1024px) 100vw, 45vw" className="object-contain p-7 transition group-hover:scale-105"/>}</div></Link></div></div></section>
 
-    <section className="bg-[#F1FAEF] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Manufacturing Applications", zh: "制造应用", th: "การใช้งานในการผลิต" }, locale)}</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl"><CjkHeading locale={locale} text={{ en: "UV Curing Application Notes by Industry", zh: "UV Curing 紫外线固化应用说明", th: "แอปพลิเคชันโน้ต UV Curing แยกตามอุตสาหกรรม", vi: "Ghi chú ứng dụng UV Curing theo ngành" }} zh={<>UV Curing 紫外线固化<span className="whitespace-nowrap">应用说明</span></>} /></h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{applications.map(item=>{const Icon=item.icon;return <Link href="/applications" key={item.title.en} className="group flex items-center gap-4 rounded-2xl border border-[#D9E4EA] bg-white p-5 transition hover:-translate-y-1 hover:shadow-lg"><span className="rounded-xl bg-[#EEF6FF] p-3 text-[#143C96]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><span className="font-bold text-[#143C96] group-hover:text-[#41A62A]">{t(item.title, locale)}</span><ArrowRight className="ml-auto h-4 w-4 text-[#41A62A]"/></Link>})}</div></div></section>
+    <section className="bg-[#F1FAEF] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Manufacturing Applications", zh: "制造应用", th: "การใช้งานในการผลิต" }, locale)}</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl"><CjkHeading locale={locale} text={{ en: "UV Curing Application Notes by Industry", zh: "UV Curing 紫外线固化应用说明", th: "แอปพลิเคชันโน้ต UV Curing แยกตามอุตสาหกรรม", vi: "Ghi chú ứng dụng UV Curing theo ngành" }} zh={<>UV Curing 紫外线固化<span className="whitespace-nowrap">应用说明</span></>} /></h2><div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">{INDUSTRY_BLOCKS.map(block=><Link href="/applications" key={block.category} className="group relative flex aspect-square items-end overflow-hidden rounded-2xl border border-[#D9E4EA] bg-[#EEF6FF] shadow-[0_10px_35px_rgba(20,60,150,.06)] transition hover:-translate-y-1 hover:shadow-lg">{block.image&&<Image src={block.image} alt="" fill sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 18vw" className="object-cover transition duration-500 group-hover:scale-105"/>}<div className="absolute inset-0 bg-gradient-to-t from-[#0B1E3F]/85 via-[#0B1E3F]/25 to-transparent"/><div className="relative flex w-full items-center gap-1.5 p-4"><span className="text-sm font-bold leading-snug text-white">{t(block.label, locale)}</span><ArrowRight className="ml-auto h-4 w-4 shrink-0 text-white/90 transition group-hover:translate-x-0.5"/></div></Link>)}</div></div></section>
 
     <section className="bg-gradient-to-br from-[#143C96] to-[#1F63D6] px-4 py-20 text-white sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><div className="flex items-end justify-between gap-4"><div><h2 className="text-3xl font-bold md:text-4xl"><CjkHeading locale={locale} text={{ en: "UV Curing Success Stories", zh: "UV Curing 紫外线固化案例分享", th: "เรื่องราวความสำเร็จ UV Curing", vi: "Câu chuyện thành công UV Curing" }} zh={<>UV Curing 紫外线固化<span className="whitespace-nowrap">案例分享</span></>} /></h2></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-white sm:inline-flex">{t({ en: "View Applications", zh: "查看应用", th: "ดูการใช้งาน" }, locale)} <ArrowRight className="h-4 w-4"/></Link></div><div className="mt-10"><div ref={caseScrollRef} className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">{successStories.map(story=><Link href={`/case-studies/${caseSlug(story)}`} key={story.id} className="group w-[280px] shrink-0 snap-start overflow-hidden rounded-2xl bg-white text-[#102038] shadow-xl"><div className="relative h-40 bg-[#EEF6FF]">{caseStudyImage(story)&&<Image src={caseStudyImage(story)} alt={story.sector} fill sizes="280px" className="object-cover transition group-hover:scale-105"/>}</div><div className="p-5"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#41A62A]">{story.sector}</p><h3 className="mt-2 line-clamp-3 font-bold leading-snug text-[#143C96]">{story.title}</h3><span className="mt-5 inline-flex items-center gap-1 text-xs font-bold text-[#143C96]">{t({ en: "Read case", zh: "阅读案例", th: "อ่านกรณีศึกษา" }, locale)} <ArrowRight className="h-3.5 w-3.5"/></span></div></Link>)}</div><div className="mt-6 flex justify-end gap-3"><button type="button" aria-label="Previous case studies" onClick={()=>scrollCases(-1)} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"><ChevronLeft className="h-5 w-5"/></button><button type="button" aria-label="Next case studies" onClick={()=>scrollCases(1)} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"><ChevronRight className="h-5 w-5"/></button></div></div></div></section>
 

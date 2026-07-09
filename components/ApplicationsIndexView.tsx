@@ -10,19 +10,10 @@ import { inquiryMailto } from "@/components/contact";
 import TrustStrip from "@/components/TrustStrip";
 import UvCuringSelector from "@/components/UvCuringSelector";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
+import { CATEGORY_LABEL } from "@/components/industries";
 import { APPLICATION_CATEGORIES, getListedApplications } from "@/data/applicationsData";
 
 const listedApplications = getListedApplications();
-
-// Localized labels for the industry categories (keys match applicationsData).
-const CATEGORY_LABEL: Record<string, LangText> = {
-  "All Applications": { en: "All Applications", zh: "全部应用", th: "การใช้งานทั้งหมด", vi: "Tất cả ứng dụng" },
-  "Medical Device Assembly": { en: "Medical Device Assembly", zh: "医疗器械装配", th: "การประกอบอุปกรณ์การแพทย์", vi: "Lắp ráp thiết bị y tế" },
-  "Automotive & ADAS": { en: "Automotive & ADAS", zh: "汽车与 ADAS", th: "ยานยนต์และ ADAS", vi: "Ô tô & ADAS" },
-  "Electronics & PCB Assembly": { en: "Electronics & PCB Assembly", zh: "电子与 PCB 组装", th: "อิเล็กทรอนิกส์และ PCB", vi: "Điện tử & PCB" },
-  "Photonics & Advanced Packaging": { en: "Photonics & Advanced Packaging", zh: "光子与先进封装", th: "โฟโตนิกส์และแพ็กเกจขั้นสูง", vi: "Quang tử & đóng gói tiên tiến" },
-  "Fiber Optic & Cable Manufacturing": { en: "Fiber Optic & Cable Manufacturing", zh: "光纤与线缆制造", th: "การผลิตไฟเบอร์ออปติกและสายเคเบิล", vi: "Sản xuất sợi quang & cáp" },
-};
 
 // Product filter bar — match against each case's recommendedProducts text.
 const PRODUCT_FILTERS: { key: string; label: LangText; token?: string }[] = [
