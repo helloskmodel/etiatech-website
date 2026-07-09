@@ -141,7 +141,7 @@ const resourceCards: { title: LangText; desc: LangText; btn: LangText; href: str
     title: { en: "OmniCure S2000 Elite User Guide", zh: "OmniCure S2000 Elite 用户指南" },
     desc: {
       en: "Full operating manual covering safety, setup, calibration, Web UI, PLC integration, StepCure, maintenance, software updates, troubleshooting, and specifications.",
-      zh: "完整操作手册,涵盖安全、设置、校准、Web UI、PLC 集成、StepCure、维护、软件更新、故障排除与规格。",
+      zh: "完整操作手册,涵盖安全、设置、校准、Web UI、PLC 集成、StepCure、维护、软件更新、故障排查与规格。",
     },
     btn: { en: "Download User Guide", zh: "下载用户指南" },
     href: PDF.userGuide,
@@ -276,7 +276,7 @@ const supportCards: { Icon: typeof Sun; title: LangText; body: LangText }[] = [
     title: { en: "OmniCure S2000 Elite Maintenance & Repair Support", zh: "OmniCure S2000 Elite 维护与维修支持" },
     body: {
       en: "Support for routine maintenance, troubleshooting, and repair coordination.",
-      zh: "支持日常维护、故障排除与维修协调。",
+      zh: "支持日常维护、故障排查与维修协调。",
     },
   },
 ];
@@ -363,7 +363,7 @@ export default function S2000View() {
               OmniCure S2000 Elite <span style={{ color: GREEN }}>UV Spot Curing System</span>
             </h1>
             <p className="mt-4 text-xl md:text-2xl font-semibold text-[#102A43]">
-              {t({ en: "Maximum Power. Total Control.", zh: "极致功率,全面掌控。" }, locale)}
+              {t({ en: "Maximum Power. Total Control.", zh: "高功率输出。精准过程控制。" }, locale)}
             </p>
             <p className="mt-4 max-w-2xl text-base md:text-lg leading-7 text-gray-600">
               {t(
@@ -517,10 +517,10 @@ export default function S2000View() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHead
             eyebrow={{ en: "Documentation", zh: "技术文档" }}
-            title={{ en: "OmniCure S2000 Elite User Guides & Technical Resources", zh: "OmniCure S2000 Elite 用户指南与技术资源" }}
+            title={{ en: "OmniCure S2000 Elite User Guides & Technical Resources", zh: "OmniCure S2000 Elite 使用手册与技术资料" }}
             sub={{
               en: "Find the documents and operating guidance you need for installation, setup, calibration, maintenance, and troubleshooting.",
-              zh: "查找安装、设置、校准、维护与故障排除所需的文档与操作指导。",
+              zh: "查找安装、设置、校准、维护与故障排查所需的文档与操作指导。",
             }}
             locale={locale}
           />
@@ -578,8 +578,8 @@ export default function S2000View() {
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHead
-            eyebrow={{ en: "Troubleshooting", zh: "故障排除" }}
-            title={{ en: "OmniCure S2000 Elite Troubleshooting", zh: "OmniCure S2000 Elite 故障排除" }}
+            eyebrow={{ en: "Troubleshooting", zh: "故障排查" }}
+            title={{ en: "OmniCure S2000 Elite Troubleshooting", zh: "OmniCure S2000 Elite 故障排查" }}
             locale={locale}
           />
           <div className="space-y-3">
@@ -613,10 +613,10 @@ export default function S2000View() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHead
             eyebrow={{ en: "Service & Support", zh: "服务与支持" }}
-            title={{ en: "OmniCure S2000 Elite Lamp Replacement & Maintenance Support", zh: "OmniCure S2000 Elite 灯管更换与维护支持" }}
+            title={{ en: "OmniCure S2000 Elite Lamp Replacement & Maintenance Support", zh: "OmniCure S2000 Elite 灯泡更换与维护支持" }}
             sub={{
               en: "ETIA can support OmniCure S2000 Elite users with replacement lamps, optical filters, light guides, calibration guidance, maintenance, repair support, and troubleshooting.",
-              zh: "ETIA 可为 OmniCure S2000 Elite 用户提供替换灯管、光学滤光片、导光管、校准指导、维护、维修支持与故障排除。",
+              zh: "ETIA 可为 OmniCure S2000 Elite 用户提供替换灯管、光学滤光片、导光管、校准指导、维护、维修支持与故障排查。",
             }}
             locale={locale}
           />
@@ -663,7 +663,7 @@ export default function S2000View() {
             title={{ en: "Why Buy OmniCure S2000 Elite from ETIA", zh: "为何从 ETIA 购买 OmniCure S2000 Elite" }}
             sub={{
               en: "ETIA supports manufacturers across China, Thailand, Vietnam, and Southeast Asia with genuine OmniCure products, application consultation, local supply, installation training, lamp replacement guidance, maintenance, repair support, and troubleshooting.",
-              zh: "ETIA 为中国、泰国、越南及东南亚的制造商提供正品 OmniCure 产品、应用咨询、本地供货、安装培训、灯管更换指导、维护、维修支持与故障排除。",
+              zh: "ETIA 为中国、泰国、越南及东南亚的制造商提供正品 OmniCure 产品、应用咨询、本地供货、安装培训、灯管更换指导、维护、维修支持与故障排查。",
             }}
             locale={locale}
           />
@@ -717,7 +717,7 @@ export default function S2000View() {
             {t(
               {
                 en: "Need Help with OmniCure S2000 Elite Selection, Setup, or Troubleshooting?",
-                zh: "在 OmniCure S2000 Elite 选型、设置或故障排除方面需要帮助?",
+                zh: "在 OmniCure S2000 Elite 选型、设置或故障排查方面需要帮助?",
               },
               locale
             )}
@@ -726,7 +726,7 @@ export default function S2000View() {
             {t(
               {
                 en: "ETIA engineers can help with OmniCure S2000 Elite product selection, lamp and filter configuration, light guide setup, calibration guidance, maintenance, repair support, and technical troubleshooting.",
-                zh: "ETIA 工程师可协助进行 OmniCure S2000 Elite 产品选型、灯管与滤光片配置、导光管设置、校准指导、维护、维修支持与技术故障排除。",
+                zh: "ETIA 工程师可协助进行 OmniCure S2000 Elite 产品选型、灯管与滤光片配置、导光管设置、校准指导、维护、维修支持与技术故障排查。",
               },
               locale
             )}
