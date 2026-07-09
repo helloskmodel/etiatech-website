@@ -4,6 +4,7 @@ import Image from "next/image";
 import { BadgeCheck, ArrowRight } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
 import TrustStrip from "@/components/TrustStrip";
+import FinalCta from "@/components/FinalCta";
 import { useLocale, t } from "@/components/LocaleContext";
 import {
   quickStart,
@@ -90,9 +91,8 @@ export default function S2000SupportView() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Technical Support · Knowledge Base", zh: "技术支持 · 知识库" }, locale)}</div>
             <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
-              {t({ en: "OmniCure S2000 Elite ", zh: "OmniCure S2000 Elite " }, locale)}<span className="text-[#41A62A]">{t({ en: "Installation & Support", zh: "安装与技术支持" }, locale)}</span>
+              {t({ en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Installation & Support", zh: "安装与技术支持" }, locale)}</span>
             </h1>
-            <p className="mt-4 max-w-2xl text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "Startup, installation, configuration, troubleshooting and safety — in one place.", zh: "开机、安装、配置、故障排查与安全——一站汇总。" }, locale)}</p>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
               {t({ en: "Step-by-step start-up, light-guide and lamp-module installation, optical filter changes, status light-ring colour meanings, troubleshooting, safety precautions and regulatory information for the OmniCure S2000 Elite UV spot curing system.", zh: "OmniCure S2000 Elite 紫外点固化系统的分步开机、导光管与灯管模块安装、光学滤光片更换、状态光环颜色含义、故障排查、安全注意事项与合规信息。" }, locale)}
             </p>
@@ -324,17 +324,12 @@ export default function S2000SupportView() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16" style={{ background: "#1A56DB" }}>
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Need installation, calibration or troubleshooting help?", zh: "需要安装、校准或故障排查支持？" }, locale)}</h2>
-          <p className="text-gray-200 mb-8">{t({ en: "As an authorized OmniCure distributor, ETIA provides documentation, on-site installation, R2000 calibration, and local service across Southeast Asia.", zh: "作为 OmniCure 授权分销商，ETIA 在东南亚提供文档、现场安装、R2000 校准与本地服务。" }, locale)}</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href={inquiryMailto(locale, { subject: "S2000 Elite Technical Support", context: "OmniCure S2000 Elite" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
-            <Link href={PRODUCT_PATH} className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Back to S2000 Elite", zh: "返回 S2000 Elite" }, locale)}</Link>
-          </div>
-        </div>
-      </section>
+      <FinalCta
+        heading={t({ en: "Need installation, calibration or troubleshooting help?", zh: "需要安装、校准或故障排查支持？" }, locale)}
+        body={t({ en: "As an authorized OmniCure distributor, ETIA provides documentation, on-site installation, R2000 calibration, and local service across Southeast Asia.", zh: "作为 OmniCure 授权分销商，ETIA 在东南亚提供文档、现场安装、R2000 校准与本地服务。" }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "S2000 Elite Technical Support", context: "OmniCure S2000 Elite" }) }}
+        secondary={{ label: t({ en: "Back to S2000 Elite", zh: "返回 S2000 Elite" }, locale), href: PRODUCT_PATH }}
+      />
     </>
   );
 }

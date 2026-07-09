@@ -196,9 +196,8 @@ export default function S2000View() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "OmniCure · Lamp-Based UV Spot Curing", zh: "OmniCure · 灯式 UV 点固化" }, locale)}</div>
             <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
-              {t({ en: "OmniCure S2000 ", zh: "OmniCure S2000 " }, locale)}<span className="text-[#41A62A]">Elite</span>
+              {t({ en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Maximum Power. Total Control.", zh: "极致功率，全面掌控。" }, locale)}</span>
             </h1>
-            <p className="mt-4 max-w-2xl text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "Maximum Power. Total Control.", zh: "极致功率，全面掌控。" }, locale)}</p>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
               {t({ en: "The industry's most advanced lamp-based UV spot curing system — up to 30 W/cm² with closed-loop precision for medical, electronics, and EV manufacturing.", zh: "业界最先进的灯式UV点固化系统——最高30 W/cm²,以闭环精度服务于医疗、电子与电动汽车制造。" }, locale)}
             </p>
