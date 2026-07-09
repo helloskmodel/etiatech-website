@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { BadgeCheck, HeartPulse, Car, CircuitBoard, Sparkles, Cable, ArrowRight } from "lucide-react";
 import ApplicationCard from "@/components/ApplicationCard";
+import HeroBanner from "@/components/HeroBanner";
+import { PAGE_BANNERS } from "@/components/caseStudies";
 import { inquiryMailto } from "@/components/contact";
 import TrustStrip from "@/components/TrustStrip";
 import UvCuringSelector from "@/components/UvCuringSelector";
@@ -36,6 +38,7 @@ export default function ApplicationsIndexView() {
   return (
     <>
       <header className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+        <HeroBanner src={PAGE_BANNERS.applications} />
         <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
