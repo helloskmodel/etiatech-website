@@ -48,15 +48,6 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
             {t({ en: "UV Curing Insights", zh: "UV光固化洞察", th: "ข้อมูลเชิงลึก UV Curing", vi: "Thông tin chuyên sâu UV Curing" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "& Application Guides", zh: "和应用指南", th: "และคู่มือการใช้งาน", vi: "& Hướng dẫn ứng dụng" }, locale)}</span>
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
-            {t(
-              {
-                en: "Technical guides, market analysis, and application know-how across photonics, medical, automotive, electronics and industrial UV curing — from ETIA's engineering team.",
-                zh: "涵盖光子学、医疗、汽车、电子及工业 UV 光固化的技术指南、市场分析与应用专知——来自 ETIA 工程团队。",
-              },
-              locale
-            )}
-          </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={inquiryMailto(locale, { subject: "UV Curing Technical Inquiry", context: "Insights / application question" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)} <ArrowRight className="h-4 w-4" /></a>
             <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV光固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>

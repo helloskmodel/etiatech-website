@@ -93,9 +93,6 @@ export default function S2000SupportView() {
             <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
               {t({ en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Installation & Support", zh: "安装与技术支持" }, locale)}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
-              {t({ en: "Step-by-step start-up, light-guide and lamp-module installation, optical filter changes, status light-ring colour meanings, troubleshooting, safety precautions and regulatory information for the OmniCure S2000 Elite UV spot curing system.", zh: "OmniCure S2000 Elite 紫外点固化系统的分步开机、导光管与灯管模块安装、光学滤光片更换、状态光环颜色含义、故障排查、安全注意事项与合规信息。" }, locale)}
-            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={inquiryMailto(locale, { subject: `Request: ${QUICK_START_PDF_FILENAME}`, context: "OmniCure S2000 Elite Quick Start Guide" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Request Quick Start Guide (PDF)", zh: "索取快速入门指南 (PDF)" }, locale)} <ArrowRight className="h-4 w-4" /></a>
               <a href={inquiryMailto(locale, { subject: "S2000 Elite Technical Support", context: "OmniCure S2000 Elite" })} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>

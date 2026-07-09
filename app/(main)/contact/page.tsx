@@ -103,9 +103,6 @@ export default function ContactPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
             <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Dedicated UV Curing Solution", zh: "专属UV光固化方案", th: "โซลูชัน UV Curing เฉพาะทาง", vi: "Giải pháp UV Curing chuyên biệt" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "We Support You Every Step of the Way.", zh: "全程为您提供支持", th: "เราสนับสนุนคุณในทุกขั้นตอน", vi: "Chúng tôi hỗ trợ bạn trong từng bước." }, locale)}</span></h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
-              {t({ en: "ETIA supports manufacturers with UV curing product advice, installation guidance, troubleshooting, maintenance, and repair service across China and Southeast Asia.", zh: "ETIA 为制造商提供 UV 光固化产品咨询、安装指导、故障排查、维护与维修服务，覆盖中国与东南亚。" }, locale)}
-            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师" }, locale)}</a>
               <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Request Service Support", zh: "申请服务支持" }, locale)}</a>
