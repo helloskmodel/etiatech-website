@@ -10,7 +10,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const a = getArticle(slug);
-  if (!a) return { title: "Insights — ETIA Technology" };
+  if (!a) return { title: "UV Curing Insights — ETIA Technology" };
   const c = a.locales.en;
   const url = `https://www.etiatech.com/insights/${a.slug}`;
   return {
