@@ -100,10 +100,10 @@ export default function ContactPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "From Selection to Service.", zh: "从选型到服务。" }, locale)}</h1>
-            <p className="mt-4 text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "Reliable UV Curing Support Across China and Southeast Asia.", zh: "覆盖中国与东南亚的可靠 UV 固化支持。" }, locale)}</p>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Reliable Support. Responsive Service.", zh: "可靠支持。快速服务。" }, locale)}</h1>
+            <p className="mt-4 text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "We're Here to Help.", zh: "我们随时为您提供帮助。" }, locale)}</p>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
-              {t({ en: "ETIA helps manufacturers select, implement, and maintain reliable curing solutions for demanding production environments.", zh: "ETIA 帮助制造商为严苛的生产环境选型、导入并维护可靠的固化解决方案。" }, locale)}
+              {t({ en: "ETIA supports manufacturers with UV curing product advice, installation guidance, troubleshooting, maintenance, and repair service across China and Southeast Asia.", zh: "ETIA 为制造商提供 UV 固化产品咨询、安装指导、故障排查、维护与维修服务，覆盖中国与东南亚。" }, locale)}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师" }, locale)}</a>
