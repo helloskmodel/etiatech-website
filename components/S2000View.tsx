@@ -226,7 +226,7 @@ export default function S2000View() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Decision Guide", zh: "选型指南" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Is S2000 Elite Right for Your Process?", zh: "S2000 Elite 适合您的工艺吗？" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Is the OmniCure S2000 Elite Right for Your Process?", zh: "OmniCure S2000 Elite 适合您的工艺吗？" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-10" style={{ background: "#44B549" }} />
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-2xl border border-gray-100 bg-[#f0f7f0] p-7">
@@ -279,7 +279,7 @@ export default function S2000View() {
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Key Benefits", zh: "核心优势" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Why the S2000 Elite?", zh: "为何选择 S2000 Elite?" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Why the OmniCure S2000 Elite?", zh: "为何选择 OmniCure S2000 Elite?" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-10" style={{ background: "#44B549" }} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {benefits.map((b) => (
@@ -297,7 +297,7 @@ export default function S2000View() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Compare", zh: "对比选型" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Lamp vs LED — S2000 Elite · S1500 Pro · LX500", zh: "灯式 vs LED —— S2000 Elite · S1500 Pro · LX500" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Lamp vs LED — OmniCure S2000 Elite · S1500 Pro · LX500", zh: "灯式 vs LED —— OmniCure S2000 Elite · S1500 Pro · LX500" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-8" style={{ background: "#44B549" }} />
           <div className="overflow-x-auto rounded-2xl border border-gray-200">
             <table className="w-full text-sm min-w-[720px]">
@@ -334,7 +334,7 @@ export default function S2000View() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Technology", zh: "核心技术" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "8 Technologies That Set the S2000 Elite Apart", zh: "让 S2000 Elite 脱颖而出的8大技术" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "8 Technologies That Set the OmniCure S2000 Elite Apart", zh: "让 OmniCure S2000 Elite 脱颖而出的8大技术" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-12" style={{ background: "#44B549" }} />
           <div className="flex flex-col gap-12">
             {features.map((f, i) => (
@@ -365,7 +365,7 @@ export default function S2000View() {
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Specifications", zh: "规格参数" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications · S2000 Elite", zh: "技术规格 · S2000 Elite" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications · OmniCure S2000 Elite UV Spot Curing System", zh: "技术规格 · OmniCure S2000 Elite UV 光固化系统" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-6" style={{ background: "#44B549" }} />
           <p className="text-gray-500 mb-8 max-w-2xl">
             {t({ en: "Full technical specifications for the OmniCure S2000 Elite lamp-based UV spot curing system. For complete dimensional drawings and installation data, contact our engineering team.", zh: "OmniCure S2000 Elite 灯式UV点固化系统的完整技术规格。如需完整尺寸图纸与安装数据,请联系我们的工程团队。" }, locale)}
@@ -398,7 +398,7 @@ export default function S2000View() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Consumables & Accessories", zh: "耗材与配件" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "S2000 Elite Lamps, Filters & Accessories", zh: "S2000 Elite 灯管、滤光片与配件" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "OmniCure S2000 Elite Lamps, Filters & Accessories", zh: "OmniCure S2000 Elite 灯管、滤光片与配件" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-4" style={{ background: "#44B549" }} />
           <p className="text-gray-500 max-w-3xl mb-10">{t({ en: "Genuine OmniCure replacement lamps, optical filters, liquid light guides, radiometry and calibration — supplied and supported locally by ETIA.", zh: "正品 OmniCure 替换灯管、光学滤光片、液体导光管、辐射测量与校准 —— 由 ETIA 本地供货与支持。" }, locale)}</p>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

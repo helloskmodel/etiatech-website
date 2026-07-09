@@ -92,7 +92,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                       {i < arr.length - 1 && <br />}
                     </span>
                   ))
-                : `${b.name} ${t({ en: "UV Curing Systems", zh: "UV 光固化系统" }, locale)}`}
+                : `${b.name.replace(/ UV$/, "")} ${t({ en: "UV Curing Systems", zh: "UV 光固化系统" }, locale)}`}
             </h1>
             {b.hero && (
               <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-6 max-w-2xl">{t(b.hero.subline, locale)}</p>
