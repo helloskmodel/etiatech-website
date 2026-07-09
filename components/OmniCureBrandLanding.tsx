@@ -34,6 +34,8 @@ import {
 } from "@/components/productCatalog";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
 import FinalCta from "@/components/FinalCta";
+import HeroImage from "@/components/HeroImage";
+import { HERO_IMAGES } from "@/components/heroImages";
 import { getApplicationsForProduct } from "@/data/applicationsData";
 
 type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
@@ -181,19 +183,7 @@ export default function OmniCureBrandLanding() {
             </div>
           </div>
 
-          <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
-            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
-              <div><p className="text-sm font-bold text-[#143C96]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#41A62A]">System</p></div>
-            </div>
-            <div className="grid gap-2.5 sm:grid-cols-2">
-              {routes.map((route) => {
-                const Icon = route.icon;
-                return <button key={route.id} onClick={() => chooseRoute(route.id)} className="group rounded-xl border border-[#E3EAF2] bg-white p-3 text-left transition hover:-translate-y-1 hover:shadow-lg" style={{ borderTopColor: route.color, borderTopWidth: 3 }}>
-                  <div className="flex items-start gap-2.5"><span className="rounded-lg p-1.5" style={{ background: route.soft, color: route.color }}><Icon className="h-4 w-4" strokeWidth={1.8} /></span><div><p className="text-[11px] font-bold" style={{ color: route.color }}>{route.id === "lamp-spot" ? "UV Lamp" : route.id === "led-spot" ? "UV LED" : "UV LED Air-Cooled"}</p><p className="mt-0.5 text-xs font-bold text-[#102A43]">{route.id === "large-area" ? "Large-Area" : route.id === "small-area" ? "Small-Area" : "Spot Curing"}</p></div></div>
-                </button>;
-              })}
-            </div>
-          </div>
+          <HeroImage images={HERO_IMAGES.omnicure} alt="OmniCure S2000 Elite UV curing system" />
         </div>
       </section>
 
