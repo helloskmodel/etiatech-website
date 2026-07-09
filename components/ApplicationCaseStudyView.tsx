@@ -65,7 +65,7 @@ export default function ApplicationCaseStudyView({ application }: { application:
           <article className="max-w-3xl">
             <TextSection eyebrow="01 · Application" title="Application" paragraphs={application.sections.application} />
             <TextSection eyebrow="02 · Challenge" title="Challenge" paragraphs={application.sections.challenge} />
-            <TextSection eyebrow="03 · Solution" title="Solution" paragraphs={application.sections.solution} />
+            <TextSection eyebrow="03 · Solution" title="UV Curing Solution" paragraphs={application.sections.solution} />
 
             {application.sections.process?.length > 0 && (
               <div className="mb-9 rounded-xl border border-[#1A56DB]/15 bg-[#f0f5ff] p-5">
@@ -81,7 +81,7 @@ export default function ApplicationCaseStudyView({ application }: { application:
               </div>
             )}
 
-            <TextSection eyebrow="04 · Recommended Product" title="Recommended Product" paragraphs={application.sections.recommendedProduct} />
+            <TextSection eyebrow="04 · Recommended Product" title="Recommended UV Curing System" paragraphs={application.sections.recommendedProduct} />
             <div className="mb-9 rounded-xl border border-gray-200 bg-gray-50 p-5">
               <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Recommended Configuration</p>
               <p className="mt-2 text-lg font-bold text-[#1A56DB]">{application.sections.recommendedConfiguration || application.recommendedProducts.join(" · ")}</p>
@@ -103,7 +103,7 @@ export default function ApplicationCaseStudyView({ application }: { application:
 
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#44B549]">Recommended Product</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#44B549]">Recommended UV Curing System</p>
               <p className="mt-2 text-lg font-bold text-[#1A56DB]">{application.sections.recommendedConfiguration || application.recommendedProducts.join(" · ")}</p>
               <p className="mt-3 text-sm leading-relaxed text-gray-500">Discuss wavelength, curing width, line speed, ink compatibility, and integration with an ETIA engineer.</p>
               <Link href="/contact" className="mt-5 block rounded-lg bg-[#44B549] px-5 py-3 text-center text-sm font-bold text-white hover:opacity-90">Contact ETIA →</Link>
@@ -113,7 +113,7 @@ export default function ApplicationCaseStudyView({ application }: { application:
         </div>
       </main>
 
-      {related.length > 0 && <section className="bg-[#f6f8fb] py-14"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><h2 className="mb-7 text-2xl font-bold text-[#1A56DB]">Related Applications</h2><div className="grid gap-5 md:grid-cols-3">{related.map((item: any) => <ApplicationCard key={item.slug} application={item} compact />)}</div></div></section>}
+      {related.length > 0 && <section className="bg-[#f6f8fb] py-14"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><h2 className="mb-7 text-2xl font-bold text-[#1A56DB]">Related UV Curing Applications</h2><div className="grid gap-5 md:grid-cols-3">{related.map((item: any) => <ApplicationCard key={item.slug} application={item} compact />)}</div></div></section>}
     </>
   );
 }

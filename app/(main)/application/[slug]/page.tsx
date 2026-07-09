@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const a = getAppBySlug(slug);
-  if (!a) return { title: "Application Note — ETIA Technology" };
+  if (!a) return { title: "UV Curing Application Note — ETIA Technology" };
   const title = `${a.title} — UV Curing Application Note | ETIA Technology`;
   const description = a.intro.slice(0, 160);
   const url = `${SITE}/application/${slug}`;
