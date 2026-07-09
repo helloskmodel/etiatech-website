@@ -30,8 +30,6 @@ import { useLocale, t } from "@/components/LocaleContext";
 import { productHref, productImage, products, type Product } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
-import HeroImage from "@/components/HeroImage";
-import { HERO_IMAGES } from "@/components/heroImages";
 
 const green = "#6BBF3A";
 const deepGreen = "#087F6B";
@@ -101,13 +99,12 @@ export default function PhoseonBrandLanding() {
     <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
       <div className="absolute -right-32 -top-40 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
       <div className="absolute -bottom-48 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.25fr_.75fr] lg:items-center lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> Phoseon® UV LED Curing Solutions</div>
           <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Phoseon UV Curing Solutions", zh: "Phoseon UV 光固化解决方案", th: "โซลูชัน UV Curing ของ Phoseon", vi: "Giải pháp UV Curing Phoseon" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Built for Production Performance.", zh: "为量产性能而生。", th: "ออกแบบเพื่อประสิทธิภาพการผลิต", vi: "Được tạo ra cho hiệu suất sản xuất." }, locale)}</span></h1>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#phoseon-families" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Explore Phoseon Solutions <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">Talk to an Engineer</a></div>
         </div>
-        <HeroImage images={HERO_IMAGES.phoseon} alt="Phoseon Nexus II UV LED curing system" />
       </div>
     </section>
 

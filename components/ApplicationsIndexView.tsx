@@ -5,8 +5,6 @@ import Link from "next/link";
 import { BadgeCheck, HeartPulse, Car, CircuitBoard, Sparkles, Cable, ArrowRight } from "lucide-react";
 import ApplicationCard from "@/components/ApplicationCard";
 import { inquiryMailto } from "@/components/contact";
-import HeroImage from "@/components/HeroImage";
-import { HERO_IMAGES } from "@/components/heroImages";
 import TrustStrip from "@/components/TrustStrip";
 import UvCuringSelector from "@/components/UvCuringSelector";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -40,7 +38,7 @@ export default function ApplicationsIndexView() {
       <header className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
         <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Application Notes · Case Studies", zh: "应用说明 · 案例分享", th: "แอปพลิเคชันโน้ต · กรณีศึกษา", vi: "Ghi chú ứng dụng · Case study" }, locale)}</div>
             <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Practical UV Curing Solutions", zh: "实用UV光固化方案", th: "โซลูชัน UV Curing ที่ใช้งานได้จริง", vi: "Giải pháp UV Curing thực tiễn" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "For Real Production Challenges.", zh: "应对一线生产挑战", th: "สำหรับความท้าทายการผลิตจริง", vi: "Cho các thách thức sản xuất thực tế." }, locale)}</span></h1>
@@ -49,7 +47,6 @@ export default function ApplicationsIndexView() {
               <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV光固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
             </div>
           </div>
-          <HeroImage images={HERO_IMAGES.application} alt="UV curing applications — automotive, medical, CPO, optical and fiber" />
         </div>
       </header>
 

@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useLocale, t, type Locale } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
 import SalesSupportContent from "@/components/SalesSupportContent";
-import HeroImage from "@/components/HeroImage";
-import { HERO_IMAGES } from "@/components/heroImages";
 import { BadgeCheck, Mail, Wrench, Globe, Zap } from "lucide-react";
 
 function ContactForm({ fields, locale }: { fields: string[]; locale: Locale }) {
@@ -99,7 +97,7 @@ export default function ContactPage() {
       <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
         <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
             <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Dedicated UV Curing Solution", zh: "专属UV光固化方案", th: "โซลูชัน UV Curing เฉพาะทาง", vi: "Giải pháp UV Curing chuyên biệt" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "We Support You Every Step of the Way.", zh: "全程为您提供支持", th: "เราสนับสนุนคุณในทุกขั้นตอน", vi: "Chúng tôi hỗ trợ bạn trong từng bước." }, locale)}</span></h1>
@@ -108,7 +106,6 @@ export default function ContactPage() {
               <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Request Service Support", zh: "申请服务支持" }, locale)}</a>
             </div>
           </div>
-          <HeroImage images={HERO_IMAGES.support} alt="ETIA support — genuine products, application-driven solutions, local supply chain and long-term service" />
         </div>
       </section>
 
