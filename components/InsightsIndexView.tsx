@@ -4,6 +4,7 @@ import Image from "next/image";
 import { BadgeCheck, ArrowRight } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
 import HeroBanner from "@/components/HeroBanner";
+import TrustStrip from "@/components/TrustStrip";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
 
@@ -56,6 +57,8 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
           </div>
         </div>
       </section>
+
+      <TrustStrip />
 
       {/* Article grid */}
       <section className="py-14" style={{ background: "#f5f7fa" }}>
