@@ -174,8 +174,7 @@ export default function OmniCureBrandLanding() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm">
               <BadgeCheck className="h-4 w-4" /> Authorized OmniCure® Distributor
             </div>
-            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">OmniCure UV Curing Solutions</h1>
-            <p className="mt-5 text-3xl font-bold leading-tight text-[#143C96] md:text-5xl">Precision Cures.<br /><span className="text-[#41A62A]">Supreme Control.</span></p>
+            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">OmniCure UV Curing Solutions<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">Precision Cures. Supreme Control.</span></h1>
             <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#41A62A] md:text-lg">Precision UV curing for assembly, bonding, medical devices and electronics.</p>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[#667085]">Genuine OmniCure® systems, replacement lamps and accessories — supplied with local application support by ETIA.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
