@@ -47,11 +47,11 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
             <BadgeCheck className="h-4 w-4" /> {t({ en: "ETIA Insights", zh: "ETIA 洞察" }, locale)}
           </div>
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
-            {t({ en: "UV Curing Insights", zh: "UV光固化洞察", th: "ข้อมูลเชิงลึก UV Curing", vi: "Thông tin chuyên sâu UV Curing" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "& Application Guides", zh: "和应用指南", th: "และคู่มือการใช้งาน", vi: "& Hướng dẫn ứng dụng" }, locale)}</span>
+            {t({ en: "UV Curing Insights", zh: "UV Curing 光固化洞察", th: "ข้อมูลเชิงลึก UV Curing", vi: "Thông tin chuyên sâu UV Curing" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "& Application Guides", zh: "和应用指南", th: "และคู่มือการใช้งาน", vi: "& Hướng dẫn ứng dụng" }, locale)}</span>
           </h1>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={inquiryMailto(locale, { subject: "UV Curing Technical Inquiry", context: "Insights / application question" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)} <ArrowRight className="h-4 w-4" /></a>
-            <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV光固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
+            <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV Curing 光固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
           </div>
           </div>
         </div>

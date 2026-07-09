@@ -30,7 +30,7 @@ export default function SystemsIndexView() {
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Complete Product Reference", zh: "完整产品索引" }, locale)}</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "All UV Curing Systems", zh: "全部UV光固化系统" }, locale)}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "All UV Curing Systems", zh: "全部UV Curing 光固化系统" }, locale)}</h1>
           <p className="text-base text-gray-300 max-w-2xl mx-auto leading-relaxed line-clamp-2">
             {t({ en: "The complete Excelitas portfolio — OmniCure, Phoseon, Fusion UV and Noblelight — organized by curing technology.", zh: "完整的Excelitas产品组合——OmniCure、Phoseon、Fusion UV 与 Noblelight——按固化技术分类。" }, locale)}
           </p>
@@ -85,7 +85,7 @@ export default function SystemsIndexView() {
       <section className="py-14" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">{t({ en: "Not sure which system fits your process?", zh: "不确定哪款系统适合您的工艺?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV光固化系统。" }, locale)}</p>
+          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 光固化系统。" }, locale)}</p>
           <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
         </div>
       </section>

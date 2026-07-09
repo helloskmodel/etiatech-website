@@ -362,7 +362,7 @@ export default function S2000View() {
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Specifications", zh: "规格参数" }, locale)}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications · OmniCure S2000 Elite UV Spot Curing System", zh: "技术规格 · OmniCure S2000 Elite UV 光固化系统" }, locale)}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications · OmniCure S2000 Elite UV Spot Curing System", zh: "技术规格 · OmniCure S2000 Elite UV Curing 光固化系统" }, locale)}</h2>
           <div className="w-12 h-1 rounded mb-6" style={{ background: "#44B549" }} />
           <p className="text-gray-500 mb-8 max-w-2xl">
             {t({ en: "Full technical specifications for the OmniCure S2000 Elite lamp-based UV spot curing system. For complete dimensional drawings and installation data, contact our engineering team.", zh: "OmniCure S2000 Elite 灯式UV点固化系统的完整技术规格。如需完整尺寸图纸与安装数据,请联系我们的工程团队。" }, locale)}
@@ -475,7 +475,7 @@ export default function S2000View() {
 
       <FinalCta
         heading={t({ en: "Ready to specify the S2000 Elite?", zh: "准备选型 S2000 Elite?" }, locale)}
-        body={t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV光固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}
+        body={t({ en: "Our UV curing engineers will match irradiance, light guide, and dose control to your exact process — from selection to validation.", zh: "我们的UV Curing 光固化工程师将根据您的具体工艺匹配辐照度、导光管与剂量控制——从选型到验证。" }, locale)}
         primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "S2000 Elite Engineering Inquiry", context: "OmniCure S2000 Elite" }) }}
         secondary={{ label: t({ en: "Request Datasheet", zh: "索取数据表" }, locale), href: inquiryMailto(locale, { subject: "S2000 Elite Datasheet", context: "OmniCure S2000 Elite" }) }}
       />

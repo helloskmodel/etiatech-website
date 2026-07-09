@@ -1583,7 +1583,7 @@ export function popularityRank(slug: string): number {
 // H1 on the product detail hero. Bilingual; keyed by slug.
 export const productTagline: Record<string, { en: string; zh: string }> = {
   "s2000-elite": { en: "The Most Reliable, Highest-Quality Lamp Spot Curing", zh: "最可靠、最高品质的灯式点固化" },
-  "s1500-pro": { en: "High-Throughput UV Curing for Micro- & Opto-Electronics", zh: "面向微电子与光电子的高通量 UV 光固化" },
+  "s1500-pro": { en: "High-Throughput UV Curing for Micro- & Opto-Electronics", zh: "面向微电子与光电子的高通量 UV Curing 光固化" },
   "lx500": { en: "Ultra-Compact UV LED Spot Curing — Consistent, Repeatable Results", zh: "超紧凑 UV LED 点固化——一致、可重复的固化效果" },
   "ac9225": { en: "High-Power UV LED Curing for Adhesives, Coatings & Inks", zh: "面向胶粘剂、涂层与油墨的高功率 UV LED 固化" },
 };
@@ -1764,7 +1764,7 @@ export const TECH_ROUTES: TechRoute[] = [
   { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing System", zh: "风冷 UV LED 大面积固化系统" },
   { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing System", zh: "风冷 UV LED 小面积固化系统" },
   { id: "water-cooled-uv-led-large-area-curing", en: "Water-Cooled UV LED Large Area Curing System", zh: "水冷 UV LED 大面积固化系统" },
-  { id: "microwave-uv-curing", en: "Microwave UV Curing System", zh: "微波 UV 光固化系统" },
+  { id: "microwave-uv-curing", en: "Microwave UV Curing System", zh: "微波 UV Curing 光固化系统" },
 ];
 
 const TECH_BY_ID: Record<string, TechRoute> = Object.fromEntries(TECH_ROUTES.map((r) => [r.id, r]));

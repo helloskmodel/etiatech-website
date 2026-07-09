@@ -172,7 +172,7 @@ export default function CaseStudyPageView({ caseStudy }: { caseStudy: CaseStudy 
 
           {/* CTA */}
           <div className="mt-8 rounded-2xl p-6 text-center" style={{ background: "#1A56DB" }}>
-            <h2 className="text-xl font-bold text-white mb-2">{t({ en: "Facing a similar UV curing challenge?", zh: "面临类似的 UV 光固化挑战?" }, locale)}</h2>
+            <h2 className="text-xl font-bold text-white mb-2">{t({ en: "Facing a similar UV curing challenge?", zh: "面临类似的 UV Curing 光固化挑战?" }, locale)}</h2>
             <p className="text-gray-200 text-sm mb-5">{t({ en: "Our engineers match the right UV system to your exact process — from selection to validation.", zh: "我们的工程师将为您的具体工艺匹配合适的UV系统——从选型到验证。" }, locale)}</p>
             <div className="flex flex-wrap justify-center gap-3">
               <a href={inquiryMailto(locale, { subject: "Sales Inquiry", context: caseStudy.company })} className="px-6 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
