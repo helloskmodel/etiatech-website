@@ -100,8 +100,7 @@ export default function ContactPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Reliable Support. Responsive Service.", zh: "可靠支持。快速服务。" }, locale)}</h1>
-            <p className="mt-4 text-lg font-semibold leading-snug text-[#41A62A] md:text-xl">{t({ en: "We're Here to Help.", zh: "我们随时为您提供帮助。" }, locale)}</p>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Reliable Support. Responsive Service.", zh: "可靠支持。快速服务。" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "We're Here to Help.", zh: "我们随时为您提供帮助。" }, locale)}</span></h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">
               {t({ en: "ETIA supports manufacturers with UV curing product advice, installation guidance, troubleshooting, maintenance, and repair service across China and Southeast Asia.", zh: "ETIA 为制造商提供 UV 固化产品咨询、安装指导、故障排查、维护与维修服务，覆盖中国与东南亚。" }, locale)}
             </p>
