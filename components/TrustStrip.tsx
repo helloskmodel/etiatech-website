@@ -6,10 +6,10 @@ import { useLocale, t, type LangText } from "@/components/LocaleContext";
 // Phoseon and Sales & Support. OmniCure uses its own authorized-distributor
 // variant inline on its page.
 const TRUST_ITEMS: LangText[] = [
-  { en: "Genuine Products", zh: "正品保证", th: "สินค้าของแท้" },
-  { en: "Application-Driven Solution", zh: "以应用为导向的解决方案", th: "โซลูชันที่ขับเคลื่อนด้วยการใช้งาน" },
-  { en: "Local Supply Chain", zh: "本地供应链", th: "ห่วงโซ่อุปทานในประเทศ" },
-  { en: "Long-Term Service", zh: "长期服务", th: "บริการระยะยาว" },
+  { en: "Genuine Products", zh: "正品保障", vi: "Sản phẩm chính hãng", th: "สินค้าของแท้" },
+  { en: "Application-Driven Solution", zh: "应用驱动", vi: "Giải pháp theo ứng dụng", th: "โซลูชันที่ขับเคลื่อนด้วยการใช้งานจริง" },
+  { en: "Local Supply Chain", zh: "本地供应", vi: "Chuỗi cung ứng địa phương", th: "ซัพพลายเชนในพื้นที่" },
+  { en: "Long-Term Service", zh: "长期服务", vi: "Dịch vụ dài hạn", th: "บริการระยะยาว" },
 ];
 
 export default function TrustStrip() {
