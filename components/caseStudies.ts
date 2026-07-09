@@ -368,6 +368,22 @@ export function caseStudyImage(c: CaseStudy): string {
   return c.image ? `${CASE_IMG_BASE}/${encodeURIComponent(c.image)}` : "";
 }
 
+// Builds a case-studies bucket URL from a raw filename (used for hero banners
+// that reuse case-study photography). Filename is URL-encoded.
+export function caseImageUrl(filename: string): string {
+  return `${CASE_IMG_BASE}/${encodeURIComponent(filename)}`;
+}
+
+// Per-page hero background banner (blurred, lightened case-study photo).
+// Change a filename here to swap that page's banner — no component edits needed.
+export const PAGE_BANNERS = {
+  omnicure: caseImageUrl("advanced-packaging.jpg"),
+  phoseon: caseImageUrl("phoseon tin coating.png"),
+  applications: caseImageUrl("Optical Fiber Draw Tower.jpg"),
+  insights: caseImageUrl("co-packaged-optics.png"),
+  support: caseImageUrl("Aerospace Composite.jpeg"),
+} as const;
+
 // Readable, SEO-friendly slug for a case study's landing page.
 export function caseSlug(c: CaseStudy): string {
   return c.company.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");

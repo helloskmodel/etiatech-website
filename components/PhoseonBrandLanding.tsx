@@ -29,6 +29,8 @@ import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { productHref, productImage, products, type Product } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
+import HeroBanner from "@/components/HeroBanner";
+import { PAGE_BANNERS } from "@/components/caseStudies";
 import FinalCta from "@/components/FinalCta";
 
 const green = "#6BBF3A";
@@ -97,6 +99,7 @@ export default function PhoseonBrandLanding() {
 
   return <div className="bg-white text-[#14213D]">
     <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+      <HeroBanner src={PAGE_BANNERS.phoseon} />
       <div className="absolute -right-32 -top-40 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
       <div className="absolute -bottom-48 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
