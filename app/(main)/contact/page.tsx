@@ -70,7 +70,7 @@ export default function ContactPage() {
   const { locale } = useLocale();
   const salesItems = [
     { icon: "🔬", title: { en: "Product Inquiry", zh: "产品咨询" }, desc: { en: "Explore OmniCure, Phoseon, Fusion and NobleLight systems matched to your process.", zh: "探索匹配您工艺的OmniCure、Phoseon、Fusion与NobleLight系统。" } },
-    { icon: "⚗️", title: { en: "Application Consulting", zh: "应用咨询" }, desc: { en: "Validate your UV curing process — from adhesive selection to dose and irradiance testing.", zh: "验证您的UV Curing 光固化工艺——从胶粘剂选型到剂量与辐照度测试。" } },
+    { icon: "⚗️", title: { en: "Application Consulting", zh: "应用咨询" }, desc: { en: "Validate your UV curing process — from adhesive selection to dose and irradiance testing.", zh: "验证您的UV Curing 紫外线固化工艺——从胶粘剂选型到剂量与辐照度测试。" } },
     { icon: "🛠️", title: { en: "Custom Engineering", zh: "定制工程" }, desc: { en: "Need a non-standard configuration? We engineer bespoke solutions for complex production lines.", zh: "需要非标配置? 我们为复杂产线打造定制化解决方案。" } },
   ];
   const serviceItems = [
@@ -103,7 +103,7 @@ export default function ContactPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}</div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Dedicated UV Curing Solution", zh: "专属UV Curing 光固化方案", th: "โซลูชัน UV Curing เฉพาะทาง", vi: "Giải pháp UV Curing chuyên biệt" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "We Support You Every Step of the Way.", zh: "全程为您提供支持", th: "เราสนับสนุนคุณในทุกขั้นตอน", vi: "Chúng tôi hỗ trợ bạn trong từng bước." }, locale)}</span></h1>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Dedicated UV Curing Solution", zh: "专属UV Curing 紫外线固化方案", th: "โซลูชัน UV Curing เฉพาะทาง", vi: "Giải pháp UV Curing chuyên biệt" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "We Support You Every Step of the Way.", zh: "全程为您提供支持", th: "เราสนับสนุนคุณในทุกขั้นตอน", vi: "Chúng tôi hỗ trợ bạn trong từng bước." }, locale)}</span></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师" }, locale)}</a>
               <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Request Service Support", zh: "申请服务支持" }, locale)}</a>
@@ -125,7 +125,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Sales Inquiry", zh: "销售咨询" }, locale)}</h2>
               <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
               <p className="text-gray-500 mb-8 leading-relaxed">
-                {t({ en: "Looking for the right UV curing system? Our engineers will evaluate your application, recommend the best solution, and support you through the entire selection process.", zh: "在寻找合适的UV Curing 光固化系统? 我们的工程师将评估您的应用、推荐最佳方案，并在整个选型过程中为您提供支持。" }, locale)}
+                {t({ en: "Looking for the right UV curing system? Our engineers will evaluate your application, recommend the best solution, and support you through the entire selection process.", zh: "在寻找合适的UV Curing 紫外线固化系统? 我们的工程师将评估您的应用、推荐最佳方案，并在整个选型过程中为您提供支持。" }, locale)}
               </p>
               <div className="flex flex-col gap-4">
                 {salesItems.map((item) => (
@@ -162,7 +162,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Service & Repair", zh: "服务与维修" }, locale)}</h2>
               <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
               <p className="text-gray-500 mb-8 leading-relaxed">
-                {t({ en: "Our in-house repair factory and certified technicians keep your UV curing equipment running at peak performance — minimizing downtime and maximizing production reliability.", zh: "我们的自有维修工厂与认证技术人员让您的UV Curing 光固化设备保持最佳性能——最大限度减少停机，最大化生产可靠性。" }, locale)}
+                {t({ en: "Our in-house repair factory and certified technicians keep your UV curing equipment running at peak performance — minimizing downtime and maximizing production reliability.", zh: "我们的自有维修工厂与认证技术人员让您的UV Curing 紫外线固化设备保持最佳性能——最大限度减少停机，最大化生产可靠性。" }, locale)}
               </p>
               <div className="flex flex-col gap-4">
                 {serviceItems.map((item) => (
@@ -240,8 +240,8 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-[32px] bg-gradient-to-br from-[#143C96] to-[#1F63D6] px-6 py-14 text-center text-white sm:px-10">
             <Zap className="mx-auto h-9 w-9 text-[#8BE172]" />
-            <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-bold md:text-4xl">{t({ en: "Ready to build a reliable UV curing process?", zh: "准备好构建可靠的 UV Curing 光固化工艺了吗？" }, locale)}</h2>
-            <p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">{t({ en: "Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers help you select, implement, and maintain the right UV curing system — with local support across China and Southeast Asia.", zh: "告诉我们您的应用、胶粘剂、固化面积、波长与生产需求。ETIA 工程师协助您选型、导入并维护合适的 UV Curing 光固化系统——并在中国与东南亚提供本地支持。" }, locale)}</p>
+            <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-bold md:text-4xl">{t({ en: "Ready to build a reliable UV curing process?", zh: "准备好构建可靠的 UV Curing 紫外线固化工艺了吗？" }, locale)}</h2>
+            <p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">{t({ en: "Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers help you select, implement, and maintain the right UV curing system — with local support across China and Southeast Asia.", zh: "告诉我们您的应用、胶粘剂、固化面积、波长与生产需求。ETIA 工程师协助您选型、导入并维护合适的 UV Curing 紫外线固化系统——并在中国与东南亚提供本地支持。" }, locale)}</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#44B549] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#3A9D3F]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师" }, locale)}</a>
               <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white transition hover:border-white/70">{t({ en: "Request Service Support", zh: "申请服务支持" }, locale)}</a>

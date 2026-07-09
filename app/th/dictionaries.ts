@@ -41,7 +41,7 @@ const tri = {
   metaTitle: {
     th: "OmniCure ประเทศไทย — ตัวแทนจำหน่ายที่ได้รับอนุญาต UV Curing | ETIA",
     en: "OmniCure Thailand — Authorized UV Curing Distributor | ETIA",
-    zh: "OmniCure 泰国授权分销商 — UV Curing 光固化系统 | ETIA",
+    zh: "OmniCure 泰国授权分销商 — UV Curing 紫外线固化系统 | ETIA",
   } as Tri,
   metaDescription: {
     th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบบ่มยูวีแบบจุด OmniCure ในประเทศไทย — ทั้งระบบหลอดยูวีและ UV LED พร้อมการควบคุม การวัดค่าความเข้มแสง และทีมวิศวกรที่ช่วยเลือกรุ่นและสนับสนุนทางเทคนิค",
@@ -102,13 +102,13 @@ const tri = {
   ctaBody: {
     th: "วิศวกรของเราจะช่วยจับคู่ระบบบ่มยูวีที่เหมาะกับการใช้งานของคุณ ตั้งแต่การเลือกรุ่นจนถึงการตรวจสอบ",
     en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.",
-    zh: "我们的工程师将为您的具体应用匹配合适的 UV Curing 光固化系统——从选型到验证。",
+    zh: "我们的工程师将为您的具体应用匹配合适的 UV Curing 紫外线固化系统——从选型到验证。",
   } as Tri,
   ctaButton: { th: "ติดต่อฝ่ายขาย", en: "Talk to Our Sales", zh: "联系我们的销售" } as Tri,
   footerTagline: {
     th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบ UV curing ระดับโลก ประสบการณ์ความเชี่ยวชาญเชิงการใช้งานกว่า 20 ปี ใน 10 อุตสาหกรรม",
     en: "Authorized distributor of world-class UV curing systems. 20 years of application expertise across 10 industries.",
-    zh: "世界级 UV Curing 光固化系统授权代理，20 年应用专业经验，覆盖 10 大行业。",
+    zh: "世界级 UV Curing 紫外线固化系统授权代理，20 年应用专业经验，覆盖 10 大行业。",
   } as Tri,
   footerRights: {
     th: "สงวนลิขสิทธิ์",
@@ -164,7 +164,7 @@ const homeTri = {
   heroSubtitle: {
     th: "ETIA เปลี่ยนประสบการณ์ตรงด้าน UV curing กว่า 20 ปี ให้เป็นการสนับสนุนที่ใช้ได้จริง ครอบคลุมตั้งแต่การเลือกผลิตภัณฑ์ การตรวจสอบกระบวนการ การแก้ไขปัญหา การบำรุงรักษา ไปจนถึงการซ่อมโดยทีมงานของเราเอง",
     en: "ETIA turns 20 years of hands-on UV curing experience into practical support across product selection, process validation, troubleshooting, maintenance, and in-house repair.",
-    zh: "ETIA将20年UV Curing 光固化实战经验，转化为覆盖选型、工艺验证、故障排查、保养与自有维修的全方位实用支持。",
+    zh: "ETIA将20年UV Curing 紫外线固化实战经验，转化为覆盖选型、工艺验证、故障排查、保养与自有维修的全方位实用支持。",
   } as Tri,
   heroBtnProducts: { th: "ดูผลิตภัณฑ์ →", en: "Explore Products →", zh: "浏览产品 →" } as Tri,
   heroBtnEngineer: { th: "ปรึกษาวิศวกร", en: "Talk to an Engineer", zh: "咨询工程师" } as Tri,
@@ -177,13 +177,13 @@ const homeTri = {
   whyIntro: {
     th: "ด้วยรากฐานความเป็นเลิศทางวิศวกรรม ETIA ร่วมมือกับแบรนด์ UV curing ชั้นนำระดับโลก เพื่อส่งมอบโซลูชันที่พิสูจน์แล้ว เชื่อถือได้ และดูแลครบวงจร — ตั้งแต่การเลือกจนถึงการสนับสนุน",
     en: "Rooted in engineering excellence, ETIA partners with the world's leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.",
-    zh: "立足硬核工程技术，携手全球头部 UV Curing 光固化品牌，提供经过市场验证、性能稳定、全流程保障的一体化方案，从设备选型到终身售后全程护航。",
+    zh: "立足硬核工程技术，携手全球头部 UV Curing 紫外线固化品牌，提供经过市场验证、性能稳定、全流程保障的一体化方案，从设备选型到终身售后全程护航。",
   } as Tri,
-  spectrumEyebrow: { th: "เทคโนโลยี UV Curing", en: "UV Curing Technology", zh: "UV Curing 光固化技术" } as Tri,
+  spectrumEyebrow: { th: "เทคโนโลยี UV Curing", en: "UV Curing Technology", zh: "UV Curing 紫外线固化技术" } as Tri,
   spectrumHeading: {
     th: "โซลูชัน UV Curing ครบทุกสเปกตรัม",
     en: "The Full Spectrum of UV Curing Solutions",
-    zh: "全光谱UV Curing 光固化解决方案",
+    zh: "全光谱UV Curing 紫外线固化解决方案",
   } as Tri,
   spectrumSubtitle: {
     th: "200–600 nm · 6 เส้นทางเทคโนโลยี · 4 แบรนด์ระดับโลก",
@@ -194,7 +194,7 @@ const homeTri = {
   ctaHeading: {
     th: "ต้องการความช่วยเหลือในการเลือกระบบ UV curing ที่เหมาะสม?",
     en: "Need help selecting the right UV curing system?",
-    zh: "需要帮助挑选合适的UV Curing 光固化系统?",
+    zh: "需要帮助挑选合适的UV Curing 紫外线固化系统?",
   } as Tri,
   ctaBody: {
     th: "วิศวกรของเราพร้อมช่วยเหลือ — ตั้งแต่ spot ถึง area, lamp ถึง LED, การเลือกจนถึงการตรวจสอบ",
@@ -211,7 +211,7 @@ const homeTri = {
   casesSubtitle: {
     th: "ดูว่าระบบ UV curing ของเราส่งมอบผลลัพธ์อย่างไร ในงานที่ความแม่นยำและความน่าเชื่อถือสำคัญที่สุด",
     en: "See how our UV curing systems deliver where precision and reliability matter most.",
-    zh: "看我们的UV Curing 光固化系统如何在最看重精度与可靠性的场景中交付成果。",
+    zh: "看我们的UV Curing 紫外线固化系统如何在最看重精度与可靠性的场景中交付成果。",
   } as Tri,
   casesReadOne: { th: "อ่านกรณีศึกษานี้ →", en: "Read this case study →", zh: "阅读此案例 →" } as Tri,
 };
