@@ -43,7 +43,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     },
     intro: {
       en: "OmniCure® is a trusted UV curing brand under Excelitas, offering LED and lamp-based spot, small-area and large-area curing systems for adhesives, coatings and inks.\n\nWith stable optical power, uniform curing performance and reliable process control, OmniCure supports precision manufacturing in medical devices, electronics, optoelectronics and other demanding applications.",
-      zh: "OmniCure® 是 Excelitas 旗下值得信赖的 UV 固化品牌,提供 LED 与灯式的点固化、小面积及大面积固化系统,适用于胶粘剂、涂层与油墨。\n\n凭借稳定的光输出、均匀的固化性能与可靠的工艺控制,OmniCure 为医疗器械、电子、光电子等高要求领域的精密制造提供支持。",
+      zh: "OmniCure® 是 Excelitas 旗下值得信赖的 UV 光固化品牌,提供 LED 与灯式的点固化、小面积及大面积固化系统,适用于胶粘剂、涂层与油墨。\n\n凭借稳定的光输出、均匀的固化性能与可靠的工艺控制,OmniCure 为医疗器械、电子、光电子等高要求领域的精密制造提供支持。",
     },
     applications: [
       { en: "Medical Device", zh: "医疗器械" },
@@ -71,7 +71,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     },
     intro: {
       en: "Phoseon® is a UV LED technology brand under Excelitas, known for high-performance UV curing and life science illumination solutions.\n\nIts air-cooled and water-cooled UV LED systems support curing and drying of inks, coatings and adhesives across labels, packaging, digital printing, electronics, automotive and medical device applications.\n\nPhoseon also provides advanced LED illumination systems for fluorescence imaging, microscopy, laboratory instruments and life science applications.",
-      zh: "Phoseon® 是 Excelitas 旗下的 UV LED 技术品牌,以高性能 UV 固化与生命科学照明解决方案著称。\n\n其风冷与水冷 UV LED 系统,支持油墨、涂层与胶粘剂的固化与干燥,广泛应用于标签、包装、数码印刷、电子、汽车及医疗器械等领域。\n\nPhoseon 还提供先进的 LED 照明系统,用于荧光成像、显微镜、实验室仪器及生命科学应用。",
+      zh: "Phoseon® 是 Excelitas 旗下的 UV LED 技术品牌,以高性能 UV 光固化与生命科学照明解决方案著称。\n\n其风冷与水冷 UV LED 系统,支持油墨、涂层与胶粘剂的固化与干燥,广泛应用于标签、包装、数码印刷、电子、汽车及医疗器械等领域。\n\nPhoseon 还提供先进的 LED 照明系统,用于荧光成像、显微镜、实验室仪器及生命科学应用。",
     },
     applications: [
       { en: "Printing & Packaging", zh: "印刷与包装" },

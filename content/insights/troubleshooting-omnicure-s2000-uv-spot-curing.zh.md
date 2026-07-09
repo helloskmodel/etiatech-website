@@ -2,7 +2,7 @@
 title: "OmniCure S2000 故障排查：灯管无法点亮、光环颜色与辐照度偏低"
 description: "一份现场排障指南，涵盖 OmniCure S2000 最常见的三类问题——灯管无法点亮、状态光环颜色含义，以及辐照度下降——并给出对应的检查与解决方法。"
 date: 2026-07-07
-tags: [OmniCure, S2000 Elite, 故障排查, UV固化]
+tags: [OmniCure, S2000 Elite, 故障排查, UV光固化]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%202000%20ELITE-LOOP%20FEEDBACK.webp
 author: ETIA Technology
 ---

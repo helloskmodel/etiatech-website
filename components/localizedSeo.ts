@@ -5,9 +5,9 @@ const SITE = "https://www.etiatech.com";
 
 const seo: Record<Exclude<Locale, "en">, { title: string; description: string; keywords: string[] }> = {
   zh: {
-    title: "UV 固化系统与解决方案 | ETIA Technology",
-    description: "ETIA 提供 OmniCure、Phoseon、Fusion UV 与 Noblelight UV 固化系统，拥有 20 年设备选型、工艺验证、维修与本地技术支持经验。",
-    keywords: ["UV固化系统", "UV LED固化", "紫外线固化设备", "OmniCure", "Phoseon", "UV固化解决方案"],
+    title: "UV 光固化系统与解决方案 | ETIA Technology",
+    description: "ETIA 提供 OmniCure、Phoseon、Fusion UV 与 Noblelight UV 光固化系统，拥有 20 年设备选型、工艺验证、维修与本地技术支持经验。",
+    keywords: ["UV光固化系统", "UV LED固化", "紫外线固化设备", "OmniCure", "Phoseon", "UV光固化解决方案"],
   },
   vi: {
     title: "Hệ thống & giải pháp đóng rắn UV tại Việt Nam | ETIA",
