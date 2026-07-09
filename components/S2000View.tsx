@@ -196,7 +196,7 @@ export default function S2000View() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "OmniCure · Lamp-Based UV Spot Curing", zh: "OmniCure · 灯式 UV 点固化" }, locale)}</div>
             <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
-              {t({ en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Maximum Power. Total Control.", zh: "迈向紫外光固化的未来" }, locale)}</span>
+              {t({ en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Maximum Power. Total Control.", zh: "迈向紫外线固化的未来" }, locale)}</span>
             </h1>
             <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {heroStats.map((s) => (
