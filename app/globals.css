@@ -11,3 +11,23 @@ body {
   color: #111827;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Chinese (and Thai) CJK glyphs render visually larger and heavier than Latin
+   at the same font-size, which makes the big hero title + green tagline look
+   oversized. Scale hero headings down a notch when the site is in Chinese so
+   they match the English visual weight. System fonts are kept as-is. */
+:is(html[lang="zh-CN"], html[lang="th"]) :is(section, header) h1 {
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+:is(html[lang="zh-CN"], html[lang="th"]) :is(section, header) h1 > span {
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  :is(html[lang="zh-CN"], html[lang="th"]) :is(section, header) h1 {
+    font-size: 3rem;
+  }
+  :is(html[lang="zh-CN"], html[lang="th"]) :is(section, header) h1 > span {
+    font-size: 1.875rem;
+  }
+}

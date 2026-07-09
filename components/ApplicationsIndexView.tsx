@@ -5,6 +5,7 @@ import { BadgeCheck, HeartPulse, Car, CircuitBoard, Sparkles, Cable } from "luci
 import ApplicationCard from "@/components/ApplicationCard";
 import TrustStrip from "@/components/TrustStrip";
 import UvCuringSelector from "@/components/UvCuringSelector";
+import { useLocale, t } from "@/components/LocaleContext";
 import { APPLICATION_CATEGORIES, getListedApplications } from "@/data/applicationsData";
 
 const listedApplications = getListedApplications();
@@ -18,6 +19,7 @@ const heroIndustries = [
 ];
 
 export default function ApplicationsIndexView() {
+  const { locale } = useLocale();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All Applications");
   const applications = useMemo(() => {
@@ -45,7 +47,7 @@ export default function ApplicationsIndexView() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> 5 Industries · 15 Application Case Studies</div>
-            <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">Practical UV Curing Solutions<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">For Real Production Challenges.</span></h1>
+            <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Practical UV Curing Solutions", zh: "实用UV固化方案", th: "โซลูชัน UV Curing ที่ใช้งานได้จริง", vi: "Giải pháp UV Curing thực tiễn" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "For Real Production Challenges.", zh: "应对一线生产挑战", th: "สำหรับความท้าทายการผลิตจริง", vi: "Cho các thách thức sản xuất thực tế." }, locale)}</span></h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-[#667085] md:text-lg">Concise, application-driven guidance connecting process requirements with suitable UV technology, recommended products, and ETIA support.</p>
           </div>
           <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">

@@ -26,7 +26,7 @@ import {
   Zap,
 } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
-import { useLocale } from "@/components/LocaleContext";
+import { useLocale, t } from "@/components/LocaleContext";
 import { productHref, productImage, products, type Product } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
@@ -102,7 +102,7 @@ export default function PhoseonBrandLanding() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.25fr_.75fr] lg:items-center lg:px-8">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> Phoseon® UV LED Curing Solutions</div>
-          <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">Phoseon UV Curing Solutions<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">Built for Production Performance.</span></h1>
+          <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Phoseon UV Curing Solutions", zh: "Phoseon UV 固化解决方案", th: "โซลูชัน UV Curing ของ Phoseon", vi: "Giải pháp UV Curing Phoseon" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Built for Production Performance.", zh: "为量产性能而生。", th: "ออกแบบเพื่อประสิทธิภาพการผลิต", vi: "Được tạo ra cho hiệu suất sản xuất." }, locale)}</span></h1>
           <p className="mt-6 max-w-2xl text-sm leading-6 text-[#667085]">High UV energy, controlled curing intensity, long service life and efficient operation for demanding production environments.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#phoseon-families" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Explore Phoseon Solutions <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">Talk to an Engineer</a></div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#667085]">{["UV LED Technology", "Industrial Applications", "Local ETIA Support"].map((item) => <span key={item} className="inline-flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-[#41A62A]" />{item}</span>)}</div>
