@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useLocale, t, type Locale } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
 import SalesSupportContent from "@/components/SalesSupportContent";
+import HeroImage from "@/components/HeroImage";
+import { HERO_IMAGES } from "@/components/heroImages";
 import { BadgeCheck, Mail, Wrench, Globe, Zap } from "lucide-react";
 
 function ContactForm({ fields, locale }: { fields: string[]; locale: Locale }) {
@@ -109,26 +111,7 @@ export default function ContactPage() {
               <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Request Service Support", zh: "申请服务支持" }, locale)}</a>
             </div>
           </div>
-          <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
-            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
-              <div><p className="text-sm font-bold text-[#143C96]">ETIA</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#41A62A]">Support</p></div>
-            </div>
-            <div className="grid gap-2.5">
-              {[
-                { icon: Mail, href: "#sales", label: { en: "Sales Inquiry", zh: "销售咨询" }, sub: { en: "Selection, quotes & product advice", zh: "选型、报价与产品建议" } },
-                { icon: Wrench, href: "#service", label: { en: "Service & Repair", zh: "服务与维修" }, sub: { en: "Maintenance, repair & spare parts", zh: "维护、维修与备件" } },
-                { icon: Globe, href: "#global", label: { en: "Global Contacts", zh: "全球联系" }, sub: { en: "Local & international teams", zh: "本地与国际团队" } },
-              ].map((c) => {
-                const Icon = c.icon;
-                return (
-                  <a key={c.href} href={c.href} className="group flex items-center gap-2.5 rounded-xl border border-[#E3EAF2] bg-white p-3 transition hover:-translate-y-1 hover:shadow-lg">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF6FF] text-[#143C96]"><Icon className="h-4 w-4" strokeWidth={1.8} /></span>
-                    <span><span className="block text-xs font-bold text-[#102A43]">{t(c.label, locale)}</span><span className="block text-[10px] text-[#7B8794]">{t(c.sub, locale)}</span></span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+          <HeroImage images={HERO_IMAGES.support} alt="ETIA support — genuine products, application-driven solutions, local supply chain and long-term service" />
         </div>
       </section>
 

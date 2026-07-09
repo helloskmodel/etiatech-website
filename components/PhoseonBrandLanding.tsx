@@ -30,6 +30,8 @@ import { useLocale, t } from "@/components/LocaleContext";
 import { productHref, productImage, products, type Product } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
+import HeroImage from "@/components/HeroImage";
+import { HERO_IMAGES } from "@/components/heroImages";
 
 const green = "#6BBF3A";
 const deepGreen = "#087F6B";
@@ -106,19 +108,7 @@ export default function PhoseonBrandLanding() {
           <p className="mt-6 max-w-2xl text-sm leading-6 text-[#667085]">High UV energy, controlled curing intensity, long service life and efficient operation for demanding production environments.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#phoseon-families" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Explore Phoseon Solutions <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">Talk to an Engineer</a></div>
         </div>
-        <div className="flex w-full flex-col justify-center rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-5 lg:mx-auto lg:min-h-[330px] lg:max-w-sm">
-          <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white bg-white text-center shadow-[0_16px_45px_rgba(26,86,219,.16)]">
-            <div><p className="text-sm font-bold text-[#143C96]">UV Curing</p><p className="mt-0.5 text-[9px] font-bold uppercase tracking-[.16em] text-[#41A62A]">System</p></div>
-          </div>
-          <div className="grid gap-2.5">
-            {phoseonTech.map((tech) => {
-              const Icon = tech.icon;
-              return <a key={tech.name} href="#phoseon-families" className="group rounded-xl border border-[#E3EAF2] bg-white p-3 text-left transition hover:-translate-y-1 hover:shadow-lg" style={{ borderTopColor: tech.color, borderTopWidth: 3 }}>
-                <div className="flex items-center gap-2.5"><span className="rounded-lg p-1.5" style={{ background: tech.soft, color: tech.color }}><Icon className="h-4 w-4" strokeWidth={1.8} /></span><div><p className="text-[11px] font-bold" style={{ color: tech.color }}>{tech.kicker}</p><p className="mt-0.5 text-xs font-bold leading-snug text-[#102A43]">{tech.name}</p></div></div>
-              </a>;
-            })}
-          </div>
-        </div>
+        <HeroImage images={HERO_IMAGES.phoseon} alt="Phoseon Nexus II UV LED curing system" />
       </div>
     </section>
 

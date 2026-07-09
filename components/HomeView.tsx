@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState, type ComponentType } from "react";
+import { useRef, type ComponentType } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -33,6 +33,8 @@ import { caseSlug, caseStudyImage, successStories } from "@/components/caseStudi
 import { productImage, products } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
+import HeroImage from "@/components/HeroImage";
+import { HERO_IMAGES } from "@/components/heroImages";
 
 const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
   { title: { en: "20 Years of Application Experience", zh: "20 年应用经验", th: "ประสบการณ์ด้านการใช้งาน 20 ปี" }, body: { en: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", zh: "在医疗、电子、光子学、汽车与工业制造领域积累的实战 UV 光固化经验。", th: "ความรู้ด้าน UV curing เชิงปฏิบัติในอุตสาหกรรมการแพทย์ อิเล็กทรอนิกส์ โฟโตนิกส์ ยานยนต์ และการผลิตทางอุตสาหกรรม" }, icon: GraduationCap },
@@ -40,9 +42,6 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
   { title: { en: "Local Stock & Fast Response", zh: "本地库存与快速响应", th: "สต็อกในประเทศและตอบสนองรวดเร็ว" }, body: { en: "Local equipment and consumables help reduce lead time and production risk.", zh: "本地备货的设备与耗材有助于缩短交期、降低生产风险。", th: "อุปกรณ์และวัสดุสิ้นเปลืองในประเทศช่วยลดระยะเวลารอคอยและความเสี่ยงในการผลิต" }, icon: Warehouse },
   { title: { en: "In-House Repair & Lifecycle Support", zh: "自有维修与全生命周期支持", th: "การซ่อมภายในและการสนับสนุนตลอดอายุการใช้งาน" }, body: { en: "Troubleshooting, maintenance and repair coordination to keep your process running.", zh: "提供故障排查、维护与维修协调，保障您的产线持续运行。", th: "การแก้ไขปัญหา การบำรุงรักษา และการประสานงานซ่อมเพื่อให้กระบวนการของคุณทำงานต่อเนื่อง" }, icon: Wrench },
 ];
-
-// OmniCure systems featured in the hero product carousel (all have COS assets).
-const heroProductSlugs = ["s1500-pro", "lx500", "v3-led-heads", "ac8", "ac5", "ls200"];
 
 const applications: Array<{ title: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }> = [
   { title: { en: "Medical Devices", zh: "医疗器械", th: "อุปกรณ์การแพทย์" }, icon: HeartPulse },
@@ -63,16 +62,6 @@ export default function HomeView() {
   const omnicureProduct = product("s2000-elite") ?? product("lx500");
   const phoseonProduct = product("nexus-ii") ?? product("firejet-one");
 
-  const heroProducts = heroProductSlugs
-    .map((slug) => product(slug))
-    .filter((p): p is NonNullable<typeof p> => !!p && !!productImage(p));
-  const [heroIndex, setHeroIndex] = useState(0);
-  useEffect(() => {
-    if (heroProducts.length <= 1) return;
-    const timer = setInterval(() => setHeroIndex((i) => (i + 1) % heroProducts.length), 3500);
-    return () => clearInterval(timer);
-  }, [heroProducts.length]);
-
   const caseScrollRef = useRef<HTMLDivElement>(null);
   const scrollCases = (dir: number) => caseScrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
 
@@ -87,14 +76,7 @@ export default function HomeView() {
           <p className="mt-6 max-w-3xl text-base leading-7 text-[#667085] md:text-lg">{t({ en: "ETIA helps manufacturers select, validate, install, and maintain advanced UV curing systems for precision bonding, coating, printing, encapsulation, and high-reliability assembly.", zh: "ETIA 帮助制造商为精密粘接、涂布、印刷、封装与高可靠性组装，选型、验证、安装并维护先进的 UV 光固化系统。", th: "ETIA ช่วยผู้ผลิตในการเลือก ตรวจสอบ ติดตั้ง และบำรุงรักษาระบบ UV curing ขั้นสูงสำหรับการยึดติด เคลือบ พิมพ์ เคลือบหุ้ม และการประกอบที่มีความน่าเชื่อถือสูง" }, locale)}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Link href="/product/omnicure" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Explore Products", zh: "浏览产品", th: "ดูสินค้า" }, locale)} <ArrowRight className="h-4 w-4" /></Link><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร" }, locale)}</a></div>
         </div>
-        <div className="relative min-h-[410px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
-          <div className="absolute left-10 right-10 top-1/2 h-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1F63D6]/20 via-[#63C94A]/35 to-transparent blur-2xl" />
-          {heroProducts.map((p, i) => <Image key={p.slug} src={productImage(p)} alt={p.name} fill priority={i === 0} sizes="(max-width: 1024px) 100vw, 46vw" className={`object-contain p-16 transition-opacity duration-700 ${i === heroIndex ? "opacity-100" : "opacity-0"}`} />)}
-          {heroProducts.length > 1 && <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">{heroProducts.map((p, i) => <button key={p.slug} type="button" aria-label={`Show ${p.name}`} onClick={() => setHeroIndex(i)} className={`h-2 rounded-full transition-all ${i === heroIndex ? "w-6 bg-[#143C96]" : "w-2 bg-[#143C96]/25"}`} />)}</div>}
-          <div className="absolute left-4 top-5 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg sm:left-6"><p className="text-xs font-bold text-[#143C96]">{t({ en: "Genuine Products", zh: "正品保证", th: "สินค้าของแท้" }, locale)}</p><p className="mt-1 text-[10px] text-[#667085]">{t({ en: "Authorized supply", zh: "授权供应", th: "จัดหาอย่างเป็นทางการ" }, locale)}</p></div>
-          <div className="absolute right-4 top-1/3 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg sm:right-6"><p className="text-xs font-bold text-[#143C96]">{t({ en: "Application Support", zh: "应用支持", th: "การสนับสนุนด้านการใช้งาน" }, locale)}</p><p className="mt-1 text-[10px] text-[#667085]">{t({ en: "Engineer-led selection", zh: "工程师主导选型", th: "การเลือกโดยวิศวกร" }, locale)}</p></div>
-          <div className="absolute bottom-5 left-8 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg"><p className="text-xs font-bold text-[#41A62A]">{t({ en: "In-House Repair", zh: "自有维修", th: "ศูนย์ซ่อมภายใน" }, locale)}</p><p className="mt-1 text-[10px] text-[#667085]">{t({ en: "Lifecycle support", zh: "全生命周期支持", th: "การสนับสนุนตลอดอายุการใช้งาน" }, locale)}</p></div>
-        </div>
+        <HeroImage images={HERO_IMAGES.home} alt="ETIA UV curing systems — OmniCure, Phoseon and Noblelight" />
       </div>
     </section>
 
