@@ -381,9 +381,9 @@ export function appImageUrl(filename: string): string {
   return `${APP_IMG_BASE}/${encodeURIComponent(filename)}`;
 }
 
-// Purpose-made wide hero banners (1926×600) under the /BANNERIMG/ bucket.
+// Purpose-made wide hero banners (1926×600, compressed) under /IMAGE/logo/.
 const BANNER_BASE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/BANNERIMG";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
 export function bannerUrl(filename: string): string {
   return `${BANNER_BASE}/${encodeURIComponent(filename)}`;
 }
