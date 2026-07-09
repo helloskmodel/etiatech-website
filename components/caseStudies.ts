@@ -374,12 +374,19 @@ export function caseImageUrl(filename: string): string {
   return `${CASE_IMG_BASE}/${encodeURIComponent(filename)}`;
 }
 
+// Some banner photos live under the /IMAGE/application/ bucket instead.
+const APP_IMG_BASE =
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application";
+export function appImageUrl(filename: string): string {
+  return `${APP_IMG_BASE}/${encodeURIComponent(filename)}`;
+}
+
 // Per-page hero background banner (blurred, lightened case-study photo).
 // Change a filename here to swap that page's banner — no component edits needed.
 export const PAGE_BANNERS = {
-  omnicure: caseImageUrl("advanced-packaging.jpg"),
-  phoseon: caseImageUrl("PCB BY ROBOT.png"),
-  applications: caseImageUrl("ev-battery.png"),
+  omnicure: appImageUrl("13-semiconductor-packaging.jpg"),
+  phoseon: caseImageUrl("phoseon tin coating.png"),
+  applications: appImageUrl("05-lidar.jpg"),
   insights: caseImageUrl("co-packaged-optics.png"),
   support: caseImageUrl("advanced-packaging.jpg"),
 } as const;
