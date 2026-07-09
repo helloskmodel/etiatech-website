@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, type ComponentType } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -33,7 +33,6 @@ import { caseSlug, caseStudyImage, successStories } from "@/components/caseStudi
 import { productImage, products } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
-import HeroImage from "@/components/HeroImage";
 import { HERO_IMAGES } from "@/components/heroImages";
 
 const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
@@ -62,6 +61,12 @@ export default function HomeView() {
   const omnicureProduct = product("s2000-elite") ?? product("lx500");
   const phoseonProduct = product("nexus-ii") ?? product("firejet-one");
 
+  const [heroIndex, setHeroIndex] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => setHeroIndex((i) => (i + 1) % HERO_IMAGES.home.length), 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   const caseScrollRef = useRef<HTMLDivElement>(null);
   const scrollCases = (dir: number) => caseScrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
 
@@ -75,7 +80,12 @@ export default function HomeView() {
           <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Your UV Curing Solution Partner", zh: "您的UV 光固化方案合作伙伴", th: "พันธมิตรโซลูชัน UV Curing ของคุณ", vi: "Đối tác giải pháp UV Curing của bạn" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "From Selection to Support.", zh: "从选型到运维全程支持", th: "ตั้งแต่การเลือกจนถึงการดูแลรักษา", vi: "Từ lựa chọn đến hỗ trợ vận hành" }, locale)}</span></h1>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Link href="/product/omnicure" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Explore Products", zh: "浏览产品", th: "ดูสินค้า" }, locale)} <ArrowRight className="h-4 w-4" /></Link><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร" }, locale)}</a></div>
         </div>
-        <HeroImage images={HERO_IMAGES.home} alt="ETIA UV curing systems — OmniCure, Phoseon and Noblelight" />
+        <div className="relative mx-auto w-full min-h-[300px] max-w-md rounded-[28px] border border-[#DCE7F5] bg-gradient-to-br from-[#F5F8FF] via-white to-[#F2FBF8] p-4 shadow-[0_24px_80px_rgba(15,36,68,.10)] sm:p-6 lg:min-h-[360px]">
+          {HERO_IMAGES.home.map((src, i) => <Image key={src} src={src} alt="ETIA UV curing system" fill priority={i === 0} sizes="(max-width: 1024px) 100vw, 38vw" className={`object-contain p-2 transition-opacity duration-700 ${i === heroIndex ? "opacity-100" : "opacity-0"}`} />)}
+          {HERO_IMAGES.home.length > 1 && <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2">{HERO_IMAGES.home.map((src, i) => <button key={src} type="button" aria-label={`Show slide ${i + 1}`} onClick={() => setHeroIndex(i)} className={`h-2 rounded-full transition-all ${i === heroIndex ? "w-6 bg-[#143C96]" : "w-2 bg-[#143C96]/25"}`} />)}</div>}
+          <div className="absolute left-3 top-3 rounded-xl border border-[#D9E4EA] bg-white px-3 py-2 shadow-lg"><p className="text-xs font-bold text-[#143C96]">{t({ en: "Genuine Products", zh: "正品保证", th: "สินค้าของแท้" }, locale)}</p><p className="mt-0.5 text-[10px] text-[#667085]">{t({ en: "Authorized supply", zh: "授权供应", th: "จัดหาอย่างเป็นทางการ" }, locale)}</p></div>
+          <div className="absolute bottom-4 left-5 rounded-xl border border-[#D9E4EA] bg-white px-3 py-2 shadow-lg"><p className="text-xs font-bold text-[#41A62A]">{t({ en: "In-House Repair", zh: "自有维修", th: "ศูนย์ซ่อมภายใน" }, locale)}</p><p className="mt-0.5 text-[10px] text-[#667085]">{t({ en: "Lifecycle support", zh: "全生命周期支持", th: "การสนับสนุนตลอดอายุการใช้งาน" }, locale)}</p></div>
+        </div>
       </div>
     </section>
 
