@@ -6,19 +6,13 @@ import { useMemo, useState, type ComponentType } from "react";
 import {
   ArrowRight,
   BadgeCheck,
-  Boxes,
   Check,
-  CircuitBoard,
   Crosshair,
-  Gauge,
   Layers3,
   Lightbulb,
-  Microscope,
   PackageCheck,
   ScanLine,
-  Settings,
   ShieldCheck,
-  Sparkles,
   Wrench,
   Zap,
 } from "lucide-react";
@@ -123,14 +117,6 @@ const routes: Array<{
   },
 ];
 
-const applicationCards = [
-  { title: "Medical Device Bonding", detail: "Catheters · Needles · Sensors", icon: Microscope },
-  { title: "Electronics Assembly", detail: "PCB components · Encapsulation", icon: CircuitBoard },
-  { title: "Optics & Photonics", detail: "Transceivers · Fiber arrays · PIC", icon: Sparkles },
-  { title: "Automotive & EV", detail: "LiDAR · Cameras · Battery components", icon: Gauge },
-  { title: "Laboratory & Life Science", detail: "Testing · Controlled curing", icon: Boxes },
-  { title: "Industrial Adhesives", detail: "Bonding · Sealing · Coatings", icon: Settings },
-];
 
 const services = [
   { title: "Genuine Product Supply", body: "Authorized supply channel for OmniCure systems, lamps and accessories.", icon: PackageCheck },
@@ -255,8 +241,6 @@ export default function OmniCureBrandLanding() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"><a href={orderTotal > 0 ? orderMailto : undefined} aria-disabled={orderTotal === 0} className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white transition ${orderTotal > 0 ? "bg-gradient-to-r from-[#1A56DB] to-[#087F6B] hover:-translate-y-0.5" : "pointer-events-none bg-[#B9C6D6]"}`}>Send Order by Email <ArrowRight className="h-4 w-4" /></a><p className="text-xs text-[#7B8794]">{orderTotal > 0 ? `${orderTotal} lamp${orderTotal > 1 ? "s" : ""} selected — opens your email app to ${SALES_EMAIL}.` : "Enter a quantity above to enable the order email."}</p></div>
         </div>}
       </section>
-
-      <section className="bg-[#F7FAFC] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Applications</p><div className="mt-3 flex items-end justify-between gap-5"><div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">Built for Demanding Applications</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Precision bonding, assembly and curing processes across advanced manufacturing industries.</p></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-[#1A56DB] sm:inline-flex">View Applications <ArrowRight className="h-4 w-4" /></Link></div><div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{applicationCards.map((item) => { const Icon = item.icon; return <Link key={item.title} href="/applications" className="group rounded-2xl border border-[#E3EAF2] bg-white p-4 text-center transition hover:-translate-y-1 hover:shadow-lg"><span className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#F3F7FF] text-[#1A56DB]"><Icon className="h-5 w-5" strokeWidth={1.7} /></span><h3 className="mt-3 text-sm font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{item.title}</h3><p className="mt-1 text-[11px] leading-4 text-[#5F6C7B]">{item.detail}</p></Link>; })}</div></div></section>
 
 
       <FinalCta heading="Not Sure Which OmniCure System Fits Your Process?" body="Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution." primary={{ label: "Talk to an Engineer", href: mailto }} secondary={{ label: "Request Product Recommendation", href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />

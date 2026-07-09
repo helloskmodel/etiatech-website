@@ -63,19 +63,6 @@ const technologies = [
   },
 ];
 
-const quickGuide: [string, string][] = [
-  ["Low heat on substrate", "UV LED"],
-  ["Known LED-curable adhesive", "UV LED Spot or Area"],
-  ["Unknown formulation", "Broad-spectrum UV Lamp"],
-  ["Small adhesive dot", "Spot Curing"],
-  ["Large surface or coating", "Area Curing"],
-  ["High-speed web process", "Large Area UV LED / Microwave UV"],
-  ["Compact machine integration", "Air-cooled UV LED"],
-  ["High-output continuous line", "Water-cooled UV LED"],
-  ["Existing lamp process", "Lamp system or replacement lamp"],
-  ["Need process validation", "Talk to ETIA engineer"],
-];
-
 export default function UvCuringSelector() {
   return (
     <section id="uv-curing-selector" className="bg-white">
@@ -111,30 +98,6 @@ export default function UvCuringSelector() {
               </Link>
             );
           })}
-        </div>
-      </div>
-
-      {/* 3 · Quick selection guide */}
-      <div className="mx-auto max-w-4xl px-4 pt-24 sm:px-6 lg:px-8">
-        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">At a Glance</p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">Quick Selection Guide</h2>
-        <div className="mt-8 overflow-hidden rounded-2xl border border-[#E6EAF0]">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-[#F4F6F9] text-left text-[#102A43]">
-                <th className="px-5 py-3 font-bold">Requirement</th>
-                <th className="px-5 py-3 font-bold">Better Direction</th>
-              </tr>
-            </thead>
-            <tbody>
-              {quickGuide.map(([req, dir], i) => (
-                <tr key={req} className={`border-t border-[#EDEFF3] ${i % 2 === 1 ? "bg-[#FAFBFC]" : "bg-white"}`}>
-                  <td className="px-5 py-3 text-[#5F6C7B]">{req}</td>
-                  <td className="px-5 py-3 font-semibold text-[#102A43]">{dir}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
 

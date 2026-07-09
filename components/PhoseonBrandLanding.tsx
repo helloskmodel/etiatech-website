@@ -18,11 +18,9 @@ import {
   Package,
   Paintbrush,
   Printer,
-  RefreshCw,
   ShieldCheck,
   Sparkles,
   ThermometerSun,
-  Wrench,
   Zap,
 } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
@@ -65,13 +63,6 @@ const why = [
   { title: "Cooling Built In", body: "Air- and water-cooled platforms for different production demands.", icon: ThermometerSun },
   { title: "Innovation Built In", body: "Advanced UV LED technology supported by a strong patent foundation.", icon: Sparkles },
   { title: "Efficiency Built In", body: "Reduced heat, energy consumption and maintenance requirements.", icon: Leaf },
-];
-
-const support = [
-  { title: "Application Review", body: "Review ink, coating, adhesive, substrate, width and line speed.", icon: MonitorCog },
-  { title: "Product Selection", body: "Compare air-cooled, water-cooled and product family options.", icon: Check },
-  { title: "Retrofit Support", body: "Plan integration with existing production lines and presses.", icon: RefreshCw },
-  { title: "Local Technical Support", body: "Local communication, troubleshooting and after-sales coordination.", icon: Wrench },
 ];
 
 // Hero technology selector (mirrors the OmniCure page): three Phoseon UV LED
@@ -122,10 +113,6 @@ export default function PhoseonBrandLanding() {
     <section className="bg-[#F7FAFC] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#6BBF3A]">Application Industries</p><div className="mt-3 flex items-end justify-between gap-5"><div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">Where Phoseon Fits Best</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">High-performance UV LED curing across printing, coatings, electronics, fiber and industrial production.</p></div><Link href="/applications" className="hidden items-center gap-2 text-sm font-bold text-[#087F6B] sm:inline-flex">View Applications <ArrowRight className="h-4 w-4"/></Link></div><div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{industries.map(item=>{const Icon=item.icon;return <Link href="/applications" key={item.title} className="group rounded-2xl border border-[#E3EAF2] bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"><Icon className="h-6 w-6 text-[#6BBF3A]" strokeWidth={1.7}/><h3 className="mt-5 font-bold text-[#102A43] group-hover:text-[#087F6B]">{item.title}</h3><p className="mt-2 text-sm text-[#5F6C7B]">{item.detail}</p></Link>})}</div></div></section>
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#6BBF3A]">Industrial Reliability</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">Why Choose Phoseon UV LED?</h2><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{why.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#E3EAF2] p-6"><Icon className="h-7 w-7 text-[#087F6B]" strokeWidth={1.7}/><h3 className="mt-5 font-bold text-[#102A43]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#5F6C7B]">{item.body}</p></article>})}</div></div></section>
-
-    <section className="bg-[#F2FBF8] px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-5xl"><div className="text-center"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#087F6B]">Technology Guidance</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">OmniCure or Phoseon — Which Fits Your Process?</h2></div><div className="mt-10 overflow-hidden rounded-2xl border border-[#DCE8E2] bg-white">{[["Precision spot curing for adhesives","OmniCure"],["S2000 / LX500 / replacement lamp support","OmniCure"],["UV LED curing for printing and packaging","Phoseon"],["UV LED curing for coatings and production lines","Phoseon"],["Large-area industrial UV LED curing","Phoseon"],["Medical bonding or electronics assembly","Ask ETIA — both may apply"]].map(([need,route],i)=><div key={need} className={`grid gap-2 px-5 py-4 sm:grid-cols-[1fr_auto] sm:items-center ${i?"border-t border-[#EDF2EF]":""}`}><span className="text-sm text-[#5F6C7B]">{need}</span><span className="text-sm font-bold text-[#087F6B]">{route}</span></div>)}</div><div className="mt-7 text-center"><a href={engineerMail} className="inline-flex items-center gap-2 rounded-xl bg-[#087F6B] px-6 py-3.5 text-sm font-bold text-white">Ask ETIA to Recommend a System <ArrowRight className="h-4 w-4"/></a></div></div></section>
-
-    <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#6BBF3A]">Local Implementation</p><h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">ETIA Support for Phoseon UV LED Solutions</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">Evaluate requirements, select suitable systems and support local implementation.</p><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{support.map(item=>{const Icon=item.icon;return <article key={item.title} className="rounded-2xl border border-[#E3EAF2] p-6"><span className="inline-flex rounded-xl bg-[#F2FBF8] p-3 text-[#087F6B]"><Icon className="h-6 w-6" strokeWidth={1.7}/></span><h3 className="mt-5 font-bold text-[#102A43]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[#5F6C7B]">{item.body}</p></article>})}</div></div></section>
 
     <FinalCta heading="Need Help Selecting a Phoseon UV LED System?" body="Tell us your material, curing width, line speed, cooling preference and production process. ETIA can recommend the right Phoseon direction." primary={{ label: "Talk to an Engineer", href: engineerMail }} secondary={{ label: "Request Product Recommendation", href: inquiryMailto(locale, { subject: "Phoseon Product Recommendation", context: "Material / curing width / line speed / cooling" }) }} />
   </div>;
