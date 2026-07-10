@@ -33,3 +33,10 @@ body {
     font-size: 1.5rem;
   }
 }
+
+/* Balance multi-line headings so a single short word is never orphaned on
+   its own line (e.g. Vietnamese compound words like "thiết bị" at heading
+   size). Progressive enhancement — older browsers simply ignore it. */
+h1, h2, h3 {
+  text-wrap: balance;
+}
