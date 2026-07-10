@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import TrustStrip from "@/components/TrustStrip";
+import FinalCta from "@/components/FinalCta";
+import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 
 export default function CaseStudiesIndexView() {
@@ -40,6 +42,13 @@ export default function CaseStudiesIndexView() {
           </div>
         </div>
       </main>
+
+      <FinalCta
+        heading={t({ en: "Want results like these for your line?", zh: "想在您的产线上复现这些成果?", th: "อยากได้ผลลัพธ์แบบนี้กับสายการผลิตของคุณไหม?", vi: "Muốn có kết quả như vậy cho dây chuyền của bạn?" }, locale)}
+        body={t({ en: "Tell us your material, curing area, wavelength and production requirements. ETIA engineers will help you find the right solution.", zh: "告诉我们您的材料、固化面积、波长与生产要求。ETIA 工程师将帮助您找到合适方案。", th: "บอกเราเกี่ยวกับวัสดุ พื้นที่คิวริ่ง ความยาวคลื่น และความต้องการด้านการผลิตของคุณ วิศวกรของ ETIA จะช่วยหาโซลูชันที่เหมาะสม", vi: "Cho chúng tôi biết vật liệu, diện tích đóng rắn, bước sóng và yêu cầu sản xuất. Kỹ sư ETIA sẽ giúp bạn tìm giải pháp phù hợp." }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "UV Curing Inquiry" }) }}
+        secondary={{ label: t({ en: "Browse Applications", zh: "浏览应用", th: "ดูการใช้งาน", vi: "Xem ứng dụng" }, locale), href: "/application" }}
+      />
     </>
   );
 }

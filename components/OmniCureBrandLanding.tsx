@@ -84,7 +84,7 @@ const routes: Array<{
   {
     id: "led-spot",
     eyebrow: { en: "UV LED Spot Curing", zh: "UV LED 点固化", th: "การคิวริ่งแบบจุดด้วย UV LED", vi: "Đóng rắn điểm bằng UV LED" },
-    title: { en: "LED Precision, Flexible Control", zh: "LED 精准控制，灵活可调", th: "ความแม่นยำแบบ LED ควบคุมได้ยืดหยุ่น", vi: "Độ chính xác LED, kiểm soát linh hoạt" },
+    title: { en: "LED Precision, Flexible Control", zh: "LED 精准控制 灵活可调", th: "ความแม่นยำแบบ LED ควบคุมได้ยืดหยุ่น", vi: "Độ chính xác LED, kiểm soát linh hoạt" },
     body: { en: "Wavelength-specific LED spot curing with long life, modular control and low maintenance.", zh: "特定波长 LED 点固化，寿命长、模块化控制、维护成本低。", th: "การคิวริ่งแบบจุดด้วย LED เฉพาะความยาวคลื่น อายุการใช้งานยาว ควบคุมแบบโมดูลาร์ และบำรุงรักษาน้อย", vi: "Đóng rắn điểm bằng LED theo bước sóng riêng, tuổi thọ dài, điều khiển mô-đun và ít bảo trì." },
     featured: "LX500 V2",
     color: "#2F80ED",
@@ -104,7 +104,7 @@ const routes: Array<{
   {
     id: "small-area",
     eyebrow: { en: "UV LED Air-Cooled Small-Area", zh: "UV LED 风冷小面积", th: "UV LED ระบายความร้อนด้วยอากาศ พื้นที่เล็ก", vi: "UV LED làm mát bằng khí, diện tích nhỏ" },
-    title: { en: "Compact Curing, Controlled Zones", zh: "紧凑固化，精准区域", th: "การคิวริ่งขนาดกะทัดรัด ควบคุมเฉพาะจุด", vi: "Đóng rắn nhỏ gọn, vùng kiểm soát" },
+    title: { en: "Compact Curing, Controlled Zones", zh: "紧凑固化 精准区域", th: "การคิวริ่งขนาดกะทัดรัด ควบคุมเฉพาะจุด", vi: "Đóng rắn nhỏ gọn, vùng kiểm soát" },
     body: { en: "Compact area curing for small components, controlled windows and laboratory workflows.", zh: "紧凑型面固化，适用于小型部件、受控窗口与实验室工艺。", th: "การคิวริ่งพื้นที่ขนาดกะทัดรัด สำหรับชิ้นส่วนขนาดเล็ก หน้าต่างควบคุม และงานในห้องปฏิบัติการ", vi: "Đóng rắn diện tích nhỏ gọn cho linh kiện nhỏ, cửa sổ kiểm soát và quy trình phòng thí nghiệm." },
     featured: "AC5 Series",
     color: "#25A970",
@@ -158,7 +158,7 @@ export default function OmniCureBrandLanding() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm">
               <BadgeCheck className="h-4 w-4" /> {t({ en: "Authorized OmniCure® Distributor", zh: "OmniCure® 授权代理商", th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต OmniCure®", vi: "Nhà phân phối ủy quyền OmniCure®" }, locale)}
             </div>
-            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "OmniCure UV Curing Solutions", zh: "OmniCure 紫外线固化解决方案", th: "โซลูชัน UV Curing จาก OmniCure", vi: "Giải pháp UV Curing OmniCure" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Precision Cures. Supreme Control.", zh: "精准固化，稳定掌控。", th: "การคิวริ่งแม่นยำ ควบคุมได้อย่างเสถียร", vi: "Đóng rắn chính xác, kiểm soát ổn định." }, locale)}</span></h1>
+            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "OmniCure UV Curing Solutions", zh: "OmniCure 紫外线固化解决方案", th: "โซลูชัน UV Curing จาก OmniCure", vi: "Giải pháp UV Curing OmniCure" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Precision Cures. Supreme Control.", zh: "精准固化 稳定掌控", th: "การคิวริ่งแม่นยำ ควบคุมได้อย่างเสถียร", vi: "Đóng rắn chính xác, kiểm soát ổn định." }, locale)}</span></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#choose-technology" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Choose Your Technology", zh: "选择适合的技术", th: "เลือกเทคโนโลยีของคุณ", vi: "Chọn công nghệ phù hợp" }, locale)} <ArrowRight className="h-4 w-4" /></a>
               <a href={mailto} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)}</a>
@@ -317,7 +317,7 @@ export default function OmniCureBrandLanding() {
         </div>
       </section>
 
-      <FinalCta heading={t({ en: "Not Sure Which OmniCure System Fits Your Process?", zh: "不确定哪款 OmniCure 系统适合您的工艺？", th: "ไม่แน่ใจว่าระบบ OmniCure รุ่นใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống OmniCure nào phù hợp với quy trình của bạn?" }, locale)} body={t({ en: "Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution.", zh: "告诉我们您的胶粘剂、基材、固化面积、节拍时间与生产要求，ETIA 可协助推荐合适的紫外线固化方案。", th: "บอกเราเกี่ยวกับกาว วัสดุรองรับ พื้นที่คิวริ่ง เวลารอบการผลิต และความต้องการด้านการผลิตของคุณ ETIA ช่วยแนะนำโซลูชัน UV Curing ที่เหมาะสมได้", vi: "Cho chúng tôi biết keo, vật liệu nền, diện tích đóng rắn, thời gian chu kỳ và yêu cầu sản xuất của bạn. ETIA có thể giúp đề xuất giải pháp UV Curing phù hợp." }, locale)} primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: mailto }} secondary={{ label: t({ en: "Request Product Recommendation", zh: "获取产品推荐", th: "ขอคำแนะนำผลิตภัณฑ์", vi: "Yêu cầu tư vấn sản phẩm" }, locale), href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />
+      <FinalCta heading={t({ en: "Not Sure Which OmniCure System Fits Your Process?", zh: "如果您不确定哪款 OmniCure UV Curing 系统适合您？", th: "ไม่แน่ใจว่าระบบ OmniCure รุ่นใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống OmniCure nào phù hợp với quy trình của bạn?" }, locale)} body={t({ en: "Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution.", zh: "告诉我们您的胶粘剂、基材、固化面积、节拍时间与生产要求，ETIA 可协助推荐合适的紫外线固化方案。", th: "บอกเราเกี่ยวกับกาว วัสดุรองรับ พื้นที่คิวริ่ง เวลารอบการผลิต และความต้องการด้านการผลิตของคุณ ETIA ช่วยแนะนำโซลูชัน UV Curing ที่เหมาะสมได้", vi: "Cho chúng tôi biết keo, vật liệu nền, diện tích đóng rắn, thời gian chu kỳ và yêu cầu sản xuất của bạn. ETIA có thể giúp đề xuất giải pháp UV Curing phù hợp." }, locale)} primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: mailto }} secondary={{ label: t({ en: "Request Product Recommendation", zh: "获取产品推荐", th: "ขอคำแนะนำผลิตภัณฑ์", vi: "Yêu cầu tư vấn sản phẩm" }, locale), href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />
     </div>
   );
 }

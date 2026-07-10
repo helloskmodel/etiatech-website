@@ -4,6 +4,7 @@ import Image from "next/image";
 import { products, TECH_ROUTES, techRouteFor, productHref, productImage, brandAccent, localizeProduct, type Product } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
+import FinalCta from "@/components/FinalCta";
 
 // The six canonical technology groups, plus a catch-all Accessories bucket for
 // products that don't cure (radiometers, light guides, network modules).
@@ -81,14 +82,12 @@ export default function SystemsIndexView() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-14" style={{ background: "#1A56DB" }}>
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">{t({ en: "Not sure which system fits your process?", zh: "不确定哪款系统适合您的工艺?", th: "ไม่แน่ใจว่าระบบใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với quy trình của bạn?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统。", th: "วิศวกรของเราจะจับคู่ระบบ UV Curing ที่เหมาะสมกับการใช้งานของคุณอย่างแม่นยำ", vi: "Kỹ sư của chúng tôi sẽ chọn hệ thống UV Curing phù hợp chính xác với ứng dụng của bạn." }, locale)}</p>
-          <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →", th: "ติดต่อฝ่ายขาย →", vi: "Liên hệ bộ phận bán hàng →" }, locale)}</a>
-        </div>
-      </section>
+      <FinalCta
+        heading={t({ en: "Not sure which system fits your process?", zh: "不确定哪款系统适合您的工艺?", th: "ไม่แน่ใจว่าระบบใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với quy trình của bạn?" }, locale)}
+        body={t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统。", th: "วิศวกรของเราจะจับคู่ระบบ UV Curing ที่เหมาะสมกับการใช้งานของคุณอย่างแม่นยำ", vi: "Kỹ sư của chúng tôi sẽ chọn hệ thống UV Curing phù hợp chính xác với ứng dụng của bạn." }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry" }) }}
+        secondary={{ label: t({ en: "Browse Applications", zh: "浏览应用", th: "ดูการใช้งาน", vi: "Xem ứng dụng" }, locale), href: "/application" }}
+      />
     </>
   );
 }
