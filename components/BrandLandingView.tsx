@@ -10,6 +10,7 @@ import WhyEtiaCards from "@/components/WhyEtiaCards";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { APPLICATION_CATEGORIES, getApplicationsForProduct } from "@/data/applicationsData";
+import { applicationsZh } from "@/data/applicationsData.zh";
 import OmniCureBrandLanding from "@/components/OmniCureBrandLanding";
 import PhoseonBrandLanding from "@/components/PhoseonBrandLanding";
 
@@ -157,14 +158,14 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                     {tags.length > 0 && (
                       <div className="flex flex-wrap gap-1 mb-3">
                         {tags.slice(0, 3).map((h) => (
-                          <span key={h} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{h}</span>
+                          <span key={h.en} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{t(h, locale)}</span>
                         ))}
                       </div>
                     )}
                     {relatedApplications.length > 0 && (
                       <div className="mb-3 border-t border-gray-100 pt-3">
-                        <p className="mb-1 text-[9px] font-bold uppercase tracking-wide text-[#44B549]">Related applications</p>
-                        {relatedApplications.map((application) => <Link key={application.slug} href={`/applications/${application.slug}`} className="block line-clamp-1 text-[10px] font-medium leading-relaxed text-gray-500 hover:text-[#1A56DB] hover:underline">{application.title}</Link>)}
+                        <p className="mb-1 text-[9px] font-bold uppercase tracking-wide text-[#44B549]">{t({ en: "Related applications", zh: "相关应用", th: "การใช้งานที่เกี่ยวข้อง", vi: "Ứng dụng liên quan" }, locale)}</p>
+                        {relatedApplications.map((application) => { const at = (locale !== "en" && applicationsZh[application.slug]?.title?.[locale as "zh" | "th" | "vi"]) || application.title; return <Link key={application.slug} href={`/applications/${application.slug}`} className="block line-clamp-1 text-[10px] font-medium leading-relaxed text-gray-500 hover:text-[#1A56DB] hover:underline">{at}</Link>; })}
                       </div>
                     )}
                     <Link href={productHref(p)} className="mt-auto text-xs font-semibold hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</Link>
