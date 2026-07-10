@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/components/LocaleContext";
+import { localeSalesEmail } from "@/components/contact";
 
 const SITE = "https://www.etiatech.com";
 
@@ -49,6 +50,6 @@ export function localizedOrganizationJsonLd(locale: Exclude<Locale, "en">) {
     url: `${SITE}/${locale}`,
     description: seo[locale].description,
     areaServed: locale === "zh" ? ["CN", "HK"] : locale === "vi" ? "VN" : "TH",
-    contactPoint: { "@type": "ContactPoint", contactType: "sales and technical support", email: "mark_tang@etia-tech.com", availableLanguage: locale },
+    contactPoint: { "@type": "ContactPoint", contactType: "sales and technical support", email: localeSalesEmail(locale), availableLanguage: locale },
   };
 }

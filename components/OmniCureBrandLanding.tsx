@@ -16,7 +16,7 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
-import { inquiryMailto, SALES_EMAIL } from "@/components/contact";
+import { inquiryMailto, localeSalesEmail } from "@/components/contact";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import {
   localizeProduct,
@@ -140,7 +140,7 @@ export default function OmniCureBrandLanding() {
   const [orderQty, setOrderQty] = useState<Record<string, number>>({});
   const orderLines = LAMP.parts.filter(([code]) => (orderQty[code] ?? 0) > 0);
   const orderTotal = orderLines.reduce((sum, [code]) => sum + (orderQty[code] ?? 0), 0);
-  const orderMailto = `mailto:${SALES_EMAIL}?subject=${encodeURIComponent("OmniCure S2000 Elite Lamp Order")}&body=${encodeURIComponent(["OmniCure S2000 Elite Lamp — Order Request", "", ...orderLines.map(([code, desc]) => `${code} x ${orderQty[code]}  — ${desc}`), "", "Company / contact / phone:", "Delivery location / country:", "", "Thank you!"].join("\n"))}`;
+  const orderMailto = `mailto:${localeSalesEmail(locale)}?subject=${encodeURIComponent("OmniCure S2000 Elite Lamp Order")}&body=${encodeURIComponent(["OmniCure S2000 Elite Lamp — Order Request", "", ...orderLines.map(([code, desc]) => `${code} x ${orderQty[code]}  — ${desc}`), "", "Company / contact / phone:", "Delivery location / country:", "", "Thank you!"].join("\n"))}`;
 
   function chooseRoute(id: Exclude<RouteId, "all">) {
     setActiveRoute(id);
@@ -244,7 +244,7 @@ export default function OmniCureBrandLanding() {
             <div><p className="font-mono text-sm font-bold text-[#1A56DB]">{code}</p><p className="mt-0.5 text-xs text-[#5F6C7B]">{desc}</p></div>
             <div className="flex items-center gap-3"><label htmlFor={`qty-${code}`} className="text-xs font-bold uppercase tracking-wider text-[#7B8794]">{t({ en: "Qty", zh: "数量", th: "จำนวน", vi: "SL" }, locale)}</label><input id={`qty-${code}`} type="number" min={0} inputMode="numeric" value={orderQty[code] ?? ""} onChange={(e) => setOrderQty((q) => ({ ...q, [code]: Math.max(0, parseInt(e.target.value, 10) || 0) }))} placeholder="0" className="w-24 rounded-lg border border-[#D4DFEC] px-3 py-2 text-sm font-semibold text-[#102A43] outline-none focus:border-[#1A56DB]" /></div>
           </div>)}</div>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"><a href={orderTotal > 0 ? orderMailto : undefined} aria-disabled={orderTotal === 0} className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white transition ${orderTotal > 0 ? "bg-gradient-to-r from-[#1A56DB] to-[#087F6B] hover:-translate-y-0.5" : "pointer-events-none bg-[#B9C6D6]"}`}>{t({ en: "Send Order by Email", zh: "通过邮件发送订单", th: "ส่งคำสั่งซื้อทางอีเมล", vi: "Gửi đơn hàng qua email" }, locale)} <ArrowRight className="h-4 w-4" /></a><p className="text-xs text-[#7B8794]">{orderTotal > 0 ? t({ en: `${orderTotal} lamp${orderTotal > 1 ? "s" : ""} selected — opens your email app to ${SALES_EMAIL}.`, zh: `已选择 ${orderTotal} 支灯管 — 将打开邮件应用发送至 ${SALES_EMAIL}。`, th: `เลือกหลอดแล้ว ${orderTotal} หลอด — จะเปิดแอปอีเมลไปที่ ${SALES_EMAIL}`, vi: `Đã chọn ${orderTotal} đèn — mở ứng dụng email tới ${SALES_EMAIL}.` }, locale) : t({ en: "Enter a quantity above to enable the order email.", zh: "请在上方输入数量以启用订单邮件。", th: "กรอกจำนวนด้านบนเพื่อเปิดใช้งานอีเมลสั่งซื้อ", vi: "Nhập số lượng ở trên để bật email đặt hàng." }, locale)}</p></div>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"><a href={orderTotal > 0 ? orderMailto : undefined} aria-disabled={orderTotal === 0} className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white transition ${orderTotal > 0 ? "bg-gradient-to-r from-[#1A56DB] to-[#087F6B] hover:-translate-y-0.5" : "pointer-events-none bg-[#B9C6D6]"}`}>{t({ en: "Send Order by Email", zh: "通过邮件发送订单", th: "ส่งคำสั่งซื้อทางอีเมล", vi: "Gửi đơn hàng qua email" }, locale)} <ArrowRight className="h-4 w-4" /></a><p className="text-xs text-[#7B8794]">{orderTotal > 0 ? t({ en: `${orderTotal} lamp${orderTotal > 1 ? "s" : ""} selected — opens your email app to ${localeSalesEmail(locale)}.`, zh: `已选择 ${orderTotal} 支灯管 — 将打开邮件应用发送至 ${localeSalesEmail(locale)}。`, th: `เลือกหลอดแล้ว ${orderTotal} หลอด — จะเปิดแอปอีเมลไปที่ ${localeSalesEmail(locale)}`, vi: `Đã chọn ${orderTotal} đèn — mở ứng dụng email tới ${localeSalesEmail(locale)}.` }, locale) : t({ en: "Enter a quantity above to enable the order email.", zh: "请在上方输入数量以启用订单邮件。", th: "กรอกจำนวนด้านบนเพื่อเปิดใช้งานอีเมลสั่งซื้อ", vi: "Nhập số lượng ở trên để bật email đặt hàng." }, locale)}</p></div>
         </div>}
       </section>
 

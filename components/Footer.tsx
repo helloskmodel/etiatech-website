@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryMailto, localeSalesEmail } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 
 export default function Footer() {
@@ -46,7 +46,7 @@ export default function Footer() {
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Contact", zh: "联系方式", vi: "Liên hệ", th: "ติดต่อ" }, locale)}</p>
           <a href={inquiryMailto(locale, {})} className="text-xs hover:underline" style={{ color: "#44B549" }}>
-            mark_tang@etia-tech.com
+            {localeSalesEmail(locale)}
           </a>
         </div>
       </div>

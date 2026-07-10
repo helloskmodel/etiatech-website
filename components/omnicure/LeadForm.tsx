@@ -3,10 +3,11 @@ import { useState } from "react";
 import { BRAND, MODELS, getCopy, type Lang } from "./copy";
 import { track } from "./track";
 import ServiceCommitment from "@/components/ServiceCommitment";
+import { localeSalesEmail } from "@/components/contact";
 
 // Inquiries are delivered by opening the visitor's mail client (mailto),
 // consistent with the rest of the site — no server-side mailer is wired.
-const LEAD_EMAIL = "mark_tang@etia-tech.com";
+// The recipient follows the visitor's country (see localeSalesEmail).
 
 export default function LeadForm({
   lang,
@@ -51,7 +52,7 @@ export default function LeadForm({
       .filter(Boolean)
       .join("\n");
     track("generate_lead", { page, lang, model: payload.model });
-    window.location.href = `mailto:${LEAD_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${localeSalesEmail(lang)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setStatus("done");
   }
 
