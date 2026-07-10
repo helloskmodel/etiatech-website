@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import S2000LandingVi from "@/components/S2000LandingVi";
+import { s2000FaqsVi } from "@/components/s2000FaqVi";
 
 const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/vi/product/omnicure/s2000";
 const OG_IMAGE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp";
+const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 
 export const metadata: Metadata = {
   title: "OmniCure S2000 Elite | Hệ thống UV Spot Curing | ETIA Việt Nam",
@@ -56,6 +58,11 @@ const jsonLd = {
     "Hệ thống UV spot curing dùng đèn cường độ cao với Closed-Loop Feedback, cửa trập chính xác, Web UI, PLC, NFC và StepCure — dùng cho sản xuất thiết bị y tế, điện tử và xe điện.",
   image: OG_IMAGE,
   url: SITE + PAGE_PATH,
+  subjectOf: [
+    { "@type": "DigitalDocument", name: "OmniCure S2000 Elite Brochure", url: `${PDF}/Brochure%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf` },
+    { "@type": "DigitalDocument", name: "OmniCure S2000 Elite Quick Start Guide", url: `${PDF}/Quick%20Start%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf` },
+    { "@type": "DigitalDocument", name: "OmniCure S2000 Elite User Guide", url: `${PDF}/User%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf` },
+  ],
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -63,13 +70,32 @@ const jsonLd = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Sản phẩm", item: `${SITE}/product/omnicure` },
+    { "@type": "ListItem", position: 2, name: "OmniCure", item: `${SITE}/product/omnicure` },
+    { "@type": "ListItem", position: 3, name: "S2000 Elite", item: SITE + PAGE_PATH },
+  ],
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: s2000FaqsVi.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function S2000ViPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <S2000LandingVi />
     </>
   );
