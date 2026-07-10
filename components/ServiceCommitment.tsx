@@ -1,6 +1,6 @@
 import { BadgeCheck } from "lucide-react";
 
-const PROMISE = "Genuine Supply Channels. Application-Driven Support. Local Support. Long-Term Service.";
+const PROMISE = "Genuine Products Through Official Channels. Application-Driven Solutions. Local Supply Chain. Long-Term Service.";
 
 export default function ServiceCommitment({ compact = false }: { compact?: boolean }) {
   if (compact) {

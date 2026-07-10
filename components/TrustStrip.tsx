@@ -3,12 +3,12 @@ import { Check } from "lucide-react";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 
 // Dark-blue trust strip shown directly under the hero on Home, Applications,
-// Phoseon and Sales & Support. OmniCure uses its own disclaimer variant inline
-// on its page.
+// Phoseon, OmniCure and Sales & Support. Wording mirrors the Service Commitment
+// poster artwork.
 const TRUST_ITEMS: LangText[] = [
-  { en: "Genuine Supply Channels", zh: "正品渠道", vi: "Kênh cung ứng sản phẩm chính hãng", th: "ช่องทางจัดจำหน่ายสินค้าของแท้" },
-  { en: "Application-Driven Support", zh: "应用驱动支持", vi: "Định hướng theo ứng dụng", th: "ขับเคลื่อนด้วยการใช้งานจริง" },
-  { en: "Local Support", zh: "本地支持", vi: "Hỗ trợ tại địa phương", th: "การสนับสนุนในพื้นที่" },
+  { en: "Genuine Products Through Official Channels", zh: "官方渠道正品", vi: "Sản phẩm chính hãng qua kênh chính thức", th: "สินค้าของแท้ผ่านช่องทางอย่างเป็นทางการ" },
+  { en: "Application-Driven Solutions", zh: "应用驱动方案", vi: "Giải pháp theo ứng dụng", th: "โซลูชันที่ออกแบบตามการใช้งาน" },
+  { en: "Local Supply Chain", zh: "本地供应", vi: "Chuỗi cung ứng địa phương", th: "ห่วงโซ่อุปทานในประเทศ" },
   { en: "Long-Term Service", zh: "长期服务", vi: "Dịch vụ dài hạn", th: "บริการระยะยาว" },
 ];
 
