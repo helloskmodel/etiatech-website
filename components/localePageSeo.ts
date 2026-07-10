@@ -215,8 +215,9 @@ const BRAND_LOCALE_META: Record<string, Record<SubLocale, { title: string; descr
       description: "ETIA จัดจำหน่ายระบบ UV LED curing Phoseon® ของแท้ — FireJet, FireEdge แบบระบายความร้อนด้วยอากาศ และ FireLine, VeriCure, Nexus II แบบระบายความร้อนด้วยน้ำ พร้อมการสนับสนุนและบริการในพื้นที่",
     },
     vi: {
-      title: "Hệ thống UV LED Phoseon — Nhà phân phối được ủy quyền | ETIA",
-      description: "ETIA cung cấp hệ thống UV LED curing Phoseon® chính hãng — FireJet, FireEdge làm mát bằng khí và FireLine, VeriCure, Nexus II làm mát bằng nước, cùng hỗ trợ kỹ thuật và dịch vụ tại chỗ.",
+      // Title/description from the client's official Vietnamese deck.
+      title: "Hệ thống UV LED Curing Phoseon — Nhà phân phối được ủy quyền | ETIA",
+      description: "ETIA cung cấp hệ thống UV LED curing Phoseon® bao gồm Nexus II, VeriCure, FireJet, FireLine và FireEdge cho in ấn bao bì, coating, điện tử, sợi quang, cáp và sản xuất công nghiệp, cùng hỗ trợ kỹ thuật địa phương và tư vấn lựa chọn hệ thống.",
     },
   },
 };
