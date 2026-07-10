@@ -167,7 +167,7 @@ const brands = [
             series: "LX SERIES · LED BASED · SINGLE WAVELENGTH",
             name: "UV LED Spot Curing",
             desc: "Single-wavelength LED spot curing at 365 nm. 0 ms warm-up, 50,000h lifespan, Industry 4.0 ready.",
-            models: ["OmniCure LX500 V2", "OmniCure LS200 Radiometer", "OmniCure V3 UV LED Heads"],
+            models: ["OmniCure LX500", "OmniCure LS200 Radiometer", "OmniCure V3 UV LED Heads"],
             bg: "#44B549",
           },
         ],

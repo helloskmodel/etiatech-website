@@ -45,10 +45,10 @@ export const NEWS_ITEMS: NewsItem[] = [
     id: "lx500-2026",
     kind: "product",
     text: {
-      en: "OmniCure LX500 V2 — ultra-compact UV LED spot curing with consistent, repeatable results",
-      zh: "OmniCure LX500 V2——超紧凑 UV LED 点固化，效果一致、可重复",
-      th: "OmniCure LX500 V2 — UV LED Spot Curing ขนาดกะทัดรัดพิเศษ ผลลัพธ์สม่ำเสมอ ทำซ้ำได้",
-      vi: "OmniCure LX500 V2 — UV LED Spot Curing siêu nhỏ gọn, kết quả nhất quán, lặp lại được",
+      en: "OmniCure LX500 — ultra-compact UV LED spot curing with consistent, repeatable results",
+      zh: "OmniCure LX500——超紧凑 UV LED 点固化，效果一致、可重复",
+      th: "OmniCure LX500 — UV LED Spot Curing ขนาดกะทัดรัดพิเศษ ผลลัพธ์สม่ำเสมอ ทำซ้ำได้",
+      vi: "OmniCure LX500 — UV LED Spot Curing siêu nhỏ gọn, kết quả nhất quán, lặp lại được",
     },
     href: {
       en: "/product/systems/lx500",

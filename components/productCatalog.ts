@@ -39,7 +39,7 @@ export const products: Product[] = [
   // ───────────────── TECHNOLOGY 1: UV SPOT CURING ─────────────────
   {
     slug: "lx500",
-    name: "OmniCure LX500 V2 UV LED Spot Curing Controller",
+    name: "OmniCure LX500 UV LED Spot Curing Controller",
     brand: "OmniCure",
     brandId: "omnicure",
     tech: "UV Spot Curing",
@@ -1514,7 +1514,7 @@ export function getProduct(slug: string): Product | undefined {
 export const modelToSlug: Record<string, string> = {
   "S2000 Elite": "s2000-elite",
   "S1500 Pro": "s1500-pro",
-  "LX500 V2": "lx500",
+  "LX500": "lx500",
   "LS200 Radiometer": "ls200",
   "UV LED Heads (V3)": "v3-led-heads",
   "R2000 Radiometer": "r2000",
