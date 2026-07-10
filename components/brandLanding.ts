@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Product } from "@/components/productCatalog";
 import type { LangText } from "@/components/LocaleContext";
+import { brandLanguageAlternates } from "@/components/localePageSeo";
 
 const SITE = "https://www.etiatech.com";
 
@@ -131,7 +132,11 @@ export function brandMetadata(slug: BrandSlug): Metadata {
   return {
     title: b.metaTitle,
     description: b.metaDescription,
-    alternates: { canonical: `${SITE}/product/${slug}` },
+    alternates: {
+      canonical: `${SITE}/product/${slug}`,
+      // Brands with a Chinese page link their en<->zh hreflang group here.
+      ...(slug === "omnicure" || slug === "phoseon" ? { languages: brandLanguageAlternates(slug) } : {}),
+    },
   };
 }
 

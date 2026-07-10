@@ -5,6 +5,10 @@ import { applicationsData } from "@/data/applicationsData";
 import { getAllArticles } from "@/components/insights";
 import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
 import { LAMP_PATHS, LAMP_LANGUAGES } from "@/components/omnicure/s2000Lamp";
+import { languageAlternates, brandLanguageAlternates } from "@/components/localePageSeo";
+
+// URL prefixes of the four language versions of a mirrored main-site path.
+const LOCALE_PREFIXES = ["", "/zh", "/vi", "/th"] as const;
 
 const SITE = "https://www.etiatech.com";
 
@@ -26,20 +30,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
     })),
-    // Brand landing pages
-    { url: `${SITE}/product/omnicure`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE}/product/phoseon`, changeFrequency: "monthly", priority: 0.85 },
+    // Brand landing pages. OmniCure and Phoseon have a Chinese version
+    // (en↔zh hreflang group); Fusion UV / Noblelight are EN-only for now.
+    ...(["omnicure", "phoseon"] as const).flatMap((slug) => {
+      const langs = brandLanguageAlternates(slug);
+      const priority = slug === "omnicure" ? 0.9 : 0.85;
+      return [
+        { url: `${SITE}/product/${slug}`, changeFrequency: "monthly" as const, priority, alternates: { languages: langs } },
+        { url: `${SITE}/zh/product/${slug}`, changeFrequency: "monthly" as const, priority, alternates: { languages: langs } },
+      ];
+    }),
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/applications`, changeFrequency: "weekly", priority: 0.9 },
+    // Applications index (EN + ZH + VI + TH), hreflang-linked.
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/applications`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      alternates: { languages: languageAlternates("/applications") },
+    })),
     // NOTE: /application, /product and /product/systems are intentionally NOT
     // listed — next.config redirects them (308) to /applications and
     // /product/omnicure. Only the canonical 200 destinations belong in the
     // sitemap; listing a redirect makes Google report "Page with redirect".
-    { url: `${SITE}/case-studies`, changeFrequency: "weekly", priority: 0.7 },
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/case-studies`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      alternates: { languages: languageAlternates("/case-studies") },
+    })),
     { url: `${SITE}/insights`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/contact`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: { languages: languageAlternates("/contact") },
+    })),
     // OmniCure S2000 Elite product page (EN + ZH + TH + VI), hreflang-linked.
     ...["/product/omnicure/s2000", "/zh/product/omnicure/s2000", "/th/product/omnicure/s2000", "/vi/product/omnicure/s2000"].map((path) => ({
       url: `${SITE}${path}`,
@@ -113,18 +140,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     productPages.push({ url, changeFrequency: "monthly", priority: FEATURED_PRIORITY[p.slug] ?? 0.7 });
   }
 
-  // Individual case-study landing pages.
-  const casePages: MetadataRoute.Sitemap = caseStudiesCn.map((c) => ({
-    url: `${SITE}/case-studies/${c.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  // Individual case-study landing pages (EN + ZH + VI + TH each).
+  const casePages: MetadataRoute.Sitemap = caseStudiesCn.flatMap((c) =>
+    LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/case-studies/${c.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: { languages: languageAlternates(`/case-studies/${c.slug}`) },
+    }))
+  );
 
-  const applicationCasePages: MetadataRoute.Sitemap = applicationsData.map((application) => ({
-    url: `${SITE}/applications/${application.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.75,
-  }));
+  // Application case-study pages (EN + ZH + VI + TH each).
+  const applicationCasePages: MetadataRoute.Sitemap = applicationsData.flatMap((application) =>
+    LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/applications/${application.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+      alternates: { languages: languageAlternates(`/applications/${application.slug}`) },
+    }))
+  );
 
   // NOTE: the 62 application-note detail pages (/application/[slug]) are
   // intentionally NOT listed yet — their content is still being reviewed and

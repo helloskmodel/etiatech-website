@@ -27,7 +27,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: SITE + PAGE_PATH,
-    languages: { en: SITE + PAGE_PATH, "zh-CN": SITE + "/zh", vi: SITE + "/vi", th: SITE + "/th", "x-default": SITE + PAGE_PATH },
+    // Real per-locale contact pages now exist (previously this pointed at the
+    // locale homepages as the nearest equivalent).
+    languages: {
+      en: SITE + PAGE_PATH,
+      "zh-CN": `${SITE}/zh${PAGE_PATH}`,
+      vi: `${SITE}/vi${PAGE_PATH}`,
+      th: `${SITE}/th${PAGE_PATH}`,
+      "x-default": SITE + PAGE_PATH,
+    },
   },
   openGraph: {
     type: "website",
