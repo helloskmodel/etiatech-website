@@ -30,6 +30,7 @@ import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
 import HeroBanner from "@/components/HeroBanner";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import FinalCta from "@/components/FinalCta";
+import TrustStrip from "@/components/TrustStrip";
 import { getApplicationsForProduct } from "@/data/applicationsData";
 import { applicationsZh } from "@/data/applicationsData.zh";
 
@@ -167,13 +168,7 @@ export default function OmniCureBrandLanding() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
-          <p className="text-sm font-semibold">{t({ en: "ETIA is an authorized distributor of OmniCure® products.", zh: "ETIA 是 OmniCure® 产品的授权代理商。", th: "ETIA เป็นตัวแทนจำหน่ายที่ได้รับอนุญาตของผลิตภัณฑ์ OmniCure®", vi: "ETIA là nhà phân phối ủy quyền các sản phẩm OmniCure®." }, locale)}</p>
-          <div className="flex flex-wrap justify-center gap-4 text-xs font-semibold text-blue-100">{[{ en: "Genuine Supply Channels", zh: "正品渠道", th: "ช่องทางจัดจำหน่ายสินค้าของแท้", vi: "Kênh cung ứng sản phẩm chính hãng" }, { en: "Application-Driven Support", zh: "应用驱动支持", th: "ขับเคลื่อนด้วยการใช้งานจริง", vi: "Định hướng theo ứng dụng" }, { en: "Local Support", zh: "本地支持", th: "การสนับสนุนในพื้นที่", vi: "Hỗ trợ tại địa phương" }, { en: "Long-Term Service", zh: "长期服务", th: "บริการระยะยาว", vi: "Dịch vụ dài hạn" }].map((item) => <span key={item.en} className="inline-flex items-center gap-1.5"><BadgeCheck className="h-4 w-4 text-[#8BE172]" />{t(item, locale)}</span>)}</div>
-          <p className="text-xs text-blue-200">{t({ en: "Authorized by Excelitas Canada Inc.", zh: "由 Excelitas Canada Inc. 授权", th: "ได้รับอนุญาตจาก Excelitas Canada Inc.", vi: "Được ủy quyền bởi Excelitas Canada Inc." }, locale)}</p>
-        </div>
-      </section>
+      <TrustStrip />
 
       <section id="choose-technology" className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
