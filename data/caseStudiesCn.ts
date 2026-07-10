@@ -16,7 +16,7 @@ export const caseStudiesCn: CaseCn[] = [
   {
     id: "0101", slug: "omnicure-s2000-elite-catheter-bonding",
     image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20/0101-catheter.jpg", product: "OmniCure S2000 Elite",
-    industry: { en: "Medical Device Assembly", zh: "医疗器械装配", th: "Medical Device Assembly", vi: "Medical Device Assembly" },
+    industry: { en: "Medical Device Assembly", zh: "医疗器械装配", th: "การประกอบอุปกรณ์การแพทย์", vi: "Lắp ráp thiết bị y tế" },
     title: { en: "OmniCure S2000 Elite Supports 360° Bonding in Cardiovascular Catheter Manufacturing", zh: "OmniCure S2000 Elite 支持心血管导管 360° 稳定粘接", th: "OmniCure S2000 Elite รองรับการยึดติด 360° ที่เสถียรในการผลิตสายสวนหัวใจ", vi: "OmniCure S2000 Elite hỗ trợ bonding 360° ổn định trong sản xuất catheter tim mạch" },
     techRoute: { en: "UV Spot Curing", zh: "UV Spot Curing 点固化", th: "UV Spot Curing", vi: "UV Spot Curing" },
     scene: { en: "Cardiovascular catheter manufacturing / balloon bonding / hub bonding / marker bonding", zh: "心血管导管制造 / Balloon Bonding / Hub Bonding / Marker Bonding", th: "การผลิตสายสวนหัวใจ / Balloon Bonding / Hub Bonding / Marker Bonding", vi: "Sản xuất catheter tim mạch / Balloon Bonding / Hub Bonding / Marker Bonding" },
@@ -41,7 +41,7 @@ export const caseStudiesCn: CaseCn[] = [
   {
     id: "0201", slug: "omnicure-s2000-elite-adas-camera-assembly",
     image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20/0201%20ADAS%20Camera%20Module.jpg", product: "OmniCure S2000 Elite",
-    industry: { en: "Automotive & ADAS", zh: "汽车与 ADAS", th: "Automotive & ADAS", vi: "Automotive & ADAS" },
+    industry: { en: "Automotive & ADAS", zh: "汽车与 ADAS", th: "ยานยนต์และ ADAS", vi: "Ô tô & ADAS" },
     title: { en: "OmniCure S2000 Elite Supports Stable Focus-Lock Bonding in ADAS Camera Module Assembly", zh: "OmniCure S2000 Elite 支持 ADAS 摄像头模组稳定焦距固定", th: "OmniCure S2000 Elite รองรับการล็อกโฟกัสที่เสถียรในโมดูลกล้อง ADAS", vi: "OmniCure S2000 Elite hỗ trợ cố định tiêu cự ổn định trong lắp ráp camera ADAS" },
     techRoute: { en: "UV Spot Curing", zh: "UV Spot Curing 点固化", th: "UV Spot Curing", vi: "UV Spot Curing" },
     scene: { en: "ADAS camera module / lens-to-barrel focus-lock bonding", zh: "ADAS 摄像头模组 / Lens-to-Barrel Focus-Lock Bonding", th: "โมดูลกล้อง ADAS / Lens-to-Barrel Focus-Lock Bonding", vi: "Module camera ADAS / Lens-to-Barrel Focus-Lock Bonding" },
@@ -65,7 +65,7 @@ export const caseStudiesCn: CaseCn[] = [
   {
     id: "0301", slug: "omnicure-lx500-pcb-assembly",
     image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20/0301%20PCB%20BY%20ROBOT.png", product: "OmniCure LX500",
-    industry: { en: "Electronics & PCB Assembly", zh: "电子与 PCB 装配", th: "Electronics & PCB Assembly", vi: "Electronics & PCB Assembly" },
+    industry: { en: "Electronics & PCB Assembly", zh: "电子与 PCB 装配", th: "อิเล็กทรอนิกส์และ PCB", vi: "Điện tử & PCB" },
     title: { en: "OmniCure LX500 Improves Fast Fixing Efficiency in PCB Micro-Component Assembly", zh: "OmniCure LX500 提升 PCB 微型组件快速固定效率", th: "OmniCure LX500 เพิ่มประสิทธิภาพการยึดชิ้นส่วนขนาดเล็กบน PCB อย่างรวดเร็ว", vi: "OmniCure LX500 nâng cao hiệu suất cố định nhanh linh kiện vi mô trên PCB" },
     techRoute: { en: "UV LED Spot Curing", zh: "UV LED Spot Curing", th: "UV LED Spot Curing", vi: "UV LED Spot Curing" },
     scene: { en: "PCB micro-component fixing / connector bonding / wire tacking / component staking", zh: "PCB 微型组件固定 / 连接器粘接 / Wire Tacking / Component Staking", th: "การยึดชิ้นส่วนขนาดเล็กบน PCB / Connector Bonding / Wire Tacking / Component Staking", vi: "Cố định linh kiện vi mô PCB / Connector Bonding / Wire Tacking / Component Staking" },
@@ -90,7 +90,7 @@ export const caseStudiesCn: CaseCn[] = [
   {
     id: "0401", slug: "omnicure-lx500-optical-transceiver-assembly",
     image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20/0401%20photo%20and%20advanced-packaging.jpg", product: "OmniCure LX500",
-    industry: { en: "Photonics & Advanced Packaging", zh: "光子与先进封装", th: "Photonics & Advanced Packaging", vi: "Photonics & Advanced Packaging" },
+    industry: { en: "Photonics & Advanced Packaging", zh: "光子与先进封装", th: "โฟโตนิกส์และแพ็กเกจขั้นสูง", vi: "Quang tử & đóng gói tiên tiến" },
     title: { en: "OmniCure LX500 Supports Multi-Channel Precision Curing for High-Speed Optical Transceivers", zh: "OmniCure LX500 支持高速光模块多通道精密固化", th: "OmniCure LX500 รองรับการ Curing แบบหลายช่องสัญญาณสำหรับ Optical Transceiver ความเร็วสูง", vi: "OmniCure LX500 hỗ trợ curing chính xác đa kênh cho optical transceiver tốc độ cao" },
     techRoute: { en: "UV LED Spot Curing", zh: "UV LED Spot Curing", th: "UV LED Spot Curing", vi: "UV LED Spot Curing" },
     scene: { en: "800G / 1.6T optical transceiver assembly / laser-to-fiber bonding / lens bonding / multi-fiber array bonding", zh: "800G / 1.6T 光模块装配 / Laser-to-Fiber Bonding / Lens Bonding / Multi-Fiber Array Bonding", th: "การประกอบ Optical Transceiver 800G / 1.6T / Laser-to-Fiber Bonding / Lens Bonding", vi: "Lắp ráp optical transceiver 800G / 1.6T / Laser-to-Fiber Bonding / Lens Bonding" },
@@ -115,7 +115,7 @@ export const caseStudiesCn: CaseCn[] = [
   {
     id: "0501", slug: "omnicure-ac-large-optical-fiber-coating",
     image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20/0501-fiber-cable.jpg", product: "OmniCure AC Large",
-    industry: { en: "Fiber Optic & Cable Manufacturing", zh: "光纤与线缆制造", th: "Fiber Optic & Cable Manufacturing", vi: "Fiber Optic & Cable Manufacturing" },
+    industry: { en: "Fiber Optic & Cable Manufacturing", zh: "光纤与线缆制造", th: "การผลิตไฟเบอร์ออปติกและสายเคเบิล", vi: "Sản xuất sợi quang & cáp" },
     title: { en: "OmniCure AC Large Supports High-Speed Coating Cure in Optical Fiber Draw Towers", zh: "OmniCure AC Large 支持高速光纤拉丝塔涂覆固化", th: "OmniCure AC Large รองรับการ Curing เคลือบความเร็วสูงใน Fiber Draw Tower", vi: "OmniCure AC Large hỗ trợ curing lớp phủ tốc độ cao trong optical fiber draw tower" },
     techRoute: { en: "UV LED Area Curing", zh: "UV LED Area Curing", th: "UV LED Area Curing", vi: "UV LED Area Curing" },
     scene: { en: "Optical fiber draw tower / primary coating / secondary coating / fiber ribbon coating", zh: "光纤拉丝塔 / Primary Coating / Secondary Coating / Fiber Ribbon Coating", th: "Fiber Draw Tower / Primary Coating / Secondary Coating / Fiber Ribbon Coating", vi: "Optical fiber draw tower / Primary Coating / Secondary Coating / Fiber Ribbon Coating" },

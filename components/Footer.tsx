@@ -37,10 +37,10 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Legal", zh: "法律条款" }, locale)}</p>
+          <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Legal", zh: "法律条款", th: "ข้อกฎหมาย", vi: "Pháp lý" }, locale)}</p>
           <div className="flex flex-col gap-1">
-            <Link href="/privacy" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Privacy Policy", zh: "隐私政策" }, locale)}</Link>
-            <Link href="/cookies" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Cookie Policy", zh: "Cookie政策" }, locale)}</Link>
+            <Link href="/privacy" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Privacy Policy", zh: "隐私政策", th: "นโยบายความเป็นส่วนตัว", vi: "Chính sách bảo mật" }, locale)}</Link>
+            <Link href="/cookies" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Cookie Policy", zh: "Cookie政策", th: "นโยบายคุกกี้", vi: "Chính sách cookie" }, locale)}</Link>
           </div>
         </div>
         <div>
@@ -53,11 +53,11 @@ export default function Footer() {
       <div className="border-t border-gray-200 py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <p className="text-xs text-gray-400">
-            © {new Date().getFullYear()} ETIA-TECH (ASIA) Co., Limited. {t({ en: "All rights reserved.", zh: "保留所有权利。" }, locale)}
+            © {new Date().getFullYear()} ETIA-TECH (ASIA) Co., Limited. {t({ en: "All rights reserved.", zh: "保留所有权利。", th: "สงวนลิขสิทธิ์", vi: "Bảo lưu mọi quyền." }, locale)}
           </p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="text-xs text-gray-400 hover:text-[#1A56DB] transition-colors">{t({ en: "Privacy", zh: "隐私" }, locale)}</Link>
-            <Link href="/cookies" className="text-xs text-gray-400 hover:text-[#1A56DB] transition-colors">{t({ en: "Cookies", zh: "Cookie" }, locale)}</Link>
+            <Link href="/privacy" className="text-xs text-gray-400 hover:text-[#1A56DB] transition-colors">{t({ en: "Privacy", zh: "隐私", th: "ความเป็นส่วนตัว", vi: "Bảo mật" }, locale)}</Link>
+            <Link href="/cookies" className="text-xs text-gray-400 hover:text-[#1A56DB] transition-colors">{t({ en: "Cookies", zh: "Cookie", th: "คุกกี้", vi: "Cookie" }, locale)}</Link>
           </div>
         </div>
       </div>
