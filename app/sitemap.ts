@@ -1,15 +1,17 @@
 import type { MetadataRoute } from "next";
-import { products, productHref } from "@/components/productCatalog";
+import { products, productHref, productImage } from "@/components/productCatalog";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
 import { getAllArticles } from "@/components/insights";
 
 const SITE = "https://www.etiatech.com";
 
-// NOTE: we intentionally omit `lastModified`. We don't track a reliable
-// per-page modification date, and stamping every URL with the build time
-// (new Date()) is a misleading freshness signal — omitting it is better than
-// providing a wrong date. changeFrequency + priority still guide crawlers.
+// NOTE: we intentionally omit `lastModified` on most pages. We don't track a
+// reliable per-page modification date, and stamping every URL with the build
+// time (new Date()) is a misleading freshness signal — omitting it is better
+// than providing a wrong date. Insights articles are the exception: they carry
+// a real publish date in their front matter, so we surface it there.
+// changeFrequency + priority still guide crawlers.
 export default function sitemap(): MetadataRoute.Sitemap {
   const core: MetadataRoute.Sitemap = [
     {
@@ -90,7 +92,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const url = `${SITE}${productHref(p)}`;
     if (seen.has(url)) continue;
     seen.add(url);
-    productPages.push({ url, changeFrequency: "monthly", priority: FEATURED_PRIORITY[p.slug] ?? 0.7 });
+    const image = productImage(p);
+    productPages.push({
+      url,
+      changeFrequency: "monthly",
+      priority: FEATURED_PRIORITY[p.slug] ?? 0.7,
+      ...(image ? { images: [image] } : {}),
+    });
   }
 
   // Individual case-study landing pages.
@@ -98,12 +106,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE}/case-studies/${c.slug}`,
     changeFrequency: "monthly",
     priority: 0.6,
+    ...(c.image ? { images: [c.image] } : {}),
   }));
 
   const applicationCasePages: MetadataRoute.Sitemap = applicationsData.map((application) => ({
     url: `${SITE}/applications/${application.slug}`,
     changeFrequency: "monthly",
     priority: 0.75,
+    ...(application.image ? { images: [application.image] } : {}),
   }));
 
   // NOTE: the 62 application-note detail pages (/application/[slug]) are
@@ -115,6 +125,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE}/insights/${a.slug}`,
     changeFrequency: "monthly",
     priority: 0.6,
+    ...(a.date ? { lastModified: a.date } : {}),
   }));
 
   return [...core, ...productPages, ...applicationCasePages, ...insightPages, ...casePages];

@@ -27,7 +27,17 @@ export const metadata: Metadata = {
     "OmniCure S2000 Elite Web UI",
     "OmniCure S2000 Elite technical support",
   ],
-  alternates: { canonical: SITE + PAGE_PATH },
+  alternates: {
+    canonical: SITE + PAGE_PATH,
+    // hreflang must stay bidirectional — mirror app/sitemap.ts and the
+    // en/vi S2000 pages.
+    languages: {
+      en: `${SITE}/product/omnicure/s2000`,
+      th: `${SITE}/th/product/omnicure/s2000`,
+      vi: `${SITE}/vi/product/omnicure/s2000`,
+      "x-default": `${SITE}/product/omnicure/s2000`,
+    },
+  },
   openGraph: {
     type: "website",
     url: SITE + PAGE_PATH,
