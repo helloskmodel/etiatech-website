@@ -16,7 +16,7 @@ export function systemLanguages(slug: string): Record<string, string> {
   const en = `${SITE}/product/systems/${slug}`;
   return {
     en,
-    "zh-CN": `${SITE}/zh/product/systems/${slug}`,
+    "zh-Hans": `${SITE}/zh/product/systems/${slug}`,
     vi: `${SITE}/vi/product/systems/${slug}`,
     th: `${SITE}/th/product/systems/${slug}`,
     "x-default": en,

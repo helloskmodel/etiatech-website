@@ -18,7 +18,7 @@ export const OG_LOCALE: Record<SubLocale, string> = { zh: "zh_CN", vi: "vi_VN", 
 export function languageAlternates(path: string): Record<string, string> {
   return {
     en: `${SITE}${path}`,
-    "zh-CN": `${SITE}/zh${path}`,
+    "zh-Hans": `${SITE}/zh${path}`,
     vi: `${SITE}/vi${path}`,
     th: `${SITE}/th${path}`,
     "x-default": `${SITE}${path}`,
@@ -182,7 +182,7 @@ export function brandLanguageAlternates(slug: string): Record<string, string> {
   const en = `${SITE}/product/${slug}`;
   return {
     en,
-    "zh-CN": `${SITE}/zh/product/${slug}`,
+    "zh-Hans": `${SITE}/zh/product/${slug}`,
     vi: `${SITE}/vi/product/${slug}`,
     th: `${SITE}/th/product/${slug}`,
     "x-default": en,

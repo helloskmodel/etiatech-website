@@ -29,7 +29,7 @@ export function localizedHomeMetadata(locale: Exclude<Locale, "en">): Metadata {
     metadataBase: new URL(SITE),
     alternates: {
       canonical: path,
-      languages: { en: "/", "zh-CN": "/zh", vi: "/vi", th: "/th", "x-default": "/" },
+      languages: { en: "/", "zh-Hans": "/zh", vi: "/vi", th: "/th", "x-default": "/" },
     },
     openGraph: {
       type: "website",

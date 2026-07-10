@@ -11,7 +11,7 @@ const OG_IMAGE =
 // Shared hreflang group — must be identical on all four language versions.
 const S2000_LANGUAGES = {
   en: `${SITE}/product/omnicure/s2000`,
-  "zh-CN": `${SITE}/zh/product/omnicure/s2000`,
+  "zh-Hans": `${SITE}/zh/product/omnicure/s2000`,
   vi: `${SITE}/vi/product/omnicure/s2000`,
   th: `${SITE}/th/product/omnicure/s2000`,
   "x-default": `${SITE}/product/omnicure/s2000`,

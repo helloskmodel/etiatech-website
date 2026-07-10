@@ -87,7 +87,7 @@ const routes: Array<{
     eyebrow: { en: "UV LED Spot Curing", zh: "UV LED 点固化", th: "การคิวริ่งแบบจุดด้วย UV LED", vi: "Đóng rắn điểm bằng UV LED" },
     title: { en: "LED Precision, Flexible Control", zh: "LED 精准控制 灵活可调", th: "ความแม่นยำแบบ LED ควบคุมได้ยืดหยุ่น", vi: "Độ chính xác LED, kiểm soát linh hoạt" },
     body: { en: "Wavelength-specific LED spot curing with long life, modular control and low maintenance.", zh: "特定波长 LED 点固化，寿命长、模块化控制、维护成本低。", th: "การคิวริ่งแบบจุดด้วย LED เฉพาะความยาวคลื่น อายุการใช้งานยาว ควบคุมแบบโมดูลาร์ และบำรุงรักษาน้อย", vi: "Đóng rắn điểm bằng LED theo bước sóng riêng, tuổi thọ dài, điều khiển mô-đun và ít bảo trì." },
-    featured: "LX500 V2",
+    featured: "LX500",
     color: "#2F80ED",
     soft: "#F3F8FF",
     icon: Zap,

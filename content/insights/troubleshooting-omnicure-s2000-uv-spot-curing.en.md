@@ -3,7 +3,7 @@ title: "Troubleshooting the OmniCure S2000: Lamp Not Striking, Light-Ring Colour
 description: "A field guide to the three most common OmniCure S2000 issues — a lamp that won't strike, what the status light-ring colours mean, and irradiance that drops off — with the checks that fix them."
 date: 2026-07-07
 tags: [OmniCure, S2000 Elite, Troubleshooting, UV Curing]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%202000%20ELITE-LOOP%20FEEDBACK.webp
+cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/insight-closed%20loop.jpg
 author: ETIA Technology
 ---
 

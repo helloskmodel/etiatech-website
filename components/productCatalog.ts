@@ -39,7 +39,7 @@ export const products: Product[] = [
   // ───────────────── TECHNOLOGY 1: UV SPOT CURING ─────────────────
   {
     slug: "lx500",
-    name: "OmniCure LX500 V2 UV LED Spot Curing Controller",
+    name: "OmniCure LX500 UV LED Spot Curing Controller",
     brand: "OmniCure",
     brandId: "omnicure",
     tech: "UV Spot Curing",
@@ -1514,7 +1514,7 @@ export function getProduct(slug: string): Product | undefined {
 export const modelToSlug: Record<string, string> = {
   "S2000 Elite": "s2000-elite",
   "S1500 Pro": "s1500-pro",
-  "LX500 V2": "lx500",
+  "LX500": "lx500",
   "LS200 Radiometer": "ls200",
   "UV LED Heads (V3)": "v3-led-heads",
   "R2000 Radiometer": "r2000",
@@ -1629,8 +1629,8 @@ export type ProductDoc = {
 const PRODUCT_PDF_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PRODUCTPDF";
 
-const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" };
-const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" };
+const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" , vi: "Brochure", th: "โบรชัวร์" };
+const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" , vi: "Hướng dẫn khởi động nhanh", th: "คู่มือเริ่มต้นอย่างรวดเร็ว" };
 
 export const productDocs: Record<string, ProductDoc[]> = {
   "ls200": [

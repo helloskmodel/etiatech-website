@@ -20,7 +20,7 @@ export const SERVICE_EMAIL = "guoren_wang@etia-tech.com";
 // to reference it in the message. Bilingual.
 export function inquiryMailto(
   locale: Locale,
-  opts: { subject?: string; context?: string; email?: string } = {}
+  opts: { subject?: string; context?: string; email?: string; fields?: string[] } = {}
 ): string {
   const email = opts.email ?? localeSalesEmail(locale);
   const zh = locale === "zh";
@@ -31,8 +31,7 @@ export function inquiryMailto(
         ctx ? `咨询产品 / 技术：${ctx}` : "咨询主题：",
         "",
         "您好，我想咨询以下内容：",
-        "· 我的应用 / 工艺：",
-        "· 需求（选型 / 报价 / 技术支持）：",
+        ...(opts.fields?.length ? opts.fields.map((f) => `· ${f}：`) : ["· 我的应用 / 工艺：", "· 需求（选型 / 报价 / 技术支持）："]),
         "· 公司 / 联系人 / 电话：",
         "",
         "谢谢！",
@@ -41,8 +40,7 @@ export function inquiryMailto(
         ctx ? `Product / Technology: ${ctx}` : "Topic:",
         "",
         "Hello, I'd like to inquire about the following:",
-        "· My application / process: ",
-        "· What I need (product selection / quote / technical support): ",
+        ...(opts.fields?.length ? opts.fields.map((f) => `· ${f}: `) : ["· My application / process: ", "· What I need (product selection / quote / technical support): "]),
         "· Company / contact / phone: ",
         "",
         "Thank you!",

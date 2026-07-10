@@ -17,7 +17,7 @@ const listedApplications = getListedApplications();
 
 // Product filter bar — match against each case's recommendedProducts text.
 const PRODUCT_FILTERS: { key: string; label: LangText; token?: string }[] = [
-  { key: "All", label: { en: "All Products", zh: "全部产品" } },
+  { key: "All", label: { en: "All Products", zh: "全部产品" , vi: "Tất cả sản phẩm" } },
   { key: "s2000", label: { en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, token: "S2000" },
   { key: "lx500", label: { en: "OmniCure LX500", zh: "OmniCure LX500" }, token: "LX500" },
   { key: "ac", label: { en: "OmniCure AC Series", zh: "OmniCure AC 系列" }, token: "AC" },

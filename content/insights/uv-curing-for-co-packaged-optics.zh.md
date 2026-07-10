@@ -23,7 +23,7 @@ cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20st
 
 ## OmniCure 如何逐一应对
 
-[OmniCure LX500 V2](/product/systems/lx500) 多通道 UV LED 平台配合 365 nm V3 LED 灯头，可提供 CPO 光纤阵列粘接所需的高稳定性、多点固化能力。结合在线辐射度量，制造商可对每个独立粘接点验证 UV 剂量——建立 50–100 纳米预算所要求的工艺控制规范。
+[OmniCure LX500](/product/systems/lx500) 多通道 UV LED 平台配合 365 nm V3 LED 灯头，可提供 CPO 光纤阵列粘接所需的高稳定性、多点固化能力。结合在线辐射度量，制造商可对每个独立粘接点验证 UV 剂量——建立 50–100 纳米预算所要求的工艺控制规范。
 
 对于资质批次与新产品导入——文档化的稳定性最为关键——OmniCure S2000 Elite 的闭环反馈可在数百万次循环中将输出维持在 **设定值 ±5%** 以内，并具备 NIST 溯源校准。
 
