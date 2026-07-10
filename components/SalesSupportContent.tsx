@@ -74,7 +74,7 @@ export default function SalesSupportContent() {
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "ETIA Service Commitment", zh: "ETIA 服务承诺", th: "คำมั่นสัญญาด้านบริการของ ETIA", vi: "Cam kết dịch vụ của ETIA" }, locale)}</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Service means more than supplying equipment", zh: "服务 不止于提供设备", th: "บริการที่มากกว่าการจัดหาอุปกรณ์", vi: "Dịch vụ không chỉ là cung cấp thiết bị" }, locale)}</h2>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Service means more than supplying equipment", zh: "服务 不止于提供设备", th: "บริการที่มากกว่าการจัดหาอุปกรณ์", vi: "Dịch vụ không chỉ là cung cấp thiết\u00A0bị" }, locale)}</h2>
               <p className="mt-5 leading-7 text-[#5F6C7B]">{t({ en: "At ETIA, service means genuine products, application-driven solutions, a dependable local supply chain, and long-term service — keeping your UV curing process stable, repeatable, and production-ready.", zh: "在 ETIA，服务意味着正品保障、应用驱动的解决方案、可靠的本地供应链与长期服务——让您的 UV Curing 紫外线固化工艺保持稳定、可重复、随时可投入生产。", th: "ที่ ETIA บริการหมายถึงสินค้าของแท้ โซลูชันที่ขับเคลื่อนด้วยการใช้งานจริง ซัพพลายเชนในพื้นที่ที่เชื่อถือได้ และบริการระยะยาว เพื่อให้กระบวนการ UV Curing ของคุณเสถียร ทำซ้ำได้ และพร้อมสำหรับการผลิต", vi: "Tại ETIA, dịch vụ nghĩa là sản phẩm chính hãng, giải pháp theo ứng dụng, chuỗi cung ứng địa phương đáng tin cậy và dịch vụ dài hạn — giúp quy trình UV curing của bạn ổn định, lặp lại được và sẵn sàng sản xuất." }, locale)}</p>
             </div>
             <div className="relative">
