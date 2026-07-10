@@ -28,6 +28,8 @@ const nextConfig: NextConfig = {
       // country-code spellings to them instead of 404ing.
       { source: "/cn", destination: "/zh", permanent: true },
       { source: "/cn/:path*", destination: "/zh/:path*", permanent: true },
+      { source: "/ch", destination: "/zh", permanent: true },
+      { source: "/ch/:path*", destination: "/zh/:path*", permanent: true },
       { source: "/vn", destination: "/vi", permanent: true },
       { source: "/vn/:path*", destination: "/vi/:path*", permanent: true },
       { source: "/en/contact", destination: "/contact", permanent: true },
