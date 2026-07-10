@@ -53,6 +53,96 @@ const zhDict: Record<string, string> = {
   "UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.": "UV Curing 紫外线固化是一种光化学过程，在高强度UV能量照射下，将胶粘剂、涂层、油墨等液态配方瞬间转化为完全固化的固体材料。",
 };
 
+// Vietnamese translations, keyed by the same English source strings as zhDict.
+const viDict: Record<string, string> = {
+  // taglines
+  "UV Spot & Area Curing": "Đóng rắn UV điểm & vùng",
+  "UV LED Air & Water-Cooled": "UV LED làm mát bằng khí & nước",
+  "Microwave UV Curing": "Đóng rắn UV vi sóng",
+  "UV LED High-Intensity Systems": "Hệ thống UV LED cường độ cao",
+  // category headers
+  "UV SPOT CURING SYSTEMS": "HỆ THỐNG ĐÓNG RẮN UV ĐIỂM",
+  "UV AREA CURING SYSTEMS": "HỆ THỐNG ĐÓNG RẮN UV VÙNG",
+  "WATER-COOLED UV LED AREA CURING SYSTEMS": "HỆ THỐNG ĐÓNG RẮN UV LED VÙNG LÀM MÁT BẰNG NƯỚC",
+  "AIR-COOLED UV LED AREA CURING SYSTEMS": "HỆ THỐNG ĐÓNG RẮN UV LED VÙNG LÀM MÁT BẰNG KHÍ",
+  "MICROWAVE UV CURING SYSTEMS": "HỆ THỐNG ĐÓNG RẮN UV VI SÓNG",
+  "WATER-COOLED UV LED SYSTEMS": "HỆ THỐNG UV LED LÀM MÁT BẰNG NƯỚC",
+  "UV LED CURING SYSTEMS": "HỆ THỐNG ĐÓNG RẮN UV LED",
+  // family names
+  "UV Lamp Spot Curing": "Đóng rắn điểm bằng đèn UV",
+  "UV LED Spot Curing": "Đóng rắn điểm bằng UV LED",
+  "Air-Cooled UV LED Large Area": "UV LED làm mát bằng khí diện tích lớn",
+  "Air-Cooled UV LED Small Area": "UV LED làm mát bằng khí diện tích nhỏ",
+  "Water-Cooled UV LED": "UV LED làm mát bằng nước",
+  "Microwave UV · Optical Fiber": "UV vi sóng · Sợi quang",
+  "UV LED Curing": "Đóng rắn UV LED",
+  // family descriptions
+  "Broad-spectrum 200W mercury high-pressure lamp spot curing. Industry-proven for medical devices and precision assembly.": "Đóng rắn điểm bằng đèn thủy ngân cao áp 200W phổ rộng. Đã được kiểm chứng trong ngành cho thiết bị y tế và lắp ráp chính xác.",
+  "Single-wavelength LED spot curing at 365 nm. 0 ms warm-up, 50,000h lifespan, Industry 4.0 ready.": "Đóng rắn điểm bằng LED đơn bước sóng ở 365 nm. Khởi động 0 ms, tuổi thọ 50,000h, sẵn sàng cho Công nghiệp 4.0.",
+  "High-output LED area curing for wide substrates. Conveyor-integrated, uniform irradiance across full panel width.": "Đóng rắn vùng bằng LED công suất cao cho vật liệu nền khổ rộng. Tích hợp băng tải, cường độ bức xạ đồng đều trên toàn chiều rộng tấm.",
+  "Compact LED area curing for inline PCB, display, and small component applications. Fast, consistent, zero warm-up.": "Đóng rắn vùng bằng LED nhỏ gọn cho các ứng dụng PCB, màn hình và linh kiện nhỏ trên dây chuyền. Nhanh, ổn định, không cần khởi động.",
+  "High-intensity water-cooled UV LED systems for demanding industrial processes. Stable output under extreme temperatures and debris environments.": "Hệ thống UV LED làm mát bằng nước cường độ cao cho các quy trình công nghiệp khắt khe. Đầu ra ổn định trong môi trường nhiệt độ khắc nghiệt và nhiều bụi bẩn.",
+  "Cost-effective air-cooled UV LED systems for wide-format and large-area curing. Conveyor-integrated, no chiller required.": "Hệ thống UV LED làm mát bằng khí tiết kiệm chi phí cho đóng rắn khổ rộng và diện tích lớn. Tích hợp băng tải, không cần máy làm lạnh.",
+  "Passively cooled, ultra-slim form factor. Ideal for digital inkjet pinning and space-limited inline applications.": "Làm mát thụ động, thiết kế siêu mỏng. Lý tưởng cho định hình mực in phun kỹ thuật số và các ứng dụng trên dây chuyền có không gian hạn chế.",
+  "Electrodeless microwave-powered UV systems for production lines. Modular design, Industry 4.0 ready, broad spectrum output. Easy retrofit into existing processes.": "Hệ thống UV vi sóng không điện cực cho dây chuyền sản xuất. Thiết kế mô-đun, sẵn sàng cho Công nghiệp 4.0, đầu ra phổ rộng. Dễ dàng nâng cấp vào quy trình hiện có.",
+  "Modular 6- or 10-inch microwave UV systems for draw towers, coloring lines, and cable marking. Patented secondary reflector maximizes UV delivery to fiber.": "Hệ thống UV vi sóng mô-đun 6 hoặc 10 inch cho tháp kéo sợi, dây chuyền tạo màu và đánh dấu cáp. Bộ phản xạ thứ cấp được cấp bằng sáng chế tối ưu hóa việc truyền UV tới sợi quang.",
+  "Water-cooled high-intensity UV LED system with dedicated optics for even irradiance at large working distances. Designed for flexible industrial integration.": "Hệ thống UV LED cường độ cao làm mát bằng nước với hệ quang học chuyên dụng cho cường độ bức xạ đồng đều ở khoảng cách làm việc lớn. Được thiết kế để tích hợp công nghiệp linh hoạt.",
+  "UV LED systems for optical fiber draw, wire marking, and bespoke process requirements. 360° curing coverage and custom-engineered solutions available.": "Hệ thống UV LED cho kéo sợi quang, đánh dấu dây và các yêu cầu quy trình đặt riêng. Cung cấp phạm vi đóng rắn 360° và các giải pháp thiết kế theo yêu cầu.",
+  // benefits
+  "Speed": "Tốc độ",
+  "Clean & Safe": "Sạch & An toàn",
+  "Precision": "Độ chính xác",
+  "UV curing converts liquid formulations to solid materials in seconds — eliminating thermal ovens, long cure queues, and handling delays that slow production lines.": "UV Curing chuyển đổi các công thức lỏng thành vật liệu rắn trong vài giây — loại bỏ lò nhiệt, hàng chờ đóng rắn dài và sự chậm trễ trong xử lý làm chậm dây chuyền sản xuất.",
+  "UV curable materials are 100% solid with no solvents — zero VOC emissions, no hazardous waste disposal, and no fumes in the clean room.": "Vật liệu đóng rắn bằng UV có hàm lượng rắn 100% không dung môi — không phát thải VOC, không xử lý chất thải nguy hại và không khói trong phòng sạch.",
+  "Spectral output, peak irradiance, and energy dose precisely determine the physical properties of the cured material. The right equipment controls all three.": "Đầu ra phổ, cường độ bức xạ đỉnh và liều năng lượng quyết định chính xác các đặc tính vật lý của vật liệu đã đóng rắn. Thiết bị phù hợp kiểm soát cả ba yếu tố này.",
+  "UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.": "UV Curing là một quá trình quang hóa chuyển đổi các công thức lỏng — keo dán, lớp phủ, mực in — thành vật liệu rắn hoàn toàn ngay lập tức khi tiếp xúc với năng lượng UV cường độ cao.",
+};
+
+// Thai translations, keyed by the same English source strings as zhDict.
+const thDict: Record<string, string> = {
+  // taglines
+  "UV Spot & Area Curing": "การบ่ม UV แบบจุดและแบบพื้นที่",
+  "UV LED Air & Water-Cooled": "UV LED ระบายความร้อนด้วยอากาศและน้ำ",
+  "Microwave UV Curing": "การบ่ม UV ด้วยไมโครเวฟ",
+  "UV LED High-Intensity Systems": "ระบบ UV LED ความเข้มสูง",
+  // category headers
+  "UV SPOT CURING SYSTEMS": "ระบบบ่ม UV แบบจุด",
+  "UV AREA CURING SYSTEMS": "ระบบบ่ม UV แบบพื้นที่",
+  "WATER-COOLED UV LED AREA CURING SYSTEMS": "ระบบบ่ม UV LED แบบพื้นที่ ระบายความร้อนด้วยน้ำ",
+  "AIR-COOLED UV LED AREA CURING SYSTEMS": "ระบบบ่ม UV LED แบบพื้นที่ ระบายความร้อนด้วยอากาศ",
+  "MICROWAVE UV CURING SYSTEMS": "ระบบบ่ม UV ด้วยไมโครเวฟ",
+  "WATER-COOLED UV LED SYSTEMS": "ระบบ UV LED ระบายความร้อนด้วยน้ำ",
+  "UV LED CURING SYSTEMS": "ระบบบ่ม UV LED",
+  // family names
+  "UV Lamp Spot Curing": "การบ่มแบบจุดด้วยหลอด UV",
+  "UV LED Spot Curing": "การบ่มแบบจุดด้วย UV LED",
+  "Air-Cooled UV LED Large Area": "UV LED ระบายความร้อนด้วยอากาศ พื้นที่ขนาดใหญ่",
+  "Air-Cooled UV LED Small Area": "UV LED ระบายความร้อนด้วยอากาศ พื้นที่ขนาดเล็ก",
+  "Water-Cooled UV LED": "UV LED ระบายความร้อนด้วยน้ำ",
+  "Microwave UV · Optical Fiber": "UV ไมโครเวฟ · ใยแก้วนำแสง",
+  "UV LED Curing": "การบ่ม UV LED",
+  // family descriptions
+  "Broad-spectrum 200W mercury high-pressure lamp spot curing. Industry-proven for medical devices and precision assembly.": "การบ่มแบบจุดด้วยหลอดปรอทความดันสูง 200W สเปกตรัมกว้าง ได้รับการพิสูจน์ในอุตสาหกรรมสำหรับอุปกรณ์การแพทย์และการประกอบที่มีความแม่นยำ",
+  "Single-wavelength LED spot curing at 365 nm. 0 ms warm-up, 50,000h lifespan, Industry 4.0 ready.": "การบ่มแบบจุดด้วย LED ความยาวคลื่นเดียวที่ 365 nm อุ่นเครื่อง 0 ms อายุการใช้งาน 50,000h พร้อมสำหรับ Industry 4.0",
+  "High-output LED area curing for wide substrates. Conveyor-integrated, uniform irradiance across full panel width.": "การบ่มแบบพื้นที่ด้วย LED กำลังสูงสำหรับวัสดุรองรับหน้ากว้าง ผสานกับสายพานลำเลียง ความเข้มการฉายรังสีสม่ำเสมอตลอดความกว้างของแผงเต็มพื้นที่",
+  "Compact LED area curing for inline PCB, display, and small component applications. Fast, consistent, zero warm-up.": "การบ่มแบบพื้นที่ด้วย LED ขนาดกะทัดรัดสำหรับงาน PCB จอแสดงผล และชิ้นส่วนขนาดเล็กบนสายการผลิต รวดเร็ว สม่ำเสมอ ไม่ต้องอุ่นเครื่อง",
+  "High-intensity water-cooled UV LED systems for demanding industrial processes. Stable output under extreme temperatures and debris environments.": "ระบบ UV LED ความเข้มสูงระบายความร้อนด้วยน้ำสำหรับกระบวนการทางอุตสาหกรรมที่ต้องการความเข้มงวด ให้เอาต์พุตที่เสถียรภายใต้อุณหภูมิสุดขั้วและสภาพแวดล้อมที่มีเศษวัสดุ",
+  "Cost-effective air-cooled UV LED systems for wide-format and large-area curing. Conveyor-integrated, no chiller required.": "ระบบ UV LED ระบายความร้อนด้วยอากาศที่คุ้มค่าสำหรับการบ่มหน้ากว้างและพื้นที่ขนาดใหญ่ ผสานกับสายพานลำเลียง ไม่ต้องใช้เครื่องทำความเย็น",
+  "Passively cooled, ultra-slim form factor. Ideal for digital inkjet pinning and space-limited inline applications.": "ระบายความร้อนแบบพาสซีฟ ดีไซน์บางเป็นพิเศษ เหมาะอย่างยิ่งสำหรับการตรึงหมึกอิงก์เจ็ตดิจิทัลและงานบนสายการผลิตที่มีพื้นที่จำกัด",
+  "Electrodeless microwave-powered UV systems for production lines. Modular design, Industry 4.0 ready, broad spectrum output. Easy retrofit into existing processes.": "ระบบ UV ขับเคลื่อนด้วยไมโครเวฟแบบไร้ขั้วอิเล็กโทรดสำหรับสายการผลิต ออกแบบเป็นโมดูล พร้อมสำหรับ Industry 4.0 เอาต์พุตสเปกตรัมกว้าง ติดตั้งเพิ่มเข้ากับกระบวนการที่มีอยู่ได้ง่าย",
+  "Modular 6- or 10-inch microwave UV systems for draw towers, coloring lines, and cable marking. Patented secondary reflector maximizes UV delivery to fiber.": "ระบบ UV ไมโครเวฟแบบโมดูลขนาด 6 หรือ 10 นิ้วสำหรับหอดึงเส้นใย สายการย้อมสี และการทำเครื่องหมายบนสายเคเบิล ตัวสะท้อนแสงทุติยภูมิที่จดสิทธิบัตรช่วยเพิ่มการส่ง UV ไปยังเส้นใยให้สูงสุด",
+  "Water-cooled high-intensity UV LED system with dedicated optics for even irradiance at large working distances. Designed for flexible industrial integration.": "ระบบ UV LED ความเข้มสูงระบายความร้อนด้วยน้ำ พร้อมชุดออปติกเฉพาะสำหรับความเข้มการฉายรังสีที่สม่ำเสมอที่ระยะทำงานไกล ออกแบบมาเพื่อการผสานรวมทางอุตสาหกรรมที่ยืดหยุ่น",
+  "UV LED systems for optical fiber draw, wire marking, and bespoke process requirements. 360° curing coverage and custom-engineered solutions available.": "ระบบ UV LED สำหรับการดึงใยแก้วนำแสง การทำเครื่องหมายบนสายไฟ และความต้องการกระบวนการเฉพาะทาง ครอบคลุมการบ่ม 360° และมีโซลูชันที่ออกแบบตามความต้องการ",
+  // benefits
+  "Speed": "ความเร็ว",
+  "Clean & Safe": "สะอาดและปลอดภัย",
+  "Precision": "ความแม่นยำ",
+  "UV curing converts liquid formulations to solid materials in seconds — eliminating thermal ovens, long cure queues, and handling delays that slow production lines.": "UV Curing เปลี่ยนสูตรของเหลวให้เป็นวัสดุแข็งภายในไม่กี่วินาที — ขจัดเตาอบความร้อน คิวการบ่มที่ยาวนาน และความล่าช้าในการจัดการที่ทำให้สายการผลิตช้าลง",
+  "UV curable materials are 100% solid with no solvents — zero VOC emissions, no hazardous waste disposal, and no fumes in the clean room.": "วัสดุที่บ่มด้วย UV มีเนื้อของแข็ง 100% ไม่มีตัวทำละลาย — ปล่อย VOC เป็นศูนย์ ไม่มีการกำจัดของเสียอันตราย และไม่มีควันในห้องคลีนรูม",
+  "Spectral output, peak irradiance, and energy dose precisely determine the physical properties of the cured material. The right equipment controls all three.": "เอาต์พุตเชิงสเปกตรัม ความเข้มการฉายรังสีสูงสุด และปริมาณพลังงานเป็นตัวกำหนดคุณสมบัติทางกายภาพของวัสดุที่บ่มแล้วอย่างแม่นยำ อุปกรณ์ที่เหมาะสมควบคุมทั้งสามอย่างนี้ได้",
+  "UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.": "UV Curing เป็นกระบวนการโฟโตเคมีที่เปลี่ยนสูตรของเหลว — กาว สารเคลือบ หมึก — ให้เป็นวัสดุแข็งอย่างสมบูรณ์ในทันทีเมื่อสัมผัสกับพลังงาน UV ความเข้มสูง",
+};
+
 const brands = [
   {
     id: "omnicure",
@@ -218,7 +308,7 @@ const uvCuringBenefits = [
 
 export default function ProductPage() {
   const { locale } = useLocale();
-  const tr = (s: string) => (locale === "zh" ? zhDict[s] ?? s : s);
+  const tr = (s: string) => (locale === "zh" ? zhDict[s] ?? s : locale === "vi" ? viDict[s] ?? s : locale === "th" ? thDict[s] ?? s : s);
   const availableBrands = brands.filter((b) => b.available);
   const scrollToId = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
