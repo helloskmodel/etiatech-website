@@ -1629,8 +1629,8 @@ export type ProductDoc = {
 const PRODUCT_PDF_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PRODUCTPDF";
 
-const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" };
-const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" };
+const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" , vi: "Brochure", th: "โบรชัวร์" };
+const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" , vi: "Hướng dẫn khởi động nhanh", th: "คู่มือเริ่มต้นอย่างรวดเร็ว" };
 
 export const productDocs: Record<string, ProductDoc[]> = {
   "ls200": [

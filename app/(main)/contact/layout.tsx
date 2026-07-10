@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     // locale homepages as the nearest equivalent).
     languages: {
       en: SITE + PAGE_PATH,
-      "zh-CN": `${SITE}/zh${PAGE_PATH}`,
+      "zh-Hans": `${SITE}/zh${PAGE_PATH}`,
       vi: `${SITE}/vi${PAGE_PATH}`,
       th: `${SITE}/th${PAGE_PATH}`,
       "x-default": SITE + PAGE_PATH,

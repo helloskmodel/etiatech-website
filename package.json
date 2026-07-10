@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "validate:i18n": "node scripts/validate-locales.mjs"
+    "validate:i18n": "node scripts/validate-locales.mjs",
+    "validate:seo": "node scripts/validate-seo.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.110.0",

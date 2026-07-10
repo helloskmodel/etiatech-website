@@ -26,7 +26,7 @@ export const LAMP_PATHS: Record<LampLang, string> = {
 // hreflang group — shared by all four language versions (and the sitemap).
 export const LAMP_LANGUAGES = {
   en: SITE + LAMP_PATHS.en,
-  "zh-CN": SITE + LAMP_PATHS.zh,
+  "zh-Hans": SITE + LAMP_PATHS.zh,
   th: SITE + LAMP_PATHS.th,
   vi: SITE + LAMP_PATHS.vi,
   "x-default": SITE + LAMP_PATHS.en,

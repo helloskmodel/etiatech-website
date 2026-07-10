@@ -22,13 +22,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: SITE,
       changeFrequency: "weekly",
       priority: 1.0,
-      alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
+      alternates: { languages: { en: SITE, "zh-Hans": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
     },
     ...["zh", "vi", "th"].map((locale) => ({
       url: `${SITE}/${locale}`,
       changeFrequency: "weekly" as const,
       priority: 0.9,
-      alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
+      alternates: { languages: { en: SITE, "zh-Hans": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
     })),
     // Brand landing pages. OmniCure and Phoseon exist in all four languages
     // (hreflang-linked); Fusion UV / Noblelight are EN-only for now.
@@ -77,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: {
         languages: {
           en: `${SITE}/product/omnicure/s2000`,
-          "zh-CN": `${SITE}/zh/product/omnicure/s2000`,
+          "zh-Hans": `${SITE}/zh/product/omnicure/s2000`,
           th: `${SITE}/th/product/omnicure/s2000`,
           vi: `${SITE}/vi/product/omnicure/s2000`,
           "x-default": `${SITE}/product/omnicure/s2000`,

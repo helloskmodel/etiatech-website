@@ -66,7 +66,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {articles.length === 0 ? (
             <p className="text-center text-gray-400 py-20">
-              {t({ en: "New articles are coming soon.", zh: "新文章即将发布。" }, locale)}
+              {t({ en: "New articles are coming soon.", zh: "新文章即将发布。" , vi: "Bài viết mới sẽ sớm ra mắt.", th: "บทความใหม่กำลังจะมาเร็ว ๆ นี้" }, locale)}
             </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -99,7 +99,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
                       <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 flex-1">{c.description}</p>
                       <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400">
                         <span>{fmtDate(a.date, locale)}</span>
-                        <span>{a.readingMinutes} {t({ en: "min read", zh: "分钟阅读" }, locale)}</span>
+                        <span>{a.readingMinutes} {t({ en: "min read", zh: "分钟阅读" , vi: "phút đọc", th: "นาทีในการอ่าน" }, locale)}</span>
                       </div>
                     </div>
                   </Link>

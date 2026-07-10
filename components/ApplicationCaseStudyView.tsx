@@ -7,6 +7,7 @@ import ServiceCommitment from "@/components/ServiceCommitment";
 import { getRelatedApplications } from "@/data/applicationsData";
 import { applicationsZh } from "@/data/applicationsData.zh";
 import { useLocale, t } from "@/components/LocaleContext";
+import { inquiryMailto } from "@/components/contact";
 
 function TextSection({ eyebrow, title, paragraphs }: { eyebrow: string; title: string; paragraphs: string[] }) {
   return (
@@ -20,9 +21,27 @@ function TextSection({ eyebrow, title, paragraphs }: { eyebrow: string; title: s
   );
 }
 
+
+// Inquiry profiles per industry: precision-bonding applications ask about
+// adhesive/geometry/cycle time; line applications (fiber draw towers, cable
+// marking) ask about material/width/line speed. Fields feed the prefilled
+// inquiry email; en is used for all non-zh locales (the mail body is en/zh).
+const LINE_CATEGORIES = new Set(["Fiber Optic & Cable Manufacturing"]);
+const INQUIRY_FIELDS = {
+  bonding: {
+    en: ["Adhesive brand & model", "Required wavelength", "Working distance", "Cure area / bond geometry", "Target cycle time", "Required irradiance / UV dose", "Automation interface (PLC / foot pedal)", "Number of curing stations"],
+    zh: ["胶粘剂品牌与型号", "所需波长", "工作距离", "固化面积 / 粘接几何", "目标节拍", "所需辐照度 / UV 剂量", "自动化接口（PLC / 脚踏）", "固化工位数量"],
+  },
+  line: {
+    en: ["Material / coating type", "Web or curing width", "Line speed", "Required wavelength", "Cooling preference (air / water)", "Working distance", "Required UV dose", "Integration requirements"],
+    zh: ["材料 / 涂层类型", "幅宽或固化宽度", "产线速度", "所需波长", "冷却方式偏好（风冷 / 水冷）", "工作距离", "所需 UV 剂量", "产线集成要求"],
+  },
+};
+
 export default function ApplicationCaseStudyView({ application }: { application: any }) {
   const { locale } = useLocale();
   const related = getRelatedApplications(application);
+  const inquiryProfile: keyof typeof INQUIRY_FIELDS = LINE_CATEGORIES.has(application.industryCategory) ? "line" : "bonding";
 
   // Merge the client-supplied zh/th/vi content; English uses the base data.
   const m = locale !== "en" ? applicationsZh[application.slug] : undefined;
@@ -137,8 +156,10 @@ export default function ApplicationCaseStudyView({ application }: { application:
             <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-widest text-[#44B549]">{t({ en: "Recommended UV Curing System", zh: "推荐 UV Curing 紫外线固化系统", th: "ระบบ UV Curing ที่แนะนำ", vi: "Hệ thống UV Curing đề xuất" }, locale)}</p>
               <p className="mt-2 text-lg font-bold text-[#1A56DB]">{a.sections.recommendedConfiguration || a.recommendedProducts.join(" · ")}</p>
-              <p className="mt-3 text-sm leading-relaxed text-gray-500">{t({ en: "Discuss wavelength, curing width, line speed, ink compatibility, and integration with an ETIA engineer.", zh: "就波长、固化宽度、产线速度、油墨兼容性与产线集成等细节，与 ETIA 工程师沟通。", th: "ปรึกษาความยาวคลื่น ความกว้างการบ่ม ความเร็วไลน์ ความเข้ากันได้ของหมึก และการผสานเข้ากับระบบกับวิศวกร ETIA", vi: "Trao đổi về bước sóng, chiều rộng curing, tốc độ dây chuyền, độ tương thích mực và tích hợp với kỹ sư ETIA." }, locale)}</p>
-              <Link href="/contact" className="mt-5 block rounded-lg bg-[#44B549] px-5 py-3 text-center text-sm font-bold text-white hover:opacity-90">{t({ en: "Contact ETIA →", zh: "联系 ETIA →", th: "ติดต่อ ETIA →", vi: "Liên hệ ETIA →" }, locale)}</Link>
+              <p className="mt-3 text-sm leading-relaxed text-gray-500">{inquiryProfile === "line"
+                ? t({ en: "Discuss material, curing width, line speed, wavelength, cooling, and integration with an ETIA engineer.", zh: "就材料、固化宽度、产线速度、波长、冷却方式与产线集成等细节，与 ETIA 工程师沟通。", th: "ปรึกษาวัสดุ ความกว้างการบ่ม ความเร็วไลน์ ความยาวคลื่น การระบายความร้อน และการผสานระบบกับวิศวกร ETIA", vi: "Trao đổi về vật liệu, chiều rộng curing, tốc độ dây chuyền, bước sóng, làm mát và tích hợp với kỹ sư ETIA." }, locale)
+                : t({ en: "Discuss adhesive, wavelength, working distance, cure area, cycle time, and automation integration with an ETIA engineer.", zh: "就胶粘剂、波长、工作距离、固化面积、节拍与自动化集成等细节，与 ETIA 工程师沟通。", th: "ปรึกษากาว ความยาวคลื่น ระยะทำงาน พื้นที่การบ่ม รอบเวลา และการผสานระบบอัตโนมัติกับวิศวกร ETIA", vi: "Trao đổi về keo, bước sóng, khoảng cách làm việc, diện tích curing, chu kỳ và tích hợp tự động hóa với kỹ sư ETIA." }, locale)}</p>
+              <a href={inquiryMailto(locale, { subject: `Application Inquiry — ${application.title}`, context: a.recommendedProducts.join(", "), fields: INQUIRY_FIELDS[inquiryProfile][locale === "zh" ? "zh" : "en"] })} className="mt-5 block rounded-lg bg-[#44B549] px-5 py-3 text-center text-sm font-bold text-white hover:opacity-90">{t({ en: "Contact ETIA →", zh: "联系 ETIA →", th: "ติดต่อ ETIA →", vi: "Liên hệ ETIA →" }, locale)}</a>
               <ServiceCommitment compact />
             </div>
           </aside>
