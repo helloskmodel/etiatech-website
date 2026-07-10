@@ -1,13 +1,28 @@
 "use client";
 import Script from "next/script";
+import { useEffect, useState } from "react";
+import { getConsent, CONSENT_CHANGE_EVENT } from "@/components/consent";
 
 // Google Analytics 4. The measurement ID is read from NEXT_PUBLIC_GA_ID
 // (set it in the Vercel project env, e.g. G-XXXXXXXXXX). When unset, this
 // renders nothing — so the site works with or without analytics configured.
+//
+// Compliance: the scripts load ONLY after the visitor has accepted cookies in
+// the consent banner. Choosing "Necessary only" (or not choosing yet) keeps
+// analytics off. Accepting flips this on immediately via the consent event.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function Analytics() {
-  if (!GA_ID) return null;
+  const [accepted, setAccepted] = useState(false);
+
+  useEffect(() => {
+    const sync = () => setAccepted(getConsent() === "accepted");
+    sync();
+    window.addEventListener(CONSENT_CHANGE_EVENT, sync);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, sync);
+  }, []);
+
+  if (!GA_ID || !accepted) return null;
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
