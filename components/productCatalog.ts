@@ -1,6 +1,7 @@
 // Authoritative Excelitas UV curing product catalog.
 // Organized by technology → brand. Used by the product index and detail pages.
 import { productI18n, productAppsI18n } from "./productCatalog.zh";
+import type { LangText } from "./LocaleContext";
 
 export type Product = {
   slug: string;
@@ -1590,29 +1591,29 @@ export const productTagline: Record<string, { en: string; zh: string }> = {
 
 // Shop-style highlight tags shown on product cards (short, spec-forward,
 // language-neutral). Keyed by slug; products without an entry show none.
-export const productHighlights: Record<string, string[]> = {
+export const productHighlights: Record<string, LangText[]> = {
   // OmniCure — UV Lamp Spot
-  "s2000-elite": ["Closed-Loop Feedback", "Intelli-Lamp 2.0", "Industry 4.0 Ready"],
-  "s1500-pro": ["Intelli-Lamp 2.0", "4.3-inch Touchscreen", "StepCure 2.0"],
-  "r2000": ["Real-Time NIST Calibration", "Multi-Station Matching", "Cure-Ring Sensor"],
-  "s2e-network-module": ["Remote Monitoring", "Up to 300 Systems", "Fault Email Alerts"],
-  "s-series-light-guides": ["360° Cure-Ring", "Multi-Leg Delivery", "Optical Adapters"],
+  "s2000-elite": [{ en: "Closed-Loop Feedback", zh: "闭环反馈", th: "ฟีดแบ็กแบบวงปิด", vi: "Phản hồi vòng kín" }, { en: "Intelli-Lamp 2.0", zh: "Intelli-Lamp 2.0", th: "Intelli-Lamp 2.0", vi: "Intelli-Lamp 2.0" }, { en: "Industry 4.0 Ready", zh: "支持工业 4.0", th: "รองรับ Industry 4.0", vi: "Sẵn sàng Industry 4.0" }],
+  "s1500-pro": [{ en: "Intelli-Lamp 2.0", zh: "Intelli-Lamp 2.0", th: "Intelli-Lamp 2.0", vi: "Intelli-Lamp 2.0" }, { en: "4.3-inch Touchscreen", zh: "4.3 英寸触摸屏", th: "หน้าจอสัมผัส 4.3 นิ้ว", vi: "Màn hình cảm ứng 4.3 inch" }, { en: "StepCure 2.0", zh: "StepCure 2.0", th: "StepCure 2.0", vi: "StepCure 2.0" }],
+  "r2000": [{ en: "Real-Time NIST Calibration", zh: "NIST 实时校准", th: "การสอบเทียบ NIST แบบเรียลไทม์", vi: "Hiệu chuẩn NIST thời gian thực" }, { en: "Multi-Station Matching", zh: "多工位匹配", th: "จับคู่หลายสถานี", vi: "Đồng bộ nhiều trạm" }, { en: "Cure-Ring Sensor", zh: "Cure-Ring 传感器", th: "เซนเซอร์ Cure-Ring", vi: "Cảm biến Cure-Ring" }],
+  "s2e-network-module": [{ en: "Remote Monitoring", zh: "远程监控", th: "การมอนิเตอร์ระยะไกล", vi: "Giám sát từ xa" }, { en: "Up to 300 Systems", zh: "最多 300 台系统", th: "รองรับสูงสุด 300 ระบบ", vi: "Tối đa 300 hệ thống" }, { en: "Fault Email Alerts", zh: "故障邮件告警", th: "แจ้งเตือนข้อผิดพลาดทางอีเมล", vi: "Cảnh báo lỗi qua email" }],
+  "s-series-light-guides": [{ en: "360° Cure-Ring", zh: "360° 环形固化", th: "Cure-Ring 360°", vi: "Cure-Ring 360°" }, { en: "Multi-Leg Delivery", zh: "多分支导光", th: "การนำแสงแบบหลายสาย", vi: "Dẫn sáng đa nhánh" }, { en: "Optical Adapters", zh: "光学适配器", th: "อะแดปเตอร์ออปติก", vi: "Bộ chuyển đổi quang học" }],
   // OmniCure — UV LED Spot
-  "lx500": ["Intelli-Lamp Stability", "2 / 4-Channel", "StepCure 2.0"],
-  "v3-led-heads": ["Class-Leading Output", "Uniform Beam Profile", "Multi-Wavelength"],
-  "ls200": ["NRC-Traceable", "Cure-Site Measurement", "Selectable Wavelengths"],
+  "lx500": [{ en: "Intelli-Lamp Stability", zh: "Intelli-Lamp 稳定性", th: "ความเสถียร Intelli-Lamp", vi: "Ổn định Intelli-Lamp" }, { en: "2 / 4-Channel", zh: "2 / 4 通道", th: "2 / 4 ช่อง", vi: "2 / 4 kênh" }, { en: "StepCure 2.0", zh: "StepCure 2.0", th: "StepCure 2.0", vi: "StepCure 2.0" }],
+  "v3-led-heads": [{ en: "Class-Leading Output", zh: "领先级输出", th: "เอาต์พุตชั้นนำ", vi: "Đầu ra dẫn đầu" }, { en: "Uniform Beam Profile", zh: "均匀光束分布", th: "โปรไฟล์ลำแสงสม่ำเสมอ", vi: "Chùm tia đồng đều" }, { en: "Multi-Wavelength", zh: "多波长", th: "หลายความยาวคลื่น", vi: "Đa bước sóng" }],
+  "ls200": [{ en: "NRC-Traceable", zh: "NRC 可溯源", th: "สอบกลับได้ตาม NRC", vi: "Truy xuất theo NRC" }, { en: "Cure-Site Measurement", zh: "固化点测量", th: "การวัดที่จุดคิวริ่ง", vi: "Đo tại điểm đóng rắn" }, { en: "Selectable Wavelengths", zh: "波长可选", th: "เลือกความยาวคลื่นได้", vi: "Chọn bước sóng" }],
   // OmniCure — Air-Cooled UV LED Area
-  "ac2": ["Air-Cooled · No Chiller", "Compact Small-Area", "Uniform Output"],
-  "ac4": ["High Irradiance", "Long Working Distance", "Precise Dose Control"],
-  "ac5": ["High Irradiance", "Even, Fast Curing", "Optical Power Measurement"],
-  "ac7": ["Large-Area Uniformity", "Adjoinable Heads", "Air-Cooled · No Chiller"],
-  "ac8": ["High Irradiance", "Patented Uniformity", "Print-Optimized 'P'"],
-  "ac8-hd": ["Double the Dose", "Highest UV Energy", "Adjoinable"],
-  "ac9225": ["High-Power UV LED", "Patented Uniformity", "Scalable Width"],
-  "ac9225-f": ["Fiber-Optimized Optics", "Replaceable Window", "40,000+ h LED Life"],
+  "ac2": [{ en: "Air-Cooled · No Chiller", zh: "风冷 · 免冷水机", th: "ระบายความร้อนด้วยอากาศ · ไม่ต้องใช้ชิลเลอร์", vi: "Làm mát bằng khí · Không chiller" }, { en: "Compact Small-Area", zh: "紧凑小面积", th: "พื้นที่เล็กกะทัดรัด", vi: "Diện tích nhỏ gọn" }, { en: "Uniform Output", zh: "均匀输出", th: "เอาต์พุตสม่ำเสมอ", vi: "Đầu ra đồng đều" }],
+  "ac4": [{ en: "High Irradiance", zh: "高辐照度", th: "ความเข้มแสงสูง", vi: "Cường độ cao" }, { en: "Long Working Distance", zh: "长工作距离", th: "ระยะทำงานไกล", vi: "Khoảng cách làm việc xa" }, { en: "Precise Dose Control", zh: "精准剂量控制", th: "ควบคุมโดสแม่นยำ", vi: "Kiểm soát liều chính xác" }],
+  "ac5": [{ en: "High Irradiance", zh: "高辐照度", th: "ความเข้มแสงสูง", vi: "Cường độ cao" }, { en: "Even, Fast Curing", zh: "均匀快速固化", th: "คิวริ่งสม่ำเสมอและรวดเร็ว", vi: "Đóng rắn đều và nhanh" }, { en: "Optical Power Measurement", zh: "光功率测量", th: "การวัดกำลังแสง", vi: "Đo công suất quang" }],
+  "ac7": [{ en: "Large-Area Uniformity", zh: "大面积均匀性", th: "ความสม่ำเสมอพื้นที่กว้าง", vi: "Đồng đều diện tích lớn" }, { en: "Adjoinable Heads", zh: "可拼接机头", th: "หัวต่อขยายได้", vi: "Đầu ghép nối được" }, { en: "Air-Cooled · No Chiller", zh: "风冷 · 免冷水机", th: "ระบายความร้อนด้วยอากาศ · ไม่ต้องใช้ชิลเลอร์", vi: "Làm mát bằng khí · Không chiller" }],
+  "ac8": [{ en: "High Irradiance", zh: "高辐照度", th: "ความเข้มแสงสูง", vi: "Cường độ cao" }, { en: "Patented Uniformity", zh: "专利均匀性", th: "ความสม่ำเสมอที่จดสิทธิบัตร", vi: "Độ đồng đều được cấp bằng sáng chế" }, { en: "Print-Optimized 'P'", zh: "印刷优化「P」型", th: "รุ่น 'P' สำหรับงานพิมพ์", vi: "Bản 'P' tối ưu cho in" }],
+  "ac8-hd": [{ en: "Double the Dose", zh: "双倍剂量", th: "โดสสองเท่า", vi: "Liều gấp đôi" }, { en: "Highest UV Energy", zh: "最高紫外能量", th: "พลังงาน UV สูงสุด", vi: "Năng lượng UV cao nhất" }, { en: "Adjoinable", zh: "可拼接", th: "ต่อขยายได้", vi: "Ghép nối được" }],
+  "ac9225": [{ en: "High-Power UV LED", zh: "高功率 UV LED", th: "UV LED กำลังสูง", vi: "UV LED công suất cao" }, { en: "Patented Uniformity", zh: "专利均匀性", th: "ความสม่ำเสมอที่จดสิทธิบัตร", vi: "Độ đồng đều được cấp bằng sáng chế" }, { en: "Scalable Width", zh: "幅宽可扩展", th: "ความกว้างขยายได้", vi: "Khổ mở rộng được" }],
+  "ac9225-f": [{ en: "Fiber-Optimized Optics", zh: "光纤优化光学", th: "ออปติกที่ปรับสำหรับไฟเบอร์", vi: "Quang học tối ưu cho sợi quang" }, { en: "Replaceable Window", zh: "可更换视窗", th: "หน้าต่างเปลี่ยนได้", vi: "Cửa sổ thay thế được" }, { en: "40,000+ h LED Life", zh: "LED 寿命 40,000+ 小时", th: "อายุ LED 40,000+ ชม.", vi: "Tuổi thọ LED 40.000+ giờ" }],
   // Phoseon — Nexus II (water-cooled vs air-cooled differ on dose, width & speed)
-  "nexus-ii": ["Higher Dose · 90 W/cm", "Up to 320 m/min", "Web Width to 675 mm"],
-  "nexus-ii-ac": ["No Chiller · Air-Cooled", "70% Less Energy", "Up to 220 m/min"],
+  "nexus-ii": [{ en: "Higher Dose · 90 W/cm", zh: "更高剂量 · 90 W/cm", th: "โดสสูงขึ้น · 90 W/cm", vi: "Liều cao hơn · 90 W/cm" }, { en: "Up to 320 m/min", zh: "最高 320 m/min", th: "สูงสุด 320 ม./นาที", vi: "Tối đa 320 m/phút" }, { en: "Web Width to 675 mm", zh: "幅宽达 675 mm", th: "ความกว้างเว็บถึง 675 มม.", vi: "Khổ web đến 675 mm" }],
+  "nexus-ii-ac": [{ en: "No Chiller · Air-Cooled", zh: "免冷水机 · 风冷", th: "ไม่ต้องใช้ชิลเลอร์ · ระบายความร้อนด้วยอากาศ", vi: "Không chiller · Làm mát bằng khí" }, { en: "70% Less Energy", zh: "能耗降低 70%", th: "ประหยัดพลังงาน 70%", vi: "Giảm 70% năng lượng" }, { en: "Up to 220 m/min", zh: "最高 220 m/min", th: "สูงสุด 220 ม./นาที", vi: "Tối đa 220 m/phút" }],
 };
 
 // ───────────────────────── Product documents ─────────────────────────

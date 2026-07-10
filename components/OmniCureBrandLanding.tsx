@@ -31,6 +31,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import FinalCta from "@/components/FinalCta";
 import { getApplicationsForProduct } from "@/data/applicationsData";
+import { applicationsZh } from "@/data/applicationsData.zh";
 
 type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
 
@@ -220,9 +221,12 @@ export default function OmniCureBrandLanding() {
               const cardCategory = isLamp ? t({ en: "Replacement Lamp", zh: "替换灯管", th: "หลอดเปลี่ยน", vi: "Đèn thay thế" }, locale) : (routeCat ? t(catLabel[routeCat], locale) : product.tech);
               const highlights = isLamp ? [] : (productHighlights[product.slug] ?? []);
               const related = isLamp ? [] : getApplicationsForProduct(product.slug, 1);
+              const relatedTitle = related.length > 0
+                ? (locale !== "en" && applicationsZh[related[0].slug]?.title?.[locale as "zh" | "th" | "vi"]) || related[0].title
+                : "";
               return <Link key={product.slug} href={cardHref} className="group flex min-h-[390px] flex-col overflow-hidden rounded-2xl border border-[#E3EAF2] bg-white transition hover:-translate-y-1 hover:border-[#B9CCE2] hover:shadow-[0_16px_45px_rgba(15,36,68,.09)]">
                 <div className="relative h-48 border-b border-[#EEF2F6] bg-white p-4">{cardImg ? <Image src={cardImg} alt={cardName} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-contain p-5 transition duration-300 group-hover:scale-105" /> : <span className="absolute inset-0 flex items-center justify-center font-bold text-[#1A56DB]">OmniCure</span>}</div>
-                <div className="flex flex-1 flex-col p-5"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#1A56DB]">{cardCategory}</p><h3 className="mt-2 text-base font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{cardName}</h3>{isLamp && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Genuine spare lamp · Part No.", zh: "原厂替换灯管 · 料号", th: "หลอดอะไหล่ของแท้ · รหัสชิ้นส่วน", vi: "Đèn thay thế chính hãng · Mã số" }, locale)} {LAMP.primaryCode}</p>}{highlights.length > 0 && <div className="mt-4 flex flex-wrap gap-1.5">{highlights.slice(0, 2).map((item) => <span key={item} className="rounded-full bg-[#F3F7FF] px-2.5 py-1 text-[10px] font-semibold text-[#1A56DB]">{item}</span>)}</div>}{related.length > 0 && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Application:", zh: "应用：", th: "การใช้งาน:", vi: "Ứng dụng:" }, locale)} {related[0].title}</p>}<span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-[#1A56DB]">{isLamp ? t({ en: "Order lamp", zh: "订购灯管", th: "สั่งซื้อหลอด", vi: "Đặt đèn" }, locale) : t({ en: "View product", zh: "查看产品", th: "ดูผลิตภัณฑ์", vi: "Xem sản phẩm" }, locale)} <ArrowRight className="h-4 w-4" /></span></div>
+                <div className="flex flex-1 flex-col p-5"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#1A56DB]">{cardCategory}</p><h3 className="mt-2 text-base font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{cardName}</h3>{isLamp && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Genuine spare lamp · Part No.", zh: "原厂替换灯管 · 料号", th: "หลอดอะไหล่ของแท้ · รหัสชิ้นส่วน", vi: "Đèn thay thế chính hãng · Mã số" }, locale)} {LAMP.primaryCode}</p>}{highlights.length > 0 && <div className="mt-4 flex flex-wrap gap-1.5">{highlights.slice(0, 2).map((item) => <span key={item.en} className="rounded-full bg-[#F3F7FF] px-2.5 py-1 text-[10px] font-semibold text-[#1A56DB]">{t(item, locale)}</span>)}</div>}{related.length > 0 && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Application:", zh: "应用：", th: "การใช้งาน:", vi: "Ứng dụng:" }, locale)} {relatedTitle}</p>}<span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-[#1A56DB]">{isLamp ? t({ en: "Order lamp", zh: "订购灯管", th: "สั่งซื้อหลอด", vi: "Đặt đèn" }, locale) : t({ en: "View product", zh: "查看产品", th: "ดูผลิตภัณฑ์", vi: "Xem sản phẩm" }, locale)} <ArrowRight className="h-4 w-4" /></span></div>
               </Link>;
             })}
           </div>
