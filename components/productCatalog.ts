@@ -1757,15 +1757,15 @@ export const brandRouteSlug: Record<Product["brandId"], string> = {
 // application notes, product & brand pages) and as SEO keywords. `id` is a
 // stable slug for future faceted/tag pages.
 // ─────────────────────────────────────────────────────────────────────────
-export type TechRoute = { id: string; en: string; zh: string };
+export type TechRoute = { id: string; en: string; zh: string; th?: string; vi?: string };
 
 export const TECH_ROUTES: TechRoute[] = [
-  { id: "uv-lamp-spot-curing", en: "UV Lamp Spot Curing System", zh: "UV 灯点光源固化系统" },
-  { id: "uv-led-spot-curing", en: "UV LED Spot Curing System", zh: "UV LED 点光源固化系统" },
-  { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing System", zh: "风冷 UV LED 大面积固化系统" },
-  { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing System", zh: "风冷 UV LED 小面积固化系统" },
-  { id: "water-cooled-uv-led-large-area-curing", en: "Water-Cooled UV LED Large Area Curing System", zh: "水冷 UV LED 大面积固化系统" },
-  { id: "microwave-uv-curing", en: "Microwave UV Curing System", zh: "微波 UV Curing 紫外线固化系统" },
+  { id: "uv-lamp-spot-curing", en: "UV Lamp Spot Curing System", zh: "UV 灯点光源固化系统", th: "ระบบ UV Lamp Spot Curing", vi: "Hệ thống UV Lamp Spot Curing" },
+  { id: "uv-led-spot-curing", en: "UV LED Spot Curing System", zh: "UV LED 点光源固化系统", th: "ระบบ UV LED Spot Curing", vi: "Hệ thống UV LED Spot Curing" },
+  { id: "air-cooled-uv-led-large-area-curing", en: "Air-Cooled UV LED Large Area Curing System", zh: "风冷 UV LED 大面积固化系统", th: "ระบบ UV LED พื้นที่กว้าง ระบายความร้อนด้วยอากาศ", vi: "Hệ thống UV LED diện tích lớn làm mát bằng khí" },
+  { id: "air-cooled-uv-led-small-area-curing", en: "Air-Cooled UV LED Small Area Curing System", zh: "风冷 UV LED 小面积固化系统", th: "ระบบ UV LED พื้นที่เล็ก ระบายความร้อนด้วยอากาศ", vi: "Hệ thống UV LED diện tích nhỏ làm mát bằng khí" },
+  { id: "water-cooled-uv-led-large-area-curing", en: "Water-Cooled UV LED Large Area Curing System", zh: "水冷 UV LED 大面积固化系统", th: "ระบบ UV LED พื้นที่กว้าง ระบายความร้อนด้วยน้ำ", vi: "Hệ thống UV LED diện tích lớn làm mát bằng nước" },
+  { id: "microwave-uv-curing", en: "Microwave UV Curing System", zh: "微波 UV Curing 紫外线固化系统", th: "ระบบ Microwave UV Curing", vi: "Hệ thống Microwave UV Curing" },
 ];
 
 const TECH_BY_ID: Record<string, TechRoute> = Object.fromEntries(TECH_ROUTES.map((r) => [r.id, r]));

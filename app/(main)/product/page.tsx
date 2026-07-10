@@ -231,20 +231,20 @@ export default function ProductPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "4 World-Class Brands · 6 Technology Routes", zh: "4大世界级品牌 · 6条技术路线" }, locale)}</p>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "4 World-Class Brands · 6 Technology Routes", zh: "4大世界级品牌 · 6条技术路线", th: "4 แบรนด์ระดับโลก · 6 เส้นทางเทคโนโลยี", vi: "4 Thương hiệu đẳng cấp thế giới · 6 Lộ trình công nghệ" }, locale)}</p>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
-              {t({ en: "Precision Selection.", zh: "精准选型" }, locale)}<br />
-              <span style={{ color: "#44B549" }}>{t({ en: "Perfect Fit.", zh: "完美匹配" }, locale)}</span>
+              {t({ en: "Precision Selection.", zh: "精准选型", th: "การเลือกที่แม่นยำ", vi: "Lựa chọn chính xác." }, locale)}<br />
+              <span style={{ color: "#44B549" }}>{t({ en: "Perfect Fit.", zh: "完美匹配", th: "ลงตัวสมบูรณ์แบบ", vi: "Phù hợp hoàn hảo." }, locale)}</span>
             </h1>
             <p className="text-base text-gray-200 mb-6 leading-relaxed">
-              {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV Curing 紫外线固化方案。" }, locale)}
+              {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV Curing 紫外线固化方案。", th: "OmniCure · Phoseon · Fusion UV · NobleLight — จับคู่กับการใช้งานเฉพาะของคุณอย่างแม่นยำ โดยวิศวกรที่มีประสบการณ์ตรวจสอบภาคสนามกว่า 20 ปี", vi: "OmniCure · Phoseon · Fusion UV · NobleLight — được các kỹ sư với 20 năm kinh nghiệm kiểm chứng thực địa lựa chọn phù hợp chính xác cho ứng dụng của bạn." }, locale)}
             </p>
             <div className="flex flex-wrap gap-4">
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-                {t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}
+                {t({ en: "Talk to an Engineer →", zh: "咨询工程师 →", th: "ปรึกษาวิศวกร →", vi: "Trao đổi với kỹ sư →" }, locale)}
               </a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
-                {t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}
+                {t({ en: "Browse by Application →", zh: "按应用浏览 →", th: "เรียกดูตามการใช้งาน →", vi: "Duyệt theo ứng dụng →" }, locale)}
               </Link>
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function ProductPage() {
           {/* Brand tabs — smooth-scroll to each brand block */}
           <nav className="flex flex-wrap justify-center gap-2 mb-10">
             <button onClick={() => scrollToId("brand-top")} className="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB] transition-all">
-              {t({ en: "All", zh: "全部" }, locale)}
+              {t({ en: "All", zh: "全部", th: "ทั้งหมด", vi: "Tất cả" }, locale)}
             </button>
             {availableBrands.map((b) => (
               <button key={b.id} onClick={() => scrollToId(`brand-${b.id}`)} className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB] transition-all">
@@ -281,7 +281,7 @@ export default function ProductPage() {
                     <p className="text-xs text-gray-400">{tr(brand.tagline)}</p>
                   </div>
                   <Link href={`/product/${brand.id === "fusionuv" ? "fusion-uv" : brand.id}`} className="text-xs font-semibold whitespace-nowrap hover:underline" style={{ color: brand.color }}>
-                    {t({ en: "Brand page →", zh: "品牌主页 →" }, locale)}
+                    {t({ en: "Brand page →", zh: "品牌主页 →", th: "หน้าแบรนด์ →", vi: "Trang thương hiệu →" }, locale)}
                   </Link>
                 </div>
                 {brand.families.map((group) => (
@@ -333,12 +333,12 @@ export default function ProductPage() {
           {/* Footer note + full catalog link (moved to bottom per audit 3.6) */}
           <div className="text-center mt-14 space-y-5">
             <p className="text-sm text-gray-400">
-              {t({ en: "*Custom Engineering Solutions Available ·", zh: "*提供定制工程解决方案 ·" }, locale)}{" "}
-              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
+              {t({ en: "*Custom Engineering Solutions Available ·", zh: "*提供定制工程解决方案 ·", th: "*มีโซลูชันวิศวกรรมออกแบบเฉพาะ ·", vi: "*Có sẵn giải pháp kỹ thuật tùy chỉnh ·" }, locale)}{" "}
+              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →", th: "ปรึกษาวิศวกร →", vi: "Trao đổi với kỹ sư →" }, locale)}</a>
             </p>
             <div>
               <Link href="/product/systems" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-                {t({ en: "Browse the Full Product Catalog — All Models with Specs →", zh: "浏览完整产品目录——全部型号含规格 →" }, locale)}
+                {t({ en: "Browse the Full Product Catalog — All Models with Specs →", zh: "浏览完整产品目录——全部型号含规格 →", th: "เรียกดูแคตตาล็อกสินค้าฉบับเต็ม — ทุกรุ่นพร้อมสเปก →", vi: "Xem toàn bộ danh mục sản phẩm — Tất cả model kèm thông số →" }, locale)}
               </Link>
             </div>
           </div>
@@ -348,8 +348,8 @@ export default function ProductPage() {
       {/* Why UV Curing — light gray */}
       <section className="py-20" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "UV Curing Technology", zh: "UV Curing 紫外线固化技术" }, locale)}</p>
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Why UV Curing?", zh: "为何选择UV Curing 紫外线固化?" }, locale)}</h2>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "UV Curing Technology", zh: "UV Curing 紫外线固化技术", th: "เทคโนโลยี UV Curing", vi: "Công nghệ UV Curing" }, locale)}</p>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Why UV Curing?", zh: "为何选择UV Curing 紫外线固化?", th: "ทำไมต้อง UV Curing?", vi: "Tại sao chọn UV Curing?" }, locale)}</h2>
           <div className="w-10 h-1 rounded mb-8" style={{ background: "#44B549" }} />
           <p className="text-gray-500 max-w-2xl mb-10">
             {tr("UV curing is a photochemical process that converts liquid formulations — adhesives, coatings, inks — into fully solid materials instantly when exposed to high-intensity UV energy.")}
@@ -369,10 +369,10 @@ export default function ProductPage() {
       {/* CTA — dark */}
       <section className="py-16" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Not sure which system is right for you?", zh: "不确定哪款系统适合您?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统——从选型到验证。" }, locale)}</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t({ en: "Not sure which system is right for you?", zh: "不确定哪款系统适合您?", th: "ไม่แน่ใจว่าระบบใดเหมาะกับคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với bạn?" }, locale)}</h2>
+          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统——从选型到验证。", th: "วิศวกรของเราจะจับคู่ระบบ UV Curing ที่เหมาะสมกับการใช้งานเฉพาะของคุณ — ตั้งแต่การเลือกไปจนถึงการตรวจสอบ", vi: "Các kỹ sư của chúng tôi sẽ chọn hệ thống UV Curing phù hợp với đúng ứng dụng của bạn — từ khâu lựa chọn đến kiểm chứng." }, locale)}</p>
           <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
-            {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}
+            {t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →", th: "ติดต่อฝ่ายขายของเรา →", vi: "Liên hệ bộ phận kinh doanh →" }, locale)}
           </a>
         </div>
       </section>

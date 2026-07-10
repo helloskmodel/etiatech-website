@@ -7,7 +7,7 @@ import { inquiryMailto } from "@/components/contact";
 
 // The six canonical technology groups, plus a catch-all Accessories bucket for
 // products that don't cure (radiometers, light guides, network modules).
-const ACCESSORIES = { id: "accessories", en: "Accessories", zh: "配件" };
+const ACCESSORIES = { id: "accessories", en: "Accessories", zh: "配件", th: "อุปกรณ์เสริม", vi: "Phụ kiện" };
 const groupsInOrder = [...TECH_ROUTES, ACCESSORIES];
 const groupOf = (p: Product) => techRouteFor(p)?.id ?? ACCESSORIES.id;
 
@@ -19,9 +19,9 @@ export default function SystemsIndexView() {
       {/* Breadcrumb */}
       <div className="border-b border-gray-200 py-3 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-gray-400">
-          <Link href="/product" className="hover:text-[#1A56DB]">{t({ en: "Products", zh: "产品" }, locale)}</Link>
+          <Link href="/product" className="hover:text-[#1A56DB]">{t({ en: "Products", zh: "产品", th: "ผลิตภัณฑ์", vi: "Sản phẩm" }, locale)}</Link>
           <span className="mx-2">›</span>
-          <span style={{ color: "#1A56DB" }}>{t({ en: "All Systems", zh: "全部系统" }, locale)}</span>
+          <span style={{ color: "#1A56DB" }}>{t({ en: "All Systems", zh: "全部系统", th: "ระบบทั้งหมด", vi: "Tất cả hệ thống" }, locale)}</span>
         </div>
       </div>
 
@@ -29,10 +29,10 @@ export default function SystemsIndexView() {
       <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Complete Product Reference", zh: "完整产品索引" }, locale)}</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "All UV Curing Systems", zh: "全部UV Curing 紫外线固化系统" }, locale)}</h1>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Complete Product Reference", zh: "完整产品索引", th: "ดัชนีผลิตภัณฑ์ทั้งหมด", vi: "Danh mục sản phẩm đầy đủ" }, locale)}</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "All UV Curing Systems", zh: "全部UV Curing 紫外线固化系统", th: "ระบบ UV Curing ทั้งหมด", vi: "Tất cả hệ thống UV Curing" }, locale)}</h1>
           <p className="text-base text-gray-300 max-w-2xl mx-auto leading-relaxed line-clamp-2">
-            {t({ en: "The complete Excelitas portfolio — OmniCure, Phoseon, Fusion UV and Noblelight — organized by curing technology.", zh: "完整的Excelitas产品组合——OmniCure、Phoseon、Fusion UV 与 Noblelight——按固化技术分类。" }, locale)}
+            {t({ en: "The complete Excelitas portfolio — OmniCure, Phoseon, Fusion UV and Noblelight — organized by curing technology.", zh: "完整的Excelitas产品组合——OmniCure、Phoseon、Fusion UV 与 Noblelight——按固化技术分类。", th: "พอร์ตโฟลิโอ Excelitas ครบชุด — OmniCure, Phoseon, Fusion UV และ Noblelight — จัดกลุ่มตามเทคโนโลยีการบ่ม", vi: "Danh mục Excelitas đầy đủ — OmniCure, Phoseon, Fusion UV và Noblelight — sắp xếp theo công nghệ đóng rắn." }, locale)}
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function SystemsIndexView() {
               <div key={route.id}>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="inline-block text-xs font-bold px-3 py-1 rounded text-white" style={{ background: "#1A56DB" }}>{t(route, locale).toUpperCase()}</span>
-                  <span className="text-xs text-gray-400">{group.length} {t({ en: "systems", zh: "款系统" }, locale)}</span>
+                  <span className="text-xs text-gray-400">{group.length} {t({ en: "systems", zh: "款系统", th: "ระบบ", vi: "hệ thống" }, locale)}</span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {group.map((raw) => {
@@ -69,7 +69,7 @@ export default function SystemsIndexView() {
                       <div className="p-5 flex flex-col flex-1">
                         <h3 className="font-bold text-base leading-snug mb-2" style={{ color: "#1A56DB" }}>{p.name}</h3>
                         <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">{p.intro}</p>
-                        <span className="mt-4 text-sm font-semibold group-hover:underline" style={{ color: brandAccent[p.brandId] }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
+                        <span className="mt-4 text-sm font-semibold group-hover:underline" style={{ color: brandAccent[p.brandId] }}>{t({ en: "View details →", zh: "查看详情 →", th: "ดูรายละเอียด →", vi: "Xem chi tiết →" }, locale)}</span>
                       </div>
                     </Link>
                     );
@@ -84,9 +84,9 @@ export default function SystemsIndexView() {
       {/* CTA */}
       <section className="py-14" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">{t({ en: "Not sure which system fits your process?", zh: "不确定哪款系统适合您的工艺?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统。" }, locale)}</p>
-          <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
+          <h2 className="text-2xl font-bold text-white mb-4">{t({ en: "Not sure which system fits your process?", zh: "不确定哪款系统适合您的工艺?", th: "ไม่แน่ใจว่าระบบใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với quy trình của bạn?" }, locale)}</h2>
+          <p className="text-gray-300 mb-8">{t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统。", th: "วิศวกรของเราจะจับคู่ระบบ UV Curing ที่เหมาะสมกับการใช้งานของคุณอย่างแม่นยำ", vi: "Kỹ sư của chúng tôi sẽ chọn hệ thống UV Curing phù hợp chính xác với ứng dụng của bạn." }, locale)}</p>
+          <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →", th: "ติดต่อฝ่ายขาย →", vi: "Liên hệ bộ phận bán hàng →" }, locale)}</a>
         </div>
       </section>
     </>
