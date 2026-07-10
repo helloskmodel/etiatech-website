@@ -3,6 +3,7 @@ import { products, productHref } from "@/components/productCatalog";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
 import { getAllArticles } from "@/components/insights";
+import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
 
 const SITE = "https://www.etiatech.com";
 
@@ -38,20 +39,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/insights`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
-    // OmniCure S2000 Elite product page (main + Thai + Vietnamese), hreflang-linked.
-    ...["/product/omnicure/s2000", "/th/product/omnicure/s2000", "/vi/product/omnicure/s2000"].map((path) => ({
+    // OmniCure S2000 Elite product page (EN + ZH + TH + VI), hreflang-linked.
+    ...["/product/omnicure/s2000", "/zh/product/omnicure/s2000", "/th/product/omnicure/s2000", "/vi/product/omnicure/s2000"].map((path) => ({
       url: `${SITE}${path}`,
       changeFrequency: "monthly" as const,
       priority: 0.95,
       alternates: {
         languages: {
           en: `${SITE}/product/omnicure/s2000`,
+          "zh-CN": `${SITE}/zh/product/omnicure/s2000`,
           th: `${SITE}/th/product/omnicure/s2000`,
           vi: `${SITE}/vi/product/omnicure/s2000`,
           "x-default": `${SITE}/product/omnicure/s2000`,
         },
       },
     })),
+    // System detail pages with locale-locked versions (currently LX500),
+    // one hreflang-linked entry per language. The generic product loop below
+    // skips these because their EN URL is already in `seen`.
+    ...LOCALIZED_SYSTEM_SLUGS.flatMap((slug) =>
+      ["", "/zh", "/vi", "/th"].map((prefix) => ({
+        url: `${SITE}${prefix}/product/systems/${slug}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+        alternates: { languages: systemLanguages(slug) },
+      }))
+    ),
     // Standalone OmniCure Thailand SEM landing pages (en + th, hreflang-linked).
     {
       url: `${SITE}/omnicure-thailand`,

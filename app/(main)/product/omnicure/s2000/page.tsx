@@ -36,6 +36,14 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: SITE + PAGE_PATH,
+    // hreflang group — must be identical on all four language versions.
+    languages: {
+      en: `${SITE}/product/omnicure/s2000`,
+      "zh-CN": `${SITE}/zh/product/omnicure/s2000`,
+      vi: `${SITE}/vi/product/omnicure/s2000`,
+      th: `${SITE}/th/product/omnicure/s2000`,
+      "x-default": `${SITE}/product/omnicure/s2000`,
+    },
   },
   openGraph: {
     type: "website",
