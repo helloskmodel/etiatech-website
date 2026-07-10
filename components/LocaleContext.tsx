@@ -35,6 +35,13 @@ export function LocaleProvider({ children, initialLocale = "en" }: { children: R
     // CSS (e.g. CJK/Thai heading sizes) applies.
     const effective = initialLocale === "en" && saved ? saved : initialLocale;
     if (effective !== initialLocale) setLocaleState(effective);
+    // On a locale-locked route (/zh, /vi, /th) persist the language into the
+    // cookie, so the cookie-based (main) routes the visitor navigates to next
+    // (Applications, Insights, Contact…) render in the SAME language instead
+    // of bouncing back to English.
+    if (initialLocale !== "en" && saved !== initialLocale) {
+      document.cookie = `${COOKIE}=${initialLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
+    }
     document.documentElement.lang = effective === "zh" ? "zh-CN" : effective;
   }, [initialLocale]);
 
