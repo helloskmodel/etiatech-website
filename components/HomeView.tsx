@@ -18,6 +18,7 @@ import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { productImage, products } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
+import NewsTicker from "@/components/NewsTicker";
 
 const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
   { title: { en: "20 Years of Application Experience", zh: "20 年应用经验", th: "ประสบการณ์ด้านการใช้งาน 20 ปี", vi: "20 năm kinh nghiệm ứng dụng" }, body: { en: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", zh: "覆盖医疗、电子、光子、汽车及工业制造场景，提供贴近现场的紫外线固化经验。", th: "เรามีความรู้ด้าน UV curing จากประสบการณ์จริง ครอบคลุมงานผลิตในอุตสาหกรรมการแพทย์ อิเล็กทรอนิกส์ โฟโตนิกส์ ยานยนต์ และอุตสาหกรรมการผลิตทั่วไป", vi: "Chúng tôi có kiến thức thực tiễn về UV curing trong các lĩnh vực sản xuất thiết bị y tế, điện tử, quang tử, ô tô và sản xuất công nghiệp." }, icon: GraduationCap },
@@ -61,6 +62,7 @@ export default function HomeView() {
   const scrollCases = (dir: number) => caseScrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
 
   return <div className="bg-white text-[#102038]">
+    <NewsTicker />
     <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
       <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
       <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
