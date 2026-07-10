@@ -135,7 +135,7 @@ export default function ContactPage() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-xs text-gray-400">{t({ en: "* Contact us by email for the fastest response — our team typically replies within one business day.", zh: "* 通过邮件联系我们可获得最快响应——我们的团队通常在1个工作日内回复。", th: "* ติดต่อเราทางอีเมลเพื่อการตอบกลับที่รวดเร็วที่สุด — ทีมงานของเรามักตอบกลับภายในหนึ่งวันทำการ", vi: "* Liên hệ qua email để được phản hồi nhanh nhất — đội ngũ của chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
+          <p className="mt-6 text-xs text-gray-400">{t({ en: "* Contact us by email for the fastest response — our team typically replies within one business day.", zh: "* 通过邮件联系我们可获得快速响应——我们的团队通常在1个工作日内回复。", th: "* ติดต่อเราทางอีเมลเพื่อการตอบกลับที่รวดเร็ว — ทีมงานของเรามักตอบกลับภายในหนึ่งวันทำการ", vi: "* Liên hệ qua email để được phản hồi nhanh chóng — đội ngũ của chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
         </div>
       </section>
 

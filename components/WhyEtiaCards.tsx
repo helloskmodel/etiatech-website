@@ -17,8 +17,8 @@ export const whyEtia: { Icon: typeof FlaskConical; title: LangText; desc: LangTe
     Icon: Package,
     title: { en: "Local Supply & Fast Delivery", zh: "本地备货 · 快速交付" },
     desc: {
-      en: "Equipment and consumables in local stock. No long lead times, no import surprises — the system you need, when you need it.",
-      zh: "设备与耗材本地备货。无漫长货期、无进口意外——你需要的系统，随需即得。",
+      en: "Selected equipment and consumables are available from local stock to help reduce lead-time uncertainty and simplify procurement.",
+      zh: "部分设备与耗材可本地备货，有助于降低交期不确定性、简化采购。",
     },
   },
   {

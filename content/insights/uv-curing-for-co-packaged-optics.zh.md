@@ -1,6 +1,6 @@
 ---
 title: "面向协同封装光学（CPO）的 UV 光固化：2026 制造指南"
-description: "协同封装光学要求商用光子学中最严苛的光纤粘接公差。本文解析在 CPO 市场迈向 2030 年 81 亿美元规模的进程中，UV 光固化如何将对准精度控制在亚 100 纳米以内。"
+description: "协同封装光学要求商用光子学中最严苛的光纤粘接公差。本文解析在 CPO 市场快速增长的进程中，UV 光固化如何将对准精度控制在亚 100 纳米以内。"
 date: 2026-07-01
 tags: [光子学, 协同封装光学, UV光固化, AI数据中心]
 author: ETIA Technology
@@ -31,7 +31,7 @@ cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20st
 
 ## 市场背景
 
-CPO 市场 2024 年规模约为 **4600 万美元**，预计到 2030 年将达到 **81 亿美元**——复合年增长率 137%——随行业从可插拔向 CPO、从铜走线向光学转型而增长。在 GTC 2025 上，NVIDIA 发布了使用 CPO 以每端口 1.6 Tbps 连接 GPU 的硅光子交换机平台，Broadcom、Cisco、Intel 和 Marvell 也在推进各自的平行架构。所有这些封装都依赖精密的 UV 光固化光纤粘接。
+CPO 市场是商用光子学中增长最快的细分领域之一，随行业从可插拔向 CPO、从铜走线向光学转型而快速增长。在 GTC 2025 上，NVIDIA 发布了使用 CPO 以每端口 1.6 Tbps 连接 GPU 的硅光子交换机平台，Broadcom、Cisco、Intel 和 Marvell 也在推进各自的平行架构。所有这些封装都依赖精密的 UV 光固化光纤粘接。
 
 ## 延伸阅读
 

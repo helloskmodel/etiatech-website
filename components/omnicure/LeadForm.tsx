@@ -109,6 +109,7 @@ export default function LeadForm({
       >
         {status === "sending" ? "…" : c.submit}
       </button>
+      <p className="mt-3 text-[11px] leading-4 text-gray-400">{c.consent}</p>
       <ServiceCommitment compact />
     </form>
   );
