@@ -186,9 +186,11 @@ export default function OmniCureBrandLanding() {
             {routes.map((route) => {
               const Icon = route.icon;
               return <button key={route.id} onClick={() => chooseRoute(route.id)} className="group flex flex-col rounded-2xl border border-[#E3EAF2] bg-white p-5 text-left transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(15,36,68,.09)]" style={{ borderTopColor: route.color, borderTopWidth: 4 }}>
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ color: route.color, background: route.soft }}><Icon className="h-5 w-5" strokeWidth={1.8} /></span>
-                <p className="mt-4 text-[11px] font-bold uppercase tracking-[.1em]" style={{ color: route.color }}>{t(route.eyebrow, locale)}</p>
-                <h3 className="mt-1.5 text-base font-bold leading-snug text-[#102A43]">{t(route.title, locale)}</h3>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl" style={{ color: route.color, background: route.soft }}><Icon className="h-7 w-7" strokeWidth={1.8} /></span>
+                  <p className="text-[11px] font-bold uppercase tracking-[.1em]" style={{ color: route.color }}>{t(route.eyebrow, locale)}</p>
+                </div>
+                <h3 className="mt-4 text-base font-bold leading-snug text-[#102A43]">{t(route.title, locale)}</h3>
                 <p className="mt-2 flex-1 text-xs leading-5 text-[#5F6C7B]">{t(route.body, locale)}</p>
                 {route.featured && <p className="mt-3 text-[11px] text-[#7B8794]">{t({ en: "Featured:", zh: "推荐型号：", th: "แนะนำ:", vi: "Nổi bật:" }, locale)} <span className="font-semibold text-[#102A43]">OmniCure {route.featured}</span></p>}
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold" style={{ color: route.color }}>{t({ en: "View matching products", zh: "查看匹配产品", th: "ดูผลิตภัณฑ์ที่ตรงกัน", vi: "Xem sản phẩm phù hợp" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
@@ -258,40 +260,36 @@ export default function OmniCureBrandLanding() {
                 <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Why OmniCure", zh: "为什么选择 OmniCure", th: "ทำไมต้อง OmniCure", vi: "Vì sao chọn OmniCure" }, locale)}</p>
                 <h2 className="mt-3 text-lg font-bold leading-snug text-[#1A56DB] md:text-xl">{t({ en: "OmniCure UV Curing Systems for Precision Manufacturing", zh: "面向精密制造的 OmniCure 紫外线固化系统", th: "ระบบ UV Curing จาก OmniCure สำหรับการผลิตที่แม่นยำ", vi: "Hệ thống UV Curing OmniCure cho sản xuất chính xác" }, locale)}</h2>
                 <p className="mt-4 max-w-xl text-3xl font-bold leading-[1.12] tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Trusted Since 1984. Built for Precision, Control and Production Reliability.", zh: "始于 1984，值得信赖。为精准、可控与量产可靠而生。", th: "ได้รับความไว้วางใจตั้งแต่ปี 1984 สร้างมาเพื่อความแม่นยำ การควบคุม และความน่าเชื่อถือในการผลิต", vi: "Được tin dùng từ năm 1984. Xây dựng cho độ chính xác, khả năng kiểm soát và độ tin cậy sản xuất." }, locale)}</p>
-                <p className="mt-6 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "OmniCure UV curing systems help manufacturers achieve stable, repeatable and efficient curing across UV spot curing and air-cooled UV LED curing applications.", zh: "OmniCure 紫外线固化系统帮助制造商在 UV 点固化与风冷 UV LED 固化应用中实现稳定、可复现且高效的固化。", th: "ระบบ UV Curing จาก OmniCure ช่วยให้ผู้ผลิตได้การคิวริ่งที่เสถียร ทำซ้ำได้ และมีประสิทธิภาพ ทั้งงาน UV spot curing และ air-cooled UV LED curing", vi: "Hệ thống UV Curing OmniCure giúp nhà sản xuất đạt được quá trình đóng rắn ổn định, lặp lại và hiệu quả trên các ứng dụng UV spot curing và UV LED làm mát bằng khí." }, locale)}</p>
-                <p className="mt-4 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "From adhesives, coatings and inks to medical devices, electronics and optoelectronics, OmniCure supports production processes where UV output, curing consistency and long-term reliability matter.", zh: "从胶粘剂、涂层与油墨到医疗器械、电子与光电子，OmniCure 支撑着对紫外输出、固化一致性与长期可靠性有要求的生产工艺。", th: "ตั้งแต่กาว สารเคลือบ และหมึก ไปจนถึงอุปกรณ์การแพทย์ อิเล็กทรอนิกส์ และออปโตอิเล็กทรอนิกส์ OmniCure รองรับกระบวนการผลิตที่ให้ความสำคัญกับเอาต์พุต UV ความสม่ำเสมอของการคิวริ่ง และความน่าเชื่อถือระยะยาว", vi: "Từ keo dán, lớp phủ và mực in đến thiết bị y tế, điện tử và quang điện tử, OmniCure hỗ trợ các quy trình sản xuất nơi đầu ra UV, độ đồng nhất khi đóng rắn và độ tin cậy lâu dài là yếu tố quan trọng." }, locale)}</p>
+                <p className="mt-6 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "OmniCure delivers stable, repeatable and efficient curing across UV spot curing and air-cooled UV LED — from adhesives, coatings and inks to medical devices, electronics and optoelectronics.", zh: "OmniCure 在 UV 点固化与风冷 UV LED 应用中实现稳定、可复现且高效的固化——从胶粘剂、涂层与油墨到医疗器械、电子与光电子。", th: "OmniCure ให้การคิวริ่งที่เสถียร ทำซ้ำได้ และมีประสิทธิภาพ ทั้ง UV spot curing และ air-cooled UV LED ตั้งแต่กาว สารเคลือบ และหมึก ไปจนถึงอุปกรณ์การแพทย์ อิเล็กทรอนิกส์ และออปโตอิเล็กทรอนิกส์", vi: "OmniCure mang lại quá trình đóng rắn ổn định, lặp lại và hiệu quả trên UV spot curing và UV LED làm mát bằng khí — từ keo, lớp phủ và mực in đến thiết bị y tế, điện tử và quang điện tử." }, locale)}</p>
               </div>
 
               {/* Right — UV curing system diagram */}
               <div className="relative rounded-3xl border border-white bg-white p-6 shadow-[0_20px_55px_rgba(15,36,68,.08)] sm:p-8">
-                <svg viewBox="0 0 400 300" className="h-auto w-full" role="img" aria-label="UV curing system diagram">
+                <svg viewBox="0 0 420 300" className="h-auto w-full" role="img" aria-label="OmniCure UV curing technology branches">
                   <defs>
-                    <linearGradient id="uvcone" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#1A56DB" stopOpacity="0.28" />
-                      <stop offset="100%" stopColor="#1A56DB" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient id="uvhead" x1="0" y1="0" x2="1" y2="0">
+                    <linearGradient id="wroot" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stopColor="#143C96" />
                       <stop offset="100%" stopColor="#1F63D6" />
                     </linearGradient>
                   </defs>
-                  {/* UV emitter head */}
-                  <rect x="120" y="34" width="160" height="34" rx="10" fill="url(#uvhead)" />
-                  <text x="200" y="56" textAnchor="middle" fontSize="14" fontWeight="700" fill="#ffffff" fontFamily="sans-serif">UV</text>
-                  {[140, 165, 190, 215, 240, 265].map((cx) => (
-                    <circle key={cx} cx={cx} cy="76" r="4" fill="#8BD3FF" />
-                  ))}
-                  {/* UV output cone */}
-                  <polygon points="130,80 270,80 300,214 100,214" fill="url(#uvcone)" />
-                  {[150, 200, 250].map((x) => (
-                    <line key={x} x1={x} y1="86" x2={x + (x - 200) * 0.28} y2="206" stroke="#1F63D6" strokeWidth="1.5" strokeDasharray="4 5" opacity="0.55" />
-                  ))}
-                  {/* Substrate / conveyor */}
-                  <rect x="70" y="216" width="260" height="16" rx="4" fill="#E3EAF2" />
-                  {/* Cured zone on substrate */}
-                  <rect x="150" y="212" width="100" height="8" rx="4" fill="#41A62A" />
-                  <text x="200" y="256" textAnchor="middle" fontSize="11" fontWeight="700" fill="#41A62A" fontFamily="sans-serif">CURED</text>
-                  <text x="200" y="284" textAnchor="middle" fontSize="10" fill="#7B8794" fontFamily="sans-serif">365 – 405 nm</text>
+                  {/* Branch connectors */}
+                  <path d="M138 150 C 196 150, 196 72, 250 72" fill="none" stroke="#1A56DB" strokeWidth="2.5" opacity="0.5" />
+                  <path d="M138 150 C 196 150, 196 228, 250 228" fill="none" stroke="#41A62A" strokeWidth="2.5" opacity="0.5" />
+                  <circle cx="138" cy="150" r="4.5" fill="#143C96" />
+                  <circle cx="250" cy="72" r="4.5" fill="#1A56DB" />
+                  <circle cx="250" cy="228" r="4.5" fill="#41A62A" />
+                  {/* Root node */}
+                  <rect x="16" y="118" width="122" height="64" rx="14" fill="url(#wroot)" />
+                  <text x="77" y="146" textAnchor="middle" fontSize="16" fontWeight="700" fill="#ffffff" fontFamily="sans-serif">OmniCure</text>
+                  <text x="77" y="165" textAnchor="middle" fontSize="10" fill="#BBD3FF" fontFamily="sans-serif">UV Curing</text>
+                  {/* Branch A — spot */}
+                  <rect x="250" y="44" width="156" height="56" rx="12" fill="#ffffff" stroke="#1A56DB" strokeWidth="1.5" />
+                  <text x="328" y="70" textAnchor="middle" fontSize="13" fontWeight="700" fill="#1A56DB" fontFamily="sans-serif">UV Spot Curing</text>
+                  <text x="328" y="87" textAnchor="middle" fontSize="10" fill="#7B8794" fontFamily="sans-serif">Spot / Lamp</text>
+                  {/* Branch B — air-cooled LED */}
+                  <rect x="250" y="200" width="156" height="56" rx="12" fill="#ffffff" stroke="#41A62A" strokeWidth="1.5" />
+                  <text x="328" y="226" textAnchor="middle" fontSize="13" fontWeight="700" fill="#087F6B" fontFamily="sans-serif">Air-Cooled UV LED</text>
+                  <text x="328" y="243" textAnchor="middle" fontSize="10" fill="#7B8794" fontFamily="sans-serif">Small &amp; Large Area</text>
                 </svg>
               </div>
             </div>
