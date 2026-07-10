@@ -322,10 +322,10 @@ export default function ProductPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "4 World-Class Brands · 6 Technology Routes", zh: "4大世界级品牌 · 6条技术路线", th: "4 แบรนด์ระดับโลก · 6 เส้นทางเทคโนโลยี", vi: "4 Thương hiệu đẳng cấp thế giới · 6 Lộ trình công nghệ" }, locale)}</p>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "4 World-Class Brands · 6 Technology Routes", zh: "4大国际知名品牌 · 6条技术路线", th: "4 แบรนด์ระดับโลก · 6 เส้นทางเทคโนโลยี", vi: "4 Thương hiệu đẳng cấp thế giới · 6 Lộ trình công nghệ" }, locale)}</p>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
               {t({ en: "Precision Selection.", zh: "精准选型", th: "การเลือกที่แม่นยำ", vi: "Lựa chọn chính xác." }, locale)}<br />
-              <span style={{ color: "#44B549" }}>{t({ en: "Perfect Fit.", zh: "完美匹配", th: "ลงตัวสมบูรณ์แบบ", vi: "Phù hợp hoàn hảo." }, locale)}</span>
+              <span style={{ color: "#44B549" }}>{t({ en: "Perfect Fit.", zh: "精准匹配", th: "ลงตัวสมบูรณ์แบบ", vi: "Phù hợp hoàn hảo." }, locale)}</span>
             </h1>
             <p className="text-base text-gray-200 mb-6 leading-relaxed">
               {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV Curing 紫外线固化方案。", th: "OmniCure · Phoseon · Fusion UV · NobleLight — จับคู่กับการใช้งานเฉพาะของคุณอย่างแม่นยำ โดยวิศวกรที่มีประสบการณ์ตรวจสอบภาคสนามกว่า 20 ปี", vi: "OmniCure · Phoseon · Fusion UV · NobleLight — được các kỹ sư với 20 năm kinh nghiệm kiểm chứng thực địa lựa chọn phù hợp chính xác cho ứng dụng của bạn." }, locale)}
