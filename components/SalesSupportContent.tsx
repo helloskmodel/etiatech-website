@@ -6,11 +6,14 @@ import { useLocale, t, type Locale, type LangText } from "@/components/LocaleCon
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
 
 // ETIA Service Commitment poster — one per language, shown on the right.
+// ?v bump forces Next's image optimizer to refetch after the artwork is
+// re-exported at the same COS filename (COS serves no Cache-Control header).
+const POSTER_V = "2";
 const COMMITMENT_POSTER: Record<Locale, string> = {
-  en: `${IMG}/ETIA%20SERVICE-EN.png`,
-  zh: `${IMG}/ETIA%20SERVICE-CN.png`,
-  th: `${IMG}/ETIA%20SERVICE-TH.png`,
-  vi: `${IMG}/ETIA%20SERVICE-VN.png`,
+  en: `${IMG}/ETIA%20SERVICE-EN.png?v=${POSTER_V}`,
+  zh: `${IMG}/ETIA%20SERVICE-CN.png?v=${POSTER_V}`,
+  th: `${IMG}/ETIA%20SERVICE-TH.png?v=${POSTER_V}`,
+  vi: `${IMG}/ETIA%20SERVICE-VN.png?v=${POSTER_V}`,
 };
 
 const lifecycle: Array<{ icon: typeof ClipboardCheck; phase: LangText; title: LangText; lead: LangText; pills: LangText[]; cta: LangText; href: string; accent: string }> = [
