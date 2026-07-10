@@ -1582,11 +1582,11 @@ export function popularityRank(slug: string): number {
 
 // Eye-catching product tagline (from the official datasheets) shown under the
 // H1 on the product detail hero. Bilingual; keyed by slug.
-export const productTagline: Record<string, { en: string; zh: string }> = {
-  "s2000-elite": { en: "The Most Reliable, Highest-Quality Lamp Spot Curing", zh: "最可靠、最高品质的灯式点固化" },
-  "s1500-pro": { en: "High-Throughput UV Curing for Micro- & Opto-Electronics", zh: "迈向紫外线固化的未来" },
-  "lx500": { en: "Ultra-Compact UV LED Spot Curing — Consistent, Repeatable Results", zh: "超紧凑 UV LED 点固化——一致、可重复的固化效果" },
-  "ac9225": { en: "High-Power UV LED Curing for Adhesives, Coatings & Inks", zh: "面向胶粘剂、涂层与油墨的高功率 UV LED 固化" },
+export const productTagline: Record<string, { en: string; zh: string; vi?: string; th?: string }> = {
+  "s2000-elite": { en: "The Most Reliable, Highest-Quality Lamp Spot Curing", zh: "最可靠、最高品质的灯式点固化", vi: "Lamp Spot Curing đáng tin cậy nhất, chất lượng cao nhất", th: "Lamp Spot Curing ที่เชื่อถือได้ที่สุดและคุณภาพสูงสุด" },
+  "s1500-pro": { en: "High-Throughput UV Curing for Micro- & Opto-Electronics", zh: "迈向紫外线固化的未来", vi: "UV Curing năng suất cao cho vi điện tử & quang điện tử", th: "UV Curing กำลังผลิตสูงสำหรับไมโครและออปโตอิเล็กทรอนิกส์" },
+  "lx500": { en: "Ultra-Compact UV LED Spot Curing — Consistent, Repeatable Results", zh: "超紧凑 UV LED 点固化——一致、可重复的固化效果", vi: "UV LED Spot Curing siêu nhỏ gọn — kết quả nhất quán, lặp lại được", th: "UV LED Spot Curing ขนาดกะทัดรัดพิเศษ — ผลลัพธ์สม่ำเสมอ ทำซ้ำได้" },
+  "ac9225": { en: "High-Power UV LED Curing for Adhesives, Coatings & Inks", zh: "面向胶粘剂、涂层与油墨的高功率 UV LED 固化", vi: "UV LED Curing công suất cao cho keo dán, lớp phủ & mực in", th: "UV LED Curing กำลังสูงสำหรับกาว สารเคลือบ และหมึกพิมพ์" },
 };
 
 // Shop-style highlight tags shown on product cards (short, spec-forward,
@@ -1850,13 +1850,13 @@ export function productBreadcrumbJsonLd(p: Product) {
 // text. Spec tables are intentionally left as-is (values are language-neutral).
 export function localizeProduct(p: Product, locale: "en" | "zh" | "vi" | "th"): Product {
   if (locale === "en") return p;
-  const pick = (l?: { zh: string[]; vi: string[] }) =>
-    l ? (locale === "zh" ? l.zh : locale === "vi" ? l.vi : null) : null;
+  const pick = (l?: { zh: string[]; vi: string[]; th?: string[] }) =>
+    l ? (locale === "zh" ? l.zh : locale === "vi" ? l.vi : locale === "th" ? (l.th ?? null) : null) : null;
   // Applications live in a parallel map so intro/feature entries stay untouched.
   const applications = pick(productAppsI18n[p.slug]) || p.applications;
   const o = productI18n[p.slug];
   if (!o) return { ...p, applications };
-  const intro = o.intro ? (locale === "zh" ? o.intro.zh : locale === "vi" ? o.intro.vi : "") || p.intro : p.intro;
+  const intro = o.intro ? (locale === "zh" ? o.intro.zh : locale === "vi" ? o.intro.vi : locale === "th" ? (o.intro.th ?? "") : "") || p.intro : p.intro;
   const features = pick(o.features) || p.features;
   return { ...p, intro, features, applications };
 }
