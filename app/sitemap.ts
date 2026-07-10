@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
+import { getAllArticles } from "@/components/insights";
 
 const SITE = "https://www.etiatech.com";
 
@@ -29,6 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/applications`, changeFrequency: "weekly", priority: 0.9 },
+    // Application notes overview (10 industries · 62 notes) and full indexes.
+    { url: `${SITE}/application`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE}/product`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE}/product/systems`, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${SITE}/case-studies`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE}/insights`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
     // OmniCure S2000 Elite product page (main + Thai + Vietnamese), hreflang-linked.
     ...["/product/omnicure/s2000", "/th/product/omnicure/s2000", "/vi/product/omnicure/s2000"].map((path) => ({
@@ -96,5 +104,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...core, ...productPages, ...applicationCasePages, ...casePages];
+  // NOTE: the 62 application-note detail pages (/application/[slug]) are
+  // intentionally NOT listed yet — their content is still being reviewed and
+  // will be added to the sitemap gradually as each note is verified.
+
+  // Published insights articles (English required per slug).
+  const insightPages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({
+    url: `${SITE}/insights/${a.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...core, ...productPages, ...applicationCasePages, ...insightPages, ...casePages];
 }
