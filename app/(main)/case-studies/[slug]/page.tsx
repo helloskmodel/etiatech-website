@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CaseStudyCnView from "@/components/CaseStudyCnView";
 import { caseStudiesCn, getCaseCnBySlug } from "@/data/caseStudiesCn";
+import { languageAlternates } from "@/components/localePageSeo";
 
 const SITE = "https://www.etiatech.com";
 
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${seoTitle} | ETIA`,
     description: seoDesc,
     keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: languageAlternates(`/case-studies/${slug}`) },
     openGraph: { title: seoTitle, description: seoDesc, url, type: "article", images: cn.image ? [cn.image] : undefined },
   };
 }

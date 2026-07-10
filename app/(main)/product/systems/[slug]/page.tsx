@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products, getProduct, brandAccent, productJsonLd, productBreadcrumbJsonLd } from "@/components/productCatalog";
 import ProductDetailView from "@/components/ProductDetailView";
+import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
 
 export function generateStaticParams() {
   // Skip products that have a dedicated rich page (href override).
@@ -15,7 +16,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${p.name} — ETIA Technology`,
     description: p.intro.slice(0, 160),
-    alternates: { canonical: `https://www.etiatech.com/product/systems/${p.slug}` },
+    alternates: {
+      canonical: `https://www.etiatech.com/product/systems/${p.slug}`,
+      // Products with locale-locked pages (/zh|/vi|/th/...) link the group here.
+      ...(LOCALIZED_SYSTEM_SLUGS.includes(p.slug) ? { languages: systemLanguages(p.slug) } : {}),
+    },
   };
 }
 

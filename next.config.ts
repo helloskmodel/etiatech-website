@@ -23,6 +23,15 @@ const nextConfig: NextConfig = {
       { source: "/th/zh/:path*", destination: "/", permanent: true },
       // NOTE: no `/th → /` rule — /th is the live Thai SEO home; redirecting it
       // would shadow that page (and put a redirect in the sitemap).
+      // Country-code aliases people type or link by hand: the real locale
+      // routes use ISO 639-1 language codes (/zh, /vi), so alias the common
+      // country-code spellings to them instead of 404ing.
+      { source: "/cn", destination: "/zh", permanent: true },
+      { source: "/cn/:path*", destination: "/zh/:path*", permanent: true },
+      { source: "/ch", destination: "/zh", permanent: true },
+      { source: "/ch/:path*", destination: "/zh/:path*", permanent: true },
+      { source: "/vn", destination: "/vi", permanent: true },
+      { source: "/vn/:path*", destination: "/vi/:path*", permanent: true },
       { source: "/en/contact", destination: "/contact", permanent: true },
       { source: "/en/applications", destination: "/applications", permanent: true },
       { source: "/application", destination: "/applications", permanent: true },

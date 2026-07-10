@@ -1,28 +1,19 @@
 "use client";
 import Image from "next/image";
-import { BRAND, CONTACT, type Lang } from "./copy";
+import { BRAND, CONTACT } from "./copy";
 import { track } from "./track";
 import LeadForm from "./LeadForm";
-import { LAMP, getLampContent } from "./s2000Lamp";
+import { LAMP, LAMP_UI, getLampContent, type LampLang } from "./s2000Lamp";
+import { localeSalesEmail } from "@/components/contact";
 
-export default function S2000LampLanding({ lang }: { lang: Lang }) {
+export default function S2000LampLanding({ lang }: { lang: LampLang }) {
   const page = `s2000-lamp-${lang}`;
-  const th = lang === "th";
   const c = getLampContent(lang);
-  const L = {
-    eyebrow: "OmniCure · Replacement Lamp",
-    request: th ? "ขอราคา / สั่งซื้อหลอด" : "Request a Quote / Re-order",
-    overview: th ? "ข้อมูลผลิตภัณฑ์" : "Overview",
-    features: th ? "คุณสมบัติ" : "Features",
-    benefits: th ? "ประโยชน์" : "Benefits",
-    which: th ? "เลือกหลอดรุ่นไหน?" : "Which lamp do I need?",
-    parts: th ? "หมายเลขชิ้นส่วน (Part Numbers)" : "Part Numbers",
-    partsHint: th ? "ค้นหาด้วยหมายเลขชิ้นส่วนได้เลย — สั่งหลอดที่ตรงรุ่น" : "Search by part number — order the exact lamp you need.",
-    alsoSearched: th ? "ค้นหาด้วยรหัสอื่นได้: " : "Also searched as: ",
-    faq: th ? "คำถามที่พบบ่อย" : "Frequently asked questions",
-    closing: th ? "ต้องเปลี่ยนหลอด S2000? ขอราคาวันนี้" : "Need a replacement S2000 lamp? Get pricing today.",
-    askPrice: th ? "สอบถามราคา →" : "Ask price →",
-  };
+  const L = LAMP_UI[lang];
+  // EN/TH are the Thailand SEM pair (Bangkok office); ZH/VI route to the
+  // country-specific sales inbox and drop the Thailand address line.
+  const thailandContact = lang === "en" || lang === "th";
+  const email = thailandContact ? CONTACT.email : localeSalesEmail(lang);
 
   return (
     <div>
@@ -117,7 +108,7 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
                   <h3 className="text-lg font-bold text-gray-900">{t.name}</h3>
                   <span className="text-xs font-mono font-semibold px-2 py-1 rounded whitespace-nowrap" style={{ background: "#1A3DAD10", color: BRAND.blue }}>{t.pn}</span>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{th ? t.descTh : t.descEn}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{t.desc[lang]}</p>
               </div>
             ))}
           </div>
@@ -153,7 +144,7 @@ export default function S2000LampLanding({ lang }: { lang: Lang }) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{L.closing}</h2>
-            <p className="text-sm text-white/80">✉ {CONTACT.email} · 📍 Bangkok, Thailand</p>
+            <p className="text-sm text-white/80">✉ {email}{thailandContact && " · 📍 Bangkok, Thailand"}</p>
           </div>
           <div id="quote" className="scroll-mt-24">
             <LeadForm lang={lang} page={`${page}-closing`} compact showModel={false} />
