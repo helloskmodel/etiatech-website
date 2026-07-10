@@ -249,6 +249,74 @@ export default function OmniCureBrandLanding() {
       </section>
 
 
+      {/* Why OmniCure — SEO-structured premium block */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="overflow-hidden rounded-[32px] border border-[#DCE9EE] bg-gradient-to-br from-[#F3F7FF] to-[#F2FBF8]">
+            <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Why OmniCure", zh: "为什么选择 OmniCure", th: "ทำไมต้อง OmniCure", vi: "Vì sao chọn OmniCure" }, locale)}</p>
+                <h2 className="mt-3 text-lg font-bold leading-snug text-[#1A56DB] md:text-xl">{t({ en: "OmniCure UV Curing Systems for Precision Manufacturing", zh: "面向精密制造的 OmniCure 紫外线固化系统", th: "ระบบ UV Curing จาก OmniCure สำหรับการผลิตที่แม่นยำ", vi: "Hệ thống UV Curing OmniCure cho sản xuất chính xác" }, locale)}</h2>
+                <p className="mt-4 max-w-xl text-3xl font-bold leading-[1.12] tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Trusted Since 1984. Built for Precision, Control and Production Reliability.", zh: "始于 1984，值得信赖。为精准、可控与量产可靠而生。", th: "ได้รับความไว้วางใจตั้งแต่ปี 1984 สร้างมาเพื่อความแม่นยำ การควบคุม และความน่าเชื่อถือในการผลิต", vi: "Được tin dùng từ năm 1984. Xây dựng cho độ chính xác, khả năng kiểm soát và độ tin cậy sản xuất." }, locale)}</p>
+                <p className="mt-6 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "OmniCure UV curing systems help manufacturers achieve stable, repeatable and efficient curing across UV spot curing and air-cooled UV LED curing applications.", zh: "OmniCure 紫外线固化系统帮助制造商在 UV 点固化与风冷 UV LED 固化应用中实现稳定、可复现且高效的固化。", th: "ระบบ UV Curing จาก OmniCure ช่วยให้ผู้ผลิตได้การคิวริ่งที่เสถียร ทำซ้ำได้ และมีประสิทธิภาพ ทั้งงาน UV spot curing และ air-cooled UV LED curing", vi: "Hệ thống UV Curing OmniCure giúp nhà sản xuất đạt được quá trình đóng rắn ổn định, lặp lại và hiệu quả trên các ứng dụng UV spot curing và UV LED làm mát bằng khí." }, locale)}</p>
+                <p className="mt-4 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "From adhesives, coatings and inks to medical devices, electronics and optoelectronics, OmniCure supports production processes where UV output, curing consistency and long-term reliability matter.", zh: "从胶粘剂、涂层与油墨到医疗器械、电子与光电子，OmniCure 支撑着对紫外输出、固化一致性与长期可靠性有要求的生产工艺。", th: "ตั้งแต่กาว สารเคลือบ และหมึก ไปจนถึงอุปกรณ์การแพทย์ อิเล็กทรอนิกส์ และออปโตอิเล็กทรอนิกส์ OmniCure รองรับกระบวนการผลิตที่ให้ความสำคัญกับเอาต์พุต UV ความสม่ำเสมอของการคิวริ่ง และความน่าเชื่อถือระยะยาว", vi: "Từ keo dán, lớp phủ và mực in đến thiết bị y tế, điện tử và quang điện tử, OmniCure hỗ trợ các quy trình sản xuất nơi đầu ra UV, độ đồng nhất khi đóng rắn và độ tin cậy lâu dài là yếu tố quan trọng." }, locale)}</p>
+              </div>
+
+              {/* Right — UV curing system diagram */}
+              <div className="relative rounded-3xl border border-white bg-white p-6 shadow-[0_20px_55px_rgba(15,36,68,.08)] sm:p-8">
+                <svg viewBox="0 0 400 300" className="h-auto w-full" role="img" aria-label="UV curing system diagram">
+                  <defs>
+                    <linearGradient id="uvcone" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#1A56DB" stopOpacity="0.28" />
+                      <stop offset="100%" stopColor="#1A56DB" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="uvhead" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#143C96" />
+                      <stop offset="100%" stopColor="#1F63D6" />
+                    </linearGradient>
+                  </defs>
+                  {/* UV emitter head */}
+                  <rect x="120" y="34" width="160" height="34" rx="10" fill="url(#uvhead)" />
+                  <text x="200" y="56" textAnchor="middle" fontSize="14" fontWeight="700" fill="#ffffff" fontFamily="sans-serif">UV</text>
+                  {[140, 165, 190, 215, 240, 265].map((cx) => (
+                    <circle key={cx} cx={cx} cy="76" r="4" fill="#8BD3FF" />
+                  ))}
+                  {/* UV output cone */}
+                  <polygon points="130,80 270,80 300,214 100,214" fill="url(#uvcone)" />
+                  {[150, 200, 250].map((x) => (
+                    <line key={x} x1={x} y1="86" x2={x + (x - 200) * 0.28} y2="206" stroke="#1F63D6" strokeWidth="1.5" strokeDasharray="4 5" opacity="0.55" />
+                  ))}
+                  {/* Substrate / conveyor */}
+                  <rect x="70" y="216" width="260" height="16" rx="4" fill="#E3EAF2" />
+                  {/* Cured zone on substrate */}
+                  <rect x="150" y="212" width="100" height="8" rx="4" fill="#41A62A" />
+                  <text x="200" y="256" textAnchor="middle" fontSize="11" fontWeight="700" fill="#41A62A" fontFamily="sans-serif">CURED</text>
+                  <text x="200" y="284" textAnchor="middle" fontSize="10" fill="#7B8794" fontFamily="sans-serif">365 – 405 nm</text>
+                </svg>
+              </div>
+            </div>
+
+            {/* Bottom value strip */}
+            <div className="grid grid-cols-2 gap-px border-t border-[#DCE9EE] bg-[#DCE9EE] lg:grid-cols-4">
+              {[
+                { icon: BadgeCheck, label: { en: "Since 1984", zh: "始于 1984", th: "ตั้งแต่ปี 1984", vi: "Từ năm 1984" } },
+                { icon: Crosshair, label: { en: "Precision Control", zh: "精准控制", th: "การควบคุมที่แม่นยำ", vi: "Kiểm soát chính xác" } },
+                { icon: Check, label: { en: "Repeatable Curing", zh: "可复现固化", th: "การคิวริ่งที่ทำซ้ำได้", vi: "Đóng rắn lặp lại" } },
+                { icon: ShieldCheck, label: { en: "Production Reliability", zh: "量产可靠", th: "ความน่าเชื่อถือในการผลิต", vi: "Độ tin cậy sản xuất" } },
+              ].map((v) => {
+                const Icon = v.icon;
+                return (
+                  <div key={v.label.en} className="flex items-center justify-center gap-2.5 bg-white px-4 py-5 text-center">
+                    <Icon className="h-5 w-5 shrink-0 text-[#1A56DB]" strokeWidth={1.9} />
+                    <span className="text-sm font-bold text-[#102A43]">{t(v.label, locale)}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FinalCta heading={t({ en: "Not Sure Which OmniCure System Fits Your Process?", zh: "不确定哪款 OmniCure 系统适合您的工艺？", th: "ไม่แน่ใจว่าระบบ OmniCure รุ่นใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống OmniCure nào phù hợp với quy trình của bạn?" }, locale)} body={t({ en: "Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution.", zh: "告诉我们您的胶粘剂、基材、固化面积、节拍时间与生产要求，ETIA 可协助推荐合适的紫外线固化方案。", th: "บอกเราเกี่ยวกับกาว วัสดุรองรับ พื้นที่คิวริ่ง เวลารอบการผลิต และความต้องการด้านการผลิตของคุณ ETIA ช่วยแนะนำโซลูชัน UV Curing ที่เหมาะสมได้", vi: "Cho chúng tôi biết keo, vật liệu nền, diện tích đóng rắn, thời gian chu kỳ và yêu cầu sản xuất của bạn. ETIA có thể giúp đề xuất giải pháp UV Curing phù hợp." }, locale)} primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: mailto }} secondary={{ label: t({ en: "Request Product Recommendation", zh: "获取产品推荐", th: "ขอคำแนะนำผลิตภัณฑ์", vi: "Yêu cầu tư vấn sản phẩm" }, locale), href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />
     </div>
   );
