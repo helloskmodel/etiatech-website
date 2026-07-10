@@ -4,6 +4,7 @@ import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
 import { getAllArticles } from "@/components/insights";
 import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
+import { LAMP_PATHS, LAMP_LANGUAGES } from "@/components/omnicure/s2000Lamp";
 
 const SITE = "https://www.etiatech.com";
 
@@ -78,11 +79,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
     },
+    // S2000 Elite replacement lamp (EN + ZH + TH + VI), hreflang-linked.
+    ...(Object.values(LAMP_PATHS) as string[]).map((path) => ({
+      url: `${SITE}${path}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      alternates: { languages: LAMP_LANGUAGES },
+    })),
     // Standalone product SEM landing pages (S2000, LX500), en + th.
     ...[
       { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
       { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
-      { en: "/product/omnicure/s2000-lamp", th: "/th/omnicure-s2000-lamp" },
     ].flatMap((pair) => {
       const langs = { en: `${SITE}${pair.en}`, th: `${SITE}${pair.th}`, "x-default": `${SITE}${pair.en}` };
       return [
