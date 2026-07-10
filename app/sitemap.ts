@@ -108,6 +108,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
     },
+    // Standalone OmniCure Vietnam SEM landing pages (en + vi, hreflang-linked).
+    ...(["/omnicure-vietnam", "/vi/omnicure"] as const).map((path) => ({
+      url: `${SITE}${path}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      alternates: { languages: { en: `${SITE}/omnicure-vietnam`, vi: `${SITE}/vi/omnicure`, "x-default": `${SITE}/omnicure-vietnam` } },
+    })),
     // S2000 Elite replacement lamp (EN + ZH + TH + VI), hreflang-linked.
     ...(Object.values(LAMP_PATHS) as string[]).map((path) => ({
       url: `${SITE}${path}`,
