@@ -22,6 +22,8 @@ export const LAMP = {
   variants: "021-64000R · 012 64000R · S2000 64000R · 64000R lamp",
   heroImage: `${IMG}/S2000%20LAMP.png`,
   heroAlt: "Omnicure S2000 Elite Lamp 012-64000R 200W UV curing lamp module",
+  // 16:9 promo shot for the replacement-lamp banner on the OmniCure page.
+  promoImage: `${IMG}/S2000%20LAMP%201609.jpg`,
   spectralImage: `${IMG}/S2000%20LAMP-SPECTRAL%20OUTPUT.png`,
   spectralAlt: "Omnicure S2000 200W lamp 012-64000R spectral output 250-600nm",
   lifeImage: `${IMG}/S2000%20LAMP-LONG%20SERVICE%20LIFE.png`,
