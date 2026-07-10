@@ -9,10 +9,16 @@ import Nav from "@/components/Nav";
 import TrustStrip from "@/components/TrustStrip";
 import { LocaleProvider } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
-import { ArrowRight, BadgeCheck, CheckCircle2, ChevronRight } from "lucide-react";
+import { s2000FaqsVi } from "@/components/s2000FaqVi";
+import { ArrowRight, BadgeCheck, CheckCircle2, ChevronRight, Download } from "lucide-react";
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
 const HERO_IMG = `${PROMO}/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp`;
+
+const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
+const PDF_BROCHURE = `${PDF}/Brochure%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf`;
+const PDF_QUICKSTART = `${PDF}/Quick%20Start%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf`;
+const PDF_USERGUIDE = `${PDF}/User%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf`;
 
 const engineerMail = inquiryMailto("vi", { subject: "OmniCure S2000 Elite", context: "OmniCure S2000 Elite" });
 
@@ -34,10 +40,10 @@ const features: { title: string; body: string }[] = [
   { title: "OmniCure S2000 Elite Optical Performance", body: "S2000 Elite duy trì khả năng tương thích ngược với nền tảng quy trình S2000 trước đây, bao gồm light guides, optical filters, phụ kiện radiometry và đầu ra quang phổ." },
 ];
 
-const guides: { title: string; desc: string; btn: string }[] = [
-  { title: "OmniCure S2000 Elite Brochure", desc: "Tổng quan sản phẩm, tính năng chính, khả năng tương thích hệ thống, chức năng điều khiển và lợi ích vận hành.", btn: "Tải Brochure" },
-  { title: "OmniCure S2000 Elite Quick Start Guide", desc: "Các bước khởi động, lắp light guide, thiết lập exposure, lắp module đèn và lắp bộ lọc quang học.", btn: "Tải Quick Start Guide" },
-  { title: "OmniCure S2000 Elite User Guide", desc: "Tài liệu vận hành đầy đủ bao gồm an toàn, cài đặt, hiệu chuẩn, Web UI, tích hợp PLC, StepCure, bảo trì, cập nhật phần mềm, xử lý sự cố và thông số kỹ thuật.", btn: "Tải User Guide" },
+const guides: { title: string; desc: string; btn: string; href: string }[] = [
+  { title: "OmniCure S2000 Elite Brochure", desc: "Tổng quan sản phẩm, tính năng chính, khả năng tương thích hệ thống, chức năng điều khiển và lợi ích vận hành.", btn: "Tải Brochure", href: PDF_BROCHURE },
+  { title: "OmniCure S2000 Elite Quick Start Guide", desc: "Các bước khởi động, lắp light guide, thiết lập exposure, lắp module đèn và lắp bộ lọc quang học.", btn: "Tải Quick Start Guide", href: PDF_QUICKSTART },
+  { title: "OmniCure S2000 Elite User Guide", desc: "Tài liệu vận hành đầy đủ bao gồm an toàn, cài đặt, hiệu chuẩn, Web UI, tích hợp PLC, StepCure, bảo trì, cập nhật phần mềm, xử lý sự cố và thông số kỹ thuật.", btn: "Tải User Guide", href: PDF_USERGUIDE },
 ];
 
 const setup: { title: string; body: string }[] = [
@@ -73,17 +79,6 @@ const whyCards = [
   "Hỗ trợ dịch vụ dài hạn",
 ];
 
-const faqs = [
-  "Tôi có thể tải OmniCure S2000 Elite user guide ở đâu?",
-  "Làm thế nào để lắp light guide cho OmniCure S2000 Elite?",
-  "Màu vòng đèn OmniCure S2000 Elite có ý nghĩa gì?",
-  "Vì sao đèn OmniCure S2000 Elite không khởi động?",
-  "Làm thế nào để thay đèn OmniCure S2000 Elite?",
-  "Làm thế nào để lắp bộ lọc quang học OmniCure S2000 Elite?",
-  "OmniCure S2000 Elite có hỗ trợ PLC automation không?",
-  "ETIA có thể hỗ trợ xử lý sự cố OmniCure S2000 Elite không?",
-];
-
 const btnPrimary = "inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]";
 const btnGhost = "inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]";
 const eyebrow = "text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]";
@@ -95,7 +90,7 @@ function Content() {
       <div className="border-b border-gray-200 bg-white py-3">
         <div className="mx-auto max-w-7xl px-4 text-xs text-gray-400 sm:px-6 lg:px-8">
           <Link href="/vi" className="hover:text-[#1A56DB]">Sản phẩm</Link><span className="mx-2">›</span>
-          <span className="hover:text-[#1A56DB]">OmniCure</span><span className="mx-2">›</span>
+          <Link href="/product/omnicure" className="hover:text-[#1A56DB]">OmniCure</Link><span className="mx-2">›</span>
           <span className="text-gray-500">S2000 Elite</span>
         </div>
       </div>
@@ -113,8 +108,8 @@ function Content() {
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={engineerMail} className={btnPrimary}>Yêu cầu báo giá <ArrowRight className="h-4 w-4" /></a>
-              <a href={engineerMail} className={btnGhost}>Tải Brochure</a>
-              <Link href="/vi" className={btnGhost}>Nhận hỗ trợ kỹ thuật</Link>
+              <a href={PDF_BROCHURE} target="_blank" rel="noopener noreferrer" className={btnGhost}><Download className="h-4 w-4" /> Tải Brochure</a>
+              <Link href="/contact" className={btnGhost}>Nhận hỗ trợ kỹ thuật</Link>
             </div>
           </div>
           <div className="relative min-h-[380px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
@@ -156,7 +151,7 @@ function Content() {
             <article key={g.title} className="flex flex-col rounded-2xl border border-[#D9E4EA] bg-white p-6">
               <h3 className="font-bold text-[#143C96]">{g.title}</h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-[#667085]">{g.desc}</p>
-              <a href={engineerMail} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#41A62A]">{g.btn} <ArrowRight className="h-4 w-4" /></a>
+              <a href={g.href} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#41A62A]"><Download className="h-4 w-4" /> {g.btn}</a>
             </article>
           ))}
         </div>
@@ -195,7 +190,7 @@ function Content() {
       <section className="bg-[#F6F9FF] px-4 py-16 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl">
         <p className={eyebrow}>Bảo trì</p>
         <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">Hỗ trợ thay đèn và bảo trì OmniCure S2000 Elite</h2>
-        <p className="mt-4 max-w-3xl leading-7 text-[#667085]">ETIA hỗ trợ người dùng OmniCure S2000 Elite về đèn thay thế, bộ lọc quang học, light guides, hướng dẫn hiệu chuẩn, bảo trì, sửa chữa và xử lý sự cố.</p>
+        <p className="mt-4 max-w-3xl leading-7 text-[#667085]">ETIA hỗ trợ người dùng OmniCure S2000 Elite về đèn thay thế, bộ lọc quang học, light guides, hướng dẫn hiệu chuẩn, bảo trì, sửa chữa và xử lý sự cố — xem <Link href="/product/omnicure/s2000-lamp" className="font-semibold text-[#1A56DB] underline">đèn thay thế OmniCure S2000</Link>, <Link href="/applications" className="font-semibold text-[#1A56DB] underline">ứng dụng UV curing</Link> hoặc <Link href="/contact" className="font-semibold text-[#1A56DB] underline">bộ phận Kinh doanh & Hỗ trợ</Link>.</p>
         <div className="mt-8 flex flex-wrap gap-3">
           {maintenanceCards.map((c) => <span key={c} className="rounded-full border border-[#1A56DB]/20 bg-white px-4 py-2 text-sm font-semibold text-[#143C96]">{c}</span>)}
         </div>
@@ -216,10 +211,10 @@ function Content() {
         <p className={eyebrow}>FAQ</p>
         <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">Câu hỏi thường gặp về OmniCure S2000 Elite</h2>
         <div className="mt-8 divide-y divide-gray-200 rounded-2xl border border-[#D9E4EA] bg-white">
-          {faqs.map((q) => (
-            <details key={q} className="group px-5 py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-[#143C96]">{q}<ChevronRight className="h-5 w-5 shrink-0 text-[#41A62A] transition-transform group-open:rotate-90" /></summary>
-              <p className="mt-3 text-sm leading-7 text-[#667085]">Kỹ sư ETIA sẽ hỗ trợ bạn với câu hỏi này — vui lòng liên hệ để được hướng dẫn chi tiết cho OmniCure S2000 Elite.</p>
+          {s2000FaqsVi.map((f) => (
+            <details key={f.q} className="group px-5 py-4">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-[#143C96]">{f.q}<ChevronRight className="h-5 w-5 shrink-0 text-[#41A62A] transition-transform group-open:rotate-90" /></summary>
+              <p className="mt-3 text-sm leading-7 text-[#667085]">{f.a}</p>
             </details>
           ))}
         </div>
@@ -232,7 +227,7 @@ function Content() {
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={engineerMail} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">Liên hệ kỹ sư <ArrowRight className="h-4 w-4" /></a>
           <a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/20">Yêu cầu báo giá</a>
-          <a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/20">Tải OmniCure S2000 Elite User Guide</a>
+          <a href={PDF_USERGUIDE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/20"><Download className="h-4 w-4" /> Tải OmniCure S2000 Elite User Guide</a>
         </div>
       </div></section>
     </div>
