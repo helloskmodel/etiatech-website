@@ -33,9 +33,9 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {/* Breadcrumb */}
       <div className="border-b border-gray-200 py-3 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-gray-400">
-          <Link href="/product" className="hover:text-[#1A56DB]">{t({ en: "Products", zh: "产品" }, locale)}</Link>
+          <Link href="/product" className="hover:text-[#1A56DB]">{t({ en: "Products", zh: "产品", th: "ผลิตภัณฑ์", vi: "Sản phẩm" }, locale)}</Link>
           <span className="mx-2">›</span>
-          <Link href="/product/systems" className="hover:text-[#1A56DB]">{t({ en: "All Systems", zh: "全部系统" }, locale)}</Link>
+          <Link href="/product/systems" className="hover:text-[#1A56DB]">{t({ en: "All Systems", zh: "全部系统", th: "ระบบทั้งหมด", vi: "Tất cả hệ thống" }, locale)}</Link>
           <span className="mx-2">›</span>
           <span style={{ color: accent }}>{p.name}</span>
         </div>
@@ -58,8 +58,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             )}
             <p className="text-base text-gray-600 leading-relaxed mb-8 max-w-xl">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
-              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale)}</a>
-              <a href={inquiryMailto(locale, { subject: "Datasheet Request", context: product.name })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "Datasheet Request", context: product.name })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表", th: "ขอเอกสารข้อมูล", vi: "Yêu cầu bảng dữ liệu" }, locale)}</a>
             </div>
           </div>
           <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
@@ -76,8 +76,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {p.applications.length > 0 && (
         <section className="py-14 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Best For", zh: "适用场景" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Ideal Applications", zh: "理想应用" }, locale)}</h2>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Best For", zh: "适用场景", th: "เหมาะสำหรับ", vi: "Phù hợp cho" }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Ideal Applications", zh: "理想应用", th: "การใช้งานที่เหมาะสม", vi: "Ứng dụng lý tưởng" }, locale)}</h2>
             <div className="w-12 h-1 rounded mb-6" style={{ background: "#44B549" }} />
             <div className="flex flex-wrap gap-2.5">
               {p.applications.map((a) => (
@@ -92,8 +92,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {p.features.length > 0 && (
         <section className="py-16" style={{ background: "#f0f4f8" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Key Benefits", zh: "核心优势" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: `Why Choose the ${shortName}`, zh: "为何选择该产品" }, locale)}</h2>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Key Benefits", zh: "核心优势", th: "ประโยชน์หลัก", vi: "Lợi ích chính" }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: `Why Choose the ${shortName}`, zh: "为何选择该产品", th: `เหตุใดจึงเลือก ${shortName}`, vi: `Vì sao chọn ${shortName}` }, locale)}</h2>
             <div className="w-12 h-1 rounded mb-8" style={{ background: "#44B549" }} />
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {p.features.map((f, i) => (
@@ -111,8 +111,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {p.specs.length > 0 && (
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Technical Overview", zh: "技术概览" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "At a Glance", zh: "关键参数一览" }, locale)}</h2>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Technical Overview", zh: "技术概览", th: "ภาพรวมทางเทคนิค", vi: "Tổng quan kỹ thuật" }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "At a Glance", zh: "关键参数一览", th: "โดยสรุป", vi: "Tổng quan nhanh" }, locale)}</h2>
             <div className="w-12 h-1 rounded mb-8" style={{ background: "#44B549" }} />
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {p.specs.slice(0, 6).map(([label, value]) => (
@@ -130,8 +130,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {p.specs.length > 0 && (
         <section className="py-16" style={{ background: "#f0f4f8" }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Specifications", zh: "规格参数" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications", zh: "技术规格" }, locale)}</h2>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Specifications", zh: "规格参数", th: "ข้อมูลจำเพาะ", vi: "Thông số kỹ thuật" }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications", zh: "技术规格", th: "ข้อมูลจำเพาะทางเทคนิค", vi: "Thông số kỹ thuật chi tiết" }, locale)}</h2>
             <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
               <table className="w-full text-sm">
                 <tbody>
@@ -152,8 +152,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {docs.length > 0 && (
         <section className="py-16 bg-white border-t border-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Documents", zh: "资料下载" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Brochures & Guides", zh: "产品手册与指南" }, locale)}</h2>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Documents", zh: "资料下载", th: "เอกสาร", vi: "Tài liệu" }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Brochures & Guides", zh: "产品手册与指南", th: "โบรชัวร์และคู่มือ", vi: "Tài liệu & hướng dẫn" }, locale)}</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {docs.map((d) => (
                 <a key={d.file} href={productDocUrl(d.file)} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-gray-400 hover:shadow-sm transition-all">
@@ -162,7 +162,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-sm font-semibold text-gray-800">{t(d.kind, locale)}</span>
-                    <span className="block text-xs text-gray-400">{t({ en: "PDF · opens in a new tab", zh: "PDF · 新标签页打开" }, locale)}</span>
+                    <span className="block text-xs text-gray-400">{t({ en: "PDF · opens in a new tab", zh: "PDF · 新标签页打开", th: "PDF · เปิดในแท็บใหม่", vi: "PDF · mở trong tab mới" }, locale)}</span>
                   </span>
                   <Download className="w-4 h-4 text-gray-300 group-hover:text-gray-600 flex-shrink-0 transition-colors" />
                 </a>
@@ -179,8 +179,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {related.length > 0 && (
         <section className="py-16 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Related Products", zh: "相关产品" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `More ${p.brand} Systems`, zh: `更多 ${p.brand} 系统` }, locale)}</h2>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Related Products", zh: "相关产品", th: "ผลิตภัณฑ์ที่เกี่ยวข้อง", vi: "Sản phẩm liên quan" }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `More ${p.brand} Systems`, zh: `更多 ${p.brand} 系统`, th: `ระบบ ${p.brand} เพิ่มเติม`, vi: `Thêm hệ thống ${p.brand}` }, locale)}</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((x) => (
                 <Link key={x.slug} href={productHref(x)} className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-[#1A56DB]/30 transition-all">
@@ -194,7 +194,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
                   <div className="p-4">
                     <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400">{x.tech}</p>
                     <h3 className="mt-1 text-sm font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{x.name}</h3>
-                    <span className="mt-3 inline-block text-xs font-semibold" style={{ color: accent }}>{t({ en: "View product →", zh: "查看产品 →" }, locale)}</span>
+                    <span className="mt-3 inline-block text-xs font-semibold" style={{ color: accent }}>{t({ en: "View product →", zh: "查看产品 →", th: "ดูผลิตภัณฑ์ →", vi: "Xem sản phẩm →" }, locale)}</span>
                   </div>
                 </Link>
               ))}
@@ -206,11 +206,11 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {/* 8 · CTA */}
       <section className="py-14" style={{ background: "#1A56DB" }}>
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">{t({ en: `Interested in the ${shortName}?`, zh: "对该产品感兴趣?" }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}</p>
+          <h2 className="text-2xl font-bold text-white mb-4">{t({ en: `Interested in the ${shortName}?`, zh: "对该产品感兴趣?", th: `สนใจ ${shortName} หรือไม่?`, vi: `Quan tâm đến ${shortName}?` }, locale)}</h2>
+          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。", th: "วิศวกร UV Curing ของเราจะจับคู่การกำหนดค่าที่เหมาะสมกับกระบวนการของคุณ — ตั้งแต่การเลือกจนถึงการตรวจสอบยืนยัน", vi: "Kỹ sư UV curing của chúng tôi sẽ chọn cấu hình phù hợp cho quy trình của bạn — từ lựa chọn đến kiểm định." }, locale)}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
-            <Link href="/product/systems" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "All Systems", zh: "全部系统" }, locale)}</Link>
+            <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →", th: "ปรึกษาวิศวกร →", vi: "Trao đổi với kỹ sư →" }, locale)}</a>
+            <Link href="/product/systems" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "All Systems", zh: "全部系统", th: "ระบบทั้งหมด", vi: "Tất cả hệ thống" }, locale)}</Link>
           </div>
         </div>
       </section>
