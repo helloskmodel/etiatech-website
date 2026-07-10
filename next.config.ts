@@ -21,7 +21,8 @@ const nextConfig: NextConfig = {
       { source: "/th/th/:path*", destination: "/", permanent: true },
       { source: "/th/en/:path*", destination: "/", permanent: true },
       { source: "/th/zh/:path*", destination: "/", permanent: true },
-      { source: "/th", destination: "/", permanent: true },
+      // NOTE: no `/th → /` rule — /th is the live Thai SEO home; redirecting it
+      // would shadow that page (and put a redirect in the sitemap).
       { source: "/en/contact", destination: "/contact", permanent: true },
       { source: "/en/applications", destination: "/applications", permanent: true },
       { source: "/application", destination: "/applications", permanent: true },
