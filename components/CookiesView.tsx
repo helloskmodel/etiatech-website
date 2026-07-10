@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
+import { localeSalesEmail } from "@/components/contact";
 
 const LAST_UPDATED: LangText = { en: "29 June 2026", zh: "2026年6月29日" };
 
@@ -82,7 +83,7 @@ export default function CookiesView() {
             <h2 className="text-lg font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Contact", zh: "联系方式" }, locale)}</h2>
             <p>
               {t({ en: "Questions about this Cookie Policy? Email", zh: "对本 Cookie 政策有疑问?请发送邮件至" }, locale)}{" "}
-              <a href="mailto:mark_tang@etia-tech.com" className="font-medium hover:underline" style={{ color: "#44B549" }}>mark_tang@etia-tech.com</a>{t({ en: ".", zh: "。" }, locale)}
+              <a href={`mailto:${localeSalesEmail(locale)}`} className="font-medium hover:underline" style={{ color: "#44B549" }}>{localeSalesEmail(locale)}</a>{t({ en: ".", zh: "。" }, locale)}
             </p>
           </div>
 

@@ -1,6 +1,18 @@
 import type { Locale } from "@/components/LocaleContext";
 
-export const SALES_EMAIL = "mark_tang@etia-tech.com";
+// Sales / general inquiries route by country: English & Chinese to the main
+// OmniCure inbox, Thai and Vietnamese to their local OmniCure inboxes.
+export function localeSalesEmail(locale: Locale): string {
+  return locale === "th"
+    ? "omnicure.th@gmail.com"
+    : locale === "vi"
+    ? "omnicure.vn@gmail.com"
+    : "Omnicure@etia-tech.com";
+}
+
+// Static default (English / Chinese). Prefer localeSalesEmail(locale) where a
+// locale is available so the address follows the visitor's country.
+export const SALES_EMAIL = "Omnicure@etia-tech.com";
 export const SERVICE_EMAIL = "guoren_wang@etia-tech.com";
 
 // Builds a mailto link with a helpful pre-filled subject AND body, so the
@@ -10,7 +22,7 @@ export function inquiryMailto(
   locale: Locale,
   opts: { subject?: string; context?: string; email?: string } = {}
 ): string {
-  const email = opts.email ?? SALES_EMAIL;
+  const email = opts.email ?? localeSalesEmail(locale);
   const zh = locale === "zh";
   const ctx = opts.context;
 

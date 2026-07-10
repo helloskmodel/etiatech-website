@@ -1,101 +1,41 @@
 "use client";
 import { useState } from "react";
-import { useLocale, t, type Locale } from "@/components/LocaleContext";
+import { useLocale, t, type Locale, type LangText } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
 import SalesSupportContent from "@/components/SalesSupportContent";
 import HeroBanner from "@/components/HeroBanner";
 import { PAGE_BANNERS } from "@/components/caseStudies";
-import { BadgeCheck, Mail, Wrench, Globe, Zap } from "lucide-react";
+import { inquiryMailto, localeSalesEmail } from "@/components/contact";
+import { BadgeCheck, Zap, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
-function ContactForm({ fields, locale }: { fields: string[]; locale: Locale }) {
-  const [submitted, setSubmitted] = useState(false);
-  if (submitted) {
-    return (
-      <div className="rounded-2xl p-8 text-center border border-gray-100 bg-white">
-        <div className="text-4xl mb-3">✅</div>
-        <p className="font-semibold" style={{ color: "#1A56DB" }}>{t({ en: "Message Sent!", zh: "信息已发送!", th: "ส่งข้อความแล้ว!", vi: "Đã gửi tin nhắn!" }, locale)}</p>
-        <p className="text-gray-500 text-sm mt-1">{t({ en: "We'll get back to you within 1 business day.", zh: "我们将在1个工作日内回复您。", th: "เราจะติดต่อกลับภายใน 1 วันทำการ", vi: "Chúng tôi sẽ phản hồi trong vòng 1 ngày làm việc." }, locale)}</p>
-      </div>
-    );
-  }
-  const fieldLabel = (f: string) =>
-    f === "Industry" ? t({ en: "Industry", zh: "行业", th: "อุตสาหกรรม", vi: "Ngành" }, locale)
-    : f === "Request Type" ? t({ en: "Request Type", zh: "请求类型", th: "ประเภทคำขอ", vi: "Loại yêu cầu" }, locale)
-    : f;
-  return (
-    <form
-      className="flex flex-col gap-4"
-      onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-    >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label className="text-xs text-gray-500 block mb-1">{t({ en: "Name *", zh: "姓名 *", th: "ชื่อ *", vi: "Tên *" }, locale)}</label>
-          <input type="text" required placeholder={t({ en: "Your name", zh: "您的姓名", th: "ชื่อของคุณ", vi: "Tên của bạn" }, locale)}
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300" />
-        </div>
-        <div>
-          <label className="text-xs text-gray-500 block mb-1">{t({ en: "Company", zh: "公司", th: "บริษัท", vi: "Công ty" }, locale)}</label>
-          <input type="text" placeholder={t({ en: "Company name", zh: "公司名称", th: "ชื่อบริษัท", vi: "Tên công ty" }, locale)}
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300" />
-        </div>
-      </div>
-      <div>
-        <label className="text-xs text-gray-500 block mb-1">{t({ en: "Email *", zh: "邮箱 *", th: "อีเมล *", vi: "Email *" }, locale)}</label>
-        <input type="email" required placeholder="your@email.com"
-          className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300" />
-      </div>
-      {fields.map((f) => (
-        <div key={f}>
-          <label className="text-xs text-gray-500 block mb-1">{fieldLabel(f)}</label>
-          <select className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-600 text-sm focus:outline-none focus:border-[#1A56DB]">
-            <option value="">{t({ en: "Select…", zh: "请选择…", th: "เลือก…", vi: "Chọn…" }, locale)}</option>
-            {f === "Industry" && ([
-              { en: "Medical Device Assembly", zh: "医疗器械装配", th: "การประกอบอุปกรณ์การแพทย์", vi: "Lắp ráp thiết bị y tế" },
-              { en: "Automotive & ADAS", zh: "汽车与 ADAS", th: "ยานยนต์และ ADAS", vi: "Ô tô & ADAS" },
-              { en: "Electronics & PCB Assembly", zh: "电子与 PCB 装配", th: "อิเล็กทรอนิกส์และ PCB", vi: "Điện tử & PCB" },
-              { en: "Photonics & Advanced Packaging", zh: "光子学与先进封装", th: "โฟโตนิกส์และแพ็กเกจขั้นสูง", vi: "Quang tử & đóng gói tiên tiến" },
-              { en: "Optical Fiber & Cable Manufacturing", zh: "光纤与线缆制造", th: "การผลิตไฟเบอร์ออปติกและสายเคเบิล", vi: "Sản xuất sợi quang & cáp" },
-              { en: "Optics & Imaging Systems", zh: "光学与成像系统", th: "ระบบออปติกและการถ่ายภาพ", vi: "Hệ thống quang học & hình ảnh" },
-              { en: "Printing & Graphic Arts", zh: "印刷与图文", th: "งานพิมพ์และกราฟิก", vi: "In ấn & đồ họa" },
-              { en: "Wood & Furniture Coatings", zh: "木器与家具涂装", th: "การเคลือบไม้และเฟอร์นิเจอร์", vi: "Sơn phủ gỗ & nội thất" },
-              { en: "Metal & Industrial Coatings", zh: "金属与工业涂装", th: "การเคลือบโลหะและอุตสาหกรรม", vi: "Sơn phủ kim loại & công nghiệp" },
-              { en: "Aerospace & Defense", zh: "航空航天与国防", th: "การบินและอวกาศและการป้องกันประเทศ", vi: "Hàng không vũ trụ & quốc phòng" },
-              { en: "Other", zh: "其他", th: "อื่น ๆ", vi: "Khác" },
-            ] as const).map((o) => <option key={o.en} value={o.en}>{t(o, locale)}</option>)}
-            {f === "Request Type" && ([
-              { en: "Equipment Repair", zh: "设备维修", th: "การซ่อมอุปกรณ์", vi: "Sửa chữa thiết bị" },
-              { en: "Radiometer Calibration", zh: "辐射计校准", th: "การสอบเทียบเรดิโอมิเตอร์", vi: "Hiệu chuẩn máy đo bức xạ" },
-              { en: "Preventive Maintenance", zh: "预防性保养", th: "การบำรุงรักษาเชิงป้องกัน", vi: "Bảo trì phòng ngừa" },
-              { en: "Spare Parts", zh: "备件", th: "อะไหล่", vi: "Phụ tùng" },
-              { en: "Other", zh: "其他", th: "อื่น ๆ", vi: "Khác" },
-            ] as const).map((o) => <option key={o.en} value={o.en}>{t(o, locale)}</option>)}
-          </select>
-        </div>
-      ))}
-      <div>
-        <label className="text-xs text-gray-500 block mb-1">{t({ en: "Message *", zh: "留言 *", th: "ข้อความ *", vi: "Tin nhắn *" }, locale)}</label>
-        <textarea required rows={4} placeholder={t({ en: "Describe your requirements…", zh: "请描述您的需求…", th: "อธิบายความต้องการของคุณ…", vi: "Mô tả yêu cầu của bạn…" }, locale)}
-          className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-gray-800 text-sm focus:outline-none focus:border-[#1A56DB] placeholder-gray-300 resize-none" />
-      </div>
-      <button type="submit" className="w-full py-3 rounded-lg font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
-        {t({ en: "Submit →", zh: "提交 →", th: "ส่ง →", vi: "Gửi →" }, locale)}
-      </button>
-    </form>
-  );
-}
+// The three lifecycle stages, used as the single inquiry-type selector. The
+// recipient follows the visitor's country (localeSalesEmail); the stage only
+// sets the email subject/context.
+const INQUIRY_STAGES: { label: LangText; subject: string; context: string }[] = [
+  {
+    label: { en: "Before Purchase · Selection & Application", zh: "购买前 · 选型与应用", th: "ก่อนการซื้อ · การเลือกและการใช้งาน", vi: "Trước khi mua · Lựa chọn & ứng dụng" },
+    subject: "Sales Inquiry — Selection & Application",
+    context: "Before Purchase — Selection & Application",
+  },
+  {
+    label: { en: "During Implementation · Setup & Training", zh: "实施中 · 安装与培训", th: "ระหว่างการติดตั้งใช้งาน · การติดตั้งและการฝึกอบรม", vi: "Trong triển khai · Lắp đặt & đào tạo" },
+    subject: "Implementation Support — Setup & Training",
+    context: "During Implementation — Setup & Training",
+  },
+  {
+    label: { en: "After Sales · Service & Repair", zh: "售后 · 服务与维修", th: "หลังการขาย · บริการและการซ่อม", vi: "Sau bán hàng · Dịch vụ & sửa chữa" },
+    subject: "After-Sales Service & Repair Request",
+    context: "After Sales — Service & Repair",
+  },
+];
 
 export default function ContactPage() {
   const { locale } = useLocale();
-  const salesItems = [
-    { icon: "🔬", title: { en: "Product Inquiry", zh: "产品咨询", th: "สอบถามผลิตภัณฑ์", vi: "Tư vấn sản phẩm" }, desc: { en: "Explore OmniCure, Phoseon, Fusion and NobleLight systems matched to your process.", zh: "探索匹配您工艺的OmniCure、Phoseon、Fusion与NobleLight系统。", th: "สำรวจระบบ OmniCure, Phoseon, Fusion และ NobleLight ที่เหมาะกับกระบวนการของคุณ", vi: "Khám phá các hệ thống OmniCure, Phoseon, Fusion và NobleLight phù hợp với quy trình của bạn." } },
-    { icon: "⚗️", title: { en: "Application Consulting", zh: "应用咨询", th: "ที่ปรึกษาด้านการใช้งาน", vi: "Tư vấn ứng dụng" }, desc: { en: "Validate your UV curing process — from adhesive selection to dose and irradiance testing.", zh: "验证您的UV Curing 紫外线固化工艺——从胶粘剂选型到剂量与辐照度测试。", th: "ตรวจสอบกระบวนการ UV Curing ของคุณ ตั้งแต่การเลือกกาวไปจนถึงการทดสอบโดสและความเข้มแสง", vi: "Xác thực quy trình UV curing của bạn — từ chọn keo đến kiểm tra liều và cường độ chiếu." } },
-    { icon: "🛠️", title: { en: "Custom Engineering", zh: "定制工程", th: "งานวิศวกรรมตามความต้องการ", vi: "Kỹ thuật tùy chỉnh" }, desc: { en: "Need a non-standard configuration? We engineer bespoke solutions for complex production lines.", zh: "需要非标配置? 我们为复杂产线打造定制化解决方案。", th: "ต้องการคอนฟิกแบบไม่มาตรฐาน? เราออกแบบโซลูชันเฉพาะสำหรับสายการผลิตที่ซับซ้อน", vi: "Cần cấu hình phi tiêu chuẩn? Chúng tôi thiết kế giải pháp riêng cho các dây chuyền phức tạp." } },
-  ];
-  const serviceItems = [
-    { icon: "⚙️", title: { en: "Equipment Repair", zh: "设备维修", th: "การซ่อมอุปกรณ์", vi: "Sửa chữa thiết bị" }, desc: { en: "Fast diagnosis and repair of OmniCure, Phoseon, and all supported UV systems. Urgent production issues are prioritized.", zh: "快速诊断与维修OmniCure、Phoseon及所有支持的UV系统。紧急生产问题优先处理。", th: "วินิจฉัยและซ่อมระบบ OmniCure, Phoseon และระบบ UV ที่รองรับทั้งหมดอย่างรวดเร็ว ปัญหาการผลิตเร่งด่วนได้รับการจัดลำดับความสำคัญ", vi: "Chẩn đoán và sửa chữa nhanh OmniCure, Phoseon và mọi hệ thống UV được hỗ trợ. Ưu tiên sự cố sản xuất khẩn cấp." } },
-    { icon: "📡", title: { en: "Radiometer Calibration", zh: "辐射计校准", th: "การสอบเทียบเรดิโอมิเตอร์", vi: "Hiệu chuẩn máy đo bức xạ" }, desc: { en: "NIST-traceable calibration for R2000, LS200 and third-party radiometers. Calibration certificate provided.", zh: "为R2000、LS200及第三方辐射计提供NIST溯源校准，并出具校准证书。", th: "การสอบเทียบที่สอบกลับได้ตาม NIST สำหรับ R2000, LS200 และเรดิโอมิเตอร์ยี่ห้ออื่น พร้อมใบรับรองการสอบเทียบ", vi: "Hiệu chuẩn truy xuất theo NIST cho R2000, LS200 và máy đo bức xạ bên thứ ba. Có cấp giấy chứng nhận hiệu chuẩn." } },
-    { icon: "🔩", title: { en: "Preventive Maintenance", zh: "预防性保养", th: "การบำรุงรักษาเชิงป้องกัน", vi: "Bảo trì phòng ngừa" }, desc: { en: "Scheduled maintenance programs to extend equipment life and prevent unexpected failures on production lines.", zh: "定期保养计划，延长设备寿命，防止产线意外故障。", th: "โปรแกรมบำรุงรักษาตามกำหนดเพื่อยืดอายุอุปกรณ์และป้องกันความเสียหายที่ไม่คาดคิดในสายการผลิต", vi: "Chương trình bảo trì định kỳ giúp kéo dài tuổi thọ thiết bị và ngăn sự cố bất ngờ trên dây chuyền." } },
-  ];
+  const [stage, setStage] = useState(0);
+  const selected = INQUIRY_STAGES[stage];
+  const inquiryEmail = localeSalesEmail(locale);
+  const inquiryHref = inquiryMailto(locale, { subject: selected.subject, context: selected.context });
+
   const offices: {
     region: { en: string; zh: string; th?: string; vi?: string };
     contact?: string;
@@ -105,10 +45,10 @@ export default function ContactPage() {
     local?: string;
     en?: string;
   }[] = [
-    { region: { en: "China · Shanghai", zh: "中国 · 上海", th: "จีน · เซี่ยงไฮ้", vi: "Trung Quốc · Thượng Hải" }, contact: "Mark Tang", phone: "400 990 8448 · +86-21-6432-7144 转106", email: "mark_tang@etia-tech.com", local: "上海市普陀区中江路388弄国盛中心2号楼1903室", en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China" },
-    { region: { en: "Hong Kong", zh: "中国 · 香港", th: "จีน · ฮ่องกง", vi: "Trung Quốc · Hồng Kông" }, contact: "Mark Tang", phone: "+86 151 2119 7091", email: "mark_tang@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
-    { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷", th: "ไทย · กรุงเทพฯ", vi: "Thái Lan · Bangkok" }, contact: "Mr. Sompoch Ratchakom (Job)", title: { en: "Sales Director", zh: "销售总监", th: "ผู้อำนวยการฝ่ายขาย", vi: "Giám đốc kinh doanh" }, phone: "+66 811 746 947", email: "sompoch@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
-    { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁", th: "เวียดนาม · บั๊กนิญ", vi: "Việt Nam · Bắc Ninh" }, contact: "Tien Nguyen", title: { en: "Technical Engineer", zh: "技术工程师", th: "วิศวกรเทคนิค", vi: "Kỹ sư kỹ thuật" }, phone: "+84 344 590 091", email: "ts_vn@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
+    { region: { en: "China · Shanghai", zh: "中国 · 上海", th: "จีน · เซี่ยงไฮ้", vi: "Trung Quốc · Thượng Hải" }, contact: "Mark Tang", phone: "400 990 8448 · +86-21-6432-7144 转106", email: "Omnicure@etia-tech.com", local: "上海市普陀区中江路388弄国盛中心2号楼1903室", en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China" },
+    { region: { en: "Hong Kong", zh: "中国 · 香港", th: "จีน · ฮ่องกง", vi: "Trung Quốc · Hồng Kông" }, contact: "Mark Tang", phone: "+86 151 2119 7091", email: "Omnicure@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
+    { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷", th: "ไทย · กรุงเทพฯ", vi: "Thái Lan · Bangkok" }, contact: "Mr. Sompoch Ratchakom (Job)", title: { en: "Sales Director", zh: "销售总监", th: "ผู้อำนวยการฝ่ายขาย", vi: "Giám đốc kinh doanh" }, phone: "+66 811 746 947", email: "omnicure.th@gmail.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
+    { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁", th: "เวียดนาม · บั๊กนิญ", vi: "Việt Nam · Bắc Ninh" }, contact: "Tien Nguyen", title: { en: "Technical Engineer", zh: "技术工程师", th: "วิศวกรเทคนิค", vi: "Kỹ sư kỹ thuật" }, phone: "+84 344 590 091", email: "omnicure.vn@gmail.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
   ];
 
   return (
@@ -123,8 +63,8 @@ export default function ContactPage() {
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> {t({ en: "Sales & Support", zh: "销售与支持", th: "ฝ่ายขายและบริการ", vi: "Kinh doanh & hỗ trợ" }, locale)}</div>
             <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Dedicated UV Curing Solution", zh: "专注紫外线固化解决方案", th: "โซลูชัน UV Curing โดยผู้เชี่ยวชาญ", vi: "Giải pháp UV Curing chuyên sâu" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "We Support You Every Step of the Way.", zh: "全程支持，服务到底。", th: "สนับสนุนทุกขั้นตอน บริการระยะยาว", vi: "Hỗ trợ toàn trình, dịch vụ lâu dài" }, locale)}</span></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师", th: "ปรึกษาวิศวกร ETIA", vi: "Trao đổi với kỹ sư ETIA" }, locale)}</a>
-              <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Request Service Support", zh: "申请服务支持", th: "ขอรับการสนับสนุนด้านบริการ", vi: "Yêu cầu hỗ trợ dịch vụ" }, locale)}</a>
+              <a href="#inquiries" className="inline-flex items-center justify-center rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师", th: "ปรึกษาวิศวกร ETIA", vi: "Trao đổi với kỹ sư ETIA" }, locale)}</a>
+              <a href="#offices" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Find a Local Contact", zh: "查找本地联系人", th: "หาผู้ติดต่อในพื้นที่", vi: "Tìm liên hệ địa phương" }, locale)}</a>
             </div>
           </div>
         </div>
@@ -134,112 +74,68 @@ export default function ContactPage() {
 
       <SalesSupportContent />
 
-      {/* Part 1 — Sales Inquiry */}
-      <section id="sales" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Part 1", zh: "第一部分", th: "ส่วนที่ 1", vi: "Phần 1" }, locale)}</p>
-              <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Sales Inquiry", zh: "销售咨询", th: "สอบถามฝ่ายขาย", vi: "Tư vấn bán hàng" }, locale)}</h2>
-              <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
-              <p className="text-gray-500 mb-8 leading-relaxed">
-                {t({ en: "Looking for the right UV curing system? Our engineers will evaluate your application, recommend the best solution, and support you through the entire selection process.", zh: "在寻找合适的UV Curing 紫外线固化系统? 我们的工程师将评估您的应用、推荐最佳方案，并在整个选型过程中为您提供支持。", th: "กำลังมองหาระบบ UV Curing ที่เหมาะสมอยู่ใช่ไหม? วิศวกรของเราจะประเมินการใช้งานของคุณ แนะนำโซลูชันที่ดีที่สุด และสนับสนุนคุณตลอดกระบวนการเลือก", vi: "Đang tìm hệ thống UV curing phù hợp? Kỹ sư của chúng tôi sẽ đánh giá ứng dụng của bạn, đề xuất giải pháp tốt nhất và hỗ trợ bạn trong suốt quá trình lựa chọn." }, locale)}
-              </p>
-              <div className="flex flex-col gap-4">
-                {salesItems.map((item) => (
-                  <div key={item.title.en} className="flex gap-4">
-                    <div className="text-2xl mt-0.5">{item.icon}</div>
-                    <div>
-                      <p className="font-semibold text-sm mb-1" style={{ color: "#1A56DB" }}>{t(item.title, locale)}</p>
-                      <p className="text-gray-500 text-sm leading-relaxed">{t(item.desc, locale)}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 p-4 rounded-xl border border-gray-100 bg-gray-50">
-                <p className="text-xs text-gray-400 mb-1">{t({ en: "Direct Email", zh: "直接邮箱", th: "อีเมลโดยตรง", vi: "Email trực tiếp" }, locale)}</p>
-                <a href="mailto:mark_tang@etia-tech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
-                  mark_tang@etia-tech.com
-                </a>
-              </div>
-            </div>
-            <div className="rounded-2xl p-8 border border-gray-100 bg-gray-50">
-              <h3 className="font-semibold text-lg mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Send a Sales Inquiry", zh: "发送销售咨询", th: "ส่งคำสอบถามฝ่ายขาย", vi: "Gửi yêu cầu tư vấn" }, locale)}</h3>
-              <ContactForm fields={["Industry"]} locale={locale} />
-            </div>
+      {/* Inquiries — one section, three stages, email routed by country */}
+      <section id="inquiries" className="scroll-mt-20 bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Inquiries", zh: "咨询", th: "การสอบถาม", vi: "Yêu cầu" }, locale)}</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "How can we help?", zh: "我们能帮您什么？", th: "เราช่วยอะไรคุณได้บ้าง?", vi: "Chúng tôi có thể giúp gì?" }, locale)}</h2>
+            <p className="mx-auto mt-4 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "Choose what you need and send us an email. Your message reaches the ETIA team for your country — we typically reply within one business day.", zh: "选择您的需求并给我们发邮件。您的信息会发送到所在国家的 ETIA 团队——我们通常在 1 个工作日内回复。", th: "เลือกสิ่งที่คุณต้องการแล้วส่งอีเมลถึงเรา ข้อความจะไปถึงทีม ETIA ในประเทศของคุณ โดยปกติเราตอบกลับภายในหนึ่งวันทำการ", vi: "Chọn nội dung bạn cần và gửi email cho chúng tôi. Tin nhắn sẽ đến đội ngũ ETIA tại quốc gia của bạn — chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-[#E6EAF0] bg-[#F6F8FB] p-6 sm:p-8">
+            <label htmlFor="inquiry-stage" className="block text-xs font-bold uppercase tracking-wide text-[#1A56DB]">{t({ en: "Inquiry type", zh: "咨询类型", th: "ประเภทการสอบถาม", vi: "Loại yêu cầu" }, locale)}</label>
+            <select
+              id="inquiry-stage"
+              value={stage}
+              onChange={(e) => setStage(Number(e.target.value))}
+              className="mt-2 w-full rounded-xl border border-[#D4DFEC] bg-white px-4 py-3 text-sm font-semibold text-[#102A43] outline-none focus:border-[#1A56DB] focus:ring-2 focus:ring-[#1A56DB]/15"
+            >
+              {INQUIRY_STAGES.map((s, i) => (
+                <option key={s.subject} value={i}>{t(s.label, locale)}</option>
+              ))}
+            </select>
+
+            <a href={inquiryHref} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">
+              <Mail className="h-4 w-4" /> {t({ en: "Send Email", zh: "发送邮件", th: "ส่งอีเมล", vi: "Gửi email" }, locale)} <ArrowRight className="h-4 w-4" />
+            </a>
+            <p className="mt-3 text-center text-xs text-[#7B8794]">
+              {t({ en: "Goes to", zh: "发送至", th: "ส่งถึง", vi: "Gửi đến" }, locale)}{" "}
+              <a href={`mailto:${inquiryEmail}`} className="font-semibold text-[#44B549] hover:underline">{inquiryEmail}</a>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Part 2 — Service & Repair */}
-      <section id="service" className="py-20" style={{ background: "#f0f4f8" }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Part 2", zh: "第二部分", th: "ส่วนที่ 2", vi: "Phần 2" }, locale)}</p>
-              <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Service & Repair", zh: "服务与维修", th: "บริการและการซ่อม", vi: "Dịch vụ & sửa chữa" }, locale)}</h2>
-              <div className="w-10 h-1 rounded mb-6" style={{ background: "#44B549" }} />
-              <p className="text-gray-500 mb-8 leading-relaxed">
-                {t({ en: "Our in-house repair factory and certified technicians keep your UV curing equipment running at peak performance — minimizing downtime and maximizing production reliability.", zh: "我们的自有维修工厂与认证技术人员让您的UV Curing 紫外线固化设备保持最佳性能——最大限度减少停机，最大化生产可靠性。", th: "โรงซ่อมภายในและช่างเทคนิคที่ผ่านการรับรองของเราช่วยให้อุปกรณ์ UV Curing ของคุณทำงานเต็มประสิทธิภาพ ลดเวลาหยุดทำงานและเพิ่มความน่าเชื่อถือในการผลิตให้สูงสุด", vi: "Xưởng sửa chữa nội bộ và kỹ thuật viên được chứng nhận của chúng tôi giúp thiết bị UV curing của bạn luôn vận hành tối ưu — giảm thời gian ngừng máy và tối đa độ tin cậy sản xuất." }, locale)}
-              </p>
-              <div className="flex flex-col gap-4">
-                {serviceItems.map((item) => (
-                  <div key={item.title.en} className="flex gap-4">
-                    <div className="text-2xl mt-0.5">{item.icon}</div>
-                    <div>
-                      <p className="font-semibold text-sm mb-1" style={{ color: "#1A56DB" }}>{t(item.title, locale)}</p>
-                      <p className="text-gray-500 text-sm leading-relaxed">{t(item.desc, locale)}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 p-4 rounded-xl border border-gray-100 bg-white">
-                <p className="text-xs text-gray-400 mb-1">{t({ en: "Service Email (Technical Manager)", zh: "服务邮箱(技术经理)", th: "อีเมลบริการ (ผู้จัดการฝ่ายเทคนิค)", vi: "Email dịch vụ (Quản lý kỹ thuật)" }, locale)}</p>
-                <a href="mailto:guoren_wang@etia-tech.com" className="font-semibold hover:underline" style={{ color: "#44B549" }}>
-                  guoren_wang@etia-tech.com
-                </a>
-              </div>
-            </div>
-            <div className="rounded-2xl p-8 border border-gray-100 bg-white">
-              <h3 className="font-semibold text-lg mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Submit a Service Request", zh: "提交服务请求", th: "ส่งคำขอรับบริการ", vi: "Gửi yêu cầu dịch vụ" }, locale)}</h3>
-              <ContactForm fields={["Request Type"]} locale={locale} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Part 3 — Global Contacts */}
-      <section id="global" className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Part 3", zh: "第三部分", th: "ส่วนที่ 3", vi: "Phần 3" }, locale)}</p>
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "#1A56DB" }}>{t({ en: "Global Contacts", zh: "全球联系", th: "ติดต่อทั่วโลก", vi: "Liên hệ toàn cầu" }, locale)}</h2>
-          <div className="w-10 h-1 rounded mb-10" style={{ background: "#44B549" }} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {/* Global Contacts — by country */}
+      <section id="offices" className="scroll-mt-20 bg-[#F6F8FB] py-20 sm:py-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Global Contacts", zh: "全球联系", th: "ติดต่อทั่วโลก", vi: "Liên hệ toàn cầu" }, locale)}</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Talk to Your Local ETIA Team", zh: "联系您所在地区的 ETIA 团队", th: "ติดต่อทีม ETIA ในพื้นที่ของคุณ", vi: "Liên hệ đội ngũ ETIA địa phương" }, locale)}</h2>
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {offices.map((c) => (
-              <div key={c.email} className="rounded-xl border border-gray-100 bg-gray-50 p-5 hover:shadow-md transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="font-bold" style={{ color: "#1A56DB" }}>{t(c.region, locale)}</span>
-                </div>
+              <div key={c.en ?? c.email} className="rounded-2xl border border-[#E6EAF0] bg-white p-6 transition-all hover:shadow-md">
+                <span className="font-bold text-[#1A56DB]">{t(c.region, locale)}</span>
                 {c.contact && (
-                  <p className="text-xs text-gray-600 mb-1">
+                  <p className="mt-2 text-xs text-gray-600">
                     <span className="font-semibold">{c.contact}</span>
                     {c.title && <span className="text-gray-400"> · {t(c.title, locale)}</span>}
                   </p>
                 )}
                 {c.local && (
-                  <p className="text-xs text-gray-500 leading-relaxed mb-1">📍 {c.local}</p>
+                  <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-gray-500"><MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gray-400" /> {c.local}</p>
                 )}
                 {c.en && (
-                  <p className="text-xs text-gray-400 leading-relaxed mb-2">{c.en}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-gray-400">{c.en}</p>
                 )}
                 {c.phone && (
-                  <p className="text-xs text-gray-600 mb-1">📞 <a href={`tel:${c.phone.split("·")[0].replace(/[^\d+]/g, "")}`} className="hover:underline">{c.phone}</a></p>
+                  <p className="mt-2 flex items-center gap-1.5 text-xs text-gray-600"><Phone className="h-3.5 w-3.5 text-gray-400" /> <a href={`tel:${c.phone.split("·")[0].replace(/[^\d+]/g, "")}`} className="hover:underline">{c.phone}</a></p>
                 )}
-                <a href={`mailto:${c.email}`} className="text-xs hover:underline" style={{ color: "#44B549" }}>{c.email}</a>
+                <p className="mt-2 flex items-center gap-1.5 text-xs"><Mail className="h-3.5 w-3.5 text-[#44B549]" /> <a href={`mailto:${c.email}`} className="font-semibold text-[#44B549] hover:underline">{c.email}</a></p>
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-6">{t({ en: "* Contact us by email for the fastest response — our team typically replies within one business day.", zh: "* 通过邮件联系我们可获得最快响应——我们的团队通常在1个工作日内回复。", th: "* ติดต่อเราทางอีเมลเพื่อการตอบกลับที่รวดเร็วที่สุด — ทีมงานของเรามักตอบกลับภายในหนึ่งวันทำการ", vi: "* Liên hệ qua email để được phản hồi nhanh nhất — đội ngũ của chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
+          <p className="mt-6 text-xs text-gray-400">{t({ en: "* Contact us by email for the fastest response — our team typically replies within one business day.", zh: "* 通过邮件联系我们可获得最快响应——我们的团队通常在1个工作日内回复。", th: "* ติดต่อเราทางอีเมลเพื่อการตอบกลับที่รวดเร็วที่สุด — ทีมงานของเรามักตอบกลับภายในหนึ่งวันทำการ", vi: "* Liên hệ qua email để được phản hồi nhanh nhất — đội ngũ của chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
         </div>
       </section>
 
@@ -251,8 +147,8 @@ export default function ContactPage() {
             <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-bold md:text-4xl">{t({ en: "Ready to build a reliable UV curing process?", zh: "准备好构建可靠的 UV Curing 紫外线固化工艺了吗？", th: "พร้อมสร้างกระบวนการ UV Curing ที่เชื่อถือได้แล้วหรือยัง?", vi: "Sẵn sàng xây dựng quy trình UV curing đáng tin cậy?" }, locale)}</h2>
             <p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">{t({ en: "Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers help you select, implement, and maintain the right UV curing system — with local support across China and Southeast Asia.", zh: "告诉我们您的应用、胶粘剂、固化面积、波长与生产需求。ETIA 工程师协助您选型、导入并维护合适的 UV Curing 紫外线固化系统——并在中国与东南亚提供本地支持。", th: "บอกเราเกี่ยวกับการใช้งาน กาว พื้นที่คิวริ่ง ความยาวคลื่น และความต้องการด้านการผลิตของคุณ วิศวกร ETIA ช่วยคุณเลือก ติดตั้ง และดูแลระบบ UV Curing ที่เหมาะสม พร้อมการสนับสนุนในพื้นที่ทั่วจีนและเอเชียตะวันออกเฉียงใต้", vi: "Cho chúng tôi biết ứng dụng, keo, diện tích đóng rắn, bước sóng và yêu cầu sản xuất của bạn. Kỹ sư ETIA giúp bạn chọn, triển khai và bảo trì hệ thống UV curing phù hợp — với hỗ trợ tại chỗ trên khắp Trung Quốc và Đông Nam Á." }, locale)}</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href="#sales" className="inline-flex items-center justify-center rounded-xl bg-[#44B549] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#3A9D3F]">{t({ en: "Talk to an ETIA Engineer", zh: "咨询 ETIA 工程师", th: "ปรึกษาวิศวกร ETIA", vi: "Trao đổi với kỹ sư ETIA" }, locale)}</a>
-              <a href="#service" className="inline-flex items-center justify-center rounded-xl border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white transition hover:border-white/70">{t({ en: "Request Service Support", zh: "申请服务支持", th: "ขอรับการสนับสนุนด้านบริการ", vi: "Yêu cầu hỗ trợ dịch vụ" }, locale)}</a>
+              <a href="#inquiries" className="inline-flex items-center justify-center rounded-xl bg-[#44B549] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#3A9D3F]">{t({ en: "Send an Inquiry", zh: "发送咨询", th: "ส่งคำสอบถาม", vi: "Gửi yêu cầu" }, locale)}</a>
+              <a href="#offices" className="inline-flex items-center justify-center rounded-xl border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white transition hover:border-white/70">{t({ en: "Find a Local Contact", zh: "查找本地联系人", th: "หาผู้ติดต่อในพื้นที่", vi: "Tìm liên hệ địa phương" }, locale)}</a>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ const lifecycle: Array<{ icon: typeof ClipboardCheck; phase: LangText; title: La
       { en: "Dose & exposure", zh: "剂量与照射", th: "โดสและการฉายแสง", vi: "Liều & chiếu xạ" },
     ],
     cta: { en: "Get selection help", zh: "获取选型支持", th: "ขอความช่วยเหลือด้านการเลือก", vi: "Nhận hỗ trợ lựa chọn" },
-    href: "#sales",
+    href: "#inquiries",
     accent: "#1A56DB",
   },
   {
@@ -41,7 +41,7 @@ const lifecycle: Array<{ icon: typeof ClipboardCheck; phase: LangText; title: La
       { en: "Safety & care", zh: "安全与维护", th: "ความปลอดภัยและดูแล", vi: "An toàn & bảo dưỡng" },
     ],
     cta: { en: "Plan your setup", zh: "咨询安装培训", th: "วางแผนการติดตั้ง", vi: "Lên kế hoạch lắp đặt" },
-    href: "#sales",
+    href: "#inquiries",
     accent: "#0E9AA7",
   },
   {
@@ -56,7 +56,7 @@ const lifecycle: Array<{ icon: typeof ClipboardCheck; phase: LangText; title: La
       { en: "Long-term care", zh: "长期维保", th: "ดูแลระยะยาว", vi: "Bảo trì lâu dài" },
     ],
     cta: { en: "Request service", zh: "申请服务支持", th: "ขอรับบริการ", vi: "Yêu cầu dịch vụ" },
-    href: "#service",
+    href: "#inquiries",
     accent: "#087F6B",
   },
 ];

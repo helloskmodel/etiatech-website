@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
+import { localeSalesEmail } from "@/components/contact";
 
 const LAST_UPDATED: LangText = { en: "29 June 2026", zh: "2026年6月29日" };
 
@@ -84,7 +85,7 @@ export default function PrivacyView() {
               <strong>ETIA-TECH (ASIA) Co., Limited</strong><br />
               {t({ en: "Hong Kong", zh: "中国香港" }, locale)}<br />
               {t({ en: "Email:", zh: "邮箱:" }, locale)}{" "}
-              <a href="mailto:mark_tang@etia-tech.com" className="font-medium hover:underline" style={{ color: "#44B549" }}>mark_tang@etia-tech.com</a>
+              <a href={`mailto:${localeSalesEmail(locale)}`} className="font-medium hover:underline" style={{ color: "#44B549" }}>{localeSalesEmail(locale)}</a>
             </p>
           </Section>
 
