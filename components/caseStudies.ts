@@ -52,9 +52,10 @@ export function appImageUrl(filename: string): string {
   return `${APP_IMG_BASE}/${encodeURIComponent(filename)}`;
 }
 
-// Purpose-made wide hero banners (1926×600, compressed) under /IMAGE/logo/.
+// Purpose-made wide hero banners (1926×600), re-compressed (~200–330 KB) under
+// a fresh /BANNERIMG/ path so the new versions bypass any stale CDN cache.
 const BANNER_BASE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/BANNERIMG";
 export function bannerUrl(filename: string): string {
   return `${BANNER_BASE}/${encodeURIComponent(filename)}`;
 }
