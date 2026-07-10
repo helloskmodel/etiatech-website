@@ -186,10 +186,14 @@ export default function OmniCureBrandLanding() {
             {routes.map((route) => {
               const Icon = route.icon;
               return <button key={route.id} onClick={() => chooseRoute(route.id)} className="group flex flex-col rounded-2xl border border-[#E3EAF2] bg-white p-5 text-left transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(15,36,68,.09)]" style={{ borderTopColor: route.color, borderTopWidth: 4 }}>
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ color: route.color, background: route.soft }}><Icon className="h-5 w-5" strokeWidth={1.8} /></span>
-                <p className="mt-4 text-[11px] font-bold uppercase tracking-[.1em]" style={{ color: route.color }}>{t(route.eyebrow, locale)}</p>
-                <h3 className="mt-1.5 text-base font-bold leading-snug text-[#102A43]">{t(route.title, locale)}</h3>
-                <p className="mt-2 flex-1 text-xs leading-5 text-[#5F6C7B]">{t(route.body, locale)}</p>
+                <div className="flex items-center gap-3.5">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl" style={{ color: route.color, background: route.soft }}><Icon className="h-7 w-7" strokeWidth={1.8} /></span>
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-[.1em]" style={{ color: route.color }}>{t(route.eyebrow, locale)}</p>
+                    <h3 className="mt-1 text-base font-bold leading-snug text-[#102A43]">{t(route.title, locale)}</h3>
+                  </div>
+                </div>
+                <p className="mt-4 flex-1 text-xs leading-5 text-[#5F6C7B]">{t(route.body, locale)}</p>
                 {route.featured && <p className="mt-3 text-[11px] text-[#7B8794]">{t({ en: "Featured:", zh: "推荐型号：", th: "แนะนำ:", vi: "Nổi bật:" }, locale)} <span className="font-semibold text-[#102A43]">OmniCure {route.featured}</span></p>}
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold" style={{ color: route.color }}>{t({ en: "View matching products", zh: "查看匹配产品", th: "ดูผลิตภัณฑ์ที่ตรงกัน", vi: "Xem sản phẩm phù hợp" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
               </button>;
@@ -248,6 +252,70 @@ export default function OmniCureBrandLanding() {
         </div>}
       </section>
 
+
+      {/* Why OmniCure — SEO-structured premium block */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="overflow-hidden rounded-[32px] border border-[#DCE9EE] bg-gradient-to-br from-[#F3F7FF] to-[#F2FBF8]">
+            <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Why OmniCure", zh: "为什么选择 OmniCure", th: "ทำไมต้อง OmniCure", vi: "Vì sao chọn OmniCure" }, locale)}</p>
+                <h2 className="mt-3 text-lg font-bold leading-snug text-[#1A56DB] md:text-xl">{t({ en: "OmniCure UV Curing Systems for Precision Manufacturing", zh: "面向精密制造的 OmniCure 紫外线固化系统", th: "ระบบ UV Curing จาก OmniCure สำหรับการผลิตที่แม่นยำ", vi: "Hệ thống UV Curing OmniCure cho sản xuất chính xác" }, locale)}</h2>
+                <p className="mt-4 max-w-xl text-3xl font-bold leading-[1.12] tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Trusted Since 1984. Built for Precision, Control and Production Reliability.", zh: "始于 1984，值得信赖。为精准、可控与量产可靠而生。", th: "ได้รับความไว้วางใจตั้งแต่ปี 1984 สร้างมาเพื่อความแม่นยำ การควบคุม และความน่าเชื่อถือในการผลิต", vi: "Được tin dùng từ năm 1984. Xây dựng cho độ chính xác, khả năng kiểm soát và độ tin cậy sản xuất." }, locale)}</p>
+                <p className="mt-6 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "OmniCure delivers stable, repeatable and efficient curing across UV spot curing and air-cooled UV LED — from adhesives, coatings and inks to medical devices, electronics and optoelectronics.", zh: "OmniCure 在 UV 点固化与风冷 UV LED 应用中实现稳定、可复现且高效的固化——从胶粘剂、涂层与油墨到医疗器械、电子与光电子。", th: "OmniCure ให้การคิวริ่งที่เสถียร ทำซ้ำได้ และมีประสิทธิภาพ ทั้ง UV spot curing และ air-cooled UV LED ตั้งแต่กาว สารเคลือบ และหมึก ไปจนถึงอุปกรณ์การแพทย์ อิเล็กทรอนิกส์ และออปโตอิเล็กทรอนิกส์", vi: "OmniCure mang lại quá trình đóng rắn ổn định, lặp lại và hiệu quả trên UV spot curing và UV LED làm mát bằng khí — từ keo, lớp phủ và mực in đến thiết bị y tế, điện tử và quang điện tử." }, locale)}</p>
+              </div>
+
+              {/* Right — UV curing system diagram */}
+              <div className="relative rounded-3xl border border-white bg-white p-6 shadow-[0_20px_55px_rgba(15,36,68,.08)] sm:p-8">
+                <svg viewBox="0 0 420 300" className="h-auto w-full" role="img" aria-label="OmniCure UV curing technology branches">
+                  <defs>
+                    <linearGradient id="wroot" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#143C96" />
+                      <stop offset="100%" stopColor="#1F63D6" />
+                    </linearGradient>
+                  </defs>
+                  {/* Branch connectors */}
+                  <path d="M138 150 C 196 150, 196 72, 250 72" fill="none" stroke="#1A56DB" strokeWidth="2.5" opacity="0.5" />
+                  <path d="M138 150 C 196 150, 196 228, 250 228" fill="none" stroke="#41A62A" strokeWidth="2.5" opacity="0.5" />
+                  <circle cx="138" cy="150" r="4.5" fill="#143C96" />
+                  <circle cx="250" cy="72" r="4.5" fill="#1A56DB" />
+                  <circle cx="250" cy="228" r="4.5" fill="#41A62A" />
+                  {/* Root node */}
+                  <rect x="16" y="118" width="122" height="64" rx="14" fill="url(#wroot)" />
+                  <text x="77" y="146" textAnchor="middle" fontSize="16" fontWeight="700" fill="#ffffff" fontFamily="sans-serif">OmniCure</text>
+                  <text x="77" y="165" textAnchor="middle" fontSize="10" fill="#BBD3FF" fontFamily="sans-serif">UV Curing</text>
+                  {/* Branch A — spot */}
+                  <rect x="250" y="44" width="156" height="56" rx="12" fill="#ffffff" stroke="#1A56DB" strokeWidth="1.5" />
+                  <text x="328" y="70" textAnchor="middle" fontSize="13" fontWeight="700" fill="#1A56DB" fontFamily="sans-serif">UV Spot Curing</text>
+                  <text x="328" y="87" textAnchor="middle" fontSize="10" fill="#7B8794" fontFamily="sans-serif">Spot / Lamp</text>
+                  {/* Branch B — air-cooled LED */}
+                  <rect x="250" y="200" width="156" height="56" rx="12" fill="#ffffff" stroke="#41A62A" strokeWidth="1.5" />
+                  <text x="328" y="226" textAnchor="middle" fontSize="13" fontWeight="700" fill="#087F6B" fontFamily="sans-serif">Air-Cooled UV LED</text>
+                  <text x="328" y="243" textAnchor="middle" fontSize="10" fill="#7B8794" fontFamily="sans-serif">Small &amp; Large Area</text>
+                </svg>
+              </div>
+            </div>
+
+            {/* Bottom value strip */}
+            <div className="grid grid-cols-2 gap-px border-t border-[#DCE9EE] bg-[#DCE9EE] lg:grid-cols-4">
+              {[
+                { icon: BadgeCheck, label: { en: "Since 1984", zh: "始于 1984", th: "ตั้งแต่ปี 1984", vi: "Từ năm 1984" } },
+                { icon: Crosshair, label: { en: "Precision Control", zh: "精准控制", th: "การควบคุมที่แม่นยำ", vi: "Kiểm soát chính xác" } },
+                { icon: Check, label: { en: "Repeatable Curing", zh: "可复现固化", th: "การคิวริ่งที่ทำซ้ำได้", vi: "Đóng rắn lặp lại" } },
+                { icon: ShieldCheck, label: { en: "Production Reliability", zh: "量产可靠", th: "ความน่าเชื่อถือในการผลิต", vi: "Độ tin cậy sản xuất" } },
+              ].map((v) => {
+                const Icon = v.icon;
+                return (
+                  <div key={v.label.en} className="flex items-center justify-center gap-2.5 bg-white px-4 py-5 text-center">
+                    <Icon className="h-5 w-5 shrink-0 text-[#1A56DB]" strokeWidth={1.9} />
+                    <span className="text-sm font-bold text-[#102A43]">{t(v.label, locale)}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <FinalCta heading={t({ en: "Not Sure Which OmniCure System Fits Your Process?", zh: "不确定哪款 OmniCure 系统适合您的工艺？", th: "ไม่แน่ใจว่าระบบ OmniCure รุ่นใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống OmniCure nào phù hợp với quy trình của bạn?" }, locale)} body={t({ en: "Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution.", zh: "告诉我们您的胶粘剂、基材、固化面积、节拍时间与生产要求，ETIA 可协助推荐合适的紫外线固化方案。", th: "บอกเราเกี่ยวกับกาว วัสดุรองรับ พื้นที่คิวริ่ง เวลารอบการผลิต และความต้องการด้านการผลิตของคุณ ETIA ช่วยแนะนำโซลูชัน UV Curing ที่เหมาะสมได้", vi: "Cho chúng tôi biết keo, vật liệu nền, diện tích đóng rắn, thời gian chu kỳ và yêu cầu sản xuất của bạn. ETIA có thể giúp đề xuất giải pháp UV Curing phù hợp." }, locale)} primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: mailto }} secondary={{ label: t({ en: "Request Product Recommendation", zh: "获取产品推荐", th: "ขอคำแนะนำผลิตภัณฑ์", vi: "Yêu cầu tư vấn sản phẩm" }, locale), href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />
     </div>
