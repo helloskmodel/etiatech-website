@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { inquiryMailto, localeSalesEmail } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
+import { openConsent } from "@/components/consent";
 
 export default function Footer() {
   const { locale } = useLocale();
@@ -41,6 +42,8 @@ export default function Footer() {
           <div className="flex flex-col gap-1">
             <Link href="/privacy" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Privacy Policy", zh: "隐私政策", th: "นโยบายความเป็นส่วนตัว", vi: "Chính sách bảo mật" }, locale)}</Link>
             <Link href="/cookies" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Cookie Policy", zh: "Cookie政策", th: "นโยบายคุกกี้", vi: "Chính sách cookie" }, locale)}</Link>
+            <Link href="/terms" className="text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Terms of Use", zh: "使用条款", th: "ข้อกำหนดการใช้งาน", vi: "Điều khoản sử dụng" }, locale)}</Link>
+            <button type="button" onClick={() => openConsent()} className="text-left text-xs text-gray-500 hover:text-[#1A56DB] transition-colors">{t({ en: "Cookie Settings", zh: "Cookie 设置", th: "ตั้งค่าคุกกี้", vi: "Cài đặt cookie" }, locale)}</button>
           </div>
         </div>
         <div>
