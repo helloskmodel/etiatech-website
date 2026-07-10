@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { ClipboardCheck, Settings2, LifeBuoy } from "lucide-react";
-import { useLocale, t, type Locale } from "@/components/LocaleContext";
+import { ClipboardCheck, Settings2, LifeBuoy, ArrowRight } from "lucide-react";
+import { useLocale, t, type Locale, type LangText } from "@/components/LocaleContext";
 
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
 
@@ -13,29 +13,50 @@ const COMMITMENT_POSTER: Record<Locale, string> = {
   vi: `${IMG}/ETIA%20SERVICE-VN.png`,
 };
 
-const lifecycle = [
+const lifecycle: Array<{ icon: typeof ClipboardCheck; phase: LangText; title: LangText; lead: LangText; pills: LangText[]; cta: LangText; href: string; accent: string }> = [
   {
     icon: ClipboardCheck,
-    phase: "Before Purchase",
-    title: "Selection & Application",
-    lead: "We help customers choose the right UV curing system before purchase.",
-    points: ["Application discussion", "UV curing requirement review", "Adhesive and material consideration", "Working distance and exposure area review", "Product and accessory recommendation", "OmniCure®, Phoseon, UV spot curing, UV LED, and area curing selection support"],
+    phase: { en: "Before Purchase", zh: "购买前", th: "ก่อนการซื้อ", vi: "Trước khi mua" },
+    title: { en: "Selection & Application", zh: "选型与应用", th: "การเลือกและการใช้งาน", vi: "Lựa chọn & ứng dụng" },
+    lead: { en: "We evaluate your application and match the right UV curing system before you buy — from adhesive and material to working distance and exposure area.", zh: "在您下单前，我们评估您的应用并匹配合适的紫外线固化系统——从胶粘剂、材料到工作距离与照射面积。", th: "ก่อนที่คุณจะซื้อ เราประเมินการใช้งานและจับคู่ระบบ UV Curing ที่เหมาะสม ตั้งแต่กาวและวัสดุ ไปจนถึงระยะทำงานและพื้นที่ฉายแสง", vi: "Trước khi bạn mua, chúng tôi đánh giá ứng dụng và chọn hệ thống UV curing phù hợp — từ keo và vật liệu đến khoảng cách làm việc và diện tích chiếu." },
+    pills: [
+      { en: "Application review", zh: "应用评估", th: "ประเมินการใช้งาน", vi: "Đánh giá ứng dụng" },
+      { en: "Selection advice", zh: "选型建议", th: "คำแนะนำการเลือก", vi: "Tư vấn lựa chọn" },
+      { en: "Material match", zh: "材料匹配", th: "จับคู่วัสดุ", vi: "Phù hợp vật liệu" },
+      { en: "Dose & exposure", zh: "剂量与照射", th: "โดสและการฉายแสง", vi: "Liều & chiếu xạ" },
+    ],
+    cta: { en: "Get selection help", zh: "获取选型支持", th: "ขอความช่วยเหลือด้านการเลือก", vi: "Nhận hỗ trợ lựa chọn" },
+    href: "#sales",
     accent: "#1A56DB",
   },
   {
     icon: Settings2,
-    phase: "During Implementation",
-    title: "Setup & Training",
-    lead: "We support the transition from equipment delivery to production use.",
-    points: ["Installation guidance", "System setup support", "Operator training", "Light guide and accessory setup", "Process discussion", "Safety and maintenance reminders"],
+    phase: { en: "During Implementation", zh: "导入实施中", th: "ระหว่างการติดตั้งใช้งาน", vi: "Trong quá trình triển khai" },
+    title: { en: "Setup & Training", zh: "安装与培训", th: "การติดตั้งและการฝึกอบรม", vi: "Lắp đặt & đào tạo" },
+    lead: { en: "We support the move from delivery to production — installation, system setup, operator training and process guidance.", zh: "我们支持从交付到投产的过渡——安装、系统调试、操作培训与工艺指导。", th: "เราสนับสนุนการเปลี่ยนผ่านจากการส่งมอบสู่การผลิต ทั้งการติดตั้ง การตั้งค่าระบบ การฝึกอบรมผู้ปฏิบัติงาน และคำแนะนำด้านกระบวนการ", vi: "Chúng tôi hỗ trợ chuyển từ giao hàng đến sản xuất — lắp đặt, cài đặt hệ thống, đào tạo vận hành và hướng dẫn quy trình." },
+    pills: [
+      { en: "Installation", zh: "安装指导", th: "การติดตั้ง", vi: "Lắp đặt" },
+      { en: "System setup", zh: "系统调试", th: "ตั้งค่าระบบ", vi: "Cài đặt hệ thống" },
+      { en: "Operator training", zh: "操作培训", th: "ฝึกอบรมผู้ใช้", vi: "Đào tạo vận hành" },
+      { en: "Safety & care", zh: "安全与维护", th: "ความปลอดภัยและดูแล", vi: "An toàn & bảo dưỡng" },
+    ],
+    cta: { en: "Plan your setup", zh: "咨询安装培训", th: "วางแผนการติดตั้ง", vi: "Lên kế hoạch lắp đặt" },
+    href: "#sales",
     accent: "#0E9AA7",
   },
   {
     icon: LifeBuoy,
-    phase: "After Sales",
-    title: "Service & Reliability",
-    lead: "We stay with customers after the system is installed.",
-    points: ["Online technical service", "Onsite troubleshooting", "Maintenance guidance", "Repair support", "Spare parts and consumables coordination", "Long-term technical communication"],
+    phase: { en: "After Sales", zh: "售后", th: "หลังการขาย", vi: "Sau bán hàng" },
+    title: { en: "Service & Reliability", zh: "服务与可靠性", th: "บริการและความน่าเชื่อถือ", vi: "Dịch vụ & độ tin cậy" },
+    lead: { en: "We stay with you after install — online and onsite support, maintenance, spare parts and long-term technical communication.", zh: "安装完成后我们持续陪伴——在线与现场支持、维护保养、备件耗材及长期技术沟通。", th: "หลังติดตั้งเรายังอยู่เคียงข้างคุณ ทั้งการสนับสนุนออนไลน์และหน้างาน การบำรุงรักษา อะไหล่ และการสื่อสารทางเทคนิคระยะยาว", vi: "Sau khi lắp đặt, chúng tôi luôn đồng hành — hỗ trợ trực tuyến và tại chỗ, bảo trì, phụ tùng và trao đổi kỹ thuật lâu dài." },
+    pills: [
+      { en: "Online support", zh: "在线支持", th: "สนับสนุนออนไลน์", vi: "Hỗ trợ trực tuyến" },
+      { en: "Onsite fix", zh: "现场排查", th: "แก้ไขหน้างาน", vi: "Xử lý tại chỗ" },
+      { en: "Spare parts", zh: "备件耗材", th: "อะไหล่", vi: "Phụ tùng" },
+      { en: "Long-term care", zh: "长期维保", th: "ดูแลระยะยาว", vi: "Bảo trì lâu dài" },
+    ],
+    cta: { en: "Request service", zh: "申请服务支持", th: "ขอรับบริการ", vi: "Yêu cầu dịch vụ" },
+    href: "#service",
     accent: "#087F6B",
   },
 ];
@@ -61,27 +82,32 @@ export default function SalesSupportContent() {
       </section>
 
       {/* Support Across the Full Equipment Lifecycle */}
-      <section className="bg-[#F6F8FB] py-20 sm:py-24">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">Full Lifecycle</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">Support Across the Full Equipment Lifecycle</h2>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Full Lifecycle", zh: "全生命周期", th: "ตลอดวงจรการใช้งาน", vi: "Toàn vòng đời" }, locale)}</p>
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Support Across the Full Equipment Lifecycle", zh: "覆盖设备全生命周期的支持", th: "การสนับสนุนตลอดวงจรการใช้งานของอุปกรณ์", vi: "Hỗ trợ suốt vòng đời thiết bị" }, locale)}</h2>
+          <div className="mt-10 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {lifecycle.map((phase) => {
               const Icon = phase.icon;
               return (
-                <div key={phase.phase} className="flex flex-col rounded-3xl border border-[#E6EAF0] bg-white p-7" style={{ borderTopColor: phase.accent, borderTopWidth: 3 }}>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-white" style={{ background: phase.accent }}><Icon className="h-5 w-5" strokeWidth={1.8} /></span>
-                  <p className="mt-5 text-xs font-bold uppercase tracking-wide" style={{ color: phase.accent }}>{phase.phase}</p>
-                  <h3 className="mt-1 text-xl font-bold text-[#102A43]">{phase.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#5F6C7B]">{phase.lead}</p>
-                  <ul className="mt-5 space-y-2.5">
-                    {phase.points.map((pt) => (
-                      <li key={pt} className="flex items-start gap-2.5 text-sm leading-6 text-[#334E68]">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: phase.accent }} />
-                        {pt}
-                      </li>
+                <div key={phase.phase.en} className="flex h-full flex-col rounded-3xl border border-[#E6EAF0] bg-[#F6F8FB] p-6 sm:p-7">
+                  {/* Stage label with small accent icon */}
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white" style={{ background: phase.accent }}><Icon className="h-4 w-4" strokeWidth={1.8} /></span>
+                    <p className="text-[11px] font-bold uppercase tracking-[.14em]" style={{ color: phase.accent }}>{t(phase.phase, locale)}</p>
+                  </div>
+                  {/* Accent line */}
+                  <span className="mt-4 block h-0.5 w-10 rounded-full" style={{ background: phase.accent }} />
+                  <h3 className="mt-4 text-xl font-bold leading-snug text-[#102A43]">{t(phase.title, locale)}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[#5F6C7B]">{t(phase.lead, locale)}</p>
+                  {/* Four keyword pills */}
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {phase.pills.map((pill) => (
+                      <span key={pill.en} className="rounded-full border bg-white px-3 py-1 text-xs font-semibold" style={{ borderColor: `${phase.accent}33`, color: phase.accent }}>{t(pill, locale)}</span>
                     ))}
-                  </ul>
+                  </div>
+                  {/* CTA */}
+                  <a href={phase.href} className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-bold transition hover:gap-2.5" style={{ color: phase.accent }}>{t(phase.cta, locale)} <ArrowRight className="h-4 w-4" /></a>
                 </div>
               );
             })}

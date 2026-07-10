@@ -25,6 +25,20 @@ export default function Nav() {
   const pathname = usePathname();
   const { locale, setLocale } = useLocale();
 
+  // Switch language without leaving the current page. The (main) routes read
+  // the etia-locale cookie, so setting it and reloading re-renders the same
+  // page in the new language. Only the locale-locked SEO routes (/zh, /vi, /th
+  // and their subpaths) ignore the cookie — there we jump to the target
+  // locale's home instead.
+  const switchLocale = (l: Locale) => {
+    setLocale(l);
+    if (/^\/(zh|vi|th)(\/|$)/.test(pathname)) {
+      window.location.href = localeHome[l];
+    } else {
+      window.location.reload();
+    }
+  };
+
   // Nav is mounted in the layout and persists across client-side navigations,
   // so the mobile menu / language dropdown would otherwise stay open after
   // following any link that isn't one of the menu's own (e.g. a product chip
@@ -79,7 +93,7 @@ export default function Nav() {
                     <button
                       key={l}
                       disabled={!active}
-                      onClick={() => { if (active) { setLocale(l); setLangOpen(false); window.location.href = localeHome[l]; } }}
+                      onClick={() => { if (active) { setLangOpen(false); switchLocale(l); } }}
                       className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
                         !active
                           ? "text-gray-300 cursor-not-allowed"
@@ -127,7 +141,7 @@ export default function Nav() {
                 <button
                   key={l}
                   disabled={!active}
-                  onClick={() => { if (active) { setLocale(l); setOpen(false); window.location.href = localeHome[l]; } }}
+                  onClick={() => { if (active) { setOpen(false); switchLocale(l); } }}
                   className={`px-3 py-1.5 rounded text-sm font-semibold transition-all ${
                     !active
                       ? "border border-gray-100 text-gray-300 cursor-not-allowed"
