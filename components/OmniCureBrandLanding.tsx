@@ -186,12 +186,14 @@ export default function OmniCureBrandLanding() {
             {routes.map((route) => {
               const Icon = route.icon;
               return <button key={route.id} onClick={() => chooseRoute(route.id)} className="group flex flex-col rounded-2xl border border-[#E3EAF2] bg-white p-5 text-left transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(15,36,68,.09)]" style={{ borderTopColor: route.color, borderTopWidth: 4 }}>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3.5">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl" style={{ color: route.color, background: route.soft }}><Icon className="h-7 w-7" strokeWidth={1.8} /></span>
-                  <p className="text-[11px] font-bold uppercase tracking-[.1em]" style={{ color: route.color }}>{t(route.eyebrow, locale)}</p>
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-[.1em]" style={{ color: route.color }}>{t(route.eyebrow, locale)}</p>
+                    <h3 className="mt-1 text-base font-bold leading-snug text-[#102A43]">{t(route.title, locale)}</h3>
+                  </div>
                 </div>
-                <h3 className="mt-4 text-base font-bold leading-snug text-[#102A43]">{t(route.title, locale)}</h3>
-                <p className="mt-2 flex-1 text-xs leading-5 text-[#5F6C7B]">{t(route.body, locale)}</p>
+                <p className="mt-4 flex-1 text-xs leading-5 text-[#5F6C7B]">{t(route.body, locale)}</p>
                 {route.featured && <p className="mt-3 text-[11px] text-[#7B8794]">{t({ en: "Featured:", zh: "推荐型号：", th: "แนะนำ:", vi: "Nổi bật:" }, locale)} <span className="font-semibold text-[#102A43]">OmniCure {route.featured}</span></p>}
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold" style={{ color: route.color }}>{t({ en: "View matching products", zh: "查看匹配产品", th: "ดูผลิตภัณฑ์ที่ตรงกัน", vi: "Xem sản phẩm phù hợp" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
               </button>;
