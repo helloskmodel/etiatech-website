@@ -7,6 +7,7 @@ import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
+import FinalCta from "@/components/FinalCta";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { APPLICATION_CATEGORIES, getApplicationsForProduct } from "@/data/applicationsData";
@@ -255,17 +256,12 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-14" style={{ background: "#1A56DB" }}>
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">{t({ en: `Need help selecting a ${b.name} system?`, zh: `需要帮助挑选 ${b.name} 系统?` }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的 UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href={inquiryMailto(locale, { subject: "Sales Inquiry", context: b.name })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
-            <Link href="/product" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "All Products", zh: "全部产品" }, locale)}</Link>
-          </div>
-        </div>
-      </section>
+      <FinalCta
+        heading={t({ en: `Need help selecting a ${b.name} system?`, zh: `需要帮助挑选 ${b.name} 系统?` }, locale)}
+        body={t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的 UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry", context: b.name }) }}
+        secondary={{ label: t({ en: "All Products", zh: "全部产品" }, locale), href: "/product" }}
+      />
     </>
   );
 }

@@ -10,6 +10,7 @@ import { productForAppNote } from "@/components/productApplications";
 import { techRouteFor } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
+import FinalCta from "@/components/FinalCta";
 
 
 const industries = [...new Set(apps.map((a) => a.industry))];
@@ -157,16 +158,12 @@ export default function ApplicationPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16" style={{ background: "#1A56DB" }}>
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Find the Right UV Curing Solution for Your Process</h2>
-          <p className="text-gray-300 mb-6">Our engineers are ready to help — from application validation to system selection.</p>
-          <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90" style={{ background: "#44B549" }}>
-            Talk to Our Sales →
-          </a>
-        </div>
-      </section>
+      <FinalCta
+        heading={t({ en: "Find the Right UV Curing Solution for Your Process", zh: "为您的工艺找到合适的紫外线固化方案", th: "ค้นหาโซลูชัน UV Curing ที่เหมาะกับกระบวนการของคุณ", vi: "Tìm giải pháp UV Curing phù hợp cho quy trình của bạn" }, locale)}
+        body={t({ en: "Our engineers are ready to help — from application validation to system selection.", zh: "从应用验证到系统选型，我们的工程师随时为您提供支持。", th: "วิศวกรของเราพร้อมช่วยเหลือ ตั้งแต่การตรวจสอบการใช้งานจนถึงการเลือกระบบ", vi: "Các kỹ sư của chúng tôi sẵn sàng hỗ trợ — từ kiểm chứng ứng dụng đến lựa chọn hệ thống." }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry" }) }}
+        secondary={{ label: t({ en: "Browse Products", zh: "浏览产品", th: "ดูสินค้า", vi: "Xem sản phẩm" }, locale), href: "/product" }}
+      />
 
     </>
   );

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FileText, Download } from "lucide-react";
 import { productImage, productHref, products, localizeProduct, productTagline, techRouteFor, productDocs, productDocUrl, type Product } from "@/components/productCatalog";
 import { inquiryMailto } from "@/components/contact";
+import FinalCta from "@/components/FinalCta";
 import { localizeSpecLabel } from "@/components/specLabels.zh";
 import { useLocale, t } from "@/components/LocaleContext";
 import RelatedApplications from "@/components/RelatedApplications";
@@ -204,16 +205,12 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       )}
 
       {/* 8 · CTA */}
-      <section className="py-14" style={{ background: "#1A56DB" }}>
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">{t({ en: `Interested in the ${shortName}?`, zh: "对该产品感兴趣?", th: `สนใจ ${shortName} หรือไม่?`, vi: `Quan tâm đến ${shortName}?` }, locale)}</h2>
-          <p className="text-gray-300 mb-8">{t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。", th: "วิศวกร UV Curing ของเราจะจับคู่การกำหนดค่าที่เหมาะสมกับกระบวนการของคุณ — ตั้งแต่การเลือกจนถึงการตรวจสอบยืนยัน", vi: "Kỹ sư UV curing của chúng tôi sẽ chọn cấu hình phù hợp cho quy trình của bạn — từ lựa chọn đến kiểm định." }, locale)}</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-8 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →", th: "ปรึกษาวิศวกร →", vi: "Trao đổi với kỹ sư →" }, locale)}</a>
-            <Link href="/product/systems" className="px-8 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "All Systems", zh: "全部系统", th: "ระบบทั้งหมด", vi: "Tất cả hệ thống" }, locale)}</Link>
-          </div>
-        </div>
-      </section>
+      <FinalCta
+        heading={t({ en: `Interested in the ${shortName}?`, zh: "对该产品感兴趣?", th: `สนใจ ${shortName} หรือไม่?`, vi: `Quan tâm đến ${shortName}?` }, locale)}
+        body={t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。", th: "วิศวกร UV Curing ของเราจะจับคู่การกำหนดค่าที่เหมาะสมกับกระบวนการของคุณ — ตั้งแต่การเลือกจนถึงการตรวจสอบยืนยัน", vi: "Kỹ sư UV curing của chúng tôi sẽ chọn cấu hình phù hợp cho quy trình của bạn — từ lựa chọn đến kiểm định." }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name }) }}
+        secondary={{ label: t({ en: "All Systems", zh: "全部系统", th: "ระบบทั้งหมด", vi: "Tất cả hệ thống" }, locale), href: "/product/systems" }}
+      />
     </>
   );
 }

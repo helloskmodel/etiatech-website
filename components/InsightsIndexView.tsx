@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BadgeCheck, ArrowRight } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
+import FinalCta from "@/components/FinalCta";
 import HeroBanner from "@/components/HeroBanner";
 import TrustStrip from "@/components/TrustStrip";
 import { PAGE_BANNERS } from "@/components/caseStudies";
@@ -108,6 +109,13 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
           )}
         </div>
       </section>
+
+      <FinalCta
+        heading={t({ en: "Have a UV curing challenge to solve?", zh: "有紫外线固化难题要解决?", th: "มีโจทย์ UV Curing ที่ต้องแก้ไหม?", vi: "Có bài toán UV curing cần giải quyết?" }, locale)}
+        body={t({ en: "Tell us your material, curing area, wavelength and production requirements. ETIA engineers will help you find the right solution.", zh: "告诉我们您的材料、固化面积、波长与生产要求。ETIA 工程师将帮助您找到合适方案。", th: "บอกเราเกี่ยวกับวัสดุ พื้นที่คิวริ่ง ความยาวคลื่น และความต้องการด้านการผลิตของคุณ วิศวกรของ ETIA จะช่วยหาโซลูชันที่เหมาะสม", vi: "Cho chúng tôi biết vật liệu, diện tích đóng rắn, bước sóng và yêu cầu sản xuất. Kỹ sư ETIA sẽ giúp bạn tìm giải pháp phù hợp." }, locale)}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "UV Curing Inquiry" }) }}
+        secondary={{ label: t({ en: "Browse Products", zh: "浏览产品", th: "ดูสินค้า", vi: "Xem sản phẩm" }, locale), href: "/product" }}
+      />
     </>
   );
 }
