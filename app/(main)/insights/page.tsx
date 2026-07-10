@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description:
     "Technical guides, market analysis and application know-how for UV curing across photonics, medical, automotive, electronics and industrial manufacturing — from ETIA Technology.",
   alternates: { canonical: "https://www.etiatech.com/insights" },
+  openGraph: {
+    type: "website",
+    url: "https://www.etiatech.com/insights",
+    siteName: "ETIA Technology",
+    title: "Insights — UV Curing Guides & Analysis | ETIA Technology",
+    description:
+      "Technical guides, market analysis and application know-how for UV curing across photonics, medical, automotive, electronics and industrial manufacturing — from ETIA Technology.",
+  },
 };
 
 export default function InsightsPage() {

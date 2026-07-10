@@ -3,6 +3,7 @@ import type { Product } from "@/components/productCatalog";
 import type { LangText } from "@/components/LocaleContext";
 
 const SITE = "https://www.etiatech.com";
+const OG_IMAGE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
 
 // Config for the four brand landing pages. Products are pulled from the
 // catalog by `catalogBrandId` and grouped by technology route, so the model
@@ -128,10 +129,25 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
 // SEO metadata (title + description) for a brand landing page.
 export function brandMetadata(slug: BrandSlug): Metadata {
   const b = brandLanding[slug];
+  const url = `${SITE}/product/${slug}`;
   return {
     title: b.metaTitle,
     description: b.metaDescription,
-    alternates: { canonical: `${SITE}/product/${slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      url,
+      siteName: "ETIA Technology",
+      title: b.metaTitle,
+      description: b.metaDescription,
+      images: [{ url: OG_IMAGE, alt: `${b.name} UV curing systems — ETIA Technology` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: b.metaTitle,
+      description: b.metaDescription,
+      images: [OG_IMAGE],
+    },
   };
 }
 

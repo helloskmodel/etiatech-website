@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   description:
     "ETIA UV Curing case studies: how OmniCure S2000 Elite, LX500 and AC Large solve real production challenges across medical, automotive, electronics, photonics and fiber manufacturing.",
   alternates: { canonical: `${SITE}/case-studies` },
+  openGraph: {
+    type: "website",
+    url: `${SITE}/case-studies`,
+    siteName: "ETIA Technology",
+    title: "UV Curing Case Studies — OmniCure Applications | ETIA Technology",
+    description:
+      "ETIA UV Curing case studies: how OmniCure S2000 Elite, LX500 and AC Large solve real production challenges across medical, automotive, electronics, photonics and fiber manufacturing.",
+  },
 };
 
 export default function CaseStudiesPage() {
