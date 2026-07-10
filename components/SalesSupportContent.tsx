@@ -8,7 +8,7 @@ const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/log
 // ETIA Service Commitment poster — one per language, shown on the right.
 // ?v bump forces Next's image optimizer to refetch after the artwork is
 // re-exported at the same COS filename (COS serves no Cache-Control header).
-const POSTER_V = "2";
+const POSTER_V = "3";
 const COMMITMENT_POSTER: Record<Locale, string> = {
   en: `${IMG}/ETIA%20SERVICE-EN.png?v=${POSTER_V}`,
   zh: `${IMG}/ETIA%20SERVICE-CN.png?v=${POSTER_V}`,
