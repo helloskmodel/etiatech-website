@@ -52,6 +52,10 @@ export default function HomeView() {
     .map((slug) => product(slug))
     .filter((p): p is NonNullable<typeof p> => !!p && !!productImage(p));
   const [heroIndex, setHeroIndex] = useState(0);
+  // Only the current slide downloads on first paint; the next one starts
+  // after the first image has loaded. Mounting all six at once made every
+  // hidden slide download immediately and compete with the hero LCP.
+  const [heroReady, setHeroReady] = useState(false);
   useEffect(() => {
     if (heroProducts.length <= 1) return;
     const timer = setInterval(() => setHeroIndex((i) => (i + 1) % heroProducts.length), 3500);
@@ -74,7 +78,16 @@ export default function HomeView() {
         </div>
         <div className="relative min-h-[340px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
           <div className="absolute left-10 right-10 top-1/2 h-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1F63D6]/20 via-[#63C94A]/35 to-transparent blur-2xl" />
-          {heroProducts.map((p, i) => <Image key={p.slug} src={productImage(p)} alt={p.name} fill priority={i === 0} sizes="(max-width: 1024px) 100vw, 46vw" className={`object-contain p-16 transition-opacity duration-700 ${i === heroIndex ? "opacity-100" : "opacity-0"}`} />)}
+          {heroProducts.map((p, i) => {
+            const n = heroProducts.length;
+            const isCurrent = i === heroIndex;
+            const isNeighbor = i === (heroIndex + 1) % n || i === (heroIndex + n - 1) % n;
+            // Mount only the visible slide plus (once it has loaded) its
+            // neighbors, so the next fade-in is already cached without
+            // downloading all slides up front.
+            if (!isCurrent && !(heroReady && isNeighbor)) return null;
+            return <Image key={p.slug} src={productImage(p)} alt={p.name} fill priority={i === 0} onLoad={i === 0 ? () => setHeroReady(true) : undefined} sizes="(max-width: 1024px) 100vw, 46vw" className={`object-contain p-16 transition-opacity duration-700 ${isCurrent ? "opacity-100" : "opacity-0"}`} />;
+          })}
           {heroProducts.length > 1 && <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">{heroProducts.map((p, i) => <button key={p.slug} type="button" aria-label={`Show ${p.name}`} onClick={() => setHeroIndex(i)} className={`h-2 rounded-full transition-all ${i === heroIndex ? "w-6 bg-[#143C96]" : "w-2 bg-[#143C96]/25"}`} />)}</div>}
           <div className="absolute left-4 top-5 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg sm:left-6"><p className="text-xs font-bold text-[#143C96]">{t({ en: "Genuine Products", zh: "正品保障", th: "สินค้าของแท้" }, locale)}</p><p className="mt-1 text-[10px] text-[#667085]">{t({ en: "Authorized supply", zh: "授权经销", th: "จัดหาอย่างเป็นทางการ" }, locale)}</p></div>
           <div className="absolute right-4 top-1/3 rounded-xl border border-[#D9E4EA] bg-white px-4 py-3 shadow-lg sm:right-6"><p className="text-xs font-bold text-[#143C96]">{t({ en: "Application Support", zh: "应用支持", th: "การสนับสนุนด้านการใช้งาน" }, locale)}</p><p className="mt-1 text-[10px] text-[#667085]">{t({ en: "Engineer-led selection", zh: "工程师主导选型", th: "การเลือกโดยวิศวกร" }, locale)}</p></div>
