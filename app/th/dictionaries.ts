@@ -107,7 +107,7 @@ const tri = {
   ctaButton: { th: "ติดต่อฝ่ายขาย", en: "Talk to Our Sales", zh: "联系我们的销售" } as Tri,
   footerTagline: {
     th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบ UV curing ระดับโลก ประสบการณ์ความเชี่ยวชาญเชิงการใช้งานกว่า 20 ปี ใน 10 อุตสาหกรรม",
-    en: "Authorized distributor of world-class UV curing systems. 20 years of application expertise across 10 industries.",
+    en: "Authorized distributor of industrial UV curing systems from recognized manufacturers. 20 years of application expertise across 10 industries.",
     zh: "世界级 UV Curing 紫外线固化系统授权代理，20 年应用专业经验，覆盖 10 大行业。",
   } as Tri,
   footerRights: {
@@ -176,7 +176,7 @@ const homeTri = {
   } as Tri,
   whyIntro: {
     th: "ด้วยรากฐานความเป็นเลิศทางวิศวกรรม ETIA ร่วมมือกับแบรนด์ UV curing ชั้นนำระดับโลก เพื่อส่งมอบโซลูชันที่พิสูจน์แล้ว เชื่อถือได้ และดูแลครบวงจร — ตั้งแต่การเลือกจนถึงการสนับสนุน",
-    en: "Rooted in engineering excellence, ETIA partners with the world's leading UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.",
+    en: "Rooted in engineering excellence, ETIA partners with established UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.",
     zh: "立足硬核工程技术，携手全球头部 UV Curing 紫外线固化品牌，提供经过市场验证、性能稳定、全流程保障的一体化方案，从设备选型到终身售后全程护航。",
   } as Tri,
   spectrumEyebrow: { th: "เทคโนโลยี UV Curing", en: "UV Curing Technology", zh: "UV Curing 紫外线固化技术" } as Tri,
@@ -187,7 +187,7 @@ const homeTri = {
   } as Tri,
   spectrumSubtitle: {
     th: "200–600 nm · 6 เส้นทางเทคโนโลยี · 4 แบรนด์ระดับโลก",
-    en: "200–600 nm · 6 Technology Routes · 4 World-Class Brands",
+    en: "200–600 nm · 6 Technology Routes · 4 Established Brands",
     zh: "200–600 nm · 6条技术路线 · 4大世界级品牌",
   } as Tri,
   spectrumViewAll: { th: "ดูผลิตภัณฑ์ทั้งหมด →", en: "View All Products →", zh: "查看全部产品 →" } as Tri,
@@ -229,7 +229,7 @@ const whyCards: { title: Tri; desc: Tri }[] = [
     title: { th: "สต็อกในพื้นที่ · จัดส่งรวดเร็ว", en: "Local Supply & Fast Delivery", zh: "本地备货 · 快速交付" },
     desc: {
       th: "อุปกรณ์และวัสดุสิ้นเปลืองมีสต็อกในพื้นที่ ไม่ต้องรอนาน ไม่มีปัญหาการนำเข้าที่คาดไม่ถึง — ได้ระบบที่คุณต้องการ ในเวลาที่คุณต้องการ",
-      en: "Equipment and consumables in local stock. No long lead times, no import surprises — the system you need, when you need it.",
+      en: "Selected equipment and consumables are available from local stock to help reduce lead-time uncertainty and simplify procurement.",
       zh: "设备与耗材本地备货。无漫长货期、无进口意外——你需要的系统，随需即得。",
     },
   },

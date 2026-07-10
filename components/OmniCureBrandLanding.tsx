@@ -318,6 +318,15 @@ export default function OmniCureBrandLanding() {
       </section>
 
       <FinalCta heading={t({ en: "Not Sure Which OmniCure System Fits Your Process?", zh: "如果您不确定哪款 OmniCure UV Curing 系统适合您？", th: "ไม่แน่ใจว่าระบบ OmniCure รุ่นใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống OmniCure nào phù hợp với quy trình của bạn?" }, locale)} body={t({ en: "Tell us your adhesive, substrate, curing area, cycle time and production requirements. ETIA can help recommend the right UV curing solution.", zh: "告诉我们您的胶粘剂、基材、固化面积、节拍时间与生产要求，ETIA 可协助推荐合适的紫外线固化方案。", th: "บอกเราเกี่ยวกับกาว วัสดุรองรับ พื้นที่คิวริ่ง เวลารอบการผลิต และความต้องการด้านการผลิตของคุณ ETIA ช่วยแนะนำโซลูชัน UV Curing ที่เหมาะสมได้", vi: "Cho chúng tôi biết keo, vật liệu nền, diện tích đóng rắn, thời gian chu kỳ và yêu cầu sản xuất của bạn. ETIA có thể giúp đề xuất giải pháp UV Curing phù hợp." }, locale)} primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: mailto }} secondary={{ label: t({ en: "Request Product Recommendation", zh: "获取产品推荐", th: "ขอคำแนะนำผลิตภัณฑ์", vi: "Yêu cầu tư vấn sản phẩm" }, locale), href: inquiryMailto(locale, { subject: "OmniCure Product Recommendation", context: "Adhesive / substrate / curing area / cycle time" }) }} />
+
+      <div className="border-t border-[#E6EAF0] bg-[#F8FAFC] px-4 py-8 sm:px-6 lg:px-8">
+        <p className="mx-auto max-w-4xl text-center text-xs leading-5 text-[#94A3B8]">{t({
+          en: "ETIA is an authorized distributor of OmniCure® products in designated territories. OmniCure® and related trademarks are owned by their respective trademark owners. Product names and trademarks are used for identification and product reference only. Authorization scope, availability, warranty and service terms may vary by country and product model.",
+          zh: "在指定地区，ETIA 是 OmniCure® 产品的授权经销商。OmniCure® 及相关商标归其各自的商标所有者所有。产品名称与商标仅用于标识与产品参考。授权范围、供货情况、保修与服务条款可能因国家/地区与产品型号而异。",
+          th: "ETIA เป็นตัวแทนจำหน่ายที่ได้รับอนุญาตของผลิตภัณฑ์ OmniCure® ในพื้นที่ที่กำหนด OmniCure® และเครื่องหมายการค้าที่เกี่ยวข้องเป็นของเจ้าของเครื่องหมายการค้านั้น ๆ ชื่อผลิตภัณฑ์และเครื่องหมายการค้าใช้เพื่อการระบุและอ้างอิงผลิตภัณฑ์เท่านั้น ขอบเขตการได้รับอนุญาต ความพร้อมจำหน่าย การรับประกันและเงื่อนไขบริการอาจแตกต่างกันตามประเทศและรุ่นผลิตภัณฑ์",
+          vi: "ETIA là nhà phân phối được ủy quyền của các sản phẩm OmniCure® tại các khu vực được chỉ định. OmniCure® và các nhãn hiệu liên quan thuộc sở hữu của các chủ sở hữu nhãn hiệu tương ứng. Tên sản phẩm và nhãn hiệu chỉ được sử dụng để nhận diện và tham chiếu sản phẩm. Phạm vi ủy quyền, tình trạng sẵn có, bảo hành và điều khoản dịch vụ có thể khác nhau theo quốc gia và mẫu sản phẩm.",
+        }, locale)}</p>
+      </div>
     </div>
   );
 }

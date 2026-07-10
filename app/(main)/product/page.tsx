@@ -322,7 +322,7 @@ export default function ProductPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "4 World-Class Brands · 6 Technology Routes", zh: "4大国际知名品牌 · 6条技术路线", th: "4 แบรนด์ระดับโลก · 6 เส้นทางเทคโนโลยี", vi: "4 Thương hiệu quốc tế · 6 Lộ trình công nghệ" }, locale)}</p>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "4 Established Brands · 6 Technology Routes", zh: "4大国际知名品牌 · 6条技术路线", th: "4 แบรนด์ระดับโลก · 6 เส้นทางเทคโนโลยี", vi: "4 Thương hiệu quốc tế · 6 Lộ trình công nghệ" }, locale)}</p>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
               {t({ en: "Precision Selection.", zh: "精准选型", th: "การเลือกที่แม่นยำ", vi: "Lựa chọn chính xác." }, locale)}<br />
               <span style={{ color: "#44B549" }}>{t({ en: "Perfect Fit.", zh: "精准匹配", th: "ลงตัวสมบูรณ์แบบ", vi: "Phù hợp chính xác." }, locale)}</span>

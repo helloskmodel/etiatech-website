@@ -58,6 +58,7 @@ export type LandingCopy = {
     model: string;
     message: string;
     submit: string;
+    consent: string;
     thanksTitle: string;
     thanksBody: string;
     required: string;
@@ -120,6 +121,7 @@ const en: LandingCopy = {
     thanksTitle: "Thank you — we'll be in touch.",
     thanksBody: "Our Thailand team will contact you shortly with pricing and advice.",
     required: "Please complete the required fields.",
+    consent: "By submitting this form, you agree that ETIA may process your contact information to respond to your inquiry, provide product recommendations, and offer sales or technical support. Please see our Privacy Policy for details.",
   },
 };
 
@@ -152,6 +154,7 @@ const th: Partial<LandingCopy> = {
     thanksTitle: "ขอบคุณ — เราจะติดต่อกลับโดยเร็ว",
     thanksBody: "ทีมงานประเทศไทยของเราจะติดต่อกลับพร้อมราคาและคำแนะนำ",
     required: "กรุณากรอกข้อมูลที่จำเป็น",
+    consent: "การส่งแบบฟอร์มนี้ถือว่าคุณยินยอมให้ ETIA ประมวลผลข้อมูลติดต่อของคุณเพื่อตอบกลับคำถาม ให้คำแนะนำผลิตภัณฑ์ และให้การสนับสนุนด้านการขายหรือทางเทคนิค โปรดดูรายละเอียดในนโยบายความเป็นส่วนตัวของเรา",
   },
 };
 

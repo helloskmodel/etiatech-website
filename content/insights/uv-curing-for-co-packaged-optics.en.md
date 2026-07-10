@@ -1,6 +1,6 @@
 ---
 title: "UV Curing for Co-Packaged Optics (CPO): The 2026 Manufacturing Guide"
-description: "Co-packaged optics demands the tightest fiber-bonding tolerances in commercial photonics. Here is how UV curing controls sub-100 nm alignment as the CPO market scales toward $8.1B by 2030."
+description: "Co-packaged optics demands the tightest fiber-bonding tolerances in commercial photonics. Here is how UV curing controls sub-100 nm alignment as the CPO market scales rapidly through the end of the decade."
 date: 2026-07-01
 tags: [Photonics, Co-Packaged Optics, UV Curing, AI Data Center]
 author: ETIA Technology
@@ -31,7 +31,7 @@ For qualification lots and new product introduction — where documented stabili
 
 ## The market context
 
-The CPO market was worth roughly **$46M in 2024** and is projected to reach **$8.1B by 2030** — a 137% CAGR — as the industry shifts from pluggables to CPO and from copper to optics. At GTC 2025, NVIDIA unveiled silicon-photonics switch platforms using CPO to connect GPUs at 1.6 Tbps per port, with Broadcom, Cisco, Intel and Marvell pursuing parallel architectures. Every one of those packages depends on precision UV-cured fiber bonding.
+The CPO market is one of the fastest-growing segments in commercial photonics, expanding rapidly as the industry shifts from pluggables to CPO and from copper to optics. At GTC 2025, NVIDIA unveiled silicon-photonics switch platforms using CPO to connect GPUs at 1.6 Tbps per port, with Broadcom, Cisco, Intel and Marvell pursuing parallel architectures. Every one of those packages depends on precision UV-cured fiber bonding.
 
 ## Where to go next
 
