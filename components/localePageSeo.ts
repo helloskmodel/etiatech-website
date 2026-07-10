@@ -173,31 +173,58 @@ export function contactMetadata(locale: SubLocale): Metadata {
 }
 
 // ---------------------------------------------------------------------------
-// Brand landing pages — Chinese only for now: brandLanding.ts carries full zh
-// copy but no th/vi yet, so only the zh routes exist (a th/vi URL would render
-// mostly-English body text, which is worse than no URL). The hreflang group is
-// therefore en + zh-CN only.
+// Brand landing pages (OmniCure / Phoseon) — the dedicated landing components
+// carry full zh/th/vi body copy, so all four language routes exist. The Thai
+// meta strings come from the client's translation deck; zh keeps the site-wide
+// "UV Curing 紫外线固化" keyword convention.
 
 export function brandLanguageAlternates(slug: string): Record<string, string> {
   const en = `${SITE}/product/${slug}`;
-  return { en, "zh-CN": `${SITE}/zh/product/${slug}`, "x-default": en };
+  return {
+    en,
+    "zh-CN": `${SITE}/zh/product/${slug}`,
+    vi: `${SITE}/vi/product/${slug}`,
+    th: `${SITE}/th/product/${slug}`,
+    "x-default": en,
+  };
 }
 
-const BRAND_META_ZH: Record<string, { title: string; description: string }> = {
+const BRAND_LOCALE_META: Record<string, Record<SubLocale, { title: string; description: string }>> = {
   omnicure: {
-    title: "OmniCure UV Curing 紫外线固化系统 — 授权经销商 | ETIA",
-    description: "正品 OmniCure® UV Curing 紫外线固化系统：LED 与灯式点固化、小面积及大面积固化，本地库存、本地服务与区域保修，适用于医疗器械、电子与光电子精密制造。",
+    zh: {
+      title: "OmniCure UV Curing 紫外线固化系统 — 授权经销商 | ETIA",
+      description: "ETIA 提供正品 OmniCure® UV Curing 紫外线固化系统、S2000 Elite 点光源、LX500 UV LED 点光源、替换灯管及配件，并提供本地应用支持、安装、维护与维修服务。",
+    },
+    th: {
+      title: "ระบบ UV Curing OmniCure — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
+      description: "ETIA จัดจำหน่ายระบบ UV curing OmniCure® ของแท้, OmniCure S2000 Elite, OmniCure LX500, หลอดไฟทดแทน และอุปกรณ์เสริม พร้อมการสนับสนุนด้านการใช้งาน การติดตั้ง การบำรุงรักษา และการซ่อมในพื้นที่",
+    },
+    vi: {
+      title: "Hệ thống UV Curing OmniCure — Nhà phân phối được ủy quyền | ETIA",
+      description: "ETIA cung cấp hệ thống UV curing OmniCure® chính hãng — OmniCure S2000 Elite, LX500, đèn thay thế và phụ kiện, cùng hỗ trợ ứng dụng, lắp đặt, bảo trì và sửa chữa tại chỗ.",
+    },
   },
   phoseon: {
-    title: "Phoseon UV LED 固化系统 — 授权经销商 | ETIA",
-    description: "正品 Phoseon® UV LED 固化系统：风冷与水冷高功率 UV LED，适用于油墨、涂层与胶粘剂的固化与干燥，覆盖标签、包装、数码印刷、电子、汽车及医疗器械等领域。",
+    zh: {
+      title: "Phoseon UV LED 固化系统 — 授权经销商 | ETIA",
+      description: "正品 Phoseon® UV LED 固化系统：风冷与水冷高功率 UV LED，适用于油墨、涂层与胶粘剂的固化与干燥，覆盖标签、包装、数码印刷、电子、汽车及医疗器械等领域。",
+    },
+    th: {
+      title: "ระบบ UV LED Phoseon — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
+      description: "ETIA จัดจำหน่ายระบบ UV LED curing Phoseon® ของแท้ — FireJet, FireEdge แบบระบายความร้อนด้วยอากาศ และ FireLine, VeriCure, Nexus II แบบระบายความร้อนด้วยน้ำ พร้อมการสนับสนุนและบริการในพื้นที่",
+    },
+    vi: {
+      title: "Hệ thống UV LED Phoseon — Nhà phân phối được ủy quyền | ETIA",
+      description: "ETIA cung cấp hệ thống UV LED curing Phoseon® chính hãng — FireJet, FireEdge làm mát bằng khí và FireLine, VeriCure, Nexus II làm mát bằng nước, cùng hỗ trợ kỹ thuật và dịch vụ tại chỗ.",
+    },
   },
 };
 
-export function brandZhMetadata(slug: "omnicure" | "phoseon"): Metadata {
+export function brandLocaleMetadata(slug: "omnicure" | "phoseon", locale: SubLocale): Metadata {
+  const meta = BRAND_LOCALE_META[slug][locale];
   return {
-    ...BRAND_META_ZH[slug],
-    alternates: { canonical: `${SITE}/zh/product/${slug}`, languages: brandLanguageAlternates(slug) },
-    openGraph: { ...BRAND_META_ZH[slug], url: `${SITE}/zh/product/${slug}`, type: "website", locale: "zh_CN" },
+    ...meta,
+    alternates: { canonical: `${SITE}/${locale}/product/${slug}`, languages: brandLanguageAlternates(slug) },
+    openGraph: { ...meta, url: `${SITE}/${locale}/product/${slug}`, type: "website", locale: OG_LOCALE[locale] },
   };
 }

@@ -30,15 +30,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
     })),
-    // Brand landing pages. OmniCure and Phoseon have a Chinese version
-    // (en↔zh hreflang group); Fusion UV / Noblelight are EN-only for now.
+    // Brand landing pages. OmniCure and Phoseon exist in all four languages
+    // (hreflang-linked); Fusion UV / Noblelight are EN-only for now.
     ...(["omnicure", "phoseon"] as const).flatMap((slug) => {
       const langs = brandLanguageAlternates(slug);
       const priority = slug === "omnicure" ? 0.9 : 0.85;
-      return [
-        { url: `${SITE}/product/${slug}`, changeFrequency: "monthly" as const, priority, alternates: { languages: langs } },
-        { url: `${SITE}/zh/product/${slug}`, changeFrequency: "monthly" as const, priority, alternates: { languages: langs } },
-      ];
+      return LOCALE_PREFIXES.map((prefix) => ({
+        url: `${SITE}${prefix}/product/${slug}`,
+        changeFrequency: "monthly" as const,
+        priority,
+        alternates: { languages: langs },
+      }));
     }),
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
