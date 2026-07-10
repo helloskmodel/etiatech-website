@@ -48,7 +48,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
             <BadgeCheck className="h-4 w-4" /> {t({ en: "ETIA Insights", zh: "ETIA 洞察" }, locale)}
           </div>
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">
-            {t({ en: "UV Curing Insights", zh: "紫外线固化技术洞察与应用指南", th: "ความรู้เชิงเทคนิคและคู่มือการใช้งาน UV Curing", vi: "Kiến thức kỹ thuật & hướng dẫn ứng dụng UV Curing" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "& Application Guides", zh: "理解工艺，优化固化。", th: "เข้าใจกระบวนการ ปรับปรุงการคิวริ่งให้เหมาะสม", vi: "Hiểu quy trình, tối ưu đóng rắn." }, locale)}</span>
+            {t({ en: "UV Curing Insights", zh: "紫外线固化技术洞察与应用指南", th: "ความรู้เชิงเทคนิคและคู่มือการใช้งาน UV Curing", vi: "Kiến thức kỹ thuật & hướng dẫn ứng dụng UV Curing" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "& Application Guides", zh: "理解工艺 优化固化", th: "เข้าใจกระบวนการ ปรับปรุงการคิวริ่งให้เหมาะสม", vi: "Hiểu quy trình, tối ưu đóng rắn." }, locale)}</span>
           </h1>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={inquiryMailto(locale, { subject: "UV Curing Technical Inquiry", context: "Insights / application question" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)} <ArrowRight className="h-4 w-4" /></a>

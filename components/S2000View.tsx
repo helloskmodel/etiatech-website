@@ -363,7 +363,7 @@ export default function S2000View() {
               OmniCure S2000 Elite <span style={{ color: GREEN }}>UV Spot Curing System</span>
             </h1>
             <p className="mt-4 text-xl md:text-2xl font-semibold text-[#102A43]">
-              {t({ en: "Maximum Power. Total Control.", zh: "高功率输出。精准过程控制。" }, locale)}
+              {t({ en: "Maximum Power. Total Control.", zh: "高功率输出 精准过程控制" }, locale)}
             </p>
             <p className="mt-4 max-w-2xl text-base md:text-lg leading-7 text-gray-600">
               {t(

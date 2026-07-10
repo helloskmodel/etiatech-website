@@ -35,7 +35,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     tagline: { en: "", zh: "" },
     hero: {
       eyebrow: { en: "OmniCure®", zh: "OmniCure®" },
-      headline: { en: "Precision Cures.\nSupreme Control.", zh: "精准固化。\n极致掌控。" },
+      headline: { en: "Precision Cures.\nSupreme Control.", zh: "精准固化\n极致掌控" },
       subline: {
         en: "Authentic OmniCure® systems — local stock, service and warranty in-region.",
         zh: "正品 OmniCure® 系统 —— 本地库存、本地服务与区域保修。",
@@ -63,7 +63,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     tagline: { en: "", zh: "" },
     hero: {
       eyebrow: { en: "Phoseon®", zh: "Phoseon®" },
-      headline: { en: "High-Power LED.\nLong-Life Performance.", zh: "高功率 LED。\n超长寿命性能。" },
+      headline: { en: "High-Power LED.\nLong-Life Performance.", zh: "高功率 LED\n超长寿命性能" },
       subline: {
         en: "Authentic Phoseon® systems — local stock, service and warranty in-region.",
         zh: "正品 Phoseon® 系统 —— 本地库存、本地服务与区域保修。",
