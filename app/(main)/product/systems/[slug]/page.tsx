@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${p.name} — ETIA Technology`,
     description: p.intro.slice(0, 160),
+    alternates: { canonical: `https://www.etiatech.com/product/systems/${p.slug}` },
   };
 }
 

@@ -128,7 +128,11 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
 // SEO metadata (title + description) for a brand landing page.
 export function brandMetadata(slug: BrandSlug): Metadata {
   const b = brandLanding[slug];
-  return { title: b.metaTitle, description: b.metaDescription };
+  return {
+    title: b.metaTitle,
+    description: b.metaDescription,
+    alternates: { canonical: `${SITE}/product/${slug}` },
+  };
 }
 
 // BreadcrumbList JSON-LD: Home > Products > {Brand}.

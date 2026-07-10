@@ -30,10 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/applications`, changeFrequency: "weekly", priority: 0.9 },
-    // Application notes overview (10 industries · 62 notes) and full indexes.
-    { url: `${SITE}/application`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE}/product`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE}/product/systems`, changeFrequency: "weekly", priority: 0.85 },
+    // NOTE: /application, /product and /product/systems are intentionally NOT
+    // listed — next.config redirects them (308) to /applications and
+    // /product/omnicure. Only the canonical 200 destinations belong in the
+    // sitemap; listing a redirect makes Google report "Page with redirect".
     { url: `${SITE}/case-studies`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE}/insights`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.3 },
