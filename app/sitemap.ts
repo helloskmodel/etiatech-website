@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
     })),
     // Brand landing pages
-    { url: `${SITE}/product/omnicure`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/product/omnicure`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE}/product/phoseon`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...["/product/omnicure/s2000", "/th/product/omnicure/s2000", "/vi/product/omnicure/s2000"].map((path) => ({
       url: `${SITE}${path}`,
       changeFrequency: "monthly" as const,
-      priority: 0.9,
+      priority: 0.95,
       alternates: {
         languages: {
           en: `${SITE}/product/omnicure/s2000`,
@@ -81,14 +81,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  // One entry per product detail page (deduped by URL).
+  // One entry per product detail page (deduped by URL). Featured/flagship
+  // systems get a higher priority than the rest of the catalog.
+  const FEATURED_PRIORITY: Record<string, number> = { lx500: 0.85, "s1500-pro": 0.8, "firejet-one": 0.8 };
   const seen = new Set(core.map((e) => e.url));
   const productPages: MetadataRoute.Sitemap = [];
   for (const p of products) {
     const url = `${SITE}${productHref(p)}`;
     if (seen.has(url)) continue;
     seen.add(url);
-    productPages.push({ url, changeFrequency: "monthly", priority: 0.7 });
+    productPages.push({ url, changeFrequency: "monthly", priority: FEATURED_PRIORITY[p.slug] ?? 0.7 });
   }
 
   // Individual case-study landing pages.
