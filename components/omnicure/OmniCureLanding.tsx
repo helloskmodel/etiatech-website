@@ -5,7 +5,7 @@ import { track } from "./track";
 import LeadForm from "./LeadForm";
 
 const LOGO =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
+  "/logo/etia-tech.png";
 
 export type LandingContact = { phone: string; phoneHref: string; lineId?: string; email: string; address: string };
 

@@ -21,7 +21,7 @@ export default function FinalCta({
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="overflow-hidden rounded-[32px] bg-gradient-to-br from-[#143C96] to-[#1F63D6] px-6 py-14 text-center text-white sm:px-10">
+        <div className="overflow-hidden rounded-[32px] bg-gradient-to-br from-[#143C96] to-[#1A56DB] px-6 py-14 text-center text-white sm:px-10">
           <Zap className="mx-auto h-9 w-9 text-[#8BE172]" />
           <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-bold md:text-4xl">{heading}</h2>
           <p className="mx-auto mt-5 max-w-3xl leading-7 text-blue-100">{body}</p>

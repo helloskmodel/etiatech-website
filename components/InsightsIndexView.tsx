@@ -41,7 +41,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
       {/* Hero — site standard (matches Sales & Support) */}
       <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF] py-16 md:py-24">
         <HeroBanner src={PAGE_BANNERS.insights} />
-        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1A56DB]/10 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div>
@@ -53,7 +53,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
           </h1>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={inquiryMailto(locale, { subject: "UV Curing Technical Inquiry", context: "Insights / application question" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)} <ArrowRight className="h-4 w-4" /></a>
-            <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV Curing 紫外线固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
+            <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV Curing 紫外线固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
           </div>
           </div>
         </div>

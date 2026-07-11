@@ -6,7 +6,7 @@ import Analytics from "@/components/Analytics";
 // Minimal standalone root for the OmniCure SEM landing pages: its own <html>,
 // a logo-only header (no site nav — fewer exits, more conversions), GA + GTM.
 const LOGO =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
+  "/logo/etia-tech.png";
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 export default function LandingRoot({

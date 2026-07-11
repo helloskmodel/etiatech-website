@@ -44,7 +44,7 @@ export const products: Product[] = [
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
-    accent: "#44B549",
+    accent: "#41A62A",
     intro:
       "The OmniCure LX500 UV LED Spot Curing system controller is uniquely designed with proprietary Intelli-Lamp technology that monitors LED head temperature and lifetime data, while automatically maintaining optical stability ±5% to provide greater process assurance. Available in either 2 or 4-channel configurations, the LX500 is the most flexible and cost-effective option for industrial manufacturing. The controller manages up to four UV LED Spot curing heads simultaneously or independently at wavelengths of 365, 385, 395 and 405 nm. The updated LX500 supports OmniCure's higher power V3 UV LED Heads delivering up to 27 W/cm² irradiance and up to 1,100 mW of optical power.",
     features: [
@@ -88,7 +88,7 @@ export const products: Product[] = [
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
-    accent: "#44B549",
+    accent: "#41A62A",
     intro:
       "Designed for use with the OmniCure LX500 Controller, the OmniCure V3 UV LED Heads feature next-generation high-output UV LEDs delivering best-in-class optical performance. With up to 120% increased optical power and up to 165% increase in peak irradiance compared to the predecessor MAX LED Heads, the V3 Heads deliver high dosage distributed uniformly across the spot area for faster, more consistent cures with greater control. Available in 365, 385, 395 and 405 nm wavelengths, delivering up to 22 W/cm² peak irradiance and 1,100 mW power with an exceptionally uniform beam profile.",
     features: [
@@ -128,7 +128,7 @@ export const products: Product[] = [
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
-    accent: "#44B549",
+    accent: "#41A62A",
     intro:
       "The OmniCure LS200 UV LED Radiometry and Calibration System ensures precise measurement and calibration of UV LED power or irradiance directly at the cure site, enabling manufacturers to control light output for a reliable, repeatable curing process. An enhanced version of its LS100 predecessor, the LS200 brings expanded measurement range and NRC-traceable sensor calibration. With accuracy of ±10% and resolution of 1 mW/cm² (irradiance) and 1 mW (power), the LS200 integrates seamlessly with the LX500 controller via the Beam Positioning Kit.",
     features: [
@@ -170,7 +170,7 @@ export const products: Product[] = [
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV Radiometer",
-    accent: "#44B549",
+    accent: "#41A62A",
     intro:
       "The OmniCure R2000 UV Radiometer is the most advanced and accurate tool for measuring irradiance or power from a UV Spot Curing System. Radiometry is essential for maintaining a repeatable UV curing process. The R2000 combines with the OmniCure S2000 Elite, S2000 XLA, or S1500 to provide a complete curing station with unmatched control and repeatability — the only system that can be calibrated in real time for NIST accuracy. Special built-in electronics allow connection of custom sensors that measure light energy directly at the cure site or within cure-ring bonding fixtures, including the OmniCure UV Cure Ring Radiometer and UV Cure Site Radiometer.",
     features: [

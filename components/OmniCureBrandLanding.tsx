@@ -152,7 +152,7 @@ export default function OmniCureBrandLanding() {
     <div className="bg-white text-[#14213D]">
       <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
         <HeroBanner src={PAGE_BANNERS.omnicure} />
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#1A56DB]/10 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 h-80 w-80 rounded-full bg-[#63C94A]/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <div>
@@ -162,7 +162,7 @@ export default function OmniCureBrandLanding() {
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "OmniCure UV Curing Solutions", zh: "OmniCure 紫外线固化解决方案", th: "โซลูชัน UV Curing จาก OmniCure", vi: "Giải pháp UV Curing OmniCure" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Precision Cures. Supreme Control.", zh: "精准固化 稳定掌控", th: "การคิวริ่งแม่นยำ ควบคุมได้อย่างเสถียร", vi: "Đóng rắn chính xác, kiểm soát ổn định." }, locale)}</span></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#choose-technology" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Choose Your Technology", zh: "选择适合的技术", th: "เลือกเทคโนโลยีของคุณ", vi: "Chọn công nghệ phù hợp" }, locale)} <ArrowRight className="h-4 w-4" /></a>
-              <a href={mailto} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)}</a>
+              <a href={mailto} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)}</a>
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function OmniCureBrandLanding() {
 
       <section id="choose-technology" className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "Technology Selector", zh: "技术选型", th: "ตัวเลือกเทคโนโลยี", vi: "Bộ chọn công nghệ" }, locale)}</p>
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Technology Selector", zh: "技术选型", th: "ตัวเลือกเทคโนโลยี", vi: "Bộ chọn công nghệ" }, locale)}</p>
           <div className="mt-3 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
             <div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">{t({ en: "Choose by Technology", zh: "按技术选择", th: "เลือกตามเทคโนโลยี", vi: "Chọn theo công nghệ" }, locale)}</h2><p className="mt-3 max-w-3xl text-[#5F6C7B]">{t({ en: "Select the curing method that best matches your adhesive, curing area, production speed and process control requirements.", zh: "根据您的胶粘剂、固化面积、生产速度与工艺控制要求，选择最合适的固化方式。", th: "เลือกวิธีการคิวริ่งที่เหมาะกับกาว พื้นที่คิวริ่ง ความเร็วการผลิต และความต้องการควบคุมกระบวนการของคุณมากที่สุด", vi: "Chọn phương pháp đóng rắn phù hợp nhất với keo, diện tích đóng rắn, tốc độ sản xuất và yêu cầu kiểm soát quy trình của bạn." }, locale)}</p></div>
             <div className="flex rounded-xl border border-[#E3EAF2] bg-[#F7FAFC] p-1 text-xs font-semibold"><span className="rounded-lg bg-white px-3 py-2 text-[#1A56DB] shadow-sm">{t({ en: "Spot · Focused energy", zh: "点固化 · 能量聚焦", th: "จุด · พลังงานโฟกัส", vi: "Điểm · Năng lượng tập trung" }, locale)}</span><span className="px-3 py-2 text-[#087F6B]">{t({ en: "Area · Uniform exposure", zh: "面固化 · 均匀照射", th: "พื้นที่ · ฉายแสงสม่ำเสมอ", vi: "Diện tích · Chiếu xạ đồng đều" }, locale)}</span></div>
@@ -199,7 +199,7 @@ export default function OmniCureBrandLanding() {
 
       <section id="omnicure-products" className="scroll-mt-20 bg-[#F7FAFC] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "OmniCure Product Family", zh: "OmniCure 产品家族", th: "ตระกูลผลิตภัณฑ์ OmniCure", vi: "Dòng sản phẩm OmniCure" }, locale)}</p>
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "OmniCure Product Family", zh: "OmniCure 产品家族", th: "ตระกูลผลิตภัณฑ์ OmniCure", vi: "Dòng sản phẩm OmniCure" }, locale)}</p>
           <div className="mt-3 flex flex-col justify-between gap-5 lg:flex-row lg:items-end"><div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">{t({ en: "Find Your OmniCure System", zh: "找到适合您的 OmniCure 系统", th: "ค้นหาระบบ OmniCure ที่ใช่สำหรับคุณ", vi: "Tìm hệ thống OmniCure phù hợp" }, locale)}</h2><p className="mt-3 max-w-2xl text-[#5F6C7B]">{t({ en: "All systems are shown on one page. Filter by curing route, then open the detailed product page.", zh: "所有系统均在同一页面展示。按固化路线筛选，再打开详细产品页面。", th: "แสดงทุกระบบไว้ในหน้าเดียว กรองตามแนวทางการคิวริ่ง แล้วเปิดหน้าผลิตภัณฑ์แบบละเอียด", vi: "Tất cả hệ thống được hiển thị trên một trang. Lọc theo phương thức đóng rắn, rồi mở trang chi tiết sản phẩm." }, locale)}</p></div><div className="flex flex-wrap gap-2"><button onClick={() => setActiveRoute("all")} className={`rounded-full border px-4 py-2 text-xs font-bold transition ${activeRoute === "all" ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-[#D9E3EE] bg-white text-[#5F6C7B]"}`}>{t({ en: "All Products", zh: "全部产品", th: "ผลิตภัณฑ์ทั้งหมด", vi: "Tất cả sản phẩm" }, locale)} ({allProducts.length})</button>{routes.map((route) => <button key={route.id} onClick={() => setActiveRoute(route.id)} className="rounded-full border bg-white px-4 py-2 text-xs font-bold transition" style={activeRoute === route.id ? { background: route.color, borderColor: route.color, color: "white" } : { borderColor: "#D9E3EE", color: "#5F6C7B" }}>{route.id === "lamp-spot" ? t({ en: "Lamp Spot", zh: "灯管点固化", th: "จุด (หลอด)", vi: "Điểm (đèn)" }, locale) : route.id === "led-spot" ? t({ en: "LED Spot", zh: "LED 点固化", th: "จุด (LED)", vi: "Điểm (LED)" }, locale) : route.id === "large-area" ? t({ en: "Large Area", zh: "大面积", th: "พื้นที่กว้าง", vi: "Diện tích lớn" }, locale) : t({ en: "Small Area", zh: "小面积", th: "พื้นที่เล็ก", vi: "Diện tích nhỏ" }, locale)}</button>)}</div></div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {visibleProducts.map((raw) => {

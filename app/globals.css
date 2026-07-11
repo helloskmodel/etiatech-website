@@ -1,15 +1,47 @@
 @import "tailwindcss";
 
+/* Inter — refined UI typeface for Latin scripts (EN + Vietnamese). Self-hosted
+   (no external request / CSP-safe). Chinese and Thai fall through to their own
+   quality faces via the font stack + OS script fallback, so all four languages
+   read as one family. Variable font: one file covers weights 100–900. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/Inter.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/Inter-vi.woff2") format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
 :root {
   --brand-blue: #1A56DB;
-  --brand-green: #44B549;
+  --brand-green: #41A62A;
   --hero-dark: #0a1628;
 }
 
 body {
   background: #ffffff;
   color: #111827;
-  font-family: Arial, Helvetica, sans-serif;
+  /* One multilingual stack: Inter for Latin (EN/VI), quality CJK + Thai faces
+     next, OS script fallback fills the rest. */
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Inter reads tighter and more premium with a hair of negative tracking on
+   headings; body stays at default for readability. */
+h1, h2, h3 {
+  letter-spacing: -0.018em;
 }
 
 /* Hero/section headings: one visual size for all four languages. The zh/th
