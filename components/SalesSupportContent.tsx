@@ -75,14 +75,36 @@ export default function SalesSupportContent() {
             <div>
               <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "ETIA Service Commitment", zh: "ETIA 服务承诺", th: "คำมั่นสัญญาด้านบริการของ ETIA", vi: "Cam kết dịch vụ của ETIA" }, locale)}</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Service means more than supplying equipment", zh: "服务 不止于提供设备", th: "บริการที่มากกว่าการจัดหาอุปกรณ์", vi: "Dịch vụ không chỉ là cung cấp thiết\u00A0bị" }, locale)}</h2>
-              <p className="mt-5 leading-7 text-[#5F6C7B]">{t({ en: "At ETIA, service means genuine products, application-driven solutions, a dependable local supply chain, and long-term service — keeping your UV curing process stable, repeatable, and production-ready.", zh: "在 ETIA，服务意味着正品保障、应用驱动的解决方案、可靠的本地供应链与长期服务——让您的 UV Curing 紫外线固化工艺保持稳定、可重复、随时可投入生产。", th: "ที่ ETIA บริการหมายถึงสินค้าของแท้ โซลูชันที่ขับเคลื่อนด้วยการใช้งานจริง ซัพพลายเชนในพื้นที่ที่เชื่อถือได้ และบริการระยะยาว เพื่อให้กระบวนการ UV Curing ของคุณเสถียร ทำซ้ำได้ และพร้อมสำหรับการผลิต", vi: "Tại ETIA, dịch vụ nghĩa là sản phẩm chính hãng, giải pháp theo ứng dụng, chuỗi cung ứng địa phương đáng tin cậy và dịch vụ dài hạn — giúp quy trình UV curing của bạn ổn định, lặp lại được và sẵn sàng sản xuất." }, locale)}</p>
+              <p className="mt-5 leading-7 text-[#5F6C7B]">{t({ en: "At ETIA, service means genuine products, application-driven solutions, a dependable local supply chain, and long-term service — keeping your UV curing process stable, repeatable, and production-ready.", zh: "在 ETIA，服务意味着正品渠道、应用驱动的解决方案、可靠的本地供应链与长期服务——让您的 UV Curing 紫外线固化工艺保持稳定、可重复、随时可投入生产。", th: "ที่ ETIA บริการหมายถึงสินค้าของแท้ โซลูชันที่ขับเคลื่อนด้วยการใช้งานจริง ซัพพลายเชนในพื้นที่ที่เชื่อถือได้ และบริการระยะยาว เพื่อให้กระบวนการ UV Curing ของคุณเสถียร ทำซ้ำได้ และพร้อมสำหรับการผลิต", vi: "Tại ETIA, dịch vụ nghĩa là sản phẩm chính hãng, giải pháp theo ứng dụng, chuỗi cung ứng địa phương đáng tin cậy và dịch vụ dài hạn — giúp quy trình UV curing của bạn ổn định, lặp lại được và sẵn sàng sản xuất." }, locale)}</p>
             </div>
             <div className="relative">
-              <Image src={COMMITMENT_POSTER[locale]} alt={t({ en: "ETIA Service Commitment — genuine products, application-driven solutions, local supply chain, long-term service", zh: "ETIA 服务承诺——正品保障、应用驱动、本地供应、长期服务", th: "คำมั่นสัญญาด้านบริการของ ETIA", vi: "Cam kết dịch vụ của ETIA" }, locale)} width={1244} height={1244} sizes="(max-width: 1024px) 60vw, 320px" className="mx-auto h-auto w-full max-w-xs rounded-2xl" priority />
+              <Image src={COMMITMENT_POSTER[locale]} alt={t({ en: "ETIA Service Commitment — genuine products, application-driven solutions, local supply chain, long-term service", zh: "ETIA 服务承诺——正品渠道、应用驱动、本地供应、长期服务", th: "คำมั่นสัญญาด้านบริการของ ETIA", vi: "Cam kết dịch vụ của ETIA" }, locale)} width={1244} height={1244} sizes="(max-width: 1024px) 60vw, 320px" className="mx-auto h-auto w-full max-w-xs rounded-2xl" priority />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Self-service troubleshooter — Chinese-only trial. The tool itself
+          lives in public/tools/; add languages by extending its data JSON,
+          then widen this locale gate. */}
+      {locale === "zh" && (
+        <section className="bg-[#F6F8FB] py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">自助支持</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">故障排查向导</h2>
+            <p className="mx-auto mt-4 max-w-xl leading-7 text-[#5F6C7B]">
+              基于官方用户指南的故障排查章节整理。按提示选择设备与症状，一步步定位原因与处理方法——查不出的问题再联系工程师。
+            </p>
+            <a
+              href="/tools/troubleshooter"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#1A56DB] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#1F63D6]"
+            >
+              🔧 开始排查 <ArrowRight className="h-4 w-4" />
+            </a>
+            <p className="mt-3 text-xs text-[#7B8794]">试用版 · 当前覆盖 OmniCure LX500 常见故障</p>
+          </div>
+        </section>
+      )}
 
       {/* Support Across the Full Equipment Lifecycle */}
       <section className="bg-white py-20 sm:py-24">
