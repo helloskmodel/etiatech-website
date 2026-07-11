@@ -30,13 +30,14 @@ const nextConfig: NextConfig = {
       // (full catalogue + site chrome), which the client considers the better
       // face for "OmniCure Thailand/Vietnam" searches. Exact matches only, so
       // the /th/omnicure-s2000, /th/omnicure-lx500, /th/omnicure-s2000-lamp
-      // product pages are untouched. Temporary (307) so it's cleanly
-      // reversible; English landing → English product page, localized landing
-      // → same-language product page.
-      { source: "/omnicure-thailand", destination: "/product/omnicure", permanent: false },
-      { source: "/th/omnicure", destination: "/th/product/omnicure", permanent: false },
-      { source: "/omnicure-vietnam", destination: "/product/omnicure", permanent: false },
-      { source: "/vi/omnicure", destination: "/vi/product/omnicure", permanent: false },
+      // product pages are untouched. Permanent (308) — the client has confirmed
+      // the retirement is final, so pass the old URLs' ranking equity to the
+      // product pages; English landing → English product page, localized
+      // landing → same-language product page.
+      { source: "/omnicure-thailand", destination: "/product/omnicure", permanent: true },
+      { source: "/th/omnicure", destination: "/th/product/omnicure", permanent: true },
+      { source: "/omnicure-vietnam", destination: "/product/omnicure", permanent: true },
+      { source: "/vi/omnicure", destination: "/vi/product/omnicure", permanent: true },
       // NOTE: no `/th → /` rule — /th is the live Thai SEO home; redirecting it
       // would shadow that page (and put a redirect in the sitemap).
       // Country-code aliases people type or link by hand: the real locale
