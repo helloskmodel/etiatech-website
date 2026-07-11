@@ -12,7 +12,7 @@ export default function TermsView() {
       {/* Hero */}
       <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Legal", zh: "法律条款", th: "ข้อกฎหมาย", vi: "Pháp lý" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#41A62A" }}>{t({ en: "Legal", zh: "法律条款", th: "ข้อกฎหมาย", vi: "Pháp lý" }, locale)}</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "Terms of Use", zh: "使用条款", th: "ข้อกำหนดการใช้งาน", vi: "Điều khoản Sử dụng" }, locale)}</h1>
           <p className="text-sm text-gray-300">{t({ en: "Last updated:", zh: "最后更新:", th: "ปรับปรุงล่าสุด:", vi: "Cập nhật lần cuối:" }, locale)} {t(LAST_UPDATED, locale)}</p>
         </div>
@@ -74,7 +74,7 @@ export default function TermsView() {
               <strong>ETIA-TECH (ASIA) Co., Limited</strong><br />
               {t({ en: "Hong Kong", zh: "中国香港", th: "ฮ่องกง", vi: "Hồng Kông" }, locale)}<br />
               {t({ en: "Email:", zh: "邮箱:", th: "อีเมล:", vi: "Email:" }, locale)}{" "}
-              <a href={`mailto:${localeSalesEmail(locale)}`} className="font-medium hover:underline" style={{ color: "#44B549" }}>{localeSalesEmail(locale)}</a>
+              <a href={`mailto:${localeSalesEmail(locale)}`} className="font-medium hover:underline" style={{ color: "#41A62A" }}>{localeSalesEmail(locale)}</a>
             </p>
           </Section>
 

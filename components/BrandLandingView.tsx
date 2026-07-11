@@ -81,16 +81,16 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="mb-4">
-              <span className="inline-block text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#44B549" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
+              <span className="inline-block text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#41A62A" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
             </div>
             {b.hero && (
-              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t(b.hero.eyebrow, locale)}</p>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#41A62A" }}>{t(b.hero.eyebrow, locale)}</p>
             )}
             <h1 className={`text-3xl md:text-5xl font-bold leading-tight text-white ${b.hero ? "mb-4" : "mb-6"}`}>
               {b.hero
                 ? t(b.hero.headline, locale).split("\n").map((line, i, arr) => (
                     <span key={i}>
-                      {arr.length > 1 && i === arr.length - 1 ? <span style={{ color: "#44B549" }}>{line}</span> : line}
+                      {arr.length > 1 && i === arr.length - 1 ? <span style={{ color: "#41A62A" }}>{line}</span> : line}
                       {i < arr.length - 1 && <br />}
                     </span>
                   ))
@@ -110,9 +110,9 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       {/* Overview — brand body copy */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Overview", zh: "品牌概述" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Overview", zh: "品牌概述" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: b.color }}>{t({ en: `About ${b.name}`, zh: `关于 ${b.name}` }, locale)}</h2>
-          <div className="w-12 h-1 rounded mb-6" style={{ background: "#44B549" }} />
+          <div className="w-12 h-1 rounded mb-6" style={{ background: "#41A62A" }} />
           {t(b.intro, locale).split("\n\n").map((para, i) => (
             <p key={i} className="text-base text-gray-600 leading-relaxed mb-4 last:mb-0">{para}</p>
           ))}
@@ -122,7 +122,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       {/* Technology routes */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Products", zh: "产品" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Products", zh: "产品" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: slug === "omnicure" ? "OmniCure UV Curing Product Catalog" : `Shop ${b.name} Systems`, zh: slug === "omnicure" ? "OmniCure UV Curing 紫外线固化产品清单" : `${b.name} 全系产品` }, locale)}</h2>
           <p className="mb-8 text-sm text-gray-500">{t({ en: slug === "omnicure" ? "Lamp and LED spot curing, small- and large-area UV LED systems, fiber curing, radiometry, and accessories." : "Browse systems by product and technology.", zh: slug === "omnicure" ? "涵盖灯式与 LED 点固化、小面积与大面积 UV LED、光纤固化、辐射测量及配件。" : "按产品与技术浏览系统。" }, locale)}</p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -135,7 +135,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                 <div key={p.slug} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
                   <Link href={productHref(p)} className="relative block h-32 sm:h-36 bg-white">
                     {popular && (
-                      <span className="absolute top-2 left-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: "#44B549" }}>★ {t({ en: "POPULAR", zh: "热门" }, locale)}</span>
+                      <span className="absolute top-2 left-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: "#41A62A" }}>★ {t({ en: "POPULAR", zh: "热门" }, locale)}</span>
                     )}
                     {productImage(p) ? (
                       <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-300" />
@@ -165,7 +165,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
                     )}
                     {relatedApplications.length > 0 && (
                       <div className="mb-3 border-t border-gray-100 pt-3">
-                        <p className="mb-1 text-[9px] font-bold uppercase tracking-wide text-[#44B549]">{t({ en: "Related applications", zh: "相关应用", th: "การใช้งานที่เกี่ยวข้อง", vi: "Ứng dụng liên quan" }, locale)}</p>
+                        <p className="mb-1 text-[9px] font-bold uppercase tracking-wide text-[#41A62A]">{t({ en: "Related applications", zh: "相关应用", th: "การใช้งานที่เกี่ยวข้อง", vi: "Ứng dụng liên quan" }, locale)}</p>
                         {relatedApplications.map((application) => { const at = (locale !== "en" && applicationsZh[application.slug]?.title?.[locale as "zh" | "th" | "vi"]) || application.title; return <Link key={application.slug} href={`/applications/${application.slug}`} className="block line-clamp-1 text-[10px] font-medium leading-relaxed text-gray-500 hover:text-[#1A56DB] hover:underline">{at}</Link>; })}
                       </div>
                     )}
@@ -203,7 +203,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       {/* Typical applications */}
       <section className="py-14" style={{ background: "#f0f4f8" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Typical Applications", zh: "典型应用行业" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Typical Applications", zh: "典型应用行业" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Where It's Used", zh: "应用领域" }, locale)}</h2>
           <div className="flex flex-wrap gap-3">
             {b.applications.map((a) => (
@@ -218,7 +218,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       {brandApplications.length > 0 && (
         <section className="border-t border-gray-100 bg-white py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#44B549]">Application Case Studies</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#41A62A]">Application Case Studies</p>
             <h2 className="text-2xl font-bold text-[#1A56DB] md:text-3xl">{b.name} applications by industry</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-500">Explore practical applications connected to the recommended {b.name} systems, including the customer challenge, solution, benefits, and ETIA support.</p>
             <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -250,7 +250,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       {/* Why buy through ETIA */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Why ETIA", zh: "为何选择 ETIA" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Why ETIA", zh: "为何选择 ETIA" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `Why Buy ${b.name} Through ETIA`, zh: `为什么通过 ETIA 采购 ${b.name}` }, locale)}</h2>
           <WhyEtiaCards />
         </div>

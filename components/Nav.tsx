@@ -53,12 +53,12 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link href={localizeHref("/", locale)} className="flex items-center gap-2">
           <Image
-            src="https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg"
+            src="/logo/etia-tech.png"
             alt="ETIA Technology"
-            width={130}
-            height={44}
-            className="object-contain"
-            unoptimized
+            width={150}
+            height={34}
+            priority
+            className="h-8 w-auto object-contain sm:h-9"
           />
         </Link>
 

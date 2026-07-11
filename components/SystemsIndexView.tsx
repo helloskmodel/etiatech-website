@@ -30,7 +30,7 @@ export default function SystemsIndexView() {
       <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #1A56DB 0%, transparent 60%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Complete Product Reference", zh: "完整产品索引", th: "ดัชนีผลิตภัณฑ์ทั้งหมด", vi: "Danh mục sản phẩm đầy đủ" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#41A62A" }}>{t({ en: "Complete Product Reference", zh: "完整产品索引", th: "ดัชนีผลิตภัณฑ์ทั้งหมด", vi: "Danh mục sản phẩm đầy đủ" }, locale)}</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "All UV Curing Systems", zh: "全部UV Curing 紫外线固化系统", th: "ระบบ UV Curing ทั้งหมด", vi: "Tất cả hệ thống UV Curing" }, locale)}</h1>
           <p className="text-base text-gray-300 max-w-2xl mx-auto leading-relaxed line-clamp-2">
             {t({ en: "The complete Excelitas portfolio — OmniCure, Phoseon, Fusion UV and Noblelight — organized by curing technology.", zh: "完整的Excelitas产品组合——OmniCure、Phoseon、Fusion UV 与 Noblelight——按固化技术分类。", th: "พอร์ตโฟลิโอ Excelitas ครบชุด — OmniCure, Phoseon, Fusion UV และ Noblelight — จัดกลุ่มตามเทคโนโลยีการบ่ม", vi: "Danh mục Excelitas đầy đủ — OmniCure, Phoseon, Fusion UV và Noblelight — sắp xếp theo công nghệ đóng rắn." }, locale)}

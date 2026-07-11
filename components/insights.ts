@@ -150,7 +150,7 @@ export function articleJsonLd(a: Article) {
       name: "ETIA Technology",
       logo: {
         "@type": "ImageObject",
-        url: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg",
+        url: "https://www.etiatech.com/logo/etia-tech.png",
       },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE}/insights/${a.slug}` },

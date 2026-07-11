@@ -16,7 +16,7 @@ const orgJsonLd = {
   "@type": "Organization",
   name: "ETIA Technology",
   url: "https://www.etiatech.com",
-  logo: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg",
+  logo: "https://www.etiatech.com/logo/etia-tech.png",
   description:
     "Authorized distributor of UV curing systems with 20 years of application expertise.",
   address: [

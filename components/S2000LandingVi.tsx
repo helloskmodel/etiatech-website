@@ -80,7 +80,7 @@ const whyCards = [
 ];
 
 const btnPrimary = "inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]";
-const btnGhost = "inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]";
+const btnGhost = "inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]";
 const eyebrow = "text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]";
 
 function Content() {
@@ -97,7 +97,7 @@ function Content() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
-        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1A56DB]/10 blur-3xl" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" /> OmniCure S Series · Hệ thống UV spot curing dùng đèn</div>
@@ -221,7 +221,7 @@ function Content() {
       </div></section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-br from-[#143C96] to-[#1F63D6] px-4 py-16 text-white sm:px-6 lg:px-8"><div className="mx-auto max-w-4xl text-center">
+      <section className="bg-gradient-to-br from-[#143C96] to-[#1A56DB] px-4 py-16 text-white sm:px-6 lg:px-8"><div className="mx-auto max-w-4xl text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Cần hỗ trợ lựa chọn, cài đặt hoặc xử lý sự cố OmniCure S2000 Elite?</h2>
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-blue-100">Kỹ sư ETIA có thể hỗ trợ lựa chọn OmniCure S2000 Elite, cấu hình đèn và bộ lọc, cài đặt light guide, hướng dẫn hiệu chuẩn, bảo trì, sửa chữa và xử lý sự cố kỹ thuật.</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
