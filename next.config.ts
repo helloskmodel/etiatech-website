@@ -21,11 +21,22 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Thailand /th/{th,en,zh} language microsite retired — redirect its old
-      // indexed URLs to the (English) main site so they don't 404. The
-      // /th/omnicure* SEM landing pages are NOT matched by these rules and stay.
+      // indexed URLs to the (English) main site so they don't 404.
       { source: "/th/th/:path*", destination: "/", permanent: true },
       { source: "/th/en/:path*", destination: "/", permanent: true },
       { source: "/th/zh/:path*", destination: "/", permanent: true },
+      // OmniCure country SEM landing pages retired: their bare standalone
+      // quote-form design is replaced by the proper OmniCure product page
+      // (full catalogue + site chrome), which the client considers the better
+      // face for "OmniCure Thailand/Vietnam" searches. Exact matches only, so
+      // the /th/omnicure-s2000, /th/omnicure-lx500, /th/omnicure-s2000-lamp
+      // product pages are untouched. Temporary (307) so it's cleanly
+      // reversible; English landing → English product page, localized landing
+      // → same-language product page.
+      { source: "/omnicure-thailand", destination: "/product/omnicure", permanent: false },
+      { source: "/th/omnicure", destination: "/th/product/omnicure", permanent: false },
+      { source: "/omnicure-vietnam", destination: "/product/omnicure", permanent: false },
+      { source: "/vi/omnicure", destination: "/vi/product/omnicure", permanent: false },
       // NOTE: no `/th → /` rule — /th is the live Thai SEO home; redirecting it
       // would shadow that page (and put a redirect in the sitemap).
       // Country-code aliases people type or link by hand: the real locale

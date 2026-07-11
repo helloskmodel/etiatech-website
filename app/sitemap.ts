@@ -95,26 +95,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: systemLanguages(slug) },
       }))
     ),
-    // Standalone OmniCure Thailand SEM landing pages (en + th, hreflang-linked).
-    {
-      url: `${SITE}/omnicure-thailand`,
-      changeFrequency: "weekly",
-      priority: 0.9,
-      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
-    },
-    {
-      url: `${SITE}/th/omnicure`,
-      changeFrequency: "weekly",
-      priority: 0.9,
-      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
-    },
-    // Standalone OmniCure Vietnam SEM landing pages (en + vi, hreflang-linked).
-    ...(["/omnicure-vietnam", "/vi/omnicure"] as const).map((path) => ({
-      url: `${SITE}${path}`,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-      alternates: { languages: { en: `${SITE}/omnicure-vietnam`, vi: `${SITE}/vi/omnicure`, "x-default": `${SITE}/omnicure-vietnam` } },
-    })),
+    // NOTE: the OmniCure country SEM landing pages (/omnicure-thailand,
+    // /th/omnicure, /omnicure-vietnam, /vi/omnicure) are intentionally NOT
+    // listed — next.config now redirects them to the proper OmniCure product
+    // pages (/product/omnicure, /th/product/omnicure, /vi/product/omnicure),
+    // which are already in the sitemap via the brand-pages loop above. Listing
+    // a redirecting URL makes Google report "Page with redirect".
     // S2000 Elite replacement lamp (EN + ZH + TH + VI), hreflang-linked.
     ...(Object.values(LAMP_PATHS) as string[]).map((path) => ({
       url: `${SITE}${path}`,
