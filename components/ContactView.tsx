@@ -74,6 +74,32 @@ export default function ContactView() {
 
       <SalesSupportContent />
 
+      {/* Self-service troubleshooter — Chinese-only trial for now; the tool
+          itself lives in public/tools/ (add languages by extending its data
+          JSON, then widen this locale gate). */}
+      {locale === "zh" && (
+        <section className="bg-white pb-2 pt-10">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <a
+              href="/tools/troubleshooter"
+              className="flex items-center gap-4 rounded-2xl border border-[#E6EAF0] bg-[#F6F8FB] p-5 transition hover:-translate-y-0.5 hover:border-[#1A56DB] hover:shadow-md"
+            >
+              <span className="text-3xl" aria-hidden>🔧</span>
+              <span className="flex-1">
+                <span className="block font-bold text-[#102A43]">
+                  故障排查向导
+                  <span className="ml-2 rounded bg-[#EEF6FF] px-1.5 py-0.5 align-middle text-[10px] font-bold text-[#1A56DB]">试用版</span>
+                </span>
+                <span className="mt-1 block text-sm leading-6 text-[#5F6C7B]">
+                  基于官方用户指南整理的 OmniCure 自助排查——按提示一步步定位故障原因与处理方法，查不出再联系工程师。
+                </span>
+              </span>
+              <ArrowRight className="h-5 w-5 shrink-0 text-[#1A56DB]" />
+            </a>
+          </div>
+        </section>
+      )}
+
       {/* Inquiries — one section, three stages, email routed by country */}
       <section id="inquiries" className="scroll-mt-20 bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
