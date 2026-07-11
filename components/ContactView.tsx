@@ -73,7 +73,6 @@ export default function ContactView() {
       <TrustStrip />
 
       <SalesSupportContent />
-
       {/* Inquiries — one section, three stages, email routed by country */}
       <section id="inquiries" className="scroll-mt-20 bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

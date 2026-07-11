@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Pretty URL for the static self-contained troubleshooter tool in
+  // public/tools/ (it fetches its data JSON from the same directory).
+  async rewrites() {
+    return [{ source: "/tools/troubleshooter", destination: "/tools/troubleshooter.html" }];
+  },
   // Permanent redirects (308 — treated as a permanent redirect by Google,
   // like 301) for old indexed URLs from the previous site so they don't 404.
   // Order matters: the first matching rule wins, so the /en/:path* catch-all
