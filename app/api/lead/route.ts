@@ -1,8 +1,15 @@
 // Lead capture endpoint for the OmniCure landing pages.
-// Validates the payload and returns 200. Delivery is not wired up yet.
+// Validates the payload, forwards it to the configured delivery webhook,
+// and returns 200.
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
+
+// Where to deliver captured leads. Set LEAD_WEBHOOK_URL in the Vercel project
+// env to a Slack/Teams incoming webhook, a Zapier/Make hook, or any endpoint
+// that accepts a JSON POST. When unset, leads are only logged — so the form
+// keeps working with or without delivery configured.
+const LEAD_WEBHOOK_URL = process.env.LEAD_WEBHOOK_URL;
 
 type LeadPayload = {
   name?: unknown;
@@ -42,9 +49,30 @@ export async function POST(request: Request) {
     lang: str(body.lang, 8),
   };
 
-  // TODO: connect email/CRM delivery (e.g. email to the Thailand sales
-  // director, or push into the CRM). For now we accept and acknowledge.
   console.log("[lead]", lead);
+  await deliver(lead);
 
   return Response.json({ ok: true }, { status: 200 });
+}
+
+// Push the lead to the configured delivery webhook. Delivery failures are
+// logged but never surfaced to the visitor — the lead is already captured in
+// the server logs, so acknowledging the submission is the right UX either way.
+async function deliver(lead: Record<string, string>) {
+  if (!LEAD_WEBHOOK_URL) return;
+  try {
+    const res = await fetch(LEAD_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        text: `New OmniCure lead: ${lead.name} (${lead.phone})`,
+        lead,
+      }),
+    });
+    if (!res.ok) {
+      console.error("[lead] delivery failed", res.status);
+    }
+  } catch (err) {
+    console.error("[lead] delivery error", err);
+  }
 }
