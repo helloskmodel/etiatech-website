@@ -175,6 +175,7 @@ export function vnLandingJsonLd(lang: VnLang) {
       addressCountry: "VN",
     },
     areaServed: "VN",
+    sameAs: ["https://www.etia-tech.com.vn"],
     brand: { "@type": "Brand", name: "OmniCure" },
   };
   const faq = {

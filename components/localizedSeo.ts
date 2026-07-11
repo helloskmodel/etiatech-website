@@ -49,6 +49,9 @@ export function localizedOrganizationJsonLd(locale: Exclude<Locale, "en">) {
     name: "ETIA Technology",
     url: `${SITE}/${locale}`,
     description: seo[locale].description,
+    // The Vietnam operation also runs a local site; sameAs tells Google both
+    // domains are the same company (two SERP slots, not two competitors).
+    ...(locale === "vi" ? { sameAs: ["https://www.etia-tech.com.vn"] } : {}),
     areaServed: locale === "zh" ? ["CN", "HK"] : locale === "vi" ? "VN" : "TH",
     contactPoint: { "@type": "ContactPoint", contactType: "sales and technical support", email: localeSalesEmail(locale), availableLanguage: locale },
   };
