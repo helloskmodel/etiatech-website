@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { products, productHref } from "@/components/productCatalog";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
-import { getAllArticles } from "@/components/insights";
+import { getAllArticles, articleLocales } from "@/components/insights";
 import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
 import { LAMP_PATHS, LAMP_LANGUAGES } from "@/components/omnicure/s2000Lamp";
 import { languageAlternates, brandLanguageAlternates } from "@/components/localePageSeo";
@@ -61,7 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       alternates: { languages: languageAlternates("/case-studies") },
     })),
-    { url: `${SITE}/insights`, changeFrequency: "weekly", priority: 0.7 },
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/insights`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      alternates: { languages: languageAlternates("/insights") },
+    })),
     { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.3 },
     ...LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/contact`,
@@ -159,12 +164,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // intentionally NOT listed yet — their content is still being reviewed and
   // will be added to the sitemap gradually as each note is verified.
 
-  // Published insights articles (English required per slug).
-  const insightPages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({
-    url: `${SITE}/insights/${a.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  // Published insights articles — one entry per available locale, hreflang-linked.
+  const INS_PREFIX: Record<string, string> = { en: "", zh: "/zh", vi: "/vi", th: "/th" };
+  const insightPages: MetadataRoute.Sitemap = getAllArticles().flatMap((a) => {
+    const locs = articleLocales(a);
+    const languages: Record<string, string> = {};
+    for (const l of locs) languages[l === "zh" ? "zh-Hans" : l] = `${SITE}${INS_PREFIX[l]}/insights/${a.slug}`;
+    languages["x-default"] = `${SITE}/insights/${a.slug}`;
+    return locs.map((l) => ({
+      url: `${SITE}${INS_PREFIX[l]}/insights/${a.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: { languages },
+    }));
+  });
 
   return [...core, ...productPages, ...applicationCasePages, ...insightPages, ...casePages];
 }

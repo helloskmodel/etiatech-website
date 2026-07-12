@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
+import { localizeHref } from "@/components/localeHref";
 import type { Article } from "@/components/insights";
 
 function fmtDate(iso: string, locale: string): string {
@@ -37,18 +38,17 @@ const PROSE = [
 
 export default function ArticleView({ article }: { article: Article }) {
   const { locale } = useLocale();
-  const hasZh = Boolean(article.locales.zh);
-  const c = (locale === "zh" && article.locales.zh) || article.locales.en;
-  const showFallbackNote = locale === "zh" && !hasZh;
+  const c = article.locales[locale] || article.locales.en;
+  const showFallbackNote = locale !== "en" && !article.locales[locale];
 
   return (
     <article>
       {/* Breadcrumb */}
       <div className="border-b border-gray-200 py-3 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-gray-400">
-          <Link href="/" className="hover:text-[#1A56DB]">{t({ en: "Home", zh: "首页" , vi: "Trang chủ" }, locale)}</Link>
+          <Link href={localizeHref("/", locale)} className="hover:text-[#1A56DB]">{t({ en: "Home", zh: "首页" , vi: "Trang chủ", th: "หน้าแรก" }, locale)}</Link>
           <span className="mx-2">›</span>
-          <Link href="/insights" className="hover:text-[#1A56DB]">{t({ en: "Insights", zh: "洞察" }, locale)}</Link>
+          <Link href={localizeHref("/insights", locale)} className="hover:text-[#1A56DB]">{t({ en: "Insights", zh: "洞察", vi: "Bài viết", th: "บทความ" }, locale)}</Link>
           <span className="mx-2">›</span>
           <span className="text-gray-500">{c.title}</span>
         </div>
@@ -92,12 +92,12 @@ export default function ArticleView({ article }: { article: Article }) {
             <p className="text-gray-200 text-sm mb-5">{t({ en: "Our engineers match the right system to your exact process — from selection to validation.", zh: "我们的工程师将为您的具体工艺匹配合适的系统——从选型到验证。" , vi: "Kỹ sư của chúng tôi chọn hệ thống phù hợp với đúng quy trình của bạn — từ lựa chọn đến thẩm định.", th: "วิศวกรของเราจับคู่ระบบที่เหมาะสมกับกระบวนการของคุณ — ตั้งแต่การเลือกจนถึงการตรวจรับรอง" }, locale)}</p>
             <div className="flex flex-wrap justify-center gap-3">
               <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-6 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#41A62A" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" , vi: "Liên hệ bộ phận kinh doanh →", th: "คุยกับฝ่ายขายของเรา →" }, locale)}</a>
-              <Link href="/product" className="px-6 py-2.5 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Explore Products", zh: "浏览产品" , vi: "Khám phá sản phẩm" }, locale)}</Link>
+              <Link href={localizeHref("/product", locale)} className="px-6 py-2.5 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Explore Products", zh: "浏览产品" , vi: "Khám phá sản phẩm", th: "ดูสินค้า" }, locale)}</Link>
             </div>
           </div>
 
           <div className="mt-8">
-            <Link href="/insights" className="text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>← {t({ en: "Back to all insights", zh: "返回全部洞察" , vi: "Quay lại tất cả bài viết", th: "กลับไปดูบทความทั้งหมด" }, locale)}</Link>
+            <Link href={localizeHref("/insights", locale)} className="text-sm font-semibold hover:underline" style={{ color: "#1A56DB" }}>← {t({ en: "Back to all insights", zh: "返回全部洞察" , vi: "Quay lại tất cả bài viết", th: "กลับไปดูบทความทั้งหมด" }, locale)}</Link>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import type { Locale } from "@/components/LocaleContext";
 // that doesn't exist 404s.
 
 // Sections localized for all three locales, including their sub-pages.
-const LOCALIZED_PREFIXES = ["/applications", "/case-studies"];
+const LOCALIZED_PREFIXES = ["/applications", "/case-studies", "/insights"];
 
 // Individual pages localized for all three locales.
 const LOCALIZED_EXACT = new Set([
