@@ -8,8 +8,10 @@ import HeroBanner from "@/components/HeroBanner";
 import TrustStrip from "@/components/TrustStrip";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
+import { localizeHref } from "@/components/localeHref";
 
 type CardLocale = { title: string; description: string };
+type CardLocales = { en: CardLocale; zh?: CardLocale; vi?: CardLocale; th?: CardLocale };
 export type ArticleCard = {
   slug: string;
   date: string;
@@ -17,7 +19,7 @@ export type ArticleCard = {
   author: string;
   cover?: string;
   readingMinutes: number;
-  locales: { en: CardLocale; zh?: CardLocale };
+  locales: CardLocales;
 };
 
 function fmtDate(iso: string, locale: string): string {
@@ -34,7 +36,7 @@ function fmtDate(iso: string, locale: string): string {
 
 export default function InsightsIndexView({ articles }: { articles: ArticleCard[] }) {
   const { locale } = useLocale();
-  const pick = (a: ArticleCard) => (locale === "zh" && a.locales.zh) || a.locales.en;
+  const pick = (a: ArticleCard) => a.locales[locale] || a.locales.en;
 
   return (
     <>
@@ -53,7 +55,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
           </h1>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={inquiryMailto(locale, { subject: "UV Curing Technical Inquiry", context: "Insights / application question" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)} <ArrowRight className="h-4 w-4" /></a>
-            <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV Curing 紫外线固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
+            <Link href={localizeHref("/product", locale)} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV Curing 紫外线固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
           </div>
           </div>
         </div>
@@ -75,7 +77,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
                 return (
                   <Link
                     key={a.slug}
-                    href={`/insights/${a.slug}`}
+                    href={localizeHref(`/insights/${a.slug}`, locale)}
                     className="group flex flex-col rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all"
                   >
                     <div className="relative h-44 bg-gray-100 overflow-hidden">
