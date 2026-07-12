@@ -1369,7 +1369,7 @@ export const applicationsData = [
       "ac8",
       "ac9225-f"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/15-Fiber-%20Draw-Tower.jpg",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/15-Fiber-%20Draw-Tower.jpg?v=2",
     "sections": {
       "application": [
         "Optical fiber production requires UV curing of primary and secondary acrylate coatings immediately after the glass fiber is drawn. High-speed draw towers require uniform, continuous UV exposure to support fiber performance and production capacity."
