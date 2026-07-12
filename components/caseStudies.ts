@@ -56,8 +56,12 @@ export function appImageUrl(filename: string): string {
 // a fresh /BANNERIMG/ path so the new versions bypass any stale CDN cache.
 const BANNER_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/BANNERIMG";
-export function bannerUrl(filename: string): string {
-  return `${BANNER_BASE}/${encodeURIComponent(filename)}`;
+// Pass a version number when a banner is replaced in-place (same filename) —
+// the `?v=N` query busts the CDN, browser and Next/Image caches so the new
+// artwork actually shows. Bump the number each time you re-upload that file.
+export function bannerUrl(filename: string, version?: number): string {
+  const url = `${BANNER_BASE}/${encodeURIComponent(filename)}`;
+  return version ? `${url}?v=${version}` : url;
 }
 
 // Per-page hero background banner (blurred, lightened case-study photo).
@@ -66,7 +70,7 @@ export const PAGE_BANNERS = {
   omnicure: bannerUrl("BANNER-OMNICURE.jpg"),
   phoseon: bannerUrl("BANNER-PHOSEON.jpg"),
   applications: bannerUrl("BANNER-APPLICATION.jpg"),
-  insights: bannerUrl("BANNER-INSIGHT.jpg"),
+  insights: bannerUrl("BANNER-INSIGHT.jpg", 2),
   support: bannerUrl("BANNER-SALES AND SUPPORT.jpg"),
 } as const;
 
