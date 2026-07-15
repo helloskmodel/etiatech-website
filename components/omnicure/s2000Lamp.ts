@@ -40,10 +40,13 @@ export const LAMP = {
   spec: "250–600 nm · 200 W",
   primaryCode: PRIMARY_CODE,
   variants: "021-64000R · 012 64000R · S2000 64000R · 64000R lamp",
-  heroImage: `${IMG}/S2000%20LAMP.png`,
+  // COS on-the-fly compression (imageMogr2): serve a small webp instead of the
+  // multi-MB source PNG, and the query string doubles as a cache-bust after an
+  // in-place re-upload. ~2.3 MB → ~50 KB.
+  heroImage: `${IMG}/S2000%20LAMP.png?imageMogr2/thumbnail/1000x/format/webp/quality/82`,
   heroAlt: "Omnicure S2000 Elite Lamp 012-64000R 200W UV curing lamp module",
   // 16:9 promo shot for the replacement-lamp banner on the OmniCure page.
-  promoImage: `${IMG}/S2000%20LAMP%201609.jpg`,
+  promoImage: `${IMG}/S2000%20LAMP%201609.jpg?imageMogr2/thumbnail/1200x/format/webp/quality/82`,
   spectralImage: `${IMG}/S2000%20LAMP-SPECTRAL%20OUTPUT.png`,
   spectralAlt: "Omnicure S2000 200W lamp 012-64000R spectral output 250-600nm",
   lifeImage: `${IMG}/S2000%20LAMP-LONG%20SERVICE%20LIFE.png`,
