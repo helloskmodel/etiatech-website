@@ -15,8 +15,9 @@ const HAS_LINE = Boolean(CONTACT.lineUrl);
 // the verticals OmniCure sells hardest into). Grayscale = quiet trust.
 const LOGO_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
+// COS imageMogr2: serve a small webp instead of the source PNG (faster row).
 const logoUrl = (file: string) =>
-  `${LOGO_BASE}/${file.replace(/ /g, "%20").replace(/\(/g, "%28").replace(/\)/g, "%29")}`;
+  `${LOGO_BASE}/${file.replace(/ /g, "%20").replace(/\(/g, "%28").replace(/\)/g, "%29")}?imageMogr2/thumbnail/280x/format/webp/quality/85`;
 const LOGOS: [string, string][] = [
   ["Baxter", "UV_logo (Baxter).png"],
   ["Boston Scientific", "UV_logo (Boston Scientific).png"],
