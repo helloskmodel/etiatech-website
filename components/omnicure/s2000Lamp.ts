@@ -323,15 +323,9 @@ export function lampJsonLd(lang: LampLang) {
     category: "UV Curing Lamp",
     sku: PRIMARY_CODE,
     mpn: PRIMARY_CODE,
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      seller:
-        lang === "zh" || lang === "vi"
-          ? { "@type": "Organization", name: "ETIA Technology" }
-          : { "@type": "Organization", name: "Etiatec (Thailand) Co., Ltd.", areaServed: "TH" },
-      url: SITE + LAMP_PATHS[lang],
-    },
+    url: SITE + LAMP_PATHS[lang],
+    // No `offers`: inquiry-based (no public price). An Offer without a price is
+    // flagged by Google and wrongly implies a direct "buy now" flow.
   };
   const faq = {
     "@context": "https://schema.org",
