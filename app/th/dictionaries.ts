@@ -51,7 +51,7 @@ const tri = {
   navHome: { th: "หน้าแรก", en: "Home", zh: "首页" } as Tri,
   navProducts: { th: "ผลิตภัณฑ์", en: "Products", zh: "产品" } as Tri,
   navApplications: { th: "การใช้งาน", en: "Applications", zh: "应用" } as Tri,
-  navContact: { th: "ฝ่ายขายและบริการ", en: "Sales & Support", zh: "销售与支持" } as Tri,
+  navContact: { th: "ฝ่ายขายและบริการ", en: "Service & Support", zh: "销售与支持" } as Tri,
   heroKicker: {
     th: "OmniCure · ระบบบ่มยูวีแบบจุด",
     en: "OmniCure · UV Spot Curing",

@@ -750,7 +750,7 @@ export default function S2000View() {
           </div>
           <p className="mt-6 text-xs text-blue-200">
             <Link href={SUPPORT_PATH} className="underline hover:text-white">
-              {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}
+              {t({ en: "Service & Support", zh: "销售与支持" }, locale)}
             </Link>
             <span className="mx-2">·</span>
             <Link href="/contact" className="underline hover:text-white">

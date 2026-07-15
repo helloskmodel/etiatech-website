@@ -12,7 +12,7 @@ export default function Footer() {
     { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
     { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
     { href: "/applications", label: { en: "Applications", zh: "应用", vi: "Ứng dụng", th: "การใช้งาน" } },
-    { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
+    { href: "/contact", label: { en: "Service & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
   ];
   return (
     <footer className="border-t border-gray-200 mt-20" style={{ background: "#f8f9fb" }}>

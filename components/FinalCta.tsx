@@ -3,7 +3,7 @@ import { Zap } from "lucide-react";
 type CtaLink = { label: string; href: string };
 
 /**
- * Site-standard closing CTA band (matches the Sales & Support page):
+ * Site-standard closing CTA band (matches the Service & Support page):
  * navy gradient rounded card, Zap accent, green primary button, white outline secondary.
  * Callers pass already-localized strings so this stays i18n-agnostic.
  */

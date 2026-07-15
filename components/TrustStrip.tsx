@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 
 // Dark-blue trust strip shown directly under the hero on Home, Applications,
-// Phoseon, OmniCure and Sales & Support. Wording mirrors the Service Commitment
+// Phoseon, OmniCure and Service & Support. Wording mirrors the Service Commitment
 // poster artwork.
 const TRUST_ITEMS: LangText[] = [
   { en: "Genuine Products Through Official Channels", zh: "官方渠道正品", vi: "Sản phẩm chính hãng qua kênh chính thức", th: "สินค้าของแท้ผ่านช่องทางอย่างเป็นทางการ" },

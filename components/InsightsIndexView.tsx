@@ -40,7 +40,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
 
   return (
     <>
-      {/* Hero — site standard (matches Sales & Support) */}
+      {/* Hero — site standard (matches Service & Support) */}
       <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF] py-16 md:py-24">
         <HeroBanner src={PAGE_BANNERS.insights} />
         <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1A56DB]/10 blur-3xl" />
