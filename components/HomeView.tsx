@@ -19,6 +19,7 @@ import { productImage, products } from "@/components/productCatalog";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
 import NewsTicker from "@/components/NewsTicker";
+import CustomerLogos from "@/components/CustomerLogos";
 
 const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
   { title: { en: "20 Years of Application Experience", zh: "20 年应用经验", th: "ประสบการณ์ด้านการใช้งาน 20 ปี", vi: "20 năm kinh nghiệm ứng dụng" }, body: { en: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", zh: "覆盖医疗、电子、光子、汽车及工业制造场景，提供贴近现场的紫外线固化经验。", th: "เรามีความรู้ด้าน UV curing จากประสบการณ์จริง ครอบคลุมงานผลิตในอุตสาหกรรมการแพทย์ อิเล็กทรอนิกส์ โฟโตนิกส์ ยานยนต์ และอุตสาหกรรมการผลิตทั่วไป", vi: "Chúng tôi có kiến thức thực tiễn về UV curing trong các lĩnh vực sản xuất thiết bị y tế, điện tử, quang tử, ô tô và sản xuất công nghiệp." }, icon: GraduationCap },
@@ -97,6 +98,7 @@ export default function HomeView() {
 
     <TrustStrip />
     <NewsTicker />
+    <CustomerLogos />
 
     <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><h2 className="text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Why Manufacturers Choose ETIA", zh: "为什么制造企业选择 ETIA", th: "ทำไมผู้ผลิตจึงเลือก ETIA", vi: "Vì sao các nhà sản xuất chọn ETIA" }, locale)}</h2><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{whyCards.map((item,i)=>{const Icon=item.icon;const accent=i%2===0?"#1A56DB":"#41A62A";const soft=i%2===0?"#EEF6FF":"#F0F9EA";return <article key={item.title.en} className="rounded-2xl border border-[#D9E4EA] bg-white p-6 shadow-[0_10px_35px_rgba(20,60,150,.06)]" style={{borderTopColor:accent,borderTopWidth:3}}><div className="flex items-center gap-3"><span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl" style={{background:soft,color:accent}}><Icon className="h-7 w-7" strokeWidth={1.7}/></span><h3 className="font-bold leading-snug" style={{color:accent}}>{t(item.title, locale)}</h3></div><p className="mt-4 text-sm leading-6 text-[#667085]">{t(item.body, locale)}</p></article>})}</div></div></section>
 
