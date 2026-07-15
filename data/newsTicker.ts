@@ -34,12 +34,12 @@ export const NEWS_ITEMS: NewsItem[] = [
       vi: "Đèn thay thế OmniCure S2000 Elite (012-64000R) — hàng chính hãng, giao nhanh",
     },
     href: {
-      en: "/product/omnicure/s2000-lamp",
-      zh: "/zh/product/omnicure/s2000-lamp",
-      th: "/th/omnicure-s2000-lamp",
-      vi: "/vi/product/omnicure/s2000-lamp",
+      en: "/insights/omnicure-s2000-elite-genuine-lamp",
+      zh: "/zh/insights/omnicure-s2000-elite-genuine-lamp",
+      th: "/th/insights/omnicure-s2000-elite-genuine-lamp",
+      vi: "/vi/insights/omnicure-s2000-elite-genuine-lamp",
     },
-    date: "2026-07-10",
+    date: "2026-07-15",
   },
   {
     id: "lx500-2026",

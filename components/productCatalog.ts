@@ -1808,6 +1808,11 @@ export function productModel(p: Product): string {
 // Product JSON-LD (schema.org/Product) for a product detail page. ETIA is the
 // distributor/seller; the brand is the manufacturer. areaServed reflects the
 // Asia-Pacific territories ETIA covers.
+//
+// No `offers` block: ETIA is a quote-based distributor with no public list
+// prices, so an Offer would be incomplete (Google flags "price required") and
+// would wrongly signal an e-commerce "buy now" flow. The page is inquiry-first
+// ("Request a Quote"), so we publish an informational Product only.
 export function productJsonLd(p: Product) {
   const img = productImage(p);
   return {
@@ -1820,12 +1825,6 @@ export function productJsonLd(p: Product) {
     brand: { "@type": "Brand", name: p.brand },
     manufacturer: { "@type": "Organization", name: BRAND_MANUFACTURER[p.brandId] },
     url: `${SITE}${productHref(p)}`,
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "ETIA Technology" },
-      areaServed: ["CN", "HK", "TH", "VN"],
-    },
   };
 }
 
