@@ -51,7 +51,7 @@ export default function CustomerLogos() {
                 alt={name}
                 title={name}
                 loading="lazy"
-                className="h-9 w-auto max-w-[130px] object-contain opacity-60 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
+                className="h-9 w-auto max-w-[130px] object-contain transition duration-200 hover:scale-105"
               />
             </div>
           ))}
