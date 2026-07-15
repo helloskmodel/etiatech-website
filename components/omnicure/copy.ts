@@ -22,6 +22,10 @@ export const CONTACT = {
   phone: "+66 811 746 947",
   phoneHref: "+66811746947",
   lineId: "TODO_FILL", // TODO_FILL: ETIA Thailand LINE official account id
+  // Full LINE "add friend" link (personal or Official Account). Paste the link
+  // from LINE → Add friends → Invite → Copy link (e.g. https://line.me/ti/p/xxxx).
+  // Empty = LINE buttons fall back to scrolling to the quote form.
+  lineUrl: "", // TODO_FILL: ETIA Thailand LINE link
   email: "sompoch@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
