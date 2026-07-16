@@ -5,7 +5,7 @@ import { s2000FaqsTh } from "@/components/s2000FaqTh";
 const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/th/product/omnicure/s2000";
 const OG_IMAGE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 
 export const metadata: Metadata = {

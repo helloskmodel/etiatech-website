@@ -3,7 +3,7 @@ title: "How to Choose the Right OmniCure S2000 Elite Lamp and Optical Filter"
 description: "Standard or Surface Cure? Which band-pass filter? A practical guide to matching the OmniCure S2000 Elite lamp module (012-68000R / 012-69000R) and optical filter to your adhesive and process."
 date: 2026-07-08
 tags: [OmniCure, S2000 Elite, UV Curing, Lamp Selection]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-%20OMNICURE%20S2000%20ELITE%20-LAMP.webp
+cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20LAMP%201609.jpg?imageMogr2/thumbnail/1200x/format/webp/quality/82
 author: ETIA Technology
 ---
 

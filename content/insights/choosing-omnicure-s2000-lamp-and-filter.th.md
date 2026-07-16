@@ -4,7 +4,7 @@ description: "ควรเลือก Standard Lamp หรือ Surface Cure L
 date: 2026-07-08
 tags: [OmniCure, S2000 Elite, UV Curing, Lamp Selection]
 author: ETIA Technology
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-%20OMNICURE%20S2000%20ELITE%20-LAMP.webp
+cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20LAMP%201609.jpg?imageMogr2/thumbnail/1200x/format/webp/quality/82
 ---
 
 ## 1. เริ่มจากข้อมูลของกาว UV

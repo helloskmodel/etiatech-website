@@ -13,7 +13,7 @@ import { s2000FaqsVi } from "@/components/s2000FaqVi";
 import { ArrowRight, BadgeCheck, CheckCircle2, ChevronRight, Download } from "lucide-react";
 
 const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
-const HERO_IMG = `${PROMO}/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp`;
+const HERO_IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 
 const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 const PDF_BROCHURE = `${PDF}/Brochure%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf`;

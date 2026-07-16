@@ -6,7 +6,7 @@ import { s2000Faqs } from "@/components/s2000Faq";
 const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/zh/product/omnicure/s2000";
 const OG_IMAGE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 
 // Shared hreflang group — must be identical on all four language versions.
 const S2000_LANGUAGES = {
