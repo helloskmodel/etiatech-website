@@ -31,7 +31,7 @@ const CUSTOMERS: [string, string][] = [
 export default function CustomerLogos() {
   const { locale } = useLocale();
   return (
-    <section className="border-y border-[#EAF0F5] bg-white px-4 py-14 sm:px-6 lg:px-8">
+    <section className="border-y border-[#EAF0F5] bg-white px-4 py-9 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl text-center">
         <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">
           {t({ en: "Trusted By", zh: "合作客户", th: "ลูกค้าที่ไว้วางใจเรา", vi: "Khách hàng tin dùng" }, locale)}
@@ -44,7 +44,7 @@ export default function CustomerLogos() {
             vi: "Được các nhà sản xuất hàng đầu ngành y tế, quang tử & điện tử tin dùng",
           }, locale)}
         </h2>
-        <div className="mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+        <div className="mt-7 grid grid-cols-2 items-center gap-x-6 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
           {CUSTOMERS.map(([name, file]) => (
             <div key={name} className="flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -53,7 +53,7 @@ export default function CustomerLogos() {
                 alt={name}
                 title={name}
                 loading="lazy"
-                className="h-9 w-auto max-w-[130px] object-contain transition duration-200 hover:scale-105"
+                className="h-7 w-auto max-w-[112px] object-contain transition duration-200 hover:scale-105"
               />
             </div>
           ))}
