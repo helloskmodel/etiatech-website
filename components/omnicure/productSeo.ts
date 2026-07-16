@@ -27,6 +27,8 @@ export function productLandingMetadata(slug: string, lang: Lang): Metadata {
 export function productLandingJsonLd(slug: string, lang: Lang) {
   const c = buildProductConfig(slug, lang);
   if (!c) return [];
+  // No `offers`: inquiry-based (no public price). An Offer without a price is
+  // flagged by Google and wrongly implies a direct "buy now" flow.
   const product = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -35,11 +37,6 @@ export function productLandingJsonLd(slug: string, lang: Lang) {
     description: c.subhead,
     image: c.image,
     category: "UV Spot Curing",
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "Etiatec (Thailand) Co., Ltd.", areaServed: "TH" },
-    },
   };
   const faq = {
     "@context": "https://schema.org",
