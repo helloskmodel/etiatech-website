@@ -78,11 +78,6 @@ const productSchema = {
     "Lamp-based UV spot curing system with Closed-Loop Feedback intensity control, a 30 ms high-speed shutter, StepCure PLC control, Web UI, NFC access control, and user-changeable lamps and optical filters for validated manufacturing.",
   image: OG_IMAGE,
   url: SITE + PAGE_PATH,
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    seller: { "@type": "Organization", name: "Etiatec (Thailand) Co., Ltd." },
-  },
   subjectOf: [
     { "@type": "CreativeWork", name: "OmniCure S2000 Elite Brochure", url: PDF.brochure },
     { "@type": "CreativeWork", name: "OmniCure S2000 Elite Quick Start Guide", url: PDF.quickStart },

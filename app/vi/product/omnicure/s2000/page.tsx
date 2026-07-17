@@ -71,11 +71,6 @@ const jsonLd = {
     { "@type": "DigitalDocument", name: "OmniCure S2000 Elite Quick Start Guide", url: `${PDF}/Quick%20Start%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf` },
     { "@type": "DigitalDocument", name: "OmniCure S2000 Elite User Guide", url: `${PDF}/User%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf` },
   ],
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    seller: { "@type": "Organization", name: "Etiatec (Thailand) Co., Ltd." },
-  },
 };
 
 const breadcrumbJsonLd = {
