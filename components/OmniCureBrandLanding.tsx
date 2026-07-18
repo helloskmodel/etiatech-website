@@ -6,14 +6,9 @@ import { useMemo, useState, type ComponentType } from "react";
 import {
   ArrowRight,
   BadgeCheck,
-  Check,
   Crosshair,
   Layers3,
-  Lightbulb,
-  PackageCheck,
   ScanLine,
-  ShieldCheck,
-  Wrench,
   Zap,
 } from "lucide-react";
 import { inquiryMailto, localeSalesEmail } from "@/components/contact";
@@ -114,13 +109,6 @@ const routes: Array<{
   },
 ];
 
-
-const services = [
-  { title: "Genuine Product Supply", body: "Authorized supply channel for OmniCure systems, lamps and accessories.", icon: PackageCheck },
-  { title: "Application-Driven Selection", body: "Match UV technology to your adhesive, substrate, cure area and cycle time.", icon: Crosshair },
-  { title: "Local Installation Support", body: "Setup, operation and process optimization support for production teams.", icon: Wrench },
-  { title: "Maintenance & Repair", body: "Troubleshooting, spare parts and repair coordination to reduce downtime.", icon: ShieldCheck },
-];
 
 export default function OmniCureBrandLanding() {
   const { locale } = useLocale();

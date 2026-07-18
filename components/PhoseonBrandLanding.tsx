@@ -15,7 +15,6 @@ import {
   Layers3,
   Leaf,
   MonitorCog,
-  Package,
   Paintbrush,
   Printer,
   ShieldCheck,
@@ -63,14 +62,6 @@ const why: Array<{ title: LangText; body: LangText; icon: ComponentType<{ classN
   { title: { en: "Cooling Built In", zh: "内建散热", th: "ระบบระบายความร้อนในตัว", vi: "Làm mát tích hợp" }, body: { en: "Air- and water-cooled platforms for different production demands.", zh: "风冷与水冷平台，满足不同的生产需求。", th: "แพลตฟอร์มระบายความร้อนด้วยอากาศและน้ำ สำหรับความต้องการผลิตที่ต่างกัน", vi: "Nền tảng làm mát bằng khí và nước cho các nhu cầu sản xuất khác nhau." }, icon: ThermometerSun },
   { title: { en: "Innovation Built In", zh: "内建创新", th: "นวัตกรรมในตัว", vi: "Đổi mới tích hợp" }, body: { en: "Advanced UV LED technology supported by a strong patent foundation.", zh: "先进 UV LED 技术，坚实的专利基础支撑。", th: "เทคโนโลยี UV LED ขั้นสูง หนุนด้วยฐานสิทธิบัตรที่แข็งแกร่ง", vi: "Công nghệ UV LED tiên tiến, được hỗ trợ bởi nền tảng bằng sáng chế vững chắc." }, icon: Sparkles },
   { title: { en: "Efficiency Built In", zh: "内建高效", th: "ประสิทธิภาพในตัว", vi: "Hiệu quả tích hợp" }, body: { en: "Reduced heat, energy consumption and maintenance requirements.", zh: "更低的发热、能耗与维护需求。", th: "ลดความร้อน การใช้พลังงาน และความต้องการบำรุงรักษา", vi: "Giảm nhiệt, tiêu thụ năng lượng và yêu cầu bảo trì." }, icon: Leaf },
-];
-
-// Hero technology selector (mirrors the OmniCure page): three Phoseon UV LED
-// curing technologies by cooling method and curing area.
-const phoseonTech = [
-  { kicker: "Water-Cooled", name: "UV LED Area Curing Systems", icon: Droplets, color: "#1E5BFF", soft: "#EEF3FF" },
-  { kicker: "Air-Cooled", name: "UV LED Small-Area Curing Systems", icon: ThermometerSun, color: "#6BBF3A", soft: "#F1FBEC" },
-  { kicker: "Air-Cooled", name: "UV LED Large-Area Curing Systems", icon: Layers3, color: "#087F6B", soft: "#F2FBF8" },
 ];
 
 function findProduct(slug: string): Product | undefined {
