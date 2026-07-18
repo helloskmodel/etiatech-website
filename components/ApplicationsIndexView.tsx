@@ -83,7 +83,7 @@ export default function ApplicationsIndexView() {
               {PRODUCT_FILTERS.map((p) => {
                 const count = p.key === "All" ? listedApplications.length : listedApplications.filter((a) => matchesProduct(a, p.key)).length;
                 return (
-                  <button key={p.key} type="button" onClick={() => setProduct(p.key)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${product === p.key ? "border-[#44B549] bg-[#44B549] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#44B549] hover:text-[#44B549]"}`}>
+                  <button key={p.key} type="button" aria-pressed={product === p.key} onClick={() => setProduct(p.key)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${product === p.key ? "border-[#44B549] bg-[#44B549] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#44B549] hover:text-[#44B549]"}`}>
                     {t(p.label, locale)} <span className="ml-1 opacity-70">{count}</span>
                   </button>
                 );
@@ -97,7 +97,7 @@ export default function ApplicationsIndexView() {
             {["All Applications", ...APPLICATION_CATEGORIES].map((item) => {
               const count = item === "All Applications" ? listedApplications.length : listedApplications.filter((application) => application.industryCategory === item).length;
               return (
-                <button key={item} type="button" onClick={() => setCategory(item)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${category === item ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB]"}`}>
+                <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${category === item ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB]"}`}>
                   {CATEGORY_LABEL[item] ? t(CATEGORY_LABEL[item], locale) : item} <span className="ml-1 opacity-70">{count}</span>
                 </button>
               );

@@ -84,10 +84,13 @@ export default function Nav() {
           <div className="relative ml-4">
             <button
               onClick={() => setLangOpen(!langOpen)}
+              aria-label={t({ en: "Select language", zh: "选择语言", vi: "Chọn ngôn ngữ", th: "เลือกภาษา" }, locale)}
+              aria-expanded={langOpen}
+              aria-haspopup="true"
               className="flex items-center gap-1.5 px-3 py-2 rounded border border-gray-200 text-sm font-semibold text-gray-700 hover:border-[#1A56DB] hover:text-[#1A56DB] transition-all"
             >
               🌐 {LOCALE_LABELS[locale]}
-              <svg className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              <svg aria-hidden="true" className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
             {langOpen && (
               <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50 min-w-[7rem]">
@@ -97,6 +100,7 @@ export default function Nav() {
                     <button
                       key={l}
                       disabled={!active}
+                      aria-current={locale === l ? "true" : undefined}
                       onClick={() => { if (active) { setLangOpen(false); switchLocale(l); } }}
                       className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
                         !active
@@ -119,8 +123,15 @@ export default function Nav() {
         </div>
 
         {/* Mobile hamburger */}
-        <button className="md:hidden text-gray-600" onClick={() => setOpen(!open)}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button
+          className="md:hidden text-gray-600"
+          onClick={() => setOpen(!open)}
+          aria-label={open
+            ? t({ en: "Close menu", zh: "关闭菜单", vi: "Đóng menu", th: "ปิดเมนู" }, locale)
+            : t({ en: "Open menu", zh: "打开菜单", vi: "Mở menu", th: "เปิดเมนู" }, locale)}
+          aria-expanded={open}
+        >
+          <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -145,6 +156,7 @@ export default function Nav() {
                 <button
                   key={l}
                   disabled={!active}
+                  aria-current={locale === l ? "true" : undefined}
                   onClick={() => { if (active) { setOpen(false); switchLocale(l); } }}
                   className={`px-3 py-1.5 rounded text-sm font-semibold transition-all ${
                     !active
