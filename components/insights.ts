@@ -10,7 +10,7 @@ import { marked } from "marked";
 marked.setOptions({ gfm: true, breaks: false });
 
 const DIR = path.join(process.cwd(), "content", "insights");
-const FILE_RE = /^(.+)\.(en|zh)\.md$/;
+const FILE_RE = /^(.+)\.(en|zh|th|vi)\.md$/;
 
 export type ArticleLocaleContent = {
   title: string;
@@ -25,7 +25,7 @@ export type Article = {
   author: string;
   cover?: string;
   readingMinutes: number;
-  locales: { en: ArticleLocaleContent; zh?: ArticleLocaleContent };
+  locales: { en: ArticleLocaleContent; zh?: ArticleLocaleContent; th?: ArticleLocaleContent; vi?: ArticleLocaleContent };
 };
 
 type Frontmatter = {
@@ -92,13 +92,13 @@ export function getAllArticles(): Article[] {
     return (cache = []);
   }
 
-  const bySlug = new Map<string, { en?: string; zh?: string }>();
+  const bySlug = new Map<string, { en?: string; zh?: string; th?: string; vi?: string }>();
   for (const f of files) {
     const m = FILE_RE.exec(f);
     if (!m) continue;
     const [, slug, loc] = m;
     const entry = bySlug.get(slug) ?? {};
-    entry[loc as "en" | "zh"] = f;
+    entry[loc as "en" | "zh" | "th" | "vi"] = f;
     bySlug.set(slug, entry);
   }
 
@@ -107,6 +107,8 @@ export function getAllArticles(): Article[] {
     if (!entry.en) continue; // English is the canonical source
     const en = readLocale(entry.en);
     const zh = entry.zh ? readLocale(entry.zh) : null;
+    const th = entry.th ? readLocale(entry.th) : null;
+    const vi = entry.vi ? readLocale(entry.vi) : null;
     const rawEnBody = fs.readFileSync(path.join(DIR, entry.en), "utf8");
     articles.push({
       slug,
@@ -115,7 +117,12 @@ export function getAllArticles(): Article[] {
       author: en.fm.author ?? "ETIA Technology",
       cover: en.fm.cover || undefined,
       readingMinutes: Math.max(1, Math.round(wordCount(rawEnBody) / 200)),
-      locales: { en: en.content, ...(zh ? { zh: zh.content } : {}) },
+      locales: {
+        en: en.content,
+        ...(zh ? { zh: zh.content } : {}),
+        ...(th ? { th: th.content } : {}),
+        ...(vi ? { vi: vi.content } : {}),
+      },
     });
   }
 
@@ -129,7 +136,7 @@ export function getArticle(slug: string): Article | undefined {
 
 // Locale content with graceful fallback to English.
 export function articleContent(a: Article, locale: "en" | "zh" | "vi" | "th"): ArticleLocaleContent {
-  return (locale === "zh" && a.locales.zh) || a.locales.en;
+  return (locale !== "en" && a.locales[locale]) || a.locales.en;
 }
 
 const SITE = "https://www.etiatech.com";

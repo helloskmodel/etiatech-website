@@ -21,7 +21,7 @@ export const CONTACT = {
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
 
-export const MODELS = ["S2000", "LX500", "Flood", "Other"] as const;
+export const MODELS = ["S2000", "S1500 Pro", "LX500", "Flood", "Other"] as const;
 
 type Product = { id: string; name: string; desc: string };
 type FAQ = { q: string; a: string };

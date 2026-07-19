@@ -8,6 +8,7 @@ const SITE = "https://www.etiatech.com";
 export const PRODUCT_PATHS: Record<string, { en: string; th: string }> = {
   "s2000-elite": { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
   lx500: { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
+  "s1500-pro": { en: "/omnicure-s1500-pro", th: "/th/omnicure-s1500-pro" },
 };
 
 export function productLandingMetadata(slug: string, lang: Lang): Metadata {
