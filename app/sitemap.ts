@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // listed — next.config redirects them (308) to /applications and
     // /product/omnicure. Only the canonical 200 destinations belong in the
     // sitemap; listing a redirect makes Google report "Page with redirect".
+    { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/case-studies`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE}/insights`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.3 },
