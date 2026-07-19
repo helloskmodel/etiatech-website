@@ -30,6 +30,11 @@ const META: Record<string, {
   stats: [string, string][];
   faq: { q: Tri; a: Tri }[];
   metaTitle: Tri;
+  // Optional landing-only copy overrides. SEM landing pages need short,
+  // benefit-first wording; without these the page falls back to the catalog
+  // intro/features, which read like brochure paragraphs.
+  landingSubhead?: Tri;
+  landingFeatures?: Record<Lang, string[]>;
 }> = {
   "s2000-elite": {
     tagline: { en: "Maximum Power. Total Control.", th: "พลังสูงสุด ควบคุมได้ทุกขั้นตอน" },
@@ -52,6 +57,33 @@ const META: Record<string, {
   lx500: {
     tagline: { en: "Cool, Stable LED Spot Curing.", th: "การบ่มแบบจุดด้วย LED ที่เย็นและเสถียร" },
     stats: [["27 W/cm²", "Peak @385nm"], ["±5%", "Optical Stability"], ["2 / 4", "Channels"], ["1%", "Intensity Steps"]],
+    // Short, one-idea-per-line copy distilled from the official Excelitas
+    // LX500 brochure — keep it scannable; the full detail lives in the specs
+    // table and the catalog product page.
+    landingSubhead: {
+      en: "Ultra-compact UV LED spot curing with ±5% optical stability and up to 27 W/cm² peak irradiance — consistent, repeatable cures at a fraction of the running cost.",
+      th: "ระบบบ่มยูวีแบบจุดด้วย LED ขนาดกะทัดรัด เสถียรภาพแสง ±5% ความเข้มสูงสุด 27 W/cm² — บ่มได้สม่ำเสมอ ทำซ้ำได้ ด้วยต้นทุนการใช้งานที่ต่ำ",
+    },
+    landingFeatures: {
+      en: [
+        "±5% optical stability — Intelli-Lamp® monitors every exposure",
+        "Up to 27 W/cm² peak irradiance (365 / 385 / 395 / 405 nm heads)",
+        "Runs up to 4 LED heads — together or independently",
+        "1% intensity steps (5–100%) for tight process control",
+        "StepCure® 2.0 — program multi-step cure profiles",
+        "~75% less energy than arc-lamp systems",
+        "Cool, compact, no external cooling — fits any line; PLC / USB control",
+      ],
+      th: [
+        "เสถียรภาพแสง ±5% — Intelli-Lamp® ตรวจสอบทุกครั้งที่ฉายแสง",
+        "ความเข้มสูงสุด 27 W/cm² (หัว LED 365 / 385 / 395 / 405 nm)",
+        "ควบคุมหัว LED ได้สูงสุด 4 หัว พร้อมกันหรือแยกอิสระ",
+        "ปรับความเข้มละเอียดทีละ 1% (5–100%) ควบคุมกระบวนการได้แม่นยำ",
+        "StepCure® 2.0 — ตั้งโปรไฟล์การบ่มหลายขั้นตอน",
+        "ประหยัดพลังงานกว่าระบบหลอด arc ประมาณ 75%",
+        "ขนาดเล็ก ทำงานเย็น ไม่ต้องระบายความร้อนภายนอก รองรับ PLC / USB",
+      ],
+    },
     metaTitle: {
       en: "OmniCure LX500 UV LED Spot Curing — Thailand | Authorized Distributor",
       th: "OmniCure LX500 UV LED บ่มแบบจุด — ประเทศไทย | ตัวแทนจำหน่ายที่ได้รับอนุญาต",
@@ -77,14 +109,20 @@ export function buildProductConfig(slug: string, lang: Lang): ProductLandingConf
   const th = productContentTh[slug];
   const loc = localizeProduct(p, "en");
 
-  // Features: TH brochure highlights when available, else catalog features.
-  const features = lang === "th" && th?.highlights?.length ? th.highlights : (loc.features ?? []);
+  // Features: landing override first, then TH brochure highlights, then catalog.
+  const features =
+    meta.landingFeatures?.[lang] ??
+    (lang === "th" && th?.highlights?.length ? th.highlights : (loc.features ?? []));
   // Specs: TH brochure spec groups (flattened) when available, else catalog.
   const specs: [string, string][] =
     lang === "th" && th?.specGroups?.length
       ? th.specGroups.flatMap((g) => g.rows)
       : p.specs;
-  const subhead = lang === "th" && th?.subtitle ? th.subtitle : loc.intro;
+  const subhead = meta.landingSubhead
+    ? pick(meta.landingSubhead, lang)
+    : lang === "th" && th?.subtitle
+      ? th.subtitle
+      : loc.intro;
 
   return {
     slug,
