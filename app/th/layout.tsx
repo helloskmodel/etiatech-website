@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 import "../globals.css";
-import LineFloatingButton from "@/components/LineFloatingButton";
+import ChatFloatingButton from "@/components/ChatFloatingButton";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="th">
       <body className="min-h-screen flex flex-col">
         {children}
-        <LineFloatingButton always />
+        <ChatFloatingButton force="th" />
       </body>
     </html>
   );
