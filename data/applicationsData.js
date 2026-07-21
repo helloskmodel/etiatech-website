@@ -1418,6 +1418,286 @@ export const applicationsData = [
       ]
     },
     "notes": "Part B fiber draw tower case maps primary and secondary coating cure to AC Large UV LED systems and ribbon matrix coating to AC9225-F.\n\nCodex 使用说明\n\n你可以把上面 16 篇直接给 Codex，然后加这段：\n\nUse these 16 reviewed Application Case Study drafts as the Phase 1 content set.\n\nBuild the Applications section around 5 industries:"
+  },
+  {
+    "slug": "uv-curing-micro-speaker-assembly",
+    "title": "UV Curing for Micro-Speaker Assembly",
+    "subtitle": "Fast, low-heat UV curing for diaphragm, voice-coil and magnet bonding in micro-speaker and receiver production.",
+    "relatedSummary": "Fast, low-heat UV curing for diaphragm, voice-coil and magnet bonding in micro-speaker and receiver production.",
+    "pageType": "Application Case Study",
+    "industryCategory": "Electronics & PCB Assembly",
+    "industry": [
+      "Electronics & PCB Assembly",
+      "Consumer Electronics",
+      "Micro-Speaker Manufacturing",
+      "Acoustic Components"
+    ],
+    "application": [
+      "Diaphragm Edge Bonding",
+      "Voice-Coil Bonding",
+      "Magnet & Frame Bonding",
+      "Mesh & Gasket Fixing",
+      "High-Volume Area Curing"
+    ],
+    "applicationPoints": [
+      "Diaphragm Edge Bonding",
+      "Voice-Coil Bonding",
+      "Magnet & Frame Bonding",
+      "Mesh & Gasket Fixing",
+      "High-Volume Area Curing"
+    ],
+    "technology": [
+      "UV LED Area Curing",
+      "UV Spot Curing",
+      "Low-Heat Curing",
+      "Automated In-Line Curing"
+    ],
+    "productCategory": "UV Curing Systems",
+    "productFamily": "Phoseon / OmniCure",
+    "recommendedProducts": [
+      "Phoseon FireJet FJ801",
+      "OmniCure® LX500",
+      "Optional: FireJet FJ800 · OmniCure AC Series"
+    ],
+    "relatedProductSlugs": [
+      "fj801",
+      "fj800",
+      "lx500"
+    ],
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/fj801.png",
+    "sections": {
+      "application": [
+        "Micro-speakers and receivers for phones, earbuds, wearables and automotive audio are assembled from delicate parts — diaphragms a few microns thick, fine voice-coil wires, magnets and small plastic frames. Production runs at very high volume, and every adhesive joint must cure in seconds without deforming heat-sensitive acoustic components."
+      ],
+      "challenge": [
+        "The adhesive joints sit on tiny, heat-sensitive parts: excess heat can warp the diaphragm and shift the speaker's acoustic response, while slow or uneven curing limits line speed. A single speaker has multiple bond points, and multi-cavity fixtures need a consistent UV dose across the whole work area, shift after shift."
+      ],
+      "solution": [
+        "ETIA recommends the Phoseon FireJet FJ801 for area curing of micro-speaker assemblies: its modular 100 × 100 mm base scales with the fixture, and TargetCure technology keeps UV output precise and predictable across cavities. For individual bond points, rework or lab stations, the OmniCure LX500 adds cool, repeatable spot curing at 365–405 nm with 1% intensity control."
+      ],
+      "recommendedProduct": [
+        "FireJet FJ801 area curing systems are designed for micro-speaker and camera-module production lines; combined with OmniCure LX500 spot curing they cover both in-line area curing and station-level bonding with the same validated process approach."
+      ],
+      "etiaSupport": [
+        "As an authorized distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
+        "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
+      ]
+    },
+    "benefits": [
+      "Second-level curing keeps line speed high",
+      "Low-heat LED output protects delicate diaphragms",
+      "Uniform dose across multi-cavity fixtures",
+      "Modular area coverage scales with automation",
+      "Repeatable output for consistent acoustic quality",
+      "Local stock, installation and support from ETIA"
+    ],
+    "etiaSupport": [
+      "As an authorized distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
+      "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
+    ],
+    "seo": {
+      "title": "UV Curing for Micro-Speaker Assembly | FireJet FJ801 & LX500 | ETIA",
+      "description": "ETIA supports micro-speaker manufacturers with Phoseon FireJet FJ801 area curing and OmniCure LX500 spot curing for diaphragm, voice-coil and magnet bonding.",
+      "urlSlug": "applications/uv-curing-micro-speaker-assembly",
+      "keywords": [
+        "UV curing",
+        "micro speaker assembly",
+        "diaphragm bonding",
+        "voice coil bonding",
+        "FireJet FJ801",
+        "OmniCure LX500",
+        "UV LED area curing",
+        "ETIA"
+      ]
+    },
+    "notes": "New note covering micro-speaker/receiver assembly, mapped to FJ801 (area) + LX500 (spot)."
+  },
+  {
+    "slug": "uv-led-curing-wire-tacking-component-staking",
+    "title": "UV LED Curing for Wire Tacking & Component Staking",
+    "subtitle": "Second-level tacking of wires, cables and components on PCBs — vibration protection without ovens or long fixturing.",
+    "relatedSummary": "Second-level tacking of wires, cables and components on PCBs — vibration protection without ovens or long fixturing.",
+    "pageType": "Application Case Study",
+    "industryCategory": "Electronics & PCB Assembly",
+    "industry": [
+      "Electronics & PCB Assembly",
+      "Industrial Electronics",
+      "Automotive Electronics",
+      "Aerospace Electronics"
+    ],
+    "application": [
+      "Wire & Cable Tacking",
+      "Connector Staking",
+      "Component Reinforcement",
+      "Solder-Joint Strain Relief",
+      "Board-Level Assembly"
+    ],
+    "applicationPoints": [
+      "Wire & Cable Tacking",
+      "Connector Staking",
+      "Component Reinforcement",
+      "Solder-Joint Strain Relief",
+      "Board-Level Assembly"
+    ],
+    "technology": [
+      "UV LED Spot Curing",
+      "UV LED Area Curing",
+      "On-Demand Curing"
+    ],
+    "productCategory": "UV Curing Systems",
+    "productFamily": "OmniCure",
+    "recommendedProducts": [
+      "OmniCure® LX500 with V3 LED Heads",
+      "OmniCure® AC Series",
+      "Optional: LS200 UV LED Radiometer"
+    ],
+    "relatedProductSlugs": [
+      "lx500",
+      "v3-led-heads",
+      "ac4",
+      "ac7",
+      "ls200"
+    ],
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/LX500.png",
+    "sections": {
+      "application": [
+        "Wires, cables, connectors and taller components on PCBs need mechanical reinforcement to survive vibration, shock and handling — in automotive, industrial and aerospace electronics this staking step is often mandatory. UV-curable tacking adhesives fix the part in seconds, exactly where the light is aimed."
+      ],
+      "challenge": [
+        "Tacking points are scattered across the board and sit next to heat-sensitive components, so the cure must be local, cool and immediate. Ovens and slow-setting adhesives add fixtures, floor space and hours of WIP; production wants each tack point cured in seconds with a dose that is repeatable from station to station."
+      ],
+      "solution": [
+        "ETIA recommends the OmniCure LX500 with V3 LED heads: up to four heads cure several tack points simultaneously or independently, with 1% intensity steps for a controlled, repeatable process. For longer bond lines or clusters of points, air-cooled OmniCure AC Series heads cure a whole zone in one exposure. LS200 radiometry keeps the validated dose stable across shifts and stations."
+      ],
+      "recommendedProduct": [
+        "OmniCure LX500 is recommended for point-by-point tacking and staking; OmniCure AC Series area heads extend the same LED curing approach to wider zones on the board."
+      ],
+      "etiaSupport": [
+        "As an authorized distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
+        "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
+      ]
+    },
+    "benefits": [
+      "Tack points cured in seconds, on demand",
+      "Cool LED output next to sensitive components",
+      "Up to four spot heads from one controller",
+      "Area heads cover clusters and long bond lines",
+      "1% intensity control for validated processes",
+      "No ovens, fixtures or long WIP queues"
+    ],
+    "etiaSupport": [
+      "As an authorized distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
+      "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
+    ],
+    "seo": {
+      "title": "UV LED Curing for Wire Tacking & Component Staking | OmniCure LX500 | ETIA",
+      "description": "ETIA supports electronics manufacturers with OmniCure LX500 spot curing and AC Series area curing for wire tacking, connector staking and component reinforcement.",
+      "urlSlug": "applications/uv-led-curing-wire-tacking-component-staking",
+      "keywords": [
+        "UV curing",
+        "wire tacking",
+        "component staking",
+        "PCB assembly",
+        "OmniCure LX500",
+        "OmniCure AC Series",
+        "UV LED curing",
+        "ETIA"
+      ]
+    },
+    "notes": "New note covering wire tacking and staking on PCBs, mapped to LX500 (spot) + AC Series (area)."
+  },
+  {
+    "slug": "uv-curing-electronics-potting-encapsulation",
+    "title": "UV Curing for Electronics Potting & Encapsulation",
+    "subtitle": "Protect sensors, PCBs and components with UV-curable encapsulants — cured in seconds instead of oven hours.",
+    "relatedSummary": "Protect sensors, PCBs and components with UV-curable encapsulants — cured in seconds instead of oven hours.",
+    "pageType": "Application Case Study",
+    "industryCategory": "Electronics & PCB Assembly",
+    "industry": [
+      "Electronics & PCB Assembly",
+      "Sensors & Modules",
+      "Industrial Electronics",
+      "Automotive Electronics"
+    ],
+    "application": [
+      "Component Encapsulation",
+      "Shallow Potting",
+      "Glob-Top Protection",
+      "Sensor Module Sealing",
+      "PCB Protection"
+    ],
+    "applicationPoints": [
+      "Component Encapsulation",
+      "Shallow Potting",
+      "Glob-Top Protection",
+      "Sensor Module Sealing",
+      "PCB Protection"
+    ],
+    "technology": [
+      "UV LED Area Curing",
+      "High-Dose Curing",
+      "Low-Heat Curing"
+    ],
+    "productCategory": "UV Curing Systems",
+    "productFamily": "OmniCure / Phoseon",
+    "recommendedProducts": [
+      "OmniCure® AC8 / AC8-HD",
+      "Phoseon FireJet ONE",
+      "Optional: OmniCure® LX500 for small parts"
+    ],
+    "relatedProductSlugs": [
+      "ac8",
+      "ac8-hd",
+      "firejet-one",
+      "lx500"
+    ],
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/AC8.png",
+    "sections": {
+      "application": [
+        "Encapsulants and shallow potting compounds protect sensors, bare dies, solder joints and complete PCB areas from moisture, dust, chemicals and vibration. With UV-curable materials, the protective layer solidifies in seconds under the lamp — replacing oven cycles that take hours and consume floor space."
+      ],
+      "challenge": [
+        "Encapsulation layers are thicker than typical bond lines, so the process needs a high, uniform UV dose to cure through the full depth — while nearby components stay cool. Shadowed areas under components must be reviewed, since UV only cures what light reaches. Oven-cured alternatives create long WIP queues and energy costs that high-volume lines want to eliminate."
+      ],
+      "solution": [
+        "ETIA recommends OmniCure AC8 Series air-cooled area curing for encapsulation and shallow potting: over 8 W/cm² (over 15 W/cm² with AC8-HD) with high longitudinal uniformity, adjoinable to match the board size. The self-contained Phoseon FireJet ONE adds a 20 W/cm² option for high-dose requirements. For small parts and glob-top spots, the OmniCure LX500 delivers targeted spot curing. ETIA reviews part geometry with the customer to confirm light reach and dose before recommending a configuration."
+      ],
+      "recommendedProduct": [
+        "OmniCure AC8 / AC8-HD is recommended for board-level encapsulation dose; FireJet ONE for compact high-power area curing; LX500 for component-level protection spots."
+      ],
+      "etiaSupport": [
+        "As an authorized distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
+        "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
+      ]
+    },
+    "benefits": [
+      "Seconds-level cure replaces oven hours",
+      "High, uniform dose through thicker layers",
+      "Cool operation next to sensitive components",
+      "Adjoinable heads match any board size",
+      "Lower energy use than thermal curing",
+      "Geometry and dose review by ETIA engineers"
+    ],
+    "etiaSupport": [
+      "As an authorized distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
+      "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
+    ],
+    "seo": {
+      "title": "UV Curing for Electronics Potting & Encapsulation | OmniCure AC8 | ETIA",
+      "description": "ETIA supports electronics manufacturers with OmniCure AC8/AC8-HD and FireJet ONE area curing for component encapsulation, shallow potting and PCB protection.",
+      "urlSlug": "applications/uv-curing-electronics-potting-encapsulation",
+      "keywords": [
+        "UV curing",
+        "electronics potting",
+        "encapsulation",
+        "glob top",
+        "OmniCure AC8",
+        "FireJet ONE",
+        "UV LED area curing",
+        "ETIA"
+      ]
+    },
+    "notes": "New note covering potting/encapsulation, mapped to AC8/AC8-HD + FireJet ONE + LX500; includes honest light-reach caveat."
   }
 ];
 
