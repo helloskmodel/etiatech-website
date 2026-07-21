@@ -3,9 +3,12 @@ title: "ETIA Launches Thailand Operations as Authorized OmniCure Distributor"
 description: "Etiatec (Thailand) Co., Ltd. — appointed by Excelitas — brings genuine OmniCure UV curing systems, local stock, installation and Thai-language support to manufacturers across Thailand."
 date: 2026-07-19
 tags: [ETIA Thailand, OmniCure, UV Curing, Company News]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-EN.png
+cover: /images/etiatec-thailand-office.jpg
 author: ETIA Technology
 ---
+
+![ETIATEC (Thailand) Co., Ltd. office in Bangkok](/images/etiatec-thailand-office.jpg)
+*The ETIATEC (Thailand) Co., Ltd. office in Bangkok.*
 
 **Bangkok, Thailand** — ETIA Technology is proud to announce the launch of **Etiatec (Thailand) Co., Ltd.**, our dedicated Thailand operation, appointed by **Excelitas Canada Inc.** as an authorized distributor of **OmniCure® UV curing systems** in Thailand.
 

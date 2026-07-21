@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { BadgeCheck, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
@@ -136,6 +137,19 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-widest text-[#44B549] mb-2">{t({ en: "Regional Presence", zh: "区域布局", th: "สาขาในภูมิภาค", vi: "Hiện diện khu vực" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#143C96] mb-8">{t({ en: "Local teams in four cities", zh: "四地本地团队", th: "ทีมงานท้องถิ่นในสี่เมือง", vi: "Đội ngũ địa phương tại bốn thành phố" }, locale)}</h2>
+          <figure className="mb-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <div className="relative aspect-[16/7]">
+              <Image src="/images/etiatec-thailand-office.jpg" alt="ETIATEC (Thailand) Co., Ltd. office in Bangkok" fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
+            </div>
+            <figcaption className="px-5 py-3 text-xs text-gray-500">
+              {t({
+                en: "The ETIATEC (Thailand) Co., Ltd. office in Bangkok.",
+                zh: "ETIATEC (Thailand) Co., Ltd. 曼谷办公楼。",
+                th: "สำนักงาน ETIATEC (Thailand) Co., Ltd. ในกรุงเทพฯ",
+                vi: "Văn phòng ETIATEC (Thailand) Co., Ltd. tại Bangkok.",
+              }, locale)}
+            </figcaption>
+          </figure>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {OFFICES.map((o) => (
               <div key={t(o.city, "en")} className={`rounded-xl border bg-white p-5 ${o.highlight ? "border-[#44B549] shadow-md" : "border-gray-200"}`}>

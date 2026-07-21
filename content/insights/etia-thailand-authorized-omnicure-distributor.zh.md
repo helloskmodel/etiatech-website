@@ -3,9 +3,12 @@ title: "ETIA 正式进入泰国市场：获授权 OmniCure 泰国代理"
 description: "Etiatec (Thailand) Co., Ltd. 获 Excelitas 授权，为泰国制造企业提供 OmniCure 原厂 UV Curing 紫外线固化系统、本地库存、安装与泰语技术支持。"
 date: 2026-07-19
 tags: [ETIA Thailand, OmniCure, UV Curing, Company News]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-CN.png
+cover: /images/etiatec-thailand-office.jpg
 author: ETIA Technology
 ---
+
+![ETIATEC (Thailand) Co., Ltd. 曼谷办公楼](/images/etiatec-thailand-office.jpg)
+*ETIATEC (Thailand) Co., Ltd. 曼谷办公楼*
 
 **泰国曼谷** — ETIA Technology 正式宣布成立泰国子公司 **Etiatec (Thailand) Co., Ltd.**，并获 **Excelitas Canada Inc.** 授权，成为 **OmniCure® UV Curing 紫外线固化系统**在泰国的授权代理商。
 
