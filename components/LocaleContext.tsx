@@ -40,14 +40,17 @@ export function LocaleProvider({ children, initialLocale = "en" }: { children: R
     // On a locale-locked route (/zh, /vi, /th) persist the language into the
     // cookie, so the cookie-based (main) routes the visitor navigates to next
     // (Applications, Insights, Contact…) render in the SAME language instead
-    // of bouncing back to English.
-    if (initialLocale !== "en" && readCookie() !== initialLocale) {
+    // of bouncing back to English. ONLY while the visitor hasn't explicitly
+    // picked a language (override) — otherwise this would clobber the cookie
+    // their choice just wrote (e.g. switching th → en re-persisted `th`,
+    // making the English site unreachable from a Thai page).
+    if (override === null && initialLocale !== "en" && readCookie() !== initialLocale) {
       document.cookie = `${COOKIE}=${initialLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
     }
     // Keep <html lang> in sync with the EFFECTIVE locale so language-specific
     // CSS (e.g. CJK/Thai heading sizes) applies.
     document.documentElement.lang = locale === "zh" ? "zh-CN" : locale;
-  }, [locale, initialLocale]);
+  }, [locale, initialLocale, override]);
 
   const setLocale = (l: Locale) => {
     setOverride(l);
