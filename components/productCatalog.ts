@@ -89,7 +89,7 @@ export const products: Product[] = [
     sub: "UV LED Spot",
     accent: "#41A62A",
     intro:
-      "Designed for use with the OmniCure LX500 Controller, the OmniCure V3 UV LED Heads feature next-generation high-output UV LEDs delivering best-in-class optical performance. With up to 120% increased optical power and up to 165% increase in peak irradiance compared to the predecessor MAX LED Heads, the V3 Heads deliver high dosage distributed uniformly across the spot area for faster, more consistent cures with greater control. Available in 365, 385, 395 and 405 nm wavelengths, delivering up to 22 W/cm² peak irradiance and 1,100 mW power with an exceptionally uniform beam profile.",
+      "Next-generation LED heads for the LX500 — up to 22 W/cm² and 1,100 mW at 365–405 nm, with an exceptionally uniform beam for faster, more consistent cures.",
     features: [
       "Class-leading irradiance and optical power at 365, 385, 395 and 405 nm",
       "Up to 22 W/cm² peak irradiance and 1,100 mW total optical power",
@@ -129,7 +129,7 @@ export const products: Product[] = [
     sub: "UV LED Spot",
     accent: "#41A62A",
     intro:
-      "The OmniCure LS200 UV LED Radiometry and Calibration System ensures precise measurement and calibration of UV LED power or irradiance directly at the cure site, enabling manufacturers to control light output for a reliable, repeatable curing process. An enhanced version of its LS100 predecessor, the LS200 brings expanded measurement range and NRC-traceable sensor calibration. With accuracy of ±10% and resolution of 1 mW/cm² (irradiance) and 1 mW (power), the LS200 integrates seamlessly with the LX500 controller via the Beam Positioning Kit.",
+      "UV LED radiometry and calibration at the cure site — ±10% accuracy, 1 mW/cm² resolution, NRC-traceable sensors, and direct integration with the LX500 controller.",
     features: [
       "Measurement accuracy ±10%; resolution 1 mW/cm² (irradiance) and 1 mW (power)",
       "Wide measurement range: 1–2,000 mW (power) and 50 mW/cm²–40 W/cm² (irradiance)",
@@ -171,7 +171,7 @@ export const products: Product[] = [
     sub: "UV Radiometer",
     accent: "#41A62A",
     intro:
-      "The OmniCure R2000 UV Radiometer is the most advanced and accurate tool for measuring irradiance or power from a UV Spot Curing System. Radiometry is essential for maintaining a repeatable UV curing process. The R2000 combines with the OmniCure S2000 Elite, S2000 XLA, or S1500 to provide a complete curing station with unmatched control and repeatability — the only system that can be calibrated in real time for NIST accuracy. Special built-in electronics allow connection of custom sensors that measure light energy directly at the cure site or within cure-ring bonding fixtures, including the OmniCure UV Cure Ring Radiometer and UV Cure Site Radiometer.",
+      "The reference radiometer for OmniCure spot curing — real-time NIST-accurate calibration with the S2000 Elite, plus custom cure-site and cure-ring sensors.",
     features: [
       "Most advanced and accurate UV radiometer for OmniCure UV lamp spot curing systems",
       "Serial communication with S2000 Elite / S2000 XLA / S1500: set irradiance levels and calibrate from a single reference point",
@@ -218,7 +218,7 @@ export const products: Product[] = [
     imageUrl:
       "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82",
     intro:
-      "OmniCure S2000 Elite is a new generation of lamp-based UV spot curing system designed for the most demanding manufacturing applications. Equipped with proprietary Closed-Loop Feedback and Intelli-Lamp 2.0 technologies, it automatically monitors and maintains optical output within ±5%. The system features a high-speed mechanical shutter with 30 ms response and is Industry 4.0-ready with Ethernet, USB, SD card, NFC, and programmable PLC I/O.",
+      "Flagship 200 W lamp-based UV spot curing — Closed-Loop Feedback holds output within ±5%, 30 ms shutter, and Industry 4.0 connectivity (Ethernet, NFC, PLC).",
     features: [
       "Patented Closed-Loop Feedback (CLF): regulates UV output in real-time (±5% of set point)",
       "Intelli-Lamp 2.0: 2,000 hours guaranteed, 3,500–4,000 hours typical lamp life",
@@ -258,7 +258,7 @@ export const products: Product[] = [
     sub: "UV Lamp Spot",
     accent: "#1A56DB",
     intro:
-      "The OmniCure S1500 Pro is a revolutionary UV spot curing system designed for automated manufacturing. It features proprietary Intelli-Lamp 2.0 technology for enhanced lamp life (2,000 hours guaranteed) and integrated StepCure 2.0 for highly customizable multi-phase curing profiles. The intuitive 4.3\" LCD touch screen simplifies operation, while Industry 4.0 features include programmable PLC output, a Flight Recorder system event tracker, and Intelli-Tap NFC keycard capability.",
+      "200 W lamp-based UV spot curing built for automated lines — a 2,000-hour guaranteed lamp, StepCure 2.0 profiles, 4.3-inch touch screen and PLC output.",
     features: [
       "Intelli-Lamp 2.0: constantly monitors lamp parameters, optimizes lamp life (2,000 h guaranteed)",
       "StepCure 2.0: precise programming of multi-phase curing profiles",
@@ -302,7 +302,7 @@ export const products: Product[] = [
     imageUrl:
       "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2E%20NETWORK%20MODULE.png",
     intro:
-      "The OmniCure S2E Network Module is designed to save time on maintenance and keep production running smoothly with remote process monitoring and UV curing equipment control. The S2E complements the OmniCure family of S-Series spot UV curing systems, offering the same high level of innovation, quality and reliability that customers expect. The S2E Ethernet adapter enables production facilities to remotely access up to 300 UV curing systems within a local area network, while simultaneously monitoring their activity and maintenance requirements through the OmniCure Monitoring Station software.",
+      "Ethernet adapter for S-Series spot curing — remotely monitor and control up to 300 systems on a LAN through the OmniCure Monitoring Station software.",
     features: [
       "Save maintenance time and keep production running smoothly with OmniCure Monitoring Station software",
       "Proactively trend and predict maintenance requirements with continuous operational data logging",
@@ -340,7 +340,7 @@ export const products: Product[] = [
     sub: "S-Series Accessory",
     accent: "#1A56DB",
     intro:
-      "The OmniCure S Series offers a variety of light guides ranging from single and multi-legged to liquid-filled or fiber light guides, as well as a range of optical adapters to best meet customer requirements.",
+      "Single-leg, multi-leg, liquid-filled and fiber light guides, plus optical adapters, to match the OmniCure S Series to your fixture.",
     features: [
       "Liquid Light Guide: 3, 5 and 8 mm tip diameters; standard lengths 750–3000 mm; dual and triple-leg configurations for multi-site curing",
       "High-Power Fiber Light Guide: equal distribution of light energy to multiple cure sites from a single light source",
@@ -375,7 +375,7 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "The Nexus II water-cooled UV LED curing system is ideally suited for flexographic printing applications and delivers the best-performing solution in the industry. With patented thermal management techniques and ValidCure Technology, the Nexus II delivers the highest total UV energy for flexographic printing, bringing increased system reliability, improved performance in high-temperature environments, and an optional high-airflow model for enhanced cooling.",
+      "Water-cooled UV LED curing for flexographic printing — patented thermal management and ValidCure deliver the industry's highest total UV energy; optional high-airflow model.",
     features: [
       "Highest total UV energy (dose) for flexographic printing — higher dose than the air-cooled variant",
       "Wider web: up to 675 mm, with print speeds up to 1050 ft (320 m)/min",
@@ -416,7 +416,7 @@ export const products: Product[] = [
     sub: "Large-Area · Flexographic",
     accent: "#1A56DB",
     intro:
-      "The Nexus II Air-Cooled (AC) UV LED curing system brings Phoseon's flexographic-printing performance to production lines that need simple, chiller-free integration. Air cooling reduces routine maintenance and removes the need for a chiller, while a common form factor makes mounting easy. Available in emitting widths from 300 mm to 600 mm with Ethernet communications, it is purpose-built for flexographic printing applications.",
+      "Air-cooled Nexus II — chiller-free flexo printing performance in 300–600 mm widths, with Ethernet communications and easy common-form-factor mounting.",
     features: [
       "Air-cooled — no chiller or fan blower needed, reduced routine maintenance",
       "Up to 70% less energy consumption — the most efficient of the Nexus II range",
@@ -454,7 +454,7 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "The FireLine FL200 is a compact and scalable water-cooled light source that operates with a separate controller. The lamps can be scaled to various lengths up to 2 meters and provide exceptional optical uniformity. The FL200 offers 25 W/cm² peak irradiance at 385/395/405 nm and 10 W/cm² at 365 nm — a high-performance light source ideal for medical device assembly and a wide range of UV LED area curing applications.",
+      "Compact water-cooled light source scalable to 2 m — 25 W/cm² at 385/395/405 nm with exceptional uniformity, ideal for medical device assembly.",
     features: [
       "Compact and scalable design — up to 2 meters in length",
       "High peak irradiance: 25 W/cm² at 385/395/405 nm; 10 W/cm² at 365 nm",
@@ -485,7 +485,7 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "The FireLine FL400 is a water-cooled UV LED curing system designed for a wide variety of demanding printing and web/conveyor-based applications, including digital inkjet printing, container screen printing, and wood panel coating. It offers versatile connection options with straight or barbed water fittings and an enhanced window seal. Available in lengths from 125 mm to 350 mm, the FL400 delivers 8–24 W/cm² peak irradiance at 385/395/405 nm with Modbus TCP for remote access.",
+      "Water-cooled UV LED curing for printing and web/conveyor lines — 8–24 W/cm² at 385/395/405 nm, 125–350 mm lengths, Modbus TCP remote access.",
     features: [
       "Versatile connection options: straight or barbed water fittings",
       "Enhanced window seal protecting against contaminants",
@@ -518,7 +518,7 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "The FireLine FL400-i Industrial UV LED Area Curing System is specifically designed for demanding industrial coating and adhesive curing in harsh, high-contaminant environments such as pipe coating and metal finishing. It features a newly engineered IP66-rated enclosure with robust endcaps, advanced window sealing, and optional sacrificial glass to shield primary optics from heat, dust and impact — delivering the same industry-leading optical uniformity and high dose performance as the original FL400.",
+      "FL400 performance in an IP66 industrial enclosure — sealed optics and optional sacrificial glass for harsh, high-contaminant environments like pipe coating and metal finishing.",
     features: [
       "IP66-rated ruggedized enclosure for harsh, high-contaminant environments",
       "Advanced window sealing protects against heat, liquid, and dirt intrusion",
@@ -551,7 +551,7 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "The FireLine FL440 complements the FireLine series by delivering unparalleled total UV energy. This IP66-compliant water-cooled UV LED system features a 40 mm-wide LED emitting window — significantly wider than the standard FL400 — providing longer exposure times and a greater dose of UV energy for complete single-pass curing. This eliminates the need for multiple passes and enhances production speed.",
+      "IP66 water-cooled system with a 40 mm-wide emitting window — longer exposure and a higher UV dose for complete single-pass curing.",
     features: [
       "40 mm-wide LED emitting window for longer exposure and greater dose per pass",
       "IP66-compliant for robust operation in demanding environments",
@@ -583,7 +583,7 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "The VeriCure Water-Cooled UV LED curing system is a wide-format UV source engineered to meet the demanding requirements of industrial coatings and print applications. It features a patented Semiconductor Light Matrix (SLM) array and a unique high-efficiency cooling design, delivering high optical power and outstanding dose performance essential for high-speed processing. Patented SLM control technology provides optimum uniformity across the irradiation area to ensure peak performance and consistent curing quality. Available in wavelengths of 365, 395 and 405 nm (385 nm on request) and emission widths from 750 mm to 1350 mm, the VeriCure supports high conveyor line speeds with high-power/high-dose capabilities while advancing throughput and environmental sustainability.",
+      "Wide-format water-cooled UV LED curing — patented SLM array, 750–1350 mm emission widths at 365/395/405 nm, built for high-speed industrial coating and print lines.",
     features: [
       "Patented Semiconductor Light Matrix (SLM) array for high optical power",
       "Patented SLM control technology for optimum uniformity across the irradiation area",
@@ -627,7 +627,7 @@ export const products: Product[] = [
     sub: "Large-Area · Sheet-Fed & Wide Web",
     accent: "#7c3aed",
     intro:
-      "The Semray 5000+ UV LED Water-Cooled System is designed to deliver exceptional printing results for industrial and larger print applications that require greater working distances from the substrate. Providing up to 30% more active UV energy to the printed product compared to conventional UV LED systems, the Semray 5000+ enables faster printing speeds and the ability to print on heat-sensitive materials. It reduces energy consumption and offers a significantly longer lifespan than traditional UV systems. Shorter curing times, minimized powder usage in sheetfed offset, and increased throughput meet the growing demands for product quality. The compact design and flexible integration make retrofitting into existing presses easy. Drawing on Noblelight's sheet-fed offset experience, the Semray 5000+ enables the 'dry sheet concept' — immediately processing printed sheets and greatly improving post-press workflow.",
+      "Water-cooled UV LED printing system delivering up to 30% more active UV energy at greater working distances — faster speeds, heat-sensitive substrates, easy press retrofits.",
     features: [
       "Highest UV LED output at 60 mm working distance — dramatically increases printing speed",
       "Up to 30% more active UV energy to the printed product vs. conventional UV LED systems",
@@ -667,7 +667,7 @@ export const products: Product[] = [
     sub: "Optical Fiber Draw · Wire Marking · 360°",
     accent: "#7c3aed",
     intro:
-      "The Semray UV PC6003 is a UV LED curing system designed from the ground up for optical fiber draw and wire marking manufacturing processes, delivering full 360° curing coverage around the substrate. Part of the Excelitas / Noblelight Semray UV LED portfolio, it brings the efficiency, long lifetime and energy savings of UV LED to high-speed fiber and wire production, with a high radiance of 65–70 W/cm² at the target and a 165 mm emission length at 395 nm.",
+      "Purpose-built for optical fiber draw and wire marking — full 360° curing with 65–70 W/cm² radiance at the target and a 165 mm emission length at 395 nm.",
     features: [
       "Purpose-built for optical fiber draw and wire marking manufacturing",
       "Full 360° curing coverage around the fiber/wire",
@@ -704,7 +704,7 @@ export const products: Product[] = [
     sub: "Customized · High-Intensity",
     accent: "#7c3aed",
     intro:
-      "The Semray UV5052M is a customized, high-intensity variant of the Excelitas / Noblelight Semray UV LED platform, equipped with dedicated optics that deliver more energy to the process — including at larger working distances. Available across 365, 385, 395 and 405 nm with peak irradiance up to 20 W/cm² at the emission window and a wide 1300 × 84 mm emission window, it is engineered for demanding industrial curing where high dose and flexible integration are essential.",
+      "High-intensity Semray variant with dedicated optics — up to 20 W/cm² across 365–405 nm and a wide 1300 × 84 mm emission window for demanding industrial curing.",
     features: [
       "Customized high-intensity Semray UV LED variant with dedicated optics",
       "Special optical concepts direct more energy to larger working distances",
@@ -744,7 +744,7 @@ export const products: Product[] = [
     sub: "Small-Area",
     accent: "#60a5fa",
     intro:
-      "The OmniCure AC2 Series includes the compact AC275 and AC2110 air-cooled UV LED heads for space-constrained small-area curing. Advanced front-end optics provide uniform output across 75 mm or 114 mm curing lengths. Models are available at 365 nm with up to 3 W/cm² and at 395 nm with up to 4 W/cm² for printing, medical-device, electronics and optoelectronics applications.",
+      "Compact air-cooled UV LED heads for space-constrained small-area curing — 75 mm or 114 mm lengths, up to 4 W/cm² at 365/395 nm.",
     features: [
       "Up to 3 W/cm² at 365 nm and 4 W/cm² at 395 nm",
       "Exceptional uniformity across the entire small curing area",
@@ -777,7 +777,7 @@ export const products: Product[] = [
     sub: "Small-Area",
     accent: "#60a5fa",
     intro:
-      "The OmniCure AC4 Series combines high-output LEDs and custom optics to deliver 8 W/cm² with exceptional uniformity at flexible working distances. AC450/P and AC475/P heads cover 50 mm and 75 mm curing lengths at 365 nm or 395 nm. Print ('P') variants use optics optimized for printing and product-marking processes.",
+      "High-output small-area curing — 8 W/cm² with exceptional uniformity across 50 mm and 75 mm lengths at 365/395 nm; 'P' variants optimized for printing.",
     features: [
       "8 W/cm² peak irradiance with exceptional uniformity",
       "Custom optics enabling high irradiance at long working distances",
@@ -812,7 +812,7 @@ export const products: Product[] = [
     sub: "Small-Area",
     accent: "#60a5fa",
     intro:
-      "The OmniCure AC5 Series provides compact, air-cooled small-area UV LED curing at flexible working distances. AC550/P and AC575/P models deliver 14 W/cm² at 395 nm, while the AC575-405 reaches 15 W/cm² at 405 nm. The heads can be mounted in any orientation and require no external chiller or ozone extraction. Print ('P') variants use application-specific optics.",
+      "Compact air-cooled small-area curing at flexible working distances — up to 15 W/cm² (405 nm), any mounting orientation, no chiller or ozone extraction.",
     features: [
       "14 W/cm² at 395 nm; up to 15 W/cm² with AC575-405",
       "Advanced front-end optics for exceptional uniformity",
@@ -845,7 +845,7 @@ export const products: Product[] = [
     sub: "Large-Area",
     accent: "#60a5fa",
     intro:
-      "The OmniCure AC7 Series provides uniform, air-cooled large-area UV LED curing in 150 mm and 300 mm lengths. AC7150 and AC7300 heads deliver 3 W/cm² at 365 nm or 5 W/cm² at 395 nm. Multiple heads can be adjoined without compromising uniformity, supporting medical-device, electronics, automotive, optical-fiber and industrial processes.",
+      "Uniform air-cooled large-area curing in 150 mm and 300 mm lengths — up to 5 W/cm², with heads adjoinable without compromising uniformity.",
     features: [
       "3 W/cm² at 365 nm or 5 W/cm² at 395 nm",
       "Custom front-end optics: high peak irradiance available at longer working distances",
@@ -887,7 +887,7 @@ export const products: Product[] = [
     sub: "Large-Area",
     accent: "#60a5fa",
     intro:
-      "OmniCure AC8 Series air-cooled UV LED curing systems deliver over 8 W/cm² peak irradiance with exceptional uniformity for even curing. The AC8150/P, AC8225/P and AC8300/P provide high longitudinal uniformity across the entire 150 mm (6\") to 300 mm (12\") curing area for consistent, repeatable results. The 'P' versions feature enhanced optics optimized for dose delivery at the short working distances required by print applications. A patented process for addressing individual UV LED module outputs provides exceptional uniformity, and multiple heads can be adjoined while maintaining optical uniformity, enabling flexible scaling. LED head lifetime exceeds 20,000 hours.",
+      "Air-cooled large-area curing with over 8 W/cm² and high longitudinal uniformity — 150/225/300 mm widths, adjoinable to any curing size.",
     features: [
       "Peak irradiance >8 W/cm² with exceptional uniformity for even curing",
       "Patented individual UV LED module output addressing for unbeatable uniformity",
@@ -929,7 +929,7 @@ export const products: Product[] = [
     sub: "Large-Area · High-Dose",
     accent: "#60a5fa",
     intro:
-      "OmniCure AC8150P-HD, AC8225P-HD and AC8300P-HD air-cooled UV LED curing systems deliver an outstandingly high optical dose, bringing UV LED curing to the next level. The AC8-HD Series uses patented technology that enables unbeatable uniformity of output across the irradiation area. Available in 385, 395 and 405 nm, the AC8-HD delivers over 15 W/cm² peak irradiance — double the dose of the standard AC8 Series — making it ideal for large-area curing applications that demand the highest dosage. Offered in three cure widths (150, 225, 300 mm), systems can be adjoined to any curing size without compromising uniformity. Patented individual UV LED module output addressing enables customizable outputs and tighter process control; LED lifetime exceeds 20,000 hours.",
+      "Double the dose of the standard AC8 — over 15 W/cm² at 385–405 nm, patented per-module output addressing, and 20,000+ hour LED lifetime.",
     features: [
       "Peak irradiance >15 W/cm² — double the dose of the standard AC8 Series",
       "Patented technology for unbeatable uniformity across the entire irradiation area",
@@ -971,7 +971,7 @@ export const products: Product[] = [
     sub: "Large-Area · High-Power",
     accent: "#60a5fa",
     intro:
-      "The OmniCure AC9 Series delivers 14 W/cm² peak irradiance for fast curing of inks, adhesives and coatings in a compact, air-cooled format. AC9150, AC9225 and AC9300 models cover 150 mm, 225 mm and 300 mm lengths at 385 nm or 395 nm. Print ('P') variants at 395 nm use optics optimized for short working distances, and multiple heads can be adjoined without compromising uniformity.",
+      "14 W/cm² air-cooled curing for inks, adhesives and coatings — 150/225/300 mm lengths at 385/395 nm, adjoinable without losing uniformity.",
     features: [
       "14 W/cm² peak irradiance for fast curing of inks, adhesives and coatings",
       "150 mm, 225 mm and 300 mm emitting lengths",
@@ -1013,7 +1013,7 @@ export const products: Product[] = [
     sub: "Fiber Curing · 225 mm",
     accent: "#60a5fa",
     intro:
-      "OmniCure AC9225-F UV LED curing systems are specifically designed for fiber curing applications. An innovative optical design enhances output and optimizes delivery of UV onto the fiber, providing an air-cooled, high-output solution to meet the demand for increased process speeds. The AC9225-F delivers up to 88 W/cm² peak irradiance at the fiber (in a typical face-to-face configuration) at 10–18 mm working distance. A replaceable outer window lets customers scale production speeds without complex integration changes, and innovative LED control technology delivers exceptional uniformity — with multiple systems joinable to increase cure-area width while maintaining uniformity across all systems.",
+      "Engineered for fiber curing — up to 88 W/cm² at the fiber, a replaceable outer window, and joinable systems for wider cure areas at production speed.",
     features: [
       "Purpose-designed for optical fiber curing applications",
       "Innovative optics enhance output and UV delivery onto the fiber",
@@ -1052,7 +1052,7 @@ export const products: Product[] = [
     sub: "Small-Area",
     accent: "#60a5fa",
     intro:
-      "The FireEdge FE100 air-cooled UV LED curing system uses passive cooling through natural convection, enabling precise finish control for applications such as digital inkjet pinning and space-limited installations. An innovative UV LED source for commercial inkjet pinning, the FE100 has no internal fans — eliminating cooling fans for a thinner, more reliable curing source. Its extremely slim form factor and ambient cooling remove the need for any external forced-air system or chiller, making it ideal for flat panel display edge curing. Built on Phoseon's patented SLM and WhisperCure technologies, it delivers 2 W/cm² peak irradiance at 385/395/405 nm (1 W/cm² at 365 nm) across emitting windows from 80 mm to 240 mm, with simple analog control.",
+      "Fanless, passively cooled UV LED source for inkjet pinning and edge curing — ultra-slim, 2 W/cm², 80–240 mm windows, no chiller or forced air.",
     features: [
       "Peak irradiance 2 W/cm² at 385, 395, 405 nm (1 W/cm² at 365 nm)",
       "Patented WhisperCure technology for quieter operation",
@@ -1093,7 +1093,7 @@ export const products: Product[] = [
     sub: "Small-Area",
     accent: "#60a5fa",
     intro:
-      "The FireEdge FE400 air-cooled UV LED curing system offers advanced features with maximum flexibility, including built-in intensity control for both full-cure and UV inkjet pinning applications. It features patented Semiconductor Light Matrix (SLM) technology for process stability and is available in lengths from 80 mm to 240 mm. Segment control allows half the light source to be disabled for precise UV coverage, and a Hub can manage up to six light sources.",
+      "Air-cooled curing and pinning with built-in intensity and segment control — patented SLM stability, 80–240 mm lengths, up to six sources per Hub.",
     features: [
       "Built-in intensity control: full-cure, low-intensity (pinning), and half-source modes",
       "Patented SLM technology for process stability and repeatable output",
@@ -1128,7 +1128,7 @@ export const products: Product[] = [
     sub: "Small-Area",
     accent: "#60a5fa",
     intro:
-      "The FireEdge FE410 UV LED curing system provides up to 50% higher irradiance, power, and dose than the original FE400, making it ideal for faster processing speeds and enhanced throughput. Designed for full cure and pinning applications, it features patented TargetCure technology for precise and predictable UV output, built-in intensity control, and segment control. Units can be stacked end-to-end for contiguous, uniform UV output at any application size.",
+      "Up to 50% more irradiance, power and dose than the FE400 — TargetCure precision, segment control, and end-to-end stacking for any application size.",
     features: [
       "Up to 50% higher irradiance, power, and dose than the FE400",
       "Patented TargetCure technology for precise, predictable UV output",
@@ -1164,7 +1164,7 @@ export const products: Product[] = [
     sub: "Large-Area",
     accent: "#1A56DB",
     intro:
-      "The Phoseon FireJet FJ800 UV LED Curing System is a large-area curing solution for adhesive and coating applications requiring low irradiance and long dwell time on large-scale production lines. Starting with a 100 mm × 100 mm base curing area, the modular components scale in all four directions, providing contiguous, uniform UV illumination. Operated by a simple controller supporting up to six light sources, the FJ800 is available in 365 and 395 nm wavelengths.",
+      "Modular large-area curing for low-irradiance, long-dwell applications — scales in all four directions from a 100 × 100 mm base, at 365/395 nm.",
     features: [
       "Modular and scalable: 100 mm × 100 mm base, scalable in all four directions",
       "Contiguous, uniform UV output across the entire curing area",
@@ -1199,7 +1199,7 @@ export const products: Product[] = [
     sub: "Large-Area",
     accent: "#1A56DB",
     intro:
-      "The Phoseon FireJet FJ801 UV LED Large-Area Curing Systems are designed primarily for production lines requiring area curing, such as micro-speaker and camera module manufacturing. These modular products scale from a 100 mm × 100 mm base and feature patented TargetCure technology for precise and predictable UV output. Available in 365, 385, 395 and 405 nm — a wider selection than the FJ800. The FJ801 controller is backward compatible with the FJ800 lamp.",
+      "Modular area curing for micro-speaker and camera-module lines — TargetCure precision, 365–405 nm options, controller backward-compatible with the FJ800.",
     features: [
       "Patented TargetCure technology for precise, predictable UV output",
       "Modular and scalable: 100 mm × 100 mm base, scalable in all directions",
@@ -1233,7 +1233,7 @@ export const products: Product[] = [
     sub: "Large-Area",
     accent: "#1A56DB",
     intro:
-      "The FireJet ONE is a premium 20 W/cm² UV LED curing system designed for curing inks, coatings and adhesives where high power in a compact design is essential. Available in widths from 75 mm to 375 mm, FireJet ONE lamps scale easily by placing units side by side and daisy-chaining them together. Unique optics ensure consistent uniformity at the substrate surface, and as a fully self-contained unit it is simple to integrate — controllable via PLC signals for instant on/off, intensity and other primary functions, or digital control with Modbus TCP for advanced status, high-speed data exchange and remote access.",
+      "Premium 20 W/cm² self-contained curing in 75–375 mm widths — daisy-chainable side by side, with PLC control or Modbus TCP remote access.",
     features: [
       "Premium 20 W/cm² peak irradiance in a compact, high-power design",
       "Five emitting-window widths: 75, 150, 225, 300, 375 mm",
@@ -1272,7 +1272,7 @@ export const products: Product[] = [
     sub: "Large-Area",
     accent: "#1A56DB",
     intro:
-      "The Phoseon FireJet FJ100 Gen2 features a compact design and end-to-end scalability, making it a perfect solution for a variety of printing and coating applications. This fully self-contained unit comes with five window lengths for easy integration, providing an ideal combination of size and power for space-constrained environments. With WhisperCure and TargetCure technologies, the FJ100 delivers reliable, consistent performance at a quiet operating level. Lamps can be controlled via PLC signals for instant on/off and intensity, or digital control for advanced status. Units scale end-to-end to create any required curing length — ideal for UV inkjet and coating applications.",
+      "Compact, end-to-end scalable curing for print and coating — five window lengths, WhisperCure quiet operation, PLC or digital control.",
     features: [
       "Compact, fully self-contained design — ideal for space-constrained environments",
       "End-to-end scalability: units stack to create any required curing length",
@@ -1314,7 +1314,7 @@ export const products: Product[] = [
     sub: "Large-Area · High-Dose",
     accent: "#1A56DB",
     intro:
-      "The Phoseon FireJet FJ240 is an excellent choice for applications where maximum dosing and dwell time are crucial for effective scanning cures, thanks to its broad 40 mm-wide exposure window. This high-performance, air-cooled solution delivers more UV power than FireJet ONE or FJ100, making it ideal for applications demanding the highest curing performance. Available in window lengths of 75, 150, 225, 300 and 375 mm with peak irradiance up to 16 W/cm² at 385/395/405 nm. WhisperCure and TargetCure technologies ensure reliable, consistent and quiet operation, and Modbus TCP enables high-speed data exchange and remote access.",
+      "Maximum dose through a 40 mm-wide window — up to 16 W/cm² at 385–405 nm in 75–375 mm lengths, with Modbus TCP remote access.",
     features: [
       "40 mm-wide LED window: maximum dose and dwell time for scanning cure applications",
       "Higher UV power than FireJet ONE and FJ100 — for the highest curing performance demands",
@@ -1356,7 +1356,7 @@ export const products: Product[] = [
     sub: "F Series",
     accent: "#f59e0b",
     intro:
-      "The Fusion UV F Series are production-proven, simple-to-use microwave-powered systems used in hundreds of industrial UV curing applications worldwide. The F Series features electrodeless UV bulbs available in a variety of wavelengths, allowing optimization to specific process needs. Because these systems are electrode-free, they avoid the degradation issues of traditional UV lamps, extending lamp life and reducing maintenance. The modular design provides process flexibility with lower cost of ownership and easily retrofits into existing production lines. Note: lamps contain mercury — manage per applicable disposal laws.",
+      "Production-proven microwave-powered curing with electrodeless bulbs — long lamp life, low maintenance, and modular retrofits into existing lines. Bulbs contain mercury; dispose per local law.",
     features: [
       "Production-proven, simple-to-use design for broad industrial applications",
       "Electrodeless bulb design: avoids electrode degradation, extends lamp life",
@@ -1393,7 +1393,7 @@ export const products: Product[] = [
     sub: "LightHammer Series",
     accent: "#f59e0b",
     intro:
-      "The Fusion UV LightHammer 6 MARK II is a smart microwave-powered UV curing system with a 150 mm (6 inch) irradiator and 200 W/cm (500 W/inch) power class. Engineered for precision and lowest cost of ownership, it delivers high-intensity UV curing in a compact 6-inch module. The system includes an irradiator, electrodeless UV bulb, and a solid-state power supply with internal or external cooling blower. Modular systems can be combined to cure across wider widths or around complex shaped surfaces.",
+      "Smart microwave-powered curing — a 6-inch irradiator at 200 W/cm with electrodeless bulb and solid-state supply; modules combine for wider or shaped surfaces.",
     features: [
       "Smart solid-state power supply: flexible software-based control, reduced operating costs",
       "Power Factor Correction >99% at full load — eliminates electrical harmonics",
@@ -1430,7 +1430,7 @@ export const products: Product[] = [
     sub: "LightHammer Series",
     accent: "#f59e0b",
     intro:
-      "The Fusion UV LightHammer 10 MARK III is the most advanced smart, IoT-ready, microwave-powered UV curing system, featuring a 10-inch irradiator and 240 W/cm (600 W/inch) power class. With sensors in both the intelligent irradiator and the solid-state power supply, it is fully IoT-enabled for today's Digitization Roadmap, monitoring 8 real-time operating parameters to minimize downtime and optimize processes. The intelligent irradiator is a direct drop-in replacement for existing LHI10 Mark II irradiators. Optional AIMS software provides centralized real-time monitoring.",
+      "IoT-ready microwave-powered curing — a 10-inch irradiator at 240 W/cm, 8 real-time monitored parameters, drop-in replacement for LHI10 Mark II irradiators.",
     features: [
       "IoT-ready: sensors in both irradiator and power supply for real-time monitoring",
       "Intelligent irradiator measures 8 operating parameters",
@@ -1471,7 +1471,7 @@ export const products: Product[] = [
     sub: "Optical Fiber",
     accent: "#f59e0b",
     intro:
-      "The Fusion UV DRF Series cure photoresponsive coatings, coloring inks, and ribbon matrix polymers in the production of optical fiber and cable. The DRF Series has been the UV curing system of choice for fiber manufacturing worldwide, thanks to its patented secondary elliptical reflector system that delivers highly focused, intense UV energy. The optical fiber passes through a sealed quartz tube aligned at the secondary focal point of the elliptical reflector for full-surface UV exposure. DRF systems support power levels from 1.8 kW (F300S) to 6 kW.",
+      "The fiber-industry standard for coating and ink curing — patented elliptical reflectors focus intense UV on the fiber through a sealed quartz tube; 1.8–6 kW.",
     features: [
       "Patented secondary elliptical reflector: highest UV irradiance per watt",
       "Highly focused, intense UV energy for optical fiber curing",
