@@ -12,7 +12,6 @@ import { inquiryMailto } from "@/components/contact";
 import { s2000FaqsTh } from "@/components/s2000FaqTh";
 import { ArrowRight, BadgeCheck, CheckCircle2, ChevronRight, Download } from "lucide-react";
 
-const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
 const HERO_IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 
 const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";

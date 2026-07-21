@@ -17,8 +17,10 @@ const brandPageSlug: Record<Product["brandId"], string> = {
 };
 
 // Unified standard product template. Section order is fixed for every catalog
-// product: Hero / Best For / Key Benefits / Technical Overview / Specifications
-// / (Documents) / Applications / Related Products / CTA.
+// product: Hero / Key Benefits / Technical Overview / Specifications /
+// (Documents) / Ideal Applications / Application Notes / Related Products / CTA.
+// Applications sit at the bottom, right above the application-note links, so
+// the top of the page stays focused on the product itself.
 export default function ProductDetailView({ product, accent }: { product: Product; accent: string }) {
   const { locale } = useLocale();
   const p = localizeProduct(product, locale);
@@ -73,23 +75,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         </div>
       </section>
 
-      {/* 2 · Best For */}
-      {p.applications.length > 0 && (
-        <section className="py-14 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Best For", zh: "适用场景", th: "เหมาะสำหรับ", vi: "Phù hợp cho" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Ideal Applications", zh: "理想应用", th: "การใช้งานที่เหมาะสม", vi: "Ứng dụng lý tưởng" }, locale)}</h2>
-            <div className="w-12 h-1 rounded mb-6" style={{ background: "#41A62A" }} />
-            <div className="flex flex-wrap gap-2.5">
-              {p.applications.map((a) => (
-                <span key={a} className="text-sm font-semibold px-4 py-2 rounded-full border" style={{ borderColor: `${accent}33`, color: accent, background: `${accent}0d` }}>{a}</span>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 3 · Key Benefits */}
+      {/* 2 · Key Benefits */}
       {p.features.length > 0 && (
         <section className="py-16" style={{ background: "#f0f4f8" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +94,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         </section>
       )}
 
-      {/* 4 · Technical Overview */}
+      {/* 3 · Technical Overview */}
       {p.specs.length > 0 && (
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +113,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         </section>
       )}
 
-      {/* 5 · Specifications */}
+      {/* 4 · Specifications */}
       {p.specs.length > 0 && (
         <section className="py-16" style={{ background: "#f0f4f8" }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -157,7 +143,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Brochures & Guides", zh: "产品手册与指南", th: "โบรชัวร์และคู่มือ", vi: "Tài liệu & hướng dẫn" }, locale)}</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {docs.map((d) => (
-                <a key={d.file} href={productDocUrl(d.file)} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-gray-400 hover:shadow-sm transition-all">
+                <a key={d.file} href={productDocUrl(d)} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-gray-400 hover:shadow-sm transition-all">
                   <span className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center text-white" style={{ background: accent }}>
                     <FileText className="w-5 h-5" />
                   </span>
@@ -173,7 +159,23 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         </section>
       )}
 
-      {/* 6 · Applications (internal links to application case studies) */}
+      {/* 5 · Ideal Applications */}
+      {p.applications.length > 0 && (
+        <section className="py-14 bg-white border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Best For", zh: "适用场景", th: "เหมาะสำหรับ", vi: "Phù hợp cho" }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Ideal Applications", zh: "理想应用", th: "การใช้งานที่เหมาะสม", vi: "Ứng dụng lý tưởng" }, locale)}</h2>
+            <div className="w-12 h-1 rounded mb-6" style={{ background: "#41A62A" }} />
+            <div className="flex flex-wrap gap-2.5">
+              {p.applications.map((a) => (
+                <span key={a} className="text-sm font-semibold px-4 py-2 rounded-full border" style={{ borderColor: `${accent}33`, color: accent, background: `${accent}0d` }}>{a}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 6 · Application Notes (internal links to application case studies) */}
       <RelatedApplications productSlug={product.slug} />
 
       {/* 7 · Related Products */}

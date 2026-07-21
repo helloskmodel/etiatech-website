@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { KNOWLEDGE_BASE } from "./knowledgeBase";
 import { TH_CONTACTS } from "@/app/th/thContact";
+import { clientIp, foreignOrigin, rateLimited } from "../rateLimit";
 
 // The chat route talks to a live model and streams, so it must never be
 // statically prerendered or cached.
@@ -81,12 +82,30 @@ function sanitize(raw: unknown): ChatMessage[] {
   return trimmed;
 }
 
+// Abuse protection for a public model-backed endpoint: per-IP rate limit
+// (burst + sustained), an origin check, and a hard payload cap. In-memory, so
+// per-instance on serverless — enough to stop casual abuse and runaway loops;
+// move to a shared store (e.g. Upstash) if it ever needs to be watertight.
+const MAX_BODY_BYTES = 64_000;
+
 export async function POST(request: Request) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     // Graceful when the key isn't configured yet: the widget shows a friendly
     // fallback pointing to the sales director instead of erroring out.
     return Response.json({ error: "not_configured" }, { status: 503 });
+  }
+
+  if (foreignOrigin(request)) {
+    return Response.json({ error: "forbidden" }, { status: 403 });
+  }
+  const ip = clientIp(request);
+  if (rateLimited(`ask:burst:${ip}`, 8, 60_000) || rateLimited(`ask:sustained:${ip}`, 60, 60 * 60_000)) {
+    return Response.json({ error: "rate_limited" }, { status: 429 });
+  }
+  const contentLength = Number(request.headers.get("content-length") ?? 0);
+  if (contentLength > MAX_BODY_BYTES) {
+    return Response.json({ error: "too_large" }, { status: 413 });
   }
 
   let body: unknown;

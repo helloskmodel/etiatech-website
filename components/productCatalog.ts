@@ -45,20 +45,19 @@ export const products: Product[] = [
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
     accent: "#41A62A",
+    // Short, one-idea-per-line copy distilled from the official Excelitas
+    // LX500 brochure — the spec table below carries the full detail.
     intro:
-      "The OmniCure LX500 UV LED Spot Curing system controller is uniquely designed with proprietary Intelli-Lamp technology that monitors LED head temperature and lifetime data, while automatically maintaining optical stability ±5% to provide greater process assurance. Available in either 2 or 4-channel configurations, the LX500 is the most flexible and cost-effective option for industrial manufacturing. The controller manages up to four UV LED Spot curing heads simultaneously or independently at wavelengths of 365, 385, 395 and 405 nm. The updated LX500 supports OmniCure's higher power V3 UV LED Heads delivering up to 27 W/cm² irradiance and up to 1,100 mW of optical power.",
+      "Ultra-compact UV LED spot curing with ±5% optical stability and up to 27 W/cm² peak irradiance — 2 or 4 channels, built for consistent, repeatable curing.",
     features: [
-      "Multiple wavelengths at high irradiance: 17 W/cm² at 365 nm | 28 W/cm² at 385 nm | 27 W/cm² at 395 nm | 24 W/cm² at 405 nm",
-      "Intelli-Lamp LED technology: UV irradiation stability for power efficiency and long-term reliability over LED lifetime",
-      "Precise light intensity control (5–100% in 1% increments) for consistent, repeatable UV process",
-      "Simultaneous or individual control of up to four UV LED curing heads from a single controller",
-      "Micro SD card interface: easy single-step programming; automatically saves exposure events and faults in real time",
-      "StepCure: customized multi-phase curing processes via controller or PC interface",
-      "LED head temperature display for optimum efficiency and extended head lifetime",
-      "~75% less energy consumption than a typical UV arc-lamp curing system",
-      "Compact, robust design — no cooling required in dense, harsh manufacturing environments",
-      "External control via optional foot pedal, PLC, or PC through USB communication",
-      "CE and RoHS compliant",
+      "±5% optical stability with Intelli-Lamp® LED technology",
+      "High peak irradiance — up to 27 W/cm² (365 / 385 / 395 / 405 nm)",
+      "StepCure® 2.0 — multi-step cure profiles for full process control",
+      "Controls up to 4 UV LED heads, together or independently",
+      "1% intensity steps (5–100%) for a repeatable process",
+      "Real-time programming and data logging via Micro SD",
+      "Calibration utility maintains long-term UV stability",
+      "V3 LED heads — cool-running, ~75% less energy than arc lamps",
     ],
     applications: [
       "Medical device manufacturing (catheters, cannulas, endoscopes, syringes)",
@@ -1623,16 +1622,27 @@ export const productHighlights: Record<string, LangText[]> = {
 // (case-sensitive, space-bearing) object keys in the bucket.
 export type ProductDoc = {
   file: string;
-  kind: { en: string; zh: string };
+  kind: { en: string; zh: string; vi?: string; th?: string };
+  // Optional COS folder override; defaults to PRODUCT_PDF_BASE.
+  base?: string;
 };
 
 const PRODUCT_PDF_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PRODUCTPDF";
+// Some older documents (S2000/LX500 guides) live in the /PDF folder instead.
+const SITE_PDF_BASE =
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 
 const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" , vi: "Brochure", th: "โบรชัวร์" };
 const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" , vi: "Hướng dẫn khởi động nhanh", th: "คู่มือเริ่มต้นอย่างรวดเร็ว" };
+const DOC_USER_GUIDE = { en: "User Guide", zh: "用户指南", vi: "Hướng dẫn sử dụng", th: "คู่มือการใช้งาน" };
 
 export const productDocs: Record<string, ProductDoc[]> = {
+  "lx500": [
+    { file: "Brochure - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_BROCHURE },
+    { file: "User Guide - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_USER_GUIDE, base: SITE_PDF_BASE },
+    { file: "Quick Start Guide - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_QUICK_START, base: SITE_PDF_BASE },
+  ],
   "ls200": [
     { file: "Brochure - OmniCure LS200 UV LED Radiometry and Calibration System.pdf", kind: DOC_BROCHURE },
   ],
@@ -1675,8 +1685,8 @@ export const productDocs: Record<string, ProductDoc[]> = {
 };
 
 // Full, browser-ready URL for a product document (spaces → %20, etc.).
-export function productDocUrl(file: string): string {
-  return `${PRODUCT_PDF_BASE}/${encodeURIComponent(file)}`;
+export function productDocUrl(doc: ProductDoc): string {
+  return `${doc.base ?? PRODUCT_PDF_BASE}/${encodeURIComponent(doc.file)}`;
 }
 
 // Product hero images live in the COS bucket under IMAGE/products/.

@@ -1,28 +1,35 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useLocale, t } from "@/components/LocaleContext";
-import { getConsent, setConsent, CONSENT_OPEN_EVENT } from "@/components/consent";
+import { getConsent, setConsent, CONSENT_CHANGE_EVENT, CONSENT_OPEN_EVENT } from "@/components/consent";
+
+const subscribe = (onChange: () => void) => {
+  window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
+  return () => window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
+};
 
 export default function CookieConsent() {
   const { locale } = useLocale();
-  const [show, setShow] = useState(false);
+  // Whether the visitor has already made a choice. Server snapshot says
+  // "decided" so the banner never renders in server HTML; the client re-reads
+  // right after hydration and shows it on first visit.
+  const decided = useSyncExternalStore(subscribe, () => getConsent() !== null, () => true);
+  // Re-opened from the footer "Cookie settings" link.
+  const [reopened, setReopened] = useState(false);
 
   useEffect(() => {
-    // Show on first visit (no stored choice); also allow re-opening from the
-    // footer "Cookie settings" link.
-    if (getConsent() === null) setShow(true);
-    const open = () => setShow(true);
+    const open = () => setReopened(true);
     window.addEventListener(CONSENT_OPEN_EVENT, open);
     return () => window.removeEventListener(CONSENT_OPEN_EVENT, open);
   }, []);
 
   const decide = (value: "accepted" | "rejected") => {
     setConsent(value);
-    setShow(false);
+    setReopened(false);
   };
 
-  if (!show) return null;
+  if (decided && !reopened) return null;
 
   return (
     <div className="fixed bottom-0 inset-x-0 z-[60] p-3 sm:p-4">

@@ -12,6 +12,7 @@ import UvCuringSelector from "@/components/UvCuringSelector";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import { CATEGORY_LABEL } from "@/components/industries";
 import { APPLICATION_CATEGORIES, getListedApplications } from "@/data/applicationsData";
+import type { Application } from "@/data/applicationTypes";
 
 const listedApplications = getListedApplications();
 
@@ -23,7 +24,7 @@ const PRODUCT_FILTERS: { key: string; label: LangText; token?: string }[] = [
   { key: "ac", label: { en: "OmniCure AC Series", zh: "OmniCure AC 系列" }, token: "AC" },
 ];
 
-function matchesProduct(application: any, key: string): boolean {
+function matchesProduct(application: Application, key: string): boolean {
   if (key === "All") return true;
   const token = PRODUCT_FILTERS.find((p) => p.key === key)?.token;
   if (!token) return true;

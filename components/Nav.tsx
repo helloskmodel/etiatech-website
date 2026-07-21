@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, t, type Locale, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
@@ -33,7 +33,7 @@ export default function Nav() {
     setLocale(l);
     const target = localizeHref(delocalizeHref(pathname), l);
     if (target !== pathname) {
-      window.location.href = target;
+      window.location.assign(target);
     } else {
       window.location.reload();
     }
@@ -42,11 +42,15 @@ export default function Nav() {
   // Nav is mounted in the layout and persists across client-side navigations,
   // so the mobile menu / language dropdown would otherwise stay open after
   // following any link that isn't one of the menu's own (e.g. a product chip
-  // on a case-study page). Close both whenever the route changes.
-  useEffect(() => {
+  // on a case-study page). Close both whenever the route changes — done during
+  // render (the "adjust state when a prop changes" pattern) rather than in an
+  // effect, so the menu never paints open on the new route.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setOpen(false);
     setLangOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 shadow-sm" style={{ background: "#ffffff" }}>

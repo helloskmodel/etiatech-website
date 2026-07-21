@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { industryColors } from "@/components/industryMedia";
@@ -17,17 +17,14 @@ const industries = [...new Set(apps.map((a) => a.industry))];
 
 
 export default function ApplicationPage() {
-  const [activeIndustry, setActiveIndustry] = useState<string>("All");
-  const { locale } = useLocale();
-
   // Deep-linking: /application?ind=<Industry> pre-selects a filter tab.
   // (Individual notes now live on their own /application/<slug> pages.)
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    const ind = params.get("ind");
-    if (ind && industries.includes(ind)) setActiveIndustry(ind);
-  }, []);
+  const [activeIndustry, setActiveIndustry] = useState<string>(() => {
+    if (typeof window === "undefined") return "All";
+    const ind = new URLSearchParams(window.location.search).get("ind");
+    return ind && industries.includes(ind) ? ind : "All";
+  });
+  const { locale } = useLocale();
 
   const filtered = activeIndustry === "All" ? apps : apps.filter((a) => a.industry === activeIndustry);
 

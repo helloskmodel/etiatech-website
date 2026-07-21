@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useLocale, t, type Locale, type LangText } from "@/components/LocaleContext";
+import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
 import SalesSupportContent from "@/components/SalesSupportContent";
 import HeroBanner from "@/components/HeroBanner";

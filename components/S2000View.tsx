@@ -23,7 +23,6 @@ import {
   Zap,
 } from "lucide-react";
 
-const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
 const HERO_IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 
 // Downloadable technical documents (COS-hosted PDFs)

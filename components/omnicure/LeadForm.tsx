@@ -5,9 +5,11 @@ import { track } from "./track";
 import ServiceCommitment from "@/components/ServiceCommitment";
 import { localeSalesEmail } from "@/components/contact";
 
-// Inquiries are delivered by opening the visitor's mail client (mailto),
-// consistent with the rest of the site — no server-side mailer is wired.
-// The recipient follows the visitor's country (see localeSalesEmail).
+// Inquiries POST to /api/lead (server-side delivery to email/CRM, configured
+// via env — see that route). If the API is not configured or fails, we fall
+// back to opening the visitor's mail client (mailto), so a lead is never
+// silently dropped. The mailto recipient follows the visitor's country
+// (see localeSalesEmail).
 
 export default function LeadForm({
   lang,
@@ -24,7 +26,7 @@ export default function LeadForm({
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [err, setErr] = useState("");
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const payload = {
@@ -33,6 +35,9 @@ export default function LeadForm({
       phone: String(fd.get("phone") || "").trim(),
       model: String(fd.get("model") || ""),
       message: String(fd.get("message") || "").trim(),
+      website: String(fd.get("website") || ""), // honeypot
+      page,
+      lang,
     };
     if (!payload.name || !payload.phone) {
       setErr(c.required);
@@ -40,6 +45,24 @@ export default function LeadForm({
       return;
     }
     setErr("");
+    setStatus("sending");
+    track("generate_lead", { page, lang, model: payload.model });
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        setStatus("done");
+        return;
+      }
+    } catch {
+      /* network error — fall through to mailto */
+    }
+
+    // Server delivery unavailable: hand off to the visitor's mail client.
     const subject = `Quote request — ${page}`;
     const body = [
       `Name: ${payload.name}`,
@@ -51,8 +74,7 @@ export default function LeadForm({
     ]
       .filter(Boolean)
       .join("\n");
-    track("generate_lead", { page, lang, model: payload.model });
-    window.location.href = `mailto:${localeSalesEmail(lang)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.assign(`mailto:${localeSalesEmail(lang)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
     setStatus("done");
   }
 
@@ -68,8 +90,13 @@ export default function LeadForm({
 
   const field = "w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1A3DAD]";
   return (
-    <form onSubmit={onSubmit} className={`rounded-xl bg-white p-5 sm:p-6 shadow-lg border border-gray-100 ${compact ? "" : ""}`}>
+    <form onSubmit={onSubmit} className={`relative rounded-xl bg-white p-5 sm:p-6 shadow-lg border border-gray-100 ${compact ? "" : ""}`}>
       <p className="font-bold text-gray-900 mb-4">{c.heading}</p>
+      {/* Honeypot: hidden from humans, bots that fill it are silently dropped. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
+        <label htmlFor={`website-${page}`}>Website</label>
+        <input id={`website-${page}`} name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <div className="space-y-3">
         <div>
           <label htmlFor={`name-${page}`} className="block text-xs font-medium text-gray-600 mb-1">{c.name} *</label>

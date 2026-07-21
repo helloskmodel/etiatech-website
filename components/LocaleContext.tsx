@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
 
 // Supported locales. EN + ZH are live; VI/TH are reserved for later.
 export type Locale = "en" | "zh" | "vi" | "th";
@@ -24,29 +24,33 @@ function readCookie(): Locale | null {
   return (m?.[1] as Locale) ?? null;
 }
 
-export function LocaleProvider({ children, initialLocale = "en" }: { children: React.ReactNode; initialLocale?: Locale }) {
-  const [locale, setLocaleState] = useState<Locale>(initialLocale);
+// The cookie only changes through setLocale below (which re-renders via state),
+// so no change subscription is needed — the store hook exists to read the
+// cookie hydration-safely: the server snapshot is null, and React re-reads on
+// the client right after hydration.
+const noSubscribe = () => () => {};
 
-  // Restore saved choice on mount (client-only to avoid hydration mismatch).
+export function LocaleProvider({ children, initialLocale = "en" }: { children: React.ReactNode; initialLocale?: Locale }) {
+  const cookieLocale = useSyncExternalStore(noSubscribe, readCookie, () => null);
+  const [override, setOverride] = useState<Locale | null>(null);
+  // On the default (en) routes, a saved cookie restores the chosen locale.
+  const locale = override ?? (initialLocale === "en" && cookieLocale ? cookieLocale : initialLocale);
+
   useEffect(() => {
-    const saved = readCookie();
-    // On the default (en) routes, a saved cookie restores the chosen locale.
-    // Keep <html lang> in sync with the EFFECTIVE locale so language-specific
-    // CSS (e.g. CJK/Thai heading sizes) applies.
-    const effective = initialLocale === "en" && saved ? saved : initialLocale;
-    if (effective !== initialLocale) setLocaleState(effective);
     // On a locale-locked route (/zh, /vi, /th) persist the language into the
     // cookie, so the cookie-based (main) routes the visitor navigates to next
     // (Applications, Insights, Contact…) render in the SAME language instead
     // of bouncing back to English.
-    if (initialLocale !== "en" && saved !== initialLocale) {
+    if (initialLocale !== "en" && readCookie() !== initialLocale) {
       document.cookie = `${COOKIE}=${initialLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
     }
-    document.documentElement.lang = effective === "zh" ? "zh-CN" : effective;
-  }, [initialLocale]);
+    // Keep <html lang> in sync with the EFFECTIVE locale so language-specific
+    // CSS (e.g. CJK/Thai heading sizes) applies.
+    document.documentElement.lang = locale === "zh" ? "zh-CN" : locale;
+  }, [locale, initialLocale]);
 
   const setLocale = (l: Locale) => {
-    setLocaleState(l);
+    setOverride(l);
     try {
       document.cookie = `${COOKIE}=${l}; path=/; max-age=${60 * 60 * 24 * 365}`;
       document.documentElement.lang = l === "zh" ? "zh-CN" : l;

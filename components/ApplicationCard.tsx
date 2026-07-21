@@ -2,9 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { applicationsZh } from "@/data/applicationsData.zh";
+import type { Application } from "@/data/applicationTypes";
 import { useLocale, t } from "@/components/LocaleContext";
 
-export default function ApplicationCard({ application, compact = false }: { application: any; compact?: boolean }) {
+export default function ApplicationCard({ application, compact = false }: { application: Application; compact?: boolean }) {
   const { locale } = useLocale();
   const m = locale !== "en" ? applicationsZh[application.slug] : undefined;
   const pick = <T,>(f: { zh?: T; th?: T; vi?: T } | undefined): T | undefined => (f as Record<string, T> | undefined)?.[locale];

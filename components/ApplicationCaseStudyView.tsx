@@ -6,6 +6,7 @@ import ApplicationCard from "@/components/ApplicationCard";
 import ServiceCommitment from "@/components/ServiceCommitment";
 import { getRelatedApplications } from "@/data/applicationsData";
 import { applicationsZh } from "@/data/applicationsData.zh";
+import type { Application } from "@/data/applicationTypes";
 import { useLocale, t } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
 
@@ -38,7 +39,7 @@ const INQUIRY_FIELDS = {
   },
 };
 
-export default function ApplicationCaseStudyView({ application }: { application: any }) {
+export default function ApplicationCaseStudyView({ application }: { application: Application }) {
   const { locale } = useLocale();
   const related = getRelatedApplications(application);
   const inquiryProfile: keyof typeof INQUIRY_FIELDS = LINE_CATEGORIES.has(application.industryCategory) ? "line" : "bonding";
@@ -69,6 +70,8 @@ export default function ApplicationCaseStudyView({ application }: { application:
       }
     : application;
   const pageType = t({ en: "Application Case Study", zh: "应用案例", th: "กรณีศึกษาการใช้งาน", vi: "Case study ứng dụng" }, locale);
+  const processSteps = a.sections.process ?? [];
+  const selectionFactors = a.sections.selectionFactors ?? [];
 
   const metadata = [
     [t({ en: "Industry", zh: "行业", th: "อุตสาหกรรม", vi: "Ngành" }, locale), a.industry.join(" · ")],
@@ -118,14 +121,14 @@ export default function ApplicationCaseStudyView({ application }: { application:
             <TextSection eyebrow={t({ en: "02 · Challenge", zh: "02 · 工艺难点", th: "02 · ความท้าทาย", vi: "02 · Thách thức" }, locale)} title={t({ en: "Challenge", zh: "工艺难点", th: "ความท้าทาย", vi: "Thách thức" }, locale)} paragraphs={a.sections.challenge} />
             <TextSection eyebrow={t({ en: "03 · Solution", zh: "03 · 解决方案", th: "03 · โซลูชัน", vi: "03 · Giải pháp" }, locale)} title={t({ en: "UV Curing Solution", zh: "UV Curing 紫外线固化方案", th: "โซลูชัน UV Curing", vi: "Giải pháp UV Curing" }, locale)} paragraphs={a.sections.solution} />
 
-            {a.sections.process?.length > 0 && (
+            {processSteps.length > 0 && (
               <div className="mb-9 rounded-xl border border-[#1A56DB]/15 bg-[#f0f5ff] p-5">
                 <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#1A56DB]">{t({ en: "Typical Process", zh: "典型工艺流程", th: "กระบวนการทั่วไป", vi: "Quy trình điển hình" }, locale)}</p>
                 <div className="flex flex-wrap items-center gap-2">
-                  {a.sections.process.map((step: string, index: number) => (
+                  {processSteps.map((step: string, index: number) => (
                     <div key={step} className="contents">
                       <span className="rounded-full border border-[#1A56DB]/20 bg-white px-3 py-2 text-xs font-semibold text-gray-700">{step}</span>
-                      {index < a.sections.process.length - 1 && <ArrowRight size={15} className="text-[#41A62A]" aria-hidden="true" />}
+                      {index < processSteps.length - 1 && <ArrowRight size={15} className="text-[#41A62A]" aria-hidden="true" />}
                     </div>
                   ))}
                 </div>
@@ -136,8 +139,8 @@ export default function ApplicationCaseStudyView({ application }: { application:
             <div className="mb-9 rounded-xl border border-gray-200 bg-gray-50 p-5">
               <p className="text-xs font-bold uppercase tracking-widest text-gray-500">{t({ en: "Recommended Configuration", zh: "推荐配置", th: "การกำหนดค่าที่แนะนำ", vi: "Cấu hình đề xuất" }, locale)}</p>
               <p className="mt-2 text-lg font-bold text-[#1A56DB]">{a.sections.recommendedConfiguration || a.recommendedProducts.join(" · ")}</p>
-              {a.sections.selectionFactors?.length > 0 && (
-                <><p className="mt-4 text-xs font-semibold text-gray-500">{t({ en: "ETIA evaluates:", zh: "ETIA 评估：", th: "ETIA พิจารณา:", vi: "ETIA đánh giá:" }, locale)}</p><div className="mt-2 flex flex-wrap gap-2">{a.sections.selectionFactors.map((factor: string) => <span key={factor} className="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600">{factor}</span>)}</div></>
+              {selectionFactors.length > 0 && (
+                <><p className="mt-4 text-xs font-semibold text-gray-500">{t({ en: "ETIA evaluates:", zh: "ETIA 评估：", th: "ETIA พิจารณา:", vi: "ETIA đánh giá:" }, locale)}</p><div className="mt-2 flex flex-wrap gap-2">{selectionFactors.map((factor: string) => <span key={factor} className="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600">{factor}</span>)}</div></>
               )}
             </div>
 
@@ -166,7 +169,7 @@ export default function ApplicationCaseStudyView({ application }: { application:
         </div>
       </main>
 
-      {related.length > 0 && <section className="bg-[#f6f8fb] py-14"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><h2 className="mb-7 text-2xl font-bold text-[#1A56DB]">{t({ en: "Related UV Curing Applications", zh: "相关 UV Curing 紫外线固化应用", th: "การใช้งาน UV Curing ที่เกี่ยวข้อง", vi: "Ứng dụng UV Curing liên quan" }, locale)}</h2><div className="grid gap-5 md:grid-cols-3">{related.map((item: any) => <ApplicationCard key={item.slug} application={item} compact />)}</div></div></section>}
+      {related.length > 0 && <section className="bg-[#f6f8fb] py-14"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><h2 className="mb-7 text-2xl font-bold text-[#1A56DB]">{t({ en: "Related UV Curing Applications", zh: "相关 UV Curing 紫外线固化应用", th: "การใช้งาน UV Curing ที่เกี่ยวข้อง", vi: "Ứng dụng UV Curing liên quan" }, locale)}</h2><div className="grid gap-5 md:grid-cols-3">{related.map((item: Application) => <ApplicationCard key={item.slug} application={item} compact />)}</div></div></section>}
     </>
   );
 }

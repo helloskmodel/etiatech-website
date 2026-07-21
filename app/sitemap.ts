@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { products, productHref } from "@/components/productCatalog";
+import { products, productHref, productImage } from "@/components/productCatalog";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
 import { getAllArticles, articleLocales } from "@/components/insights";
@@ -12,10 +12,12 @@ const LOCALE_PREFIXES = ["", "/zh", "/vi", "/th"] as const;
 
 const SITE = "https://www.etiatech.com";
 
-// NOTE: we intentionally omit `lastModified`. We don't track a reliable
-// per-page modification date, and stamping every URL with the build time
-// (new Date()) is a misleading freshness signal — omitting it is better than
-// providing a wrong date. changeFrequency + priority still guide crawlers.
+// NOTE: we intentionally omit `lastModified` on most pages. We don't track a
+// reliable per-page modification date, and stamping every URL with the build
+// time (new Date()) is a misleading freshness signal — omitting it is better
+// than providing a wrong date. Insights articles are the exception: they carry
+// a real publish date in their front matter, so we surface it there.
+// changeFrequency + priority still guide crawlers.
 export default function sitemap(): MetadataRoute.Sitemap {
   const core: MetadataRoute.Sitemap = [
     {
@@ -55,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // listed — next.config redirects them (308) to /applications and
     // /product/omnicure. Only the canonical 200 destinations belong in the
     // sitemap; listing a redirect makes Google report "Page with redirect".
+    { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
     ...LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/case-studies`,
       changeFrequency: "weekly" as const,
@@ -117,6 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...[
       { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
       { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
+      { en: "/omnicure-s1500-pro", th: "/th/omnicure-s1500-pro" },
     ].flatMap((pair) => {
       const langs = { en: `${SITE}${pair.en}`, th: `${SITE}${pair.th}`, "x-default": `${SITE}${pair.en}` };
       return [
@@ -137,26 +141,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const url = `${SITE}${productHref(p)}`;
     if (seen.has(url)) continue;
     seen.add(url);
-    productPages.push({ url, changeFrequency: "monthly", priority: FEATURED_PRIORITY[p.slug] ?? 0.7 });
+    const image = productImage(p);
+    productPages.push({
+      url,
+      changeFrequency: "monthly",
+      priority: FEATURED_PRIORITY[p.slug] ?? 0.7,
+      ...(image ? { images: [image] } : {}),
+    });
   }
 
-  // Individual case-study landing pages (EN + ZH + VI + TH each).
+  // Individual case-study landing pages (EN + ZH + VI + TH each), with the
+  // hero image attached for image-search indexing.
   const casePages: MetadataRoute.Sitemap = caseStudiesCn.flatMap((c) =>
     LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/case-studies/${c.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
       alternates: { languages: languageAlternates(`/case-studies/${c.slug}`) },
+      ...(c.image ? { images: [c.image] } : {}),
     }))
   );
 
-  // Application case-study pages (EN + ZH + VI + TH each).
+  // Application case-study pages (EN + ZH + VI + TH each), with images.
   const applicationCasePages: MetadataRoute.Sitemap = applicationsData.flatMap((application) =>
     LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/applications/${application.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.75,
       alternates: { languages: languageAlternates(`/applications/${application.slug}`) },
+      ...(application.image ? { images: [application.image] } : {}),
     }))
   );
 
@@ -164,7 +177,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // intentionally NOT listed yet — their content is still being reviewed and
   // will be added to the sitemap gradually as each note is verified.
 
-  // Published insights articles — one entry per available locale, hreflang-linked.
+  // Published insights articles — one entry per available locale,
+  // hreflang-linked, with the real publish date as lastModified.
   const INS_PREFIX: Record<string, string> = { en: "", zh: "/zh", vi: "/vi", th: "/th" };
   const insightPages: MetadataRoute.Sitemap = getAllArticles().flatMap((a) => {
     const locs = articleLocales(a);
@@ -176,6 +190,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
       alternates: { languages },
+      ...(a.date ? { lastModified: a.date } : {}),
     }));
   });
 
