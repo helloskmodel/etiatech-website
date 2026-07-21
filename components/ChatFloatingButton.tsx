@@ -3,16 +3,23 @@ import { useLocale, type Locale } from "@/components/LocaleContext";
 import { CONTACT } from "@/components/omnicure/copy";
 
 // Floating chat button, fixed bottom-right, per-market messenger:
-// Thai pages get LINE (Omnicure Thailand OA), Vietnamese pages get Zalo.
-// Renders nothing when the visitor's language has no channel configured.
-// Pass `force` on locale-locked route trees (/th, /vi) that don't mount a
-// LocaleProvider of their own.
+// Thai AND English pages get LINE (Omnicure Thailand OA — WhatsApp was ruled
+// out for security reasons), Vietnamese pages get Zalo. Renders nothing when
+// the visitor's language has no channel configured. Pass `force` on
+// locale-locked route trees (/th, /vi) that don't mount a LocaleProvider of
+// their own.
 const CHANNELS: Partial<Record<Locale, { label: string; href: string; bg: string; aria: string }>> = {
   th: {
     label: "LINE",
     href: CONTACT.lineUrl,
     bg: "#06C755",
     aria: "แชทกับเราทาง LINE",
+  },
+  en: {
+    label: "LINE",
+    href: CONTACT.lineUrl,
+    bg: "#06C755",
+    aria: "Chat with us on LINE",
   },
   vi: {
     label: "Zalo",
