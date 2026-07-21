@@ -12,11 +12,11 @@ export const BRAND = {
   blueDark: "#142f86",
 } as const;
 
-// Contact — real ETIA Thailand sales director (Sompoch). LINE id still pending.
+// Contact — real ETIA Thailand sales director (Sompoch).
 export const CONTACT = {
   phone: "+66 811 746 947",
   phoneHref: "+66811746947",
-  lineId: "TODO_FILL", // TODO_FILL: ETIA Thailand LINE official account id
+  lineId: "@712sangs", // "Omnicure Thailand" LINE official account
   email: "sompoch@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;

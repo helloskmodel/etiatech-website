@@ -6,7 +6,7 @@ import LeadForm from "./LeadForm";
 
 const LOGO =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg";
-const LINE_URL = CONTACT.lineId && CONTACT.lineId !== "TODO_FILL" ? `https://line.me/R/ti/p/${CONTACT.lineId}` : "#line";
+const LINE_URL = `https://line.me/R/ti/p/${CONTACT.lineId}`;
 
 export default function OmniCureLanding({ lang }: { lang: Lang }) {
   const c = getCopy(lang);

@@ -5,7 +5,7 @@ import { track } from "./track";
 import LeadForm from "./LeadForm";
 import type { ProductLandingConfig } from "./productConfig";
 
-const LINE_URL = CONTACT.lineId && CONTACT.lineId !== "TODO_FILL" ? `https://line.me/R/ti/p/${CONTACT.lineId}` : "#line";
+const LINE_URL = `https://line.me/R/ti/p/${CONTACT.lineId}`;
 
 export default function ProductLanding({ config }: { config: ProductLandingConfig }) {
   const c = config;
