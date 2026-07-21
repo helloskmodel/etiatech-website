@@ -5,7 +5,7 @@ import { S2000_FAQ } from "@/components/s2000Faq";
 const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/product/omnicure/s2000";
 const OG_IMAGE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 
 const PDF = {
   brochure:
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: SITE + PAGE_PATH,
-    // hreflang must stay bidirectional — mirror app/sitemap.ts and the
-    // th/vi S2000 pages.
+    // hreflang group — must be identical on all four language versions.
     languages: {
       en: `${SITE}/product/omnicure/s2000`,
-      th: `${SITE}/th/product/omnicure/s2000`,
+      "zh-Hans": `${SITE}/zh/product/omnicure/s2000`,
       vi: `${SITE}/vi/product/omnicure/s2000`,
+      th: `${SITE}/th/product/omnicure/s2000`,
       "x-default": `${SITE}/product/omnicure/s2000`,
     },
   },
@@ -78,11 +78,6 @@ const productSchema = {
     "Lamp-based UV spot curing system with Closed-Loop Feedback intensity control, a 30 ms high-speed shutter, StepCure PLC control, Web UI, NFC access control, and user-changeable lamps and optical filters for validated manufacturing.",
   image: OG_IMAGE,
   url: SITE + PAGE_PATH,
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    seller: { "@type": "Organization", name: "Etiatec (Thailand) Co., Ltd." },
-  },
   subjectOf: [
     { "@type": "CreativeWork", name: "OmniCure S2000 Elite Brochure", url: PDF.brochure },
     { "@type": "CreativeWork", name: "OmniCure S2000 Elite Quick Start Guide", url: PDF.quickStart },

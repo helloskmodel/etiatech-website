@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Pretty URL for the static self-contained troubleshooter tool in
+  // public/tools/ (it fetches its data JSON from the same directory).
+  async rewrites() {
+    return [{ source: "/tools/troubleshooter", destination: "/tools/troubleshooter.html" }];
+  },
   // Permanent redirects (308 — treated as a permanent redirect by Google,
   // like 301) for old indexed URLs from the previous site so they don't 404.
   // Order matters: the first matching rule wins, so the /en/:path* catch-all
@@ -16,13 +21,34 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Thailand /th/{th,en,zh} language microsite retired — redirect its old
-      // indexed URLs to the (English) main site so they don't 404. The
-      // /th/omnicure* SEM landing pages are NOT matched by these rules and stay.
+      // indexed URLs to the (English) main site so they don't 404.
       { source: "/th/th/:path*", destination: "/", permanent: true },
       { source: "/th/en/:path*", destination: "/", permanent: true },
       { source: "/th/zh/:path*", destination: "/", permanent: true },
+      // OmniCure country SEM landing pages retired: their bare standalone
+      // quote-form design is replaced by the proper OmniCure product page
+      // (full catalogue + site chrome), which the client considers the better
+      // face for "OmniCure Thailand/Vietnam" searches. Exact matches only, so
+      // the /th/omnicure-s2000, /th/omnicure-lx500, /th/omnicure-s2000-lamp
+      // product pages are untouched. Permanent (308) — the client has confirmed
+      // the retirement is final, so pass the old URLs' ranking equity to the
+      // product pages; English landing → English product page, localized
+      // landing → same-language product page.
+      { source: "/omnicure-thailand", destination: "/product/omnicure", permanent: true },
+      { source: "/th/omnicure", destination: "/th/product/omnicure", permanent: true },
+      { source: "/omnicure-vietnam", destination: "/product/omnicure", permanent: true },
+      { source: "/vi/omnicure", destination: "/vi/product/omnicure", permanent: true },
       // NOTE: no `/th → /` rule — /th is the live Thai SEO home; redirecting it
       // would shadow that page (and put a redirect in the sitemap).
+      // Country-code aliases people type or link by hand: the real locale
+      // routes use ISO 639-1 language codes (/zh, /vi), so alias the common
+      // country-code spellings to them instead of 404ing.
+      { source: "/cn", destination: "/zh", permanent: true },
+      { source: "/cn/:path*", destination: "/zh/:path*", permanent: true },
+      { source: "/ch", destination: "/zh", permanent: true },
+      { source: "/ch/:path*", destination: "/zh/:path*", permanent: true },
+      { source: "/vn", destination: "/vi", permanent: true },
+      { source: "/vn/:path*", destination: "/vi/:path*", permanent: true },
       { source: "/en/contact", destination: "/contact", permanent: true },
       { source: "/en/applications", destination: "/applications", permanent: true },
       { source: "/application", destination: "/applications", permanent: true },

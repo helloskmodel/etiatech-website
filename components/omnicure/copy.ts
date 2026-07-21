@@ -5,6 +5,11 @@
 
 export type Lang = "en" | "th";
 
+// Pages that reuse the lead form beyond the Thailand SEM pair (currently the
+// zh/vi S2000 Elite Lamp pages) — only the form strings are translated for
+// these; the full SEM landing copy stays EN+TH.
+export type FormLang = Lang | "zh" | "vi";
+
 // Brand palette (from the logo brief). TODO_FILL: confirm exact hex from logo.
 export const BRAND = {
   green: "#4CAF3E",
@@ -17,6 +22,8 @@ export const CONTACT = {
   phone: "+66 811 746 947",
   phoneHref: "+66811746947",
   lineId: "@712sangs", // "Omnicure Thailand" LINE official account
+  // Full LINE "add friend" link for the Official Account above.
+  lineUrl: "https://line.me/R/ti/p/@712sangs",
   email: "sompoch@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
@@ -158,9 +165,41 @@ const th: Partial<LandingCopy> = {
   },
 };
 
-// Deep per-key fallback: TH value if present, else EN.
-export function getCopy(lang: Lang): LandingCopy {
+// ZH/VI: only the lead-form strings (used by the zh/vi lamp pages).
+const zhForm: LandingCopy["form"] = {
+  heading: "索取报价",
+  name: "姓名",
+  company: "公司",
+  phone: "电话",
+  model: "所需型号",
+  message: "留言（选填）",
+  submit: "索取报价",
+  thanksTitle: "谢谢您——我们会尽快与您联系。",
+  thanksBody: "我们的团队将尽快向您提供报价与建议。",
+  required: "请填写必填项。",
+  consent: "提交本表单即表示您同意 ETIA 处理您的联系信息，用于回复您的咨询、提供产品建议以及销售或技术支持。详情请参阅我们的隐私政策。",
+};
+
+const viForm: LandingCopy["form"] = {
+  heading: "Yêu cầu báo giá",
+  name: "Họ tên",
+  company: "Công ty",
+  phone: "Điện thoại",
+  model: "Model cần mua",
+  message: "Lời nhắn (không bắt buộc)",
+  submit: "Yêu cầu báo giá",
+  thanksTitle: "Cảm ơn bạn — chúng tôi sẽ sớm liên hệ.",
+  thanksBody: "Đội ngũ của chúng tôi sẽ liên hệ với bạn cùng báo giá và tư vấn.",
+  required: "Vui lòng điền các trường bắt buộc.",
+  consent: "Bằng việc gửi biểu mẫu này, bạn đồng ý để ETIA xử lý thông tin liên hệ của bạn nhằm phản hồi yêu cầu, tư vấn sản phẩm và hỗ trợ bán hàng hoặc kỹ thuật. Vui lòng xem Chính sách bảo mật của chúng tôi để biết chi tiết.",
+};
+
+// Deep per-key fallback: TH value if present, else EN. ZH/VI translate only
+// the form; the rest of the landing copy falls back to EN.
+export function getCopy(lang: FormLang): LandingCopy {
   if (lang === "en") return en;
+  if (lang === "zh") return { ...en, form: zhForm };
+  if (lang === "vi") return { ...en, form: viForm };
   return {
     ...en,
     ...th,

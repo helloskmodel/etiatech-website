@@ -136,7 +136,7 @@ export const applicationsData = [
     "productCategory": "UV Curing Systems",
     "productFamily": "OmniCure",
     "recommendedProducts": [
-      "OmniCure® LX500 V2"
+      "OmniCure® LX500"
     ],
     "relatedProductSlugs": [
       "lx500",
@@ -151,10 +151,10 @@ export const applicationsData = [
         "The main challenge is speed and consistency. Manufacturers need to cure adhesive bonds in a very short cycle time without interrupting high-speed indexing, rotary, or multi-station assembly lines. The process must also control heat and maintain stable output across long production runs."
       ],
       "solution": [
-        "ETIA recommends OmniCure® LX500 V2 with compact UV LED heads for high-speed needle and cannula assembly. Multi-channel control allows several curing stations to operate from one platform, while PLC integration helps synchronize UV exposure with automated production equipment."
+        "ETIA recommends OmniCure® LX500 with compact UV LED heads for high-speed needle and cannula assembly. Multi-channel control allows several curing stations to operate from one platform, while PLC integration helps synchronize UV exposure with automated production equipment."
       ],
       "recommendedProduct": [
-        "OmniCure® LX500 V2 is recommended for high-volume medical assembly applications that require compact UV LED heads, multiple wavelength options, and automation-friendly control."
+        "OmniCure® LX500 is recommended for high-volume medical assembly applications that require compact UV LED heads, multiple wavelength options, and automation-friendly control."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -174,8 +174,8 @@ export const applicationsData = [
       "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
     ],
     "seo": {
-      "title": "UV LED Curing for Needle and Cannula Assembly | OmniCure LX500 V2 | ETIA",
-      "description": "ETIA provides OmniCure LX500 V2 UV LED curing solutions for high-speed hypodermic needle bonding and cannula assembly.",
+      "title": "UV LED Curing for Needle and Cannula Assembly | OmniCure LX500 | ETIA",
+      "description": "ETIA provides OmniCure LX500 UV LED curing solutions for high-speed hypodermic needle bonding and cannula assembly.",
       "urlSlug": "applications/uv-led-curing-hypodermic-needle-cannula-assembly",
       "keywords": [
         "UV LED curing",
@@ -183,11 +183,11 @@ export const applicationsData = [
         "cannula assembly",
         "stainless steel to plastic bonding",
         "medical device assembly",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "ETIA"
       ]
     },
-    "notes": "Part A identifies hypodermic needle and cannula assembly as a priority medical application and maps it to OmniCure LX500 V2."
+    "notes": "Part A identifies hypodermic needle and cannula assembly as a priority medical application and maps it to OmniCure LX500."
   },
   {
     "slug": "uv-curing-pcr-microfluidic-diagnostic-card-sealing",
@@ -319,7 +319,7 @@ export const applicationsData = [
     "recommendedProducts": [
       "OmniCure® AC8 / AC9 Series",
       "OmniCure® S2000 Elite",
-      "OmniCure® LX500 V2"
+      "OmniCure® LX500"
     ],
     "relatedProductSlugs": [
       "ac8",
@@ -336,10 +336,10 @@ export const applicationsData = [
         "Battery manufacturers must reduce manufacturing cost while improving reliability. Battery components may face vibration, heat, moisture, corrosion, and long-term service requirements. Traditional thermal curing and solvent-based processes can add energy demand, floor-space requirements, and process complexity."
       ],
       "solution": [
-        "ETIA recommends selecting the OmniCure system based on curing area, adhesive chemistry, and production layout. AC8 / AC9 Series systems can support larger-area battery sealing and coating processes, while S2000 Elite and LX500 V2 can support localized bonding or precision curing steps."
+        "ETIA recommends selecting the OmniCure system based on curing area, adhesive chemistry, and production layout. AC8 / AC9 Series systems can support larger-area battery sealing and coating processes, while S2000 Elite and LX500 can support localized bonding or precision curing steps."
       ],
       "recommendedProduct": [
-        "OmniCure® AC8 / AC9 Series are recommended for larger-area UV curing in battery assembly. S2000 Elite and LX500 V2 can support precision bonding, sealant curing, or localized protection steps."
+        "OmniCure® AC8 / AC9 Series are recommended for larger-area UV curing in battery assembly. S2000 Elite and LX500 can support precision bonding, sealant curing, or localized protection steps."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -414,7 +414,7 @@ export const applicationsData = [
     "productCategory": "UV Curing Systems",
     "productFamily": "OmniCure",
     "recommendedProducts": [
-      "OmniCure® LX500 V2",
+      "OmniCure® LX500",
       "OmniCure® AC Small Series / AC4 / AC5"
     ],
     "relatedProductSlugs": [
@@ -431,10 +431,10 @@ export const applicationsData = [
         "LiDAR manufacturing requires sub-micron optical alignment and stable bonding of delicate optical and micro-mechanical components. Any cure-induced shift can affect ranging accuracy. At the same time, optical windows and housings must be sealed for harsh automotive environments."
       ],
       "solution": [
-        "ETIA recommends OmniCure® LX500 V2 for precision spot curing of laser, receiver, and MEMS bonding steps. For optical window sealing or broader protection areas, OmniCure® AC Small Series can provide uniform, low-heat UV LED exposure."
+        "ETIA recommends OmniCure® LX500 for precision spot curing of laser, receiver, and MEMS bonding steps. For optical window sealing or broader protection areas, OmniCure® AC Small Series can provide uniform, low-heat UV LED exposure."
       ],
       "recommendedProduct": [
-        "OmniCure® LX500 V2 is recommended for precision optical bonding in LiDAR assembly. OmniCure® AC Small Series is recommended for compact area curing and environmental sealing."
+        "OmniCure® LX500 is recommended for precision optical bonding in LiDAR assembly. OmniCure® AC Small Series is recommended for compact area curing and environmental sealing."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -455,7 +455,7 @@ export const applicationsData = [
     ],
     "seo": {
       "title": "UV LED Curing for Automotive LiDAR Sensor Assembly | OmniCure LX500 AC Small | ETIA",
-      "description": "ETIA supports automotive LiDAR manufacturers with OmniCure LX500 V2 and AC Small UV LED curing solutions for optical bonding and sealing.",
+      "description": "ETIA supports automotive LiDAR manufacturers with OmniCure LX500 and AC Small UV LED curing solutions for optical bonding and sealing.",
       "urlSlug": "applications/uv-led-curing-automotive-lidar-sensor-assembly",
       "keywords": [
         "UV curing",
@@ -464,12 +464,12 @@ export const applicationsData = [
         "laser-to-lens bonding",
         "MEMS mirror bonding",
         "optical window sealing",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "OmniCure AC Small",
         "ETIA"
       ]
     },
-    "notes": "Part B LiDAR case study maps laser and receiver bonding to LX500 V2, and optical aperture window sealing to AC Small AC4/AC5."
+    "notes": "Part B LiDAR case study maps laser and receiver bonding to LX500, and optical aperture window sealing to AC Small AC4/AC5."
   },
   {
     "slug": "uv-spot-curing-adas-camera-module-assembly",
@@ -509,7 +509,7 @@ export const applicationsData = [
     "productFamily": "OmniCure",
     "recommendedProducts": [
       "OmniCure® S2000 Elite",
-      "OmniCure® LX500 V2",
+      "OmniCure® LX500",
       "OmniCure® AC Small Series"
     ],
     "relatedProductSlugs": [
@@ -527,10 +527,10 @@ export const applicationsData = [
         "Lens-to-barrel bonding requires active focus adjustment before UV curing locks the position. Barrel-to-PCB bonding, IR filter attachment, and housing sealing add further process steps that require repeatable UV dose and automotive-grade traceability."
       ],
       "solution": [
-        "ETIA recommends OmniCure® S2000 Elite for focus-lock bonding where Closed-Loop Feedback and dose control are important. LX500 V2 can support precision UV LED bonding of optical components, while AC Small systems can support compact housing or window sealing applications."
+        "ETIA recommends OmniCure® S2000 Elite for focus-lock bonding where Closed-Loop Feedback and dose control are important. LX500 can support precision UV LED bonding of optical components, while AC Small systems can support compact housing or window sealing applications."
       ],
       "recommendedProduct": [
-        "OmniCure® S2000 Elite is recommended for controlled optical bonding. LX500 V2 supports precision LED curing. AC Small supports compact sealing and area curing steps."
+        "OmniCure® S2000 Elite is recommended for controlled optical bonding. LX500 supports precision LED curing. AC Small supports compact sealing and area curing steps."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -560,12 +560,12 @@ export const applicationsData = [
         "lens-to-barrel bonding",
         "focus-lock curing",
         "OmniCure S2000 Elite",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "AC Small",
         "ETIA"
       ]
     },
-    "notes": "Part B ADAS camera module case maps lens-to-barrel bonding to S2000 Elite, IR filter bonding to LX500 V2, and housing sealing to AC Small."
+    "notes": "Part B ADAS camera module case maps lens-to-barrel bonding to S2000 Elite, IR filter bonding to LX500, and housing sealing to AC Small."
   },
   {
     "slug": "uv-led-curing-pcb-conformal-coating",
@@ -699,7 +699,7 @@ export const applicationsData = [
     "productCategory": "UV Curing Systems",
     "productFamily": "OmniCure",
     "recommendedProducts": [
-      "OmniCure® LX500 V2"
+      "OmniCure® LX500"
     ],
     "relatedProductSlugs": [
       "lx500",
@@ -714,10 +714,10 @@ export const applicationsData = [
         "OCA bonding requires uniform cure without haze, bubbles, excessive heat, or adhesive distortion. Manufacturers need controlled UV exposure that supports high-quality display appearance and repeatable production output."
       ],
       "solution": [
-        "ETIA recommends OmniCure® LX500 V2 with suitable UV LED heads for display bonding applications. Multi-channel control can support multiple curing zones, while wavelength options help match adhesive photoinitiator requirements."
+        "ETIA recommends OmniCure® LX500 with suitable UV LED heads for display bonding applications. Multi-channel control can support multiple curing zones, while wavelength options help match adhesive photoinitiator requirements."
       ],
       "recommendedProduct": [
-        "OmniCure® LX500 V2 is recommended for display module bonding where compact UV LED heads, controlled output, and low-heat curing are important."
+        "OmniCure® LX500 is recommended for display module bonding where compact UV LED heads, controlled output, and low-heat curing are important."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -737,8 +737,8 @@ export const applicationsData = [
       "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
     ],
     "seo": {
-      "title": "UV LED Curing for Display Module OCA Bonding | OmniCure LX500 V2 | ETIA",
-      "description": "ETIA supports display manufacturers with OmniCure LX500 V2 UV LED curing solutions for OCA bonding, cover glass bonding, and touch panel assembly.",
+      "title": "UV LED Curing for Display Module OCA Bonding | OmniCure LX500 | ETIA",
+      "description": "ETIA supports display manufacturers with OmniCure LX500 UV LED curing solutions for OCA bonding, cover glass bonding, and touch panel assembly.",
       "urlSlug": "applications/uv-led-curing-display-module-oca-bonding",
       "keywords": [
         "UV curing",
@@ -746,12 +746,12 @@ export const applicationsData = [
         "OCA bonding",
         "touch panel assembly",
         "optical adhesive curing",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "UV LED curing",
         "ETIA"
       ]
     },
-    "notes": "Part A identifies display module OCA bonding as a priority electronics application using OmniCure LX500 V2."
+    "notes": "Part A identifies display module OCA bonding as a priority electronics application using OmniCure LX500."
   },
   {
     "slug": "uv-led-curing-oled-panel-edge-sealing",
@@ -787,7 +787,7 @@ export const applicationsData = [
     "productCategory": "UV Curing Systems",
     "productFamily": "OmniCure",
     "recommendedProducts": [
-      "OmniCure® LX500 V2"
+      "OmniCure® LX500"
     ],
     "relatedProductSlugs": [
       "lx500",
@@ -802,10 +802,10 @@ export const applicationsData = [
         "OLED materials cannot tolerate excessive heat, and poor edge sealing can lead to moisture ingress, dark spots, or display failure. Manufacturers need a controlled curing process that protects sensitive organic layers while supporting high-volume production."
       ],
       "solution": [
-        "ETIA recommends OmniCure® LX500 V2 for controlled UV LED curing of OLED edge seal adhesives. Proper wavelength selection and intensity control help match adhesive chemistry while limiting thermal exposure."
+        "ETIA recommends OmniCure® LX500 for controlled UV LED curing of OLED edge seal adhesives. Proper wavelength selection and intensity control help match adhesive chemistry while limiting thermal exposure."
       ],
       "recommendedProduct": [
-        "OmniCure® LX500 V2 is recommended for OLED edge sealing applications requiring compact UV LED curing, low heat, and precise exposure control."
+        "OmniCure® LX500 is recommended for OLED edge sealing applications requiring compact UV LED curing, low heat, and precise exposure control."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -825,8 +825,8 @@ export const applicationsData = [
       "ETIA helps customers translate UV curing requirements into practical, reliable production solutions."
     ],
     "seo": {
-      "title": "UV LED Curing for OLED Panel Edge Sealing | OmniCure LX500 V2 | ETIA",
-      "description": "ETIA provides OmniCure LX500 V2 UV LED curing solutions for OLED panel edge sealing and moisture barrier adhesive curing.",
+      "title": "UV LED Curing for OLED Panel Edge Sealing | OmniCure LX500 | ETIA",
+      "description": "ETIA provides OmniCure LX500 UV LED curing solutions for OLED panel edge sealing and moisture barrier adhesive curing.",
       "urlSlug": "applications/uv-led-curing-oled-panel-edge-sealing",
       "keywords": [
         "UV curing",
@@ -834,12 +834,12 @@ export const applicationsData = [
         "display encapsulation",
         "moisture barrier adhesive",
         "UV LED curing",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "OLED manufacturing",
         "ETIA"
       ]
     },
-    "notes": "Part A maps OLED panel encapsulation to OmniCure LX500 V2 and emphasizes low-heat curing for moisture-sensitive OLED materials."
+    "notes": "Part A maps OLED panel encapsulation to OmniCure LX500 and emphasizes low-heat curing for moisture-sensitive OLED materials."
   },
   {
     "slug": "uv-curing-optical-transceiver-manufacturing",
@@ -879,7 +879,7 @@ export const applicationsData = [
     "productFamily": "OmniCure",
     "recommendedProducts": [
       "OmniCure® S2000 Elite",
-      "OmniCure® LX500 V2",
+      "OmniCure® LX500",
       "OmniCure® R2000 Radiometer",
       "OmniCure® LS200 Radiometry System"
     ],
@@ -898,10 +898,10 @@ export const applicationsData = [
         "Tighter alignment tolerances leave little room for adhesive cure shrinkage or UV dose variation. Manufacturers also need higher throughput and process documentation for supplier qualification, especially when supporting hyperscale data center customers."
       ],
       "solution": [
-        "ETIA recommends OmniCure® S2000 Elite for Closed-Loop Feedback dose control, LX500 V2 for multi-channel UV LED curing, and R2000 or LS200 systems for dose verification. This combination supports precision optical bonding and scalable production."
+        "ETIA recommends OmniCure® S2000 Elite for Closed-Loop Feedback dose control, LX500 for multi-channel UV LED curing, and R2000 or LS200 systems for dose verification. This combination supports precision optical bonding and scalable production."
       ],
       "recommendedProduct": [
-        "OmniCure® S2000 Elite is recommended for validated spot curing. LX500 V2 supports multi-channel optical assembly. R2000 / LS200 support radiometric process verification."
+        "OmniCure® S2000 Elite is recommended for validated spot curing. LX500 supports multi-channel optical assembly. R2000 / LS200 support radiometric process verification."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -932,13 +932,13 @@ export const applicationsData = [
         "1.6T transceiver",
         "laser-to-fiber bonding",
         "OmniCure S2000 Elite",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "LS200",
         "R2000",
         "ETIA"
       ]
     },
-    "notes": "Part B optical transceiver case maps transceiver bonding to S2000 Elite, LX500 V2, R2000, and LS200."
+    "notes": "Part B optical transceiver case maps transceiver bonding to S2000 Elite, LX500, R2000, and LS200."
   },
   {
     "slug": "uv-curing-co-packaged-optics-fiber-array-bonding",
@@ -977,7 +977,7 @@ export const applicationsData = [
     "productCategory": "UV Curing Systems",
     "productFamily": "OmniCure",
     "recommendedProducts": [
-      "OmniCure® LX500 V2",
+      "OmniCure® LX500",
       "OmniCure® LS200",
       "OmniCure® S2000 Elite",
       "OmniCure® AC Small Series"
@@ -998,10 +998,10 @@ export const applicationsData = [
         "CPO assembly requires extremely tight alignment stability. UV adhesive shrinkage, inconsistent dose, or uncontrolled curing can shift fiber position and reduce coupling efficiency. As CPO moves toward higher-volume manufacturing, process verification becomes increasingly important."
       ],
       "solution": [
-        "ETIA recommends OmniCure® LX500 V2 with 365 nm UV LED heads for multi-channel precision curing, combined with LS200 for in-process UV dose verification. For qualification-level process control, S2000 Elite can support Closed-Loop Feedback curing. AC Small can support compact sealing steps where area exposure is needed."
+        "ETIA recommends OmniCure® LX500 with 365 nm UV LED heads for multi-channel precision curing, combined with LS200 for in-process UV dose verification. For qualification-level process control, S2000 Elite can support Closed-Loop Feedback curing. AC Small can support compact sealing steps where area exposure is needed."
       ],
       "recommendedProduct": [
-        "OmniCure® LX500 V2 + LS200 is recommended for CPO fiber array bonding. S2000 Elite supports qualification-grade stability, while AC Small can support package sealing applications."
+        "OmniCure® LX500 + LS200 is recommended for CPO fiber array bonding. S2000 Elite supports qualification-grade stability, while AC Small can support package sealing applications."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -1022,7 +1022,7 @@ export const applicationsData = [
     ],
     "seo": {
       "title": "UV Curing for Co-Packaged Optics Fiber Array Bonding | OmniCure LX500 LS200 | ETIA",
-      "description": "ETIA provides OmniCure LX500 V2 and LS200 UV curing solutions for co-packaged optics fiber array bonding and silicon photonics assembly.",
+      "description": "ETIA provides OmniCure LX500 and LS200 UV curing solutions for co-packaged optics fiber array bonding and silicon photonics assembly.",
       "urlSlug": "applications/uv-curing-co-packaged-optics-fiber-array-bonding",
       "keywords": [
         "UV curing",
@@ -1031,13 +1031,13 @@ export const applicationsData = [
         "silicon photonics",
         "AI data center",
         "FAU bonding",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "LS200",
         "OmniCure S2000 Elite",
         "ETIA"
       ]
     },
-    "notes": "Part B CPO case maps silicon photonic engine-to-fiber bonding to LX500 V2 and LS200, with S2000 Elite for qualification-grade process stability."
+    "notes": "Part B CPO case maps silicon photonic engine-to-fiber bonding to LX500 and LS200, with S2000 Elite for qualification-grade process stability."
   },
   {
     "slug": "uv-curing-photonic-integrated-circuit-packaging",
@@ -1076,7 +1076,7 @@ export const applicationsData = [
     "productCategory": "UV Curing Systems",
     "productFamily": "OmniCure",
     "recommendedProducts": [
-      "OmniCure® LX500 V2",
+      "OmniCure® LX500",
       "OmniCure® LS200",
       "OmniCure® S2000 Elite",
       "OmniCure® R2000 Radiometer"
@@ -1096,10 +1096,10 @@ export const applicationsData = [
         "PIC packaging is highly sensitive to alignment shift, adhesive shrinkage, and refractive index variation. A small change during curing can reduce coupling efficiency and lower production yield. Process validation is also important for foundry and OSAT production environments."
       ],
       "solution": [
-        "ETIA recommends OmniCure® LX500 V2 for multi-channel precision UV LED spot curing and LS200 for in-situ dose measurement. For validated process environments, S2000 Elite with R2000 Radiometer can support documented curing control."
+        "ETIA recommends OmniCure® LX500 for multi-channel precision UV LED spot curing and LS200 for in-situ dose measurement. For validated process environments, S2000 Elite with R2000 Radiometer can support documented curing control."
       ],
       "recommendedProduct": [
-        "OmniCure® LX500 V2 + LS200 is recommended for FAU-to-PIC bonding. S2000 Elite + R2000 can support documented process validation and qualification workflows."
+        "OmniCure® LX500 + LS200 is recommended for FAU-to-PIC bonding. S2000 Elite + R2000 can support documented process validation and qualification workflows."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -1120,7 +1120,7 @@ export const applicationsData = [
     ],
     "seo": {
       "title": "UV Curing for Photonic Integrated Circuit Packaging | OmniCure LX500 LS200 | ETIA",
-      "description": "ETIA supports PIC packaging with OmniCure LX500 V2, LS200, S2000 Elite, and R2000 UV curing solutions for fiber array bonding.",
+      "description": "ETIA supports PIC packaging with OmniCure LX500, LS200, S2000 Elite, and R2000 UV curing solutions for fiber array bonding.",
       "urlSlug": "applications/uv-curing-photonic-integrated-circuit-packaging",
       "keywords": [
         "UV curing",
@@ -1129,13 +1129,13 @@ export const applicationsData = [
         "silicon photonics",
         "FAU bonding",
         "fiber-to-waveguide coupling",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "LS200",
         "R2000",
         "ETIA"
       ]
     },
-    "notes": "Part B PIC packaging case maps FAU-to-PIC bonding to LX500 V2 + LS200 and wafer-level bonding to S2000 Elite + R2000."
+    "notes": "Part B PIC packaging case maps FAU-to-PIC bonding to LX500 + LS200 and wafer-level bonding to S2000 Elite + R2000."
   },
   {
     "slug": "uv-curing-advanced-semiconductor-packaging",
@@ -1172,7 +1172,7 @@ export const applicationsData = [
     "productCategory": "UV Curing Systems",
     "productFamily": "OmniCure",
     "recommendedProducts": [
-      "OmniCure® LX500 V2",
+      "OmniCure® LX500",
       "OmniCure® AC Small Series",
       "OmniCure® AC Large Series"
     ],
@@ -1192,10 +1192,10 @@ export const applicationsData = [
         "Thin dies, dense micro-bumps, and high-value packages are sensitive to warpage, heat, contamination, and process variability. Manufacturers need controlled curing that protects yield while supporting high-value production."
       ],
       "solution": [
-        "ETIA recommends OmniCure® LX500 V2 for precision spot curing, AC Small Series for localized area curing, and AC Large Series for full-wafer exposure applications such as UV dicing tape release."
+        "ETIA recommends OmniCure® LX500 for precision spot curing, AC Small Series for localized area curing, and AC Large Series for full-wafer exposure applications such as UV dicing tape release."
       ],
       "recommendedProduct": [
-        "OmniCure® LX500 V2 supports chiplet and photonic interconnect bonding. AC Small supports underfill or localized area curing. AC Large supports wafer-level UV exposure."
+        "OmniCure® LX500 supports chiplet and photonic interconnect bonding. AC Small supports underfill or localized area curing. AC Large supports wafer-level UV exposure."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -1226,13 +1226,13 @@ export const applicationsData = [
         "3D integration",
         "underfill cure",
         "UV dicing tape release",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "OmniCure AC Small",
         "OmniCure AC Large",
         "ETIA"
       ]
     },
-    "notes": "Part B advanced packaging case maps chiplet bonding to LX500 V2, fine-pitch underfill to AC Small, and UV dicing tape release to AC Large."
+    "notes": "Part B advanced packaging case maps chiplet bonding to LX500, fine-pitch underfill to AC Small, and UV dicing tape release to AC Large."
   },
   {
     "slug": "uv-spot-curing-fiber-optic-connector-termination",
@@ -1270,7 +1270,7 @@ export const applicationsData = [
     "productFamily": "OmniCure",
     "recommendedProducts": [
       "OmniCure® S2000 Elite",
-      "OmniCure® LX500 V2"
+      "OmniCure® LX500"
     ],
     "relatedProductSlugs": [
       "s2000-elite",
@@ -1285,10 +1285,10 @@ export const applicationsData = [
         "Connector manufacturers need low-loss terminations, consistent epoxy cure, and repeatable production across multiple connector stations. Poor curing can affect optical performance, mechanical retention, and long-term reliability."
       ],
       "solution": [
-        "ETIA recommends OmniCure® S2000 Elite or LX500 V2 with fiber light guide delivery for targeted UV curing at connector ferrules. The selection depends on production speed, adhesive chemistry, automation level, and process validation needs."
+        "ETIA recommends OmniCure® S2000 Elite or LX500 with fiber light guide delivery for targeted UV curing at connector ferrules. The selection depends on production speed, adhesive chemistry, automation level, and process validation needs."
       ],
       "recommendedProduct": [
-        "OmniCure® S2000 Elite is recommended for high-control spot curing. LX500 V2 is suitable for compact multi-channel UV LED connector assembly."
+        "OmniCure® S2000 Elite is recommended for high-control spot curing. LX500 is suitable for compact multi-channel UV LED connector assembly."
       ],
       "etiaSupport": [
         "As an authorized OmniCure® distributor, ETIA supports application review, product selection, genuine supply, installation, training, troubleshooting, and long-term service.",
@@ -1309,7 +1309,7 @@ export const applicationsData = [
     ],
     "seo": {
       "title": "UV Spot Curing for Fiber Optic Connector Termination | OmniCure S2000 LX500 | ETIA",
-      "description": "ETIA supports fiber optic connector manufacturers with OmniCure S2000 Elite and LX500 V2 UV curing systems for ferrule bonding and connector termination.",
+      "description": "ETIA supports fiber optic connector manufacturers with OmniCure S2000 Elite and LX500 UV curing systems for ferrule bonding and connector termination.",
       "urlSlug": "applications/uv-spot-curing-fiber-optic-connector-termination",
       "keywords": [
         "UV curing",
@@ -1320,11 +1320,11 @@ export const applicationsData = [
         "SC connector",
         "FC connector",
         "OmniCure S2000 Elite",
-        "OmniCure LX500 V2",
+        "OmniCure LX500",
         "ETIA"
       ]
     },
-    "notes": "Part A maps fiber optic connector termination to OmniCure S2000 Elite or LX500 V2 with fiber light guide output."
+    "notes": "Part A maps fiber optic connector termination to OmniCure S2000 Elite or LX500 with fiber light guide output."
   },
   {
     "slug": "uv-led-curing-optical-fiber-draw-tower-coating",
@@ -1369,7 +1369,7 @@ export const applicationsData = [
       "ac8",
       "ac9225-f"
     ],
-    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/15-Fiber-%20Draw-Tower.jpg",
+    "image": "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/15-Fiber-%20Draw-Tower.jpg?v=2",
     "sections": {
       "application": [
         "Optical fiber production requires UV curing of primary and secondary acrylate coatings immediately after the glass fiber is drawn. High-speed draw towers require uniform, continuous UV exposure to support fiber performance and production capacity."

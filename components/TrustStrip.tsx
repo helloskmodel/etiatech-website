@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 
 // Dark-blue trust strip shown directly under the hero on Home, Applications,
-// Phoseon, OmniCure and Sales & Support. Wording mirrors the Service Commitment
+// Phoseon, OmniCure and Service & Support. Wording mirrors the Service Commitment
 // poster artwork.
 const TRUST_ITEMS: LangText[] = [
   { en: "Genuine Products Through Official Channels", zh: "官方渠道正品", vi: "Sản phẩm chính hãng qua kênh chính thức", th: "สินค้าของแท้ผ่านช่องทางอย่างเป็นทางการ" },
@@ -15,7 +15,7 @@ const TRUST_ITEMS: LangText[] = [
 export default function TrustStrip() {
   const { locale } = useLocale();
   return (
-    <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-r from-[#143C96] to-[#1A56DB] px-4 py-5 text-white sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-3 text-center text-xs font-bold sm:grid-cols-4 sm:text-sm">
         {TRUST_ITEMS.map((item) => (
           <span key={item.en} className="inline-flex items-center justify-center gap-2">

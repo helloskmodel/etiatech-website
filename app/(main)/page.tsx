@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Authorized distributor of OmniCure, Phoseon, Fusion & NobleLight UV curing systems. 20 years of application expertise, local stock, in-house repair across 10 industries.",
   alternates: {
     canonical: "https://www.etiatech.com",
-    languages: { en: "https://www.etiatech.com", "zh-CN": "https://www.etiatech.com/zh", vi: "https://www.etiatech.com/vi", th: "https://www.etiatech.com/th", "x-default": "https://www.etiatech.com" },
+    languages: { en: "https://www.etiatech.com", "zh-Hans": "https://www.etiatech.com/zh", vi: "https://www.etiatech.com/vi", th: "https://www.etiatech.com/th", "x-default": "https://www.etiatech.com" },
   },
 };
 
@@ -16,7 +16,7 @@ const orgJsonLd = {
   "@type": "Organization",
   name: "ETIA Technology",
   url: "https://www.etiatech.com",
-  logo: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg",
+  logo: "https://www.etiatech.com/logo/etia-tech.png",
   description:
     "Authorized distributor of UV curing systems with 20 years of application expertise.",
   address: [

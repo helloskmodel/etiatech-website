@@ -117,7 +117,7 @@ export default function AppNoteView({ note }: { note: App }) {
             <h2 className="text-xl font-bold text-white mb-2">{t({ en: "Have a similar curing challenge?", zh: "有类似的固化难题?" }, locale)}</h2>
             <p className="text-gray-200 text-sm mb-5">{t({ en: "Our engineers match the right UV system to your exact process — from selection to validation.", zh: "我们的工程师将为您的具体工艺匹配合适的UV系统——从选型到验证。" }, locale)}</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a href={inquiryMailto(locale, { subject: "Sales Inquiry", context: note.title })} className="px-6 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#44B549" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
+              <a href={inquiryMailto(locale, { subject: "Sales Inquiry", context: note.title })} className="px-6 py-2.5 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#41A62A" }}>{t({ en: "Talk to Our Sales →", zh: "联系我们的销售 →" }, locale)}</a>
               <Link href="/product" className="px-6 py-2.5 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Explore Products", zh: "浏览产品" }, locale)}</Link>
             </div>
           </div>

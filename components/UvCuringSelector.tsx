@@ -14,7 +14,7 @@ import { products, TECH_ROUTES, techRouteFor, productHref, productImage, localiz
 // and technology labels are already localized in the catalog, so only a few
 // UI strings live here.
 
-const ACCENTS = ["#1A56DB", "#2F80ED", "#087F6B", "#1A9C8E", "#0E7490", "#6BBF3A"];
+const ACCENTS = ["#1A56DB", "#2F80ED", "#087F6B", "#1A9C8E", "#0E7490", "#41A62A"];
 
 // Precompute the product list for each technology route once.
 const ROUTE_PRODUCTS = TECH_ROUTES.map((route) => ({
@@ -34,7 +34,7 @@ export default function UvCuringSelector() {
     <section id="uv-curing-selector" className="bg-white">
       <div className="mx-auto max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
         {/* Hero — short */}
-        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#44B549]">{t({ en: "UV Curing System Selection", zh: "紫外线固化系统选型", th: "การเลือกระบบ UV Curing", vi: "Chọn hệ thống UV Curing" }, locale)}</p>
+        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "UV Curing System Selection", zh: "紫外线固化系统选型", th: "การเลือกระบบ UV Curing", vi: "Chọn hệ thống UV Curing" }, locale)}</p>
         <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "How to Choose the Right UV Curing System", zh: "如何选择合适的紫外线固化系统", th: "วิธีเลือกระบบ UV Curing ที่เหมาะสม", vi: "Cách chọn hệ thống UV Curing phù hợp" }, locale)}</h2>
         <p className="mt-3 max-w-2xl leading-7 text-[#5F6C7B]">{t({ en: "Start with your application, then match wavelength, curing area, intensity and production speed.", zh: "从应用出发，再匹配波长、固化面积、光强与生产速度。", th: "เริ่มจากการใช้งานของคุณ แล้วจับคู่ความยาวคลื่น พื้นที่คิวริ่ง ความเข้มแสง และความเร็วการผลิต", vi: "Bắt đầu từ ứng dụng của bạn, rồi khớp bước sóng, diện tích đóng rắn, cường độ và tốc độ sản xuất." }, locale)}</p>
 

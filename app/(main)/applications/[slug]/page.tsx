@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ApplicationCaseStudyView from "@/components/ApplicationCaseStudyView";
 import { applicationsData, getApplicationBySlug } from "@/data/applicationsData";
+import { languageAlternates } from "@/components/localePageSeo";
 
 const SITE = "https://www.etiatech.com";
 
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: application.seo.title,
     description: application.seo.description,
     keywords: application.seo.keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: languageAlternates(`/applications/${slug}`) },
     openGraph: { title: application.seo.title, description: application.seo.description, url, type: "article", images: [application.image] },
   };
 }

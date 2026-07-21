@@ -4,7 +4,7 @@ const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/contact";
 
 export const metadata: Metadata = {
-  title: "UV Curing Sales & Support — From Selection to Service | ETIA",
+  title: "UV Curing Service & Support — From Selection to Service | ETIA",
   description:
     "Application-driven UV curing support across China and Southeast Asia: system selection, application review, local supply, installation, training, maintenance, repair and radiometer calibration for OmniCure® and Phoseon systems.",
   keywords: [
@@ -27,13 +27,21 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: SITE + PAGE_PATH,
-    languages: { en: SITE + PAGE_PATH, "zh-CN": SITE + "/zh", vi: SITE + "/vi", th: SITE + "/th", "x-default": SITE + PAGE_PATH },
+    // Real per-locale contact pages now exist (previously this pointed at the
+    // locale homepages as the nearest equivalent).
+    languages: {
+      en: SITE + PAGE_PATH,
+      "zh-Hans": `${SITE}/zh${PAGE_PATH}`,
+      vi: `${SITE}/vi${PAGE_PATH}`,
+      th: `${SITE}/th${PAGE_PATH}`,
+      "x-default": SITE + PAGE_PATH,
+    },
   },
   openGraph: {
     type: "website",
     url: SITE + PAGE_PATH,
     siteName: "ETIA",
-    title: "UV Curing Sales & Support — From Selection to Service | ETIA",
+    title: "UV Curing Service & Support — From Selection to Service | ETIA",
     description:
       "Reliable, application-driven UV curing support across China and Southeast Asia — selection, implementation, and long-term service for OmniCure® and Phoseon systems.",
   },

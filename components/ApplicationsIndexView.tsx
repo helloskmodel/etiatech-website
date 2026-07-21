@@ -18,7 +18,7 @@ const listedApplications = getListedApplications();
 
 // Product filter bar — match against each case's recommendedProducts text.
 const PRODUCT_FILTERS: { key: string; label: LangText; token?: string }[] = [
-  { key: "All", label: { en: "All Products", zh: "全部产品" } },
+  { key: "All", label: { en: "All Products", zh: "全部产品" , vi: "Tất cả sản phẩm" } },
   { key: "s2000", label: { en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, token: "S2000" },
   { key: "lx500", label: { en: "OmniCure LX500", zh: "OmniCure LX500" }, token: "LX500" },
   { key: "ac", label: { en: "OmniCure AC Series", zh: "OmniCure AC 系列" }, token: "AC" },
@@ -58,7 +58,7 @@ export default function ApplicationsIndexView() {
     <>
       <header className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
         <HeroBanner src={PAGE_BANNERS.applications} />
-        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1F63D6]/10 blur-3xl" />
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1A56DB]/10 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <div>
@@ -66,7 +66,7 @@ export default function ApplicationsIndexView() {
             <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "Practical UV Curing Solutions", zh: "实用紫外线固化解决方案", th: "โซลูชัน UV Curing สำหรับงานจริง", vi: "Giải pháp UV Curing thực tiễn" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "For Real Production Challenges.", zh: "应用驱动 解决难题", th: "ขับเคลื่อนด้วยการใช้งาน แก้ปัญหาหน้างาน", vi: "Định hướng ứng dụng, giải quyết thách thức." }, locale)}</span></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={inquiryMailto(locale, { subject: "UV Curing Application Inquiry", context: "Application / material / process requirements" })} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)} <ArrowRight className="h-4 w-4" /></a>
-              <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1F63D6]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV Curing 紫外线固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
+              <Link href="/product" className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Browse UV Curing Systems", zh: "浏览UV Curing 紫外线固化系统", th: "ดูระบบ UV Curing", vi: "Xem hệ thống UV Curing" }, locale)}</Link>
             </div>
           </div>
         </div>
@@ -78,12 +78,12 @@ export default function ApplicationsIndexView() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Product filter bar */}
           <div className="mb-4">
-            <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#44B549]">{t({ en: "Filter by Product", zh: "按产品筛选", th: "กรองตามผลิตภัณฑ์", vi: "Lọc theo sản phẩm" }, locale)}</p>
+            <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#41A62A]">{t({ en: "Filter by Product", zh: "按产品筛选", th: "กรองตามผลิตภัณฑ์", vi: "Lọc theo sản phẩm" }, locale)}</p>
             <div className="flex gap-2 overflow-x-auto pb-2">
               {PRODUCT_FILTERS.map((p) => {
                 const count = p.key === "All" ? listedApplications.length : listedApplications.filter((a) => matchesProduct(a, p.key)).length;
                 return (
-                  <button key={p.key} type="button" aria-pressed={product === p.key} onClick={() => setProduct(p.key)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${product === p.key ? "border-[#44B549] bg-[#44B549] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#44B549] hover:text-[#44B549]"}`}>
+                  <button key={p.key} type="button" onClick={() => setProduct(p.key)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${product === p.key ? "border-[#41A62A] bg-[#41A62A] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#41A62A] hover:text-[#41A62A]"}`}>
                     {t(p.label, locale)} <span className="ml-1 opacity-70">{count}</span>
                   </button>
                 );
@@ -97,7 +97,7 @@ export default function ApplicationsIndexView() {
             {["All Applications", ...APPLICATION_CATEGORIES].map((item) => {
               const count = item === "All Applications" ? listedApplications.length : listedApplications.filter((application) => application.industryCategory === item).length;
               return (
-                <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${category === item ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB]"}`}>
+                <button key={item} type="button" onClick={() => setCategory(item)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${category === item ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB]"}`}>
                   {CATEGORY_LABEL[item] ? t(CATEGORY_LABEL[item], locale) : item} <span className="ml-1 opacity-70">{count}</span>
                 </button>
               );

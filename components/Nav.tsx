@@ -5,6 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, t, type Locale, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
+import { localizeHref, delocalizeHref } from "@/components/localeHref";
 
 const languages: Locale[] = ["en", "zh", "vi", "th"];
 
@@ -14,10 +15,8 @@ const links = [
   { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
   { href: "/applications", label: { en: "Applications", zh: "应用", vi: "Ứng dụng", th: "การใช้งาน" } },
   { href: "/insights", label: { en: "Insights", zh: "洞察", vi: "Thông tin", th: "บทความ" } },
-  { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
+  { href: "/contact", label: { en: "Service & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
 ];
-
-const localeHome: Record<Locale, string> = { en: "/", zh: "/zh", vi: "/vi", th: "/th" };
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -25,15 +24,16 @@ export default function Nav() {
   const pathname = usePathname();
   const { locale, setLocale } = useLocale();
 
-  // Switch language without leaving the current page. The (main) routes read
-  // the etia-locale cookie, so setting it and reloading re-renders the same
-  // page in the new language. Only the locale-locked SEO routes (/zh, /vi, /th
-  // and their subpaths) ignore the cookie — there we jump to the target
-  // locale's home instead.
+  // Switch language keeping the current page. When the page has a
+  // locale-locked URL in the target language (e.g. /applications ↔
+  // /vi/applications) navigate there, so the address bar reflects the
+  // language; otherwise stay on the shared route and reload — the
+  // etia-locale cookie re-renders it in the new language.
   const switchLocale = (l: Locale) => {
     setLocale(l);
-    if (/^\/(zh|vi|th)(\/|$)/.test(pathname)) {
-      window.location.assign(localeHome[l]);
+    const target = localizeHref(delocalizeHref(pathname), l);
+    if (target !== pathname) {
+      window.location.assign(target);
     } else {
       window.location.reload();
     }
@@ -55,42 +55,42 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 shadow-sm" style={{ background: "#ffffff" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href={localizeHref("/", locale)} className="flex items-center gap-2">
           <Image
-            src="https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg"
+            src="/logo/etia-tech.png"
             alt="ETIA Technology"
-            width={130}
-            height={44}
-            className="object-contain"
-            unoptimized
+            width={150}
+            height={34}
+            priority
+            className="h-8 w-auto object-contain sm:h-9"
           />
         </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={`text-sm font-medium transition-colors ${
-                pathname === l.href
-                  ? "text-[#1A56DB] border-b-2 border-[#1A56DB] pb-0.5"
-                  : "text-gray-600 hover:text-[#1A56DB]"
-              }`}
-            >
-              {t(l.label, locale)}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const href = localizeHref(l.href, locale);
+            return (
+              <Link
+                key={l.href}
+                href={href}
+                className={`text-sm font-medium transition-colors ${
+                  pathname === href || pathname === l.href
+                    ? "text-[#1A56DB] border-b-2 border-[#1A56DB] pb-0.5"
+                    : "text-gray-600 hover:text-[#1A56DB]"
+                }`}
+              >
+                {t(l.label, locale)}
+              </Link>
+            );
+          })}
           <div className="relative ml-4">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              aria-label={t({ en: "Select language", zh: "选择语言", vi: "Chọn ngôn ngữ", th: "เลือกภาษา" }, locale)}
-              aria-expanded={langOpen}
-              aria-haspopup="true"
               className="flex items-center gap-1.5 px-3 py-2 rounded border border-gray-200 text-sm font-semibold text-gray-700 hover:border-[#1A56DB] hover:text-[#1A56DB] transition-all"
             >
               🌐 {LOCALE_LABELS[locale]}
-              <svg aria-hidden="true" className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              <svg className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
             {langOpen && (
               <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50 min-w-[7rem]">
@@ -100,7 +100,6 @@ export default function Nav() {
                     <button
                       key={l}
                       disabled={!active}
-                      aria-current={locale === l ? "true" : undefined}
                       onClick={() => { if (active) { setLangOpen(false); switchLocale(l); } }}
                       className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
                         !active
@@ -123,15 +122,8 @@ export default function Nav() {
         </div>
 
         {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-gray-600"
-          onClick={() => setOpen(!open)}
-          aria-label={open
-            ? t({ en: "Close menu", zh: "关闭菜单", vi: "Đóng menu", th: "ปิดเมนู" }, locale)
-            : t({ en: "Open menu", zh: "打开菜单", vi: "Mở menu", th: "เปิดเมนู" }, locale)}
-          aria-expanded={open}
-        >
-          <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button className="md:hidden text-gray-600" onClick={() => setOpen(!open)}>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -145,7 +137,7 @@ export default function Nav() {
       {open && (
         <div className="md:hidden border-t border-gray-200 px-4 py-4 flex flex-col gap-4 bg-white">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-gray-600 hover:text-[#1A56DB] text-sm" onClick={() => setOpen(false)}>
+            <Link key={l.href} href={localizeHref(l.href, locale)} className="text-gray-600 hover:text-[#1A56DB] text-sm" onClick={() => setOpen(false)}>
               {t(l.label, locale)}
             </Link>
           ))}
@@ -156,7 +148,6 @@ export default function Nav() {
                 <button
                   key={l}
                   disabled={!active}
-                  aria-current={locale === l ? "true" : undefined}
                   onClick={() => { if (active) { setOpen(false); switchLocale(l); } }}
                   className={`px-3 py-1.5 rounded text-sm font-semibold transition-all ${
                     !active

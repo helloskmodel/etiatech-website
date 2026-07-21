@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { BRAND, MODELS, getCopy, type Lang } from "./copy";
+import { BRAND, MODELS, getCopy, type FormLang } from "./copy";
 import { track } from "./track";
 import ServiceCommitment from "@/components/ServiceCommitment";
 import { localeSalesEmail } from "@/components/contact";
@@ -17,7 +17,7 @@ export default function LeadForm({
   compact = false,
   showModel = true,
 }: {
-  lang: Lang;
+  lang: FormLang;
   page: string;
   compact?: boolean;
   showModel?: boolean;

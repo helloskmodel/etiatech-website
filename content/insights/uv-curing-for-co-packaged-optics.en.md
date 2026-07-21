@@ -23,7 +23,7 @@ The dominant failure mode is deceptively simple: **UV adhesive cure shrinkage**.
 
 ## How OmniCure addresses each one
 
-The [OmniCure LX500 V2](/product/systems/lx500) multi-channel UV LED platform, paired with 365 nm V3 LED heads, delivers the high-stability, multi-point curing CPO fiber-array bonding requires. Combined with in-process radiometry, manufacturers can verify UV dose at each individual bond site — establishing the process-control discipline that a 50–100 nm budget demands.
+The [OmniCure LX500](/product/systems/lx500) multi-channel UV LED platform, paired with 365 nm V3 LED heads, delivers the high-stability, multi-point curing CPO fiber-array bonding requires. Combined with in-process radiometry, manufacturers can verify UV dose at each individual bond site — establishing the process-control discipline that a 50–100 nm budget demands.
 
 For qualification lots and new product introduction — where documented stability matters most — the OmniCure S2000 Elite's Closed-Loop Feedback holds output within **±5% of set point** across millions of cycles, with NIST-traceable calibration.
 

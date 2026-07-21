@@ -2,7 +2,13 @@ import type { MetadataRoute } from "next";
 import { products, productHref, productImage } from "@/components/productCatalog";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
-import { getAllArticles } from "@/components/insights";
+import { getAllArticles, articleLocales } from "@/components/insights";
+import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
+import { LAMP_PATHS, LAMP_LANGUAGES } from "@/components/omnicure/s2000Lamp";
+import { languageAlternates, brandLanguageAlternates } from "@/components/localePageSeo";
+
+// URL prefixes of the four language versions of a mirrored main-site path.
+const LOCALE_PREFIXES = ["", "/zh", "/vi", "/th"] as const;
 
 const SITE = "https://www.etiatech.com";
 
@@ -18,62 +24,103 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: SITE,
       changeFrequency: "weekly",
       priority: 1.0,
-      alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
+      alternates: { languages: { en: SITE, "zh-Hans": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
     },
     ...["zh", "vi", "th"].map((locale) => ({
       url: `${SITE}/${locale}`,
       changeFrequency: "weekly" as const,
       priority: 0.9,
-      alternates: { languages: { en: SITE, "zh-CN": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
+      alternates: { languages: { en: SITE, "zh-Hans": `${SITE}/zh`, vi: `${SITE}/vi`, th: `${SITE}/th`, "x-default": SITE } },
     })),
-    // Brand landing pages
-    { url: `${SITE}/product/omnicure`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE}/product/phoseon`, changeFrequency: "monthly", priority: 0.85 },
+    // Brand landing pages. OmniCure and Phoseon exist in all four languages
+    // (hreflang-linked); Fusion UV / Noblelight are EN-only for now.
+    ...(["omnicure", "phoseon"] as const).flatMap((slug) => {
+      const langs = brandLanguageAlternates(slug);
+      const priority = slug === "omnicure" ? 0.9 : 0.85;
+      return LOCALE_PREFIXES.map((prefix) => ({
+        url: `${SITE}${prefix}/product/${slug}`,
+        changeFrequency: "monthly" as const,
+        priority,
+        alternates: { languages: langs },
+      }));
+    }),
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE}/applications`, changeFrequency: "weekly", priority: 0.9 },
+    // Applications index (EN + ZH + VI + TH), hreflang-linked.
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/applications`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      alternates: { languages: languageAlternates("/applications") },
+    })),
     // NOTE: /application, /product and /product/systems are intentionally NOT
     // listed — next.config redirects them (308) to /applications and
     // /product/omnicure. Only the canonical 200 destinations belong in the
     // sitemap; listing a redirect makes Google report "Page with redirect".
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE}/case-studies`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${SITE}/insights`, changeFrequency: "weekly", priority: 0.7 },
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/case-studies`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      alternates: { languages: languageAlternates("/case-studies") },
+    })),
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/insights`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      alternates: { languages: languageAlternates("/insights") },
+    })),
     { url: `${SITE}/terms`, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE}/contact`, changeFrequency: "monthly", priority: 0.8 },
-    // OmniCure S2000 Elite product page (main + Thai + Vietnamese), hreflang-linked.
-    ...["/product/omnicure/s2000", "/th/product/omnicure/s2000", "/vi/product/omnicure/s2000"].map((path) => ({
+    ...LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/contact`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: { languages: languageAlternates("/contact") },
+    })),
+    // OmniCure S2000 Elite product page (EN + ZH + TH + VI), hreflang-linked.
+    ...["/product/omnicure/s2000", "/zh/product/omnicure/s2000", "/th/product/omnicure/s2000", "/vi/product/omnicure/s2000"].map((path) => ({
       url: `${SITE}${path}`,
       changeFrequency: "monthly" as const,
       priority: 0.95,
       alternates: {
         languages: {
           en: `${SITE}/product/omnicure/s2000`,
+          "zh-Hans": `${SITE}/zh/product/omnicure/s2000`,
           th: `${SITE}/th/product/omnicure/s2000`,
           vi: `${SITE}/vi/product/omnicure/s2000`,
           "x-default": `${SITE}/product/omnicure/s2000`,
         },
       },
     })),
-    // Standalone OmniCure Thailand SEM landing pages (en + th, hreflang-linked).
-    {
-      url: `${SITE}/omnicure-thailand`,
-      changeFrequency: "weekly",
+    // System detail pages with locale-locked versions (currently LX500),
+    // one hreflang-linked entry per language. The generic product loop below
+    // skips these because their EN URL is already in `seen`.
+    ...LOCALIZED_SYSTEM_SLUGS.flatMap((slug) =>
+      ["", "/zh", "/vi", "/th"].map((prefix) => ({
+        url: `${SITE}${prefix}/product/systems/${slug}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+        alternates: { languages: systemLanguages(slug) },
+      }))
+    ),
+    // NOTE: the OmniCure country SEM landing pages (/omnicure-thailand,
+    // /th/omnicure, /omnicure-vietnam, /vi/omnicure) are intentionally NOT
+    // listed — next.config now redirects them to the proper OmniCure product
+    // pages (/product/omnicure, /th/product/omnicure, /vi/product/omnicure),
+    // which are already in the sitemap via the brand-pages loop above. Listing
+    // a redirecting URL makes Google report "Page with redirect".
+    // S2000 Elite replacement lamp (EN + ZH + TH + VI), hreflang-linked.
+    ...(Object.values(LAMP_PATHS) as string[]).map((path) => ({
+      url: `${SITE}${path}`,
+      changeFrequency: "weekly" as const,
       priority: 0.9,
-      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
-    },
-    {
-      url: `${SITE}/th/omnicure`,
-      changeFrequency: "weekly",
-      priority: 0.9,
-      alternates: { languages: { en: `${SITE}/omnicure-thailand`, th: `${SITE}/th/omnicure`, "x-default": `${SITE}/omnicure-thailand` } },
-    },
+      alternates: { languages: LAMP_LANGUAGES },
+    })),
     // Standalone product SEM landing pages (S2000, LX500), en + th.
     ...[
       { en: "/omnicure-s2000", th: "/th/omnicure-s2000" },
       { en: "/omnicure-lx500", th: "/th/omnicure-lx500" },
       { en: "/omnicure-s1500-pro", th: "/th/omnicure-s1500-pro" },
-      { en: "/product/omnicure/s2000-lamp", th: "/th/omnicure-s2000-lamp" },
     ].flatMap((pair) => {
       const langs = { en: `${SITE}${pair.en}`, th: `${SITE}${pair.th}`, "x-default": `${SITE}${pair.en}` };
       return [
@@ -103,32 +150,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Individual case-study landing pages.
-  const casePages: MetadataRoute.Sitemap = caseStudiesCn.map((c) => ({
-    url: `${SITE}/case-studies/${c.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.6,
-    ...(c.image ? { images: [c.image] } : {}),
-  }));
+  // Individual case-study landing pages (EN + ZH + VI + TH each), with the
+  // hero image attached for image-search indexing.
+  const casePages: MetadataRoute.Sitemap = caseStudiesCn.flatMap((c) =>
+    LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/case-studies/${c.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: { languages: languageAlternates(`/case-studies/${c.slug}`) },
+      ...(c.image ? { images: [c.image] } : {}),
+    }))
+  );
 
-  const applicationCasePages: MetadataRoute.Sitemap = applicationsData.map((application) => ({
-    url: `${SITE}/applications/${application.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.75,
-    ...(application.image ? { images: [application.image] } : {}),
-  }));
+  // Application case-study pages (EN + ZH + VI + TH each), with images.
+  const applicationCasePages: MetadataRoute.Sitemap = applicationsData.flatMap((application) =>
+    LOCALE_PREFIXES.map((prefix) => ({
+      url: `${SITE}${prefix}/applications/${application.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+      alternates: { languages: languageAlternates(`/applications/${application.slug}`) },
+      ...(application.image ? { images: [application.image] } : {}),
+    }))
+  );
 
   // NOTE: the 62 application-note detail pages (/application/[slug]) are
   // intentionally NOT listed yet — their content is still being reviewed and
   // will be added to the sitemap gradually as each note is verified.
 
-  // Published insights articles (English required per slug).
-  const insightPages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({
-    url: `${SITE}/insights/${a.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.6,
-    ...(a.date ? { lastModified: a.date } : {}),
-  }));
+  // Published insights articles — one entry per available locale,
+  // hreflang-linked, with the real publish date as lastModified.
+  const INS_PREFIX: Record<string, string> = { en: "", zh: "/zh", vi: "/vi", th: "/th" };
+  const insightPages: MetadataRoute.Sitemap = getAllArticles().flatMap((a) => {
+    const locs = articleLocales(a);
+    const languages: Record<string, string> = {};
+    for (const l of locs) languages[l === "zh" ? "zh-Hans" : l] = `${SITE}${INS_PREFIX[l]}/insights/${a.slug}`;
+    languages["x-default"] = `${SITE}/insights/${a.slug}`;
+    return locs.map((l) => ({
+      url: `${SITE}${INS_PREFIX[l]}/insights/${a.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: { languages },
+      ...(a.date ? { lastModified: a.date } : {}),
+    }));
+  });
 
   return [...core, ...productPages, ...applicationCasePages, ...insightPages, ...casePages];
 }

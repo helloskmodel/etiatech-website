@@ -950,7 +950,7 @@
       ]
     },
     {
-      "model": "LX500 V2",
+      "model": "LX500",
       "slug": "product/systems/lx500",
       "category": {
         "en": "UV LED Spot Curing",
@@ -958,14 +958,14 @@
         "vi": "Đóng rắn UV LED điểm"
       },
       "name": {
-        "en": "OmniCure LX500 V2",
-        "zh": "OmniCure LX500 V2",
-        "vi": "OmniCure LX500 V2"
+        "en": "OmniCure LX500",
+        "zh": "OmniCure LX500",
+        "vi": "OmniCure LX500"
       },
       "description": {
-        "en": "The LX500 V2 series delivers outstanding optical stability with proprietary Intelli-Lamp LED technology, exceptionally high peak irradiance, and unparalleled process control with StepCure 2.0. A newly designed 2.4-inch full color LCD provides flexible control via keypad, foot pedal, PLC, or USB, with real-time programming and data logging via Micro SD card.",
-        "zh": "LX500 V2系列搭载专利Intelli-Lamp LED技术，光学稳定性出众，峰值辐照度极高，并通过StepCure 2.0实现无与伦比的工艺控制。全新设计的2.4英寸全彩液晶屏支持四向按键、脚踏开关、PLC或USB等多种控制方式，并可通过Micro SD卡实现实时编程与数据记录。",
-        "vi": "Dòng LX500 V2 mang lại độ ổn định quang học vượt trội nhờ công nghệ Intelli-Lamp LED độc quyền, độ rọi đỉnh cực cao, và khả năng kiểm soát quy trình vô song với StepCure 2.0. Màn hình LCD màu 2.4 inch thiết kế mới cho phép điều khiển linh hoạt qua bàn phím, bàn đạp, PLC hoặc USB, cùng lập trình thời gian thực và ghi log dữ liệu qua thẻ Micro SD."
+        "en": "The LX500 series delivers outstanding optical stability with proprietary Intelli-Lamp LED technology, exceptionally high peak irradiance, and unparalleled process control with StepCure 2.0. A newly designed 2.4-inch full color LCD provides flexible control via keypad, foot pedal, PLC, or USB, with real-time programming and data logging via Micro SD card.",
+        "zh": "LX500系列搭载专利Intelli-Lamp LED技术，光学稳定性出众，峰值辐照度极高，并通过StepCure 2.0实现无与伦比的工艺控制。全新设计的2.4英寸全彩液晶屏支持四向按键、脚踏开关、PLC或USB等多种控制方式，并可通过Micro SD卡实现实时编程与数据记录。",
+        "vi": "Dòng LX500 mang lại độ ổn định quang học vượt trội nhờ công nghệ Intelli-Lamp LED độc quyền, độ rọi đỉnh cực cao, và khả năng kiểm soát quy trình vô song với StepCure 2.0. Màn hình LCD màu 2.4 inch thiết kế mới cho phép điều khiển linh hoạt qua bàn phím, bàn đạp, PLC hoặc USB, cùng lập trình thời gian thực và ghi log dữ liệu qua thẻ Micro SD."
       },
       "features": [
         {

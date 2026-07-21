@@ -47,7 +47,7 @@ Standard Markdown below the frontmatter: `##`/`###` headings, lists, **bold**,
 
 **Internal links are important for SEO** — link to products and applications:
 
-- Products: `[OmniCure LX500 V2](/product/systems/lx500)` or a brand page `/product/omnicure`
+- Products: `[OmniCure LX500](/product/systems/lx500)` or a brand page `/product/omnicure`
 - Applications: `[case study](/application#AN-PHO-002)` (deep-links open that note)
 - Contact: `[Talk to our engineers](mailto:mark_tang@etia-tech.com?subject=Inquiry)`
 

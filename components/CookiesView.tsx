@@ -24,7 +24,7 @@ const cookieTypes: { name: LangText; purpose: LangText; color: string }[] = [
       th: "จดจำการเลือกที่คุณตั้งไว้ (เช่น ภาษา) เพื่อมอบประสบการณ์ที่เป็นส่วนตัวมากยิ่งขึ้น",
       vi: "Ghi nhớ các lựa chọn của bạn (chẳng hạn như ngôn ngữ) để mang lại trải nghiệm được cá nhân hóa hơn.",
     },
-    color: "#44B549",
+    color: "#41A62A",
   },
   {
     name: { en: "Analytics", zh: "分析统计", th: "การวิเคราะห์", vi: "Phân tích" },
@@ -45,7 +45,7 @@ export default function CookiesView() {
       {/* Hero */}
       <section className="py-12 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1241a3 0%, #1A56DB 100%)" }}>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "Legal", zh: "法律条款", th: "ข้อกฎหมาย", vi: "Pháp lý" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#41A62A" }}>{t({ en: "Legal", zh: "法律条款", th: "ข้อกฎหมาย", vi: "Pháp lý" }, locale)}</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "Cookie Policy", zh: "Cookie 政策", th: "นโยบายคุกกี้", vi: "Chính sách Cookie" }, locale)}</h1>
           <p className="text-sm text-gray-300">{t({ en: "Last updated:", zh: "最后更新:", th: "อัปเดตล่าสุด:", vi: "Cập nhật lần cuối:" }, locale)} {t(LAST_UPDATED, locale)}</p>
         </div>
@@ -89,7 +89,7 @@ export default function CookiesView() {
             <h2 className="text-lg font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Contact", zh: "联系方式", th: "ติดต่อ", vi: "Liên hệ" }, locale)}</h2>
             <p>
               {t({ en: "Questions about this Cookie Policy? Email", zh: "对本 Cookie 政策有疑问?请发送邮件至", th: "มีคำถามเกี่ยวกับนโยบายคุกกี้ฉบับนี้? ส่งอีเมลถึง", vi: "Có câu hỏi về Chính sách Cookie này? Gửi email đến" }, locale)}{" "}
-              <a href={`mailto:${localeSalesEmail(locale)}`} className="font-medium hover:underline" style={{ color: "#44B549" }}>{localeSalesEmail(locale)}</a>{t({ en: ".", zh: "。", th: ".", vi: "." }, locale)}
+              <a href={`mailto:${localeSalesEmail(locale)}`} className="font-medium hover:underline" style={{ color: "#41A62A" }}>{localeSalesEmail(locale)}</a>{t({ en: ".", zh: "。", th: ".", vi: "." }, locale)}
             </p>
           </div>
 

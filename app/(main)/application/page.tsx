@@ -36,8 +36,8 @@ export default function ApplicationPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#44B549" }}>{t({ en: "10 Industries · 62 Application Notes", zh: "10大行业 · 62个应用点" }, locale)}</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "Validated UV Curing Applications.", zh: "经过验证的 UV Curing 紫外线固化应用" }, locale)}<br /><span style={{ color: "#44B549" }}>{t({ en: "Reliable Performance.", zh: "可靠稳定的性能" }, locale)}</span></h1>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#41A62A" }}>{t({ en: "10 Industries · 62 Application Notes", zh: "10大行业 · 62个应用点" }, locale)}</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">{t({ en: "Validated UV Curing Applications.", zh: "经过验证的 UV Curing 紫外线固化应用" }, locale)}<br /><span style={{ color: "#41A62A" }}>{t({ en: "Reliable Performance.", zh: "可靠稳定的性能" }, locale)}</span></h1>
           <p className="text-base text-gray-200 mb-8 leading-relaxed">
             {t({ en: "UV curing solutions proven across 10 industries and 62 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.", zh: "经10大行业、62个应用场景验证的UV Curing 紫外线固化解决方案——帮助制造商在严苛的生产环境中获得稳定的固化效果。" }, locale)}
           </p>
@@ -129,7 +129,7 @@ export default function ApplicationPage() {
       {/* Customer Success */}
       <section id="case-studies" className="py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#44B549" }}>{t({ en: "Customer Success", zh: "客户成功案例" }, locale)}</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Customer Success", zh: "客户成功案例" }, locale)}</p>
           <h2 className="text-3xl font-bold mb-3" style={{ color: "#1A56DB" }}>{t({ en: "From UV Curing Know-How to Real Results", zh: "从 UV Curing 紫外线固化专业积淀，到落地实效成果" }, locale)}</h2>
           <p className="text-gray-500 mb-10 max-w-3xl text-balance">{t({ en: "Unmatched UV curing expertise — full system solutions where chemistry, material, and equipment work as one.", zh: "积累丰富的UV Curing 紫外线固化的经验—— 为客户制定融合耗材、胶粘剂与设备一体化解决方案。" }, locale)}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,7 +144,7 @@ export default function ApplicationPage() {
                   <Image src={c.image} alt={t(c.title, locale)} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-[#44B549]">{t(c.industry, locale)} · {c.product}</p>
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-[#41A62A]">{t(c.industry, locale)} · {c.product}</p>
                   <h3 className="font-bold text-base leading-snug text-gray-900 transition-colors group-hover:text-[#1A56DB]">{t(c.title, locale)}</h3>
                   <p className="mt-3 line-clamp-2 flex-1 text-sm leading-relaxed text-gray-500">{t(c.scene, locale)}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#1A56DB]">{locale === "zh" ? "查看案例 →" : "Read case →"}</span>

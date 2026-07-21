@@ -20,7 +20,7 @@ export default function ApplicationCard({ application, compact = false }: { appl
         </div>
       )}
       <div className="border-t border-gray-100 p-5">
-        <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-[#44B549]">{industry}</p>
+        <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-[#41A62A]">{industry}</p>
         <h3 className="text-base font-bold leading-snug text-gray-900 transition-colors group-hover:text-[#1A56DB]">{title}</h3>
         {!compact && <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-500">{subtitle}</p>}
         <p className="mt-4 text-xs font-semibold text-[#1A56DB]">{t({ en: "Read application →", zh: "查看应用 →", th: "ดูการใช้งาน →", vi: "Xem ứng dụng →" }, locale)}</p>

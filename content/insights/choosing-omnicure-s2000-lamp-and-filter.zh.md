@@ -3,7 +3,7 @@ title: "如何为 OmniCure S2000 Elite 选择正确的灯管与光学滤光片"
 description: "标准型还是表面固化型？该用哪片带通滤光片？一份实用指南，帮你把 S2000 Elite 灯管模块（012-68000R / 012-69000R）与滤光片匹配到你的胶粘剂与工艺。"
 date: 2026-07-08
 tags: [OmniCure, S2000 Elite, UV光固化, 灯管选型]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-%20OMNICURE%20S2000%20ELITE%20-LAMP.webp
+cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20LAMP%201609.jpg?imageMogr2/thumbnail/1200x/format/webp/quality/82
 author: ETIA Technology
 ---
 

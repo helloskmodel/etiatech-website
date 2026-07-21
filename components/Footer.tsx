@@ -12,15 +12,14 @@ export default function Footer() {
     { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
     { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
     { href: "/applications", label: { en: "Applications", zh: "应用", vi: "Ứng dụng", th: "การใช้งาน" } },
-    { href: "/about", label: { en: "About ETIA", zh: "关于我们", vi: "Về ETIA", th: "เกี่ยวกับ ETIA" } },
-    { href: "/contact", label: { en: "Sales & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
+    { href: "/contact", label: { en: "Service & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
   ];
   return (
     <footer className="border-t border-gray-200 mt-20" style={{ background: "#f8f9fb" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <Image
-            src="https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIALOGO.jpg"
+            src="/logo/etia-tech.png"
             alt="ETIA Technology"
             width={150}
             height={50}
@@ -49,7 +48,7 @@ export default function Footer() {
         </div>
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Contact", zh: "联系方式", vi: "Liên hệ", th: "ติดต่อ" }, locale)}</p>
-          <a href={inquiryMailto(locale, {})} className="text-xs hover:underline" style={{ color: "#44B549" }}>
+          <a href={inquiryMailto(locale, {})} className="text-xs hover:underline" style={{ color: "#41A62A" }}>
             {localeSalesEmail(locale)}
           </a>
         </div>

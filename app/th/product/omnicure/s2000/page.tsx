@@ -5,7 +5,7 @@ import { s2000FaqsTh } from "@/components/s2000FaqTh";
 const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/th/product/omnicure/s2000";
 const OG_IMAGE =
-  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp";
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 
 export const metadata: Metadata = {
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: SITE + PAGE_PATH,
-    // hreflang must stay bidirectional — mirror app/sitemap.ts and the
-    // en/vi S2000 pages.
+    // hreflang group — must be identical on all four language versions.
     languages: {
       en: `${SITE}/product/omnicure/s2000`,
-      th: `${SITE}/th/product/omnicure/s2000`,
+      "zh-Hans": `${SITE}/zh/product/omnicure/s2000`,
       vi: `${SITE}/vi/product/omnicure/s2000`,
+      th: `${SITE}/th/product/omnicure/s2000`,
       "x-default": `${SITE}/product/omnicure/s2000`,
     },
   },
@@ -72,11 +72,6 @@ const productJsonLd = {
     { "@type": "DigitalDocument", name: "OmniCure S2000 Elite Quick Start Guide", url: `${PDF}/Quick%20Start%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf` },
     { "@type": "DigitalDocument", name: "OmniCure S2000 Elite User Guide", url: `${PDF}/User%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf` },
   ],
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    seller: { "@type": "Organization", name: "Etiatec (Thailand) Co., Ltd." },
-  },
 };
 
 const breadcrumbJsonLd = {

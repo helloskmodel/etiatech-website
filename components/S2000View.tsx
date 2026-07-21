@@ -23,8 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 
-const PROMO = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION";
-const HERO_IMG = `${PROMO}/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp`;
+const HERO_IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82";
 
 // Downloadable technical documents (COS-hosted PDFs)
 const PDF = {
@@ -42,7 +41,7 @@ const LAMP_PATH = "/product/omnicure/s2000-lamp";
 const SUPPORT_PATH = "/contact";
 
 const BLUE = "#1A56DB";
-const GREEN = "#44B549";
+const GREEN = "#41A62A";
 
 const heroStats: { val: string; label: LangText }[] = [
   { val: "30 / 37 W/cm²", label: { en: "Optical output", zh: "光学输出" } },
@@ -430,7 +429,7 @@ export default function S2000View() {
       </section>
 
       {/* Trust bar — OmniCure brand variant (4 trust points) */}
-      <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-5 text-white sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-[#143C96] to-[#1A56DB] px-4 py-5 text-white sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
           <p className="text-sm font-semibold">
             {t({ en: "ETIA is an authorized distributor of OmniCure® products.", zh: "ETIA 是 OmniCure® 产品的授权分销商。" }, locale)}
@@ -623,7 +622,7 @@ export default function S2000View() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {supportCards.map((c) => (
               <div key={c.title.en} className="flex gap-4 rounded-2xl border border-gray-100 bg-white p-6">
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "#44B54918", color: GREEN }}>
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "#41A62A18", color: GREEN }}>
                   <c.Icon size={22} strokeWidth={1.75} />
                 </span>
                 <div>
@@ -710,7 +709,7 @@ export default function S2000View() {
       </section>
 
       {/* 11. Final CTA */}
-      <section className="bg-gradient-to-r from-[#143C96] to-[#1F63D6] px-4 py-16 text-white sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-[#143C96] to-[#1A56DB] px-4 py-16 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <Zap className="mx-auto h-9 w-9 text-[#8BE172]" />
           <h2 className="mt-5 text-2xl md:text-4xl font-bold">
@@ -750,7 +749,7 @@ export default function S2000View() {
           </div>
           <p className="mt-6 text-xs text-blue-200">
             <Link href={SUPPORT_PATH} className="underline hover:text-white">
-              {t({ en: "Sales & Support", zh: "销售与支持" }, locale)}
+              {t({ en: "Service & Support", zh: "销售与支持" }, locale)}
             </Link>
             <span className="mx-2">·</span>
             <Link href="/contact" className="underline hover:text-white">

@@ -39,12 +39,12 @@ export const products: Product[] = [
   // ───────────────── TECHNOLOGY 1: UV SPOT CURING ─────────────────
   {
     slug: "lx500",
-    name: "OmniCure LX500 V2 UV LED Spot Curing Controller",
+    name: "OmniCure LX500 UV LED Spot Curing Controller",
     brand: "OmniCure",
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
-    accent: "#44B549",
+    accent: "#41A62A",
     // Short, one-idea-per-line copy distilled from the official Excelitas
     // LX500 brochure — the spec table below carries the full detail.
     intro:
@@ -87,7 +87,7 @@ export const products: Product[] = [
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
-    accent: "#44B549",
+    accent: "#41A62A",
     intro:
       "Designed for use with the OmniCure LX500 Controller, the OmniCure V3 UV LED Heads feature next-generation high-output UV LEDs delivering best-in-class optical performance. With up to 120% increased optical power and up to 165% increase in peak irradiance compared to the predecessor MAX LED Heads, the V3 Heads deliver high dosage distributed uniformly across the spot area for faster, more consistent cures with greater control. Available in 365, 385, 395 and 405 nm wavelengths, delivering up to 22 W/cm² peak irradiance and 1,100 mW power with an exceptionally uniform beam profile.",
     features: [
@@ -127,7 +127,7 @@ export const products: Product[] = [
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV LED Spot",
-    accent: "#44B549",
+    accent: "#41A62A",
     intro:
       "The OmniCure LS200 UV LED Radiometry and Calibration System ensures precise measurement and calibration of UV LED power or irradiance directly at the cure site, enabling manufacturers to control light output for a reliable, repeatable curing process. An enhanced version of its LS100 predecessor, the LS200 brings expanded measurement range and NRC-traceable sensor calibration. With accuracy of ±10% and resolution of 1 mW/cm² (irradiance) and 1 mW (power), the LS200 integrates seamlessly with the LX500 controller via the Beam Positioning Kit.",
     features: [
@@ -169,7 +169,7 @@ export const products: Product[] = [
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "UV Radiometer",
-    accent: "#44B549",
+    accent: "#41A62A",
     intro:
       "The OmniCure R2000 UV Radiometer is the most advanced and accurate tool for measuring irradiance or power from a UV Spot Curing System. Radiometry is essential for maintaining a repeatable UV curing process. The R2000 combines with the OmniCure S2000 Elite, S2000 XLA, or S1500 to provide a complete curing station with unmatched control and repeatability — the only system that can be calibrated in real time for NIST accuracy. Special built-in electronics allow connection of custom sensors that measure light energy directly at the cure site or within cure-ring bonding fixtures, including the OmniCure UV Cure Ring Radiometer and UV Cure Site Radiometer.",
     features: [
@@ -216,7 +216,7 @@ export const products: Product[] = [
     // The S2E.png asset is actually the S2E Network Module; use the real
     // S2000 Elite product photo (same one the dedicated S2000 page uses).
     imageUrl:
-      "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp",
+      "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/PRODUCT-UV%20LAMP%20SPOT-S2000%20HERO.png?imageMogr2/thumbnail/900x/format/webp/quality/82",
     intro:
       "OmniCure S2000 Elite is a new generation of lamp-based UV spot curing system designed for the most demanding manufacturing applications. Equipped with proprietary Closed-Loop Feedback and Intelli-Lamp 2.0 technologies, it automatically monitors and maintains optical output within ±5%. The system features a high-speed mechanical shutter with 30 ms response and is Industry 4.0-ready with Ethernet, USB, SD card, NFC, and programmable PLC I/O.",
     features: [
@@ -1513,7 +1513,7 @@ export function getProduct(slug: string): Product | undefined {
 export const modelToSlug: Record<string, string> = {
   "S2000 Elite": "s2000-elite",
   "S1500 Pro": "s1500-pro",
-  "LX500 V2": "lx500",
+  "LX500": "lx500",
   "LS200 Radiometer": "ls200",
   "UV LED Heads (V3)": "v3-led-heads",
   "R2000 Radiometer": "r2000",
@@ -1622,7 +1622,7 @@ export const productHighlights: Record<string, LangText[]> = {
 // (case-sensitive, space-bearing) object keys in the bucket.
 export type ProductDoc = {
   file: string;
-  kind: { en: string; zh: string };
+  kind: { en: string; zh: string; vi?: string; th?: string };
   // Optional COS folder override; defaults to PRODUCT_PDF_BASE.
   base?: string;
 };
@@ -1633,9 +1633,9 @@ const PRODUCT_PDF_BASE =
 const SITE_PDF_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 
-const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" };
-const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" };
-const DOC_USER_GUIDE = { en: "User Guide", zh: "用户指南" };
+const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" , vi: "Brochure", th: "โบรชัวร์" };
+const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" , vi: "Hướng dẫn khởi động nhanh", th: "คู่มือเริ่มต้นอย่างรวดเร็ว" };
+const DOC_USER_GUIDE = { en: "User Guide", zh: "用户指南", vi: "Hướng dẫn sử dụng", th: "คู่มือการใช้งาน" };
 
 export const productDocs: Record<string, ProductDoc[]> = {
   "lx500": [
@@ -1818,6 +1818,11 @@ export function productModel(p: Product): string {
 // Product JSON-LD (schema.org/Product) for a product detail page. ETIA is the
 // distributor/seller; the brand is the manufacturer. areaServed reflects the
 // Asia-Pacific territories ETIA covers.
+//
+// No `offers` block: ETIA is a quote-based distributor with no public list
+// prices, so an Offer would be incomplete (Google flags "price required") and
+// would wrongly signal an e-commerce "buy now" flow. The page is inquiry-first
+// ("Request a Quote"), so we publish an informational Product only.
 export function productJsonLd(p: Product) {
   const img = productImage(p);
   return {
@@ -1830,12 +1835,6 @@ export function productJsonLd(p: Product) {
     brand: { "@type": "Brand", name: p.brand },
     manufacturer: { "@type": "Organization", name: BRAND_MANUFACTURER[p.brandId] },
     url: `${SITE}${productHref(p)}`,
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "ETIA Technology" },
-      areaServed: ["CN", "HK", "TH", "VN"],
-    },
   };
 }
 
