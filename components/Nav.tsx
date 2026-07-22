@@ -14,6 +14,7 @@ const links = [
   { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
   { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
   { href: "/applications", label: { en: "Applications", zh: "应用", vi: "Ứng dụng", th: "การใช้งาน" } },
+  { href: "/industries", label: { en: "Industries", zh: "行业方案", vi: "Ngành", th: "อุตสาหกรรม" } },
   { href: "/insights", label: { en: "Insights", zh: "洞察", vi: "Thông tin", th: "บทความ" } },
   { href: "/contact", label: { en: "Service & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
 ];
