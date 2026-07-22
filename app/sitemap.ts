@@ -58,6 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // /product/omnicure. Only the canonical 200 destinations belong in the
     // sitemap; listing a redirect makes Google report "Page with redirect".
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
+    // Industry solution pages (cookie-localized single URLs).
+    { url: `${SITE}/industries`, changeFrequency: "monthly", priority: 0.8 },
+    ...["medical", "electronics", "optical-communications", "new-energy", "printing-packaging", "advanced-materials"].map((slug) => ({
+      url: `${SITE}/industries/${slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
     ...LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/case-studies`,
       changeFrequency: "weekly" as const,
