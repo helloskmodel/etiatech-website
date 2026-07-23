@@ -189,38 +189,6 @@ export const industries: Industry[] = [
     ctaSubject: "Printing / Packaging UV Curing Inquiry",
     relatedNoteSlugs: [],
   },
-  {
-    slug: "advanced-materials",
-    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/vericure.jpg",
-    name: { en: "Advanced Materials", zh: "先进材料", th: "วัสดุขั้นสูง", vi: "Vật liệu tiên tiến" },
-    headline: { en: "UV Curing for Advanced Coatings, Composites & Wood Finishing", zh: "先进材料、涂层与木材 UV 固化方案", th: "การบ่ม UV สำหรับสารเคลือบขั้นสูง คอมโพสิต และงานไม้", vi: "UV curing cho lớp phủ tiên tiến, composite & hoàn thiện gỗ" },
-    sub: { en: "Deep-cure dose and broadband spectrum for thick, pigmented and textured coatings.", zh: "为厚涂层、含颜料涂层与纹理表面提供深固化剂量与宽谱覆盖。", th: "โดสบ่มลึกและสเปกตรัมกว้าง สำหรับชั้นเคลือบหนา มีสี และพื้นผิวขรุขระ", vi: "Liều cure sâu và phổ rộng cho lớp phủ dày, có màu và bề mặt gồ ghề." },
-    painPoints: [
-      { en: "Thick UV coatings need high dose for deep cure penetration", zh: "厚 UV 涂层需要高剂量实现深层固化", th: "ชั้นเคลือบ UV หนาต้องการโดสสูงเพื่อบ่มลึก", vi: "Lớp phủ UV dày cần liều cao để cure sâu" },
-      { en: "Wood surfaces are irregular — uniform area coverage is hard", zh: "木材表面不规则,均匀覆盖是难点", th: "ผิวไม้ไม่เรียบ — ครอบคลุมสม่ำเสมอได้ยาก", vi: "Bề mặt gỗ không đều — khó phủ đồng nhất" },
-      { en: "Fast conveyor speeds — flooring runs at 30–50 m/min", zh: "输送速度快——地板产线 30–50 m/min", th: "สายพานเร็ว — พื้นไม้วิ่ง 30–50 m/min", vi: "Băng tải nhanh — sàn gỗ chạy 30–50 m/phút" },
-      { en: "Pigmented and dark coatings need broadband UV", zh: "含颜料与深色涂层需要宽谱 UV", th: "เคลือบสีเข้มต้องการ UV สเปกตรัมกว้าง", vi: "Lớp phủ có màu và tối cần UV phổ rộng" },
-    ],
-    valueProp: {
-      en: "Water-cooled LED systems (VeriCure) and broadband microwave systems (LightHammer) deliver the dose and spectral coverage that thick coatings and wood finishing demand.",
-      zh: "水冷 LED 系统(VeriCure)与宽谱微波系统(LightHammer)提供厚涂层与木材涂装所需的剂量与光谱覆盖。",
-      th: "ระบบ LED ระบายความร้อนด้วยน้ำ (VeriCure) และระบบไมโครเวฟสเปกตรัมกว้าง (LightHammer) ให้โดสและช่วงสเปกตรัมที่งานเคลือบหนาและงานไม้ต้องการ",
-      vi: "Hệ LED làm mát nước (VeriCure) và hệ vi sóng phổ rộng (LightHammer) cho liều và phổ mà lớp phủ dày cùng hoàn thiện gỗ đòi hỏi.",
-    },
-    products: [
-      { slug: "vericure", name: "Phoseon VeriCure", note: { en: "Wide-format wood coating at up to 50 m/min", zh: "宽幅木材涂装,线速最高 50 m/min", th: "เคลือบไม้หน้ากว้างที่สูงสุด 50 m/min", vi: "Phủ gỗ khổ rộng tới 50 m/phút" } },
-      { slug: "lighthammer-10", name: "LightHammer 10 / 6", note: { en: "Broadband microwave for pigmented coatings", zh: "宽谱微波:含颜料涂层", th: "ไมโครเวฟสเปกตรัมกว้างสำหรับเคลือบมีสี", vi: "Vi sóng phổ rộng cho lớp phủ có màu" } },
-      { slug: "fl440", name: "Phoseon FireLine FL440", note: { en: "IP66 high power for harsh environments", zh: "IP66 高功率,适应严苛环境", th: "IP66 กำลังสูง เหมาะสภาพแวดล้อมหนัก", vi: "IP66 công suất cao cho môi trường khắc nghiệt" } },
-    ],
-    tips: [
-      { en: "Wood coating favours water-cooled systems — sustained high dose without cool-down pauses", zh: "木材涂装优先水冷系统——高剂量可持续输出,无需停机降温", th: "งานไม้เหมาะกับระบบระบายความร้อนด้วยน้ำ — โดสสูงต่อเนื่องไม่ต้องพักเครื่อง", vi: "Phủ gỗ ưu tiên hệ làm mát nước — liều cao liên tục không nghỉ máy" },
-      { en: "SLM technology gives superior uniformity on rough and textured wood surfaces", zh: "SLM 技术在粗糙纹理木面上均匀性更优", th: "เทคโนโลยี SLM ให้ความสม่ำเสมอเหนือกว่าบนผิวไม้ขรุขระ", vi: "Công nghệ SLM cho độ đồng đều vượt trội trên bề mặt gỗ thô" },
-      { en: "Composite curing may need custom wavelength profiles — review with the ETIA application team", zh: "复合材料固化可能需要定制波长方案——请与 ETIA 应用团队评审", th: "งานคอมโพสิตอาจต้องการโปรไฟล์ความยาวคลื่นเฉพาะ — ปรึกษาทีมแอปพลิเคชัน ETIA", vi: "Composite có thể cần hồ sơ bước sóng riêng — trao đổi với đội ứng dụng ETIA" },
-    ],
-    ctaLabel: { en: "Discuss Your Coating Line", zh: "咨询您的涂装产线", th: "ปรึกษาไลน์เคลือบของคุณ", vi: "Trao đổi về dây chuyền phủ của bạn" },
-    ctaSubject: "Coatings / Wood / Composites UV Curing Inquiry",
-    relatedNoteSlugs: [],
-  },
 ];
 
 export function getIndustry(slug: string): Industry | undefined {
