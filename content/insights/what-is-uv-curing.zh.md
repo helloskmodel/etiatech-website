@@ -3,7 +3,7 @@ title: "什么是 UV 固化?写给制造企业的入门指南"
 description: "UV 光固化的原理、灯管式与 LED 系统的区别、产线为什么改用光固化,以及如何选型——ETIA 工程师的通俗讲解。"
 date: 2026-07-21
 tags: [UV Curing Basics, UV LED, OmniCure, Guide]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp
+cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/UVCURING.jpg
 author: ETIA Technology
 ---
 
