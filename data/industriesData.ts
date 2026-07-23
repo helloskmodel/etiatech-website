@@ -93,6 +93,38 @@ export const industries: Industry[] = [
     relatedNoteSlugs: ["uv-led-curing-pcb-conformal-coating", "uv-led-curing-display-module-oca-bonding", "uv-curing-micro-speaker-assembly", "uv-led-curing-wire-tacking-component-staking", "uv-curing-electronics-potting-encapsulation", "uv-spot-curing-adas-camera-module-assembly"],
   },
   {
+    slug: "automotive",
+    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/06-adas-camera.jpg",
+    name: { en: "Automotive & ADAS", zh: "汽车与 ADAS", th: "ยานยนต์และ ADAS", vi: "Ô tô & ADAS" },
+    headline: { en: "UV Curing for Automotive Electronics & ADAS", zh: "汽车电子与 ADAS UV 固化方案", th: "การบ่ม UV สำหรับอิเล็กทรอนิกส์ยานยนต์และ ADAS", vi: "UV curing cho điện tử ô tô & ADAS" },
+    sub: { en: "Focus-stable camera bonding, sensor assembly and vibration-proof staking for vehicle electronics.", zh: "摄像头焦距锁定粘接、传感器组装与抗振加固,面向车载电子量产。", th: "การยึดกล้องแบบโฟกัสเสถียร การประกอบเซนเซอร์ และการเสริมกันสั่นสำหรับอิเล็กทรอนิกส์ยานยนต์", vi: "Bonding camera giữ tiêu cự, lắp ráp cảm biến và gia cố chống rung cho điện tử xe." },
+    painPoints: [
+      { en: "Camera focus must stay locked after cure — zero focus drift", zh: "固化后焦距必须锁定,不允许焦距漂移", th: "โฟกัสกล้องต้องคงที่หลังบ่ม — ห้ามมี focus drift", vi: "Tiêu cự camera phải khóa chặt sau cure — không lệch tiêu" },
+      { en: "Parts must survive vibration, shock and thermal cycling", zh: "部件要经受振动、冲击与温度循环考验", th: "ชิ้นส่วนต้องทนแรงสั่น แรงกระแทก และรอบความร้อน", vi: "Chi tiết phải chịu rung, sốc và chu kỳ nhiệt" },
+      { en: "Automotive quality systems demand Cpk and full traceability", zh: "车规质量体系要求 Cpk 与全程可追溯", th: "ระบบคุณภาพยานยนต์ต้องการ Cpk และการตรวจสอบย้อนกลับเต็มรูปแบบ", vi: "Hệ chất lượng ô tô đòi hỏi Cpk và truy xuất đầy đủ" },
+      { en: "Heat-sensitive sensors and optics rule out oven curing", zh: "热敏感的传感器与光学件不允许烘箱固化", th: "เซนเซอร์และออปติกไวความร้อน ใช้เตาอบไม่ได้", vi: "Cảm biến và quang học nhạy nhiệt không cho phép sấy lò" },
+    ],
+    valueProp: {
+      en: "Spot curing locks camera lenses at the exact focused position in seconds, closed-loop systems keep every cure identical for automotive Cpk requirements, and cool LED output protects image sensors and lidar optics.",
+      zh: "点固化在数秒内把镜头锁定在调焦位置;闭环系统让每次固化一致,满足车规 Cpk 要求;低温 LED 输出保护图像传感器与激光雷达光学件。",
+      th: "การบ่มแบบจุดล็อกเลนส์ที่ตำแหน่งโฟกัสภายในวินาที ระบบวงปิดทำให้ทุกการบ่มเหมือนกันตามข้อกำหนด Cpk ยานยนต์ และ LED เย็นปกป้องเซนเซอร์ภาพกับออปติกลิดาร์",
+      vi: "Spot curing khóa ống kính đúng vị trí lấy nét trong vài giây; hệ vòng kín giữ mọi lần cure như nhau theo yêu cầu Cpk ô tô; LED mát bảo vệ cảm biến ảnh và quang học lidar.",
+    },
+    products: [
+      { slug: "s2000-elite", name: "OmniCure S2000 Elite", note: { en: "Closed-loop spot for camera focus-lock bonding", zh: "闭环点光源:摄像头焦距锁定粘接", th: "จุดวงปิดสำหรับการยึดล็อกโฟกัสกล้อง", vi: "Spot vòng kín cho bonding khóa tiêu cự camera" } },
+      { slug: "lx500", name: "OmniCure LX500", note: { en: "Cool LED spot for sensors and staking", zh: "低温 LED 点光源:传感器与加固", th: "จุด LED เย็นสำหรับเซนเซอร์และการเสริมแรง", vi: "Spot LED mát cho cảm biến và staking" } },
+      { slug: "fj801", name: "Phoseon FireJet FJ801", note: { en: "Area curing for camera-module lines", zh: "面固化:摄像头模组产线", th: "บ่มพื้นที่สำหรับไลน์โมดูลกล้อง", vi: "Area curing cho dây chuyền module camera" } },
+    ],
+    tips: [
+      { en: "Validate focus drift, post-thermal-cycling image quality and batch consistency on the real production line — cure speed alone is not the metric", zh: "在真实产线上验证焦距漂移、热循环后成像质量与批次一致性——固化快不是唯一指标", th: "ตรวจสอบ focus drift คุณภาพภาพหลังรอบความร้อน และความสม่ำเสมอของล็อตบนไลน์จริง — ความเร็วบ่มไม่ใช่ตัวชี้วัดเดียว", vi: "Xác nhận focus drift, chất lượng ảnh sau chu kỳ nhiệt và độ đồng nhất lô trên dây chuyền thực — tốc độ cure không phải chỉ số duy nhất" },
+      { en: "Use radiometer calibration per shift so validated dose stays within the automotive process window", zh: "每班次做辐照计校准,让已验证剂量始终处于车规工艺窗口内", th: "สอบเทียบเรดิโอมิเตอร์ทุกกะ เพื่อให้โดสที่ตรวจรับรองอยู่ในหน้าต่างกระบวนการยานยนต์", vi: "Hiệu chuẩn radiometer mỗi ca để liều đã xác nhận nằm trong cửa sổ quy trình ô tô" },
+      { en: "For wire tacking and connector staking on ECUs, LED spot heads cure each point in seconds without heating the board", zh: "ECU 上的线材固定与连接器加固,用 LED 点光源秒级固化且不加热板卡", th: "การยึดสายและเสริมคอนเนกเตอร์บน ECU ใช้หัว LED แบบจุดบ่มทีละจุดในวินาทีโดยไม่ทำให้บอร์ดร้อน", vi: "Cố định dây và gia cố connector trên ECU dùng đầu LED spot cure từng điểm trong giây mà không nóng bo" },
+    ],
+    ctaLabel: { en: "Request an Automotive Application Review", zh: "申请汽车应用评估", th: "ขอรับการประเมินการใช้งานยานยนต์", vi: "Yêu cầu đánh giá ứng dụng ô tô" },
+    ctaSubject: "Automotive / ADAS Application Review",
+    relatedNoteSlugs: ["uv-spot-curing-adas-camera-module-assembly", "uv-led-curing-automotive-lidar-sensor-assembly", "uv-curing-ev-battery-manufacturing", "uv-led-curing-wire-tacking-component-staking"],
+  },
+  {
     slug: "optical-communications",
     image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/10-optical-transceiver.jpg",
     name: { en: "Optical Communications", zh: "光通信", th: "การสื่อสารด้วยแสง", vi: "Truyền thông quang" },
