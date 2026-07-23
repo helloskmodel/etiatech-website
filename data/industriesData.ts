@@ -14,6 +14,7 @@ export type IndustryProduct = {
 
 export type Industry = {
   slug: string;
+  image: string;
   name: LangText;
   headline: LangText;
   sub: LangText;
@@ -29,6 +30,7 @@ export type Industry = {
 export const industries: Industry[] = [
   {
     slug: "medical",
+    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/01-catheter.jpg",
     name: { en: "Medical & Life Sciences", zh: "医疗与生命科学", th: "การแพทย์และวิทยาศาสตร์ชีวภาพ", vi: "Y tế & khoa học sự sống" },
     headline: { en: "Precision UV Curing for Medical Device Assembly", zh: "医疗器械精密 UV 固化解决方案", th: "การบ่ม UV ความแม่นยำสูงสำหรับการประกอบอุปกรณ์การแพทย์", vi: "UV curing chính xác cho lắp ráp thiết bị y tế" },
     sub: { en: "Validated, auditable curing for catheters, lenses, microfluidics and wearables.", zh: "面向导管、透镜、微流控与可穿戴设备的可验证、可审计固化工艺。", th: "กระบวนการบ่มที่ตรวจรับรองและตรวจสอบได้ สำหรับสายสวน เลนส์ ไมโครฟลูอิดิกส์ และอุปกรณ์สวมใส่", vi: "Quy trình curing xác nhận được, kiểm toán được cho catheter, thấu kính, vi lưu và thiết bị đeo." },
@@ -60,6 +62,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "electronics",
+    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/07-pcb-coating.jpg",
     name: { en: "Electronics & Semiconductor", zh: "电子与半导体", th: "อิเล็กทรอนิกส์และเซมิคอนดักเตอร์", vi: "Điện tử & bán dẫn" },
     headline: { en: "High-Throughput UV Curing for Electronics Manufacturing", zh: "电子与半导体制造 UV 固化方案", th: "การบ่ม UV ปริมาณสูงสำหรับการผลิตอิเล็กทรอนิกส์", vi: "UV curing năng suất cao cho sản xuất điện tử" },
     sub: { en: "From precision spot bonding to full-panel area curing — without thermal damage.", zh: "从精密点固化到整板面固化,全程无热损伤。", th: "จากการยึดแบบจุดความแม่นยำสูงถึงการบ่มทั้งแผง — โดยไม่มีความเสียหายจากความร้อน", vi: "Từ bonding điểm chính xác đến area curing cả panel — không tổn hại nhiệt." },
@@ -91,6 +94,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "optical-communications",
+    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/10-optical-transceiver.jpg",
     name: { en: "Optical Communications", zh: "光通信", th: "การสื่อสารด้วยแสง", vi: "Truyền thông quang" },
     headline: { en: "UV LED Curing for Optical Fiber & Photonic Components", zh: "光纤与光通信器件 UV 固化方案", th: "การบ่ม UV LED สำหรับไฟเบอร์ออปติกและชิ้นส่วนโฟโตนิก", vi: "UV LED curing cho sợi quang & linh kiện photonic" },
     sub: { en: "360° cure at fiber-draw speed, and precision bonding for photonic packaging.", zh: "拉丝级速度的 360° 固化,以及光子封装的精密粘接。", th: "การบ่ม 360° ที่ความเร็วดึงเส้นใย และการยึดความแม่นยำสูงสำหรับแพ็กเกจโฟโตนิก", vi: "Cure 360° ở tốc độ kéo sợi, và bonding chính xác cho đóng gói photonic." },
@@ -122,6 +126,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "new-energy",
+    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/04-ev-battery.jpg",
     name: { en: "New Energy & Battery", zh: "新能源与电池", th: "พลังงานใหม่และแบตเตอรี่", vi: "Năng lượng mới & pin" },
     headline: { en: "UV Curing Solutions for EV Battery & New Energy Manufacturing", zh: "新能源与电池制造 UV 固化方案", th: "โซลูชันการบ่ม UV สำหรับการผลิตแบตเตอรี่ EV และพลังงานใหม่", vi: "Giải pháp UV curing cho sản xuất pin EV & năng lượng mới" },
     sub: { en: "Uniform, high-dose curing across wide webs — without heating sensitive cells.", zh: "宽幅涂布的均匀高剂量固化,且不加热敏感电芯。", th: "การบ่มโดสสูงสม่ำเสมอทั่วเว็บกว้าง — โดยไม่ทำให้เซลล์ไวร้อน", vi: "Cure liều cao đồng đều trên web rộng — không làm nóng cell nhạy cảm." },
@@ -153,6 +158,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "printing-packaging",
+    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/firejet%20one.png",
     name: { en: "Digital Printing & Packaging", zh: "数字印刷与包装", th: "การพิมพ์ดิจิทัลและบรรจุภัณฑ์", vi: "In kỹ thuật số & bao bì" },
     headline: { en: "High-Speed UV LED Curing for Digital Printing & Packaging", zh: "数字印刷与包装 UV LED 固化方案", th: "การบ่ม UV LED ความเร็วสูงสำหรับการพิมพ์ดิจิทัลและบรรจุภัณฑ์", vi: "UV LED curing tốc độ cao cho in kỹ thuật số & bao bì" },
     sub: { en: "Cure ink the instant it lands — from narrow carriages to wide-format lines.", zh: "墨水落纸即固化——从窄幅小车到宽幅产线。", th: "บ่มหมึกทันทีที่ตกถึงผิว — จากหัวพิมพ์แคบถึงไลน์หน้ากว้าง", vi: "Cure mực ngay khi chạm bề mặt — từ carriage hẹp đến dây chuyền khổ rộng." },
@@ -185,6 +191,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "advanced-materials",
+    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/vericure.jpg",
     name: { en: "Advanced Materials", zh: "先进材料", th: "วัสดุขั้นสูง", vi: "Vật liệu tiên tiến" },
     headline: { en: "UV Curing for Advanced Coatings, Composites & Wood Finishing", zh: "先进材料、涂层与木材 UV 固化方案", th: "การบ่ม UV สำหรับสารเคลือบขั้นสูง คอมโพสิต และงานไม้", vi: "UV curing cho lớp phủ tiên tiến, composite & hoàn thiện gỗ" },
     sub: { en: "Deep-cure dose and broadband spectrum for thick, pigmented and textured coatings.", zh: "为厚涂层、含颜料涂层与纹理表面提供深固化剂量与宽谱覆盖。", th: "โดสบ่มลึกและสเปกตรัมกว้าง สำหรับชั้นเคลือบหนา มีสี และพื้นผิวขรุขระ", vi: "Liều cure sâu và phổ rộng cho lớp phủ dày, có màu và bề mặt gồ ghề." },
