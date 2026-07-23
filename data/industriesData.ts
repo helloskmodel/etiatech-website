@@ -18,6 +18,8 @@ export type Industry = {
   name: LangText;
   headline: LangText;
   sub: LangText;
+  // Three short "typical application" bullets shown on the index cards.
+  typicalApps: LangText[];
   painPoints: LangText[];
   valueProp: LangText;
   products: IndustryProduct[];
@@ -34,6 +36,11 @@ export const industries: Industry[] = [
     name: { en: "Medical & Life Sciences", zh: "医疗与生命科学", th: "การแพทย์และวิทยาศาสตร์ชีวภาพ", vi: "Y tế & khoa học sự sống" },
     headline: { en: "Precision UV Curing for Medical Device Assembly", zh: "医疗器械精密 UV 固化解决方案", th: "การบ่ม UV ความแม่นยำสูงสำหรับการประกอบอุปกรณ์การแพทย์", vi: "UV curing chính xác cho lắp ráp thiết bị y tế" },
     sub: { en: "Validated, auditable curing for catheters, lenses, microfluidics and wearables.", zh: "面向导管、透镜、微流控与可穿戴设备的可验证、可审计固化工艺。", th: "กระบวนการบ่มที่ตรวจรับรองและตรวจสอบได้ สำหรับสายสวน เลนส์ ไมโครฟลูอิดิกส์ และอุปกรณ์สวมใส่", vi: "Quy trình curing xác nhận được, kiểm toán được cho catheter, thấu kính, vi lưu và thiết bị đeo." },
+    typicalApps: [
+      { en: "Adhesive bonding of catheters & needles", zh: "导管与针头的胶粘接", th: "การยึดติดสายสวนและเข็มด้วยกาว", vi: "Dán keo catheter & kim tiêm" },
+      { en: "Medical device coating cure", zh: "医疗器械涂层固化", th: "การบ่มสารเคลือบอุปกรณ์การแพทย์", vi: "Cure lớp phủ thiết bị y tế" },
+      { en: "Microfluidic & diagnostic card sealing", zh: "微流控与诊断卡密封", th: "การซีลการ์ดไมโครฟลูอิดิกส์และวินิจฉัย", vi: "Niêm phong thẻ vi lưu & chẩn đoán" },
+    ],
     painPoints: [
       { en: "Strict biocompatibility and leachables requirements", zh: "严格的生物相容性与可沥滤物要求", th: "ข้อกำหนดความเข้ากันได้ทางชีวภาพและสารชะละลายที่เข้มงวด", vi: "Yêu cầu nghiêm ngặt về tương thích sinh học và chất thôi nhiễm" },
       { en: "100% process traceability for FDA / ISO 13485", zh: "FDA / ISO 13485 要求 100% 工艺可追溯", th: "การตรวจสอบย้อนกลับกระบวนการ 100% ตาม FDA / ISO 13485", vi: "Truy xuất quy trình 100% theo FDA / ISO 13485" },
@@ -66,6 +73,11 @@ export const industries: Industry[] = [
     name: { en: "Electronics & Semiconductor", zh: "电子与半导体", th: "อิเล็กทรอนิกส์และเซมิคอนดักเตอร์", vi: "Điện tử & bán dẫn" },
     headline: { en: "High-Throughput UV Curing for Electronics Manufacturing", zh: "电子与半导体制造 UV 固化方案", th: "การบ่ม UV ปริมาณสูงสำหรับการผลิตอิเล็กทรอนิกส์", vi: "UV curing năng suất cao cho sản xuất điện tử" },
     sub: { en: "From precision spot bonding to full-panel area curing — without thermal damage.", zh: "从精密点固化到整板面固化,全程无热损伤。", th: "จากการยึดแบบจุดความแม่นยำสูงถึงการบ่มทั้งแผง — โดยไม่มีความเสียหายจากความร้อน", vi: "Từ bonding điểm chính xác đến area curing cả panel — không tổn hại nhiệt." },
+    typicalApps: [
+      { en: "Conformal coating cure on PCBs", zh: "PCB 三防漆固化", th: "การบ่ม conformal coating บน PCB", vi: "Cure lớp phủ bảo vệ trên PCB" },
+      { en: "Potting & encapsulation", zh: "电子灌封与封装", th: "การพอตติงและเอ็นแคปซูเลชัน", vi: "Potting & bọc phủ linh kiện" },
+      { en: "Wire tacking & component staking", zh: "线材固定与元件加固", th: "การยึดสายไฟและเสริมแรงชิ้นส่วน", vi: "Cố định dây & gia cố linh kiện" },
+    ],
     painPoints: [
       { en: "Miniaturization demands precise small-spot control", zh: "小型化趋势要求精准的微小光斑控制", th: "การย่อส่วนต้องการการควบคุมจุดแสงเล็กอย่างแม่นยำ", vi: "Thu nhỏ linh kiện đòi hỏi kiểm soát điểm sáng nhỏ chính xác" },
       { en: "High-volume lines need fast cure at consistent quality", zh: "大批量产线需要又快又稳的固化质量", th: "ไลน์ปริมาณสูงต้องการการบ่มเร็วที่คุณภาพคงที่", vi: "Dây chuyền sản lượng lớn cần cure nhanh với chất lượng ổn định" },
@@ -98,6 +110,11 @@ export const industries: Industry[] = [
     name: { en: "Automotive & ADAS", zh: "汽车与 ADAS", th: "ยานยนต์และ ADAS", vi: "Ô tô & ADAS" },
     headline: { en: "UV Curing for Automotive Electronics & ADAS", zh: "汽车电子与 ADAS UV 固化方案", th: "การบ่ม UV สำหรับอิเล็กทรอนิกส์ยานยนต์และ ADAS", vi: "UV curing cho điện tử ô tô & ADAS" },
     sub: { en: "Focus-stable camera bonding, sensor assembly and vibration-proof staking for vehicle electronics.", zh: "摄像头焦距锁定粘接、传感器组装与抗振加固,面向车载电子量产。", th: "การยึดกล้องแบบโฟกัสเสถียร การประกอบเซนเซอร์ และการเสริมกันสั่นสำหรับอิเล็กทรอนิกส์ยานยนต์", vi: "Bonding camera giữ tiêu cự, lắp ráp cảm biến và gia cố chống rung cho điện tử xe." },
+    typicalApps: [
+      { en: "ADAS camera focus-lock bonding", zh: "ADAS 摄像头焦距锁定粘接", th: "การยึดล็อกโฟกัสกล้อง ADAS", vi: "Bonding khóa tiêu cự camera ADAS" },
+      { en: "Lidar & sensor assembly", zh: "激光雷达与传感器组装", th: "การประกอบลิดาร์และเซนเซอร์", vi: "Lắp ráp lidar & cảm biến" },
+      { en: "ECU wire tacking & connector staking", zh: "ECU 线材固定与连接器加固", th: "การยึดสายและเสริมคอนเนกเตอร์บน ECU", vi: "Cố định dây & gia cố connector trên ECU" },
+    ],
     painPoints: [
       { en: "Camera focus must stay locked after cure — zero focus drift", zh: "固化后焦距必须锁定,不允许焦距漂移", th: "โฟกัสกล้องต้องคงที่หลังบ่ม — ห้ามมี focus drift", vi: "Tiêu cự camera phải khóa chặt sau cure — không lệch tiêu" },
       { en: "Parts must survive vibration, shock and thermal cycling", zh: "部件要经受振动、冲击与温度循环考验", th: "ชิ้นส่วนต้องทนแรงสั่น แรงกระแทก และรอบความร้อน", vi: "Chi tiết phải chịu rung, sốc và chu kỳ nhiệt" },
@@ -130,6 +147,11 @@ export const industries: Industry[] = [
     name: { en: "Optical Communications", zh: "光通信", th: "การสื่อสารด้วยแสง", vi: "Truyền thông quang" },
     headline: { en: "UV LED Curing for Optical Fiber & Photonic Components", zh: "光纤与光通信器件 UV 固化方案", th: "การบ่ม UV LED สำหรับไฟเบอร์ออปติกและชิ้นส่วนโฟโตนิก", vi: "UV LED curing cho sợi quang & linh kiện photonic" },
     sub: { en: "360° cure at fiber-draw speed, and precision bonding for photonic packaging.", zh: "拉丝级速度的 360° 固化,以及光子封装的精密粘接。", th: "การบ่ม 360° ที่ความเร็วดึงเส้นใย และการยึดความแม่นยำสูงสำหรับแพ็กเกจโฟโตนิก", vi: "Cure 360° ở tốc độ kéo sợi, và bonding chính xác cho đóng gói photonic." },
+    typicalApps: [
+      { en: "Optical fiber coating cure at draw speed", zh: "拉丝速度下的光纤涂覆固化", th: "การบ่มสารเคลือบไฟเบอร์ที่ความเร็วดึงเส้นใย", vi: "Cure lớp phủ sợi quang ở tốc độ kéo" },
+      { en: "Fiber bonding & connector termination", zh: "光纤粘接与连接器端接", th: "การยึดไฟเบอร์และการเข้าหัวคอนเนกเตอร์", vi: "Bonding sợi & đấu nối connector" },
+      { en: "Transceiver & photonic packaging", zh: "光模块与光子器件封装", th: "แพ็กเกจ transceiver และโฟโตนิก", vi: "Đóng gói transceiver & photonic" },
+    ],
     painPoints: [
       { en: "Fiber draw speeds up to 3,000 m/min demand instant cure", zh: "高达 3,000 m/min 的拉丝速度要求瞬时固化", th: "ความเร็วดึงเส้นใยถึง 3,000 m/min ต้องการการบ่มทันที", vi: "Tốc độ kéo sợi tới 3.000 m/phút đòi hỏi cure tức thời" },
       { en: "Coating must be perfectly concentric — no eccentricity", zh: "涂层必须完全同心,不允许偏心", th: "การเคลือบต้องร่วมศูนย์สมบูรณ์ — ห้ามเยื้องศูนย์", vi: "Lớp phủ phải đồng tâm hoàn hảo — không lệch tâm" },
@@ -162,6 +184,11 @@ export const industries: Industry[] = [
     name: { en: "New Energy & Battery", zh: "新能源与电池", th: "พลังงานใหม่และแบตเตอรี่", vi: "Năng lượng mới & pin" },
     headline: { en: "UV Curing Solutions for EV Battery & New Energy Manufacturing", zh: "新能源与电池制造 UV 固化方案", th: "โซลูชันการบ่ม UV สำหรับการผลิตแบตเตอรี่ EV และพลังงานใหม่", vi: "Giải pháp UV curing cho sản xuất pin EV & năng lượng mới" },
     sub: { en: "Uniform, high-dose curing across wide webs — without heating sensitive cells.", zh: "宽幅涂布的均匀高剂量固化,且不加热敏感电芯。", th: "การบ่มโดสสูงสม่ำเสมอทั่วเว็บกว้าง — โดยไม่ทำให้เซลล์ไวร้อน", vi: "Cure liều cao đồng đều trên web rộng — không làm nóng cell nhạy cảm." },
+    typicalApps: [
+      { en: "Li-ion cell & pack bonding", zh: "锂电芯与电池包粘接", th: "การยึดเซลล์และแพ็กแบตเตอรี่ Li-ion", vi: "Bonding cell & pack pin Li-ion" },
+      { en: "Electrode & protective coating cure", zh: "电极与保护涂层固化", th: "การบ่มสารเคลือบอิเล็กโทรดและชั้นป้องกัน", vi: "Cure lớp phủ điện cực & bảo vệ" },
+      { en: "EV structural adhesive cure", zh: "EV 结构胶固化", th: "การบ่มกาวโครงสร้าง EV", vi: "Cure keo kết cấu EV" },
+    ],
     painPoints: [
       { en: "Electrode coating needs uniform, fast cure over wide webs", zh: "电极涂布需要宽幅、均匀且快速的固化", th: "การเคลือบอิเล็กโทรดต้องบ่มเร็วสม่ำเสมอทั่วเว็บกว้าง", vi: "Phủ điện cực cần cure nhanh, đồng đều trên web rộng" },
       { en: "EV structural bonding requires high-strength adhesive cure", zh: "EV 结构粘接要求高强度胶水固化", th: "การยึดโครงสร้าง EV ต้องการการบ่มกาวความแข็งแรงสูง", vi: "Bonding kết cấu EV đòi hỏi cure keo cường độ cao" },
