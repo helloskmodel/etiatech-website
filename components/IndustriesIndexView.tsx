@@ -42,14 +42,26 @@ export default function IndustriesIndexView() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((ind) => (
-              <Link key={ind.slug} href={`/industries/${ind.slug}`} className="group rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-[#1A56DB]/40 hover:shadow-md">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#41A62A]">{t(ind.name, locale)}</p>
-                <h2 className="mt-3 text-lg font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{t(ind.headline, locale)}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-gray-500">{t(ind.sub, locale)}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#1A56DB]">
-                  {t({ en: "Explore solutions", zh: "查看方案", th: "ดูโซลูชัน", vi: "Xem giải pháp" }, locale)}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
+              <Link key={ind.slug} href={`/industries/${ind.slug}`} className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all hover:-translate-y-1 hover:border-[#1A56DB]/40 hover:shadow-md">
+                <div className="bg-[#41A62A] px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-white">{t(ind.name, locale)}</div>
+                <div className="relative aspect-[16/9]">
+                  <Image src={ind.image} alt={t(ind.name, locale)} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h2 className="text-lg font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{t(ind.headline, locale)}</h2>
+                  <ul className="mt-4 space-y-2">
+                    {ind.typicalApps.map((app, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-gray-600">
+                        <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#41A62A]" />
+                        {t(app, locale)}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-[#1A56DB]">
+                    {t({ en: "Explore solutions", zh: "查看方案", th: "ดูโซลูชัน", vi: "Xem giải pháp" }, locale)}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
