@@ -60,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
     // Industry solution pages (cookie-localized single URLs).
     { url: `${SITE}/industries`, changeFrequency: "monthly", priority: 0.8 },
-    ...["medical", "electronics", "optical-communications", "new-energy", "printing-packaging"].map((slug) => ({
+    ...["medical", "electronics", "optical-communications", "new-energy"].map((slug) => ({
       url: `${SITE}/industries/${slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.85,

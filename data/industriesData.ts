@@ -156,39 +156,6 @@ export const industries: Industry[] = [
     ctaSubject: "Battery / New Energy UV Cure Trial",
     relatedNoteSlugs: ["uv-curing-ev-battery-manufacturing", "uv-led-curing-automotive-lidar-sensor-assembly"],
   },
-  {
-    slug: "printing-packaging",
-    image: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/firejet%20one.png",
-    name: { en: "Digital Printing & Packaging", zh: "数字印刷与包装", th: "การพิมพ์ดิจิทัลและบรรจุภัณฑ์", vi: "In kỹ thuật số & bao bì" },
-    headline: { en: "High-Speed UV LED Curing for Digital Printing & Packaging", zh: "数字印刷与包装 UV LED 固化方案", th: "การบ่ม UV LED ความเร็วสูงสำหรับการพิมพ์ดิจิทัลและบรรจุภัณฑ์", vi: "UV LED curing tốc độ cao cho in kỹ thuật số & bao bì" },
-    sub: { en: "Cure ink the instant it lands — from narrow carriages to wide-format lines.", zh: "墨水落纸即固化——从窄幅小车到宽幅产线。", th: "บ่มหมึกทันทีที่ตกถึงผิว — จากหัวพิมพ์แคบถึงไลน์หน้ากว้าง", vi: "Cure mực ngay khi chạm bề mặt — từ carriage hẹp đến dây chuyền khổ rộng." },
-    painPoints: [
-      { en: "Ink must cure immediately after jetting — no migration", zh: "喷墨后必须立即固化,不允许墨水迁移", th: "หมึกต้องบ่มทันทีหลังพ่น — ห้ามซึมเคลื่อน", vi: "Mực phải cure ngay sau khi phun — không lan thấm" },
-      { en: "Carriage widths from 150 mm to 3,000+ mm", zh: "小车宽度从 150 mm 到 3,000+ mm", th: "ความกว้างตั้งแต่ 150 mm ถึงกว่า 3,000 mm", vi: "Bề rộng carriage từ 150 mm đến hơn 3.000 mm" },
-      { en: "High irradiance AND high uniformity, simultaneously", zh: "高光强与高均匀性必须同时满足", th: "ต้องได้ทั้งความเข้มสูงและความสม่ำเสมอสูงพร้อมกัน", vi: "Cần đồng thời cường độ cao VÀ độ đồng đều cao" },
-      { en: "Mixed substrates — paper, film, corrugated, foil", zh: "基材混杂——纸张、薄膜、瓦楞、箔材", th: "วัสดุหลากหลาย — กระดาษ ฟิล์ม ลูกฟูก ฟอยล์", vi: "Vật liệu đa dạng — giấy, phim, sóng, lá kim loại" },
-    ],
-    valueProp: {
-      en: "FireJet and AC Series deliver 20+ W/cm² in compact packages built for inkjet carriage mounting; water-cooled Semray 5000+ covers wide-format work. LED eliminates lamp replacement cost and mercury waste.",
-      zh: "FireJet 与 AC 系列以适合喷墨小车安装的紧凑体积输出 20+ W/cm²;水冷 Semray 5000+ 覆盖宽幅场景。LED 免去换灯成本与汞废弃物。",
-      th: "FireJet และ AC Series ให้ 20+ W/cm² ในขนาดกะทัดรัดสำหรับติดตั้งบนหัวพิมพ์ Semray 5000+ ระบายความร้อนด้วยน้ำครอบคลุมงานหน้ากว้าง LED ตัดค่าเปลี่ยนหลอดและของเสียปรอท",
-      vi: "FireJet và AC Series cho 20+ W/cm² trong kích thước nhỏ gắn lên carriage; Semray 5000+ làm mát nước phủ khổ rộng. LED loại bỏ chi phí thay đèn và chất thải thủy ngân.",
-    },
-    products: [
-      { slug: "firejet-one", name: "Phoseon FireJet ONE", note: { en: "20 W/cm², stackable to any print width", zh: "20 W/cm²,可堆叠适配任意打印幅宽", th: "20 W/cm² ต่อขยายได้ทุกความกว้างพิมพ์", vi: "20 W/cm², xếp chồng theo mọi khổ in" } },
-      { slug: "fj100", name: "Phoseon FJ100 Gen2", note: { en: "Compact self-contained OEM print curing", zh: "紧凑一体化 OEM 打印固化", th: "ระบบพิมพ์ OEM แบบครบในตัว กะทัดรัด", vi: "Curing in OEM nhỏ gọn, tự chứa" } },
-      { slug: "ac8", name: "OmniCure AC8/P Series", note: { en: "Print-optimized area curing", zh: "印刷优化版面固化", th: "บ่มพื้นที่รุ่นปรับแต่งเพื่อการพิมพ์", vi: "Area curing tối ưu cho in" } },
-      { slug: "semray-5000", name: "Semray 5000+", note: { en: "Wide-format, 30% more output", zh: "宽幅场景,输出提升 30%", th: "หน้ากว้าง เอาต์พุตเพิ่ม 30%", vi: "Khổ rộng, đầu ra tăng 30%" } },
-    ],
-    tips: [
-      { en: "Specify the print-optimized 'P' variants of the AC8 for inkjet applications", zh: "喷墨应用要指定 AC8 的印刷优化 'P' 版本", th: "งานอิงค์เจ็ทให้ระบุรุ่น 'P' ของ AC8 ที่ปรับเพื่อการพิมพ์", vi: "Ứng dụng inkjet chọn biến thể 'P' của AC8 tối ưu cho in" },
-      { en: "Measure dose (mJ/cm²) per ink layer and confirm the minimum cure dose with your ink supplier", zh: "按墨层测量剂量(mJ/cm²),与墨水供应商确认最低固化剂量", th: "วัดโดส (mJ/cm²) ต่อชั้นหมึก และยืนยันโดสขั้นต่ำกับผู้ผลิตหมึกของคุณ", vi: "Đo liều (mJ/cm²) mỗi lớp mực và xác nhận liều tối thiểu với nhà cung cấp mực" },
-      { en: "For pigmented or dark coatings on packaging, broadband microwave UV cures where LED struggles", zh: "包装上的深色/含颜料涂层,LED 难固化时可用宽谱微波 UV", th: "งานเคลือบสีเข้มบนบรรจุภัณฑ์ ใช้ UV ไมโครเวฟสเปกตรัมกว้างเมื่อ LED บ่มยาก", vi: "Lớp phủ tối màu trên bao bì dùng UV vi sóng phổ rộng khi LED khó cure" },
-    ],
-    ctaLabel: { en: "Talk to a Print Curing Specialist", zh: "咨询印刷固化专家", th: "ปรึกษาผู้เชี่ยวชาญการบ่มงานพิมพ์", vi: "Trao đổi với chuyên gia curing ngành in" },
-    ctaSubject: "Printing / Packaging UV Curing Inquiry",
-    relatedNoteSlugs: [],
-  },
 ];
 
 export function getIndustry(slug: string): Industry | undefined {
