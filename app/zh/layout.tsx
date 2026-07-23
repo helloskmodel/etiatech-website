@@ -1,6 +1,14 @@
 import type { ReactNode } from "react";
 import "../globals.css";
+import ChatFloatingButton from "@/components/ChatFloatingButton";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <html lang="zh-CN"><body className="min-h-screen flex flex-col">{children}</body></html>;
+  return (
+    <html lang="zh-CN">
+      <body className="min-h-screen flex flex-col">
+        {children}
+        <ChatFloatingButton force="zh" />
+      </body>
+    </html>
+  );
 }
