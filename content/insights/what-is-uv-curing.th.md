@@ -3,7 +3,7 @@ title: "UV Curing คืออะไร? คู่มือเบื้องต
 description: "หลักการทำงานของการบ่มด้วยแสง UV เปรียบเทียบระบบหลอดกับ LED เหตุผลที่ไลน์ผลิตเปลี่ยนมาใช้ และวิธีเลือกระบบ — อธิบายแบบเข้าใจง่ายโดยวิศวกร ETIA"
 date: 2026-07-21
 tags: [UV Curing Basics, UV LED, OmniCure, Guide]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp
+cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/UVCURING.jpg
 author: ETIA Technology
 ---
 

@@ -3,7 +3,7 @@ title: "What Is UV Curing? A Practical Guide for Manufacturers"
 description: "How UV light curing works, lamp vs LED systems, why production lines switch to it, and how to choose the right system — a plain-language introduction from ETIA engineers."
 date: 2026-07-21
 tags: [UV Curing Basics, UV LED, OmniCure, Guide]
-cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/PROMOTION/PROMOTION-OMNICURE%20S2000%20ELITE%20-INTRODUCTION.webp
+cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/UVCURING.jpg
 author: ETIA Technology
 ---
 

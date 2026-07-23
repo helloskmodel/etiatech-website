@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useLocale, t } from "@/components/LocaleContext";
 import { industries } from "@/data/industriesData";
@@ -10,7 +11,15 @@ export default function IndustriesIndexView() {
   return (
     <>
       <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: "#0f2444" }}>
-        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.82) 50%, rgba(26,86,219,0.45) 100%)" }} />
+        <Image
+          src="https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/UVCURING.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,30,58,0.94) 0%, rgba(18,65,163,0.78) 55%, rgba(26,86,219,0.35) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-widest text-[#41A62A]">{t({ en: "Industry Solutions", zh: "行业解决方案", th: "โซลูชันรายอุตสาหกรรม", vi: "Giải pháp theo ngành" }, locale)}</p>
           <h1 className="mt-4 max-w-3xl text-3xl md:text-5xl font-bold leading-tight text-white">
