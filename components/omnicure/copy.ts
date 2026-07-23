@@ -26,7 +26,8 @@ export const CONTACT = {
   lineUrl: "https://line.me/R/ti/p/@712sangs",
   // Zalo chat link for Vietnam (https://zalo.me/<phone-or-OA-id>).
   // Empty = the Zalo floating button stays hidden until this is filled.
-  zaloUrl: "", // TODO_FILL: ETIA Vietnam Zalo number or OA id
+  // "Etiatech Việt Nam" Zalo account (+84 961 530 153, Bac Ninh office).
+  zaloUrl: "https://zalo.me/84961530153",
   email: "sompoch@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
