@@ -32,8 +32,11 @@ export default function CookieConsent() {
   if (decided && !reopened) return null;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-[60] p-3 sm:p-4">
-      <div className="max-w-5xl mx-auto rounded-xl border border-gray-200 bg-white shadow-xl px-5 py-4 flex flex-col md:flex-row md:items-center gap-4">
+    // pointer-events-none on the full-width wrapper so the transparent strip
+    // doesn't swallow clicks meant for elements underneath (e.g. the floating
+    // chat button); the card itself re-enables pointer events.
+    <div className="pointer-events-none fixed bottom-0 inset-x-0 z-[60] p-3 sm:p-4">
+      <div className="pointer-events-auto max-w-5xl mx-auto rounded-xl border border-gray-200 bg-white shadow-xl px-5 py-4 flex flex-col md:flex-row md:items-center gap-4">
         <div className="flex-1">
           <p className="text-sm font-semibold mb-1" style={{ color: "#1A56DB" }}>{t({ en: "We value your privacy", zh: "我们重视您的隐私", th: "เราให้ความสำคัญกับความเป็นส่วนตัวของคุณ", vi: "Chúng tôi coi trọng quyền riêng tư của bạn" }, locale)}</p>
           <p className="text-xs text-gray-500 leading-relaxed">
