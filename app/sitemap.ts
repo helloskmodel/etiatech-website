@@ -165,7 +165,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // Application case-study pages (EN + ZH + VI + TH each), with images.
-  const applicationCasePages: MetadataRoute.Sitemap = applicationsData.flatMap((application) =>
+  // Unpublished notes (published: false) are excluded like everywhere else.
+  const applicationCasePages: MetadataRoute.Sitemap = applicationsData
+    .filter((application: { published?: boolean }) => application.published !== false)
+    .flatMap((application) =>
     LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/applications/${application.slug}`,
       changeFrequency: "monthly" as const,
