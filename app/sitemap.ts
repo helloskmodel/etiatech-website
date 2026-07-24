@@ -58,13 +58,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // /product/omnicure. Only the canonical 200 destinations belong in the
     // sitemap; listing a redirect makes Google report "Page with redirect".
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
-    // Industry solution pages (cookie-localized single URLs).
-    { url: `${SITE}/industries`, changeFrequency: "monthly", priority: 0.8 },
-    ...["medical", "electronics", "automotive", "optical-communications", "new-energy"].map((slug) => ({
-      url: `${SITE}/industries/${slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-    })),
+    // NOTE: /industries was retired — next.config redirects it (and its slugs)
+    // to /applications, so it must not be listed here.
     ...LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/case-studies`,
       changeFrequency: "weekly" as const,

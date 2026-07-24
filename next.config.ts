@@ -53,6 +53,11 @@ const nextConfig: NextConfig = {
       { source: "/en/applications", destination: "/applications", permanent: true },
       { source: "/application", destination: "/applications", permanent: true },
       { source: "/application/:path*", destination: "/applications", permanent: true },
+      // The short-lived /industries section was retired (its images duplicated
+      // the application notes and confused visitors) — send any indexed URLs
+      // to the applications index, its closest equivalent.
+      { source: "/industries", destination: "/applications", permanent: true },
+      { source: "/industries/:path*", destination: "/applications", permanent: true },
       { source: "/omnicure-s2000-lamp", destination: "/product/omnicure/s2000-lamp", permanent: true },
       { source: "/product", destination: "/product/omnicure", permanent: true },
       { source: "/product/systems", destination: "/product/omnicure", permanent: true },
