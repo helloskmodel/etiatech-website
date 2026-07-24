@@ -1421,6 +1421,7 @@ export const applicationsData = [
   },
   {
     "slug": "uv-curing-micro-speaker-assembly",
+    "published": false,
     "title": "UV Curing for Micro-Speaker Assembly",
     "subtitle": "Fast, low-heat UV curing for diaphragm, voice-coil and magnet bonding in micro-speaker and receiver production.",
     "relatedSummary": "Fast, low-heat UV curing for diaphragm, voice-coil and magnet bonding in micro-speaker and receiver production.",
@@ -1514,6 +1515,7 @@ export const applicationsData = [
   },
   {
     "slug": "uv-led-curing-wire-tacking-component-staking",
+    "published": false,
     "title": "UV LED Curing for Wire Tacking & Component Staking",
     "subtitle": "Second-level tacking of wires, cables and components on PCBs — vibration protection without ovens or long fixturing.",
     "relatedSummary": "Second-level tacking of wires, cables and components on PCBs — vibration protection without ovens or long fixturing.",
@@ -1608,6 +1610,7 @@ export const applicationsData = [
   },
   {
     "slug": "uv-curing-electronics-potting-encapsulation",
+    "published": false,
     "title": "UV Curing for Electronics Potting & Encapsulation",
     "subtitle": "Protect sensors, PCBs and components with UV-curable encapsulants — cured in seconds instead of oven hours.",
     "relatedSummary": "Protect sensors, PCBs and components with UV-curable encapsulants — cured in seconds instead of oven hours.",
