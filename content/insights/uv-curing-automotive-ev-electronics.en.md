@@ -49,6 +49,8 @@ A closed-loop spot system (such as the **OmniCure S2000 Elite**) holds output wi
 
 ## Shadow areas: the high-density board problem
 
+![UV conformal coating being applied to a dense automotive PCB](https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/07-pcb-coating.jpg)
+
 Automotive PCBs are dense, and tall components cast shadows where light can't reach — a real risk with conformal coatings, because uncured material under a shadow is a latent field failure. There are two ways a curing process handles this, and both start with getting maximum, uniform light onto the board:
 
 - **Area curing with high uniformity** — a wide, even UV field reaches into as much of the board as possible in a single pass
@@ -57,6 +59,8 @@ Automotive PCBs are dense, and tall components cast shadows where light can't re
 The equipment's job is to deliver a uniform, validated dose across the whole board area. Validate coverage with **radiometric mapping** across the full cure zone, not just at the lamp face — the highest-uniformity area systems are what make edge-to-edge cure repeatable on large boards.
 
 ## EV battery packs & BMS
+
+![UV curing in EV battery module assembly](https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/04-ev-battery.jpg)
 
 The EV battery pack — cells, module housings, and the battery management system (BMS) — uses UV curing for potting and wire bonding of modules, conformal coating of BMS PCBs, sealing of case enclosures, and bonding of cylindrical li-ion cells into plastic housings. These parts demand **high-strength structural bonds** and reliable protection against thermal shock, humidity and corrosion, all without heating the sensitive cells.
 
