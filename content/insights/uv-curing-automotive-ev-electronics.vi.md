@@ -49,6 +49,8 @@ Hệ spot vòng kín (như **OmniCure S2000 Elite**) giữ đầu ra trong ±5% 
 
 ## Vùng bóng: bài toán của bo mạch mật độ cao
 
+![Phủ conformal bằng UV trên PCB ô tô mật độ cao](https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/07-pcb-coating.jpg)
+
 PCB ô tô có mật độ cao, và linh kiện cao tạo bóng nơi ánh sáng không tới — một rủi ro thực với lớp phủ conformal, vì vật liệu chưa cure dưới vùng bóng là lỗi tiềm ẩn ngoài hiện trường. Có hai cách quy trình cure xử lý điều này, và cả hai đều bắt đầu bằng việc đưa lượng sáng tối đa, đồng đều lên bo mạch:
 
 - **Cure diện tích độ đồng đều cao** — trường UV rộng, đều, phủ tới nhiều bo mạch nhất trong một lượt
@@ -57,6 +59,8 @@ PCB ô tô có mật độ cao, và linh kiện cao tạo bóng nơi ánh sáng 
 Nhiệm vụ của thiết bị là truyền liều đồng đều, đã xác nhận trên toàn diện tích bo mạch. Xác nhận độ phủ bằng **lập bản đồ bức xạ** trên toàn vùng cure (không chỉ tại mặt đèn) — hệ diện tích độ đồng đều cao chính là thứ khiến cure mép-tới-mép lặp lại được trên bo mạch lớn.
 
 ## Khối pin EV & BMS
+
+![UV curing trong lắp ráp module pin EV](https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/application/04-ev-battery.jpg)
 
 Khối pin EV — cell, vỏ module và hệ thống quản lý pin (BMS) — dùng UV curing cho potting và hàn dây của module, phủ conformal cho PCB của BMS, làm kín vỏ khối, và bonding cell li-ion trụ vào vỏ nhựa. Những chi tiết này đòi hỏi **mối ghép kết cấu cường độ cao** và bảo vệ đáng tin cậy khỏi sốc nhiệt, ẩm và ăn mòn, tất cả mà không làm nóng các cell nhạy cảm.
 
