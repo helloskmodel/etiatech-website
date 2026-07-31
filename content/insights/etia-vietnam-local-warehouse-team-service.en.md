@@ -4,6 +4,7 @@ description: "Etiatech Vietnam backs its genuine OmniCure and Phoseon UV curing 
 date: 2026-07-31
 tags: [ETIA Vietnam, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-VN
+coverFit: contain
 author: ETIA Technology
 ---
 

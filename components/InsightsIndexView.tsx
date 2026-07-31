@@ -18,6 +18,7 @@ export type ArticleCard = {
   tags: string[];
   author: string;
   cover?: string;
+  coverFit?: "cover" | "contain";
   readingMinutes: number;
   locales: CardLocales;
 };
@@ -80,9 +81,9 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
                     href={localizeHref(`/insights/${a.slug}`, locale)}
                     className="group flex flex-col rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all"
                   >
-                    <div className="relative h-44 bg-gray-100 overflow-hidden">
+                    <div className={`relative h-44 overflow-hidden ${a.coverFit === "contain" ? "bg-white" : "bg-gray-100"}`}>
                       {a.cover ? (
-                        <Image src={a.cover} alt={c.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <Image src={a.cover} alt={c.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className={`${a.coverFit === "contain" ? "object-contain" : "object-cover group-hover:scale-105"} transition-transform duration-300`} />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
                           <span className="text-white/90 text-4xl font-bold">ETIA</span>
