@@ -38,6 +38,50 @@ export const technologies = [
 export const products: Product[] = [
   // ───────────────── TECHNOLOGY 1: UV SPOT CURING ─────────────────
   {
+    slug: "lx505",
+    name: "OmniCure LX505 UV LED Spot Curing System",
+    brand: "OmniCure",
+    brandId: "omnicure",
+    tech: "UV Spot Curing",
+    sub: "UV LED Spot",
+    accent: "#41A62A",
+    // Short, one-idea-per-line copy distilled from the official Excelitas
+    // LX505 material — the spec table below carries the full detail.
+    intro:
+      "The next-generation UV LED spot curing system — ±5% optical stability, LED cooling, StepCure® 2.0 multi-step control and new color-coded LED MAX heads for fast, uniform, repeatable curing.",
+    features: [
+      "±5% optical stability with LED cooling technology that monitors head temperature and life data",
+      "StepCure® 2.0 — program exposure time, intensity, duty cycle and trigger per channel, across single or multiple heads",
+      "Controls up to 4 UV LED heads simultaneously or independently, or one head per controller",
+      "New color-coded LED MAX heads (55 & 130 mm) cut setup time — 365 / 385 / 400 nm",
+      "High peak irradiance at 10 mm with 3 mm focusing lens: 14 W/cm² (365 nm), 16 W/cm² (385 nm), 9 W/cm² (400 nm)",
+      "Exposure time to ±0.1 s and intensity to ±1% for a repeatable, validated process",
+      "New 2.4\" full-color LCD; control by 4-way keypad, PLC or USB to PC",
+      "Improved connector with integrated locking for faster install and swap",
+      "Cylindrical-lens option delivers a focused elliptical beam for small-area cures",
+    ],
+    applications: [
+      "Medical device manufacturing (catheters, cannulas, needles, syringes)",
+      "Electronics assembly (camera modules, micro-speakers, lenses, displays)",
+      "Optoelectronics and photonics assembly",
+      "Automotive and aerospace component bonding",
+      "Semiconductor and general-purpose UV adhesive curing",
+      "Automated, multi-head high-throughput production lines",
+    ],
+    specs: [
+      ["Channels", "2 or 4 channel configurations"],
+      ["UV LED Heads", "Up to 4 individual & interchangeable to any channel"],
+      ["Wavelengths", "365 nm, 385 nm (55 & 130 mm); 400 nm (55 mm)"],
+      ["Peak Irradiance", "Up to 14 / 16 / 9 W/cm² at 365 / 385 / 400 nm (10 mm, 3 mm lens)"],
+      ["Optical Stability", "±5% maintained during exposure (LED cooling)"],
+      ["Intensity Control", "±1% steps"],
+      ["Exposure Control", "±0.1 s via StepCure® 2.0"],
+      ["Display", '2.4" full-color LCD'],
+      ["External Control", "4-way keypad, PLC, or PC via USB"],
+      ["Certifications", "CE and RoHS compliant"],
+    ],
+  },
+  {
     slug: "lx500",
     name: "OmniCure LX500 UV LED Spot Curing Controller",
     brand: "OmniCure",
@@ -1584,6 +1628,7 @@ export function popularityRank(slug: string): number {
 export const productTagline: Record<string, { en: string; zh: string; vi?: string; th?: string }> = {
   "s2000-elite": { en: "The Most Reliable, Highest-Quality Lamp Spot Curing", zh: "高可靠、高品质的灯式点固化", vi: "Lamp Spot Curing đáng tin cậy, chất lượng cao", th: "Lamp Spot Curing ที่เชื่อถือได้และคุณภาพสูง" },
   "s1500-pro": { en: "High-Throughput UV Curing for Micro- & Opto-Electronics", zh: "迈向紫外线固化的未来", vi: "UV Curing năng suất cao cho vi điện tử & quang điện tử", th: "UV Curing กำลังผลิตสูงสำหรับไมโครและออปโตอิเล็กทรอนิกส์" },
+  "lx505": { en: "The Next-Generation UV LED Spot Curing System", zh: "新一代 UV LED 点固化系统", vi: "Hệ thống UV LED Spot Curing thế hệ mới", th: "ระบบ UV LED Spot Curing เจเนอเรชันใหม่" },
   "lx500": { en: "Ultra-Compact UV LED Spot Curing — Consistent, Repeatable Results", zh: "超紧凑 UV LED 点固化——一致、可重复的固化效果", vi: "UV LED Spot Curing siêu nhỏ gọn — kết quả nhất quán, lặp lại được", th: "UV LED Spot Curing ขนาดกะทัดรัดพิเศษ — ผลลัพธ์สม่ำเสมอ ทำซ้ำได้" },
   "ac9225": { en: "High-Power UV LED Curing for Adhesives, Coatings & Inks", zh: "面向胶粘剂、涂层与油墨的高功率 UV LED 固化", vi: "UV LED Curing công suất cao cho keo dán, lớp phủ & mực in", th: "UV LED Curing กำลังสูงสำหรับกาว สารเคลือบ และหมึกพิมพ์" },
 };
@@ -1598,6 +1643,7 @@ export const productHighlights: Record<string, LangText[]> = {
   "s2e-network-module": [{ en: "Remote Monitoring", zh: "远程监控", th: "การมอนิเตอร์ระยะไกล", vi: "Giám sát từ xa" }, { en: "Up to 300 Systems", zh: "最多 300 台系统", th: "รองรับสูงสุด 300 ระบบ", vi: "Tối đa 300 hệ thống" }, { en: "Fault Email Alerts", zh: "故障邮件告警", th: "แจ้งเตือนข้อผิดพลาดทางอีเมล", vi: "Cảnh báo lỗi qua email" }],
   "s-series-light-guides": [{ en: "360° Cure-Ring", zh: "360° 环形固化", th: "Cure-Ring 360°", vi: "Cure-Ring 360°" }, { en: "Multi-Leg Delivery", zh: "多分支导光", th: "การนำแสงแบบหลายสาย", vi: "Dẫn sáng đa nhánh" }, { en: "Optical Adapters", zh: "光学适配器", th: "อะแดปเตอร์ออปติก", vi: "Bộ chuyển đổi quang học" }],
   // OmniCure — UV LED Spot
+  "lx505": [{ en: "±5% Optical Stability", zh: "±5% 光学稳定", th: "ความเสถียรเชิงแสง ±5%", vi: "Ổn định quang ±5%" }, { en: "2 / 4-Channel", zh: "2 / 4 通道", th: "2 / 4 ช่อง", vi: "2 / 4 kênh" }, { en: "StepCure 2.0", zh: "StepCure 2.0", th: "StepCure 2.0", vi: "StepCure 2.0" }, { en: "Color-Coded LED MAX", zh: "彩码 LED MAX", th: "LED MAX รหัสสี", vi: "LED MAX mã màu" }],
   "lx500": [{ en: "Intelli-Lamp Stability", zh: "Intelli-Lamp 稳定性", th: "ความเสถียร Intelli-Lamp", vi: "Ổn định Intelli-Lamp" }, { en: "2 / 4-Channel", zh: "2 / 4 通道", th: "2 / 4 ช่อง", vi: "2 / 4 kênh" }, { en: "StepCure 2.0", zh: "StepCure 2.0", th: "StepCure 2.0", vi: "StepCure 2.0" }],
   "v3-led-heads": [{ en: "High Output", zh: "高输出", th: "เอาต์พุตสูง", vi: "Đầu ra cao" }, { en: "Uniform Beam Profile", zh: "均匀光束分布", th: "โปรไฟล์ลำแสงสม่ำเสมอ", vi: "Chùm tia đồng đều" }, { en: "Multi-Wavelength", zh: "多波长", th: "หลายความยาวคลื่น", vi: "Đa bước sóng" }],
   "ls200": [{ en: "NRC-Traceable", zh: "NRC 可溯源", th: "สอบกลับได้ตาม NRC", vi: "Truy xuất theo NRC" }, { en: "Cure-Site Measurement", zh: "固化点测量", th: "การวัดที่จุดคิวริ่ง", vi: "Đo tại điểm đóng rắn" }, { en: "Selectable Wavelengths", zh: "波长可选", th: "เลือกความยาวคลื่นได้", vi: "Chọn bước sóng" }],
@@ -1697,6 +1743,9 @@ const PRODUCT_IMG_BASE =
 
 // slug → actual object key in the bucket.
 const productImageFile: Record<string, string> = {
+  // TODO: replace with the real LX505 hero image once supplied — placeholder
+  // reuses the LX500 shot so the page renders in the meantime.
+  "lx505": "LX500.png",
   "lx500": "LX500.png",
   "v3-led-heads": "V3.png",
   "ls200": "LS200.png",
