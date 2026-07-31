@@ -14,7 +14,7 @@ Buying a UV curing system is the easy part. Keeping it running — genuine spare
 
 ## Four commitments, in Thailand
 
-**Genuine products through authorized channels.** As an authorized distributor, every OmniCure and Phoseon system, replacement lamp and accessory we supply is genuine, with the warranty and support that only authorized supply carries.
+**Genuine products, factory-backed.** As an authorized OmniCure distributor, the OmniCure systems, replacement lamps and accessories we supply are genuine, carrying the manufacturer warranty and support that authorized supply guarantees; the Phoseon systems we supply come through genuine, factory-direct channels too.
 
 **Application-driven solutions.** Our engineers help you select the right system for your adhesive, substrate and takt time — and run cure trials on your real parts before you buy, not after.
 
@@ -33,5 +33,3 @@ We supply and support the curing **equipment**; your adhesives and coatings rema
 Tell us your application, adhesive and production requirements — we'll help you find the right system and keep it running.
 
 📍 Bangkok, Thailand · ☎ +66 811 746 947 · 💬 LINE: @712sangs · [Contact ETIA](/contact)
-
-*Etiatec (Thailand) Co., Ltd. is the authorized distributor of OmniCure and Phoseon UV curing systems in Thailand.*

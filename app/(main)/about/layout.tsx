@@ -7,7 +7,7 @@ const PAGE_PATH = "/about";
 export const metadata: Metadata = {
   title: "About ETIA Technology | Authorized UV Curing Systems Distributor",
   description:
-    "ETIA Technology is an authorized distributor of OmniCure, Phoseon, Fusion UV and Noblelight UV curing systems, with 20 years of application expertise and offices in Shanghai, Hong Kong, Bangkok and Bac Ninh.",
+    "ETIA Technology is an authorized OmniCure distributor in Thailand and Vietnam, and also supplies Phoseon, Fusion UV and Noblelight UV curing systems, with 20 years of application expertise and offices in Shanghai, Hong Kong, Bangkok and Bac Ninh.",
   keywords: [
     "about ETIA Technology",
     "ETIA Thailand",

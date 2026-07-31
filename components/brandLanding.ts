@@ -80,9 +80,9 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Industrial Coatings", zh: "工业涂层" },
       { en: "Optical Fiber & Cable", zh: "光纤与线缆" },
     ],
-    metaTitle: "Phoseon UV LED Systems — Authorized Distributor | ETIA",
+    metaTitle: "Phoseon UV LED Curing Systems | ETIA",
     metaDescription:
-      "Phoseon high-power UV LED curing — air-cooled FireJet/FireEdge and water-cooled FireLine/VeriCure/Nexus II for printing and industrial lines. ETIA: Asia-Pacific authorized distributor.",
+      "Phoseon high-power UV LED curing — air-cooled FireJet/FireEdge and water-cooled FireLine/VeriCure/Nexus II for printing and industrial lines. Supplied and supported by ETIA in Thailand and Vietnam.",
   },
   "fusion-uv": {
     catalogBrandId: "fusionuv",
@@ -100,9 +100,9 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Wide-Web & Converting", zh: "宽幅卷材与加工" },
       { en: "Industrial", zh: "工业" },
     ],
-    metaTitle: "Fusion UV Microwave UV Systems — Authorized Distributor | ETIA",
+    metaTitle: "Fusion UV Microwave UV Systems | ETIA",
     metaDescription:
-      "Fusion UV electrodeless microwave UV lamps — broad-spectrum 200–600 nm, F Series & LightHammer, for printing, coatings and optical fiber. ETIA: Asia-Pacific authorized distributor.",
+      "Fusion UV electrodeless microwave UV lamps — broad-spectrum 200–600 nm, F Series & LightHammer, for printing, coatings and optical fiber. Supplied and supported by ETIA in Thailand and Vietnam.",
   },
   noblelight: {
     catalogBrandId: "noblelight",
@@ -120,9 +120,9 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Wire Marking", zh: "线材标识" },
       { en: "Custom UV LED Solutions", zh: "定制 UV LED 方案" },
     ],
-    metaTitle: "NobleLight Semray UV LED Systems — Authorized Distributor | ETIA",
+    metaTitle: "NobleLight Semray UV LED Systems | ETIA",
     metaDescription:
-      "Excelitas Noblelight Semray water-cooled UV LED systems — scalable 400–1300 mm width, plus 360° optical-fiber curing. ETIA: Asia-Pacific authorized distributor.",
+      "Excelitas Noblelight Semray water-cooled UV LED systems — scalable 400–1300 mm width, plus 360° optical-fiber curing. Supplied and supported by ETIA in Thailand and Vietnam.",
   },
 };
 

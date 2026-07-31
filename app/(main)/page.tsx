@@ -4,7 +4,7 @@ import HomeView from "@/components/HomeView";
 export const metadata: Metadata = {
   title: "ETIA Technology | UV Curing Systems & Solutions Distributor",
   description:
-    "Authorized distributor of OmniCure, Phoseon, Fusion & NobleLight UV curing systems. 20 years of application expertise, local stock, in-house repair across 10 industries.",
+    "Authorized OmniCure UV curing distributor in Thailand and Vietnam — also supplying Phoseon, Fusion & NobleLight systems. 20 years of application expertise, local stock, in-house repair across 10 industries.",
   alternates: {
     canonical: "https://www.etiatech.com",
     languages: { en: "https://www.etiatech.com", "zh-Hans": "https://www.etiatech.com/zh", vi: "https://www.etiatech.com/vi", th: "https://www.etiatech.com/th", "x-default": "https://www.etiatech.com" },
