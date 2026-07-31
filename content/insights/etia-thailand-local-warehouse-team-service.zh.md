@@ -4,6 +4,7 @@ description: "Etiatec(泰国)以本地仓库、本地工程团队和与总部同
 date: 2026-07-31
 tags: [ETIA Thailand, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE.TH
+coverFit: contain
 author: ETIA Technology
 ---
 

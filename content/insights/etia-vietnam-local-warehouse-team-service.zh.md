@@ -4,6 +4,7 @@ description: "Etiatech 越南以本地仓库、本地工程团队和与总部同
 date: 2026-07-31
 tags: [ETIA Vietnam, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-VN
+coverFit: contain
 author: ETIA Technology
 ---
 

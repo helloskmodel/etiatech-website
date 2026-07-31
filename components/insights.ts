@@ -26,6 +26,9 @@ export type Article = {
   tags: string[];
   author: string;
   cover?: string;
+  // How the card thumbnail should fit the cover. "contain" suits square
+  // infographics (shows the whole image, no crop); default is "cover".
+  coverFit?: "cover" | "contain";
   readingMinutes: number;
   locales: {
     en: ArticleLocaleContent;
@@ -42,6 +45,7 @@ type Frontmatter = {
   tags?: string[];
   author?: string;
   cover?: string;
+  coverFit?: string;
 };
 
 // Minimal, dependency-free frontmatter parser. Supports:
@@ -124,6 +128,7 @@ export function getAllArticles(): Article[] {
       tags: en.fm.tags ?? [],
       author: en.fm.author ?? "ETIA Technology",
       cover: en.fm.cover || undefined,
+      coverFit: en.fm.coverFit === "contain" ? "contain" : undefined,
       readingMinutes: Math.max(1, Math.round(wordCount(rawEnBody) / 200)),
       locales,
     });
@@ -154,6 +159,7 @@ export function getArticleCards() {
       tags: a.tags,
       author: a.author,
       cover: a.cover,
+      coverFit: a.coverFit,
       readingMinutes: a.readingMinutes,
       locales,
     };

@@ -4,6 +4,7 @@ description: "Etiatec (Thailand) สนับสนุนระบบบ่ม U
 date: 2026-07-31
 tags: [ETIA Thailand, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE.TH
+coverFit: contain
 author: ETIA Technology
 ---
 
