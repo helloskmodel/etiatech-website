@@ -1757,9 +1757,8 @@ const PRODUCT_IMG_BASE =
 
 // slug → actual object key in the bucket.
 const productImageFile: Record<string, string> = {
-  // TODO: replace with the real LX505 hero image once supplied — placeholder
-  // reuses the LX500 shot so the page renders in the meantime.
-  "lx505": "LX500.png",
+  // The LX505 hero object has no file extension in the bucket.
+  "lx505": "LX505",
   "lx500": "LX500.png",
   "v3-led-heads": "V3.png",
   "ls200": "LS200.png",
