@@ -9,6 +9,7 @@ import TrustStrip from "@/components/TrustStrip";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
 import { localizeHref } from "@/components/localeHref";
+import { cosResize } from "@/components/cosImage";
 
 type CardLocale = { title: string; description: string };
 type CardLocales = { en: CardLocale; zh?: CardLocale; vi?: CardLocale; th?: CardLocale };
@@ -83,7 +84,7 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
                   >
                     <div className={`relative h-44 overflow-hidden ${a.coverFit === "contain" ? "bg-white" : "bg-gray-100"}`}>
                       {a.cover ? (
-                        <Image src={a.cover} alt={c.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className={`${a.coverFit === "contain" ? "object-contain" : "object-cover group-hover:scale-105"} transition-transform duration-300`} />
+                        <Image src={cosResize(a.cover, 800)} alt={c.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className={`${a.coverFit === "contain" ? "object-contain" : "object-cover group-hover:scale-105"} transition-transform duration-300`} />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
                           <span className="text-white/90 text-4xl font-bold">ETIA</span>

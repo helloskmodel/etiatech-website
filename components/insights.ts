@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { marked } from "marked";
+import { optimizeBodyImages } from "./cosImage";
 import type { Metadata } from "next";
 
 marked.setOptions({ gfm: true, breaks: false });
@@ -81,7 +82,7 @@ function readLocale(file: string): { fm: Frontmatter; content: ArticleLocaleCont
     content: {
       title: data.title ?? "",
       description: data.description ?? "",
-      html: marked.parse(body) as string,
+      html: optimizeBodyImages(marked.parse(body) as string),
     },
   };
 }
