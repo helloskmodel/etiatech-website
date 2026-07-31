@@ -81,7 +81,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="mb-4">
-              <span className="inline-block text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#41A62A" }}>{t({ en: "Authorized Distributor", zh: "授权代理商" }, locale)}</span>
+              <span className="inline-block text-[11px] font-bold px-2.5 py-1 rounded-full text-white" style={{ background: "#41A62A" }}>{t({ en: "Supplied & Supported by ETIA", zh: "ETIA 供应与支持", th: "จัดหาและสนับสนุนโดย ETIA", vi: "Cung cấp & hỗ trợ bởi ETIA" }, locale)}</span>
             </div>
             {b.hero && (
               <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#41A62A" }}>{t(b.hero.eyebrow, locale)}</p>

@@ -94,4 +94,4 @@ The fastest path is not to buy a system first — it's to **test your actual boa
 - Compare [UV curing systems](/product/omnicure) across spot, area and LED platforms
 - Have a specific avionics coating, potting or sensor-bonding step to qualify? [Talk to an ETIA engineer](/contact) — tell us your material, spec and takt time, and we'll take it from there.
 
-*ETIA Technology is an Asia-Pacific authorized distributor of OmniCure and Phoseon UV curing systems. We supply and support the curing equipment; the conformal coatings, potting compounds and adhesives remain your qualified material.*
+*ETIA is an authorized OmniCure distributor in Thailand and Vietnam. We supply and support the curing equipment; the conformal coatings, potting compounds and adhesives remain your qualified material.*

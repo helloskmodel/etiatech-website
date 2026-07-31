@@ -1,6 +1,6 @@
 ---
 title: "同一标准,本地速度:ETIA 在越南的服务承诺"
-description: "Etiatech 越南以本地仓库、本地工程团队和与总部同标准的服务承诺,支撑正品 OmniCure 与 Phoseon 紫外线固化系统——授权供应、应用支持与长期服务,就在越南。"
+description: "Etiatech 越南以本地仓库、本地工程团队和与总部同标准的服务承诺,支撑正品 OmniCure 与 Phoseon 紫外线固化系统——正品供应、应用支持与长期服务,就在越南。"
 date: 2026-07-31
 tags: [ETIA Vietnam, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-VN
@@ -14,7 +14,7 @@ author: ETIA Technology
 
 ## 四项承诺,就在越南
 
-**官方渠道正品。** 作为授权经销商,我们供应的每一台 OmniCure 与 Phoseon 系统、替换灯与配件都是正品,附带只有授权渠道才有的保修与支持——这是散货商给不了的。
+**原厂正品保障。** 作为 OmniCure 授权经销商,我们供应的 OmniCure 系统、替换灯与配件均为正品,附带授权渠道才有的原厂保修与支持;我们供应的 Phoseon 系统同样来自原厂正规渠道——这是散货商给不了的。
 
 **应用定制方案。** 工程师帮您按胶水、基材和产线节拍选对系统,并在您购买前用您的真实工件做固化试验——是买前,不是买后。
 
@@ -33,5 +33,3 @@ author: ETIA Technology
 告诉我们您的应用、胶水与生产需求,我们帮您选对系统、并让它持续运转。
 
 💬 Zalo:+84 961 530 153 · [联系 ETIA](/vi/contact)
-
-*Etiatech 越南是 OmniCure 与 Phoseon 紫外线固化系统在越南的授权经销商。*

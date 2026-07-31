@@ -102,10 +102,10 @@ export default function AboutPage() {
           </h1>
           <p className="mt-5 max-w-3xl text-base md:text-lg leading-relaxed text-white/80">
             {t({
-              en: "ETIA Technology is an authorized distributor of UV curing systems, helping manufacturers across China and Southeast Asia select, validate, install and maintain the right curing solution for their process.",
-              zh: "ETIA Technology 是 UV Curing 紫外线固化系统授权代理商,帮助中国及东南亚制造企业完成设备选型、工艺验证、安装与长期维护。",
-              th: "ETIA Technology เป็นตัวแทนจำหน่ายระบบบ่มยูวีที่ได้รับอนุญาต ช่วยผู้ผลิตในจีนและเอเชียตะวันออกเฉียงใต้เลือก ตรวจสอบ ติดตั้ง และดูแลโซลูชันการบ่มที่เหมาะกับกระบวนการ",
-              vi: "ETIA Technology là nhà phân phối ủy quyền hệ thống UV curing, giúp nhà sản xuất tại Trung Quốc và Đông Nam Á lựa chọn, xác nhận, lắp đặt và bảo trì giải pháp phù hợp.",
+              en: "ETIA Technology is an authorized OmniCure distributor in Thailand and Vietnam and a trusted supplier of UV curing systems across China and Southeast Asia, helping manufacturers select, validate, install and maintain the right curing solution for their process.",
+              zh: "ETIA Technology 是 OmniCure 在泰国和越南的授权经销商,也是覆盖中国及东南亚的 UV Curing 紫外线固化系统供应商,帮助制造企业完成设备选型、工艺验证、安装与长期维护。",
+              th: "ETIA Technology เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทยและเวียดนาม และเป็นผู้จัดหาระบบบ่มยูวีทั่วจีนและเอเชียตะวันออกเฉียงใต้ ช่วยผู้ผลิตเลือก ตรวจสอบ ติดตั้ง และดูแลโซลูชันการบ่มที่เหมาะกับกระบวนการ",
+              vi: "ETIA Technology là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam, đồng thời là nhà cung cấp hệ thống UV curing trên khắp Trung Quốc và Đông Nam Á, giúp nhà sản xuất lựa chọn, xác nhận, lắp đặt và bảo trì giải pháp phù hợp.",
             }, locale)}
           </p>
         </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
       {/* Authorized brands */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#44B549] mb-2">{t({ en: "Authorized Brands", zh: "授权品牌", th: "แบรนด์ที่ได้รับอนุญาต", vi: "Thương hiệu ủy quyền" }, locale)}</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-[#44B549] mb-2">{t({ en: "Brands We Supply", zh: "我们供应的品牌", th: "แบรนด์ที่เราจัดจำหน่าย", vi: "Thương hiệu chúng tôi cung cấp" }, locale)}</p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#143C96] mb-8">{t({ en: "Four UV curing brands, one local partner", zh: "四大 UV 固化品牌,一个本地伙伴", th: "สี่แบรนด์ UV curing พันธมิตรท้องถิ่นเดียว", vi: "Bốn thương hiệu UV curing, một đối tác địa phương" }, locale)}</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {BRANDS.map((b) => (

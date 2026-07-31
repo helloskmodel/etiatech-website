@@ -207,17 +207,17 @@ const BRAND_LOCALE_META: Record<string, Record<SubLocale, { title: string; descr
   },
   phoseon: {
     zh: {
-      title: "Phoseon UV LED 固化系统 — 授权经销商 | ETIA",
+      title: "Phoseon UV LED 固化系统 | ETIA",
       description: "正品 Phoseon® UV LED 固化系统：风冷与水冷高功率 UV LED，适用于油墨、涂层与胶粘剂的固化与干燥，覆盖标签、包装、数码印刷、电子、汽车及医疗器械等领域。",
     },
     th: {
       // Title/description from the client's official Thai deck.
-      title: "ระบบ UV LED Curing Phoseon — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
+      title: "ระบบ UV LED Curing Phoseon | ETIA",
       description: "ETIA จัดจำหน่ายระบบ UV LED curing Phoseon® รวมถึง Nexus II, VeriCure, FireJet, FireLine และ FireEdge สำหรับงานพิมพ์บรรจุภัณฑ์ coating อิเล็กทรอนิกส์ ไฟเบอร์ สายเคเบิล และการผลิตอุตสาหกรรม พร้อมการสนับสนุนทางเทคนิคในพื้นที่และคำแนะนำการเลือกระบบ",
     },
     vi: {
       // Title/description from the client's official Vietnamese deck.
-      title: "Hệ thống UV LED Curing Phoseon — Nhà phân phối được ủy quyền | ETIA",
+      title: "Hệ thống UV LED Curing Phoseon | ETIA",
       description: "ETIA cung cấp hệ thống UV LED curing Phoseon® bao gồm Nexus II, VeriCure, FireJet, FireLine và FireEdge cho in ấn bao bì, coating, điện tử, sợi quang, cáp và sản xuất công nghiệp, cùng hỗ trợ kỹ thuật địa phương và tư vấn lựa chọn hệ thống.",
     },
   },

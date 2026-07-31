@@ -1,6 +1,6 @@
 ---
 title: "Same Standard, Local Speed: ETIA's Service Commitment in Vietnam"
-description: "Etiatech Vietnam backs its genuine OmniCure and Phoseon UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — authorized supply, application support and long-term service, in Vietnam."
+description: "Etiatech Vietnam backs its genuine OmniCure and Phoseon UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — genuine supply, application support and long-term service, in Vietnam."
 date: 2026-07-31
 tags: [ETIA Vietnam, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-VN
@@ -14,7 +14,7 @@ Buying a UV curing system is the easy part. Keeping it running — genuine spare
 
 ## Four commitments, in Vietnam
 
-**Genuine products through authorized channels.** As an authorized distributor, every OmniCure and Phoseon system, replacement lamp and accessory we supply is genuine, with the warranty and support that only authorized supply carries — something a grey-market seller cannot offer.
+**Genuine products, factory-backed.** As an authorized OmniCure distributor, the OmniCure systems, replacement lamps and accessories we supply are genuine, carrying the manufacturer warranty and support that authorized supply guarantees; the Phoseon systems we supply come through genuine, factory-direct channels too — something a grey-market seller cannot offer.
 
 **Application-driven solutions.** Our engineers help you select the right system for your adhesive, substrate and takt time — and run cure trials on your real parts before you buy, not after.
 
@@ -33,5 +33,3 @@ We supply and support the curing **equipment**; your adhesives and coatings rema
 Tell us your application, adhesive and production requirements — we'll help you find the right system and keep it running.
 
 💬 Zalo: +84 961 530 153 · [Contact ETIA](/vi/contact)
-
-*Etiatech Vietnam is the authorized distributor of OmniCure and Phoseon UV curing systems in Vietnam.*

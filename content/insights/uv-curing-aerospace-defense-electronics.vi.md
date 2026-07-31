@@ -96,4 +96,4 @@ Con đường nhanh nhất không phải mua hệ thống trước — mà là *
 - So sánh [hệ thống UV curing](/product/omnicure) qua các nền tảng spot, diện tích và LED
 - Có bước phủ, potting hay bonding cảm biến avionics cụ thể cần phê duyệt? [Trao đổi với kỹ sư ETIA](/contact) — cho chúng tôi biết vật liệu, spec và takt time của bạn, phần còn lại để chúng tôi lo.
 
-*ETIA Technology là nhà phân phối được ủy quyền tại châu Á – Thái Bình Dương của các hệ thống UV curing OmniCure và Phoseon. Chúng tôi cung cấp và hỗ trợ thiết bị cure; lớp phủ conformal, vật liệu potting và keo vẫn là vật liệu đã phê duyệt của bạn.*
+*ETIA là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam. Chúng tôi cung cấp và hỗ trợ thiết bị cure; lớp phủ conformal, vật liệu potting và keo vẫn là vật liệu đã phê duyệt của bạn.*
