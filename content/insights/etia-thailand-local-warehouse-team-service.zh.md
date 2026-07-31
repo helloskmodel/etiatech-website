@@ -1,6 +1,6 @@
 ---
 title: "同一标准,本地速度:ETIA 在泰国的服务承诺"
-description: "Etiatec(泰国)以本地仓库、本地工程团队和与总部同标准的服务承诺,支撑 OmniCure 与 Phoseon 紫外线固化系统——正品、应用支持与长期服务,就在泰国。"
+description: "Etiatec(泰国)以本地仓库、本地工程团队和与总部同标准的服务承诺,支撑 OmniCure 紫外线固化系统——正品、应用支持与长期服务,就在泰国。"
 date: 2026-07-31
 tags: [ETIA Thailand, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE.TH
@@ -14,7 +14,7 @@ author: ETIA Technology
 
 ## 四项承诺,就在泰国
 
-**原厂正品保障。** 作为 OmniCure 授权经销商,我们供应的 OmniCure 系统、替换灯与配件均为正品,附带授权渠道才有的原厂保修与支持;我们供应的 Phoseon 系统同样来自原厂正规渠道。
+**正品保障,品质承诺。** 作为 OmniCure 授权经销商,我们保证从正规渠道进货、保证质量,并提供授权渠道才有的原厂保修与支持。
 
 **应用定制方案。** 工程师帮您按胶水、基材和产线节拍选对系统,并在您购买前用您的真实工件做固化试验——是买前,不是买后。
 

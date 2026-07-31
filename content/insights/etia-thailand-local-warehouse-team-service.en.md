@@ -1,6 +1,6 @@
 ---
 title: "Same Standard, Local Speed: ETIA's Service Commitment in Thailand"
-description: "Etiatec (Thailand) backs its OmniCure and Phoseon UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — genuine products, application support and long-term service, in Thailand."
+description: "Etiatec (Thailand) backs its OmniCure UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — genuine products, application support and long-term service, in Thailand."
 date: 2026-07-31
 tags: [ETIA Thailand, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE.TH
@@ -14,7 +14,7 @@ Buying a UV curing system is the easy part. Keeping it running — genuine spare
 
 ## Four commitments, in Thailand
 
-**Genuine products, factory-backed.** As an authorized OmniCure distributor, the OmniCure systems, replacement lamps and accessories we supply are genuine, carrying the manufacturer warranty and support that authorized supply guarantees; the Phoseon systems we supply come through genuine, factory-direct channels too.
+**Genuine products, quality guaranteed.** As an authorized OmniCure distributor, we source everything through official, legitimate channels — genuine products, backed by the manufacturer warranty and support that only authorized supply carries.
 
 **Application-driven solutions.** Our engineers help you select the right system for your adhesive, substrate and takt time — and run cure trials on your real parts before you buy, not after.
 

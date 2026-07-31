@@ -1,6 +1,6 @@
 ---
 title: "Cùng một tiêu chuẩn, tốc độ tại chỗ: Cam kết dịch vụ của ETIA tại Việt Nam"
-description: "Etiatech Việt Nam hỗ trợ hệ thống UV curing OmniCure và Phoseon chính hãng bằng kho tại Việt Nam, đội ngũ kỹ sư tại chỗ và cam kết dịch vụ cùng tiêu chuẩn với trụ sở chính — nguồn cung chính hãng, hỗ trợ ứng dụng và dịch vụ dài hạn, tại Việt Nam."
+description: "Etiatech Việt Nam hỗ trợ hệ thống UV curing OmniCure chính hãng bằng kho tại Việt Nam, đội ngũ kỹ sư tại chỗ và cam kết dịch vụ cùng tiêu chuẩn với trụ sở chính — nguồn cung chính hãng, hỗ trợ ứng dụng và dịch vụ dài hạn, tại Việt Nam."
 date: 2026-07-31
 tags: [ETIA Vietnam, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-VN
@@ -14,7 +14,7 @@ Mua một hệ thống UV curing là phần dễ. Giữ cho nó vận hành liê
 
 ## Bốn cam kết, tại Việt Nam
 
-**Sản phẩm chính hãng, bảo chứng từ nhà máy.** Là nhà phân phối OmniCure được ủy quyền, các hệ thống OmniCure, đèn thay thế và phụ kiện chúng tôi cung cấp đều chính hãng, kèm bảo hành và hỗ trợ chính hãng mà chỉ nguồn cung ủy quyền mới có; các hệ thống Phoseon chúng tôi cung cấp cũng đến từ kênh chính hãng trực tiếp của nhà máy — điều mà người bán hàng trôi nổi không thể cung cấp.
+**Sản phẩm chính hãng, bảo đảm chất lượng.** Là nhà phân phối OmniCure được ủy quyền, chúng tôi cam kết nhập hàng qua kênh chính thức, hợp pháp — sản phẩm chính hãng, kèm bảo hành và hỗ trợ chính hãng mà chỉ nguồn cung ủy quyền mới có, điều mà người bán hàng trôi nổi không thể cung cấp.
 
 **Giải pháp theo ứng dụng.** Kỹ sư của chúng tôi giúp chọn hệ thống phù hợp với keo, vật liệu nền và takt time của bạn — và thử nghiệm cure trên chi tiết thực của bạn trước khi mua, không phải sau khi mua.
 
