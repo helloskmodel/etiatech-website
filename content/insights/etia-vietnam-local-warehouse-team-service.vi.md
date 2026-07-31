@@ -26,8 +26,6 @@ Mua một hệ thống UV curing là phần dễ. Giữ cho nó vận hành liê
 
 Nhà sản xuất tại Việt Nam không nên phải chọn giữa sự tiện lợi tại chỗ và chuyên môn cấp trụ sở. Với kho tại chỗ và đội ngũ kỹ sư tại chỗ, Etiatech Việt Nam mang lại cả hai: chiều sâu của tập đoàn ETIA, cùng một người ở gần bắt máy.
 
-Chúng tôi cung cấp và hỗ trợ **thiết bị** cure; keo và lớp phủ vẫn là vật liệu của bạn — và chúng tôi giúp bạn cure chúng ổn định qua từng lô.
-
 ## Trao đổi với đội ngũ Việt Nam
 
 Cho chúng tôi biết ứng dụng, keo và yêu cầu sản xuất của bạn — chúng tôi sẽ giúp tìm hệ thống phù hợp và giữ nó vận hành.
