@@ -1,6 +1,7 @@
 // Authoritative Excelitas UV curing product catalog.
 // Organized by technology → brand. Used by the product index and detail pages.
 import { productI18n, productAppsI18n } from "./productCatalog.zh";
+import { cosResize } from "./cosImage";
 import type { LangText } from "./LocaleContext";
 
 export type Product = {
@@ -1801,9 +1802,9 @@ const productImageFile: Record<string, string> = {
 // Full image URL for a product, or "" when no asset is available (the UI
 // renders a branded placeholder instead of a broken image in that case).
 export function productImage(p: Product): string {
-  if (p.imageUrl) return p.imageUrl;
+  if (p.imageUrl) return cosResize(p.imageUrl, 1200);
   const file = productImageFile[p.slug];
-  return file ? `${PRODUCT_IMG_BASE}/${encodeURIComponent(file)}` : "";
+  return file ? cosResize(`${PRODUCT_IMG_BASE}/${encodeURIComponent(file)}`, 1200) : "";
 }
 
 // ───────────────────────── Product SEO (JSON-LD) ─────────────────────────
