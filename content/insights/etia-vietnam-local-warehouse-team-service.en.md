@@ -26,8 +26,6 @@ Buying a UV curing system is the easy part. Keeping it running — genuine spare
 
 Manufacturers in Vietnam should not have to choose between local convenience and headquarters-level expertise. With a local warehouse and a local engineering team, Etiatech Vietnam delivers both: the depth of the ETIA group, with someone nearby who picks up the phone.
 
-We supply and support the curing **equipment**; your adhesives and coatings remain your material — and we help you cure them reliably, batch after batch.
-
 ## Talk to the Vietnam team
 
 Tell us your application, adhesive and production requirements — we'll help you find the right system and keep it running.
