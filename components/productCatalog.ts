@@ -69,16 +69,24 @@ export const products: Product[] = [
       "Automated, multi-head high-throughput production lines",
     ],
     specs: [
+      ["Part Numbers", "010-00376R (2-channel) · 010-00377R (4-channel)"],
       ["Channels", "2 or 4 channel configurations"],
-      ["UV LED Heads", "Up to 4 individual & interchangeable to any channel"],
+      ["UV LED Heads", "Up to 4, individual & interchangeable to any channel"],
       ["Wavelengths", "365 nm, 385 nm (55 & 130 mm); 400 nm (55 mm)"],
       ["Peak Irradiance", "Up to 14 / 16 / 9 W/cm² at 365 / 385 / 400 nm (10 mm, 3 mm lens)"],
-      ["Optical Stability", "±5% maintained during exposure (LED cooling)"],
-      ["Intensity Control", "±1% steps"],
-      ["Exposure Control", "±0.1 s via StepCure® 2.0"],
+      ["Optical Stability", "±5% maintained during exposure (Intelli-Lamp® LED cooling)"],
+      ["Intensity Level", "5–100% (1% increments)"],
+      ["Timer", "Countdown 999.9 s to 0.1 s (0.1 s steps); count mode via panel or foot pedal"],
       ["Display", '2.4" full-color LCD'],
-      ["External Control", "4-way keypad, PLC, or PC via USB"],
-      ["Certifications", "CE and RoHS compliant"],
+      ["LED Head Connector", "HDMI with integrated auto-locking"],
+      ["External Control", "Optional foot pedal, PLC, or PC via USB"],
+      ["Controller Dimensions", '(H) 5.5" × (W) 3.5" × (D) 5.5" (139.7 × 88.9 × 139.7 mm)'],
+      ["Operating Voltage", "12 VDC via AC adapter; AC 100–120 V or 200–240 V (±10%), 50/60 Hz"],
+      ["Power Consumption", "72 W max at 120 VAC; 104 W max at 240 VAC (4 heads)"],
+      ["Ambient Temp/Humidity", "5° to 35°C, 85% max (no condensation)"],
+      ["Storage Temp/Humidity", "-10° to 60°C, 85% max (no condensation)"],
+      ["Certifications", "RoHS compliant"],
+      ["Warranty", "1 year"],
     ],
   },
   {
@@ -1678,12 +1686,18 @@ const PRODUCT_PDF_BASE =
 // Some older documents (S2000/LX500 guides) live in the /PDF folder instead.
 const SITE_PDF_BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
+// Chinese-language product brochures live in the /PRODUCTPDFCN folder.
+const PRODUCT_PDF_CN_BASE =
+  "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PRODUCTPDFCN";
 
 const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" , vi: "Brochure", th: "โบรชัวร์" };
 const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" , vi: "Hướng dẫn khởi động nhanh", th: "คู่มือเริ่มต้นอย่างรวดเร็ว" };
 const DOC_USER_GUIDE = { en: "User Guide", zh: "用户指南", vi: "Hướng dẫn sử dụng", th: "คู่มือการใช้งาน" };
 
 export const productDocs: Record<string, ProductDoc[]> = {
+  "lx505": [
+    { file: "Excelitas_OmniCure_LX505_Brochure_CHI-PH_PRINT.PDF", kind: DOC_BROCHURE, base: PRODUCT_PDF_CN_BASE },
+  ],
   "lx500": [
     { file: "Brochure - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_BROCHURE },
     { file: "User Guide - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_USER_GUIDE, base: SITE_PDF_BASE },
