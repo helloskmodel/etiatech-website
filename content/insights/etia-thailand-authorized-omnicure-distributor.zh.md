@@ -37,7 +37,7 @@ ETIA Technology 是 UV Curing 紫外线固化系统授权代理商，拥有 **20
 
 - **销售总监：** Sompoch Ratchakom (Job)
 - **电话：** +66 811 746 947
-- **邮箱：** sompoch@etia-tech.com
+- **邮箱：** Omnicure@etia-tech.com
 - **泰语官网：** [www.etiatech.com/th](/th)
 
 如需报价、演示，或为您的工艺匹配合适的紫外线固化系统，欢迎[咨询我们的工程师](/contact)。

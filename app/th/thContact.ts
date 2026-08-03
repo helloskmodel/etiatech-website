@@ -12,7 +12,7 @@ export const TH_CONTACTS = {
     role: { th: "ผู้อำนวยการฝ่ายขาย", en: "Sales Director", zh: "销售总监" } as Tri,
     phone: "+66 811 746 947",
     phoneHref: "+66811746947",
-    email: "sompoch@etia-tech.com",
+    email: "Omnicure@etia-tech.com",
   },
 };
 

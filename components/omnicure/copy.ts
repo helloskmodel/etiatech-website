@@ -28,7 +28,7 @@ export const CONTACT = {
   // Empty = the Zalo floating button stays hidden until this is filled.
   // "Etiatech Việt Nam" Zalo account (+84 961 530 153, Bac Ninh office).
   zaloUrl: "https://zalo.me/84961530153",
-  email: "sompoch@etia-tech.com",
+  email: "Omnicure@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
 
