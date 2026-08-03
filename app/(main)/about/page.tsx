@@ -159,7 +159,7 @@ export default function AboutPage() {
                 {o.highlight && (
                   <div className="mt-3 space-y-1 border-t border-gray-100 pt-3 text-xs text-gray-600">
                     <p className="flex items-center gap-1.5"><Phone className="h-3 w-3 text-[#44B549]" />+66 811 746 947</p>
-                    <p className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-[#44B549]" />sompoch@etia-tech.com</p>
+                    <p className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-[#44B549]" />Omnicure@etia-tech.com</p>
                   </div>
                 )}
               </div>

@@ -1,13 +1,10 @@
 import type { Locale } from "@/components/LocaleContext";
 
-// Sales / general inquiries route by country: English & Chinese to the main
-// OmniCure inbox, Thai and Vietnamese to their local OmniCure inboxes.
+// Sales / general inquiries for every country route to one unified OmniCure
+// inbox. `locale` is kept for call-site compatibility.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function localeSalesEmail(locale: Locale): string {
-  return locale === "th"
-    ? "omnicure.th@gmail.com"
-    : locale === "vi"
-    ? "omnicure.vn@gmail.com"
-    : "Omnicure@etia-tech.com";
+  return "Omnicure@etia-tech.com";
 }
 
 // Static default (English / Chinese). Prefer localeSalesEmail(locale) where a

@@ -37,7 +37,7 @@ ETIA Technology is an authorized distributor of UV curing systems with **20 year
 
 - **Sales Director:** Sompoch Ratchakom (Job)
 - **Phone:** +66 811 746 947
-- **Email:** sompoch@etia-tech.com
+- **Email:** Omnicure@etia-tech.com
 - **Thai-language site:** [www.etiatech.com/th](/th)
 
 For a quotation, a demo, or help matching a UV curing system to your process, [talk to our engineers](/contact).
