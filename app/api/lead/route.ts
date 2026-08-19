@@ -3,7 +3,7 @@
 // Delivery is configured with env vars, first match wins:
 //   LEAD_WEBHOOK_URL — POST the lead as JSON (Zapier/Make/Slack/CRM webhook)
 //   RESEND_API_KEY   — email via the Resend API to LEAD_TO_EMAIL
-//                      (default omnicure@etiatech.com; optional LEAD_FROM_EMAIL,
+//                      (default Omnicure@etia-tech.com; optional LEAD_FROM_EMAIL,
 //                      default onboarding@resend.dev)
 // With neither configured this returns 503 and the form falls back to the
 // visitor's mail client (mailto), so no lead is ever silently dropped.
@@ -44,7 +44,7 @@ async function deliver(lead: Record<string, string>): Promise<"sent" | "unconfig
   }
 
   const resendKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEAD_TO_EMAIL || "omnicure@etiatech.com";
+  const to = process.env.LEAD_TO_EMAIL || "Omnicure@etia-tech.com";
   if (resendKey) {
     const text = Object.entries(lead)
       .filter(([, v]) => v)
