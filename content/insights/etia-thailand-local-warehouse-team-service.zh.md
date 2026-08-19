@@ -30,4 +30,4 @@ author: ETIA Technology
 
 告诉我们您的应用、胶水与生产需求,我们帮您选对系统、并让它持续运转。
 
-📍 泰国曼谷 · ☎ +66 811 746 947 · 💬 LINE:@712sangs · [联系 ETIA](/contact)
+📍 泰国曼谷 · ☎ +66 811 746 947 · 💬 LINE:@omnicurethailand · [联系 ETIA](/contact)

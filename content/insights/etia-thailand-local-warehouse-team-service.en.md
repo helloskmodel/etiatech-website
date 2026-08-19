@@ -30,4 +30,4 @@ Manufacturers in Thailand should not have to choose between local convenience an
 
 Tell us your application, adhesive and production requirements — we'll help you find the right system and keep it running.
 
-📍 Bangkok, Thailand · ☎ +66 811 746 947 · 💬 LINE: @712sangs · [Contact ETIA](/contact)
+📍 Bangkok, Thailand · ☎ +66 811 746 947 · 💬 LINE: @omnicurethailand · [Contact ETIA](/contact)
