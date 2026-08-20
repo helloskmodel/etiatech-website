@@ -5,7 +5,7 @@ import { track } from "./track";
 import LeadForm from "./LeadForm";
 import type { ProductLandingConfig } from "./productConfig";
 
-const LINE_URL = `https://line.me/R/ti/p/${CONTACT.lineId}`;
+const LINE_URL = CONTACT.lineUrl; // official lin.ee add-friend link (copy.ts)
 
 export default function ProductLanding({ config }: { config: ProductLandingConfig }) {
   const c = config;

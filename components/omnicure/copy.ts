@@ -23,7 +23,7 @@ export const CONTACT = {
   phoneHref: "+66811746947",
   lineId: "@omnicurethailand", // "Omnicure Thailand" LINE official account
   // Full LINE "add friend" link for the Official Account above.
-  lineUrl: "https://line.me/R/ti/p/@omnicurethailand",
+  lineUrl: "https://lin.ee/wLV66QX",
   // Zalo chat link for Vietnam (https://zalo.me/<phone-or-OA-id>).
   // Empty = the Zalo floating button stays hidden until this is filled.
   // "Etiatech Việt Nam" Zalo account (+84 961 530 153, Bac Ninh office).
