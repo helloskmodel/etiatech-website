@@ -1694,27 +1694,73 @@ const PRODUCT_PDF_CN_BASE =
 const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" , vi: "Brochure", th: "โบรชัวร์" };
 const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" , vi: "Hướng dẫn khởi động nhanh", th: "คู่มือเริ่มต้นอย่างรวดเร็ว" };
 const DOC_USER_GUIDE = { en: "User Guide", zh: "用户指南", vi: "Hướng dẫn sử dụng", th: "คู่มือการใช้งาน" };
+const DOC_BROCHURE_CN = { en: "Brochure (Chinese)", zh: "产品手册(中文)", vi: "Brochure (tiếng Trung)", th: "โบรชัวร์ (ภาษาจีน)" };
+const DOC_SPEC_GUIDE = { en: "Specification Guide", zh: "规格指南", vi: "Hướng dẫn thông số", th: "คู่มือข้อกำหนด" };
 
+// English brochures/spec guides live in the /PDF folder (SITE_PDF_BASE);
+// Chinese brochures live in /PRODUCTPDFCN (PRODUCT_PDF_CN_BASE). Every URL
+// below was verified to return HTTP 200 before being added.
 export const productDocs: Record<string, ProductDoc[]> = {
+  "s2000-elite": [
+    { file: "Brochure - OmniCure S2000 Elite UV Curing System.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "OmniCure_S2000_Elite_Brochure-CH1.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
+    { file: "User Guide - OmniCure S2000 Elite UV Curing System.pdf", kind: DOC_USER_GUIDE, base: SITE_PDF_BASE },
+    { file: "Quick Start Guide - OmniCure S2000 Elite UV Curing System.pdf", kind: DOC_QUICK_START, base: SITE_PDF_BASE },
+  ],
+  "s1500-pro": [
+    { file: "Brochure - OmniCure S1500 Pro.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "OmniCure_S1500_Pro_Brochure-CH宣传彩页.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
+  ],
+  "r2000": [
+    { file: "Brochure - OmniCure R2000 UV Radiometer.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "s2e-network-module": [
+    { file: "Brochure - OmniCure S2E Network Module.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "v3-led-heads": [
+    { file: "Specification Guide - OmniCure LX500 V3 LED UV Head Assembly.pdf", kind: DOC_SPEC_GUIDE, base: SITE_PDF_BASE },
+  ],
   "lx505": [
-    { file: "Excelitas_OmniCure_LX505_Brochure_CHI-PH_PRINT.PDF", kind: DOC_BROCHURE, base: PRODUCT_PDF_CN_BASE },
+    { file: "Excelitas_OmniCure_LX505_Brochure_CHI-PH_PRINT.PDF", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
   ],
   "lx500": [
     { file: "Brochure - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_BROCHURE },
+    { file: "Excelitas_OmniCure_LX500_Brochure_4pg_CHI-clr UPDATE_PRINT.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
     { file: "User Guide - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_USER_GUIDE, base: SITE_PDF_BASE },
     { file: "Quick Start Guide - OmniCure LX500 LED Spot UV Curing System.pdf", kind: DOC_QUICK_START, base: SITE_PDF_BASE },
   ],
   "ls200": [
     { file: "Brochure - OmniCure LS200 UV LED Radiometry and Calibration System.pdf", kind: DOC_BROCHURE },
   ],
+  "ac2": [
+    { file: "Brochure - OmniCure AC2 LED UV Curing System.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "AC2产品资料.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
+  ],
+  "ac4": [
+    { file: "Brochure - OmniCure AC4 LED UV Curing System.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "AC4产品资料.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
+  ],
+  "ac5": [
+    { file: "Brochure - OmniCure AC5 LED UV Curing System.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "AC5产品资料.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
+  ],
   "ac7": [
+    { file: "Brochure - OmniCure AC7 LED UV Curing System.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "AC7产品资料.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
     { file: "Quick Start Guide - OmniCure AC7 LED UV Curing System.pdf", kind: DOC_QUICK_START },
   ],
   "ac8": [
     { file: "Brochure - OmniCure AC8 LED UV Curing System.pdf", kind: DOC_BROCHURE },
+    { file: "AC8产品资料.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
   ],
   "ac8-hd": [
     { file: "Brochure - OmniCure AC8-HD LED UV Curing System.pdf", kind: DOC_BROCHURE },
+  ],
+  "ac9225": [
+    { file: "Brochure - OmniCure AC9 LED UV Curing System.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "ac9225-f": [
+    { file: "Brochure – OmniCure AC9225F UV LED Fiber Curing Systems.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
   ],
   // Fusion UV — the F-Series product covers both F300 (3 kW) and F600 (6 kW)
   // power classes, so both brochures live here.
