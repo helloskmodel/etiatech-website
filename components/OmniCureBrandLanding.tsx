@@ -7,10 +7,19 @@ import {
   ArrowRight,
   BadgeCheck,
   Crosshair,
+  Download,
   Layers3,
   ScanLine,
   Zap,
 } from "lucide-react";
+
+// OmniCure family literature (verified COS URLs). Shown as downloads on the
+// OmniCure brand page — the full catalog + Chinese family brochure.
+const COS = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com";
+const FAMILY_DOCS: { label: LangText; href: string }[] = [
+  { label: { en: "Product Catalog (EN)", zh: "产品目录(英文)", th: "แคตตาล็อกผลิตภัณฑ์ (EN)", vi: "Danh mục sản phẩm (EN)" }, href: `${COS}/PDF/${encodeURIComponent("OmniCure UV Curing Product Catalog.pdf")}` },
+  { label: { en: "Family Brochure (中文)", zh: "家族产品手册(中文)", th: "โบรชัวร์ตระกูลผลิตภัณฑ์ (จีน)", vi: "Brochure dòng sản phẩm (Trung)" }, href: `${COS}/PDF/${encodeURIComponent("Brochure - Omnicure family CN.pdf")}` },
+];
 import { inquiryMailto, localeSalesEmail } from "@/components/contact";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import {
@@ -216,6 +225,24 @@ export default function OmniCureBrandLanding() {
                 <div className="flex flex-1 flex-col p-5"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#1A56DB]">{cardCategory}</p><h3 className="mt-2 text-base font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{cardName}</h3>{isLamp && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Genuine spare lamp · Part No.", zh: "原厂替换灯管 · 料号", th: "หลอดอะไหล่ของแท้ · รหัสชิ้นส่วน", vi: "Đèn thay thế chính hãng · Mã số" }, locale)} {LAMP.primaryCode}</p>}{highlights.length > 0 && <div className="mt-4 flex flex-wrap gap-1.5">{highlights.slice(0, 2).map((item) => <span key={item.en} className="rounded-full bg-[#F3F7FF] px-2.5 py-1 text-[10px] font-semibold text-[#1A56DB]">{t(item, locale)}</span>)}</div>}{related.length > 0 && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Application:", zh: "应用：", th: "การใช้งาน:", vi: "Ứng dụng:" }, locale)} {relatedTitle}</p>}<span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-[#1A56DB]">{isLamp ? t({ en: "Check stock", zh: "查询库存", th: "เช็คสต็อก", vi: "Kiểm tra tồn kho" }, locale) : t({ en: "View product", zh: "查看产品", th: "ดูผลิตภัณฑ์", vi: "Xem sản phẩm" }, locale)} <ArrowRight className="h-4 w-4" /></span></div>
               </Link>;
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Product literature — full OmniCure family catalog downloads */}
+      <section className="px-4 pb-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-[#143C96] to-[#1A56DB] p-7 text-white sm:p-9 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#8FE0B0]">{t({ en: "Product Literature", zh: "产品资料", th: "เอกสารผลิตภัณฑ์", vi: "Tài liệu sản phẩm" }, locale)}</p>
+            <h2 className="mt-2 text-2xl font-bold md:text-3xl">{t({ en: "The complete OmniCure product family", zh: "OmniCure 完整产品家族", th: "ตระกูลผลิตภัณฑ์ OmniCure ทั้งหมด", vi: "Toàn bộ dòng sản phẩm OmniCure" }, locale)}</h2>
+            <p className="mt-2 max-w-xl text-sm leading-6 text-white/80">{t({ en: "Download the full catalog covering every OmniCure UV curing system — spot, LED spot and large-area.", zh: "下载覆盖全部 OmniCure 紫外线固化系统的完整目录——点固化、LED 点固化与大面积。", th: "ดาวน์โหลดแคตตาล็อกฉบับเต็มครอบคลุมระบบ UV curing ของ OmniCure ทุกรุ่น", vi: "Tải danh mục đầy đủ bao gồm mọi hệ thống UV curing OmniCure." }, locale)}</p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:shrink-0">
+            {FAMILY_DOCS.map((doc) => (
+              <a key={doc.href} href={doc.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:bg-[#EAF1FF]">
+                <Download className="h-4 w-4" /> {t(doc.label, locale)}
+              </a>
+            ))}
           </div>
         </div>
       </section>
