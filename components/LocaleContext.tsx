@@ -1,9 +1,9 @@
 "use client";
 import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
 
-// Supported locales. EN + ZH are live; VI/TH are reserved for later.
-export type Locale = "en" | "zh" | "vi" | "th";
-export const ACTIVE_LOCALES: Locale[] = ["en", "zh", "vi", "th"];
+// Supported locales. EN + ZH are live; VI/TH/MY are available.
+export type Locale = "en" | "zh" | "vi" | "th" | "my";
+export const ACTIVE_LOCALES: Locale[] = ["en", "zh", "vi", "th", "my"];
 
 // Maps the Nav button labels to locale codes.
 export const LOCALE_LABELS: Record<Locale, string> = {
@@ -11,6 +11,7 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   zh: "CN",
   vi: "VN",
   th: "TH",
+  my: "MS",
 };
 
 const COOKIE = "etia-locale";
@@ -20,7 +21,7 @@ const LocaleCtx = createContext<Ctx>({ locale: "en", setLocale: () => {} });
 
 function readCookie(): Locale | null {
   if (typeof document === "undefined") return null;
-  const m = document.cookie.match(/(?:^|;\s*)etia-locale=(en|zh|vi|th)/);
+  const m = document.cookie.match(/(?:^|;\s*)etia-locale=(en|zh|vi|th|my)/);
   return (m?.[1] as Locale) ?? null;
 }
 
