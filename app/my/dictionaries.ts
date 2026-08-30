@@ -12,357 +12,265 @@ export const HTML_LANG: Record<MyLocale, string> = {
   en: "en",
 };
 
-type Bilingual = Record<MyLocale, string>;
+// Complete Malay (ms-MY) translation dictionary
+// Technical terms (UV curing, bonding, lead time, downtime, spot curing, ADAS, PCB) preserved in English
+// per user's localization strategy
 
-// Home page strings
-const tri = {
-  metaTitle: {
-    en: "UV Curing Systems & Solutions Distributor | ETIA",
-    my: "Pengedar Sistem & Penyelesaian UV Curing | ETIA",
-  } as Bilingual,
-  metaDescription: {
-    en: "Authorized distributor of industrial UV curing systems from established manufacturers. 20 years of application expertise across 10 industries.",
-    my: "Pengedar sah sistem UV curing industri daripada pengilang terkemuka. 20 tahun kepakaran aplikasi merentasi 10 industri.",
-  } as Bilingual,
-  navHome: { en: "Home", my: "Utama" } as Bilingual,
-  navProducts: { en: "Products", my: "Produk" } as Bilingual,
-  navApplications: { en: "Applications", my: "Aplikasi" } as Bilingual,
-  navInsights: { en: "Insights", my: "Info Teknikal" } as Bilingual,
-  navService: { en: "Service & Support", my: "Servis & Sokongan" } as Bilingual,
-  navAbout: { en: "About ETIA", my: "Tentang ETIA" } as Bilingual,
-};
-
-export type MyDict = {
-  metaTitle: string;
-  metaDescription: string;
-  nav: Record<string, string>;
-};
-
-export function getDict(lang: MyLocale): MyDict {
-  return {
-    metaTitle: tri.metaTitle[lang],
-    metaDescription: tri.metaDescription[lang],
-    nav: {
-      home: tri.navHome[lang],
-      products: tri.navProducts[lang],
-      applications: tri.navApplications[lang],
-      insights: tri.navInsights[lang],
-      service: tri.navService[lang],
-      about: tri.navAbout[lang],
+export const MY_STRINGS = {
+  meta: {
+    title: "ETIA Technology | Pengedar Sistem & Penyelesaian UV Curing",
+    description: "Pengedar sah OmniCure UV curing di Asia Tenggara — Malaysia, Thailand, Vietnam, Singapura dan Indonesia. Turut membekalkan sistem Phoseon, Fusion & NobleLight. 20 tahun kepakaran aplikasi, stok tempatan dan pembaikan dalaman merentasi 10 industri.",
+    ogTitle: "ETIA Technology — Rakan Penyelesaian UV Curing Anda",
+    ogDescription: "Sistem UV curing OmniCure dan Phoseon, disokong oleh jurutera aplikasi, stok tempatan dan pembaikan dalaman.",
+  },
+  locale: { code: "ms", label: "MS", name: "Bahasa Melayu" },
+  nav: {
+    home: "Utama",
+    omnicure: "OmniCure",
+    phoseon: "Phoseon",
+    products: "Produk",
+    applications: "Aplikasi",
+    insights: "Info Teknikal",
+    about: "Tentang ETIA",
+    caseStudies: "Kajian Kes",
+    serviceSupport: "Servis & Sokongan",
+    salesSupport: "Jualan & Sokongan",
+  },
+  cta: {
+    talkToEngineer: "Berbincang dengan Jurutera",
+    exploreProducts: "Terokai Produk",
+    sendApplication: "Hantar Butiran Aplikasi Anda",
+    readCase: "Baca kajian kes",
+    allCaseStudies: "Semua Kajian Kes",
+    learnMore: "Ketahui Lanjut",
+    contactUs: "Hubungi Kami",
+  },
+  home: {
+    eyebrow: "Pengedar Sah · Produk Asli Melalui Saluran Rasmi",
+    eyebrowAlt: "Pembekal Rasmi · Produk Asli Melalui Saluran Rasmi",
+    h1Line1: "Rakan Penyelesaian UV Curing Anda.",
+    h1Line2: "Dari Pemilihan Hingga Sokongan.",
+    heroImageAlt: "Sistem UV spot curing OmniCure S1500 Pro",
+    pillars: [
+      { title: "Produk Asli", sub: "Bekalan sah" },
+      { title: "Sokongan Aplikasi", sub: "Pemilihan dipandu jurutera" },
+      { title: "Pembaikan Dalaman", sub: "Sokongan sepanjang hayat" },
+    ],
+    ticker: [
+      "Produk Asli Melalui Saluran Rasmi",
+      "Penyelesaian Berasaskan Aplikasi",
+      "Rantaian Bekalan Tempatan",
+      "Perkhidmatan Jangka Panjang",
+    ],
+    badges: { newProduct: "PRODUK BAHARU", newPromotion: "PROMOSI BAHARU" },
+    news: [
+      { badge: "PRODUK BAHARU", text: "Lampu gantian OmniCure S2000 Elite (012-64000R) — stok asli, penghantaran pantas" },
+      { badge: "PRODUK BAHARU", text: "OmniCure LX500 — spot curing UV LED ultra padat dengan hasil konsisten dan boleh diulang" },
+      { badge: "PROMOSI BAHARU", text: "Konsultasi proses UV curing percuma — berbincang dengan jurutera ETIA tentang aplikasi anda" },
+    ],
+    why: {
+      heading: "Mengapa Pengilang Memilih ETIA",
+      items: [
+        { title: "20 Tahun Pengalaman Aplikasi", body: "Pengetahuan UV curing yang praktikal merentasi bidang perubatan, elektronik, fotonik, automotif dan pembuatan industri." },
+        { title: "Bekalan Sah & Asli", body: "Sistem, lampu gantian dan aksesori asli melalui saluran bekalan yang sah." },
+        { title: "Stok Tempatan & Tindak Balas Pantas", body: "Peralatan dan bahan guna habis disimpan secara tempatan bagi memendekkan lead time serta mengurangkan risiko pengeluaran." },
+        { title: "Pembaikan Dalaman & Sokongan Sepanjang Kitaran Hayat", body: "Penyelesaian masalah, penyelenggaraan dan penyelarasan pembaikan untuk memastikan proses anda terus berjalan." },
+      ],
     },
-  };
-}
-
-// Home page copy
-const homeTri = {
-  heroEyebrow: {
-    en: "Authorized Distributor · Genuine Products Through Official Channels",
-    my: "Pengedar Sah · Produk Asli Melalui Saluran Rasmi",
-  } as Bilingual,
-  heroTitle: {
-    en: "Your UV Curing Solution Partner. From Selection to Support.",
-    my: "Rakan Penyelesaian UV Curing Anda. Dari Pemilihan Hingga Sokongan.",
-  } as Bilingual,
-  heroSubtitle: {
-    en: "20 years of application expertise. Proven solutions across medical, electronics, photonics, automotive, and industrial manufacturing.",
-    my: "20 tahun kepakaran aplikasi. Penyelesaian terbukti merentasi perubatan, elektronik, fotonik, automotif dan pembuatan industri.",
-  } as Bilingual,
-  exploreProducts: { en: "Explore Products", my: "Terokai Produk" } as Bilingual,
-  talkEngineer: { en: "Talk to an Engineer", my: "Berbincang dengan Jurutera" } as Bilingual,
-
-  trustBar: {
-    en: "Genuine Products Through Official Channels · Application-Driven Solutions · Local Supply Chain · Long-Term Service",
-    my: "Produk Asli Melalui Saluran Rasmi · Penyelesaian Berasaskan Aplikasi · Rantaian Bekalan Tempatan · Perkhidmatan Jangka Panjang",
-  } as Bilingual,
-
-  productsHeading: {
-    en: "UV Curing Systems",
-    my: "Sistem UV Curing",
-  } as Bilingual,
-  productsSubheading: {
-    en: "Industry-Leading UV Curing Brands",
-    my: "Jenama UV Curing Terunggul dalam Industri",
-  } as Bilingual,
-
-  omnicureHeading: {
-    en: "Precision Manufacturing",
-    my: "Pembuatan Berketepatan Tinggi",
-  } as Bilingual,
-  omnicureDesc: {
-    en: "OmniCure UV Curing Systems — Precision UV curing for assembly, bonding, medical devices and electronics.",
-    my: "Sistem UV Curing OmniCure — UV curing berketepatan tinggi untuk pemasangan, bonding, peranti perubatan dan elektronik.",
-  } as Bilingual,
-
-  phoseonHeading: {
-    en: "Industrial UV LED",
-    my: "UV LED Industri",
-  } as Bilingual,
-  phoseonDesc: {
-    en: "Phoseon UV LED Curing Systems — Industrial UV LED curing for inks, coatings, printing, packaging and production lines.",
-    my: "Sistem UV LED Curing Phoseon — UV LED curing industri untuk dakwat, salutan, percetakan, pembungkusan dan barisan pengeluaran.",
-  } as Bilingual,
-
-  exploreOmnicure: { en: "Explore OmniCure", my: "Terokai OmniCure" } as Bilingual,
-  explorePhoseon: { en: "Explore Phoseon", my: "Terokai Phoseon" } as Bilingual,
-
-  casesHeading: {
-    en: "Case Studies",
-    my: "Kajian Kes",
-  } as Bilingual,
-  casesSubtitle: {
-    en: "Real production applications — see the system, the process and the results.",
-    my: "Aplikasi pengeluaran sebenar — lihat sistemnya, prosesnya dan hasilnya.",
-  } as Bilingual,
-  allCases: { en: "All Case Studies", my: "Semua Kajian Kes" } as Bilingual,
-  readCase: { en: "Read case", my: "Baca kajian kes" } as Bilingual,
-
-  trustedBy: {
-    en: "Trusted By",
-    my: "Dipercayai Oleh",
-  } as Bilingual,
-  trustedDesc: {
-    en: "Trusted by leading medical, photonics & electronics manufacturers",
-    my: "Dipercayai oleh pengilang terkemuka dalam bidang perubatan, fotonik dan elektronik",
-  } as Bilingual,
-
-  whyHeading: {
-    en: "Why Manufacturers Choose ETIA",
-    my: "Mengapa Pengilang Memilih ETIA",
-  } as Bilingual,
-
-  whyCard1Title: { en: "Genuine Products / Authorized supply", my: "Produk Asli / Bekalan sah" } as Bilingual,
-  whyCard2Title: { en: "Application Support / Engineer-led selection", my: "Sokongan Aplikasi / Pemilihan dipandu jurutera" } as Bilingual,
-  whyCard3Title: { en: "In-House Repair / Lifecycle support", my: "Pembaikan Dalaman / Sokongan sepanjang hayat" } as Bilingual,
-
-  needHelp: {
-    en: "Need help choosing the right UV curing system?",
-    my: "Perlukan bantuan memilih sistem UV curing yang tepat?",
-  } as Bilingual,
-  needHelpDesc: {
-    en: "Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers will help you find the right solution.",
-    my: "Beritahu kami aplikasi, pelekat, kawasan curing, panjang gelombang dan keperluan pengeluaran anda. Jurutera ETIA akan bantu anda cari penyelesaian yang tepat.",
-  } as Bilingual,
-  sendApplication: { en: "Send Your Application", my: "Hantar Butiran Aplikasi Anda" } as Bilingual,
-};
-
-export type MyHomeDict = {
-  hero: { eyebrow: string; title: string; subtitle: string };
-  buttons: { exploreProducts: string; talkEngineer: string };
-  trustBar: string;
-  products: { heading: string; subheading: string };
-  omnicure: { heading: string; desc: string; cta: string };
-  phoseon: { heading: string; desc: string; cta: string };
-  cases: { heading: string; subtitle: string; all: string; read: string };
-  trusted: { heading: string; desc: string };
-  why: {
-    heading: string;
-    card1: { title: string };
-    card2: { title: string };
-    card3: { title: string };
-  };
-  cta: { heading: string; desc: string; button: string };
-};
-
-export function getHomeDict(lang: MyLocale): MyHomeDict {
-  return {
-    hero: {
-      eyebrow: homeTri.heroEyebrow[lang],
-      title: homeTri.heroTitle[lang],
-      subtitle: homeTri.heroSubtitle[lang],
-    },
-    buttons: {
-      exploreProducts: homeTri.exploreProducts[lang],
-      talkEngineer: homeTri.talkEngineer[lang],
-    },
-    trustBar: homeTri.trustBar[lang],
-    products: {
-      heading: homeTri.productsHeading[lang],
-      subheading: homeTri.productsSubheading[lang],
-    },
-    omnicure: {
-      heading: homeTri.omnicureHeading[lang],
-      desc: homeTri.omnicureDesc[lang],
-      cta: homeTri.exploreOmnicure[lang],
-    },
-    phoseon: {
-      heading: homeTri.phoseonHeading[lang],
-      desc: homeTri.phoseonDesc[lang],
-      cta: homeTri.explorePhoseon[lang],
+    brands: {
+      eyebrow: "Penyelesaian Jenama UV Curing",
+      heading: "Jenama UV Curing Terunggul dalam Industri",
+      omnicure: {
+        tag: "Pembuatan Berketepatan Tinggi",
+        title: "Sistem UV Curing OmniCure",
+        body: "UV curing berketepatan tinggi untuk pemasangan, bonding, peranti perubatan dan elektronik.",
+        cta: "Terokai OmniCure",
+        imageAlt: "Sistem UV curing OmniCure",
+      },
+      phoseon: {
+        tag: "UV LED Industri",
+        title: "Sistem UV LED Curing Phoseon",
+        body: "UV LED curing industri untuk dakwat, salutan, percetakan, pembungkusan dan barisan pengeluaran.",
+        cta: "Terokai Phoseon",
+        imageAlt: "Sistem UV LED curing industri Phoseon",
+      },
     },
     cases: {
-      heading: homeTri.casesHeading[lang],
-      subtitle: homeTri.casesSubtitle[lang],
-      all: homeTri.allCases[lang],
-      read: homeTri.readCase[lang],
+      heading: "Kajian Kes",
+      sub: "Aplikasi pengeluaran sebenar — lihat sistemnya, prosesnya dan hasilnya.",
+      items: [
+        { industry: "Pemasangan Peranti Perubatan", title: "OmniCure S2000 Elite Menyokong Bonding 360° dalam Pembuatan Kateter Kardiovaskular" },
+        { industry: "Automotif & ADAS", title: "OmniCure S2000 Elite Menyokong Bonding Focus-Lock yang Stabil dalam Pemasangan Modul Kamera ADAS" },
+        { industry: "Elektronik & Pemasangan PCB", title: "OmniCure LX500 Meningkatkan Kecekapan Fast-Fixing dalam Pemasangan Komponen Mikro PCB" },
+        { industry: "Fotonik & Pembungkusan Termaju", title: "OmniCure LX500 Menyokong Curing Berketepatan Tinggi Berbilang Saluran untuk Transceiver Optik Berkelajuan Tinggi" },
+        { industry: "Pembuatan Gentian Optik & Kabel", title: "OmniCure AC Large Menyokong Curing Salutan Berkelajuan Tinggi di Menara Penarikan Gentian Optik" },
+      ],
     },
-    trusted: {
-      heading: homeTri.trustedBy[lang],
-      desc: homeTri.trustedDesc[lang],
+    trust: {
+      eyebrow: "Dipercayai Oleh",
+      heading: "Dipercayai oleh pengilang terkemuka dalam bidang perubatan, fotonik dan elektronik",
     },
-    why: {
-      heading: homeTri.whyHeading[lang],
-      card1: { title: homeTri.whyCard1Title[lang] },
-      card2: { title: homeTri.whyCard2Title[lang] },
-      card3: { title: homeTri.whyCard3Title[lang] },
+    closingCta: {
+      heading: "Perlukan bantuan memilih sistem UV curing yang tepat?",
+      body: "Beritahu kami aplikasi, pelekat, kawasan curing, panjang gelombang dan keperluan pengeluaran anda. Jurutera ETIA akan bantu anda cari penyelesaian yang tepat.",
     },
-    cta: {
-      heading: homeTri.needHelp[lang],
-      desc: homeTri.needHelpDesc[lang],
-      button: homeTri.sendApplication[lang],
+  },
+  contactPage: {
+    eyebrow: "Jualan & Sokongan",
+    h1: "Panduan Pakar. Kami Sedia Membantu.",
+    intro: "Daripada pemilihan produk dan nasihat proses sehingga penyelesaian tersuai dan servis peralatan, pasukan ETIA membantu pelanggan mendapatkan jawapan yang tepat dan memastikan pengeluaran terus berjalan.",
+    anchors: { sales: "Pertanyaan Jualan", service: "Servis & Pembaikan", global: "Pejabat Kami" },
+    partLabel: "Bahagian {n}",
+    sales: {
+      heading: "Pertanyaan Jualan",
+      body: "Mencari sistem UV curing yang sesuai? Jurutera kami akan menilai aplikasi anda, mengesyorkan penyelesaian terbaik dan menemani anda sepanjang proses pemilihan.",
+      cards: [
+        { title: "Pertanyaan Produk", body: "Terokai sistem OmniCure, Phoseon, Fusion dan NobleLight yang sepadan dengan proses anda." },
+        { title: "Konsultasi Aplikasi", body: "Sahkan proses UV curing anda — daripada pemilihan pelekat sehingga ujian dos dan iradians." },
+        { title: "Kejuruteraan Tersuai", body: "Perlukan konfigurasi bukan standard? Kami merekayasa penyelesaian khusus untuk barisan pengeluaran yang kompleks." },
+      ],
+      directEmailLabel: "E-mel Terus",
+      formHeading: "Hantar Pertanyaan Jualan",
     },
-  };
-}
-
-// Case study titles
-const caseTitles = {
-  medicalDevice: {
-    en: "Medical Device Assembly — OmniCure S2000 Elite Supports 360° Bonding in Cardiovascular Catheter Manufacturing",
-    my: "Pemasangan Peranti Perubatan — OmniCure S2000 Elite Menyokong Bonding 360° dalam Pembuatan Kateter Kardiovaskular",
-  } as Bilingual,
-  automotive: {
-    en: "Automotive & ADAS — OmniCure S2000 Elite Supports Stable Focus-Lock Bonding in ADAS Camera Module Assembly",
-    my: "Automotif & ADAS — OmniCure S2000 Elite Menyokong Bonding Focus-Lock yang Stabil dalam Pemasangan Modul Kamera ADAS",
-  } as Bilingual,
-  electronics: {
-    en: "Electronics & PCB Assembly — OmniCure LX500 Improves Fast Fixing Efficiency in PCB Micro-Component Assembly",
-    my: "Elektronik & Pemasangan PCB — OmniCure LX500 Meningkatkan Kecekapan Fast-Fixing dalam Pemasangan Komponen Mikro PCB",
-  } as Bilingual,
-  photonics: {
-    en: "Photonics & Advanced Packaging — OmniCure LX500 Supports Multi-Channel Precision Curing for High-Speed Optical Transceivers",
-    my: "Fotonik & Pembungkusan Termaju — OmniCure LX500 Menyokong Curing Berketepatan Tinggi Berbilang Saluran untuk Transceiver Optik Berkelajuan Tinggi",
-  } as Bilingual,
-  fiber: {
-    en: "Fiber Optic & Cable Manufacturing — OmniCure AC Large Supports High-Speed Coating Cure in Optical Fiber Draw Towers",
-    my: "Pembuatan Gentian Optik & Kabel — OmniCure AC Large Menyokong Curing Salutan Berkelajuan Tinggi di Menara Penarikan Gentian Optik",
-  } as Bilingual,
-};
-
-export function getCaseTitle(caseKey: string, lang: MyLocale): string {
-  const titles: Record<string, Bilingual> = {
-    medicalDevice: caseTitles.medicalDevice,
-    automotive: caseTitles.automotive,
-    electronics: caseTitles.electronics,
-    photonics: caseTitles.photonics,
-    fiber: caseTitles.fiber,
-  };
-  return titles[caseKey]?.[lang] || caseKey;
-}
-
-// Service & Support section
-const serviceTri = {
-  heading: {
-    en: "Service & Support",
-    my: "Servis & Sokongan",
-  } as Bilingual,
-  tagline: {
-    en: "Expert Guidance. We're Here to Help.",
-    my: "Panduan Pakar. Kami Sedia Membantu.",
-  } as Bilingual,
-  intro: {
-    en: "From product selection and process advice to custom solutions and equipment service, ETIA's team helps customers get the right answers and keep production running.",
-    my: "Daripada pemilihan produk dan nasihat proses sehingga penyelesaian tersuai dan servis peralatan, pasukan ETIA membantu pelanggan mendapatkan jawapan yang tepat dan memastikan pengeluaran terus berjalan.",
-  } as Bilingual,
-
-  salesInquiry: { en: "Sales Inquiry", my: "Pertanyaan Jualan" } as Bilingual,
-  serviceRepair: { en: "Service & Repair", my: "Servis & Pembaikan" } as Bilingual,
-  office: { en: "Our Office", my: "Pejabat Kami" } as Bilingual,
-
-  salesDesc: {
-    en: "Looking for the right UV curing system? Our engineers will assess your application, recommend the best solution, and guide you through the selection process.",
-    my: "Mencari sistem UV curing yang sesuai? Jurutera kami akan menilai aplikasi anda, mengesyorkan penyelesaian terbaik dan menemani anda sepanjang proses pemilihan.",
-  } as Bilingual,
-
-  repairFactoryDesc: {
-    en: "Our in-house repair factory and certified technicians ensure your UV curing equipment operates at peak performance — reducing downtime and maximizing production reliability.",
-    my: "Kilang pembaikan dalaman dan juruteknik bertauliah kami memastikan peralatan UV curing anda beroperasi pada prestasi terbaik — mengurangkan downtime dan memaksimumkan kebolehpercayaan pengeluaran.",
-  } as Bilingual,
-
-  quickResponse: { en: "Fast Response — Within 1 working day", my: "Tindak Balas Pantas — Dalam 1 hari bekerja" } as Bilingual,
-  expertEngineer: { en: "Expert Engineer — 20 years UV curing expertise", my: "Jurutera Pakar — 20 tahun kepakaran UV curing" } as Bilingual,
-  localStock: { en: "Local Stock — Ready for immediate delivery", my: "Stok Tempatan — Sedia untuk penghantaran segera" } as Bilingual,
-};
-
-export type MyServiceDict = {
-  heading: string;
-  tagline: string;
-  intro: string;
-  sections: { salesInquiry: string; serviceRepair: string; office: string };
-  descriptions: { sales: string; repair: string };
-  commitments: { quick: string; expert: string; stock: string };
-};
-
-export function getServiceDict(lang: MyLocale): MyServiceDict {
-  return {
-    heading: serviceTri.heading[lang],
-    tagline: serviceTri.tagline[lang],
-    intro: serviceTri.intro[lang],
-    sections: {
-      salesInquiry: serviceTri.salesInquiry[lang],
-      serviceRepair: serviceTri.serviceRepair[lang],
-      office: serviceTri.office[lang],
+    service: {
+      heading: "Servis & Pembaikan",
+      body: "Kilang pembaikan dalaman dan juruteknik bertauliah kami memastikan peralatan UV curing anda beroperasi pada prestasi terbaik — mengurangkan downtime dan memaksimumkan kebolehpercayaan pengeluaran.",
+      cards: [
+        { title: "Pembaikan Peralatan", body: "Diagnosis dan pembaikan pantas untuk OmniCure, Phoseon dan semua sistem UV yang disokong. Masalah pengeluaran yang mendesak diberi keutamaan." },
+        { title: "Kalibrasi Radiometer", body: "Kalibrasi boleh dijejak NIST untuk R2000, LS200 dan radiometer pihak ketiga. Sijil kalibrasi disertakan." },
+        { title: "Penyelenggaraan Pencegahan", body: "Program penyelenggaraan berjadual untuk memanjangkan hayat peralatan dan mengelakkan kerosakan tidak dijangka pada barisan pengeluaran." },
+      ],
+      serviceEmailLabel: "E-mel Servis (Pengurus Teknikal)",
+      formHeading: "Hantar Permintaan Servis",
     },
-    descriptions: {
-      sales: serviceTri.salesDesc[lang],
-      repair: serviceTri.repairFactoryDesc[lang],
+    global: {
+      heading: "Pejabat Kami",
+      regions: "Malaysia · Thailand · Vietnam · Singapura · Indonesia",
+      offices: {
+        malaysia: "Malaysia",
+        china: "China · Shanghai",
+        hongkong: "Hong Kong",
+        thailand: "Thailand · Bangkok",
+        vietnam: "Vietnam · Bac Ninh",
+        singapore: "Singapura",
+        indonesia: "Indonesia",
+      },
+      phoneNote: "* Nombor telefon akan disahkan. Hubungi kami melalui e-mel untuk maklum balas segera.",
     },
-    commitments: {
-      quick: serviceTri.quickResponse[lang],
-      expert: serviceTri.expertEngineer[lang],
-      stock: serviceTri.localStock[lang],
-    },
-  };
-}
-
-// Why ETIA section
-const whyTri = {
-  heading: {
-    en: "Why Manufacturers Choose ETIA",
-    my: "Mengapa Pengilang Memilih ETIA",
-  } as Bilingual,
-  intro: {
-    en: "20 Years of Practical UV Curing Knowledge",
-    my: "20 Tahun Pengalaman Aplikasi",
-  } as Bilingual,
-
-  card1Desc: {
-    en: "Practical UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.",
-    my: "Pengetahuan UV curing yang praktikal merentasi bidang perubatan, elektronik, fotonik, automotif dan pembuatan industri.",
-  } as Bilingual,
-
-  card2Title: { en: "Genuine Products & Authorized Supply", my: "Bekalan Sah & Asli" } as Bilingual,
-  card2Desc: {
-    en: "Systems, replacement lamps and accessories from authorized supply channels.",
-    my: "Sistem, lampu gantian dan aksesori asli melalui saluran bekalan yang sah.",
-  } as Bilingual,
-
-  card3Title: { en: "Local Stock & Fast Response", my: "Stok Tempatan & Tindak Balas Pantas" } as Bilingual,
-  card3Desc: {
-    en: "Equipment and consumables stored locally to shorten lead times and reduce production risk.",
-    my: "Peralatan dan bahan guna habis disimpan secara tempatan bagi memendekkan lead time serta mengurangkan risiko pengeluaran.",
-  } as Bilingual,
-
-  card4Title: { en: "In-House Repair & Lifecycle Support", my: "Pembaikan Dalaman & Sokongan Sepanjang Kitaran Hayat" } as Bilingual,
-  card4Desc: {
-    en: "Troubleshooting, maintenance and repair calibration to keep your process running.",
-    my: "Penyelesaian masalah, penyelenggaraan dan penyelarasan pembaikan untuk memastikan proses anda terus berjalan.",
-  } as Bilingual,
-};
-
-export type MyWhyDict = {
-  heading: string;
-  intro: string;
-  cards: Array<{ title?: string; desc: string }>;
-};
-
-export function getWhyDict(lang: MyLocale): MyWhyDict {
-  return {
-    heading: whyTri.heading[lang],
-    intro: whyTri.intro[lang],
-    cards: [
-      { desc: whyTri.card1Desc[lang] },
-      { title: whyTri.card2Title[lang], desc: whyTri.card2Desc[lang] },
-      { title: whyTri.card3Title[lang], desc: whyTri.card3Desc[lang] },
-      { title: whyTri.card4Title[lang], desc: whyTri.card4Desc[lang] },
+    commitments: [
+      { title: "Tindak Balas Pantas", sub: "Dalam 1 hari bekerja" },
+      { title: "Jurutera Pakar", sub: "20 tahun kepakaran UV curing" },
+      { title: "Stok Tempatan", sub: "Sedia untuk penghantaran segera" },
     ],
-  };
+  },
+  form: {
+    name: "Nama",
+    company: "Syarikat",
+    email: "E-mel",
+    phone: "Telefon",
+    industry: "Industri",
+    requestType: "Jenis Permintaan",
+    message: "Mesej",
+    select: "Pilih…",
+    submit: "Hantar",
+    required: "Wajib diisi",
+    invalidEmail: "Sila masukkan alamat e-mel yang sah",
+    success: "Terima kasih. Pertanyaan anda telah dihantar — pasukan kami akan menghubungi anda dalam 1 hari bekerja.",
+    error: "Maaf, penghantaran tidak berjaya. Sila cuba lagi atau e-mel terus kepada kami.",
+    industries: [
+      "Pemasangan Peranti Perubatan",
+      "Automotif & ADAS",
+      "Elektronik & Pemasangan PCB",
+      "Fotonik & Pembungkusan Termaju",
+      "Pembuatan Gentian Optik & Kabel",
+      "Sistem Optik & Pengimejan",
+      "Percetakan & Seni Grafik",
+      "Salutan Kayu & Perabot",
+      "Salutan Logam & Industri",
+      "Aeroangkasa & Pertahanan",
+      "Lain-lain",
+    ],
+    requestTypes: [
+      "Pembaikan Peralatan",
+      "Kalibrasi Radiometer",
+      "Penyelenggaraan Pencegahan",
+      "Alat Ganti",
+      "Lain-lain",
+    ],
+  },
+  footer: {
+    tagline: "Pengedar sah sistem UV curing bertaraf dunia. 20 tahun kepakaran aplikasi merentasi 9 industri.",
+    navigation: "Navigasi",
+    legal: "Perundangan",
+    contact: "Hubungi",
+    privacyPolicy: "Dasar Privasi",
+    cookiePolicy: "Dasar Kuki",
+    termsOfUse: "Terma Penggunaan",
+    cookieSettings: "Tetapan Kuki",
+    privacy: "Privasi",
+    cookies: "Kuki",
+    rights: "© 2026 ETIA-TECH (ASIA) Co., Limited. Hak cipta terpelihara.",
+  },
+  cookieBanner: {
+    text: "Kami menggunakan kuki untuk meningkatkan pengalaman anda di laman web ini.",
+    accept: "Terima",
+    reject: "Tolak",
+    settings: "Tetapan",
+  },
+  common: {
+    loading: "Memuatkan…",
+    notFound: "Halaman tidak dijumpai",
+    backHome: "Kembali ke Laman Utama",
+  },
+  productPages: {
+    omnicure: {
+      meta: {
+        title: "Sistem UV Curing OmniCure — Pengedar Sah | ETIA",
+        description: "Sistem UV curing berketepatan tinggi OmniCure untuk pemasangan, bonding, peranti perubatan dan elektronik. ETIA membekalkan sistem asli, lampu, sokongan aplikasi dan servis.",
+      },
+      hero: {
+        eyebrow: "Pengedar Sah OmniCure®",
+        h1Line1: "Penyelesaian UV Curing OmniCure",
+        h1Line2: "Curing Berketepatan Tinggi. Kawalan Menyeluruh.",
+        ctaPrimary: "Pilih Teknologi Anda",
+        ctaSecondary: "Berbincang dengan Jurutera",
+      },
+    },
+    phoseon: {
+      meta: {
+        title: "Sistem UV LED Curing Phoseon | ETIA",
+        description: "UV LED curing berkuasa tinggi Phoseon — FireJet/FireEdge penyejukan udara dan FireLine/VeriCure/Nexus II penyejukan air untuk percetakan dan barisan industri. Dibekal dan disokong oleh ETIA di Malaysia, Thailand dan Vietnam.",
+      },
+      hero: {
+        eyebrow: "Penyelesaian UV LED Curing Phoseon®",
+        h1Line1: "Penyelesaian UV Curing Phoseon",
+        h1Line2: "Dibina untuk Prestasi Pengeluaran.",
+        ctaPrimary: "Terokai Penyelesaian Phoseon",
+        ctaSecondary: "Berbincang dengan Jurutera",
+      },
+    },
+  },
+  caseStudies: {
+    heading: "Kajian Kes",
+    sub: "Aplikasi pengeluaran sebenar — lihat sistemnya, prosesnya dan hasilnya.",
+    all: "Semua Kajian Kes",
+    read: "Baca kajian kes",
+    sections: {
+      challenge: "Cabaran Pelanggan",
+      configuration: "Konfigurasi yang Disyorkan",
+      benefits: "Manfaat yang Dijangka",
+      support: "Sokongan ETIA",
+      industry: "Industri",
+      systemUsed: "Sistem yang Digunakan",
+      application: "Aplikasi",
+      related: "Kajian Kes Berkaitan",
+    },
+    cta: "Bincangkan Aplikasi Serupa",
+  },
+};
+
+export type MyDict = typeof MY_STRINGS;
+
+export function getDict(_lang: MyLocale = "my"): MyDict {
+  return MY_STRINGS;
 }
