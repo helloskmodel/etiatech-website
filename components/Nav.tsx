@@ -115,13 +115,13 @@ export default function Nav() {
                 })}
                 <button
                   onClick={() => { setLangOpen(false); window.location.assign("/my"); }}
-                  className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
+                  className={`block w-full px-4 py-2 text-sm text-left transition-colors border-t border-gray-100 ${
                     pathname === "/my" || pathname.startsWith("/my/")
                       ? "font-semibold text-[#1A56DB] hover:bg-gray-50"
                       : "text-gray-600 hover:bg-gray-50"
                   }`}
                 >
-                  {LOCALE_LABELS["my"]}
+                  🌍 MS
                 </button>
               </div>
             )}
@@ -181,7 +181,7 @@ export default function Nav() {
               }`}
               style={pathname === "/my" || pathname.startsWith("/my/") ? { background: "#1A56DB" } : {}}
             >
-              {LOCALE_LABELS["my"]}
+              MS
             </button>
           </div>
           <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-3 text-center text-sm font-bold text-white">
