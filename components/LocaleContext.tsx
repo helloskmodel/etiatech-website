@@ -3,14 +3,15 @@ import { createContext, useContext, useEffect, useState, useSyncExternalStore } 
 
 // Supported locales. EN + ZH are live; VI/TH are reserved for later.
 export type Locale = "en" | "zh" | "vi" | "th";
-export const ACTIVE_LOCALES: Locale[] = ["en", "zh", "vi", "th"];
+export const ACTIVE_LOCALES = ["en", "zh", "vi", "th", "my"] as const;
 
 // Maps the Nav button labels to locale codes.
-export const LOCALE_LABELS: Record<Locale, string> = {
+export const LOCALE_LABELS: Record<string, string> = {
   en: "EN",
   zh: "CN",
   vi: "VN",
   th: "TH",
+  my: "MS",
 };
 
 const COOKIE = "etia-locale";
