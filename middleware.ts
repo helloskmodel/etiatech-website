@@ -2,13 +2,8 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // Hide /my routes if SITE_MY_PUBLISHED is not "true"
-  if (pathname.startsWith("/my") && process.env.SITE_MY_PUBLISHED !== "true") {
-    return new NextResponse(null, { status: 404 });
-  }
-
+  // SEO control handled via robots.ts and page-level metadata
+  // No additional routing middleware needed
   return NextResponse.next();
 }
 
