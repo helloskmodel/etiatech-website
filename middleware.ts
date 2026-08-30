@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
 
   // Hide /my routes if SITE_MY_PUBLISHED is not "true"
   if (pathname.startsWith("/my") && process.env.SITE_MY_PUBLISHED !== "true") {
-    return NextResponse.notFound();
+    return new NextResponse(null, { status: 404 });
   }
 
   return NextResponse.next();

@@ -56,7 +56,7 @@ export default function TermsPage() {
             <p>ETIA mungkin bertindak sebagai pengedar yang diberi kuasa, penjual semula, penyedia perkhidmatan atau rakan sumber produk untuk produk dan wilayah terpilih yang ditunjukkan di laman web ini. Status kebenaran, saluran bekalan, skop waranti dan servis mungkin berbeza mengikut jenama, model produk dan negara. Sila sahkan syarat-syarat yang berkaitan dengan ETIA sebelum membeli. Waranti produk, jika ada, disediakan oleh pengilang masing-masing mengikut syarat-syarat mereka sendiri. Tiada apa-apa di laman web ini yang merupakan waranti oleh ETIA di luar apa yang telah disepakati secara nyata dalam kontrak penjualan bertulis.</p>
           </Section>
 
-          <Section title="5. Maklumat Disediakan "Seadanya"">
+          <Section title='5. Maklumat Disediakan "Seadanya"'>
             <p>Maklumat di laman web ini disediakan "seadanya" untuk rujukan umum dan tidak membentuk nasihat kejuruteraan, undang-undang atau profesional. Anda bertanggungjawab untuk menilai kesesuaian sebarang produk untuk aplikasi spesifik anda. Dalam sejauh mana yang dibenarkan oleh undang-undang, ETIA menolak semua waranti tersirat, termasuk yang berkaitan dengan kebolehdagangan dan kesesuaian untuk tujuan tertentu.</p>
           </Section>
 

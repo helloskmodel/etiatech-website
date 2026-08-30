@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function PhoseonPage() {
   const dict = getDict("my");
   const t = dict.productPages.phoseon;
+  const cta = dict.cta;
 
   return (
     <div className="min-h-screen bg-white text-[#102038]">
@@ -22,19 +23,19 @@ export default function PhoseonPage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-6">
             <span className="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              {t.eyebrow}
+              {t.hero.eyebrow}
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            <span className="block">{t.h1Line1}</span>
-            <span className="text-[#4CAF3E]">{t.h1Line2}</span>
+            <span className="block">{t.hero.h1Line1}</span>
+            <span className="text-[#4CAF3E]">{t.hero.h1Line2}</span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <a href="#applications" className="inline-flex items-center justify-center gap-2 bg-[#4CAF3E] hover:bg-[#3d8a2f] text-white font-bold py-3 px-6 rounded-lg transition">
-              {t.ctaPrimary}
+              {t.hero.ctaPrimary}
             </a>
             <a href="mailto:sales@etia-tech.com?subject=Phoseon%20Inquiry" className="inline-flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 rounded-lg border border-white/40 transition">
-              {t.ctaSecondary}
+              {t.hero.ctaSecondary}
             </a>
           </div>
         </div>
@@ -179,7 +180,7 @@ export default function PhoseonPage() {
             href="mailto:sales@etia-tech.com"
             className="inline-block bg-[#4CAF3E] hover:bg-[#3d8a2f] text-white font-bold py-3 px-8 rounded-lg transition"
           >
-            {t.ctaSecondary}
+            {cta.contactUs}
           </a>
         </div>
       </section>
