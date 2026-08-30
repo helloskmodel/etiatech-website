@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "code": "ms",
+    "name": "Bahasa Melayu",
+    "switcherLabel": "MS",
+    "dir": "ltr"
+  },
+  "languages": {
+    "en": "EN",
+    "zh": "中文",
+    "th": "ไทย",
+    "vi": "Tiếng Việt"
+  },
+  "nav": {
+    "home": "Utama",
+    "omnicure": "OmniCure",
+    "phoseon": "Phoseon",
+    "applications": "Aplikasi",
+    "salesSupport": "Jualan & Sokongan",
+    "talkToEngineer": "Berbincang dengan Jurutera"
+  },
+  "cta": {
+    "talkToEngineer": "Berbincang dengan Jurutera",
+    "requestDatasheet": "Minta Lembaran Data",
+    "requestServiceSupport": "Minta Sokongan Servis",
+    "viewUvCuringSystems": "Lihat Sistem UV Curing",
+    "explore": "Terokai",
+    "readMore": "Baca Lanjut"
+  },
+  "trustBar": {
+    "items": [
+      "Produk Asli",
+      "Penyelesaian Berasaskan Aplikasi",
+      "Rantaian Bekalan Tempatan",
+      "Perkhidmatan Jangka Panjang"
+    ]
+  },
+  "glossary": {
+    "genuineProducts": "Produk Asli",
+    "applicationDrivenSolutions": "Penyelesaian Berasaskan Aplikasi",
+    "localSupplyChain": "Rantaian Bekalan Tempatan",
+    "longTermService": "Perkhidmatan Jangka Panjang",
+    "authorizedDistributor": "Pengedar Sah",
+    "technicalSupport": "Sokongan Teknikal",
+    "onsiteTroubleshooting": "Penyelesaian Masalah Tempat Kerja",
+    "maintenanceAndRepairSupport": "Sokongan Penyelenggaraan dan Pembaikan"
+  },
+  "productPages": {
+    "omnicure": {
+      "eyebrow": "Pengedar Sah OmniCure®",
+      "h1Line1": "Penyelesaian UV Curing OmniCure",
+      "h1Line2": "Curing Berketepatan Tinggi. Kawalan Menyeluruh.",
+      "ctaPrimary": "Pilih Teknologi Anda",
+      "ctaSecondary": "Berbincang dengan Jurutera",
+      "technologySelector": "Pemilih Teknologi",
+      "chooseByTechnology": "Pilih Mengikut Teknologi",
+      "spotCuring": "Spot · Tenaga tertumpu",
+      "areaCuring": "Area · Pendedahan seragam",
+      "highIntensitySpot": "Spot Curing Berintensiti Tinggi",
+      "ledPrecision": "Ketepatan LED, Kawalan Fleksibel",
+      "uniformExposure": "Pendedahan Seragam untuk Kawasan Lebih Luas",
+      "compactCuring": "Curing Padat, Zon Terkawal",
+      "featured": "Pilihan utama:",
+      "viewMatching": "Lihat produk yang sepadan",
+      "productFamily": "Keluarga Produk OmniCure",
+      "findYourSystem": "Cari Sistem OmniCure Anda",
+      "allProducts": "Semua Produk / Area Besar / Area Kecil",
+      "viewProduct": "Lihat produk / Semak stok",
+      "closedLoopFeedback": "Maklum Balas Gelung Tertutup",
+      "realTimeCalibration": "Kalibrasi NIST Masa Nyata",
+      "airCooled": "Penyejukan Udara · Tanpa Chiller",
+      "adjoinableHeads": "Kepala Boleh Dicantum",
+      "productLiterature": "Bahan Rujukan Produk",
+      "criticalConsumable": "Bahan Guna Habis Kritikal",
+      "lampReplacement": "Perlukan Lampu Gantian untuk S2000 Anda?",
+      "checkCompatibility": "Semak Keserasian",
+      "requestRecommendation": "Minta Cadangan Produk"
+    },
+    "phoseon": {
+      "eyebrow": "Penyelesaian UV LED Curing Phoseon®",
+      "h1Line1": "Penyelesaian UV Curing Phoseon",
+      "h1Line2": "Dibina untuk Prestasi Pengeluaran.",
+      "ctaPrimary": "Terokai Penyelesaian Phoseon",
+      "ctaSecondary": "Berbincang dengan Jurutera",
+      "productFamilies": "Keluarga Produk Phoseon",
+      "highUvEnergy": "Tenaga UV Tinggi",
+      "controlledIntensity": "Keamatan Terkawal",
+      "efficientOperation": "Operasi LED Cekap",
+      "productionIntegration": "Integrasi Barisan Pengeluaran",
+      "airAndWaterCooled": "Penyejukan udara dan air",
+      "webWidths": "Lebar web 300–675 mm",
+      "warranty": "Waranti sistem penuh 5 tahun",
+      "ultraHighDose": "Dos UV ultra tinggi",
+      "scalableFormFactor": "Faktor bentuk boleh diskala",
+      "convectionOptions": "Pilihan perolakan semula jadi",
+      "featuredPlatform": "Platform Pilihan",
+      "diodeLife": "Jangka hayat diod dijangka >60,000 jam",
+      "printSpeed": "Kelajuan cetak sehingga 720 kaki/min",
+      "quickRetrofit": "Retrofit mesin cetak yang pantas",
+      "askAboutRetrofit": "Tanya Tentang Retrofit",
+      "wherePhoseonFits": "Di Mana Phoseon Paling Sesuai",
+      "printingPackaging": "Percetakan & Pembungkusan",
+      "industrialCoatings": "Salutan Industri",
+      "fiberCable": "Gentian & Kabel",
+      "adhesivesConverting": "Pelekat & Penukaran",
+      "qualityBuiltIn": "Kualiti / Penyejukan / Inovasi / Kecekapan Terbina Dalam"
+    }
+  }
+}
