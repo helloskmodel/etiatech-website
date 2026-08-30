@@ -19,8 +19,6 @@ const SITE = "https://www.etiatech.com";
 // a real publish date in their front matter, so we surface it there.
 // changeFrequency + priority still guide crawlers.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const isMyPublished = process.env.SITE_MY_PUBLISHED === "true";
-
   const core: MetadataRoute.Sitemap = [
     {
       url: SITE,

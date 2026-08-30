@@ -10,15 +10,13 @@ const SITE = "https://www.etiatech.com";
 // Note: robots.txt only stops compliant bots — scrapers faking these UAs need
 // WAF rules in the Vercel dashboard instead.
 export default function robots(): MetadataRoute.Robots {
-  const isMyPublished = process.env.SITE_MY_PUBLISHED === "true";
-
   return {
     rules: [
       { userAgent: "Baiduspider", disallow: "/" },
       { userAgent: "Sogou web spider", disallow: "/" },
       { userAgent: "360Spider", disallow: "/" },
       { userAgent: "Bytespider", disallow: "/" },
-      { userAgent: "*", allow: "/", ...(isMyPublished ? {} : { disallow: "/my" }) },
+      { userAgent: "*", allow: "/" },
     ],
     sitemap: `${SITE}/sitemap.xml`,
     host: SITE,
