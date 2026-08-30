@@ -113,6 +113,16 @@ export default function Nav() {
                     </button>
                   );
                 })}
+                <button
+                  onClick={() => { setLangOpen(false); window.location.assign("/my"); }}
+                  className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
+                    pathname === "/my" || pathname.startsWith("/my/")
+                      ? "font-semibold text-[#1A56DB] hover:bg-gray-50"
+                      : "text-gray-600 hover:bg-gray-50"
+                  }`}
+                >
+                  {LOCALE_LABELS["my"]}
+                </button>
               </div>
             )}
           </div>
@@ -162,6 +172,17 @@ export default function Nav() {
                 </button>
               );
             })}
+            <button
+              onClick={() => { setOpen(false); window.location.assign("/my"); }}
+              className={`px-3 py-1.5 rounded text-sm font-semibold transition-all ${
+                pathname === "/my" || pathname.startsWith("/my/")
+                  ? "text-white"
+                  : "border border-gray-200 text-gray-600"
+              }`}
+              style={pathname === "/my" || pathname.startsWith("/my/") ? { background: "#1A56DB" } : {}}
+            >
+              {LOCALE_LABELS["my"]}
+            </button>
           </div>
           <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-3 text-center text-sm font-bold text-white">
             {t({ en: "Talk to an Engineer", zh: "咨询工程师", vi: "Trao đổi với kỹ sư", th: "ปรึกษาวิศวกร" }, locale)}
