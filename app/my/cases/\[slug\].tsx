@@ -14,10 +14,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: caseStudy ? `${caseStudy.title} | ETIA` : "Kajian Kes | ETIA",
     description: caseStudy?.overview[0] || "Kajian kes UV curing",
-    robots: {
-      index: process.env.SITE_MY_PUBLISHED === "true",
-      follow: process.env.SITE_MY_PUBLISHED === "true",
-    },
   };
 }
 

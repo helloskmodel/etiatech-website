@@ -5,10 +5,6 @@ import { getDict } from "../../dictionaries";
 export const metadata: Metadata = {
   title: "Sistem UV Curing OmniCure — Pengedar Sah | ETIA",
   description: "Sistem UV curing berketepatan tinggi OmniCure untuk pemasangan, bonding, peranti perubatan dan elektronik. ETIA membekalkan sistem asli, lampu, sokongan aplikasi dan servis.",
-  robots: {
-    index: process.env.SITE_MY_PUBLISHED === "true",
-    follow: process.env.SITE_MY_PUBLISHED === "true",
-  },
 };
 
 export default function OmniCurePage() {

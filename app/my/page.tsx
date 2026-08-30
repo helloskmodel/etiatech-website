@@ -8,10 +8,6 @@ const lang: MyLocale = "my";
 export const metadata: Metadata = {
   title: "ETIA Technology | Pengedar Sistem & Penyelesaian UV Curing",
   description: "Pengedar sah OmniCure UV curing di Asia Tenggara — Malaysia, Thailand, Vietnam, Singapura dan Indonesia. 20 tahun kepakaran aplikasi, stok tempatan dan pembaikan dalaman merentasi 10 industri.",
-  robots: {
-    index: process.env.SITE_MY_PUBLISHED === "true",
-    follow: process.env.SITE_MY_PUBLISHED === "true",
-  },
 };
 
 export default function MalaysiaHome() {

@@ -5,10 +5,6 @@ import { getDict } from "../../dictionaries";
 export const metadata: Metadata = {
   title: "Sistem UV LED Curing Phoseon | ETIA",
   description: "UV LED curing berkuasa tinggi Phoseon — FireJet/FireEdge penyejukan udara dan FireLine/VeriCure/Nexus II penyejukan air untuk percetakan dan barisan industri. Dibekal dan disokong oleh ETIA di Malaysia, Thailand dan Vietnam.",
-  robots: {
-    index: process.env.SITE_MY_PUBLISHED === "true",
-    follow: process.env.SITE_MY_PUBLISHED === "true",
-  },
 };
 
 export default function PhoseonPage() {

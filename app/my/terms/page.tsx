@@ -5,10 +5,6 @@ import { getDict } from "../dictionaries";
 export const metadata: Metadata = {
   title: "Terma Penggunaan | ETIA Technology",
   description: "Terma penggunaan ETIA Technology — syarat dan ketentuan menggunakan laman web kami.",
-  robots: {
-    index: process.env.SITE_MY_PUBLISHED === "true",
-    follow: process.env.SITE_MY_PUBLISHED === "true",
-  },
 };
 
 export default function TermsPage() {

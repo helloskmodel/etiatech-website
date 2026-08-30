@@ -4,10 +4,6 @@ import { getDict } from "../dictionaries";
 export const metadata: Metadata = {
   title: "Hubungi Kami | ETIA Technology",
   description: "Hubungi jurutera ETIA untuk pertanyaan jualan, servis, pembaikan peralatan dan sokongan aplikasi UV curing.",
-  robots: {
-    index: process.env.SITE_MY_PUBLISHED === "true",
-    follow: process.env.SITE_MY_PUBLISHED === "true",
-  },
 };
 
 export default function ContactPage() {

@@ -5,10 +5,6 @@ import { getDict } from "../dictionaries";
 export const metadata: Metadata = {
   title: "Dasar Privasi | ETIA Technology",
   description: "Dasar privasi ETIA Technology — cara kami mengumpul, menggunakan dan melindungi data peribadi anda.",
-  robots: {
-    index: process.env.SITE_MY_PUBLISHED === "true",
-    follow: process.env.SITE_MY_PUBLISHED === "true",
-  },
 };
 
 export default function PrivacyPage() {

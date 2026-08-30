@@ -8,10 +8,6 @@ const lang: MyLocale = "my";
 export const metadata: Metadata = {
   title: "Kajian Kes UV Curing | ETIA Technology",
   description: "Terokai aplikasi pengeluaran sebenar — lihat sistemnya, prosesnya dan hasilnya di merata-rata industri.",
-  robots: {
-    index: process.env.SITE_MY_PUBLISHED === "true",
-    follow: process.env.SITE_MY_PUBLISHED === "true",
-  },
 };
 
 export default function MalaysiaCases() {
