@@ -35,6 +35,11 @@ export const CONTACT = {
   // than appended here as ?text= (that parameter only applies to the
   // https://wa.me/<number> form).
   whatsappUrl: "https://wa.me/message/HDAWX7IOYT4CO1",
+  // WeCom (企业微信) customer-service link for the Chinese pages. Unlike a
+  // personal WeChat account — which can only be added by scanning a QR — a
+  // WeCom "kfid" link is a real URL: on mobile it hands off to WeChat/WeCom,
+  // on desktop it opens WeCom's own scan page.
+  wecomUrl: "https://work.weixin.qq.com/kfid/kfcae13b93d714df6b6",
   email: "Omnicure@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
