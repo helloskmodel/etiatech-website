@@ -4,6 +4,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { useLocale, type Locale } from "@/components/LocaleContext";
 import { CONTACT } from "@/components/omnicure/copy";
+import { useConsentBannerVisible } from "@/components/consentBanner";
 
 // Floating chat button, fixed bottom-right, per-market messengers.
 //
@@ -72,7 +73,14 @@ function Bubble() {
 }
 
 const PILL = "flex items-center gap-2 rounded-full px-4 py-3 text-sm font-bold text-white shadow-lg transition-transform hover:-translate-y-0.5";
-const ANCHOR = "fixed bottom-5 right-5 z-50";
+const ANCHOR = "fixed right-5 z-50 transition-[bottom] duration-300";
+// The cookie banner is fixed to the bottom of the viewport and sits above this
+// button (z-60 vs z-50), so on a first visit it covers the button and swallows
+// the tap. Lift the button clear while the banner is up. The offsets clear the
+// banner's measured height at each layout — 183px stacked (below md), 133px as
+// a row (md), 113px once it is wider (lg) — plus a small gap.
+const ANCHOR_ABOVE_BANNER = "bottom-52 md:bottom-36 lg:bottom-32";
+const ANCHOR_DEFAULT = "bottom-5";
 
 export default function ChatFloatingButton({ force }: { force?: Locale }) {
   const { locale } = useLocale();
@@ -81,6 +89,8 @@ export default function ChatFloatingButton({ force }: { force?: Locale }) {
   const [qrOpen, setQrOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const bannerUp = useConsentBannerVisible();
+  const anchor = `${ANCHOR} ${bannerUp ? ANCHOR_ABOVE_BANNER : ANCHOR_DEFAULT}`;
 
   // Dismiss the expanded stack on Escape or a click outside it.
   useEffect(() => {
@@ -136,7 +146,7 @@ export default function ChatFloatingButton({ force }: { force?: Locale }) {
     if (!only) return null;
     return (
       <>
-        <div className={ANCHOR}>{only}</div>
+        <div className={anchor}>{only}</div>
         {qrCard}
       </>
     );
@@ -144,7 +154,7 @@ export default function ChatFloatingButton({ force }: { force?: Locale }) {
 
   return (
     <>
-      <div ref={wrapRef} className={`${ANCHOR} flex flex-col items-end gap-2`}>
+      <div ref={wrapRef} className={`${anchor} flex flex-col items-end gap-2`}>
         {menuOpen && (
           <div className="flex flex-col items-end gap-2">
             {/* The stack opens upward, so render it reversed: the primary
