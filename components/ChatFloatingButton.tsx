@@ -6,9 +6,10 @@ import { useLocale, type Locale } from "@/components/LocaleContext";
 import { CONTACT } from "@/components/omnicure/copy";
 
 // Floating chat button, fixed bottom-right, per-market messenger:
-// Thai and English pages get LINE (Omnicure Thailand OA), Vietnamese pages
-// get Zalo, and Chinese pages get a WeChat QR modal (WeChat has no direct
-// chat link, so the button opens a scan-to-add card instead). Renders
+// Thai pages get LINE (Omnicure Thailand OA), English pages get WhatsApp
+// (the default messenger across the rest of Southeast Asia), Vietnamese
+// pages get Zalo, and Chinese pages get a WeChat QR modal (WeChat has no
+// direct chat link, so the button opens a scan-to-add card instead). Renders
 // nothing when the visitor's language has no channel configured. Pass
 // `force` on locale-locked route trees (/th, /vi, /zh) that don't mount a
 // LocaleProvider of their own.
@@ -20,7 +21,7 @@ type Channel = LinkChannel | WeChatChannel;
 
 const CHANNELS: Partial<Record<Locale, Channel>> = {
   th: { kind: "link", label: "LINE", href: CONTACT.lineUrl, bg: "#06C755", aria: "แชทกับเราทาง LINE" },
-  en: { kind: "link", label: "LINE", href: CONTACT.lineUrl, bg: "#06C755", aria: "Chat with us on LINE" },
+  en: { kind: "link", label: "WhatsApp", href: CONTACT.whatsappUrl, bg: "#25D366", aria: "Chat with us on WhatsApp" },
   vi: { kind: "link", label: "Zalo", href: CONTACT.zaloUrl, bg: "#0068FF", aria: "Nhắn tin cho chúng tôi qua Zalo" },
   zh: { kind: "wechat", label: "微信", bg: "#07C160", aria: "扫码添加微信咨询" },
 };

@@ -28,6 +28,13 @@ export const CONTACT = {
   // Empty = the Zalo floating button stays hidden until this is filled.
   // "Etiatech Việt Nam" Zalo account (+84 961 530 153, Bac Ninh office).
   zaloUrl: "https://zalo.me/84961530153",
+  // WhatsApp click-to-chat link for the English site (Malaysia, Singapore,
+  // Indonesia, the Philippines — WhatsApp is the default B2B messenger there,
+  // where LINE has almost no presence). This is the WhatsApp Business account's
+  // own short link, so the greeting message is configured in the app rather
+  // than appended here as ?text= (that parameter only applies to the
+  // https://wa.me/<number> form).
+  whatsappUrl: "https://wa.me/message/HDAWX7IOYT4CO1",
   email: "Omnicure@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
