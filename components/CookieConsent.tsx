@@ -1,35 +1,18 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState, useSyncExternalStore } from "react";
 import { useLocale, t } from "@/components/LocaleContext";
-import { getConsent, setConsent, CONSENT_CHANGE_EVENT, CONSENT_OPEN_EVENT } from "@/components/consent";
-
-const subscribe = (onChange: () => void) => {
-  window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
-  return () => window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
-};
+import { setConsent } from "@/components/consent";
+import { useConsentBannerVisible } from "@/components/consentBanner";
 
 export default function CookieConsent() {
   const { locale } = useLocale();
-  // Whether the visitor has already made a choice. Server snapshot says
-  // "decided" so the banner never renders in server HTML; the client re-reads
-  // right after hydration and shows it on first visit.
-  const decided = useSyncExternalStore(subscribe, () => getConsent() !== null, () => true);
-  // Re-opened from the footer "Cookie settings" link.
-  const [reopened, setReopened] = useState(false);
+  // Shared with the floating chat button, which has to dodge this banner.
+  const visible = useConsentBannerVisible();
 
-  useEffect(() => {
-    const open = () => setReopened(true);
-    window.addEventListener(CONSENT_OPEN_EVENT, open);
-    return () => window.removeEventListener(CONSENT_OPEN_EVENT, open);
-  }, []);
+  // setConsent fires the change event, which closes the banner via the hook.
+  const decide = (value: "accepted" | "rejected") => setConsent(value);
 
-  const decide = (value: "accepted" | "rejected") => {
-    setConsent(value);
-    setReopened(false);
-  };
-
-  if (decided && !reopened) return null;
+  if (!visible) return null;
 
   return (
     // pointer-events-none on the full-width wrapper so the transparent strip
