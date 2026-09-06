@@ -1,0 +1,100 @@
+# 把 GitHub 仓库自动镜像到腾讯云代码仓库。
+#
+# 为什么要这个：GitHub 是唯一源（开发、PR、评审都在这里），腾讯云是只读镜像，
+# 让国内的服务器拉代码不走境外网络，境外网络异常时也能照常发布。
+#
+# ⚠️ 腾讯云那一侧是**只读**的：不要在腾讯云仓库直接提交，下一次镜像会把它覆盖掉。
+#
+# 启用方法 —— 在 GitHub 仓库 Settings → Secrets and variables → Actions 添加：
+#
+#   TENCENT_GIT_URL       腾讯云仓库的 HTTPS 地址，例如
+#                         https://e.coding.net/<团队>/<项目>/<仓库>.git
+#   TENCENT_GIT_USERNAME  腾讯云仓库的用户名（CODING 里是「个人访问令牌」的用户名）
+#   TENCENT_GIT_TOKEN     对应的访问令牌/密码，需要写权限
+#
+# 三个 secret 没配齐时这个流程会自己跳过，不会报红。
+
+name: Mirror to Tencent Cloud
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["**"]
+  delete:
+  workflow_dispatch:
+
+# 镜像是全量推送，同一时间只允许跑一个，避免两次推送互相打架。
+concurrency:
+  group: mirror-to-tencent
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: 检查是否已配置腾讯云仓库
+        id: cfg
+        env:
+          DEST_URL: ${{ secrets.TENCENT_GIT_URL }}
+          DEST_USER: ${{ secrets.TENCENT_GIT_USERNAME }}
+          DEST_TOKEN: ${{ secrets.TENCENT_GIT_TOKEN }}
+        run: |
+          if [ -z "$DEST_URL" ] || [ -z "$DEST_USER" ] || [ -z "$DEST_TOKEN" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::腾讯云镜像未配置（缺 TENCENT_GIT_URL / _USERNAME / _TOKEN），跳过。"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 拉取完整仓库
+        if: steps.cfg.outputs.configured == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone --mirror \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            source.git
+
+      - name: 推送到腾讯云
+        if: steps.cfg.outputs.configured == 'true'
+        working-directory: source.git
+        env:
+          DEST_URL: ${{ secrets.TENCENT_GIT_URL }}
+          DEST_USER: ${{ secrets.TENCENT_GIT_USERNAME }}
+          DEST_TOKEN: ${{ secrets.TENCENT_GIT_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # 凭据只写进 git 的凭据文件（600 权限），不拼进 URL——
+          # 拼进 URL 会出现在进程参数和部分 git 报错里。
+          python3 - <<'PY' > "$HOME/.git-credentials"
+          import os, urllib.parse as u
+          p = u.urlsplit(os.environ["DEST_URL"])
+          user = u.quote(os.environ["DEST_USER"], safe="")
+          token = u.quote(os.environ["DEST_TOKEN"], safe="")
+          print(f"{p.scheme}://{user}:{token}@{p.netloc}")
+          PY
+          chmod 600 "$HOME/.git-credentials"
+          git config --global credential.helper store
+
+          cleanup() { rm -f "$HOME/.git-credentials"; }
+          trap cleanup EXIT
+
+          # 只镜像分支和标签：refs/pull/* 这类 GitHub 专有引用不推过去。
+          # --prune 让腾讯云侧同步删除 GitHub 上已删除的分支。
+          # 失败重试（境内外网络抖动常见）。
+          for attempt in 1 2 3 4; do
+            if git push --force --prune "$DEST_URL" \
+                 "refs/heads/*:refs/heads/*" "refs/tags/*:refs/tags/*"; then
+              echo "镜像完成。"
+              exit 0
+            fi
+            delay=$((2 ** attempt))
+            echo "推送失败，${delay}s 后重试（第 ${attempt} 次）…"
+            sleep "$delay"
+          done
+
+          echo "::error::镜像到腾讯云失败，已重试 4 次。"
+          exit 1
