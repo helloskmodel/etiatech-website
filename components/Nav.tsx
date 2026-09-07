@@ -28,7 +28,7 @@ export default function Nav() {
   // locale-locked URL in the target language (e.g. /applications ↔
   // /vi/applications) navigate there, so the address bar reflects the
   // language; otherwise stay on the shared route and reload — the
-  // etia-locale cookie re-renders it in the new language.
+  // etia-lang cookie re-renders it in the new language.
   const switchLocale = (l: Locale) => {
     setLocale(l);
     const target = localizeHref(delocalizeHref(pathname), l);

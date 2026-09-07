@@ -24,7 +24,7 @@ const SPECIAL: Record<string, Partial<Record<Locale, string>>> = {
 };
 
 // Best URL for `href` in `locale`: the locale-locked version when one exists,
-// otherwise the shared EN route (which the etia-locale cookie renders in the
+// otherwise the shared EN route (which the etia-lang cookie renders in the
 // visitor's language).
 export function localizeHref(href: string, locale: Locale): string {
   if (locale === "en" || !href.startsWith("/")) return href;
