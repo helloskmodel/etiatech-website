@@ -3,6 +3,7 @@
 > 状态：方案草案，待确认
 > 分支：`claude/production-plan-wecom-integration-0e470t`
 > 最后更新：2026-09-06
+> 相关：[`TRACEABILITY.md`](./TRACEABILITY.md) —— 灯泡序列号全链路追溯（扫码入库 / 出货 / 客户查询）
 
 ---
 
