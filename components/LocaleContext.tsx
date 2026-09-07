@@ -13,14 +13,23 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   th: "TH",
 };
 
-const COOKIE = "etia-locale";
+// Records an EXPLICIT language choice — i.e. the visitor clicked the language
+// switcher. Nothing else writes it.
+//
+// The name changed from `etia-locale` on purpose: the old cookie was also
+// written by merely VISITING /zh, /vi or /th, which left the shared routes —
+// the homepage included — stuck in that language for a year. Renaming makes
+// every stale copy already sitting in visitors' browsers inert immediately,
+// instead of waiting a year for it to expire.
+const COOKIE = "etia-lang";
+const LEGACY_COOKIE = "etia-locale";
 
 type Ctx = { locale: Locale; setLocale: (l: Locale) => void };
 const LocaleCtx = createContext<Ctx>({ locale: "en", setLocale: () => {} });
 
 function readCookie(): Locale | null {
   if (typeof document === "undefined") return null;
-  const m = document.cookie.match(/(?:^|;\s*)etia-locale=(en|zh|vi|th)/);
+  const m = document.cookie.match(/(?:^|;\s*)etia-lang=(en|zh|vi|th)/);
   return (m?.[1] as Locale) ?? null;
 }
 
@@ -37,20 +46,25 @@ export function LocaleProvider({ children, initialLocale = "en" }: { children: R
   const locale = override ?? (initialLocale === "en" && cookieLocale ? cookieLocale : initialLocale);
 
   useEffect(() => {
-    // On a locale-locked route (/zh, /vi, /th) persist the language into the
-    // cookie, so the cookie-based (main) routes the visitor navigates to next
-    // (Applications, Insights, Contact…) render in the SAME language instead
-    // of bouncing back to English. ONLY while the visitor hasn't explicitly
-    // picked a language (override) — otherwise this would clobber the cookie
-    // their choice just wrote (e.g. switching th → en re-persisted `th`,
-    // making the English site unreachable from a Thai page).
-    if (override === null && initialLocale !== "en" && readCookie() !== initialLocale) {
-      document.cookie = `${COOKIE}=${initialLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
+    // Landing on a locale-locked route (/zh, /vi, /th) deliberately does NOT
+    // persist that language. It used to, and the result was that anyone who
+    // opened the Thai page once — a Thai search result, or the team checking
+    // their own site — got the Thai homepage at www.etiatech.com for the next
+    // year, with the language switcher the only way back. Arriving on a
+    // translated page is not the same as asking for that language everywhere,
+    // so only the switcher (setLocale) writes the cookie now. Each language
+    // has its own home URL anyway (/zh, /vi, /th), and every nav destination
+    // has a localized version, so navigation within a language still works.
+    //
+    // Clear any leftover copy of the old cookie so it can't keep overriding
+    // the homepage for visitors who already have one.
+    if (document.cookie.includes(`${LEGACY_COOKIE}=`)) {
+      document.cookie = `${LEGACY_COOKIE}=; path=/; max-age=0`;
     }
     // Keep <html lang> in sync with the EFFECTIVE locale so language-specific
     // CSS (e.g. CJK/Thai heading sizes) applies.
     document.documentElement.lang = locale === "zh" ? "zh-CN" : locale;
-  }, [locale, initialLocale, override]);
+  }, [locale]);
 
   const setLocale = (l: Locale) => {
     setOverride(l);

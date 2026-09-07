@@ -24,7 +24,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // Read the visitor's saved language server-side so the page is rendered in the
   // right language on the FIRST paint — otherwise the server renders English and
   // the client re-renders after reading the cookie, causing a visible flash.
-  const cookieLocale = (await cookies()).get("etia-locale")?.value;
+  //
+  // `etia-lang` is only ever written by the language switcher, so this reflects
+  // a deliberate choice. (Its predecessor `etia-locale` was also set by simply
+  // visiting /zh, /vi or /th, which made this line serve the homepage in Thai
+  // to anyone who had once opened the Thai page — see LocaleContext.)
+  const cookieLocale = (await cookies()).get("etia-lang")?.value;
   const locale: Locale = LOCALES.includes(cookieLocale as Locale) ? (cookieLocale as Locale) : "en";
   const htmlLang = locale === "zh" ? "zh-CN" : locale;
 
