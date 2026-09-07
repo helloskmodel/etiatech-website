@@ -47,6 +47,9 @@ create table item (
   spec_i18n       jsonb       not null default '{}'::jsonb,
   rated_hours     int,                                 -- 灯泡额定寿命
   warranty_months int,
+  -- 年度校准是**收费服务**，也是最稳定的复购来源之一。设备填 12，
+  -- 灯泡留空（灯泡不做校准）。
+  calibration_interval_months int,
   chanjet_code    text,                                -- 与畅捷通对账用
   created_at      timestamptz not null default now()
 );
@@ -132,6 +135,7 @@ create table unit_event (
   event_type  text        not null check (event_type in (
                 'manufactured','received','stocked','reserved',
                 'shipped','delivered','installed',
+                'calibrated',
                 'warranty_claim','returned','scrapped')),
 
   occurred_at timestamptz not null,          -- 事情**发生**的时间
@@ -194,6 +198,25 @@ left join lateral (
   limit 1
 ) e on true;
 
+-- 校准时间线：标签上印的「下次校准」和到期提醒都读这个。
+-- 到期日由「最近一次校准 + 该型号的校准周期」算出，不单独存字段 ——
+-- 存了就会和事件对不上。
+create view unit_calibration as
+select
+  c.unit_id,
+  c.occurred_at::date                         as calibrated_on,
+  (c.occurred_at::date
+     + make_interval(months => i.calibration_interval_months)) as due_on,
+  c.ref_id                                    as certificate_no
+from (
+  select distinct on (unit_id) unit_id, occurred_at, ref_id
+  from unit_event where event_type = 'calibrated'
+  order by unit_id, seq desc
+) c
+join unit u on u.id = c.unit_id
+join item i on i.id = u.item_id
+where i.calibration_interval_months is not null;
+
 -- 出货时间线：客户设备台账和保修判定都读这个
 create view unit_shipment as
 select distinct on (unit_id)
@@ -210,4 +233,5 @@ commit;
 --     TRACEABILITY.md §10 第 4 项）
 --   · Intelli-Lamp 读回的实际点灯小时数（§2.4，待原厂确认接口）
 --   · 出货单 / 装箱单本体（DESIGN.md §5，与本表通过 ref_type/ref_id 关联）
+--   · 校准提醒的发送记录（到期前 N 天推送，避免重复打扰）
 -- ---------------------------------------------------------------------------
