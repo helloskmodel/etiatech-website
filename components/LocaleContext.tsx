@@ -39,11 +39,25 @@ function readCookie(): Locale | null {
 // the client right after hydration.
 const noSubscribe = () => () => {};
 
-export function LocaleProvider({ children, initialLocale = "en" }: { children: React.ReactNode; initialLocale?: Locale }) {
+// `cookieDriven` says whether the saved language may override `initialLocale`.
+// It is an explicit flag rather than "initialLocale === en" (what this used to
+// infer) because those are two different things: the homepage is English AND
+// locale-locked, and conflating them meant the server could render it in
+// English while the client swapped it back to the cookie's language on hydration.
+export function LocaleProvider({
+  children,
+  initialLocale = "en",
+  cookieDriven = false,
+}: {
+  children: React.ReactNode;
+  initialLocale?: Locale;
+  cookieDriven?: boolean;
+}) {
   const cookieLocale = useSyncExternalStore(noSubscribe, readCookie, () => null);
   const [override, setOverride] = useState<Locale | null>(null);
-  // On the default (en) routes, a saved cookie restores the chosen locale.
-  const locale = override ?? (initialLocale === "en" && cookieLocale ? cookieLocale : initialLocale);
+  // An explicit switcher click (override) always wins. Otherwise the saved
+  // language applies only on the shared, cookie-driven routes.
+  const locale = override ?? ((cookieDriven && cookieLocale) || initialLocale);
 
   useEffect(() => {
     // Landing on a locale-locked route (/zh, /vi, /th) deliberately does NOT
