@@ -3,6 +3,7 @@
 import { productI18n, productAppsI18n } from "./productCatalog.zh";
 import { cosResize } from "./cosImage";
 import type { LangText } from "./LocaleContext";
+import { productCategory, type ProductCategory } from "./productCategories";
 
 export type Product = {
   slug: string;
@@ -1910,6 +1911,43 @@ export function techRouteFor(p: Product): TechRoute | undefined {
     default:
       return undefined;
   }
+}
+
+// Maps a product to exactly one buyer-facing category (see productCategories).
+//
+// Two deliberate special cases:
+//  - LS200 is catalogued with sub "UV LED Spot" because it pairs with the LED
+//    spot heads, but the product IS a radiometry & calibration system — it
+//    measures, it doesn't cure — so it belongs under instruments.
+//  - The S-Series light guides and network module are accessories for the
+//    S2000/S1500 mercury lamp systems, so they sit with uv-lamp rather than in
+//    a category of their own.
+export function categoryFor(p: Product): ProductCategory | undefined {
+  if (p.slug === "ls200") return productCategory("instruments");
+  switch (p.tech) {
+    case "UV Spot Curing":
+      if (p.sub?.startsWith("UV Lamp Spot") || p.sub?.startsWith("S-Series Accessory")) {
+        return productCategory("uv-lamp");
+      }
+      if (p.sub?.startsWith("UV LED Spot")) return productCategory("uv-led");
+      if (p.sub?.startsWith("UV Radiometer")) return productCategory("instruments");
+      return undefined;
+    case "Air-Cooled UV LED Curing":
+    case "Water-Cooled UV LED Area Curing":
+      return productCategory("uv-led");
+    case "Microwave UV Curing":
+      return productCategory("microwave");
+    default:
+      return undefined;
+  }
+}
+
+// Products in a category, in the site-wide popularity order so the flagship
+// leads each category page.
+export function productsInCategory(id: string): Product[] {
+  return products
+    .filter((p) => categoryFor(p)?.id === id)
+    .sort((a, b) => popularityRank(a.slug) - popularityRank(b.slug));
 }
 
 // Short product model name for a "Product" ticket — strips the brand prefix and

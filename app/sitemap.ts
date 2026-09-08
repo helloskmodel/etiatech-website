@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products, productHref, productImage } from "@/components/productCatalog";
+import { PRODUCT_CATEGORIES } from "@/components/productCategories";
+import { SOLUTIONS } from "@/components/solutionsMeta";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
 import { getAllArticles, articleLocales } from "@/components/insights";
@@ -46,6 +48,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
     { url: `${SITE}/product/fusion-uv`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/product/noblelight`, changeFrequency: "monthly", priority: 0.85 },
+    // Product category pages — the light-source entry points buyers search for
+    // ("UV LED 固化", "汞灯光源"). EN-only routes: they render in the visitor's
+    // language from the etia-locale cookie rather than having /zh|/vi|/th
+    // twins, so there is nothing to hreflang-link them to.
+    ...PRODUCT_CATEGORIES.map((c) => ({
+      url: `${SITE}/product/${c.id}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
+    // Industry solution pages + their index, same cookie-locale arrangement.
+    { url: `${SITE}/solutions`, changeFrequency: "monthly", priority: 0.85 },
+    ...SOLUTIONS.map((s) => ({
+      url: `${SITE}/solutions/${s.id}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
     // Applications index (EN + ZH + VI + TH), hreflang-linked.
     ...LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/applications`,
