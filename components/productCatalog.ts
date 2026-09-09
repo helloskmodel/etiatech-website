@@ -2048,12 +2048,46 @@ const DOC_BROCHURE = { en: "Brochure", zh: "产品手册" , vi: "Brochure", th: 
 const DOC_QUICK_START = { en: "Quick Start Guide", zh: "快速入门指南" , vi: "Hướng dẫn khởi động nhanh", th: "คู่มือเริ่มต้นอย่างรวดเร็ว" };
 const DOC_USER_GUIDE = { en: "User Guide", zh: "用户指南", vi: "Hướng dẫn sử dụng", th: "คู่มือการใช้งาน" };
 const DOC_BROCHURE_CN = { en: "Brochure (Chinese)", zh: "产品手册(中文)", vi: "Brochure (tiếng Trung)", th: "โบรชัวร์ (ภาษาจีน)" };
+const DOC_OVERVIEW = { en: "Range Overview Brochure", zh: "系列总览手册", vi: "Brochure tổng quan dòng sản phẩm", th: "โบรชัวร์ภาพรวมกลุ่มผลิตภัณฑ์" };
 const DOC_SPEC_GUIDE = { en: "Specification Guide", zh: "规格指南", vi: "Hướng dẫn thông số", th: "คู่มือข้อกำหนด" };
 
 // English brochures/spec guides live in the /PDF folder (SITE_PDF_BASE);
 // Chinese brochures live in /PRODUCTPDFCN (PRODUCT_PDF_CN_BASE). Every URL
 // below was verified to return HTTP 200 before being added.
 export const productDocs: Record<string, ProductDoc[]> = {
+  "ir-m85": [
+    { file: "Custom MX Infrared Heating Modules Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "ir-m110": [
+    { file: "Custom MX Infrared Heating Modules Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "ir-m115": [
+    { file: "Custom MX Infrared Heating Modules Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "ir-mx-scalable": [
+    { file: "Custom MX Infrared Heating Modules Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "ir-mx-advanced": [
+    { file: "Custom MX Infrared Heating Modules Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "ir-control-systems": [
+    { file: "Custom MX Infrared Heating Modules Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "drf-series": [
+    { file: "Microwave-powered+UV+Curing+System+Overview+Brochure.pdf", kind: DOC_OVERVIEW, base: SITE_PDF_BASE },
+  ],
+  "lc6-benchtop-conveyor": [
+    { file: "LC6 Benchtop Conveyors for UV Microwave UV Curing Systems Brochure (1).pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "Belt Conveyors for UV Microwave Curing Systems Brochure.pdf", kind: DOC_OVERVIEW, base: SITE_PDF_BASE },
+  ],
+  "drs-10-12-conveyor": [
+    { file: "DRS 10_12 Floor Standing Conveyors for UV Microwave UV Curing Systems Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "Belt Conveyors for UV Microwave Curing Systems Brochure.pdf", kind: DOC_OVERVIEW, base: SITE_PDF_BASE },
+  ],
+  "drs-10-12-qn-conveyor": [
+    { file: "DRS 10_12 Floor Standing Conveyors for UV Microwave UV Curing Systems Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+    { file: "Belt Conveyors for UV Microwave Curing Systems Brochure.pdf", kind: DOC_OVERVIEW, base: SITE_PDF_BASE },
+  ],
   "s2000-elite": [
     { file: "Brochure - OmniCure S2000 Elite UV Curing System.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
     { file: "OmniCure_S2000_Elite_Brochure-CH1.pdf", kind: DOC_BROCHURE_CN, base: PRODUCT_PDF_CN_BASE },
@@ -2120,12 +2154,15 @@ export const productDocs: Record<string, ProductDoc[]> = {
   "f-series": [
     { file: "Brochure Fusion-F300 Series UV Curing System.pdf", kind: { en: "F300 Series Brochure", zh: "F300 系列产品手册" } },
     { file: "Brochure Fusion-F600 Series UV Curing Systems.pdf", kind: { en: "F600 Series Brochure", zh: "F600 系列产品手册" } },
+    { file: "Microwave-powered+UV+Curing+System+Overview+Brochure.pdf", kind: DOC_OVERVIEW, base: SITE_PDF_BASE },
   ],
   "lighthammer-6": [
     { file: "Brochure Fusion-LightHammer 6 Mark II UV Curing System.pdf", kind: DOC_BROCHURE },
+    { file: "Microwave-powered+UV+Curing+System+Overview+Brochure.pdf", kind: DOC_OVERVIEW, base: SITE_PDF_BASE },
   ],
   "lighthammer-10": [
     { file: "Brochure Fusion-LightHammer 10 Mark III UV Curing System.pdf", kind: DOC_BROCHURE },
+    { file: "Microwave-powered+UV+Curing+System+Overview+Brochure.pdf", kind: DOC_OVERVIEW, base: SITE_PDF_BASE },
   ],
   // Noblelight
   "semray-5000": [

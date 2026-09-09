@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import type { LangText } from "@/components/LocaleContext";
-import { products, type Product } from "@/components/productCatalog";
+import { products, type Product, type ProductDoc } from "@/components/productCatalog";
 
 const SITE = "https://www.etiatech.com";
+const COS_PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 
 // ─────────────────────────────────────────────────────────────────────────
 // ETIA's five customer-facing product categories.
@@ -43,6 +44,9 @@ export type ProductCategory = {
   // Optional photographs of the technology in production, shown alongside the
   // typical-applications list.
   gallery?: { src: string; caption: LangText }[];
+  // Optional literature that covers the whole category rather than one model,
+  // rendered as a downloads block on the category page.
+  docs?: ProductDoc[];
   // Optional reference section explaining how to choose within the category —
   // prose steps plus comparison tables. Only ever populated from material the
   // manufacturer publishes; see docs/PROJECT-STATUS.md.
@@ -182,6 +186,18 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     metaTitle: "Microwave Electrodeless UV Lamps | Fusion UV F Series & LightHammer | ETIA",
     metaDescription:
       "Fusion UV microwave-powered UV curing systems — electrodeless lamps from the economical F300S to the LightHammer 10 Mark III, with H, D and V bulb fills, unlimited cure width and Industry 4.0 sensing. Supplied and supported by ETIA.",
+    docs: [
+      {
+        file: "Microwave-powered+UV+Curing+System+Overview+Brochure.pdf",
+        kind: { en: "Microwave UV Systems Overview", zh: "微波紫外系统总览手册", vi: "Tổng quan hệ thống UV vi sóng", th: "ภาพรวมระบบ UV ไมโครเวฟ" },
+        base: COS_PDF,
+      },
+      {
+        file: "Belt Conveyors for UV Microwave Curing Systems Brochure.pdf",
+        kind: { en: "Belt Conveyors Brochure", zh: "输送机产品手册", vi: "Brochure băng tải", th: "โบรชัวร์สายพานลำเลียง" },
+        base: COS_PDF,
+      },
+    ],
     selectionGuide: {
       heading: { en: "Choosing your lamp system", zh: "如何选择灯系统" },
       standfirst: {
@@ -435,6 +451,13 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     metaTitle: "Industrial Infrared Heating Modules | Noblelight M & MX Series | ETIA",
     metaDescription:
       "Excelitas Noblelight infrared heating modules for industrial process technology — M 85, M 110, M 115, scalable MX modules with integrated control, custom MX systems and infrared control systems. Specified to your process by ETIA.",
+    docs: [
+      {
+        file: "Custom MX Infrared Heating Modules Brochure.pdf",
+        kind: { en: "Infrared Modules Brochure", zh: "红外模块产品手册", vi: "Brochure mô-đun hồng ngoại", th: "โบรชัวร์โมดูลอินฟราเรด" },
+        base: COS_PDF,
+      },
+    ],
     heroImage: "/images/infrared/emitter-array.jpg",
     gallery: [
       {

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download, FileText } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import FinalCta from "@/components/FinalCta";
@@ -15,7 +15,7 @@ import {
   categoryProducts,
   type ProductCategorySlug,
 } from "@/components/productCategories";
-import { productHref, productImage, brandAccent, localizeProduct } from "@/components/productCatalog";
+import { productHref, productImage, brandAccent, localizeProduct, productDocUrl } from "@/components/productCatalog";
 
 /**
  * A "BY TECHNOLOGY" product category page — the light-source technology a
@@ -226,6 +226,42 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
           )}
         </div>
       </section>
+
+      {/* Downloads — literature covering the whole category. */}
+      {c.docs && c.docs.length > 0 && (
+        <section className="border-t border-gray-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">
+              {t({ en: "Downloads", zh: "资料下载", th: "ดาวน์โหลด", vi: "Tải tài liệu" }, locale)}
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-[#143C96] md:text-3xl">
+              {t({ en: "Brochures & Guides", zh: "产品手册与指南", th: "โบรชัวร์และคู่มือ", vi: "Tài liệu & hướng dẫn" }, locale)}
+            </h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {c.docs.map((d) => (
+                <a
+                  key={d.file}
+                  href={productDocUrl(d)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 transition-all hover:border-gray-400 hover:shadow-sm"
+                >
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg text-white" style={{ background: c.accent }}>
+                    <FileText className="h-5 w-5" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-gray-800">{t(d.kind, locale)}</span>
+                    <span className="block text-xs text-gray-400">
+                      {t({ en: "PDF · opens in a new tab", zh: "PDF · 新标签页打开", th: "PDF · เปิดในแท็บใหม่", vi: "PDF · mở trong tab mới" }, locale)}
+                    </span>
+                  </span>
+                  <Download className="h-4 w-4 flex-shrink-0 text-gray-300 transition-colors group-hover:text-gray-600" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Typical applications */}
       {c.applications.length > 0 && (
