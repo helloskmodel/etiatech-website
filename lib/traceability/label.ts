@@ -290,10 +290,31 @@ function lampBody(data: LabelData, mark: ServiceMark, tx: number, s: Spec): stri
  * `@page` 的尺寸设成单张标签的大小、页边距为 0 —— 标签打印机走的是连续卷纸，
  * 一张标签就是一页。浏览器打印时必须关掉「缩放以适应」，否则毫米尺寸会失真。
  */
-export async function renderLabelSheet(labels: LabelData[], title = "ETIA 标签"): Promise<string> {
+export async function renderLabelSheet(
+  labels: LabelData[],
+  title = "ETIA 标签",
+  opts: { autoPrint?: boolean } = {}
+): Promise<string> {
   if (labels.length === 0) throw new Error("没有要打印的标签");
   const s = SPEC[labels[0].variant];
   const svgs = await Promise.all(labels.map(renderLabel));
+
+  // 自动调起打印。配合 Chrome 的 --kiosk-printing 启动参数,打印对话框不会
+  // 弹出,标签直接从默认打印机出来 —— 仓库里点一下就完事,不用每次去对话框里
+  // 选打印机、关缩放。没加那个参数时照常弹对话框,不影响使用。
+  //
+  // 等 document.fonts.ready:中文字体没加载完就打印,字会以后备字体印出来,
+  // 字宽不同会让排版走样。
+  const autoPrint = opts.autoPrint
+    ? `<script>
+  window.addEventListener("load", function () {
+    var go = function () { window.print(); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(go, go);
+    else go();
+  });
+</script>`
+    : "";
+
   return `<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <title>${esc(title)}</title>
@@ -316,5 +337,6 @@ export async function renderLabelSheet(labels: LabelData[], title = "ETIA 标签
 <p class="hint">共 ${labels.length} 张 · 单张 ${s.w}×${s.h} mm。
 打印时请<b>关闭「缩放以适应纸张」</b>，否则毫米尺寸会失真、贴不进模切位置。</p>
 <div class="sheet">${svgs.map((x) => `<div class="label">${x}</div>`).join("")}</div>
+${autoPrint}
 </body></html>`;
 }

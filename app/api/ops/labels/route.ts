@@ -18,9 +18,9 @@ export async function POST(request: Request) {
   const secret = process.env.TRACE_SIGNING_SECRET;
   if (!secret) return Response.json({ error: "signing_secret_missing" }, { status: 503 });
 
-  let body: { serials?: unknown };
+  let body: { serials?: unknown; autoPrint?: unknown };
   try {
-    body = (await request.json()) as { serials?: unknown };
+    body = (await request.json()) as { serials?: unknown; autoPrint?: unknown };
   } catch {
     return Response.json({ error: "bad_request" }, { status: 400 });
   }
@@ -76,7 +76,9 @@ export async function POST(request: Request) {
     };
   });
 
-  const html = await renderLabelSheet(labels, `ETIA 标签 ${labels.length} 张`);
+  const html = await renderLabelSheet(labels, `ETIA 标签 ${labels.length} 张`, {
+    autoPrint: body.autoPrint === true,
+  });
   return new Response(html, {
     headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" },
   });

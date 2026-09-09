@@ -51,7 +51,7 @@ export default function IntakeForm({ sites, items }: { sites: Option[]; items: O
     fetch("/api/ops/labels", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ serials: units.map((u) => u.serial) }),
+      body: JSON.stringify({ serials: units.map((u) => u.serial), autoPrint: true }),
     })
       .then((r) => (r.ok ? r.text() : Promise.reject(new Error("标签生成失败"))))
       .then((html) => {
