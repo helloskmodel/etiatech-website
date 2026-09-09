@@ -19,12 +19,25 @@ import type { NextRequest } from "next/server";
 // for themselves, so there is nothing to guard.
 const PATHNAME_HEADER = "x-etia-pathname";
 
+// 内部系统(入库/出货扫描)只在国内腾讯云那份部署上开放,境外 Vercel 那份
+// 必须看不见它 —— 见 TRACEABILITY.md §6.2。用部署角色控制:腾讯云那边设
+// DEPLOY_ROLE=internal,Vercel 不设,于是 /ops 与 /api/ops 在公网上直接 404,
+// 跟不存在一样(不是 403 —— 403 等于告诉别人这里有东西)。
+const INTERNAL = process.env.DEPLOY_ROLE === "internal";
+
 export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (!INTERNAL && (pathname === "/ops" || pathname.startsWith("/ops/") ||
+                    pathname === "/api/ops" || pathname.startsWith("/api/ops/"))) {
+    return new NextResponse(null, { status: 404 });
+  }
+
   const requestHeaders = new Headers(request.headers);
-  requestHeaders.set(PATHNAME_HEADER, request.nextUrl.pathname);
+  requestHeaders.set(PATHNAME_HEADER, pathname);
   return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
-  matcher: ["/"],
+  matcher: ["/", "/ops/:path*", "/api/ops/:path*"],
 };
