@@ -1,12 +1,12 @@
 // Lead capture endpoint for the OmniCure landing pages.
 //
-// Delivery is configured with env vars, first match wins:
+// Delivery is configured with one env var:
 //   LEAD_WEBHOOK_URL — POST the lead as JSON (Zapier/Make/Slack/CRM webhook)
-//   RESEND_API_KEY   — email via the Resend API to LEAD_TO_EMAIL
-//                      (default Omnicure@etia-tech.com; optional LEAD_FROM_EMAIL,
-//                      default onboarding@resend.dev)
-// With neither configured this returns 503 and the form falls back to the
-// visitor's mail client (mailto), so no lead is ever silently dropped.
+// Without it this returns 503 and the form falls back to the visitor's mail
+// client (mailto), so no lead is ever silently dropped.
+//
+// Resend email delivery was removed: mail stopped arriving at the inbox and
+// the integration was retired rather than repaired.
 //
 // Privacy: lead contact details are NOT logged on the happy path — only a
 // redacted summary. The full lead is logged only if a configured delivery
@@ -40,27 +40,6 @@ async function deliver(lead: Record<string, string>): Promise<"sent" | "unconfig
       body: JSON.stringify({ type: "etiatech-lead", ...lead }),
     });
     if (!res.ok) throw new Error(`webhook ${res.status}`);
-    return "sent";
-  }
-
-  const resendKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEAD_TO_EMAIL || "Omnicure@etia-tech.com";
-  if (resendKey) {
-    const text = Object.entries(lead)
-      .filter(([, v]) => v)
-      .map(([k, v]) => `${k}: ${v}`)
-      .join("\n");
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${resendKey}` },
-      body: JSON.stringify({
-        from: process.env.LEAD_FROM_EMAIL || "onboarding@resend.dev",
-        to: to.split(",").map((s) => s.trim()),
-        subject: `New lead — ${lead.name}${lead.model ? ` (${lead.model})` : ""} via ${lead.page || "landing page"}`,
-        text,
-      }),
-    });
-    if (!res.ok) throw new Error(`resend ${res.status}`);
     return "sent";
   }
 
@@ -107,7 +86,7 @@ export async function POST(request: Request) {
   try {
     const outcome = await deliver(lead);
     if (outcome === "unconfigured") {
-      console.warn("[lead] no delivery configured (LEAD_WEBHOOK_URL or RESEND_API_KEY+LEAD_TO_EMAIL) — client falls back to mailto");
+      console.warn("[lead] no delivery configured (LEAD_WEBHOOK_URL) — client falls back to mailto");
       return Response.json({ error: "not_configured" }, { status: 503 });
     }
     console.log("[lead] delivered", { page: lead.page, lang: lead.lang, model: lead.model });
