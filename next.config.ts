@@ -57,9 +57,11 @@ const nextConfig: NextConfig = {
       // the application notes and confused visitors) — send any indexed URLs
       // to the applications index, its closest equivalent.
       { source: "/industries", destination: "/applications", permanent: true },
+      // Industry solution pages live at /solutions/[slug]; the bare index is
+      // the applications page, which lists all five industries.
+      { source: "/solutions", destination: "/applications", permanent: true },
       { source: "/industries/:path*", destination: "/applications", permanent: true },
       { source: "/omnicure-s2000-lamp", destination: "/product/omnicure/s2000-lamp", permanent: true },
-      { source: "/product", destination: "/product/omnicure", permanent: true },
       { source: "/product/systems", destination: "/product/omnicure", permanent: true },
       // Any old product URL (incl. /en/products/uv-lamps, /en/products/microwave)
       { source: "/en/products/:path*", destination: "/product", permanent: true },

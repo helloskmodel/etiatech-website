@@ -9,9 +9,9 @@ export default function Footer() {
   const { locale } = useLocale();
   const navLinks = [
     { href: "/", label: { en: "Home", zh: "首页", vi: "Trang chủ", th: "หน้าหลัก" } },
-    { href: "/product/omnicure", label: { en: "OmniCure", zh: "OmniCure" } },
-    { href: "/product/phoseon", label: { en: "Phoseon", zh: "Phoseon" } },
-    { href: "/applications", label: { en: "Applications", zh: "应用", vi: "Ứng dụng", th: "การใช้งาน" } },
+    { href: "/product", label: { en: "Product", zh: "产品中心", vi: "Sản phẩm", th: "ผลิตภัณฑ์" } },
+    { href: "/applications", label: { en: "Application", zh: "行业应用", vi: "Ứng dụng", th: "การใช้งาน" } },
+    { href: "/insights", label: { en: "Insight", zh: "洞察", vi: "Thông tin", th: "บทความ" } },
     { href: "/about", label: { en: "About ETIA", zh: "关于我们", vi: "Về ETIA", th: "เกี่ยวกับ ETIA" } },
     { href: "/contact", label: { en: "Service & Support", zh: "销售与支持", vi: "Bán hàng & hỗ trợ", th: "ฝ่ายขายและบริการ" } },
   ];

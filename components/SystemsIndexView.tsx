@@ -9,8 +9,17 @@ import FinalCta from "@/components/FinalCta";
 // The six canonical technology groups, plus a catch-all Accessories bucket for
 // products that don't cure (radiometers, light guides, network modules).
 const ACCESSORIES = { id: "accessories", en: "Accessories", zh: "配件", th: "อุปกรณ์เสริม", vi: "Phụ kiện" };
-const groupsInOrder = [...TECH_ROUTES, ACCESSORIES];
-const groupOf = (p: Product) => techRouteFor(p)?.id ?? ACCESSORIES.id;
+// Infrared modules are not a UV curing route, so they need their own group
+// rather than falling into the accessories catch-all.
+const INFRARED = { id: "infrared", en: "Infrared Heating", zh: "红外加热", th: "ระบบทำความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" };
+const ANALYTICAL = { id: "analytical", en: "Analytical Light Sources", zh: "分析光源", th: "แหล่งกำเนิดแสงสำหรับงานวิเคราะห์", vi: "Nguồn sáng phân tích" };
+const groupsInOrder = [...TECH_ROUTES, INFRARED, ANALYTICAL, ACCESSORIES];
+const groupOf = (p: Product) =>
+  p.tech === "Infrared Heating"
+    ? INFRARED.id
+    : p.tech === "Analytical Light Sources"
+    ? ANALYTICAL.id
+    : techRouteFor(p)?.id ?? ACCESSORIES.id;
 
 export default function SystemsIndexView() {
   const { locale } = useLocale();
