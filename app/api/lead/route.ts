@@ -28,8 +28,10 @@ export const runtime = "nodejs";
 type LeadPayload = {
   name?: unknown;
   company?: unknown;
+  email?: unknown;
   phone?: unknown;
   model?: unknown;
+  inquiryType?: unknown;
   message?: unknown;
   page?: unknown;
   lang?: unknown;
@@ -38,6 +40,11 @@ type LeadPayload = {
 
 const str = (v: unknown, max = 500) =>
   typeof v === "string" ? v.trim().slice(0, max) : "";
+
+// Deliberately permissive — this only rejects what could not be an address at
+// all. Anything stricter turns real overseas addresses away, and a typo
+// reaching the inbox costs far less than a genuine lead refused at the form.
+const looksLikeEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
 async function deliver(lead: Record<string, string>): Promise<"sent" | "unconfigured"> {
   const webhook = process.env.LEAD_WEBHOOK_URL;
@@ -87,6 +94,9 @@ async function deliver(lead: Record<string, string>): Promise<"sent" | "unconfig
         .split(",")
         .map((s) => s.trim())
         .filter(Boolean),
+      // So hitting Reply in the inbox answers the enquirer directly instead of
+      // our own send-only mailbox. Only set when they actually left an address.
+      ...(lead.email ? { replyTo: lead.email } : {}),
       subject: `New lead — ${lead.name}${lead.model ? ` (${lead.model})` : ""} via ${lead.page || "landing page"}`,
       text,
     });
@@ -117,16 +127,25 @@ export async function POST(request: Request) {
   }
 
   const name = str(body.name, 120);
+  const email = str(body.email, 160);
   const phone = str(body.phone, 40);
-  // Name and phone are the minimum needed to follow up.
-  if (!name || !phone) {
+  // A name plus ONE way to reply is the minimum needed to follow up. Email or
+  // phone — not both: overseas buyers routinely leave only an email and would
+  // abandon a form that demanded a phone number, while callers in our own
+  // markets often leave only a number.
+  if (!name || (!email && !phone)) {
     return Response.json({ error: "missing_fields" }, { status: 422 });
+  }
+  if (email && !looksLikeEmail(email)) {
+    return Response.json({ error: "invalid_email" }, { status: 422 });
   }
 
   const lead = {
     name,
     company: str(body.company, 160),
+    email,
     phone,
+    inquiryType: str(body.inquiryType, 80),
     model: str(body.model, 40),
     message: str(body.message, 2000),
     page: str(body.page, 80),

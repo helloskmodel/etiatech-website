@@ -5,8 +5,8 @@ import TrustStrip from "@/components/TrustStrip";
 import SalesSupportContent from "@/components/SalesSupportContent";
 import HeroBanner from "@/components/HeroBanner";
 import { PAGE_BANNERS } from "@/components/caseStudies";
-import { inquiryMailto, localeSalesEmail } from "@/components/contact";
-import { BadgeCheck, Zap, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import InquiryForm from "@/components/InquiryForm";
+import { BadgeCheck, Zap, Mail, Phone, MapPin } from "lucide-react";
 
 // The three lifecycle stages, used as the single inquiry-type selector. The
 // recipient follows the visitor's country (localeSalesEmail); the stage only
@@ -33,8 +33,6 @@ export default function ContactView() {
   const { locale } = useLocale();
   const [stage, setStage] = useState(0);
   const selected = INQUIRY_STAGES[stage];
-  const inquiryEmail = localeSalesEmail(locale);
-  const inquiryHref = inquiryMailto(locale, { subject: selected.subject, context: selected.context });
 
   const offices: {
     region: { en: string; zh: string; th?: string; vi?: string };
@@ -79,7 +77,7 @@ export default function ContactView() {
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Inquiries", zh: "咨询", th: "การสอบถาม", vi: "Yêu cầu" }, locale)}</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "How can we help?", zh: "我们能帮您什么？", th: "เราช่วยอะไรคุณได้บ้าง?", vi: "Chúng tôi có thể giúp gì?" }, locale)}</h2>
-            <p className="mx-auto mt-4 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "Choose what you need and send us an email. Your message reaches the ETIA team for your country — we typically reply within one business day.", zh: "选择您的需求并给我们发邮件。您的信息会发送到所在国家的 ETIA 团队——我们通常在 1 个工作日内回复。", th: "เลือกสิ่งที่คุณต้องการแล้วส่งอีเมลถึงเรา ข้อความจะไปถึงทีม ETIA ในประเทศของคุณ โดยปกติเราตอบกลับภายในหนึ่งวันทำการ", vi: "Chọn nội dung bạn cần và gửi email cho chúng tôi. Tin nhắn sẽ đến đội ngũ ETIA tại quốc gia của bạn — chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
+            <p className="mx-auto mt-4 max-w-xl leading-7 text-[#5F6C7B]">{t({ en: "Choose what you need and leave us a message. It reaches the ETIA team for your country — we typically reply within one business day.", zh: "选择您的需求并留言给我们。您的信息会发送到所在国家的 ETIA 团队——我们通常在 1 个工作日内回复。", th: "เลือกสิ่งที่คุณต้องการแล้วฝากข้อความถึงเรา ข้อความจะไปถึงทีม ETIA ในประเทศของคุณ โดยปกติเราตอบกลับภายในหนึ่งวันทำการ", vi: "Chọn nội dung bạn cần và để lại tin nhắn cho chúng tôi. Tin nhắn sẽ đến đội ngũ ETIA tại quốc gia của bạn — chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
           </div>
 
           <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-[#E6EAF0] bg-[#F6F8FB] p-6 sm:p-8">
@@ -95,13 +93,7 @@ export default function ContactView() {
               ))}
             </select>
 
-            <a href={inquiryHref} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">
-              <Mail className="h-4 w-4" /> {t({ en: "Send Email", zh: "发送邮件", th: "ส่งอีเมล", vi: "Gửi email" }, locale)} <ArrowRight className="h-4 w-4" />
-            </a>
-            <p className="mt-3 text-center text-xs text-[#7B8794]">
-              {t({ en: "Goes to", zh: "发送至", th: "ส่งถึง", vi: "Gửi đến" }, locale)}{" "}
-              <a href={`mailto:${inquiryEmail}`} className="font-semibold text-[#41A62A] hover:underline">{inquiryEmail}</a>
-            </p>
+            <InquiryForm inquiryType={selected.context} />
           </div>
         </div>
       </section>
