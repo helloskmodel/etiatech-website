@@ -205,8 +205,10 @@ create view unit_calibration as
 select
   c.unit_id,
   c.occurred_at::date                         as calibrated_on,
-  (c.occurred_at::date
-     + make_interval(months => i.calibration_interval_months)) as due_on,
+  -- 转回 date：date + interval 会得到 timestamp，而这个值要印在标签上、
+  -- 也要用来算「还有几天到期」，带个 00:00:00 只会碍事。
+  ((c.occurred_at::date
+     + make_interval(months => i.calibration_interval_months))::date) as due_on,
   c.ref_id                                    as certificate_no
 from (
   select distinct on (unit_id) unit_id, occurred_at, ref_id

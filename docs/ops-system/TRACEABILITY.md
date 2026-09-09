@@ -413,7 +413,39 @@ lamp                                lamp_event  (append-only)
 **但"换灯提醒 + 现场服务记录 + 应用 know-how"仍然只有你们有。**
 所以资源要压在 8.2、8.3 和 8.4，而不是把防伪页做得多花哨。
 
-## 9. 分期
+## 9. 已建成部分（可运行、已验证）
+
+| 文件 | 内容 | 验证方式 |
+|---|---|---|
+| `lib/traceability/serial.ts` | 发号、Crockford Base32 归一化、Luhn mod 32 校验位、HMAC 签名、二维码 URL | 22 项单元测试 |
+| `lib/traceability/label.ts` | 设备 60×40mm / 灯泡 40×20mm 标签 SVG，真实毫米尺寸可直接打印 | 12 项单元测试 + 渲染实测 |
+| `lib/traceability/intake.ts` | 入库：建批次 → 批量发号 → 建单品 → 每支落 received 事件 | 10 项集成测试，**跑在真实 Postgres 上** |
+| `docs/ops-system/schema.sql` | 第 1、2 期表结构 | 已在 PostgreSQL 16 上实际建库验证 |
+
+**已在真实数据库上验证成立的保证：**
+
+| 保证 | 怎么验的 |
+|---|---|
+| 事件表不可改、不可删 | `UPDATE` / `DELETE` 均被触发器拒绝 |
+| 序列号格式非法进不来 | `CHECK` 约束拒绝 `BADSERIAL` |
+| 同一单品事件序号不重复 | 唯一约束拒绝 |
+| **并发入库不撞号、不跳号** | 6 个事务同时入库 30 支，号段恰好 0..29 |
+| 事务回滚不留半截数据 | 中途抛错后三张表均为空 |
+| 当前状态由事件推导 | `unit_current` 视图返回最后一条事件 |
+| 下次校准日期由「最近校准 + 型号周期」算出 | `unit_calibration` 视图，返回 `date` 类型 |
+
+跑集成测试：
+
+```bash
+createdb etia && psql -d etia -f docs/ops-system/schema.sql
+TRACE_DATABASE_URL=postgres://user@host/etia npm test
+```
+
+不设 `TRACE_DATABASE_URL` 时这 10 项自动跳过，其余 34 项照常运行。
+
+---
+
+## 10. 分期
 
 按第 8 节的商业目标重排后的优先级 —— **换灯提醒提前，防伪页后置**：
 
@@ -431,7 +463,7 @@ lamp                                lamp_event  (append-only)
 > 第 3 期是**商业上回报最快的一期**,建议不要往后拖。
 > 第 1、2 期可以先跑起来,不必等 Excelitas 的答复。
 
-## 10. 待确认
+## 11. 待确认
 
 标签形式已由实物照片确认（见第 2 节），剩余事项：
 
