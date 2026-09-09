@@ -6,6 +6,8 @@ import { getAllArticles, articleLocales } from "@/components/insights";
 import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
 import { LAMP_PATHS, LAMP_LANGUAGES } from "@/components/omnicure/s2000Lamp";
 import { languageAlternates, brandLanguageAlternates } from "@/components/localePageSeo";
+import { productCategoryList, productCategoryHref, categoryProducts } from "@/components/productCategories";
+import { industryList, industryHref, industryApplications } from "@/components/industrySolutions";
 
 // URL prefixes of the four language versions of a mirrored main-site path.
 const LOCALE_PREFIXES = ["", "/zh", "/vi", "/th"] as const;
@@ -53,10 +55,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: languageAlternates("/applications") },
     })),
-    // NOTE: /application, /product and /product/systems are intentionally NOT
-    // listed — next.config redirects them (308) to /applications and
-    // /product/omnicure. Only the canonical 200 destinations belong in the
-    // sitemap; listing a redirect makes Google report "Page with redirect".
+    // Product centre — the hub behind the PRODUCT menu, offering both the
+    // technology and the brand route into the catalog.
+    { url: `${SITE}/product`, changeFrequency: "weekly", priority: 0.9 },
+    // "BY TECHNOLOGY" category pages. A category with neither models nor
+    // finished copy yet (contentPending) is reachable from the menu but stays
+    // out of the sitemap until it has something worth ranking.
+    ...productCategoryList
+      .filter((c) => categoryProducts(c.slug).length > 0 || !c.contentPending)
+      .map((c) => ({
+        url: `${SITE}${productCategoryHref(c.slug)}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+      })),
+    // "BY INDUSTRY" solution pages, on the same rule: an industry with no
+    // application notes and unfinished copy waits.
+    ...industryList
+      .filter((i) => industryApplications(i.slug).length > 0 || !i.contentPending)
+      .map((i) => ({
+        url: `${SITE}${industryHref(i.slug)}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+      })),
+    // NOTE: /application and /product/systems are intentionally NOT listed —
+    // next.config redirects them (308) to /applications and /product/omnicure.
+    // Only the canonical 200 destinations belong in the sitemap; listing a
+    // redirect makes Google report "Page with redirect".
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
     // NOTE: /industries was retired — next.config redirects it (and its slugs)
     // to /applications, so it must not be listed here.

@@ -2,20 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState, type ComponentType, type ReactNode } from "react";
+import { useEffect, useState, type ComponentType, type ReactNode } from "react";
 import {
   ArrowRight,
   BadgeCheck,
-  ChevronLeft,
-  ChevronRight,
   GraduationCap,
   Warehouse,
   Wrench,
 } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
-import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { productImage, products } from "@/components/productCatalog";
+import { localizeHref } from "@/components/localeHref";
+import { productCategoryList, productCategoryHref } from "@/components/productCategories";
+import { industryList, industryHref } from "@/components/industrySolutions";
+import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
 import NewsTicker from "@/components/NewsTicker";
@@ -27,6 +28,9 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
   { title: { en: "Local Stock & Fast Response", zh: "本地库存 快速响应", th: "สต็อกในประเทศ ตอบสนองรวดเร็ว", vi: "Kho hàng địa phương & phản hồi nhanh" }, body: { en: "Local equipment and consumables help reduce lead time and production risk.", zh: "本地备货，缩短交期，降低停线与生产风险。", th: "มีอุปกรณ์และวัสดุสิ้นเปลืองในสต็อกท้องถิ่น ช่วยลดระยะเวลารอสินค้าและลดความเสี่ยงต่อการผลิต", vi: "Thiết bị và vật tư tiêu hao có sẵn tại địa phương giúp rút ngắn thời gian giao hàng và giảm rủi ro gián đoạn sản xuất." }, icon: Warehouse },
   { title: { en: "In-House Repair & Lifecycle Support", zh: "内部维修 长期支持", th: "บริการซ่อมและการสนับสนุนตลอดอายุการใช้งาน", vi: "Sửa chữa nội bộ & hỗ trợ vòng đời sản phẩm" }, body: { en: "Troubleshooting, maintenance and repair coordination to keep your process running.", zh: "故障排查、维护保养与维修协调，保障工艺持续稳定运行。", th: "ให้การสนับสนุนด้านการแก้ไขปัญหา การบำรุงรักษา และการประสานงานซ่อม เพื่อช่วยให้กระบวนการผลิตดำเนินต่อไปอย่างมั่นคง", vi: "Hỗ trợ xử lý sự cố, bảo trì và điều phối sửa chữa nhằm giúp quy trình sản xuất vận hành ổn định." }, icon: Wrench },
 ];
+
+// The four Excelitas brands, in the order they are shown under BY BRAND.
+const HOME_BRAND_ORDER: BrandSlug[] = ["omnicure", "phoseon", "fusion-uv", "noblelight"];
 
 // OmniCure systems featured in the hero product carousel (all have COS assets).
 const heroProductSlugs = ["s1500-pro", "lx500", "v3-led-heads", "ac8", "ac5", "ls200"];
@@ -46,8 +50,6 @@ function product(slug: string) {
 export default function HomeView() {
   const { locale } = useLocale();
   const engineerMail = inquiryMailto(locale, { subject: "UV Curing Engineering Inquiry", context: "Application / adhesive / curing area / wavelength / production requirements" });
-  const omnicureProduct = product("s2000-elite") ?? product("lx500");
-  const phoseonProduct = product("nexus-ii") ?? product("firejet-one");
 
   const heroProducts = heroProductSlugs
     .map((slug) => product(slug))
@@ -62,9 +64,6 @@ export default function HomeView() {
     const timer = setInterval(() => setHeroIndex((i) => (i + 1) % heroProducts.length), 3500);
     return () => clearInterval(timer);
   }, [heroProducts.length]);
-
-  const caseScrollRef = useRef<HTMLDivElement>(null);
-  const scrollCases = (dir: number) => caseScrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
 
   return <div className="bg-white text-[#102038]">
     <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
@@ -104,9 +103,77 @@ export default function HomeView() {
     <div className="mt-6 divide-y divide-[#E6EDF3] rounded-2xl border border-[#D9E4EA] bg-white shadow-[0_10px_35px_rgba(20,60,150,.06)] md:hidden">{whyCards.map((item,i)=>{const Icon=item.icon;const accent=i%2===0?"#1A56DB":"#41A62A";const soft=i%2===0?"#EEF6FF":"#F0F9EA";return <div key={item.title.en} className="flex items-start gap-3.5 p-4"><span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl" style={{background:soft,color:accent}}><Icon className="h-5 w-5" strokeWidth={1.8}/></span><div><h3 className="text-sm font-bold leading-snug" style={{color:accent}}>{t(item.title, locale)}</h3><p className="mt-1 text-xs leading-5 text-[#667085]">{t(item.body, locale)}</p></div></div>})}</div>
     <div className="mt-10 hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-4">{whyCards.map((item,i)=>{const Icon=item.icon;const accent=i%2===0?"#1A56DB":"#41A62A";const soft=i%2===0?"#EEF6FF":"#F0F9EA";return <article key={item.title.en} className="rounded-2xl border border-[#D9E4EA] bg-white p-6 shadow-[0_10px_35px_rgba(20,60,150,.06)]" style={{borderTopColor:accent,borderTopWidth:3}}><div className="flex items-center gap-3"><span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl" style={{background:soft,color:accent}}><Icon className="h-7 w-7" strokeWidth={1.7}/></span><h3 className="font-bold leading-snug" style={{color:accent}}>{t(item.title, locale)}</h3></div><p className="mt-4 text-sm leading-6 text-[#667085]">{t(item.body, locale)}</p></article>})}</div></div></section>
 
-    <section className="px-4 pt-14 pb-20 sm:px-6 md:pt-20 lg:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "UV Curing Brand Solutions", zh: "紫外线固化品牌解决方案", th: "โซลูชันแบรนด์ UV Curing", vi: "Giải pháp thương hiệu UV Curing" }, locale)}</p><h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Industry-Leading UV Curing Brands", zh: "行业知名的紫外线固化品牌", th: "แบรนด์ UV Curing ชั้นนำในอุตสาหกรรม", vi: "Các thương hiệu UV Curing uy tín trong ngành" }, locale)}</h2><div className="mt-10 grid gap-6 lg:grid-cols-2"><Link href="/product/omnicure" className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#EEF6FF] sm:grid-cols-[1fr_.9fr]"><div className="p-8"><span className="text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">{t({ en: "Precision Manufacturing", zh: "精密制造", th: "การผลิตที่ต้องการความแม่นยำ", vi: "Sản xuất chính xác" }, locale)}</span><h3 className="mt-3 text-2xl font-bold text-[#143C96]">{t({ en: "OmniCure UV Curing Systems", zh: "OmniCure 紫外线固化系统", th: "ระบบ UV Curing จาก OmniCure", vi: "Hệ thống UV Curing OmniCure" }, locale)}</h3><p className="mt-4 text-sm leading-6 text-[#667085]">{t({ en: "Precision UV curing for assembly, bonding, medical devices and electronics.", zh: "适用于装配、粘接、医疗器械和电子制造的精密紫外线固化。", th: "UV curing ที่แม่นยำสำหรับงานประกอบ งานยึดติด อุปกรณ์การแพทย์ และอิเล็กทรอนิกส์", vi: "UV curing chính xác cho lắp ráp, liên kết, thiết bị y tế và điện tử." }, locale)}</p><span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#143C96]">{t({ en: "Explore OmniCure", zh: "了解 OmniCure", th: "ดูเพิ่มเติมเกี่ยวกับ OmniCure", vi: "Khám phá OmniCure" }, locale)} <ArrowRight className="h-4 w-4"/></span></div><div className="relative min-h-64 bg-white/60">{omnicureProduct&&productImage(omnicureProduct)&&<Image src={productImage(omnicureProduct)} alt="OmniCure UV curing system" fill sizes="(max-width:1024px) 100vw, 45vw" className="object-contain p-7 transition group-hover:scale-105"/>}</div></Link><Link href="/product/phoseon" className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#F1FAEF] sm:grid-cols-[1fr_.9fr]"><div className="p-8"><span className="text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">{t({ en: "Industrial UV LED", zh: "工业 UV LED", th: "UV LED สำหรับอุตสาหกรรม", vi: "UV LED công nghiệp" }, locale)}</span><h3 className="mt-3 text-2xl font-bold text-[#143C96]">{t({ en: "Phoseon UV LED Curing Systems", zh: "Phoseon UV LED 固化系统", th: "ระบบ UV LED Curing จาก Phoseon", vi: "Hệ thống UV LED Curing Phoseon" }, locale)}</h3><p className="mt-4 text-sm leading-6 text-[#667085]">{t({ en: "Industrial UV LED curing for inks, coatings, printing, packaging and production lines.", zh: "适用于油墨、涂层、印刷、包装及生产线的工业 UV LED 固化。", th: "UV LED curing สำหรับหมึกพิมพ์ สารเคลือบ งานพิมพ์ บรรจุภัณฑ์ และสายการผลิต", vi: "UV LED curing công nghiệp cho mực in, lớp phủ, in ấn, bao bì và dây chuyền sản xuất." }, locale)}</p><span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#41A62A]">{t({ en: "Explore Phoseon", zh: "了解 Phoseon", th: "ดูเพิ่มเติมเกี่ยวกับ Phoseon", vi: "Khám phá Phoseon" }, locale)} <ArrowRight className="h-4 w-4"/></span></div><div className="relative min-h-64 bg-white/60">{phoseonProduct&&productImage(phoseonProduct)&&<Image src={productImage(phoseonProduct)} alt="Phoseon industrial UV LED curing system" fill sizes="(max-width:1024px) 100vw, 45vw" className="object-contain p-7 transition group-hover:scale-105"/>}</div></Link></div></div></section>
+    {/* BY TECHNOLOGY — the way most visitors arrive: they know the light
+        source they need, not the brand that makes it. */}
+    <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}</p>
+        <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Find your light source", zh: "按光源技术选型", th: "ค้นหาแหล่งกำเนิดแสงของคุณ", vi: "Tìm nguồn sáng của bạn" }, locale)}</h2>
+        <p className="mt-4 max-w-2xl text-sm leading-6 text-[#667085]">{t({ en: "Mercury lamp, UV LED, microwave electrodeless, measurement and infrared — pick the technology your process needs.", zh: "汞灯、UV LED、微波无极灯、精密检测与红外加热——按您工艺所需的技术选择。", th: "หลอดปรอท UV LED ไมโครเวฟไร้ขั้ว เครื่องมือวัด และอินฟราเรด — เลือกเทคโนโลยีที่กระบวนการของคุณต้องการ", vi: "Đèn thủy ngân, UV LED, vi sóng không điện cực, thiết bị đo và hồng ngoại — chọn công nghệ mà quy trình của bạn cần." }, locale)}</p>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {productCategoryList.map((c) => (
+            <Link key={c.slug} href={localizeHref(productCategoryHref(c.slug), locale)} className="group flex flex-col rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#F7FAFC] p-7 transition hover:border-[#1A56DB]/40 hover:shadow-lg">
+              <div className="mb-4 h-1.5 w-10 rounded" style={{ background: c.accent }} />
+              <h3 className="text-lg font-bold text-[#143C96]">{t(c.name, locale)}</h3>
+              <p className="mt-3 flex-1 text-sm leading-6 text-[#667085]">{t(c.tagline, locale)}</p>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: c.accent }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" /></span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    <section className="bg-gradient-to-br from-[#143C96] to-[#1A56DB] px-4 py-16 text-white sm:px-6 lg:px-8 md:py-20"><div className="mx-auto max-w-7xl"><div className="flex items-end justify-between gap-4"><div><h2 className="text-3xl font-bold md:text-4xl">{t({ en: "Case Studies", zh: "客户案例", th: "กรณีศึกษา", vi: "Case study" }, locale)}</h2><p className="mt-3 max-w-xl text-sm text-white/75">{t({ en: "Real production applications — see the system, the process and the results.", zh: "真实产线应用——看设备、看工艺、看结果。", th: "การใช้งานจริงในสายการผลิต — ดูระบบ กระบวนการ และผลลัพธ์", vi: "Ứng dụng sản xuất thực tế — xem hệ thống, quy trình và kết quả." }, locale)}</p></div><Link href="/case-studies" className="hidden items-center gap-2 text-sm font-bold text-white sm:inline-flex">{t({ en: "All Case Studies", zh: "全部案例", th: "กรณีศึกษาทั้งหมด", vi: "Tất cả case study" }, locale)} <ArrowRight className="h-4 w-4"/></Link></div><div className="mt-8"><div ref={caseScrollRef} className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">{caseStudiesCn.map(c=><Link href={`/case-studies/${c.slug}`} key={c.slug} className="group w-[165px] shrink-0 snap-start overflow-hidden rounded-2xl bg-white text-[#102038] shadow-xl sm:w-[240px]"><div className="relative aspect-[4/3] bg-[#EEF6FF]"><Image src={c.image} alt={t(c.title, locale)} fill sizes="(max-width: 640px) 165px, 240px" className="object-cover transition group-hover:scale-105"/></div><div className="p-3.5 sm:p-4"><p className="text-[10px] font-bold uppercase tracking-widest text-[#41A62A] sm:text-xs">{t(c.industry, locale)}</p><h3 className="mt-1 text-sm font-bold leading-snug text-[#143C96] line-clamp-2 sm:line-clamp-3">{t(c.title, locale)}</h3><span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#41A62A]">{t({ en: "Read case", zh: "看案例", th: "อ่านกรณีศึกษา", vi: "Xem case" }, locale)} <ArrowRight className="h-3.5 w-3.5"/></span></div></Link>)}</div><div className="mt-5 flex justify-end gap-3"><button type="button" aria-label={t({ en: "Previous case studies", zh: "上一组案例", th: "กรณีศึกษาก่อนหน้า", vi: "Case trước" }, locale)} onClick={()=>scrollCases(-1)} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"><ChevronLeft className="h-5 w-5"/></button><button type="button" aria-label={t({ en: "Next case studies", zh: "下一组案例", th: "กรณีศึกษาถัดไป", vi: "Case tiếp theo" }, locale)} onClick={()=>scrollCases(1)} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"><ChevronRight className="h-5 w-5"/></button></div></div></div></section>
+    {/* BY BRAND — the four Excelitas brands ETIA is authorized to supply. */}
+    <section className="px-4 pt-14 pb-20 sm:px-6 md:pt-20 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" }, locale)}</p>
+        <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Industry-Leading UV Curing Brands", zh: "行业知名的紫外线固化品牌", th: "แบรนด์ UV Curing ชั้นนำในอุตสาหกรรม", vi: "Các thương hiệu UV Curing uy tín trong ngành" }, locale)}</h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {HOME_BRAND_ORDER.map((slug) => {
+            const b = brandLanding[slug];
+            const hero = products.find((p) => p.brandId === b.catalogBrandId && productImage(p));
+            return (
+              <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:grid-cols-[1fr_.85fr]">
+                <div className="p-7">
+                  <div className="mb-3 h-1.5 w-10 rounded" style={{ background: b.color }} />
+                  <h3 className="text-xl font-bold text-[#143C96]">{b.name}</h3>
+                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-[#667085]">{t(b.intro, locale).split("\n\n")[0]}</p>
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: b.color }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" /></span>
+                </div>
+                <div className="relative min-h-56 bg-[#F7FAFC]">
+                  {hero && <Image src={productImage(hero)} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 100vw, 42vw" className="object-contain p-6 transition group-hover:scale-105" />}
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    {/* BY INDUSTRY — for visitors who know their sector and their bonding
+        problem, but not which light source solves it. */}
+    <section className="bg-gradient-to-br from-[#143C96] to-[#1A56DB] px-4 py-16 text-white sm:px-6 lg:px-8 md:py-20">
+      <div className="mx-auto max-w-7xl">
+        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#8BE172]">{t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}</p>
+        <div className="mt-3 flex items-end justify-between gap-4">
+          <div>
+            <h2 className="text-3xl font-bold md:text-4xl">{t({ en: "Industry Solutions", zh: "行业解决方案", th: "โซลูชันอุตสาหกรรม", vi: "Giải pháp ngành" }, locale)}</h2>
+            <p className="mt-3 max-w-xl text-sm text-white/75">{t({ en: "The bonding problems each sector actually brings us — and the systems that solve them.", zh: "各行业实际带给我们的粘接难题，以及解决这些难题的设备方案。", th: "ปัญหาการยึดติดที่แต่ละอุตสาหกรรมนำมาหาเรา — และระบบที่แก้ปัญหาเหล่านั้น", vi: "Những vấn đề liên kết mà mỗi ngành thực sự mang đến cho chúng tôi — và hệ thống giải quyết chúng." }, locale)}</p>
+          </div>
+          <Link href={localizeHref("/applications", locale)} className="hidden items-center gap-2 text-sm font-bold text-white sm:inline-flex">{t({ en: "All applications", zh: "全部应用", th: "การใช้งานทั้งหมด", vi: "Tất cả ứng dụng" }, locale)} <ArrowRight className="h-4 w-4" /></Link>
+        </div>
+        <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {industryList.map((s) => (
+            <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex flex-col rounded-3xl border border-white/15 bg-white/10 p-7 transition hover:border-white/40 hover:bg-white/15">
+              <div className="mb-4 h-1.5 w-10 rounded" style={{ background: s.accent }} />
+              <h3 className="text-lg font-bold">{t(s.name, locale)}</h3>
+              <p className="mt-3 flex-1 text-sm leading-6 text-white/75">{t(s.tagline, locale)}</p>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-[#8BE172]">{t({ en: "View solutions", zh: "查看方案", th: "ดูโซลูชัน", vi: "Xem giải pháp" }, locale)} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" /></span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
 
     <CustomerLogos />
 
