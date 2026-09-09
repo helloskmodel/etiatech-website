@@ -310,54 +310,88 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
   },
 
   // ───────────────────────── 5. 科学仪器行业 ─────────────────────────
+  // ETIA's angle here is not a standalone curing machine: it is the UV module
+  // that goes inside someone else's analytical instrument. The named facts
+  // below are public — TA Instruments specifies the Excelitas OmniCure S2000
+  // as the source in its rheometer UV light-guide accessory, and published
+  // photo-rheology on Anton Paar MCR instruments uses OmniCure S1500/S2000.
+  // Mettler Toledo's own photocalorimetry kit uses Hamamatsu and DELO sources,
+  // so nothing here claims an OmniCure relationship with that platform.
   "scientific-instruments": {
     slug: "scientific-instruments",
     accent: "#7c3aed",
     name: { en: "Scientific Instruments", zh: "科学仪器行业" },
     tagline: {
-      en: "UV and LED light sources built into analytical, imaging and life-science instruments.",
-      zh: "集成于分析、成像与生命科学仪器中的紫外与 LED 光源。",
+      en: "The UV module inside the instrument — light sources, light guides and radiometry for photo-rheology and photocalorimetry.",
+      zh: "仪器内部的那个紫外模块——为光流变与光量热提供光源、光导与辐照测量。",
     },
     intro: [
       {
-        en: "Instrument builders need light sources with the stability and documentation of a component, not a shop tool: known spectral output, specified drift, and a supply relationship that will still be there when the instrument ships its tenth production batch.",
-        zh: "仪器制造商所需要的光源，必须具备零部件级的稳定性与文件规范，而非车间工具级：明确的光谱输出、给定的漂移指标，以及在仪器进入第十批量产时依然存在的稳定供应关系。",
+        en: "Rheometers and thermal analysers become photo-instruments the moment you put UV light onto the sample. A rotational rheometer with a UV light-curing cell tracks the storage and loss moduli while the resin cures, and the crossover of G′ and G″ gives the gel point directly. A DSC with a photocalorimetry accessory measures the heat released as the photoinitiated reaction proceeds. In both cases the instrument maker builds the cell — and someone has to supply the light.",
+        zh: "当紫外光照射到样品上的那一刻，流变仪与热分析仪就变成了光学仪器。带紫外固化池的旋转流变仪，可在树脂固化过程中追踪储能模量与损耗模量，G′ 与 G″ 的交叉点直接给出胶凝点；带光量热附件的 DSC，则测量光引发反应进行时释放的热量。这两种情形下，测量池由仪器厂商制造——而光源需要有人来提供。",
       },
       {
-        en: "ETIA supplies UV and LED illumination for fluorescence imaging, microscopy and laboratory instruments, together with the radiometry needed to characterise and calibrate them — plus the precision spot curing used to assemble the optics inside those instruments.",
-        zh: "ETIA 为荧光成像、显微镜与实验室仪器提供紫外与 LED 照明，并配套其表征与校准所需的辐照测量方案——同时提供用于装配仪器内部光学元件的精密点固化设备。",
+        en: "That light source is ETIA's part of the job. The OmniCure® S2000 is the mercury lamp source specified in TA Instruments' UV light-guide accessory for its rheometers, and published photo-rheology on Anton Paar MCR instruments has been run with OmniCure S1500 and S2000 sources coupled through a light guide. We supply the same sources, the light guides and adapters that couple them to the measuring cell, and the spare lamps that keep an instrument running years after it was commissioned.",
+        zh: "这个光源正是 ETIA 承担的部分。OmniCure® S2000 是 TA Instruments 流变仪紫外光导附件所指定的汞灯光源；在 Anton Paar MCR 仪器上发表的光流变研究，也采用 OmniCure S1500 与 S2000 通过光导耦合。我们供应同样的光源、将其耦合到测量池的光导与转接件，以及让仪器在验收多年之后仍能正常运转的备用灯管。",
+      },
+      {
+        en: "The hard part of a photo-instrument is not making light — it is knowing how much of it reaches the sample plane. Irradiance is what the kinetics scale with: on a rheometer, raising it from 50 to 150 mW/cm² visibly shortens the time to the G′/G″ crossover. Because irradiance falls off with distance and drifts as a lamp ages, a measurement taken at the source is not the number that acted on the sample. Traceable radiometry is therefore part of the instrument, not an afterthought — which is why we sell the OmniCure R2000 and LS200 alongside the sources rather than after them.",
+        zh: "光学仪器真正的难点不在于产生光，而在于知道究竟有多少光抵达了样品平面。反应动力学随辐照度而变：在流变仪上，将辐照度从 50 提高到 150 mW/cm²，G′/G″ 交叉时间会明显缩短。而辐照度随距离衰减、随灯管老化漂移，因此在光源端测得的数值并不是作用于样品的数值。可溯源的辐照测量因此是仪器的组成部分，而非事后补充——这正是我们把 OmniCure R2000 与 LS200 与光源一同供应、而不是事后追加的原因。",
+      },
+      {
+        en: "We work with instrument builders integrating a UV module into a new platform, and with laboratories keeping an existing rheometer or photocalorimeter in service — including replacing an ageing or discontinued source with one whose spectrum and irradiance can be matched to the method already validated.",
+        zh: "我们既服务于将紫外模块集成进新平台的仪器制造商，也服务于维持现有流变仪或光量热仪运转的实验室——包括为已老化或停产的光源寻找替代方案，并使其光谱与辐照度能够匹配既有的、已验证的测试方法。",
       },
     ],
     processes: [
       {
-        title: { en: "Fluorescence & imaging illumination", zh: "荧光与成像照明" },
+        title: { en: "Photo-rheology", zh: "光流变" },
         body: {
-          en: "Stable LED illumination for fluorescence microscopy and imaging systems.",
-          zh: "用于荧光显微与成像系统的稳定 LED 照明。",
+          en: "UV curing on a rotational rheometer — follow G′ and G″ through the cure and read the gel point off their crossover.",
+          zh: "在旋转流变仪上进行紫外固化——追踪 G′ 与 G″ 的变化，由其交叉点读出胶凝点。",
         },
       },
       {
-        title: { en: "Instrument optics assembly", zh: "仪器光学装配" },
+        title: { en: "Photocalorimetry (photo-DSC)", zh: "光量热（Photo-DSC）" },
         body: {
-          en: "Precision spot curing for lens, filter and window bonding inside the instrument.",
-          zh: "用于仪器内部透镜、滤光片与窗口粘接的精密点固化。",
+          en: "Heat flow measured while the sample is illuminated, for cure kinetics, conversion and photostability studies.",
+          zh: "在样品受光照射的同时测量热流，用于固化动力学、转化率与光稳定性研究。",
         },
       },
       {
-        title: { en: "Source characterisation", zh: "光源表征" },
+        title: { en: "Coupling light into the cell", zh: "将光耦合进测量池" },
         body: {
-          en: "Traceable radiometry to specify, calibrate and monitor the built-in source.",
-          zh: "可溯源辐照测量，用于内置光源的规格确定、校准与监控。",
+          en: "Light guides, collimators and adapters that carry the source to a quartz plate or measuring cell without losing uniformity.",
+          zh: "光导、准直器与转接件，将光源引至石英板或测量池，同时不损失均匀性。",
+        },
+      },
+      {
+        title: { en: "Irradiance at the sample plane", zh: "样品平面辐照度" },
+        body: {
+          en: "Traceable radiometry so the mW/cm² in the method is the mW/cm² the sample actually received.",
+          zh: "可溯源的辐照测量，使方法中写下的 mW/cm² 就是样品实际接收到的 mW/cm²。",
+        },
+      },
+      {
+        title: { en: "Source replacement and retrofit", zh: "光源替换与改造" },
+        body: {
+          en: "Keeping an installed instrument in service when its original lamp source is ageing or discontinued.",
+          zh: "当仪器原配光源老化或停产时，让已装机的设备继续可用。",
+        },
+      },
+      {
+        title: { en: "OEM integration", zh: "OEM 集成" },
+        body: {
+          en: "Specifying the source, optics and control for a UV module being built into a new instrument platform.",
+          zh: "为集成进新仪器平台的紫外模块，确定光源、光学与控制方案。",
         },
       },
     ],
-    recommends: ["uv-measurement", "uv-led", "mercury-uv-lamp"],
+    recommends: ["mercury-uv-lamp", "uv-measurement", "uv-led"],
     applicationSlugs: [],
-    metaTitle: "UV & LED Light Sources for Scientific Instruments | ETIA",
+    metaTitle: "UV Modules for Rheometers & Thermal Analysers | Photo-Rheology & Photo-DSC | ETIA",
     metaDescription:
-      "UV and LED illumination for scientific instruments — fluorescence imaging, microscopy and laboratory systems — plus precision spot curing for instrument optics assembly and traceable radiometry. From ETIA.",
-    // No application notes for this sector yet; awaiting customer material.
-    contentPending: true,
+      "UV light sources, light guides and traceable radiometry for scientific instruments — photo-rheology on rotational rheometers and photocalorimetry on DSC. OmniCure sources, spare lamps and irradiance measurement, supplied and supported by ETIA.",
   },
 };
 
