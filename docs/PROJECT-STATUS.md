@@ -97,6 +97,14 @@ Landing-page SEO architecture and many polish passes are already live:
 - Bilingual **EN/ZH** via `t()`/`LangText`; keep structured for VN/TH.
 - Push only to `claude/product-image-assets-30ar7q` unless told otherwise.
 - Don't put the model identifier in commits/PRs/code.
+- **Not distributed — do not build pages for these.** Excelitas/Noblelight's
+  catalogue is wider than ETIA's agency. Confirmed out of scope:
+  - **Arc & Flash Lamps** — CW laser lamps, flash lamps, xenon flash systems,
+    Ignite/HIT, trigger transformers, humm3®, Flexe3®.
+  - **UV disinfection & treatment** — BlueLight® family, Steribelt, Air D,
+    micro-photoreactors, water/air/surface treatment.
+
+  In scope from Noblelight: Semray UV LED, M/MX infrared, analytical lamps.
 
 ---
 
