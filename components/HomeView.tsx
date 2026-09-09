@@ -99,8 +99,10 @@ export default function HomeView() {
     <NewsTicker />
 
     <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 md:pb-6 lg:px-8"><div className="mx-auto max-w-7xl"><h2 className="text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Why Manufacturers Choose ETIA", zh: "为什么制造企业选择 ETIA", th: "ทำไมผู้ผลิตจึงเลือก ETIA", vi: "Vì sao các nhà sản xuất chọn ETIA" }, locale)}</h2>
-    {/* Mobile: one compact card with four rows — fits a single screen. */}
-    <div className="mt-6 divide-y divide-[#E6EDF3] rounded-2xl border border-[#D9E4EA] bg-white shadow-[0_10px_35px_rgba(20,60,150,.06)] md:hidden">{whyCards.map((item,i)=>{const Icon=item.icon;const accent=i%2===0?"#1A56DB":"#41A62A";const soft=i%2===0?"#EEF6FF":"#F0F9EA";return <div key={item.title.en} className="flex items-start gap-3.5 p-4"><span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl" style={{background:soft,color:accent}}><Icon className="h-5 w-5" strokeWidth={1.8}/></span><div><h3 className="text-sm font-bold leading-snug" style={{color:accent}}>{t(item.title, locale)}</h3><p className="mt-1 text-xs leading-5 text-[#667085]">{t(item.body, locale)}</p></div></div>})}</div>
+    {/* Mobile: a 2x2 tile grid. The body copy is dropped — at half the screen
+        width it pushes the four tiles past one screen, which is the whole
+        point of the compact layout. The titles carry the claim. */}
+    <div className="mt-6 grid grid-cols-2 gap-3 md:hidden">{whyCards.map((item,i)=>{const Icon=item.icon;const accent=i%2===0?"#1A56DB":"#41A62A";const soft=i%2===0?"#EEF6FF":"#F0F9EA";return <div key={item.title.en} className="rounded-2xl border border-[#D9E4EA] bg-white p-4 shadow-[0_10px_35px_rgba(20,60,150,.06)]" style={{borderTopColor:accent,borderTopWidth:3}}><span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{background:soft,color:accent}}><Icon className="h-5 w-5" strokeWidth={1.8}/></span><h3 className="mt-3 text-sm font-bold leading-snug" style={{color:accent}}>{t(item.title, locale)}</h3></div>})}</div>
     <div className="mt-10 hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-4">{whyCards.map((item,i)=>{const Icon=item.icon;const accent=i%2===0?"#1A56DB":"#41A62A";const soft=i%2===0?"#EEF6FF":"#F0F9EA";return <article key={item.title.en} className="rounded-2xl border border-[#D9E4EA] bg-white p-6 shadow-[0_10px_35px_rgba(20,60,150,.06)]" style={{borderTopColor:accent,borderTopWidth:3}}><div className="flex items-center gap-3"><span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl" style={{background:soft,color:accent}}><Icon className="h-7 w-7" strokeWidth={1.7}/></span><h3 className="font-bold leading-snug" style={{color:accent}}>{t(item.title, locale)}</h3></div><p className="mt-4 text-sm leading-6 text-[#667085]">{t(item.body, locale)}</p></article>})}</div></div></section>
 
     {/* BY TECHNOLOGY — the way most visitors arrive: they know the light
@@ -129,22 +131,26 @@ export default function HomeView() {
         <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" }, locale)}</p>
         <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Industry-Leading UV Curing Brands", zh: "行业知名的紫外线固化品牌", th: "แบรนด์ UV Curing ชั้นนำในอุตสาหกรรม", vi: "Các thương hiệu UV Curing uy tín trong ngành" }, locale)}</h2>
         <p className="mt-4 max-w-2xl text-sm leading-6 text-[#667085]">{t({ en: "Four brands that cross the technologies rather than map onto them.", zh: "四个品牌横跨不同技术，并非与技术一一对应。", th: "สี่แบรนด์ที่ครอบคลุมข้ามเทคโนโลยี ไม่ได้จับคู่แบบหนึ่งต่อหนึ่ง", vi: "Bốn thương hiệu trải rộng qua các công nghệ, không tương ứng một-một." }, locale)}</p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        {/* Two per row on mobile: four brands fit one screen instead of four
+            full-height cards. The blurb and the Explore affordance drop away
+            below sm — at ~150px of content width they only crowd the tile,
+            and the whole tile is the link. */}
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6">
           {HOME_BRAND_ORDER.map((slug) => {
             const b = brandLanding[slug];
             const hero = products.find((p) => p.brandId === b.catalogBrandId && productImage(p));
             const cats = categoriesForBrand(b.catalogBrandId);
             return (
-              <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:grid-cols-[1fr_.85fr]">
-                <div className="p-7">
-                  <div className="mb-3 h-1.5 w-10 rounded" style={{ background: b.color }} />
-                  <h3 className="text-xl font-bold text-[#143C96]">{b.name}</h3>
-                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-[#667085]">{t(b.intro, locale).split("\n\n")[0]}</p>
-                  {cats.length > 0 && <div className="mt-4 flex flex-wrap gap-1.5">{cats.map((c) => <span key={c.slug} className="rounded-full border px-2.5 py-1 text-[11px] font-semibold" style={{ borderColor: `${c.accent}55`, color: c.accent }}>{t(c.name, locale)}</span>)}</div>}
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: b.color }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" /></span>
+              <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group grid overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:rounded-3xl sm:grid-cols-[1fr_.85fr]">
+                <div className="p-4 sm:p-7">
+                  <div className="mb-2.5 h-1.5 w-8 rounded sm:mb-3 sm:w-10" style={{ background: b.color }} />
+                  <h3 className="text-base font-bold text-[#143C96] sm:text-xl">{b.name}</h3>
+                  <p className="mt-3 hidden line-clamp-3 text-sm leading-6 text-[#667085] sm:block">{t(b.intro, locale).split("\n\n")[0]}</p>
+                  {cats.length > 0 && <div className="mt-2.5 flex flex-wrap gap-1 sm:mt-4 sm:gap-1.5">{cats.map((c) => <span key={c.slug} className="rounded-full border px-2 py-0.5 text-[10px] font-semibold sm:px-2.5 sm:py-1 sm:text-[11px]" style={{ borderColor: `${c.accent}55`, color: c.accent }}>{t(c.name, locale)}</span>)}</div>}
+                  <span className="mt-6 hidden items-center gap-1.5 text-sm font-bold sm:inline-flex" style={{ color: b.color }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" /></span>
                 </div>
-                <div className="relative min-h-56 bg-[#F7FAFC]">
-                  {hero && <Image src={productImage(hero)} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 100vw, 42vw" className="object-contain p-6 transition group-hover:scale-105" />}
+                <div className="relative min-h-28 bg-[#F7FAFC] sm:min-h-56">
+                  {hero && <Image src={productImage(hero)} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 48vw, 42vw" className="object-contain p-3 transition group-hover:scale-105 sm:p-6" />}
                 </div>
               </Link>
             );
