@@ -93,6 +93,61 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
         </div>
       </section>
 
+      {/* Selection guide — reference content for categories where picking the
+          right variant is the customer's actual problem. */}
+      {c.selectionGuide && (
+        <section className="border-t border-gray-100 bg-[#F7FAFC] px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="text-2xl font-bold text-[#143C96] md:text-3xl">{t(c.selectionGuide.heading, locale)}</h2>
+            <div className="mt-4 mb-6 h-1 w-12 rounded" style={{ background: c.accent }} />
+            <p className="max-w-3xl text-base leading-7 text-[#475467]">{t(c.selectionGuide.standfirst, locale)}</p>
+
+            <div className="mt-10 space-y-7">
+              {c.selectionGuide.steps.map((step, i) => (
+                <div key={i} className="border-l-2 pl-5" style={{ borderColor: c.accent }}>
+                  <h3 className="text-base font-bold text-[#143C96]">{t(step.title, locale)}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#667085]">{t(step.body, locale)}</p>
+                </div>
+              ))}
+            </div>
+
+            {c.selectionGuide.tables?.map((table, ti) => (
+              <figure key={ti} className="mt-12">
+                <figcaption className="mb-4 text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">
+                  {t(table.caption, locale)}
+                </figcaption>
+                {/* Wide tables scroll inside their own container so the page body never does. */}
+                <div className="overflow-x-auto rounded-2xl border border-[#D9E4EA] bg-white">
+                  <table className="w-full min-w-[44rem] border-collapse text-left text-sm">
+                    <thead>
+                      <tr className="border-b border-[#D9E4EA] bg-[#F7FAFC]">
+                        {table.columns.map((col, i) => (
+                          <th key={i} scope="col" className="px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#475467]">
+                            {t(col, locale)}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {table.rows.map((row, i) => (
+                        <tr key={i} className="border-b border-[#E6EDF3] last:border-0">
+                          {row.map((cell, j) => (
+                            <td key={j} className={`px-5 py-4 align-top leading-6 ${j === 0 ? "font-bold text-[#143C96]" : "text-[#667085]"}`}>
+                              {t(cell, locale)}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {table.footnote && <p className="mt-3 text-xs leading-5 text-[#98A2B3]">{t(table.footnote, locale)}</p>}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Models */}
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">

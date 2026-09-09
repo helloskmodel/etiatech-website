@@ -1561,6 +1561,42 @@ export const products: Product[] = [
   // the customer's process rather than sold from a fixed spec sheet, so the
   // spec tables below state configuration rather than invented numbers.
   {
+    slug: "fusion-belt-conveyors",
+    name: "Fusion UV Belt Conveyor Systems — DRS 10/12 & LC6B/LC6U",
+    brand: "Fusion UV",
+    brandId: "fusionuv",
+    tech: "Microwave UV Curing",
+    sub: "Belt Conveyors",
+    accent: "#f59e0b",
+    intro:
+      "Standard conveyors built for Noblelight microwave-powered UV curing systems: the DRS 10/12 floor-standing units and the LC6B / LC6U benchtop units. Chemists and production managers use them to test UV-curable adhesives, inks and coatings while developing formulations, to evaluate cure response, and to run low-volume or short production runs.",
+    features: [
+      "DRS 10/12 — floor-standing conveyor configuration",
+      "LC6B and LC6U — benchtop conveyor configurations",
+      "Standard products designed for use with Noblelight microwave-powered UV curing systems",
+      "Lamp head can rotate, raise and lower to set the cure geometry",
+      "Belt speeds of 0.6 to 76 m/min (2 to 250 fpm)",
+      "Rugged enough for pilot-plant or production environments, not only the laboratory",
+    ],
+    applications: [
+      "Formulation development for UV-curable adhesives, inks and coatings",
+      "Cure response evaluation",
+      "Performance assessment before scale-up",
+      "Low-volume production runs",
+      "Short production runs",
+      "Laboratory and R&D curing",
+    ],
+    specs: [
+      ["Floor-Standing Models", "DRS 10, DRS 12"],
+      ["Benchtop Models", "LC6B, LC6U"],
+      ["Belt Speed", "0.6–76 m/min (2–250 fpm)"],
+      ["Lamp Movement", "Rotate, raise and lower"],
+      ["Designed For", "Noblelight microwave-powered UV curing systems"],
+      ["Typical Use", "Formulation development, cure response testing, short runs"],
+      ["Mercury", "Lamps contain mercury — manage per local, state or federal disposal laws"],
+    ],
+  },
+  {
     slug: "ir-m85",
     name: "Noblelight M 85 Infrared Heating Module",
     brand: "Noblelight",
