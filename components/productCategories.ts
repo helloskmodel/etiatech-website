@@ -95,6 +95,12 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
         th: "แหล่งกำเนิด UV แบบหลอดอาร์กปรอทให้สเปกตรัมกว้างและต่อเนื่องตั้งแต่ราว 250 ถึง 600 nm ความครอบคลุมสเปกตรัมที่เต็มช่วงนี้เองที่ทำให้ยังเป็นแหล่งกำเนิดแสงอ้างอิงสำหรับกาว สารเคลือบ และหมึกที่มีโฟโตอินิชิเอเตอร์ดูดกลืนนอกย่านแคบของ UV LED — และเป็นเหตุผลที่กระบวนการทางการแพทย์และอิเล็กทรอนิกส์จำนวนมากที่ผ่านการตรวจรับรองแล้วยังคงระบุให้ใช้",
       },
       {
+        en: "Mercury UV divides into two families. Electroded medium-pressure arc lamps strike an arc between two electrodes in a mercury fill: Excelitas Noblelight builds them from 0.4 to 10 kW as standard and up to 60 kW for high-power duty, in arc lengths from 4 to 150 cm and at power densities around 100 W/cm², with metal-halide additives used to shape the spectrum around a given formulation. Electrodeless lamps excite the same mercury fill with microwave energy instead — with no electrodes to erode, output holds flatter across lamp life. ETIA catalogues the electrodeless side separately, under 微波无极灯 (Microwave Electrodeless UV).",
+        zh: "汞灯紫外分两大类。一是有电极中压弧光灯，在汞填充管内两电极间起弧：Excelitas Noblelight 标准型 0.4–10 kW，高功率型可至 60 kW，弧长 4–150 cm，功率密度约 100 W/cm²，并可通过金属卤化物掺杂将光谱调整到配方所需的位置。二是无极灯，用微波能量激发同样的汞填充——没有电极可损耗，输出在整个灯寿命内更平稳。无极灯这一侧 ETIA 单列在「微波无极灯」品类下。",
+        vi: "UV thủy ngân chia thành hai họ. Đèn hồ quang áp suất trung bình có điện cực tạo hồ quang giữa hai điện cực trong khí thủy ngân: Excelitas Noblelight chế tạo loại tiêu chuẩn từ 0,4 đến 10 kW và tới 60 kW cho ứng dụng công suất cao, chiều dài hồ quang 4–150 cm, mật độ công suất khoảng 100 W/cm², với phụ gia halogenua kim loại để điều chỉnh phổ theo từng công thức. Đèn không điện cực kích thích cùng loại khí thủy ngân bằng năng lượng vi sóng — không có điện cực bị ăn mòn nên đầu ra ổn định hơn suốt tuổi thọ đèn. ETIA xếp riêng nhóm không điện cực trong danh mục UV vi sóng không điện cực.",
+        th: "UV ปรอทแบ่งเป็นสองตระกูล หลอดอาร์กความดันปานกลางแบบมีขั้วไฟฟ้าสร้างอาร์กระหว่างขั้วสองข้างในไอปรอท: Excelitas Noblelight ผลิตรุ่นมาตรฐานตั้งแต่ 0.4 ถึง 10 kW และสูงถึง 60 kW สำหรับงานกำลังสูง ความยาวอาร์ก 4–150 ซม. ความหนาแน่นกำลังราว 100 W/cm² พร้อมสารเติมเมทัลฮาไลด์เพื่อปรับสเปกตรัมให้เข้ากับสูตรเคมี ส่วนหลอดไร้ขั้วไฟฟ้ากระตุ้นไอปรอทชนิดเดียวกันด้วยพลังงานไมโครเวฟ — ไม่มีขั้วไฟฟ้าให้สึกกร่อน เอาต์พุตจึงคงที่กว่าตลอดอายุหลอด ETIA จัดหมวดหลอดไร้ขั้วไฟฟ้าแยกไว้ภายใต้ UV ไมโครเวฟไร้ขั้วไฟฟ้า",
+      },
+      {
         en: "ETIA supplies the OmniCure® S-Series spot curing systems: closed-loop optical feedback holds intensity constant over lamp life, so the dose your process was validated at on day one is the dose it still receives 2,000 hours later. Genuine replacement lamps, light guides and calibration are stocked in-region.",
         zh: "ETIA 供应 OmniCure® S 系列点固化系统：闭环光学反馈在整个灯泡寿命内保持光强恒定——工艺首日验证的剂量，2000 小时后依然一致。原厂替换灯泡、光导与校准服务均有区域备货。",
         vi: "ETIA cung cấp hệ thống đóng rắn điểm OmniCure® S-Series: phản hồi quang vòng kín giữ cường độ ổn định suốt tuổi thọ đèn, nên liều chiếu mà quy trình của bạn được thẩm định trong ngày đầu vẫn là liều chiếu nhận được sau 2.000 giờ. Đèn thay thế chính hãng, ống dẫn sáng và dịch vụ hiệu chuẩn đều có sẵn trong khu vực.",
@@ -110,7 +116,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     ],
     metaTitle: "Mercury UV Lamp Curing Sources | OmniCure S-Series | ETIA",
     metaDescription:
-      "Broad-spectrum mercury lamp UV curing sources with closed-loop intensity control. OmniCure S2000 Elite and S1500 Pro spot curing systems, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
+      "Mercury UV lamp curing sources explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
     match: (p) =>
       p.tech === "UV Spot Curing" && (p.sub === "UV Lamp Spot" || p.sub === "S-Series Accessory"),
   },
@@ -205,6 +211,9 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Electronic components", zh: "电子元器件", vi: "Linh kiện điện tử", th: "ชิ้นส่วนอิเล็กทรอนิกส์" },
       { en: "Optical fibre production", zh: "光纤生产", vi: "Sản xuất sợi quang", th: "การผลิตเส้นใยแก้วนำแสง" },
       { en: "Printing, coating & converting", zh: "印刷、涂层与加工", vi: "In ấn, phủ & gia công", th: "งานพิมพ์ เคลือบ & แปรรูป" },
+      { en: "Wood & furniture lacquer curing", zh: "木器与家具涂料固化", vi: "Đóng rắn sơn gỗ & nội thất", th: "การบ่มแล็กเกอร์ไม้ & เฟอร์นิเจอร์" },
+      { en: "Metal coating & finishing", zh: "金属涂层与表面处理", vi: "Phủ & hoàn thiện bề mặt kim loại", th: "การเคลือบ & ตกแต่งผิวโลหะ" },
+      { en: "Powder coating cure on MDF board", zh: "MDF 板粉末涂层固化", vi: "Đóng rắn lớp phủ bột trên ván MDF", th: "การบ่มสารเคลือบผงบนแผ่น MDF" },
     ],
     metaTitle: "Microwave Electrodeless UV Lamps | Fusion UV F Series & LightHammer | ETIA",
     metaDescription:
@@ -502,6 +511,12 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Glass coating, cutting & mirror backing", zh: "玻璃涂层、切割与镜背处理", vi: "Phủ, cắt kính & tráng gương", th: "การเคลือบ ตัดกระจก & เคลือบหลังกระจกเงา" },
       { en: "Cable, fibre & wire tube ovens", zh: "线缆、光纤与线材管式炉", vi: "Lò ống cho cáp, sợi quang & dây", th: "เตาอบแบบท่อสำหรับเคเบิล เส้นใยแก้ว & ลวด" },
       { en: "Pre-heating before coating or bonding", zh: "涂覆或粘接前预热", vi: "Gia nhiệt sơ bộ trước khi phủ hoặc dán", th: "การอุ่นก่อนเคลือบหรือยึดติด" },
+      { en: "Gelling powder coating on MDF board", zh: "MDF 板粉末涂层胶化", vi: "Làm keo hóa lớp phủ bột trên ván MDF", th: "การทำให้สารเคลือบผงเจลบนแผ่น MDF" },
+      { en: "Heating before laminating or embossing", zh: "层压或压花前加热", vi: "Gia nhiệt trước khi ép lớp hoặc dập nổi", th: "การให้ความร้อนก่อนลามิเนตหรือปั๊มลาย" },
+      { en: "Residual moisture removal in wood processing", zh: "木材加工残余水分去除", vi: "Loại bỏ độ ẩm dư trong gia công gỗ", th: "การกำจัดความชื้นตกค้างในการแปรรูปไม้" },
+      { en: "Preheating for alloy application & reflow", zh: "合金涂覆与回流前预热", vi: "Gia nhiệt sơ bộ khi phủ hợp kim & hàn reflow", th: "การอุ่นก่อนการเคลือบโลหะผสม & รีโฟลว์" },
+      { en: "Printing ink drying", zh: "印刷油墨干燥", vi: "Sấy mực in", th: "การอบแห้งหมึกพิมพ์" },
+      { en: "Paper, cardboard & non-woven heating", zh: "纸张、纸板与无纺布加热", vi: "Gia nhiệt giấy, bìa carton & vải không dệt", th: "การให้ความร้อนกระดาษ กระดาษแข็ง & ผ้าไม่ทอ" },
     ],
     metaTitle: "Industrial Infrared Heating Modules | Noblelight M & MX Series | ETIA",
     metaDescription:
