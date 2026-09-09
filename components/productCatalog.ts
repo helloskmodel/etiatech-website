@@ -1555,6 +1555,44 @@ export const products: Product[] = [
       ["Mercury", "Yes — manage per disposal laws"],
     ],
   },
+  {
+    slug: "cv300-conveyor",
+    name: "OmniCure CV300 Low-Volume Production Conveyor",
+    brand: "OmniCure",
+    brandId: "omnicure",
+    tech: "Air-Cooled UV LED Curing",
+    sub: "Conveyor",
+    accent: "#41A62A",
+    intro:
+      "The conveyor built around the OmniCure AC Series of high-power UV LED heads — substrates to 310 mm wide on an open-mesh Teflon®-coated fibreglass belt, with the head height and angle adjustable to the part. Suits production, laboratory and R&D alike.",
+    features: [
+      "Designed to complement the OmniCure AC Series of high-power UV LED curing systems",
+      "Handles substrates up to 310 mm (12.2 in.) wide",
+      "Effective curing area up to 300 mm (12 in.), depending on the LED system fitted",
+      "Open-mesh Teflon®-coated fibreglass belt",
+      "Belt speed adjustable from 1 to 14.5 m/min (3 to 48 ft/min)",
+      "Head height adjustable from 30 to 60 mm in 10 mm increments",
+      "Head angle adjustable 0 to 90° to the direction of belt travel, in 15° increments",
+      "Suitable for production, laboratory and R&D use",
+    ],
+    applications: [
+      "Low-volume and short production runs",
+      "Formulation development for UV-curable adhesives, inks and coatings",
+      "Laboratory and R&D curing",
+      "Conveyorised curing of flat parts and substrates",
+      "Process trials before specifying a full production line",
+    ],
+    specs: [
+      ["Designed For", "OmniCure AC Series high-power UV LED curing systems"],
+      ["Substrate Width", "Up to 310 mm (12.2 in.)"],
+      ["Effective Curing Area", "Up to 300 mm (12 in.), depending on the LED system fitted"],
+      ["Belt", "Open-mesh Teflon®-coated fibreglass"],
+      ["Belt Speed", "1–14.5 m/min (3–48 ft/min)"],
+      ["Head Height Adjustment", "30–60 mm in 10 mm increments"],
+      ["Head Angle Adjustment", "0–90° to belt travel, in 15° increments"],
+      ["Typical Use", "Production, laboratory and R&D"],
+    ],
+  },
   // ────────── TECHNOLOGY 6: ANALYTICAL LIGHT SOURCES ──────────
   // From the public Excelitas "High-quality light sources for analytical
   // instruments" brochure (NobleLight HQ-Light Sources Brochure_2025.10).
@@ -1692,7 +1730,7 @@ export const products: Product[] = [
   // spec tables below state configuration rather than invented numbers.
   {
     slug: "lc6-benchtop-conveyor",
-    name: "Noblelight LC6B / LC6B-2 Benchtop UV Curing Conveyor",
+    name: "Noblelight LC6 Benchtop UV Curing Conveyor — LC6B / LC6U",
     brand: "Noblelight",
     brandId: "noblelight",
     tech: "Microwave UV Curing",
@@ -1722,7 +1760,7 @@ export const products: Product[] = [
       "Bench-scale process trials before specifying a line",
     ],
     specs: [
-      ["Models", "LC6B (rotatable lamp), LC6B-2 (vertical adjustment only)"],
+      ["Models", "LC6B (rotatable lamp), LC6B-2 (vertical adjustment only), LC6U"],
       ["Lamp Systems", "F300S or LightHammer 6 Mark II (sold separately)"],
       ["Substrate Width", "Up to 190 mm (7.5 in.)"],
       ["Effective UV Width", "Up to 152 mm (6 in.)"],
