@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import TrustStrip from "@/components/TrustStrip";
 import { LocaleProvider } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import { s2000FaqsVi } from "@/components/s2000FaqVi";
 import { ArrowRight, BadgeCheck, CheckCircle2, ChevronRight, Download } from "lucide-react";
 
@@ -19,7 +19,7 @@ const PDF_BROCHURE = `${PDF}/Brochure%20-%20OmniCure%20S2000%20Elite%20UV%20Curi
 const PDF_QUICKSTART = `${PDF}/Quick%20Start%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf`;
 const PDF_USERGUIDE = `${PDF}/User%20Guide%20-%20OmniCure%20S2000%20Elite%20UV%20Curing%20System.pdf`;
 
-const engineerMail = inquiryMailto("vi", { subject: "OmniCure S2000 Elite", context: "OmniCure S2000 Elite" });
+const engineerMail = inquiryHref("vi", { subject: "OmniCure S2000 Elite", context: "OmniCure S2000 Elite" });
 
 const stats = [
   "Công suất quang học lên đến 30 W/cm² / 37 W/cm²",

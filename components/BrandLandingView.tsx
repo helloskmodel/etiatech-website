@@ -8,7 +8,7 @@ import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import FinalCta from "@/components/FinalCta";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { APPLICATION_CATEGORIES, getApplicationsForProduct } from "@/data/applicationsData";
 import { applicationsZh } from "@/data/applicationsData.zh";
@@ -100,7 +100,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
               <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-6 max-w-2xl">{t(b.hero.subline, locale)}</p>
             )}
             <div className="flex flex-wrap gap-4">
-              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: b.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: b.color }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
+              <a href={inquiryHref(locale, { subject: "Engineering Inquiry", context: b.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: b.color }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →" }, locale)}</a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">{t({ en: "Browse by Application →", zh: "按应用浏览 →" }, locale)}</Link>
             </div>
           </div>
@@ -259,7 +259,7 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
       <FinalCta
         heading={t({ en: `Need help selecting a ${b.name} system?`, zh: `需要帮助挑选 ${b.name} 系统?` }, locale)}
         body={t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的 UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。" }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry", context: b.name }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryHref(locale, { subject: "Sales Inquiry", context: b.name }) }}
         secondary={{ label: t({ en: "All Products", zh: "全部产品" }, locale), href: "/product" }}
       />
     </>

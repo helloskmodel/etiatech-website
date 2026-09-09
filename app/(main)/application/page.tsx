@@ -9,7 +9,7 @@ import { apps, appSlug, localizeApp, localizeIndustry } from "@/components/appli
 import { productForAppNote } from "@/components/productApplications";
 import { techRouteFor } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import FinalCta from "@/components/FinalCta";
 
 
@@ -42,7 +42,7 @@ export default function ApplicationPage() {
             {t({ en: "UV curing solutions proven across 10 industries and 62 application scenarios — helping manufacturers achieve stable curing results in demanding production environments.", zh: "经10大行业、62个应用场景验证的UV Curing 紫外线固化解决方案——帮助制造商在严苛的生产环境中获得稳定的固化效果。" }, locale)}
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href={inquiryMailto(locale, { subject: "Sales Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+            <a href={inquiryHref(locale, { subject: "Sales Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
               {t({ en: "Talk to Our Sales", zh: "联系我们的销售" }, locale)}
             </a>
             <Link href="/product" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -158,7 +158,7 @@ export default function ApplicationPage() {
       <FinalCta
         heading={t({ en: "Find the Right UV Curing Solution for Your Process", zh: "为您的工艺找到合适的紫外线固化方案", th: "ค้นหาโซลูชัน UV Curing ที่เหมาะกับกระบวนการของคุณ", vi: "Tìm giải pháp UV Curing phù hợp cho quy trình của bạn" }, locale)}
         body={t({ en: "Our engineers are ready to help — from application validation to system selection.", zh: "从应用验证到系统选型，我们的工程师随时为您提供支持。", th: "วิศวกรของเราพร้อมช่วยเหลือ ตั้งแต่การตรวจสอบการใช้งานจนถึงการเลือกระบบ", vi: "Các kỹ sư của chúng tôi sẵn sàng hỗ trợ — từ kiểm chứng ứng dụng đến lựa chọn hệ thống." }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry" }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryHref(locale, { subject: "Sales Inquiry" }) }}
         secondary={{ label: t({ en: "Browse Products", zh: "浏览产品", th: "ดูสินค้า", vi: "Xem sản phẩm" }, locale), href: "/product" }}
       />
 

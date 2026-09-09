@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { inquiryMailto, SERVICE_EMAIL } from "@/components/contact";
+import { inquiryHref, supportMailto } from "@/components/contact";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import { s2000Faqs } from "@/components/s2000Faq";
 import {
@@ -317,16 +317,15 @@ function SectionHead({
 export default function S2000View() {
   const { locale } = useLocale();
 
-  const quoteMail = inquiryMailto(locale, {
+  const quoteMail = inquiryHref(locale, {
     subject: "OmniCure S2000 Elite — Request a Quote",
     context: "OmniCure S2000 Elite UV Spot Curing System",
   });
-  const supportMail = inquiryMailto(locale, {
+  const supportMail = supportMailto({
     subject: "OmniCure S2000 Elite — Technical Support",
     context: "OmniCure S2000 Elite UV Spot Curing System",
-    email: SERVICE_EMAIL,
   });
-  const engineerMail = inquiryMailto(locale, {
+  const engineerMail = inquiryHref(locale, {
     subject: "OmniCure S2000 Elite — Talk to an Engineer",
     context: "OmniCure S2000 Elite UV Spot Curing System",
   });

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { inquiryMailto, localeSalesEmail } from "@/components/contact";
+import { inquiryHref, localeSalesEmail } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { openConsent } from "@/components/consent";
 
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
         <div>
           <p className="text-sm font-semibold text-[#1A56DB] mb-2">{t({ en: "Contact", zh: "联系方式", vi: "Liên hệ", th: "ติดต่อ" }, locale)}</p>
-          <a href={inquiryMailto(locale, {})} className="text-xs hover:underline" style={{ color: "#41A62A" }}>
+          <a href={inquiryHref(locale, {})} className="text-xs hover:underline" style={{ color: "#41A62A" }}>
             {localeSalesEmail(locale)}
           </a>
         </div>

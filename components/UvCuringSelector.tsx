@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useLocale, t } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import FinalCta from "@/components/FinalCta";
 import { products, TECH_ROUTES, techRouteFor, productHref, productImage, localizeProduct } from "@/components/productCatalog";
 
@@ -27,7 +27,7 @@ export default function UvCuringSelector() {
   const [sel, setSel] = useState(0);
   const active = ROUTE_PRODUCTS[sel];
   const accent = ACCENTS[sel];
-  const engineerMail = inquiryMailto(locale, { subject: "UV Curing System Selection", context: t(active.route, locale) });
+  const engineerMail = inquiryHref(locale, { subject: "UV Curing System Selection", context: t(active.route, locale) });
 
   return (
     <>
@@ -90,7 +90,7 @@ export default function UvCuringSelector() {
     <FinalCta
       heading={t({ en: "Not sure which system fits your process?", zh: "不确定哪种系统适合您的工艺？", th: "ยังไม่แน่ใจว่าระบบใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với quy trình của bạn?" }, locale)}
       body={t({ en: "Tell us your material, curing area, working distance and production speed. ETIA will help recommend the right UV curing system.", zh: "告诉我们您的材料、固化面积、工作距离和生产速度，ETIA 将帮助您推荐合适的紫外线固化系统。", th: "แจ้งวัสดุ พื้นที่คิวริ่ง ระยะทำงาน และความเร็วการผลิตของคุณ ETIA จะช่วยแนะนำระบบ UV Curing ที่เหมาะสม", vi: "Cho chúng tôi biết vật liệu, diện tích đóng rắn, khoảng cách làm việc và tốc độ sản xuất. ETIA sẽ giúp đề xuất hệ thống UV Curing phù hợp." }, locale)}
-      primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "UV Curing System Selection", context: "Material / curing area / working distance / production speed" }) }}
+      primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryHref(locale, { subject: "UV Curing System Selection", context: "Material / curing area / working distance / production speed" }) }}
       secondary={{ label: t({ en: "Browse Products", zh: "浏览产品", th: "ดูสินค้า", vi: "Xem sản phẩm" }, locale), href: "/product" }}
     />
     </>

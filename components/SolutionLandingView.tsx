@@ -15,7 +15,7 @@ import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import FinalCta from "@/components/FinalCta";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 
 const ACCENT = "#1A56DB";
@@ -61,7 +61,7 @@ export default function SolutionLandingView({ solution }: { solution: Solution }
             <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-6 max-w-2xl">{t(solution.blurb, locale)}</p>
             <div className="flex flex-wrap gap-4">
               <a
-                href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: solution.label.en })}
+                href={inquiryHref(locale, { subject: "Engineering Inquiry", context: solution.label.en })}
                 className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all"
                 style={{ background: GREEN }}
               >
@@ -207,7 +207,7 @@ export default function SolutionLandingView({ solution }: { solution: Solution }
           en: "Tell us the bond, the substrate and the line rate — our engineers will come back with the system and the dose window that fit.",
           zh: "把粘接部位、基材与产线节拍告诉我们 —— 工程师会为您匹配合适的机型与剂量窗口。",
         }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry", context: solution.label.en }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryHref(locale, { subject: "Sales Inquiry", context: solution.label.en }) }}
         secondary={{ label: t({ en: "All Applications", zh: "全部应用" }, locale), href: "/applications" }}
       />
     </>

@@ -5,7 +5,7 @@ import { Microscope, Leaf, Zap } from "lucide-react";
 import { modelToSlug, getProduct, productHref } from "@/components/productCatalog";
 import { heroBannerImage } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import FinalCta from "@/components/FinalCta";
 
 // Chinese translations for the curated brand/family marketing copy, keyed by
@@ -331,7 +331,7 @@ export default function ProductPage() {
               {t({ en: "OmniCure · Phoseon · Fusion UV · NobleLight — matched to your exact application by engineers with 20 years of field validation.", zh: "OmniCure · Phoseon · Fusion UV · NobleLight —— 由拥有20年经验的工程师，为您的具体应用精准匹配UV Curing 紫外线固化方案。", th: "OmniCure · Phoseon · Fusion UV · NobleLight — จับคู่กับการใช้งานเฉพาะของคุณอย่างแม่นยำ โดยวิศวกรที่มีประสบการณ์ตรวจสอบภาคสนามกว่า 20 ปี", vi: "OmniCure · Phoseon · Fusion UV · NobleLight — được các kỹ sư với 20 năm kinh nghiệm kiểm chứng thực địa lựa chọn phù hợp chính xác cho ứng dụng của bạn." }, locale)}
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
+              <a href={inquiryHref(locale, { subject: "Engineering Inquiry" })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
                 {t({ en: "Talk to an Engineer →", zh: "咨询工程师 →", th: "ปรึกษาวิศวกร →", vi: "Trao đổi với kỹ sư →" }, locale)}
               </a>
               <Link href="/application" className="px-6 py-3 rounded font-semibold text-white border border-white/30 hover:border-white/60 transition-all">
@@ -425,7 +425,7 @@ export default function ProductPage() {
           <div className="text-center mt-14 space-y-5">
             <p className="text-sm text-gray-400">
               {t({ en: "*Custom Engineering Solutions Available ·", zh: "*提供定制工程解决方案 ·", th: "*มีโซลูชันวิศวกรรมออกแบบเฉพาะ ·", vi: "*Có sẵn giải pháp kỹ thuật tùy chỉnh ·" }, locale)}{" "}
-              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →", th: "ปรึกษาวิศวกร →", vi: "Trao đổi với kỹ sư →" }, locale)}</a>
+              <a href={inquiryHref(locale, { subject: "Engineering Inquiry" })} className="font-medium hover:underline" style={{ color: "#1A56DB" }}>{t({ en: "Talk to an Engineer →", zh: "咨询工程师 →", th: "ปรึกษาวิศวกร →", vi: "Trao đổi với kỹ sư →" }, locale)}</a>
             </p>
             <div>
               <Link href="/product/systems" className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: "#1A56DB" }}>
@@ -460,7 +460,7 @@ export default function ProductPage() {
       <FinalCta
         heading={t({ en: "Not sure which system is right for you?", zh: "不确定哪款系统适合您?", th: "ไม่แน่ใจว่าระบบใดเหมาะกับคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với bạn?" }, locale)}
         body={t({ en: "Our engineers will match the right UV curing system to your exact application — from selection to validation.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统——从选型到验证。", th: "วิศวกรของเราจะจับคู่ระบบ UV Curing ที่เหมาะสมกับการใช้งานเฉพาะของคุณ — ตั้งแต่การเลือกไปจนถึงการตรวจสอบ", vi: "Các kỹ sư của chúng tôi sẽ chọn hệ thống UV Curing phù hợp với đúng ứng dụng của bạn — từ khâu lựa chọn đến kiểm chứng." }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry" }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryHref(locale, { subject: "Sales Inquiry" }) }}
         secondary={{ label: t({ en: "Browse Applications", zh: "浏览应用", th: "ดูการใช้งาน", vi: "Xem ứng dụng" }, locale), href: "/application" }}
       />
     </>

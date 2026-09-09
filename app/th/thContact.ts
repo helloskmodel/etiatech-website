@@ -1,4 +1,4 @@
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import type { ThLocale } from "./dictionaries";
 
 type Tri = Record<ThLocale, string>;
@@ -16,7 +16,9 @@ export const TH_CONTACTS = {
   },
 };
 
-// Inquiry mailto pre-addressed to the Thailand Sales Director.
+// Inquiry destination for the Thailand pages. No recipient override: the
+// Thailand Sales Director's address IS the shared sales inbox, so routing was
+// already identical to the default.
 export function thMailto(l: ThLocale, opts: { subject?: string; context?: string } = {}) {
-  return inquiryMailto(l, { ...opts, email: TH_CONTACTS.sales.email });
+  return inquiryHref(l, opts);
 }

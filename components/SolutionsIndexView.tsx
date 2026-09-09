@@ -4,7 +4,7 @@ import { SOLUTIONS, solutionApplications } from "@/components/solutions";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import FinalCta from "@/components/FinalCta";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 
 const ACCENT = "#1A56DB";
@@ -69,7 +69,7 @@ export default function SolutionsIndexView() {
           en: "Describe the bond, the substrate and the line rate — our engineers will point you at the right system.",
           zh: "描述一下粘接部位、基材与产线节拍 —— 工程师会为您指出合适的机型。",
         }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry", context: "Industry Solutions" }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryHref(locale, { subject: "Sales Inquiry", context: "Industry Solutions" }) }}
         secondary={{ label: t({ en: "All Applications", zh: "全部应用" }, locale), href: "/applications" }}
       />
     </>

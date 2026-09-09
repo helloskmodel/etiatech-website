@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products, TECH_ROUTES, techRouteFor, productHref, productImage, brandAccent, localizeProduct, type Product } from "@/components/productCatalog";
 import { useLocale, t } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import FinalCta from "@/components/FinalCta";
 
 // The six canonical technology groups, plus a catch-all Accessories bucket for
@@ -85,7 +85,7 @@ export default function SystemsIndexView() {
       <FinalCta
         heading={t({ en: "Not sure which system fits your process?", zh: "不确定哪款系统适合您的工艺?", th: "ไม่แน่ใจว่าระบบใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với quy trình của bạn?" }, locale)}
         body={t({ en: "Our engineers will match the right UV curing system to your exact application.", zh: "我们的工程师将为您的具体应用匹配合适的UV Curing 紫外线固化系统。", th: "วิศวกรของเราจะจับคู่ระบบ UV Curing ที่เหมาะสมกับการใช้งานของคุณอย่างแม่นยำ", vi: "Kỹ sư của chúng tôi sẽ chọn hệ thống UV Curing phù hợp chính xác với ứng dụng của bạn." }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry" }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryHref(locale, { subject: "Sales Inquiry" }) }}
         secondary={{ label: t({ en: "Browse Applications", zh: "浏览应用", th: "ดูการใช้งาน", vi: "Xem ứng dụng" }, locale), href: "/application" }}
       />
     </>

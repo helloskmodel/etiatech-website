@@ -5,7 +5,7 @@ import { BadgeCheck, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 
 const BRANDS: Array<{ name: string; href: string; blurb: LangText }> = [
   {
@@ -192,7 +192,7 @@ export default function AboutPage() {
           th: "บอกเราเกี่ยวกับการใช้งาน กาว พื้นที่การบ่ม และความต้องการการผลิต — วิศวกรของเราจะช่วยหาโซลูชันที่เหมาะสม",
           vi: "Cho chúng tôi biết ứng dụng, keo, vùng curing và yêu cầu sản xuất — kỹ sư ETIA sẽ giúp bạn tìm giải pháp phù hợp.",
         }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Engineering Inquiry" }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryHref(locale, { subject: "Engineering Inquiry" }) }}
         secondary={{ label: t({ en: "Sales & Support", zh: "销售与支持", th: "ฝ่ายขายและบริการ", vi: "Bán hàng & hỗ trợ" }, locale), href: "/contact" }}
       />
     </>

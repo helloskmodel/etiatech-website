@@ -16,7 +16,7 @@ import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
 import FinalCta from "@/components/FinalCta";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { getApplicationsForProduct } from "@/data/applicationsData";
 import { applicationsZh } from "@/data/applicationsData.zh";
@@ -74,7 +74,7 @@ export default function CategoryLandingView({ category }: { category: ProductCat
             <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-6 max-w-2xl">{t(category.blurb, locale)}</p>
             <div className="flex flex-wrap gap-4">
               <a
-                href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: category.label.en })}
+                href={inquiryHref(locale, { subject: "Engineering Inquiry", context: category.label.en })}
                 className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all"
                 style={{ background: GREEN }}
               >
@@ -108,7 +108,7 @@ export default function CategoryLandingView({ category }: { category: ProductCat
                 )}
               </p>
               <a
-                href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: category.label.en })}
+                href={inquiryHref(locale, { subject: "Engineering Inquiry", context: category.label.en })}
                 className="inline-block px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all"
                 style={{ background: GREEN }}
               >
@@ -231,7 +231,7 @@ export default function CategoryLandingView({ category }: { category: ProductCat
           en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.",
           zh: "我们的 UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。",
         }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryMailto(locale, { subject: "Sales Inquiry", context: category.label.en }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师" }, locale), href: inquiryHref(locale, { subject: "Sales Inquiry", context: category.label.en }) }}
         secondary={{ label: t({ en: "All Products", zh: "全部产品" }, locale), href: "/product" }}
       />
     </>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FileText, Download } from "lucide-react";
 import { productImage, productHref, products, localizeProduct, productTagline, techRouteFor, productDocs, productDocUrl, type Product } from "@/components/productCatalog";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import FinalCta from "@/components/FinalCta";
 import { localizeSpecLabel } from "@/components/specLabels.zh";
 import { useLocale, t } from "@/components/LocaleContext";
@@ -61,8 +61,8 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             )}
             <p className="text-base text-gray-600 leading-relaxed mb-8 max-w-xl">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
-              <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)}</a>
-              <a href={inquiryMailto(locale, { subject: "Datasheet Request", context: product.name })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表", th: "ขอเอกสารข้อมูล", vi: "Yêu cầu bảng dữ liệu" }, locale)}</a>
+              <a href={inquiryHref(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)}</a>
+              <a href={inquiryHref(locale, { subject: "Datasheet Request", context: product.name })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表", th: "ขอเอกสารข้อมูล", vi: "Yêu cầu bảng dữ liệu" }, locale)}</a>
             </div>
           </div>
           <div className="rounded-2xl bg-white border border-gray-200 shadow-sm relative" style={{ height: "360px" }}>
@@ -210,7 +210,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       <FinalCta
         heading={t({ en: `Interested in the ${shortName}?`, zh: "对该产品感兴趣?", th: `สนใจ ${shortName} หรือไม่?`, vi: `Quan tâm đến ${shortName}?` }, locale)}
         body={t({ en: "Our UV curing engineers will match the right configuration to your process — from selection to validation.", zh: "我们的UV Curing 紫外线固化工程师将为您的工艺匹配合适的配置——从选型到验证。", th: "วิศวกร UV Curing ของเราจะจับคู่การกำหนดค่าที่เหมาะสมกับกระบวนการของคุณ — ตั้งแต่การเลือกจนถึงการตรวจสอบยืนยัน", vi: "Kỹ sư UV curing của chúng tôi sẽ chọn cấu hình phù hợp cho quy trình của bạn — từ lựa chọn đến kiểm định." }, locale)}
-        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name }) }}
+        primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale), href: inquiryHref(locale, { subject: "Engineering Inquiry", context: product.name }) }}
         secondary={{ label: t({ en: "All Systems", zh: "全部系统", th: "ระบบทั้งหมด", vi: "Tất cả hệ thống" }, locale), href: "/product/systems" }}
       />
     </>

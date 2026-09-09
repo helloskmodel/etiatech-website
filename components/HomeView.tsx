@@ -12,7 +12,7 @@ import {
   Warehouse,
   Wrench,
 } from "lucide-react";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
 import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { productImage, products } from "@/components/productCatalog";
@@ -45,7 +45,7 @@ function product(slug: string) {
 
 export default function HomeView() {
   const { locale } = useLocale();
-  const engineerMail = inquiryMailto(locale, { subject: "UV Curing Engineering Inquiry", context: "Application / adhesive / curing area / wavelength / production requirements" });
+  const engineerMail = inquiryHref(locale, { subject: "UV Curing Engineering Inquiry", context: "Application / adhesive / curing area / wavelength / production requirements" });
   const omnicureProduct = product("s2000-elite") ?? product("lx500");
   const phoseonProduct = product("nexus-ii") ?? product("firejet-one");
 
@@ -110,6 +110,6 @@ export default function HomeView() {
 
     <CustomerLogos />
 
-    <FinalCta heading={t({ en: "Need help choosing the right UV curing system?", zh: "需要帮助选择合适的 UV Curing 紫外线固化系统吗？", th: "ต้องการความช่วยเหลือในการเลือกระบบ UV curing ที่เหมาะสมหรือไม่?" , vi: "Bạn cần hỗ trợ chọn hệ thống UV curing phù hợp?" }, locale)} body={t({ en: "Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers will help you find the right solution.", zh: "告诉我们您的应用、胶粘剂、固化面积、波长与生产要求。ETIA 工程师将帮助您找到合适方案。", th: "บอกเราเกี่ยวกับการใช้งาน กาว พื้นที่การบ่ม ความยาวคลื่น และความต้องการการผลิตของคุณ วิศวกรของ ETIA จะช่วยคุณหาโซลูชันที่เหมาะสม" , vi: "Cho chúng tôi biết ứng dụng, keo, diện tích đóng rắn, bước sóng và yêu cầu sản xuất của bạn. Kỹ sư ETIA sẽ giúp bạn tìm giải pháp phù hợp." }, locale)} primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร" , vi: "Trao đổi với kỹ sư" }, locale), href: engineerMail }} secondary={{ label: t({ en: "Send Your Application", zh: "提交您的应用需求", th: "ส่งการใช้งานของคุณ" , vi: "Gửi thông tin ứng dụng của bạn" }, locale), href: inquiryMailto(locale, { subject: "UV Curing Application Review", context: "Application / adhesive / area / wavelength / production requirements" }) }} />
+    <FinalCta heading={t({ en: "Need help choosing the right UV curing system?", zh: "需要帮助选择合适的 UV Curing 紫外线固化系统吗？", th: "ต้องการความช่วยเหลือในการเลือกระบบ UV curing ที่เหมาะสมหรือไม่?" , vi: "Bạn cần hỗ trợ chọn hệ thống UV curing phù hợp?" }, locale)} body={t({ en: "Tell us your application, adhesive, curing area, wavelength, and production requirements. ETIA engineers will help you find the right solution.", zh: "告诉我们您的应用、胶粘剂、固化面积、波长与生产要求。ETIA 工程师将帮助您找到合适方案。", th: "บอกเราเกี่ยวกับการใช้งาน กาว พื้นที่การบ่ม ความยาวคลื่น และความต้องการการผลิตของคุณ วิศวกรของ ETIA จะช่วยคุณหาโซลูชันที่เหมาะสม" , vi: "Cho chúng tôi biết ứng dụng, keo, diện tích đóng rắn, bước sóng và yêu cầu sản xuất của bạn. Kỹ sư ETIA sẽ giúp bạn tìm giải pháp phù hợp." }, locale)} primary={{ label: t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร" , vi: "Trao đổi với kỹ sư" }, locale), href: engineerMail }} secondary={{ label: t({ en: "Send Your Application", zh: "提交您的应用需求", th: "ส่งการใช้งานของคุณ" , vi: "Gửi thông tin ứng dụng của bạn" }, locale), href: inquiryHref(locale, { subject: "UV Curing Application Review", context: "Application / adhesive / area / wavelength / production requirements" }) }} />
   </div>;
 }

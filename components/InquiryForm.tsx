@@ -56,7 +56,16 @@ export default function InquiryForm({ inquiryType }: { inquiryType: string }) {
     setStatus("sending");
     track("generate_lead", { page: "contact", lang: locale, model: inquiryType });
 
-    const payload = { ...form, inquiryType, page: "contact", lang: locale };
+    // The CTA that sent them here passes the product or technology page they
+    // came from as ?topic= — it tells sales what the visitor was reading when
+    // they decided to get in touch. Read at submit time rather than during
+    // render, so there is no hydration mismatch and no Suspense boundary to
+    // arrange around useSearchParams.
+    const topic =
+      typeof window !== "undefined"
+        ? new URLSearchParams(window.location.search).get("topic")?.slice(0, 40) ?? ""
+        : "";
+    const payload = { ...form, inquiryType, model: topic, page: "contact", lang: locale };
 
     try {
       const res = await fetch("/api/lead", {
@@ -77,6 +86,7 @@ export default function InquiryForm({ inquiryType }: { inquiryType: string }) {
     // just did is not thrown away.
     const body = [
       `Inquiry type: ${inquiryType}`,
+      topic && `Topic: ${topic}`,
       `Name: ${form.name}`,
       form.company && `Company: ${form.company}`,
       form.email && `Email: ${form.email}`,

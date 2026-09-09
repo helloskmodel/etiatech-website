@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, t, type Locale, type LangText, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
+import { inquiryHref } from "@/components/contact";
 import { localizeHref, delocalizeHref } from "@/components/localeHref";
 // Menu labels come from the metadata-only modules, never from productCatalog
 // or solutions — Nav renders on every page and those pull in the full product
@@ -227,7 +227,7 @@ export default function Nav() {
               </div>
             )}
           </div>
-          <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#358B22]">
+          <a href={inquiryHref(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#358B22]">
             {t({ en: "Talk to an Engineer", zh: "咨询工程师", vi: "Trao đổi với kỹ sư", th: "ปรึกษาวิศวกร" }, locale)}
           </a>
         </div>
@@ -315,7 +315,7 @@ export default function Nav() {
               );
             })}
           </div>
-          <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-3 text-center text-sm font-bold text-white">
+          <a href={inquiryHref(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-3 text-center text-sm font-bold text-white">
             {t({ en: "Talk to an Engineer", zh: "咨询工程师", vi: "Trao đổi với kỹ sư", th: "ปรึกษาวิศวกร" }, locale)}
           </a>
         </div>
