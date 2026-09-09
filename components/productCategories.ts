@@ -43,6 +43,19 @@ export type ProductCategory = {
   // Optional photographs of the technology in production, shown alongside the
   // typical-applications list.
   gallery?: { src: string; caption: LangText }[];
+  // Optional reference section that explains how to choose within the
+  // category — prose steps plus a comparison table of the variants.
+  selectionGuide?: {
+    heading: LangText;
+    standfirst: LangText;
+    steps: { title: LangText; body: LangText }[];
+    table?: {
+      caption: LangText;
+      columns: LangText[];
+      rows: LangText[][];
+      footnote?: LangText;
+    };
+  };
   // Selects this category's models out of the product catalog.
   match: (p: Product) => boolean;
   // Set while the category is still waiting on customer-supplied copy and
@@ -237,6 +250,82 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     metaDescription:
       "Excelitas Noblelight infrared heating modules for industrial process technology — M 85, M 110, M 115, scalable MX modules with integrated control, custom MX systems and infrared control systems. Specified to your process by ETIA.",
     heroImage: "/images/infrared/emitter-array.jpg",
+    selectionGuide: {
+      heading: { en: "Choosing the right emitter", zh: "如何选择合适的红外发射器" },
+      standfirst: {
+        en: "An infrared installation succeeds or fails on one question: does the emitter's radiation land where the material can absorb it? Everything else — power, module size, control — follows from that.",
+        zh: "红外系统成败的关键只有一个问题：发射器辐射出的能量，是否落在材料能够吸收的波段上？功率、模块尺寸、控制方式，都由此推导而来。",
+      },
+      steps: [
+        {
+          title: { en: "1 · Why radiation, not an oven", zh: "1 · 为什么用辐射而不是烘箱" },
+          body: {
+            en: "Convection heats the air and lets the air heat the part, and conduction needs physical contact. Infrared radiation transfers energy directly to the product as electromagnetic waves — no contact, no heated air volume, and the heat stops the moment the emitter is switched off.",
+            zh: "对流加热是先加热空气、再由空气加热工件；传导加热则需要物理接触。红外辐射以电磁波的形式将能量直接传递给产品——无需接触、无需加热整个空气腔体，且发射器一断电，加热立即停止。",
+          },
+        },
+        {
+          title: { en: "2 · Match the wavelength to the material", zh: "2 · 让波长匹配材料" },
+          body: {
+            en: "Every material has its own absorption spectrum. Water absorbs strongly in the medium-wave region, which is why water-based coatings and drying processes are usually medium-wave or carbon jobs. Many plastics have characteristic absorption bands that a short-wave emitter passes straight through. Radiation the material does not absorb is not heat — it is transmitted or reflected away.",
+            zh: "每种材料都有自己的吸收光谱。水在中波区吸收强烈，因此水性涂料与干燥工艺通常选用中波或碳素发射器。许多塑料具有特定吸收带，短波辐射会直接穿透而过。材料不吸收的辐射就不会变成热量——它要么被透射，要么被反射掉。",
+          },
+        },
+        {
+          title: { en: "3 · Filament temperature sets the wavelength", zh: "3 · 灯丝温度决定波长" },
+          body: {
+            en: "A hotter filament radiates at a shorter peak wavelength and at higher intensity. That single relationship is what separates the emitter families below — and it is why you cannot simply turn a medium-wave emitter up to get short-wave behaviour.",
+            zh: "灯丝温度越高，辐射的峰值波长越短、强度越高。正是这一条关系区分了下表中的各类发射器——也正因如此，把中波发射器调高功率并不能得到短波的效果。",
+          },
+        },
+        {
+          title: { en: "4 · Then geometry and control", zh: "4 · 最后是几何布置与控制" },
+          body: {
+            en: "Emitter-to-product distance and emitter-to-emitter spacing determine how uniform the heating field is. A gold reflector directs radiation forward instead of losing it backwards; a wavelength converter helps with materials that transmit too much; an air-knife module carries vapour away and shortens drying. Control then holds the process where you set it.",
+            zh: "发射器到产品的距离、以及发射器之间的间距，决定了加热面的均匀性。金反射膜将辐射向前导出，避免向后损失；波长转换器用于透射率过高的材料；风刀模块带走蒸汽、缩短干燥时间。控制系统则将工艺稳定在设定值上。",
+          },
+        },
+      ],
+      table: {
+        caption: { en: "Emitter families at a glance", zh: "发射器类型一览" },
+        columns: [
+          { en: "Emitter", zh: "发射器类型" },
+          { en: "Peak wavelength", zh: "峰值波长" },
+          { en: "Response", zh: "响应速度" },
+          { en: "Suited to", zh: "适用场景" },
+        ],
+        rows: [
+          [
+            { en: "Short wave / halogen", zh: "短波 / 卤素" },
+            { en: "≈1 µm", zh: "≈1 µm" },
+            { en: "About a second", zh: "约 1 秒" },
+            { en: "Fast heating of thick or fast-moving product; deepest penetration; highest power density", zh: "厚壁或高速运动工件的快速加热；穿透最深；功率密度最高" },
+          ],
+          [
+            { en: "Fast response medium wave", zh: "快响应中波" },
+            { en: "≈1.5 µm", zh: "≈1.5 µm" },
+            { en: "One to two seconds", zh: "1–2 秒" },
+            { en: "The general-purpose compromise — inks, coatings and laminating where both speed and absorption matter", zh: "通用折中方案——油墨、涂层与层压等兼顾速度与吸收的场合" },
+          ],
+          [
+            { en: "Carbon", zh: "碳素" },
+            { en: "≈2 µm", zh: "≈2 µm" },
+            { en: "One to two seconds", zh: "1–2 秒" },
+            { en: "A medium-wave spectrum with short-wave switching — water-based coatings, powder coating, plastics", zh: "兼具中波光谱与短波开关速度——水性涂料、粉末涂装、塑料加工" },
+          ],
+          [
+            { en: "Medium wave", zh: "中波" },
+            { en: "≈2.5–3 µm", zh: "≈2.5–3 µm" },
+            { en: "Minutes", zh: "数分钟" },
+            { en: "Gentle surface heating matched to water and many lacquers; continuous processes that do not switch", zh: "与水及多种漆类匹配的温和表面加热；无需频繁开关的连续工艺" },
+          ],
+        ],
+        footnote: {
+          en: "Indicative selection guidance only. Exact power density, heated length and cross section are specified per application — send us the material, temperature and line speed.",
+          zh: "以上仅为选型方向参考。具体功率密度、加热长度与截面尺寸按应用确定——请将材料、工艺温度与产线速度发给我们。",
+        },
+      },
+    },
     gallery: [
       {
         src: "/images/infrared/automotive-body-drying.jpg",
