@@ -1698,6 +1698,7 @@ export const products: Product[] = [
     tech: "Microwave UV Curing",
     sub: "Benchtop Conveyor",
     accent: "#f59e0b",
+    imageUrl: "/images/fusion-uv/lc6b.jpg",
     intro:
       "The benchtop conveyor for laboratory and R&D evaluation — substrates to 190 mm wide with an effective UV width to 152 mm, paired with an F300S or LightHammer 6 Mark II lamp. Compact enough for a bench, rugged enough for small-part production.",
     features: [
