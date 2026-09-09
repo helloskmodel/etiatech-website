@@ -41,8 +41,10 @@ export type IndustrySolution = {
   applicationSlugs: string[];
   metaTitle: string;
   metaDescription: string;
-  // Set while the industry is still waiting on customer-supplied material.
-  contentPending?: boolean;
+  // Not published yet — same contract as a draft product category: hidden
+  // from the menu, the home page and the cross-links, out of the sitemap,
+  // previewable at its URL with noindex.
+  draft?: boolean;
 };
 
 export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
@@ -391,6 +393,8 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle: "UV Modules for Rheometers | Photo-Rheology Light Sources & Radiometry | ETIA",
     metaDescription:
       "UV light sources, light guides and traceable radiometry for photo-rheology on rotational rheometers — OmniCure sources, spare lamps and irradiance measurement at the sample plane. Supplied and supported by ETIA.",
+    // Held back until there is an installation to point at.
+    draft: true,
   },
 };
 
@@ -403,7 +407,11 @@ export const INDUSTRY_ORDER: IndustrySlug[] = [
   "scientific-instruments",
 ];
 
+// Every industry, drafts included — for static params and a draft's own page.
 export const industryList: IndustrySolution[] = INDUSTRY_ORDER.map((slug) => industrySolutions[slug]);
+
+// What the site actually shows: menus, grids, cross-links and the sitemap.
+export const publishedIndustries: IndustrySolution[] = industryList.filter((i) => !i.draft);
 
 export function industryHref(slug: IndustrySlug): string {
   return `/solutions/${slug}`;
@@ -432,6 +440,7 @@ export function industryMetadata(slug: IndustrySlug): Metadata {
     title: i.metaTitle,
     description: i.metaDescription,
     alternates: { canonical: `${SITE}${industryHref(slug)}` },
+    ...(i.draft ? { robots: { index: false, follow: false } } : {}),
   };
 }
 

@@ -10,7 +10,7 @@ import { useLocale, t } from "@/components/LocaleContext";
 import { localizeHref } from "@/components/localeHref";
 import {
   productCategories,
-  productCategoryList,
+  publishedProductCategories,
   productCategoryHref,
   categoryProducts,
   type ProductCategorySlug,
@@ -30,7 +30,8 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
   const { locale } = useLocale();
   const c = productCategories[slug];
   const models = categoryProducts(slug);
-  const others = productCategoryList.filter((o) => o.slug !== slug);
+  // A draft category still lists the published ones, but never the reverse.
+  const others = publishedProductCategories.filter((o) => o.slug !== slug);
 
   return (
     <>

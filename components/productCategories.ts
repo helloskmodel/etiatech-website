@@ -63,11 +63,11 @@ export type ProductCategory = {
   };
   // Selects this category's models out of the product catalog.
   match: (p: Product) => boolean;
-  // Set while the category is still waiting on customer-supplied copy and
-  // model data. Such a page renders its overview and an inquiry CTA but no
-  // invented specs; if it also has no catalog models it stays out of the
-  // sitemap (see app/sitemap.ts) until there is something worth ranking.
-  contentPending?: boolean;
+  // Not published yet. A draft category is hidden from the menu, the product
+  // centre, the home page and the cross-links, and stays out of the sitemap;
+  // its page still builds so it can be previewed at its URL, but carries
+  // noindex. Clear the flag to publish.
+  draft?: boolean;
 };
 
 // Measurement instruments are catalogued under "UV Spot Curing" because they
@@ -407,7 +407,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       "Precision UV measurement instruments — OmniCure R2000 radiometer and LS200 UV LED radiometry and calibration system with traceable calibration, for process validation and production QA. Supplied by ETIA.",
     match: (p) => MEASUREMENT_SLUGS.has(p.slug),
     // Awaiting the customer's own instrument line-up and copy.
-    contentPending: true,
+    draft: true,
   },
 
   // ────────────────────────── 5. 红外加热 ──────────────────────────
@@ -490,8 +490,15 @@ export const PRODUCT_CATEGORY_ORDER: ProductCategorySlug[] = [
   "infrared-heating",
 ];
 
+// Every category, drafts included — for the route's static params and for
+// anything that must still resolve a draft (e.g. its own page).
 export const productCategoryList: ProductCategory[] = PRODUCT_CATEGORY_ORDER.map(
   (slug) => productCategories[slug]
+);
+
+// What the site actually shows: menus, grids, cross-links and the sitemap.
+export const publishedProductCategories: ProductCategory[] = productCategoryList.filter(
+  (c) => !c.draft
 );
 
 export function productCategoryHref(slug: ProductCategorySlug): string {
@@ -507,7 +514,7 @@ export function categoryProducts(slug: ProductCategorySlug): Product[] {
 // the catalog so it stays true as the catalog changes — the four brands cross
 // the five categories rather than mapping one-to-one onto them.
 export function categoriesForBrand(brandId: Product["brandId"]): ProductCategory[] {
-  return productCategoryList.filter((c) =>
+  return publishedProductCategories.filter((c) =>
     products.some((p) => p.brandId === brandId && c.match(p))
   );
 }
@@ -522,6 +529,7 @@ export function productCategoryMetadata(slug: ProductCategorySlug): Metadata {
     title: c.metaTitle,
     description: c.metaDescription,
     alternates: { canonical: `${SITE}${productCategoryHref(slug)}` },
+    ...(c.draft ? { robots: { index: false, follow: false } } : {}),
   };
 }
 

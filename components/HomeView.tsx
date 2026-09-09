@@ -14,8 +14,8 @@ import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
 import { productImage, products } from "@/components/productCatalog";
 import { localizeHref } from "@/components/localeHref";
-import { productCategoryList, productCategoryHref, categoriesForBrand } from "@/components/productCategories";
-import { industryList, industryHref } from "@/components/industrySolutions";
+import { publishedProductCategories, productCategoryHref, categoriesForBrand } from "@/components/productCategories";
+import { publishedIndustries, industryHref } from "@/components/industrySolutions";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import TrustStrip from "@/components/TrustStrip";
 import FinalCta from "@/components/FinalCta";
@@ -111,7 +111,7 @@ export default function HomeView() {
         <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Find your light source", zh: "按光源技术选型", th: "ค้นหาแหล่งกำเนิดแสงของคุณ", vi: "Tìm nguồn sáng của bạn" }, locale)}</h2>
         <p className="mt-4 max-w-2xl text-sm leading-6 text-[#667085]">{t({ en: "Mercury lamp, UV LED, microwave electrodeless, measurement and infrared — pick the technology your process needs.", zh: "汞灯、UV LED、微波无极灯、精密检测与红外加热——按您工艺所需的技术选择。", th: "หลอดปรอท UV LED ไมโครเวฟไร้ขั้ว เครื่องมือวัด และอินฟราเรด — เลือกเทคโนโลยีที่กระบวนการของคุณต้องการ", vi: "Đèn thủy ngân, UV LED, vi sóng không điện cực, thiết bị đo và hồng ngoại — chọn công nghệ mà quy trình của bạn cần." }, locale)}</p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {productCategoryList.map((c) => (
+          {publishedProductCategories.map((c) => (
             <Link key={c.slug} href={localizeHref(productCategoryHref(c.slug), locale)} className="group flex flex-col rounded-3xl border border-[#D9E4EA] bg-gradient-to-br from-white to-[#F7FAFC] p-7 transition hover:border-[#1A56DB]/40 hover:shadow-lg">
               <div className="mb-4 h-1.5 w-10 rounded" style={{ background: c.accent }} />
               <h3 className="text-lg font-bold text-[#143C96]">{t(c.name, locale)}</h3>
@@ -166,7 +166,7 @@ export default function HomeView() {
           <Link href={localizeHref("/applications", locale)} className="hidden items-center gap-2 text-sm font-bold text-white sm:inline-flex">{t({ en: "All applications", zh: "全部应用", th: "การใช้งานทั้งหมด", vi: "Tất cả ứng dụng" }, locale)} <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {industryList.map((s) => (
+          {publishedIndustries.map((s) => (
             <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex flex-col rounded-3xl border border-white/15 bg-white/10 p-7 transition hover:border-white/40 hover:bg-white/15">
               <div className="mb-4 h-1.5 w-10 rounded" style={{ background: s.accent }} />
               <h3 className="text-lg font-bold">{t(s.name, locale)}</h3>

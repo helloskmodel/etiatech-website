@@ -10,7 +10,7 @@ import { useLocale, t } from "@/components/LocaleContext";
 import { localizeHref } from "@/components/localeHref";
 import {
   industrySolutions,
-  industryList,
+  publishedIndustries,
   industryHref,
   industryApplications,
   type IndustrySlug,
@@ -27,7 +27,7 @@ export default function IndustrySolutionView({ slug }: { slug: IndustrySlug }) {
   const { locale } = useLocale();
   const s = industrySolutions[slug];
   const applications = industryApplications(slug);
-  const others = industryList.filter((o) => o.slug !== slug);
+  const others = publishedIndustries.filter((o) => o.slug !== slug);
 
   return (
     <>
@@ -113,7 +113,7 @@ export default function IndustrySolutionView({ slug }: { slug: IndustrySlug }) {
             {t({ en: "Recommended technologies", zh: "推荐技术方案", th: "เทคโนโลยีที่แนะนำ", vi: "Công nghệ đề xuất" }, locale)}
           </h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {s.recommends.map((cat) => {
+            {s.recommends.filter((cat) => !productCategories[cat].draft).map((cat) => {
               const c = productCategories[cat];
               return (
                 <Link

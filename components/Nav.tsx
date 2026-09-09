@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 import { useLocale, t, type LangText, type Locale, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
 import { localizeHref, delocalizeHref } from "@/components/localeHref";
-import { productCategoryList, productCategoryHref } from "@/components/productCategories";
-import { industryList, industryHref } from "@/components/industrySolutions";
+import { publishedProductCategories, productCategoryHref } from "@/components/productCategories";
+import { publishedIndustries, industryHref } from "@/components/industrySolutions";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 
 const languages: Locale[] = ["en", "zh", "vi", "th"];
@@ -23,7 +23,7 @@ type MenuGroup = { heading: LangText; links: MenuLink[] };
 const productMenu: MenuGroup[] = [
   {
     heading: { en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" },
-    links: productCategoryList.map((c) => ({ href: productCategoryHref(c.slug), label: c.name })),
+    links: publishedProductCategories.map((c) => ({ href: productCategoryHref(c.slug), label: c.name })),
   },
   {
     heading: { en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" },
@@ -37,7 +37,7 @@ const productMenu: MenuGroup[] = [
 const applicationMenu: MenuGroup[] = [
   {
     heading: { en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" },
-    links: industryList.map((i) => ({ href: industryHref(i.slug), label: i.name })),
+    links: publishedIndustries.map((i) => ({ href: industryHref(i.slug), label: i.name })),
   },
 ];
 

@@ -8,7 +8,7 @@ import FinalCta from "@/components/FinalCta";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { localizeHref } from "@/components/localeHref";
-import { productCategoryList, productCategoryHref, categoryProducts, categoriesForBrand } from "@/components/productCategories";
+import { publishedProductCategories, productCategoryHref, categoryProducts, categoriesForBrand } from "@/components/productCategories";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import { products, productImage } from "@/components/productCatalog";
 
@@ -61,7 +61,7 @@ export default function ProductCenterView() {
             {t({ en: "Choose your light source", zh: "选择您的光源", th: "เลือกแหล่งกำเนิดแสงของคุณ", vi: "Chọn nguồn sáng của bạn" }, locale)}
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {productCategoryList.map((c) => {
+            {publishedProductCategories.map((c) => {
               const count = categoryProducts(c.slug).length;
               return (
                 <Link
