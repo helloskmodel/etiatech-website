@@ -369,86 +369,90 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
   },
 
   // ───────────────────────── 5. 科学实验 ─────────────────────────
-  // Focused on rheometers, where the evidence is public and checkable: TA
-  // Instruments specifies the Excelitas OmniCure S2000 as the source in its
-  // rheometer UV light-guide accessory, and published photo-rheology on Anton
-  // Paar MCR instruments uses OmniCure S1500/S2000 through a light guide.
-  //
-  // Photocalorimetry (photo-DSC) is deliberately left out for now: Mettler
-  // Toledo's kit uses Hamamatsu and DELO sources and TA's PCA has its own
-  // lamp, so there is no OmniCure claim to make there yet. Revisit when we
-  // have a real installation to point at.
+  // Now backed by a real product line — the Excelitas analytical light
+  // sources — rather than by third-party evidence about rheometers alone.
+  // Photocalorimetry stays out: Mettler Toledo's kit uses Hamamatsu and DELO
+  // sources and TA's PCA has its own lamp, so there is no claim to make there.
   "scientific-instruments": {
     slug: "scientific-instruments",
     accent: "#7c3aed",
     name: { en: "Laboratory & Research", zh: "科学实验", vi: "Phòng thí nghiệm & nghiên cứu", th: "ห้องปฏิบัติการ & การวิจัย" },
     tagline: {
-      en: "The UV module inside the rheometer — light source, light guide and traceable irradiance for photo-rheology.",
-      zh: "流变仪内部的那个紫外模块——为光流变提供光源、光导与可溯源的辐照测量。",
-      vi: "Mô-đun UV bên trong máy đo lưu biến — nguồn sáng, ống dẫn sáng và cường độ bức xạ truy xuất được cho lưu biến quang.",
-      th: "โมดูล UV ภายในเครื่องวัดความหนืด — แหล่งกำเนิดแสง ตัวนำแสง และความเข้มรังสีที่สอบกลับได้สำหรับโฟโตรีโอโลยี",
+      en: "The light source inside the instrument — for spectrometers, chromatographs, gas detectors and photo-rheology.",
+      zh: "仪器内部的那个光源——用于分光光度计、色谱仪、气体检测仪与光流变。",
+      vi: "Nguồn sáng bên trong thiết bị — cho máy quang phổ, sắc ký, thiết bị dò khí và lưu biến quang.",
+      th: "แหล่งกำเนิดแสงภายในเครื่องมือ — สำหรับสเปกโตรมิเตอร์ โครมาโทกราฟ เครื่องตรวจจับแก๊ส และโฟโตรีโอโลยี",
     },
     intro: [
       {
-        en: "A rotational rheometer becomes a photo-instrument the moment you put UV light onto the sample. With a UV light-curing cell, it tracks the storage and loss moduli while the resin cures, and the crossover of G′ and G″ gives the gel point directly — the exact moment the material stops being a liquid. No other method reads that transition as cleanly.",
-        zh: "当紫外光照射到样品上的那一刻，旋转流变仪就变成了一台光学仪器。配上紫外固化池后，它可以在树脂固化过程中追踪储能模量与损耗模量，而 G′ 与 G″ 的交叉点直接给出胶凝点——材料不再是液体的那一刻。没有别的方法能如此干净地读出这个转变。",
-        vi: "Máy đo lưu biến quay trở thành một thiết bị quang học ngay khi bạn chiếu ánh sáng UV lên mẫu. Với buồng đóng rắn UV, nó theo dõi mô-đun tích trữ và mô-đun tổn hao trong khi nhựa đóng rắn, và giao điểm của G′ với G″ cho ngay điểm gel — đúng khoảnh khắc vật liệu thôi là chất lỏng. Không phương pháp nào khác đọc được bước chuyển ấy rõ ràng đến thế.",
-        th: "เครื่องวัดความหนืดแบบหมุนจะกลายเป็นเครื่องมือเชิงแสงทันทีที่คุณฉายแสง UV ลงบนตัวอย่าง เมื่อมีเซลล์บ่มด้วย UV เครื่องจะติดตามมอดูลัสสะสมและมอดูลัสสูญเสียขณะเรซินกำลังบ่ม และจุดตัดของ G′ กับ G″ ให้จุดเจลออกมาโดยตรง — ซึ่งคือช่วงเวลาที่วัสดุหยุดเป็นของเหลวพอดี ไม่มีวิธีอื่นใดที่อ่านการเปลี่ยนสถานะนี้ได้ชัดเจนเท่า",
+        en: "In an analytical instrument the light source is not a peripheral — it sets the detection limit. A UV-Vis spectrophotometer or an HPLC is limited by how stable and how intense its deuterium lamp stays over life; a photoionisation detector is limited by photon energy and window purity. Instrument builders write their specification around that component, and laboratories live with the consequences for years.",
+        zh: "在分析仪器中，光源不是外围件——它直接决定检测限。UV-Vis 分光光度计或 HPLC 的性能上限，取决于氘灯在整个寿命期内的稳定性与强度；光电离检测器则受限于光子能量与窗口纯度。仪器厂商围绕这个部件撰写规格书，而实验室要为此承担数年的后果。",
+        vi: "Trong một thiết bị phân tích, nguồn sáng không phải thiết bị ngoại vi — nó quyết định giới hạn phát hiện. Máy quang phổ UV-Vis hay HPLC bị giới hạn bởi độ ổn định và cường độ mà đèn deuterium giữ được suốt tuổi thọ; đầu dò quang ion hóa bị giới hạn bởi năng lượng photon và độ tinh khiết của cửa sổ. Nhà chế tạo thiết bị viết đặc tả quanh linh kiện đó, còn phòng thí nghiệm sống với hệ quả trong nhiều năm.",
+        th: "ในเครื่องมือวิเคราะห์ แหล่งกำเนิดแสงไม่ใช่อุปกรณ์ต่อพ่วง — แต่เป็นตัวกำหนดขีดจำกัดการตรวจวัด สเปกโตรโฟโตมิเตอร์ UV-Vis หรือ HPLC ถูกจำกัดด้วยความเสถียรและความเข้มที่หลอดดิวทีเรียมรักษาไว้ได้ตลอดอายุ ส่วนเครื่องตรวจจับแบบโฟโตไอออไนเซชันถูกจำกัดด้วยพลังงานโฟตอนและความบริสุทธิ์ของหน้าต่าง ผู้ผลิตเครื่องมือเขียนข้อกำหนดโดยอิงชิ้นส่วนนี้ และห้องปฏิบัติการต้องอยู่กับผลของมันไปอีกหลายปี",
       },
       {
-        en: "The instrument maker builds the cell; someone has to supply the light. That is ETIA's part of the job. The OmniCure® S2000 is the mercury lamp source specified in TA Instruments' UV light-guide accessory for its rheometers, and published photo-rheology on Anton Paar MCR instruments has been run with OmniCure S1500 and S2000 sources coupled through a light guide. We supply those sources, the light guides and adapters that couple them to the measuring cell, and the spare lamps that keep an instrument running years after it was commissioned.",
-        zh: "测量池由仪器厂商制造，而光源需要有人提供——这正是 ETIA 承担的部分。OmniCure® S2000 是 TA Instruments 流变仪紫外光导附件所指定的汞灯光源；在 Anton Paar MCR 仪器上发表的光流变研究，也采用 OmniCure S1500 与 S2000 通过光导耦合。我们供应这些光源、将其耦合到测量池的光导与转接件，以及让仪器在验收多年之后仍能正常运转的备用灯管。",
-        vi: "Nhà sản xuất thiết bị làm ra buồng đo; vẫn cần ai đó cung cấp ánh sáng. Đó là phần việc của ETIA. OmniCure® S2000 là nguồn đèn thủy ngân được quy định trong phụ kiện ống dẫn sáng UV của TA Instruments dành cho máy đo lưu biến của hãng, và các nghiên cứu lưu biến quang đã công bố trên thiết bị Anton Paar MCR được thực hiện với nguồn OmniCure S1500 và S2000 ghép qua ống dẫn sáng. Chúng tôi cung cấp chính những nguồn sáng đó, các ống dẫn sáng và đầu nối để ghép chúng vào buồng đo, cùng đèn dự phòng giúp thiết bị chạy tiếp nhiều năm sau khi nghiệm thu.",
-        th: "ผู้ผลิตเครื่องมือเป็นผู้สร้างเซลล์วัด แต่ยังต้องมีคนจัดหาแสง นั่นคือส่วนงานของ ETIA OmniCure® S2000 คือแหล่งกำเนิดแสงหลอดปรอทที่ระบุไว้ในอุปกรณ์เสริมตัวนำแสง UV ของ TA Instruments สำหรับเครื่องวัดความหนืดของบริษัท และงานวิจัยโฟโตรีโอโลยีที่ตีพิมพ์บนเครื่อง Anton Paar MCR ก็ใช้แหล่งกำเนิดแสง OmniCure S1500 และ S2000 ต่อผ่านตัวนำแสง เราจัดหาแหล่งกำเนิดแสงเหล่านั้น ตัวนำแสงและอะแดปเตอร์ที่ต่อเข้ากับเซลล์วัด รวมถึงหลอดสำรองที่ทำให้เครื่องมือใช้งานต่อได้อีกหลายปีหลังการติดตั้ง",
+        en: "ETIA supplies that component. The Excelitas analytical range covers D2 plus deuterium lamps for HPLC, UHPLC and high-end UV-Vis; PID lamps in DC and RF excitation for gas chromatography, mass spectrometry, VOC monitoring and explosives trace detection; and the FiberLight® D2, a 6 W module carrying a deuterium lamp, a tungsten lamp, a shutter, the optics and an SMA connector for instruments with no room to spare.",
+        zh: "ETIA 供应的正是这个部件。Excelitas 分析光源产品线涵盖：用于 HPLC、UHPLC 与高端 UV-Vis 的 D2 plus 系列氘灯；DC 与 RF 激发的 PID 灯，用于气相色谱、质谱、VOC 监测与爆炸物痕量检测；以及 FiberLight® D2——一个集成氘灯、钨灯、快门、光学系统与 SMA 接口的 6 W 模块，专为空间紧张的仪器而设。",
+        vi: "ETIA cung cấp chính linh kiện đó. Dải sản phẩm phân tích của Excelitas gồm đèn deuterium D2 plus cho HPLC, UHPLC và UV-Vis cao cấp; đèn PID kích thích DC và RF cho sắc ký khí, khối phổ, giám sát VOC và phát hiện vết chất nổ; cùng FiberLight® D2, mô-đun 6 W mang đèn deuterium, đèn vonfram, cửa chắn, hệ quang và đầu nối SMA cho các thiết bị không còn chỗ trống.",
+        th: "ETIA จัดหาชิ้นส่วนนั้นให้ ผลิตภัณฑ์งานวิเคราะห์ของ Excelitas ครอบคลุมหลอดดิวทีเรียม D2 plus สำหรับ HPLC, UHPLC และ UV-Vis ระดับสูง; หลอด PID แบบกระตุ้น DC และ RF สำหรับแก๊สโครมาโทกราฟี แมสสเปกโตรเมตรี การเฝ้าระวัง VOC และการตรวจหาร่องรอยวัตถุระเบิด; และ FiberLight® D2 โมดูลขนาด 6 วัตต์ที่บรรจุหลอดดิวทีเรียม หลอดทังสเตน ชัตเตอร์ ระบบออปติก และขั้วต่อ SMA สำหรับเครื่องมือที่ไม่มีพื้นที่เหลือ",
       },
       {
-        en: "The hard part is not making light — it is knowing how much of it reaches the sample plane. The kinetics scale with irradiance: raising it from 50 to 150 mW/cm² visibly shortens the time to the G′/G″ crossover. Because irradiance falls off with distance and drifts as a lamp ages, a reading taken at the source is not the number that acted on the sample. Traceable radiometry is therefore part of the instrument, not an afterthought — which is why we sell the OmniCure R2000 and LS200 alongside the sources rather than after them.",
-        zh: "真正的难点不在于产生光，而在于知道究竟有多少光抵达了样品平面。反应动力学随辐照度而变：将辐照度从 50 提高到 150 mW/cm²，G′/G″ 交叉时间会明显缩短。而辐照度随距离衰减、随灯管老化漂移，因此在光源端测得的读数并不是作用于样品的数值。可溯源的辐照测量因此是仪器的组成部分，而非事后补充——这正是我们把 OmniCure R2000 与 LS200 与光源一同供应、而不是事后追加的原因。",
-        vi: "Phần khó không phải là tạo ra ánh sáng — mà là biết bao nhiêu ánh sáng thực sự tới được mặt phẳng mẫu. Động học tỉ lệ theo cường độ bức xạ: nâng từ 50 lên 150 mW/cm² rút ngắn thấy rõ thời gian đến giao điểm G′/G″. Vì cường độ suy giảm theo khoảng cách và trôi khi đèn lão hóa, một số đo lấy tại nguồn không phải con số đã tác động lên mẫu. Bởi vậy đo bức xạ truy xuất được là một phần của thiết bị, không phải thứ nghĩ đến sau — và đó là lý do chúng tôi bán OmniCure R2000 và LS200 cùng lúc với nguồn sáng chứ không phải sau đó.",
-        th: "ส่วนที่ยากไม่ใช่การสร้างแสง — แต่คือการรู้ว่ามีแสงไปถึงระนาบตัวอย่างมากเท่าใด จลนพลศาสตร์แปรผันตามความเข้มรังสี: การเพิ่มจาก 50 เป็น 150 mW/cm² ทำให้เวลาถึงจุดตัด G′/G″ สั้นลงอย่างเห็นได้ชัด เนื่องจากความเข้มลดลงตามระยะทางและเลื่อนไปเมื่อหลอดเสื่อมสภาพ ค่าที่วัดได้ที่ตัวแหล่งกำเนิดแสงจึงไม่ใช่ค่าที่กระทำต่อตัวอย่างจริง การวัดรังสีที่สอบกลับได้จึงเป็นส่วนหนึ่งของเครื่องมือ ไม่ใช่สิ่งที่ค่อยคิดทีหลัง — และนั่นคือเหตุผลที่เราจำหน่าย OmniCure R2000 และ LS200 ไปพร้อมกับแหล่งกำเนิดแสง ไม่ใช่ตามมาทีหลัง",
+        en: "The same logic reaches the rheometer. Put UV light onto the sample and a rotational rheometer becomes a photo-instrument: it tracks the storage and loss moduli through the cure, and the crossover of G′ and G″ gives the gel point directly. The OmniCure® S2000 is the mercury source specified in TA Instruments\u2019 UV light-guide accessory for its rheometers, and published photo-rheology on Anton Paar MCR instruments has been run with OmniCure S1500 and S2000 through a light guide.",
+        zh: "同样的逻辑延伸到流变仪。把紫外光打到样品上，旋转流变仪就变成了一台光学仪器：它追踪固化过程中的储能模量与损耗模量，G′ 与 G″ 的交叉点直接给出胶凝点。OmniCure® S2000 是 TA Instruments 流变仪紫外光导附件所指定的汞灯光源；在 Anton Paar MCR 仪器上发表的光流变研究，也采用 OmniCure S1500 与 S2000 经光导耦合。",
+        vi: "Cùng logic ấy vươn tới máy đo lưu biến. Chiếu ánh sáng UV lên mẫu và máy đo lưu biến quay trở thành thiết bị quang học: nó theo dõi mô-đun tích trữ và tổn hao suốt quá trình đóng rắn, và giao điểm G′ với G″ cho ngay điểm gel. OmniCure® S2000 là nguồn đèn thủy ngân được quy định trong phụ kiện ống dẫn sáng UV của TA Instruments cho máy đo lưu biến của hãng, và nghiên cứu lưu biến quang đã công bố trên thiết bị Anton Paar MCR dùng OmniCure S1500 và S2000 qua ống dẫn sáng.",
+        th: "ตรรกะเดียวกันนี้ขยายไปถึงเครื่องวัดความหนืด เมื่อฉายแสง UV ลงบนตัวอย่าง เครื่องวัดความหนืดแบบหมุนจะกลายเป็นเครื่องมือเชิงแสง: ติดตามมอดูลัสสะสมและมอดูลัสสูญเสียตลอดการบ่ม และจุดตัดของ G′ กับ G″ ให้จุดเจลออกมาโดยตรง OmniCure® S2000 คือแหล่งกำเนิดแสงหลอดปรอทที่ระบุไว้ในอุปกรณ์เสริมตัวนำแสง UV ของ TA Instruments สำหรับเครื่องวัดความหนืดของบริษัท และงานวิจัยโฟโตรีโอโลยีที่ตีพิมพ์บนเครื่อง Anton Paar MCR ใช้ OmniCure S1500 และ S2000 ผ่านตัวนำแสง",
       },
       {
-        en: "We work with instrument builders integrating a UV module into a new platform, and with laboratories keeping an installed rheometer in service — including replacing an ageing or discontinued source with one whose spectrum and irradiance can be matched to the method already validated.",
-        zh: "我们既服务于将紫外模块集成进新平台的仪器制造商，也服务于维持已装机流变仪运转的实验室——包括为已老化或停产的光源寻找替代方案，并使其光谱与辐照度能够匹配既有的、已验证的测试方法。",
-        vi: "Chúng tôi làm việc với các nhà chế tạo thiết bị tích hợp mô-đun UV vào nền tảng mới, và với các phòng thí nghiệm duy trì hoạt động của máy đo lưu biến đã lắp đặt — bao gồm việc thay nguồn sáng lão hóa hoặc đã ngừng sản xuất bằng nguồn có phổ và cường độ khớp được với phương pháp vốn đã thẩm định.",
-        th: "เราทำงานร่วมกับผู้ผลิตเครื่องมือที่ต้องการผสานโมดูล UV เข้ากับแพลตฟอร์มใหม่ และกับห้องปฏิบัติการที่ต้องรักษาเครื่องวัดความหนืดที่ติดตั้งแล้วให้ใช้งานต่อได้ — รวมถึงการเปลี่ยนแหล่งกำเนิดแสงที่เสื่อมสภาพหรือเลิกผลิต ด้วยตัวที่มีสเปกตรัมและความเข้มตรงกับวิธีทดสอบที่ผ่านการตรวจรับรองไว้แล้ว",
+        en: "Across both, the awkward part is the same: knowing how much light reaches the sample. Irradiance falls off with distance and drifts as a lamp ages, so a reading taken at the source is not the number that acted on the sample — which is why traceable radiometry belongs with the source rather than after it. We work with instrument builders integrating a source into a new platform, and with laboratories keeping an installed instrument in service when its original lamp is ageing or discontinued.",
+        zh: "两类应用面对的难题是同一个：究竟有多少光抵达了样品。辐照度随距离衰减、随灯管老化漂移，因此在光源端测得的读数并不是作用于样品的数值——这正是可溯源辐照测量应当与光源一同配置、而非事后追加的原因。我们既服务于将光源集成进新平台的仪器厂商，也服务于在原配灯管老化或停产后仍需维持仪器运转的实验室。",
+        vi: "Ở cả hai, phần khó là như nhau: biết được bao nhiêu ánh sáng tới được mẫu. Cường độ suy giảm theo khoảng cách và trôi khi đèn lão hóa, nên số đo lấy tại nguồn không phải con số đã tác động lên mẫu — vì vậy đo bức xạ truy xuất được phải đi cùng nguồn sáng chứ không phải sau đó. Chúng tôi làm việc với nhà chế tạo thiết bị tích hợp nguồn sáng vào nền tảng mới, và với phòng thí nghiệm duy trì thiết bị đã lắp đặt khi đèn nguyên bản lão hóa hoặc ngừng sản xuất.",
+        th: "ทั้งสองกรณีมีจุดยากเดียวกัน: การรู้ว่ามีแสงไปถึงตัวอย่างมากเท่าใด ความเข้มลดลงตามระยะทางและเลื่อนไปเมื่อหลอดเสื่อม ค่าที่วัดที่ตัวแหล่งกำเนิดแสงจึงไม่ใช่ค่าที่กระทำต่อตัวอย่างจริง — นั่นคือเหตุผลที่การวัดรังสีแบบสอบกลับได้ต้องมาพร้อมแหล่งกำเนิดแสง ไม่ใช่ตามมาทีหลัง เราทำงานกับผู้ผลิตเครื่องมือที่ผสานแหล่งกำเนิดแสงเข้ากับแพลตฟอร์มใหม่ และกับห้องปฏิบัติการที่ต้องรักษาเครื่องมือที่ติดตั้งแล้วให้ใช้งานต่อเมื่อหลอดเดิมเสื่อมสภาพหรือเลิกผลิต",
       },
     ],
     processes: [
+      {
+        title: { en: "UV-Vis spectrophotometry & HPLC", zh: "UV-Vis 分光光度法与 HPLC", vi: "Quang phổ UV-Vis & HPLC", th: "สเปกโตรโฟโตเมตรี UV-Vis & HPLC" },
+        body: {
+          en: "Deuterium sources whose intensity holds over life, so detection limits and calibration intervals hold with it.",
+          zh: "强度在整个寿命期内保持稳定的氘灯光源，使检测限与校准周期随之稳定。",
+          vi: "Nguồn deuterium giữ được cường độ suốt tuổi thọ, nhờ đó giới hạn phát hiện và chu kỳ hiệu chuẩn cũng ổn định theo.",
+          th: "แหล่งกำเนิดแสงดิวทีเรียมที่รักษาความเข้มไว้ได้ตลอดอายุ ทำให้ขีดจำกัดการตรวจวัดและรอบการสอบเทียบคงที่ตามไปด้วย",
+        },
+      },
+      {
+        title: { en: "Gas detection & chromatography", zh: "气体检测与色谱分析", vi: "Phát hiện khí & sắc ký", th: "การตรวจจับแก๊ส & โครมาโทกราฟี" },
+        body: {
+          en: "PID lamps selected by photon energy and window material for the compounds you actually need to see.",
+          zh: "按光子能量与窗口材料选定 PID 灯，以匹配您实际需要检出的化合物。",
+          vi: "Đèn PID được chọn theo năng lượng photon và vật liệu cửa sổ, phù hợp với đúng các hợp chất bạn cần phát hiện.",
+          th: "เลือกหลอด PID ตามพลังงานโฟตอนและวัสดุหน้าต่าง ให้ตรงกับสารประกอบที่คุณต้องตรวจจับจริง",
+        },
+      },
+      {
+        title: { en: "Compact & portable instruments", zh: "紧凑型与便携式仪器", vi: "Thiết bị nhỏ gọn & di động", th: "เครื่องมือขนาดกะทัดรัด & พกพา" },
+        body: {
+          en: "The FiberLight® D2 module puts a full UV-Vis source on one board, for handheld and battery-driven designs.",
+          zh: "FiberLight® D2 模块把一套完整的 UV-Vis 光源做在一块板上，适用于手持与电池供电设计。",
+          vi: "Mô-đun FiberLight® D2 đưa trọn một nguồn UV-Vis lên một bo mạch, dành cho thiết kế cầm tay và chạy pin.",
+          th: "โมดูล FiberLight® D2 รวมแหล่งกำเนิดแสง UV-Vis ครบชุดไว้บนบอร์ดเดียว สำหรับงานออกแบบแบบมือถือและใช้แบตเตอรี่",
+        },
+      },
       {
         title: { en: "Photo-rheology", zh: "光流变", vi: "Lưu biến quang", th: "โฟโตรีโอโลยี" },
         body: {
           en: "UV curing on a rotational rheometer — follow G′ and G″ through the cure and read the gel point off their crossover.",
           zh: "在旋转流变仪上进行紫外固化——追踪 G′ 与 G″ 的变化，由其交叉点读出胶凝点。",
-          vi: "Đóng rắn UV trên máy đo lưu biến quay — theo dõi G′ và G″ suốt quá trình và đọc điểm gel tại giao điểm của chúng.",
-          th: "การบ่ม UV บนเครื่องวัดความหนืดแบบหมุน — ติดตาม G′ และ G″ ตลอดการบ่ม แล้วอ่านจุดเจลจากจุดตัดของทั้งสอง",
+          vi: "Đóng rắn UV trên máy đo lưu biến quay — theo dõi G′ và G″ suốt quá trình và đọc điểm gel tại giao điểm.",
+          th: "การบ่ม UV บนเครื่องวัดความหนืดแบบหมุน — ติดตาม G′ และ G″ ตลอดการบ่ม แล้วอ่านจุดเจลจากจุดตัด",
         },
       },
       {
-        title: { en: "Coupling light into the cell", zh: "将光耦合进测量池", vi: "Ghép ánh sáng vào buồng đo", th: "การนำแสงเข้าสู่เซลล์วัด" },
+        title: { en: "OEM integration", zh: "OEM 集成", vi: "Tích hợp OEM", th: "การผสานระบบ OEM" },
         body: {
-          en: "Light guides, collimators and adapters that carry the source to the quartz plate without losing uniformity.",
-          zh: "光导、准直器与转接件，将光源引至石英板，同时不损失均匀性。",
-          vi: "Ống dẫn sáng, bộ chuẩn trực và đầu nối đưa nguồn sáng tới tấm thạch anh mà không mất độ đồng đều.",
-          th: "ตัวนำแสง คอลลิเมเตอร์ และอะแดปเตอร์ที่นำแสงไปยังแผ่นควอตซ์โดยไม่สูญเสียความสม่ำเสมอ",
-        },
-      },
-      {
-        title: { en: "Irradiance at the sample plane", zh: "样品平面辐照度", vi: "Cường độ bức xạ tại mặt phẳng mẫu", th: "ความเข้มรังสีที่ระนาบตัวอย่าง" },
-        body: {
-          en: "Traceable radiometry so the mW/cm² written into the method is the mW/cm² the sample actually received.",
-          zh: "可溯源的辐照测量，使方法中写下的 mW/cm² 就是样品实际接收到的 mW/cm²。",
-          vi: "Đo bức xạ truy xuất được, để mW/cm² ghi trong quy trình đúng bằng mW/cm² mà mẫu thực sự nhận.",
-          th: "การวัดรังสีที่สอบกลับได้ เพื่อให้ค่า mW/cm² ที่เขียนไว้ในวิธีทดสอบ คือค่าที่ตัวอย่างได้รับจริง",
-        },
-      },
-      {
-        title: { en: "Cure kinetics against irradiance", zh: "固化动力学与辐照度的关系", vi: "Động học đóng rắn theo cường độ bức xạ", th: "จลนพลศาสตร์การบ่มเทียบกับความเข้มรังสี" },
-        body: {
-          en: "Running the same formulation across an intensity series to see how gel time actually responds.",
-          zh: "在一组辐照度条件下测试同一配方，观察胶凝时间的实际响应。",
-          vi: "Chạy cùng một công thức qua một dải cường độ để xem thời gian gel thực sự phản ứng ra sao.",
-          th: "ทดสอบสูตรเดียวกันในหลายระดับความเข้มแสง เพื่อดูว่าเวลาเจลตอบสนองอย่างไรจริง ๆ",
+          en: "Specifying the source, optics and coupling for a light module being built into a new instrument platform.",
+          zh: "为集成进新仪器平台的光源模块，确定光源、光学与耦合方案。",
+          vi: "Xác định nguồn sáng, quang học và cách ghép nối cho mô-đun ánh sáng tích hợp vào nền tảng thiết bị mới.",
+          th: "การกำหนดแหล่งกำเนิดแสง ระบบออปติก และการเชื่อมต่อ สำหรับโมดูลแสงที่จะติดตั้งในแพลตฟอร์มเครื่องมือใหม่",
         },
       },
       {
@@ -460,23 +464,12 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
           th: "รักษาให้เครื่องมือที่ติดตั้งแล้วใช้งานต่อได้ เมื่อแหล่งกำเนิดแสงเดิมเสื่อมสภาพหรือเลิกผลิต",
         },
       },
-      {
-        title: { en: "OEM integration", zh: "OEM 集成", vi: "Tích hợp OEM", th: "การผสานระบบ OEM" },
-        body: {
-          en: "Specifying the source, optics and control for a UV module being built into a new instrument platform.",
-          zh: "为集成进新仪器平台的紫外模块，确定光源、光学与控制方案。",
-          vi: "Xác định nguồn sáng, quang học và điều khiển cho mô-đun UV tích hợp vào nền tảng thiết bị mới.",
-          th: "การกำหนดแหล่งกำเนิดแสง ระบบออปติก และการควบคุม สำหรับโมดูล UV ที่จะติดตั้งในแพลตฟอร์มเครื่องมือใหม่",
-        },
-      },
     ],
-    recommends: ["mercury-uv-lamp", "uv-measurement", "uv-led"],
+    recommends: ["analytical-light-sources", "mercury-uv-lamp", "uv-led"],
     applicationSlugs: [],
-    metaTitle: "UV Modules for Rheometers | Photo-Rheology Light Sources & Radiometry | ETIA",
+    metaTitle: "Light Sources for Analytical Instruments & Photo-Rheology | ETIA",
     metaDescription:
-      "UV light sources, light guides and traceable radiometry for photo-rheology on rotational rheometers — OmniCure sources, spare lamps and irradiance measurement at the sample plane. Supplied and supported by ETIA.",
-    // Held back until there is an installation to point at.
-    draft: true,
+      "Deuterium lamps, PID lamps and the FiberLight D2 UV-Vis module for spectrometers, HPLC, gas chromatography and gas detection — plus UV sources for photo-rheology on rotational rheometers. Supplied and supported by ETIA.",
   },
 };
 

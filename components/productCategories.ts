@@ -23,7 +23,8 @@ export type ProductCategorySlug =
   | "uv-led"
   | "microwave-uv-lamp"
   | "uv-measurement"
-  | "infrared-heating";
+  | "infrared-heating"
+  | "analytical-light-sources";
 
 export type ProductCategory = {
   slug: ProductCategorySlug;
@@ -533,6 +534,57 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     ],
     match: (p) => p.tech === "Infrared Heating",
   },
+
+  // ────────────────────── 6. 分析光源 ──────────────────────
+  // Not curing equipment: these are OEM light sources built into someone
+  // else's analytical instrument. Sourced from the public Excelitas
+  // "High-quality light sources for analytical instruments" brochure.
+  "analytical-light-sources": {
+    slug: "analytical-light-sources",
+    accent: "#0ea5e9",
+    name: { en: "Analytical Light Sources", zh: "分析光源", vi: "Nguồn sáng phân tích", th: "แหล่งกำเนิดแสงสำหรับงานวิเคราะห์" },
+    tagline: {
+      en: "Deuterium, PID and integrated UV-Vis sources — the lamp inside the spectrometer, the chromatograph and the gas detector.",
+      zh: "氘灯、PID 灯与一体化 UV-Vis 光源——分光光度计、色谱仪与气体检测仪内部的那只灯。",
+      vi: "Nguồn deuterium, PID và mô-đun UV-Vis tích hợp — chiếc đèn bên trong máy quang phổ, máy sắc ký và thiết bị dò khí.",
+      th: "แหล่งกำเนิดแสงดิวทีเรียม PID และโมดูล UV-Vis แบบรวม — หลอดที่อยู่ภายในสเปกโตรมิเตอร์ โครมาโทกราฟ และเครื่องตรวจจับแก๊ส",
+    },
+    intro: [
+      {
+        en: "An analytical instrument is only as good as its light source. In UV-Vis spectrophotometry and HPLC the detection limit is set by how stable and how intense the lamp is; in photoionisation detection it is set by the photon energy and the purity of the window. These are not accessories bolted on afterwards — they are the component the instrument's specification is written around.",
+        zh: "分析仪器的性能上限，取决于它的光源。在 UV-Vis 分光光度法与 HPLC 中，检测限由灯的稳定性与强度决定；在光电离检测中，则由光子能量与窗口材料的纯度决定。这些不是事后加装的配件——而是仪器规格书据以撰写的那个核心部件。",
+        vi: "Một thiết bị phân tích chỉ tốt ngang nguồn sáng của nó. Trong quang phổ UV-Vis và HPLC, giới hạn phát hiện được quyết định bởi độ ổn định và cường độ của đèn; trong phát hiện quang ion hóa, nó do năng lượng photon và độ tinh khiết của cửa sổ quyết định. Đây không phải phụ kiện lắp thêm về sau — mà là linh kiện mà bản đặc tả của thiết bị được viết dựa trên nó.",
+        th: "เครื่องมือวิเคราะห์จะดีได้เท่าที่แหล่งกำเนิดแสงของมันดี ในสเปกโตรโฟโตเมตรี UV-Vis และ HPLC ขีดจำกัดการตรวจวัดถูกกำหนดด้วยความเสถียรและความเข้มของหลอด ส่วนในการตรวจจับแบบโฟโตไอออไนเซชันถูกกำหนดด้วยพลังงานโฟตอนและความบริสุทธิ์ของวัสดุหน้าต่าง สิ่งเหล่านี้ไม่ใช่อุปกรณ์เสริมที่ติดเพิ่มภายหลัง — แต่เป็นชิ้นส่วนที่ข้อกำหนดของเครื่องมือถูกเขียนขึ้นรอบตัวมัน",
+      },
+      {
+        en: "ETIA supplies the Excelitas analytical range: deuterium lamps of the D2 plus series for HPLC, UHPLC and high-end UV-Vis; photoionisation detector lamps in DC and RF excitation for gas chromatography, mass spectrometry, VOC monitoring and explosives trace detection; and the FiberLight® D2, which packs a deuterium lamp, a tungsten lamp, a shutter, the optics and an SMA connector into one 6 W module for instruments with no room to spare.",
+        zh: "ETIA 供应 Excelitas 完整的分析光源产品线：用于 HPLC、UHPLC 与高端 UV-Vis 的 D2 plus 系列氘灯；DC 与 RF 两种激发方式的 PID 光电离检测灯，用于气相色谱、质谱、VOC 监测与爆炸物痕量检测；以及 FiberLight® D2——将氘灯、钨灯、快门、光学系统与 SMA 接口集成于一个 6 W 模块，专为空间紧张的仪器而设计。",
+        vi: "ETIA cung cấp trọn dải sản phẩm phân tích của Excelitas: đèn deuterium dòng D2 plus cho HPLC, UHPLC và UV-Vis cao cấp; đèn dò quang ion hóa (PID) kích thích DC và RF cho sắc ký khí, khối phổ, giám sát VOC và phát hiện vết chất nổ; cùng FiberLight® D2 gói đèn deuterium, đèn vonfram, cửa chắn, hệ quang và đầu nối SMA vào một mô-đun 6 W dành cho thiết bị không còn chỗ trống.",
+        th: "ETIA จัดหาผลิตภัณฑ์งานวิเคราะห์ของ Excelitas ครบช่วง: หลอดดิวทีเรียมซีรีส์ D2 plus สำหรับ HPLC, UHPLC และ UV-Vis ระดับสูง; หลอด PID แบบกระตุ้น DC และ RF สำหรับแก๊สโครมาโทกราฟี แมสสเปกโตรเมตรี การเฝ้าระวัง VOC และการตรวจหาร่องรอยวัตถุระเบิด; และ FiberLight® D2 ที่รวมหลอดดิวทีเรียม หลอดทังสเตน ชัตเตอร์ ระบบออปติก และขั้วต่อ SMA ไว้ในโมดูลขนาด 6 วัตต์เดียว สำหรับเครื่องมือที่ไม่มีพื้นที่เหลือ",
+      },
+      {
+        en: "Excelitas builds these alongside the OEMs that use them, to the dimensions and performance the instrument requires — and the PID lamps come off the industry's first fully automated production line, which is what lets lamp-to-lamp consistency and short lead times exist at the same time. ETIA handles specification, supply and replacement in Asia-Pacific.",
+        zh: "Excelitas 与使用这些光源的 OEM 客户共同开发，按仪器所需的尺寸与性能定制——其中 PID 灯出自业内首条全自动化产线，这正是灯与灯之间的一致性与短交期能够并存的原因。ETIA 在亚太区负责选型、供应与更换。",
+        vi: "Excelitas phát triển chúng cùng với chính các OEM sử dụng, theo đúng kích thước và hiệu năng mà thiết bị yêu cầu — và đèn PID được sản xuất trên dây chuyền tự động hóa hoàn toàn đầu tiên của ngành, điều khiến tính đồng nhất giữa các đèn và thời gian giao hàng ngắn cùng tồn tại được. ETIA phụ trách xác định cấu hình, cung ứng và thay thế tại châu Á – Thái Bình Dương.",
+        th: "Excelitas พัฒนาผลิตภัณฑ์เหล่านี้ร่วมกับ OEM ที่นำไปใช้ ตามขนาดและสมรรถนะที่เครื่องมือต้องการ — และหลอด PID ผลิตจากสายการผลิตอัตโนมัติเต็มรูปแบบสายแรกของวงการ ซึ่งเป็นเหตุผลที่ความสม่ำเสมอระหว่างหลอดกับระยะเวลาส่งมอบที่สั้นเกิดขึ้นพร้อมกันได้ ETIA ดูแลการกำหนดสเปก การจัดหา และการเปลี่ยนทดแทนในภูมิภาคเอเชียแปซิฟิก",
+      },
+    ],
+    applications: [
+      { en: "UV-Vis spectroscopy", zh: "UV-Vis 光谱分析", vi: "Quang phổ UV-Vis", th: "สเปกโทรสโกปี UV-Vis" },
+      { en: "HPLC & UHPLC", zh: "HPLC 与 UHPLC", vi: "HPLC & UHPLC", th: "HPLC & UHPLC" },
+      { en: "Gas chromatography & mass spectrometry", zh: "气相色谱与质谱", vi: "Sắc ký khí & khối phổ", th: "แก๊สโครมาโทกราฟี & แมสสเปกโตรเมตรี" },
+      { en: "Atomic absorption spectroscopy", zh: "原子吸收光谱", vi: "Quang phổ hấp thụ nguyên tử", th: "อะตอมมิกแอบซอร์พชันสเปกโทรสโกปี" },
+      { en: "VOC & air quality monitoring", zh: "VOC 与空气质量监测", vi: "Giám sát VOC & chất lượng không khí", th: "การเฝ้าระวัง VOC & คุณภาพอากาศ" },
+      { en: "Explosives trace detection", zh: "爆炸物痕量检测", vi: "Phát hiện vết chất nổ", th: "การตรวจหาร่องรอยวัตถุระเบิด" },
+      { en: "Water & pollution monitoring", zh: "水质与污染监测", vi: "Giám sát nước & ô nhiễm", th: "การเฝ้าระวังน้ำ & มลพิษ" },
+      { en: "Thin layer chromatography & HPCE", zh: "薄层色谱与毛细管电泳", vi: "Sắc ký lớp mỏng & HPCE", th: "ทินเลเยอร์โครมาโทกราฟี & HPCE" },
+      { en: "Semiconductor inspection", zh: "半导体检测", vi: "Kiểm tra bán dẫn", th: "การตรวจสอบเซมิคอนดักเตอร์" },
+    ],
+    metaTitle: "Analytical Light Sources | Deuterium, PID & FiberLight D2 | ETIA",
+    metaDescription:
+      "Excelitas analytical light sources for instrument OEMs — D2 plus deuterium lamps for HPLC/UHPLC and UV-Vis, PID lamps for GC, MS and VOC detection, and the FiberLight D2 integrated UV-Vis module. Specified and supplied by ETIA.",
+    match: (p) => p.tech === "Analytical Light Sources",
+  },
 };
 
 // Menu / page order — the order the customer specified.
@@ -542,6 +594,7 @@ export const PRODUCT_CATEGORY_ORDER: ProductCategorySlug[] = [
   "microwave-uv-lamp",
   "uv-measurement",
   "infrared-heating",
+  "analytical-light-sources",
 ];
 
 // Every category, drafts included — for the route's static params and for
