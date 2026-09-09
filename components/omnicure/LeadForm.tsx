@@ -5,11 +5,13 @@ import { track } from "./track";
 import ServiceCommitment from "@/components/ServiceCommitment";
 import { localeSalesEmail } from "@/components/contact";
 
-// Inquiries POST to /api/lead (server-side delivery to email/CRM, configured
-// via env — see that route). If the API is not configured or fails, we fall
-// back to opening the visitor's mail client (mailto), so a lead is never
-// silently dropped. The mailto recipient follows the visitor's country
-// (see localeSalesEmail).
+// Inquiries POST to /api/lead, which emails them via ETIA's own mailbox
+// (SMTP — see that route). If the API is not configured or delivery fails we
+// still open the visitor's mail client as a fallback, but we say so plainly
+// instead of showing the success panel: a form that claims "thank you, we'll
+// be in touch" while nothing was delivered is how this site went months
+// without a single inquiry and nobody noticed.
+// The mailto recipient follows the visitor's country (see localeSalesEmail).
 
 export default function LeadForm({
   lang,
@@ -23,7 +25,7 @@ export default function LeadForm({
   showModel?: boolean;
 }) {
   const c = getCopy(lang).form;
-  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "fallback" | "error">("idle");
   const [err, setErr] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -75,7 +77,9 @@ export default function LeadForm({
       .filter(Boolean)
       .join("\n");
     window.location.assign(`mailto:${localeSalesEmail(lang)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
-    setStatus("done");
+    // NOT "done": nothing has reached us yet — the visitor still has to press
+    // send in their mail client, and many never will.
+    setStatus("fallback");
   }
 
   if (status === "done") {
@@ -84,6 +88,22 @@ export default function LeadForm({
         <div className="text-3xl mb-2">✅</div>
         <p className="font-bold text-gray-900 mb-1">{c.thanksTitle}</p>
         <p className="text-sm text-gray-600">{c.thanksBody}</p>
+      </div>
+    );
+  }
+
+  if (status === "fallback") {
+    const email = localeSalesEmail(lang);
+    return (
+      <div className="rounded-xl bg-white p-6 shadow-lg border border-amber-200 text-center">
+        <div className="text-3xl mb-2">✉️</div>
+        <p className="font-bold text-gray-900 mb-1">{c.fallbackTitle}</p>
+        <p className="text-sm text-gray-600">
+          {c.fallbackBody}{" "}
+          <a href={`mailto:${email}`} className="font-semibold underline" style={{ color: BRAND.green }}>
+            {email}
+          </a>
+        </p>
       </div>
     );
   }

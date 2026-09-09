@@ -85,6 +85,9 @@ export type LandingCopy = {
     thanksTitle: string;
     thanksBody: string;
     required: string;
+    /** 在线提交失败时的诚实说明 —— 绝不冒充成功。 */
+    fallbackTitle: string;
+    fallbackBody: string;
   };
 };
 
@@ -144,6 +147,8 @@ const en: LandingCopy = {
     thanksTitle: "Thank you — we'll be in touch.",
     thanksBody: "Our Thailand team will contact you shortly with pricing and advice.",
     required: "Please complete the required fields.",
+    fallbackTitle: "We couldn't submit this online.",
+    fallbackBody: "Your mail app should have opened with the details filled in — please press send. Or contact us directly at",
     consent: "By submitting this form, you agree that ETIA may process your contact information to respond to your inquiry, provide product recommendations, and offer sales or technical support. Please see our Privacy Policy for details.",
   },
 };
@@ -177,6 +182,8 @@ const th: Partial<LandingCopy> = {
     thanksTitle: "ขอบคุณ — เราจะติดต่อกลับโดยเร็ว",
     thanksBody: "ทีมงานประเทศไทยของเราจะติดต่อกลับพร้อมราคาและคำแนะนำ",
     required: "กรุณากรอกข้อมูลที่จำเป็น",
+    fallbackTitle: "ไม่สามารถส่งแบบออนไลน์ได้",
+    fallbackBody: "แอปอีเมลของคุณควรเปิดขึ้นพร้อมข้อมูลที่กรอกไว้แล้ว — กรุณากดส่ง หรือติดต่อเราโดยตรงที่",
     consent: "การส่งแบบฟอร์มนี้ถือว่าคุณยินยอมให้ ETIA ประมวลผลข้อมูลติดต่อของคุณเพื่อตอบกลับคำถาม ให้คำแนะนำผลิตภัณฑ์ และให้การสนับสนุนด้านการขายหรือทางเทคนิค โปรดดูรายละเอียดในนโยบายความเป็นส่วนตัวของเรา",
   },
 };
@@ -193,6 +200,8 @@ const zhForm: LandingCopy["form"] = {
   thanksTitle: "谢谢您——我们会尽快与您联系。",
   thanksBody: "我们的团队将尽快向您提供报价与建议。",
   required: "请填写必填项。",
+  fallbackTitle: "在线提交没有成功。",
+  fallbackBody: "我们已为您打开邮件窗口并填好内容——请点击发送。或直接联系我们：",
   consent: "提交本表单即表示您同意 ETIA 处理您的联系信息，用于回复您的咨询、提供产品建议以及销售或技术支持。详情请参阅我们的隐私政策。",
 };
 
@@ -207,6 +216,8 @@ const viForm: LandingCopy["form"] = {
   thanksTitle: "Cảm ơn bạn — chúng tôi sẽ sớm liên hệ.",
   thanksBody: "Đội ngũ của chúng tôi sẽ liên hệ với bạn cùng báo giá và tư vấn.",
   required: "Vui lòng điền các trường bắt buộc.",
+  fallbackTitle: "Không gửi được trực tuyến.",
+  fallbackBody: "Ứng dụng email của bạn sẽ mở ra với thông tin đã điền sẵn — vui lòng bấm gửi. Hoặc liên hệ trực tiếp với chúng tôi tại",
   consent: "Bằng việc gửi biểu mẫu này, bạn đồng ý để ETIA xử lý thông tin liên hệ của bạn nhằm phản hồi yêu cầu, tư vấn sản phẩm và hỗ trợ bán hàng hoặc kỹ thuật. Vui lòng xem Chính sách bảo mật của chúng tôi để biết chi tiết.",
 };
 
