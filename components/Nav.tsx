@@ -13,7 +13,7 @@ import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 const languages: Locale[] = ["en", "zh", "vi", "th"];
 
 // Brands shown under PRODUCT → BY BRAND, in the customer's preferred order.
-const BRAND_ORDER: BrandSlug[] = ["omnicure", "phoseon", "fusion-uv", "noblelight"];
+const BRAND_ORDER: BrandSlug[] = ["omnicure", "noblelight", "phoseon", "fusion-uv"];
 
 type MenuLink = { href: string; label: LangText; note?: LangText };
 type MenuGroup = { heading: LangText; links: MenuLink[] };

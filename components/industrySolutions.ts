@@ -186,23 +186,23 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       "UV curing for semiconductor and electronics manufacturing — advanced packaging, underfill dams, display OCA bonding, OLED edge sealing, PCB conformal coating, staking and potting. Low-thermal UV LED systems from ETIA.",
   },
 
-  // ────────────────────────── 3. 汽车内饰行业 ──────────────────────────
+  // ────────────────────────── 3. 汽车行业 ──────────────────────────
   automotive: {
     slug: "automotive",
     accent: "#f59e0b",
-    name: { en: "Automotive Interior & Electronics", zh: "汽车内饰行业" },
+    name: { en: "Automotive", zh: "汽车" },
     tagline: {
-      en: "Interior trim, ambient lighting, sensors and battery assembly — cure times that keep pace with takt.",
-      zh: "内饰件、氛围灯、传感器与电池装配——匹配节拍时间的固化速度。",
+      en: "Sensors, displays, interior trim and battery assembly — bonds that survive a decade in a car, made at line takt.",
+      zh: "传感器、显示屏、内饰件与电池装配——在整车上要撑十年的粘接，且必须在节拍内完成。",
     },
     intro: [
       {
-        en: "Automotive interiors have become electronic. Trim panels carry light guides and ambient lighting, displays are bonded rather than clipped, and every one of those joints has to survive a decade of heat soak, humidity and vibration — while being made at line takt.",
-        zh: "汽车内饰已经电子化。饰板集成了导光件与氛围灯，显示屏由粘接取代卡扣固定，而每一处接合都必须在十年的高温暴晒、湿热与振动中保持可靠——同时还要在产线节拍内完成。",
+        en: "A modern car is held together by adhesive as much as by fasteners. Camera and LiDAR modules are aligned and bonded, displays are bonded rather than clipped, trim panels carry light guides and ambient lighting, and battery components are joined next to cells that must not be heated. Every one of those joints has to survive a decade of heat soak, humidity and vibration — while being made at line takt.",
+        zh: "现代汽车靠胶粘剂结合的部位，已不亚于靠紧固件。摄像头与激光雷达模组需要对准后粘接，显示屏由粘接取代卡扣固定，饰板集成了导光件与氛围灯，电池部件则要在不能受热的电芯旁完成连接。而每一处接合都必须在十年的高温暴晒、湿热与振动中保持可靠——同时还要在产线节拍内完成。",
       },
       {
-        en: "UV curing is what makes those two demands compatible: a bond that fixtures in seconds instead of minutes in an oven. ETIA covers interior trim and lighting bonding through to the sensor and battery assemblies alongside them — ADAS camera modules, LiDAR housings and EV battery components.",
-        zh: "紫外固化正是让这两项要求得以兼容的手段：几秒内定位固化，而非在烘箱中等待数分钟。ETIA 的覆盖范围从内饰件与灯具粘接，延伸至与之相邻的传感器与电池装配——ADAS 摄像模组、激光雷达外壳与动力电池部件。",
+        en: "UV curing is what makes those two demands compatible: a bond that fixtures in seconds instead of minutes in an oven, with the energy going into the adhesive rather than into the sensor, the display or the cell next to it. ETIA specifies the source and the dose for each of those joints.",
+        zh: "紫外固化正是让这两项要求得以兼容的手段：几秒内定位固化，而非在烘箱中等待数分钟；能量进入胶粘剂本身，而不是旁边的传感器、显示屏或电芯。ETIA 为每一处这样的接合确定光源与剂量。",
       },
     ],
     processes: [
@@ -241,12 +241,9 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       "uv-led-curing-automotive-lidar-sensor-assembly",
       "uv-curing-ev-battery-manufacturing",
     ],
-    metaTitle: "UV Curing for Automotive Interior & Electronics | ETIA",
+    metaTitle: "UV Curing for Automotive Manufacturing | ADAS, Display, Trim & EV Battery | ETIA",
     metaDescription:
-      "UV curing for automotive interior trim, ambient lighting, display bonding, ADAS camera and LiDAR sensor assembly and EV battery components — seconds-scale fixturing at line takt. Supplied and supported by ETIA.",
-    // The interior-trim half of this page is awaiting the customer's own
-    // application material; the sensor/battery notes below are already live.
-    contentPending: true,
+      "UV curing for automotive manufacturing — ADAS camera and LiDAR sensor assembly, display and cluster bonding, interior trim and ambient lighting, and EV battery components. Seconds-scale fixturing at line takt, from ETIA.",
   },
 
   // ───────────────────── 4. 三类医疗器械行业 ─────────────────────
@@ -309,38 +306,40 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       "Validated UV curing for Class III medical devices — catheter and balloon bonding, needle and cannula assembly, microfluidic diagnostic sealing, with traceable radiometry for IQ/OQ/PQ and ISO 13485. From ETIA.",
   },
 
-  // ───────────────────────── 5. 科学仪器行业 ─────────────────────────
-  // ETIA's angle here is not a standalone curing machine: it is the UV module
-  // that goes inside someone else's analytical instrument. The named facts
-  // below are public — TA Instruments specifies the Excelitas OmniCure S2000
-  // as the source in its rheometer UV light-guide accessory, and published
-  // photo-rheology on Anton Paar MCR instruments uses OmniCure S1500/S2000.
-  // Mettler Toledo's own photocalorimetry kit uses Hamamatsu and DELO sources,
-  // so nothing here claims an OmniCure relationship with that platform.
+  // ───────────────────────── 5. 科学实验 ─────────────────────────
+  // Focused on rheometers, where the evidence is public and checkable: TA
+  // Instruments specifies the Excelitas OmniCure S2000 as the source in its
+  // rheometer UV light-guide accessory, and published photo-rheology on Anton
+  // Paar MCR instruments uses OmniCure S1500/S2000 through a light guide.
+  //
+  // Photocalorimetry (photo-DSC) is deliberately left out for now: Mettler
+  // Toledo's kit uses Hamamatsu and DELO sources and TA's PCA has its own
+  // lamp, so there is no OmniCure claim to make there yet. Revisit when we
+  // have a real installation to point at.
   "scientific-instruments": {
     slug: "scientific-instruments",
     accent: "#7c3aed",
-    name: { en: "Scientific Instruments", zh: "科学仪器行业" },
+    name: { en: "Laboratory & Research", zh: "科学实验" },
     tagline: {
-      en: "The UV module inside the instrument — light sources, light guides and radiometry for photo-rheology and photocalorimetry.",
-      zh: "仪器内部的那个紫外模块——为光流变与光量热提供光源、光导与辐照测量。",
+      en: "The UV module inside the rheometer — light source, light guide and traceable irradiance for photo-rheology.",
+      zh: "流变仪内部的那个紫外模块——为光流变提供光源、光导与可溯源的辐照测量。",
     },
     intro: [
       {
-        en: "Rheometers and thermal analysers become photo-instruments the moment you put UV light onto the sample. A rotational rheometer with a UV light-curing cell tracks the storage and loss moduli while the resin cures, and the crossover of G′ and G″ gives the gel point directly. A DSC with a photocalorimetry accessory measures the heat released as the photoinitiated reaction proceeds. In both cases the instrument maker builds the cell — and someone has to supply the light.",
-        zh: "当紫外光照射到样品上的那一刻，流变仪与热分析仪就变成了光学仪器。带紫外固化池的旋转流变仪，可在树脂固化过程中追踪储能模量与损耗模量，G′ 与 G″ 的交叉点直接给出胶凝点；带光量热附件的 DSC，则测量光引发反应进行时释放的热量。这两种情形下，测量池由仪器厂商制造——而光源需要有人来提供。",
+        en: "A rotational rheometer becomes a photo-instrument the moment you put UV light onto the sample. With a UV light-curing cell, it tracks the storage and loss moduli while the resin cures, and the crossover of G′ and G″ gives the gel point directly — the exact moment the material stops being a liquid. No other method reads that transition as cleanly.",
+        zh: "当紫外光照射到样品上的那一刻，旋转流变仪就变成了一台光学仪器。配上紫外固化池后，它可以在树脂固化过程中追踪储能模量与损耗模量，而 G′ 与 G″ 的交叉点直接给出胶凝点——材料不再是液体的那一刻。没有别的方法能如此干净地读出这个转变。",
       },
       {
-        en: "That light source is ETIA's part of the job. The OmniCure® S2000 is the mercury lamp source specified in TA Instruments' UV light-guide accessory for its rheometers, and published photo-rheology on Anton Paar MCR instruments has been run with OmniCure S1500 and S2000 sources coupled through a light guide. We supply the same sources, the light guides and adapters that couple them to the measuring cell, and the spare lamps that keep an instrument running years after it was commissioned.",
-        zh: "这个光源正是 ETIA 承担的部分。OmniCure® S2000 是 TA Instruments 流变仪紫外光导附件所指定的汞灯光源；在 Anton Paar MCR 仪器上发表的光流变研究，也采用 OmniCure S1500 与 S2000 通过光导耦合。我们供应同样的光源、将其耦合到测量池的光导与转接件，以及让仪器在验收多年之后仍能正常运转的备用灯管。",
+        en: "The instrument maker builds the cell; someone has to supply the light. That is ETIA's part of the job. The OmniCure® S2000 is the mercury lamp source specified in TA Instruments' UV light-guide accessory for its rheometers, and published photo-rheology on Anton Paar MCR instruments has been run with OmniCure S1500 and S2000 sources coupled through a light guide. We supply those sources, the light guides and adapters that couple them to the measuring cell, and the spare lamps that keep an instrument running years after it was commissioned.",
+        zh: "测量池由仪器厂商制造，而光源需要有人提供——这正是 ETIA 承担的部分。OmniCure® S2000 是 TA Instruments 流变仪紫外光导附件所指定的汞灯光源；在 Anton Paar MCR 仪器上发表的光流变研究，也采用 OmniCure S1500 与 S2000 通过光导耦合。我们供应这些光源、将其耦合到测量池的光导与转接件，以及让仪器在验收多年之后仍能正常运转的备用灯管。",
       },
       {
-        en: "The hard part of a photo-instrument is not making light — it is knowing how much of it reaches the sample plane. Irradiance is what the kinetics scale with: on a rheometer, raising it from 50 to 150 mW/cm² visibly shortens the time to the G′/G″ crossover. Because irradiance falls off with distance and drifts as a lamp ages, a measurement taken at the source is not the number that acted on the sample. Traceable radiometry is therefore part of the instrument, not an afterthought — which is why we sell the OmniCure R2000 and LS200 alongside the sources rather than after them.",
-        zh: "光学仪器真正的难点不在于产生光，而在于知道究竟有多少光抵达了样品平面。反应动力学随辐照度而变：在流变仪上，将辐照度从 50 提高到 150 mW/cm²，G′/G″ 交叉时间会明显缩短。而辐照度随距离衰减、随灯管老化漂移，因此在光源端测得的数值并不是作用于样品的数值。可溯源的辐照测量因此是仪器的组成部分，而非事后补充——这正是我们把 OmniCure R2000 与 LS200 与光源一同供应、而不是事后追加的原因。",
+        en: "The hard part is not making light — it is knowing how much of it reaches the sample plane. The kinetics scale with irradiance: raising it from 50 to 150 mW/cm² visibly shortens the time to the G′/G″ crossover. Because irradiance falls off with distance and drifts as a lamp ages, a reading taken at the source is not the number that acted on the sample. Traceable radiometry is therefore part of the instrument, not an afterthought — which is why we sell the OmniCure R2000 and LS200 alongside the sources rather than after them.",
+        zh: "真正的难点不在于产生光，而在于知道究竟有多少光抵达了样品平面。反应动力学随辐照度而变：将辐照度从 50 提高到 150 mW/cm²，G′/G″ 交叉时间会明显缩短。而辐照度随距离衰减、随灯管老化漂移，因此在光源端测得的读数并不是作用于样品的数值。可溯源的辐照测量因此是仪器的组成部分，而非事后补充——这正是我们把 OmniCure R2000 与 LS200 与光源一同供应、而不是事后追加的原因。",
       },
       {
-        en: "We work with instrument builders integrating a UV module into a new platform, and with laboratories keeping an existing rheometer or photocalorimeter in service — including replacing an ageing or discontinued source with one whose spectrum and irradiance can be matched to the method already validated.",
-        zh: "我们既服务于将紫外模块集成进新平台的仪器制造商，也服务于维持现有流变仪或光量热仪运转的实验室——包括为已老化或停产的光源寻找替代方案，并使其光谱与辐照度能够匹配既有的、已验证的测试方法。",
+        en: "We work with instrument builders integrating a UV module into a new platform, and with laboratories keeping an installed rheometer in service — including replacing an ageing or discontinued source with one whose spectrum and irradiance can be matched to the method already validated.",
+        zh: "我们既服务于将紫外模块集成进新平台的仪器制造商，也服务于维持已装机流变仪运转的实验室——包括为已老化或停产的光源寻找替代方案，并使其光谱与辐照度能够匹配既有的、已验证的测试方法。",
       },
     ],
     processes: [
@@ -352,24 +351,24 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
         },
       },
       {
-        title: { en: "Photocalorimetry (photo-DSC)", zh: "光量热（Photo-DSC）" },
-        body: {
-          en: "Heat flow measured while the sample is illuminated, for cure kinetics, conversion and photostability studies.",
-          zh: "在样品受光照射的同时测量热流，用于固化动力学、转化率与光稳定性研究。",
-        },
-      },
-      {
         title: { en: "Coupling light into the cell", zh: "将光耦合进测量池" },
         body: {
-          en: "Light guides, collimators and adapters that carry the source to a quartz plate or measuring cell without losing uniformity.",
-          zh: "光导、准直器与转接件，将光源引至石英板或测量池，同时不损失均匀性。",
+          en: "Light guides, collimators and adapters that carry the source to the quartz plate without losing uniformity.",
+          zh: "光导、准直器与转接件，将光源引至石英板，同时不损失均匀性。",
         },
       },
       {
         title: { en: "Irradiance at the sample plane", zh: "样品平面辐照度" },
         body: {
-          en: "Traceable radiometry so the mW/cm² in the method is the mW/cm² the sample actually received.",
+          en: "Traceable radiometry so the mW/cm² written into the method is the mW/cm² the sample actually received.",
           zh: "可溯源的辐照测量，使方法中写下的 mW/cm² 就是样品实际接收到的 mW/cm²。",
+        },
+      },
+      {
+        title: { en: "Cure kinetics against irradiance", zh: "固化动力学与辐照度的关系" },
+        body: {
+          en: "Running the same formulation across an intensity series to see how gel time actually responds.",
+          zh: "在一组辐照度条件下测试同一配方，观察胶凝时间的实际响应。",
         },
       },
       {
@@ -389,9 +388,9 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     ],
     recommends: ["mercury-uv-lamp", "uv-measurement", "uv-led"],
     applicationSlugs: [],
-    metaTitle: "UV Modules for Rheometers & Thermal Analysers | Photo-Rheology & Photo-DSC | ETIA",
+    metaTitle: "UV Modules for Rheometers | Photo-Rheology Light Sources & Radiometry | ETIA",
     metaDescription:
-      "UV light sources, light guides and traceable radiometry for scientific instruments — photo-rheology on rotational rheometers and photocalorimetry on DSC. OmniCure sources, spare lamps and irradiance measurement, supplied and supported by ETIA.",
+      "UV light sources, light guides and traceable radiometry for photo-rheology on rotational rheometers — OmniCure sources, spare lamps and irradiance measurement at the sample plane. Supplied and supported by ETIA.",
   },
 };
 

@@ -14,7 +14,7 @@ import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
 import { productImage, products } from "@/components/productCatalog";
 import { localizeHref } from "@/components/localeHref";
-import { productCategoryList, productCategoryHref } from "@/components/productCategories";
+import { productCategoryList, productCategoryHref, categoriesForBrand } from "@/components/productCategories";
 import { industryList, industryHref } from "@/components/industrySolutions";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import TrustStrip from "@/components/TrustStrip";
@@ -30,7 +30,7 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
 ];
 
 // The four Excelitas brands, in the order they are shown under BY BRAND.
-const HOME_BRAND_ORDER: BrandSlug[] = ["omnicure", "phoseon", "fusion-uv", "noblelight"];
+const HOME_BRAND_ORDER: BrandSlug[] = ["omnicure", "noblelight", "phoseon", "fusion-uv"];
 
 // OmniCure systems featured in the hero product carousel (all have COS assets).
 const heroProductSlugs = ["s1500-pro", "lx500", "v3-led-heads", "ac8", "ac5", "ls200"];
@@ -128,16 +128,19 @@ export default function HomeView() {
       <div className="mx-auto max-w-7xl">
         <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" }, locale)}</p>
         <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Industry-Leading UV Curing Brands", zh: "行业知名的紫外线固化品牌", th: "แบรนด์ UV Curing ชั้นนำในอุตสาหกรรม", vi: "Các thương hiệu UV Curing uy tín trong ngành" }, locale)}</h2>
+        <p className="mt-4 max-w-2xl text-sm leading-6 text-[#667085]">{t({ en: "Four brands that cross the technologies rather than map onto them.", zh: "四个品牌横跨不同技术，并非与技术一一对应。", th: "สี่แบรนด์ที่ครอบคลุมข้ามเทคโนโลยี ไม่ได้จับคู่แบบหนึ่งต่อหนึ่ง", vi: "Bốn thương hiệu trải rộng qua các công nghệ, không tương ứng một-một." }, locale)}</p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {HOME_BRAND_ORDER.map((slug) => {
             const b = brandLanding[slug];
             const hero = products.find((p) => p.brandId === b.catalogBrandId && productImage(p));
+            const cats = categoriesForBrand(b.catalogBrandId);
             return (
               <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group grid overflow-hidden rounded-3xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:grid-cols-[1fr_.85fr]">
                 <div className="p-7">
                   <div className="mb-3 h-1.5 w-10 rounded" style={{ background: b.color }} />
                   <h3 className="text-xl font-bold text-[#143C96]">{b.name}</h3>
                   <p className="mt-3 line-clamp-3 text-sm leading-6 text-[#667085]">{t(b.intro, locale).split("\n\n")[0]}</p>
+                  {cats.length > 0 && <div className="mt-4 flex flex-wrap gap-1.5">{cats.map((c) => <span key={c.slug} className="rounded-full border px-2.5 py-1 text-[11px] font-semibold" style={{ borderColor: `${c.accent}55`, color: c.accent }}>{t(c.name, locale)}</span>)}</div>}
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: b.color }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" /></span>
                 </div>
                 <div className="relative min-h-56 bg-[#F7FAFC]">

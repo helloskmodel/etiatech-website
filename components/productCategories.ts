@@ -503,6 +503,15 @@ export function categoryProducts(slug: ProductCategorySlug): Product[] {
   return products.filter(productCategories[slug].match);
 }
 
+// The technology categories a brand actually has products in. Computed from
+// the catalog so it stays true as the catalog changes — the four brands cross
+// the five categories rather than mapping one-to-one onto them.
+export function categoriesForBrand(brandId: Product["brandId"]): ProductCategory[] {
+  return productCategoryList.filter((c) =>
+    products.some((p) => p.brandId === brandId && c.match(p))
+  );
+}
+
 export function isProductCategorySlug(s: string): s is ProductCategorySlug {
   return s in productCategories;
 }
