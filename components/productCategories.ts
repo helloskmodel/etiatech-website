@@ -33,8 +33,6 @@ export type ProductCategory = {
   tagline: LangText;
   // Body paragraphs for the overview section.
   intro: LangText[];
-  // 3–5 selling points, rendered as cards.
-  highlights: { title: LangText; body: LangText }[];
   // Typical applications / industries, rendered as chips.
   applications: LangText[];
   metaTitle: string;
@@ -78,36 +76,6 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
         zh: "ETIA 供应 OmniCure® S 系列点固化系统：闭环光学反馈在整个灯泡寿命内保持光强恒定——工艺首日验证的剂量，2000 小时后依然一致。原厂替换灯泡、光导与校准服务均有区域备货。",
       },
     ],
-    highlights: [
-      {
-        title: { en: "Full broad-spectrum output", zh: "完整宽光谱输出" },
-        body: {
-          en: "250–600 nm continuous coverage cures photoinitiator systems that single-wavelength UV LED cannot reach.",
-          zh: "250–600 nm 连续覆盖，可固化单一波长 UV LED 无法触及的光引发剂体系。",
-        },
-      },
-      {
-        title: { en: "Closed-loop intensity control", zh: "闭环光强控制" },
-        body: {
-          en: "Optical feedback compensates for lamp ageing — repeatable dose from first cure to lamp end-of-life.",
-          zh: "光学反馈补偿灯泡衰减——从首次固化到灯泡寿命终点，剂量始终可重复。",
-        },
-      },
-      {
-        title: { en: "Validated-process friendly", zh: "适配已验证工艺" },
-        body: {
-          en: "The reference source most medical device and electronics process validations were written against.",
-          zh: "多数医疗器械与电子工艺验证文件所依据的基准光源。",
-        },
-      },
-      {
-        title: { en: "Local lamps and service", zh: "本地灯泡与服务" },
-        body: {
-          en: "Genuine lamps, light guides, adapters and calibration stocked and serviced in-region.",
-          zh: "原厂灯泡、光导、转接件与校准服务，区域备货、本地响应。",
-        },
-      },
-    ],
     applications: [
       { en: "Medical device bonding", zh: "医疗器械粘接" },
       { en: "Catheter & needle assembly", zh: "导管与针头装配" },
@@ -139,36 +107,6 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       {
         en: "ETIA covers the full range: OmniCure® LX spot curing and AC Series air-cooled arrays, Phoseon® FireEdge / FireJet / FireLine, and Noblelight Semray® water-cooled systems up to 1350 mm emission width. We size the head, wavelength and working distance to your adhesive's datasheet and your line speed — not the other way round.",
         zh: "ETIA 覆盖完整产品线：OmniCure® LX 点固化与 AC 系列风冷阵列、Phoseon® FireEdge / FireJet / FireLine，以及发光宽度达 1350 mm 的 Noblelight Semray® 水冷系统。我们依据您的胶水技术数据与产线速度来选定灯头、波长与工作距离——而不是反过来。",
-      },
-    ],
-    highlights: [
-      {
-        title: { en: "Instant on/off, no warm-up", zh: "瞬时开关，无需预热" },
-        body: {
-          en: "No shutters, no idle burn — the source is only on while the part is under it.",
-          zh: "无需快门、无空转损耗——仅在工件到位时点亮。",
-        },
-      },
-      {
-        title: { en: "Low thermal load", zh: "低热负载" },
-        body: {
-          en: "Minimal infrared output protects heat-sensitive substrates, films and electronics.",
-          zh: "红外输出极低，保护热敏基材、薄膜与电子元件。",
-        },
-      },
-      {
-        title: { en: "20,000–60,000 h lifetime", zh: "2–6 万小时寿命" },
-        body: {
-          en: "Tens of thousands of hours between changes, and no mercury or ozone handling.",
-          zh: "更换间隔长达数万小时，且无需处理汞与臭氧。",
-        },
-      },
-      {
-        title: { en: "Spot to wide-web scale", zh: "从点固化到宽幅卷材" },
-        body: {
-          en: "Millimetre spot heads through to 1350 mm water-cooled production arrays.",
-          zh: "从毫米级点固化头，到 1350 mm 水冷产线阵列。",
-        },
       },
     ],
     applications: [
@@ -208,36 +146,6 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
         zh: "ETIA 供应 Fusion UV® F 系列与 LightHammer® 平台，以及用于光纤拉丝塔的 DRF 系列。它们可改造接入现有产线，是宽幅印刷、涂层与加工领域的成熟光源——在这些场景中，宽光谱穿透固化比点位精度更为关键。",
       },
     ],
-    highlights: [
-      {
-        title: { en: "No electrodes, longer stable life", zh: "无电极，稳定寿命更长" },
-        body: {
-          en: "Microwave excitation removes the electrode erosion that limits conventional arc lamps.",
-          zh: "微波激发消除了限制传统弧光灯寿命的电极损耗。",
-        },
-      },
-      {
-        title: { en: "200–600 nm broad spectrum", zh: "200–600 nm 宽光谱" },
-        body: {
-          en: "Deep-UV surface cure and long-wave through-cure from a single source.",
-          zh: "单一光源同时实现深紫外表面固化与长波穿透固化。",
-        },
-      },
-      {
-        title: { en: "Tunable by bulb fill", zh: "灯泡配方可调光谱" },
-        body: {
-          en: "H, D, V and doped fills shift the spectrum onto your chemistry — same hardware.",
-          zh: "H、D、V 及掺杂配方可将光谱移至您的化学体系——硬件不变。",
-        },
-      },
-      {
-        title: { en: "Built for continuous web", zh: "面向连续卷材" },
-        body: {
-          en: "High-speed printing, coating and converting lines; retrofits into existing frames.",
-          zh: "适用于高速印刷、涂层与加工产线；可改造接入现有机架。",
-        },
-      },
-    ],
     applications: [
       { en: "Wide-web printing & converting", zh: "宽幅印刷与加工" },
       { en: "Industrial coatings", zh: "工业涂层" },
@@ -272,36 +180,6 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
         zh: "ETIA 供应用于灯式点固化系统的 OmniCure® R2000 辐照计，以及 LS200 UV LED 辐照测量与校准系统，均具备可溯源的出厂校准。对于受监管的医疗器械与航空航天生产而言，这正是让工艺记录在审核中站得住脚的依据。",
       },
     ],
-    highlights: [
-      {
-        title: { en: "Traceable calibration", zh: "可溯源校准" },
-        body: {
-          en: "NRC-traceable factory calibration — the basis for defensible process records.",
-          zh: "NRC 可溯源出厂校准——工艺记录可追溯的依据。",
-        },
-      },
-      {
-        title: { en: "Measure at the cure site", zh: "在固化点直接测量" },
-        body: {
-          en: "Compact sensors read irradiance where the adhesive actually is, not at the lamp.",
-          zh: "紧凑型传感器在胶水实际所在位置读取辐照度，而非在灯端测量。",
-        },
-      },
-      {
-        title: { en: "Lamp and LED coverage", zh: "覆盖灯式与 LED" },
-        body: {
-          en: "R2000 for broad-spectrum lamp systems; LS200 for monochromatic UV LED sources.",
-          zh: "R2000 用于宽光谱灯式系统；LS200 用于单色 UV LED 光源。",
-        },
-      },
-      {
-        title: { en: "Audit-ready documentation", zh: "满足审核要求" },
-        body: {
-          en: "Repeatable numbers for IQ/OQ/PQ, ISO 13485 and customer process audits.",
-          zh: "为 IQ/OQ/PQ、ISO 13485 及客户工艺审核提供可重复的数据。",
-        },
-      },
-    ],
     applications: [
       { en: "Medical device process validation", zh: "医疗器械工艺验证" },
       { en: "Routine production QA checks", zh: "量产例行质量检查" },
@@ -326,55 +204,25 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       en: "Noblelight infrared modules — heat delivered into the product, exactly where the process needs it.",
       zh: "Noblelight 红外模块——将热量直接送入产品，精确投放在工艺所需之处。",
     },
+    // Overview copy from the Excelitas "Infrared Modules for Industrial
+    // Process Technology" brochure. The source text still says "Heraeus" —
+    // the pre-acquisition brand — so it reads as Excelitas here.
     intro: [
       {
-        en: "Infrared emitters put energy into the product rather than into the air around it. That makes them faster, more controllable and far more energy-efficient than convection ovens for drying, pre-heating, laminating and thermal curing — and it lets the heat be switched with the line instead of running continuously.",
-        zh: "红外发射器将能量送入产品本身，而非周围空气。相比对流烘箱，其在干燥、预热、层压与热固化中升温更快、控制更精准、能效显著更高——并且可以随产线节拍开关，而非持续运行。",
+        en: "Noblelight infrared modules from Excelitas deliver thermal energy in a practical form. This simplifies and accelerates operating stages, optimises energy usage and results in an exceptional finished product. Whether they are large heating fields, tunnels, ovens or individual modules, our modular infrared systems are always precisely matched to your processes and materials — so the infrared heat is supplied in the right amounts, exactly where it is required.",
+        zh: "Excelitas 的 Noblelight 红外模块以切实可用的形式输出热能，从而简化并加快工序、优化能耗，并带来出色的成品质量。无论是大型加热面、隧道炉、烘箱还是单个模块，我们的模块化红外系统始终与您的工艺和材料精确匹配——让红外热量以恰当的量，投放在恰当的位置。",
       },
       {
-        en: "ETIA supplies Excelitas Noblelight infrared modules: the simply constructed M series for retrofits and single heating stations, the scalable MX series with integrated control for complete heating systems, and custom-engineered MX solutions built around your geometry. Whether it is a large heating field, a tunnel, an oven or a single module, the system is matched to your process and materials.",
-        zh: "ETIA 供应 Excelitas Noblelight 红外模块：结构简明的 M 系列，适用于改造与单工位加热；带集成控制的 MX 可扩展系列，构成完整加热系统；以及围绕您的几何形状定制开发的 MX 方案。无论是大型加热面、隧道炉、烘箱还是单个模块，系统都按您的工艺与材料进行匹配。",
+        en: "Infrared heat is intelligent heat, because it heats the material precisely and efficiently. Noblelight infrared modules are supplied ready-to-fit and can be integrated directly into the production process, and can be supplied with matching control units and housings — the ideal solution for industrial heating processes.",
+        zh: "红外热是「聪明的热」，因为它精确而高效地加热材料本身。Noblelight 红外模块以可直接安装的状态交付，能够直接集成进生产工序，并可配套相应的控制单元与外壳——是工业加热工艺的理想方案。",
       },
       {
-        en: "Each module is supplied ready to fit, with the emitter output, voltage and wavelength selected for the material being heated — and with matching control systems, from a simple regulator through to fully integrated PLC-based automation.",
-        zh: "每个模块均以可直接安装的状态交付，发射器功率、电压与波长依据受热材料选定——并配套相应的控制系统，从简易调节器到完全集成的 PLC 自动化方案。",
-      },
-    ],
-    highlights: [
-      {
-        title: { en: "Direct radiant heating", zh: "直接辐射加热" },
-        body: {
-          en: "Energy goes into the product, not the surrounding air — faster ramp, lower running cost.",
-          zh: "能量直达产品而非周围空气——升温更快，运行成本更低。",
-        },
+        en: "Our speciality is problem solving. Solutions range from a simple module through to a purpose-built system with control: the simply constructed M series for retrofits and single heating stations, the scalable MX series with integrated control for complete heating systems, and custom-engineered MX solutions built around your geometry. Emitter output, voltage and wavelength are selected for the material actually being heated.",
+        zh: "我们的专长是解决问题。方案从单个模块，到带控制系统的专门定制设备：结构简明的 M 系列，适用于改造与单工位加热；带集成控制的 MX 可扩展系列，构成完整加热系统；以及围绕您的几何形状定制开发的 MX 方案。发射器的功率、电压与波长，均依据实际受热材料选定。",
       },
       {
-        title: { en: "Matched wavelength", zh: "波长匹配" },
-        body: {
-          en: "Emitter output, voltage and wavelength are selected for the material actually being heated.",
-          zh: "发射器功率、电压与波长，依据实际受热材料选定。",
-        },
-      },
-      {
-        title: { en: "Ready to fit, easy to retrofit", zh: "即装即用，易于改造" },
-        body: {
-          en: "Modules arrive assembled with their electrical connections and drop into existing lines.",
-          zh: "模块出厂即完成装配与电气连接，可直接接入现有产线。",
-        },
-      },
-      {
-        title: { en: "Scales module to tunnel", zh: "从单模块到隧道炉" },
-        body: {
-          en: "Combine modules into large heating fields, tunnels and ovens, with control to match.",
-          zh: "多模块可组合为大型加热面、隧道炉与烘箱，并配套相应控制。",
-        },
-      },
-      {
-        title: { en: "Engineered, not guessed", zh: "工程设计，而非试错" },
-        body: {
-          en: "Over 3,000 infrared test reports and CAE simulation replace trial-and-error commissioning.",
-          zh: "逾 3000 份红外测试报告与 CAE 仿真，取代反复试错的调试过程。",
-        },
+        en: "ETIA supplies and supports these modules in Asia-Pacific — tell us your process temperature, line speed and product geometry, and our engineers will specify the emitter, module and control system for it.",
+        zh: "ETIA 在亚太区提供这些模块的供应与支持——请告知您的工艺温度、产线速度与产品几何形状，我们的工程师将据此确定发射器、模块与控制系统方案。",
       },
     ],
     applications: [

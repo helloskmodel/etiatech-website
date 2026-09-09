@@ -93,26 +93,6 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
         </div>
       </section>
 
-      {/* Why this technology */}
-      {c.highlights.length > 0 && (
-        <section className="bg-[#F7FAFC] px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <h2 className="text-2xl font-bold text-[#143C96] md:text-3xl">
-              {t({ en: "Why this technology", zh: "为什么选择这项技术", th: "ทำไมต้องเทคโนโลยีนี้", vi: "Vì sao chọn công nghệ này" }, locale)}
-            </h2>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {c.highlights.map((h, i) => (
-                <div key={i} className="rounded-2xl border border-[#D9E4EA] bg-white p-6">
-                  <div className="mb-3 h-1 w-8 rounded" style={{ background: c.accent }} />
-                  <h3 className="text-base font-bold text-[#143C96]">{t(h.title, locale)}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#667085]">{t(h.body, locale)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Models */}
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
