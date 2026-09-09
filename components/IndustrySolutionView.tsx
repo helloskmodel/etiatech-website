@@ -106,6 +106,24 @@ export default function IndustrySolutionView({ slug }: { slug: IndustrySlug }) {
         </div>
       </section>
 
+      {/* Parts and devices this sector brings us. */}
+      {s.applications && s.applications.length > 0 && (
+        <section className="border-t border-gray-100 bg-white px-4 pt-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-2xl font-bold text-[#143C96] md:text-3xl">
+              {t({ en: "Parts we are asked to cure", zh: "我们经常被问到的零件", th: "ชิ้นส่วนที่เราถูกขอให้บ่ม", vi: "Các chi tiết chúng tôi được yêu cầu đóng rắn" }, locale)}
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {s.applications.map((a, i) => (
+                <span key={i} className="rounded-full border border-[#D9E4EA] bg-[#F7FAFC] px-4 py-2 text-sm font-medium text-[#475467]">
+                  {t(a, locale)}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Recommended technologies */}
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">

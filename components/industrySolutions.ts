@@ -35,6 +35,9 @@ export type IndustrySolution = {
   intro: LangText[];
   // The bonding / curing processes ETIA is asked about in this sector.
   processes: { title: LangText; body: LangText }[];
+  // Optional: the specific parts or devices this sector brings us, shown as
+  // chips. Populated where there is published material naming them.
+  applications?: LangText[];
   // Product categories to steer this industry's visitors towards, in order.
   recommends: ProductCategorySlug[];
   // Application notes belonging to this industry, in display order.
@@ -356,6 +359,19 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
           th: "การวัดรังสีที่สอบกลับได้ สำหรับ IQ/OQ/PQ, ISO 13485 และการตรวจประเมินของลูกค้า",
         },
       },
+    ],
+    applications: [
+      { en: "Catheters, stents & syringes", zh: "导管、支架与注射器", vi: "Ống thông, stent & bơm tiêm", th: "สายสวน สเตนต์ & กระบอกฉีดยา" },
+      { en: "Cannula assemblies & blood oxygenators", zh: "套管组件与血液氧合器", vi: "Cụm canule & máy trao đổi oxy máu", th: "ชุดแคนนูลา & เครื่องแลกเปลี่ยนออกซิเจนในเลือด" },
+      { en: "Endoscopes, optics & fibre optics", zh: "内窥镜、光学件与光纤", vi: "Nội soi, quang học & sợi quang", th: "กล้องส่องตรวจ ออปติก & เส้นใยแก้วนำแสง" },
+      { en: "Anaesthesia & respiratory masks", zh: "麻醉与呼吸面罩", vi: "Mặt nạ gây mê & hô hấp", th: "หน้ากากวางยาสลบ & ช่วยหายใจ" },
+      { en: "Endotracheal tubing & connectors", zh: "气管插管与接头", vi: "Ống nội khí quản & đầu nối", th: "ท่อช่วยหายใจ & ข้อต่อ" },
+      { en: "Drainage devices & tubing", zh: "引流器械与管路", vi: "Thiết bị dẫn lưu & ống dẫn", th: "อุปกรณ์ระบายของเหลว & ท่อ" },
+      { en: "Transdermal patches & hydrogels", zh: "透皮贴剂与水凝胶", vi: "Miếng dán qua da & hydrogel", th: "แผ่นแปะผ่านผิวหนัง & ไฮโดรเจล" },
+      { en: "Medical coatings & filters", zh: "医用涂层与滤材", vi: "Lớp phủ y tế & màng lọc", th: "สารเคลือบทางการแพทย์ & ตัวกรอง" },
+      { en: "Hearing aids & insulin pens", zh: "助听器与胰岛素笔", vi: "Máy trợ thính & bút tiêm insulin", th: "เครื่องช่วยฟัง & ปากกาอินซูลิน" },
+      { en: "Arterial locators", zh: "动脉定位器", vi: "Thiết bị định vị động mạch", th: "อุปกรณ์ระบุตำแหน่งหลอดเลือดแดง" },
+      { en: "Atraumatic guidewire tips", zh: "无创导丝头端", vi: "Đầu dây dẫn không gây tổn thương", th: "ปลายลวดนำแบบไม่ทำให้บาดเจ็บ" },
     ],
     recommends: ["mercury-uv-lamp", "uv-led", "uv-measurement"],
     applicationSlugs: [
