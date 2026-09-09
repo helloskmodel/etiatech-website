@@ -1,12 +1,20 @@
 // Lead capture endpoint for the OmniCure landing pages.
 //
-// Delivery is configured with one env var:
+// Delivery is configured with env vars, first match wins:
 //   LEAD_WEBHOOK_URL — POST the lead as JSON (Zapier/Make/Slack/CRM webhook)
-// Without it this returns 503 and the form falls back to the visitor's mail
-// client (mailto), so no lead is ever silently dropped.
+//   SMTP_HOST + SMTP_USER + SMTP_PASS
+//                    — send through our own company mailbox to LEAD_TO_EMAIL
+//                      (default Omnicure@etia-tech.com). Optional SMTP_PORT
+//                      (default 465) and LEAD_FROM_EMAIL (default SMTP_USER).
+// With neither configured this returns 503 and the form falls back to the
+// visitor's mail client (mailto), so no lead is ever silently dropped.
 //
-// Resend email delivery was removed: mail stopped arriving at the inbox and
-// the integration was retired rather than repaired.
+// Why SMTP and not a transactional email API: the previous Resend integration
+// sent from the shared onboarding@resend.dev address, which only delivers to
+// the API account owner's own inbox, so nothing reached the sales mailbox.
+// Sending through our own mailbox makes the From address one we actually own,
+// so there is no domain to verify and no third-party sending reputation in
+// play.
 //
 // Privacy: lead contact details are NOT logged on the happy path — only a
 // redacted summary. The full lead is logged only if a configured delivery
@@ -40,6 +48,48 @@ async function deliver(lead: Record<string, string>): Promise<"sent" | "unconfig
       body: JSON.stringify({ type: "etiatech-lead", ...lead }),
     });
     if (!res.ok) throw new Error(`webhook ${res.status}`);
+    return "sent";
+  }
+
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  if (host && user && pass) {
+    // Imported here rather than at module scope so the SMTP client is only
+    // loaded when it is actually configured — it is dead weight on the cold
+    // start of every other request otherwise.
+    const { createTransport } = await import("nodemailer");
+    const port = Number(process.env.SMTP_PORT) || 465;
+    const transport = createTransport({
+      host,
+      port,
+      // 465 is implicit TLS; 587 (and 25) start plaintext and upgrade with
+      // STARTTLS, which nodemailer does automatically when secure is false.
+      secure: port === 465,
+      auth: { user, pass },
+      // Fail fast: the caller falls back to mailto, and a hung SMTP dial
+      // would otherwise burn the whole function timeout before it could.
+      connectionTimeout: 8000,
+      greetingTimeout: 8000,
+      socketTimeout: 12000,
+    });
+
+    const text = Object.entries(lead)
+      .filter(([, v]) => v)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join("\n");
+
+    await transport.sendMail({
+      // Defaults to the authenticated mailbox: most providers reject a From
+      // the account is not allowed to send as.
+      from: process.env.LEAD_FROM_EMAIL || user,
+      to: (process.env.LEAD_TO_EMAIL || "Omnicure@etia-tech.com")
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean),
+      subject: `New lead — ${lead.name}${lead.model ? ` (${lead.model})` : ""} via ${lead.page || "landing page"}`,
+      text,
+    });
     return "sent";
   }
 
@@ -86,7 +136,7 @@ export async function POST(request: Request) {
   try {
     const outcome = await deliver(lead);
     if (outcome === "unconfigured") {
-      console.warn("[lead] no delivery configured (LEAD_WEBHOOK_URL) — client falls back to mailto");
+      console.warn("[lead] no delivery configured (LEAD_WEBHOOK_URL or SMTP_HOST+SMTP_USER+SMTP_PASS) — client falls back to mailto");
       return Response.json({ error: "not_configured" }, { status: 503 });
     }
     console.log("[lead] delivered", { page: lead.page, lang: lead.lang, model: lead.model });
