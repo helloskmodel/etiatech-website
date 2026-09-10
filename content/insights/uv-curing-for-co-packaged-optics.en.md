@@ -37,6 +37,6 @@ The CPO market is one of the fastest-growing segments in commercial photonics, e
 
 - See the full [Co-Packaged Optics case study](/application#AN-PHO-002) for the process detail and recommended systems.
 - Compare [UV curing systems](/product) across spot, area, and LED platforms.
-- Have a specific CPO bonding step to validate? [Talk to our engineers](mailto:mark_tang@etia-tech.com?subject=CPO%20UV%20Curing).
+- Have a specific CPO bonding step to validate? [Talk to our engineers](mailto:sales@etia-tech.com?subject=CPO%20UV%20Curing).
 
 *ETIA is an authorized OmniCure distributor in Thailand and Vietnam, and also supplies Phoseon, Fusion UV and Noblelight UV curing systems.*

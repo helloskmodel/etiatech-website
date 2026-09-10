@@ -49,7 +49,7 @@ Standard Markdown below the frontmatter: `##`/`###` headings, lists, **bold**,
 
 - Products: `[OmniCure LX500](/product/systems/lx500)` or a brand page `/product/omnicure`
 - Applications: `[case study](/application#AN-PHO-002)` (deep-links open that note)
-- Contact: `[Talk to our engineers](mailto:mark_tang@etia-tech.com?subject=Inquiry)`
+- Contact: `[Talk to our engineers](mailto:sales@etia-tech.com?subject=Inquiry)`
 
 Start the body with a strong opening paragraph — no top-level `#` heading (the
 `title` already renders as the H1). Use `##` for section headings.

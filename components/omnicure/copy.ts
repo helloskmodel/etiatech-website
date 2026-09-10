@@ -40,7 +40,7 @@ export const CONTACT = {
   // WeCom "kfid" link is a real URL: on mobile it hands off to WeChat/WeCom,
   // on desktop it opens WeCom's own scan page.
   wecomUrl: "https://work.weixin.qq.com/kfid/kfcae13b93d714df6b6",
-  email: "Omnicure@etia-tech.com",
+  email: "sales@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
 

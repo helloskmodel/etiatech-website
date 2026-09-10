@@ -37,6 +37,6 @@ CPO 市场是商用光子学中增长最快的细分领域之一，随行业从�
 
 - 查看完整的[协同封装光学案例](/application#AN-PHO-002)，了解工艺细节与推荐系统。
 - 比较跨点固化、面固化与 LED 平台的[UV 光固化系统](/product)。
-- 有具体的 CPO 粘接工序需要验证？[联系我们的工程师](mailto:mark_tang@etia-tech.com?subject=CPO%20UV%20Curing)。
+- 有具体的 CPO 粘接工序需要验证？[联系我们的工程师](mailto:sales@etia-tech.com?subject=CPO%20UV%20Curing)。
 
 *ETIA 是 OmniCure UV 固化系统在泰国和越南的授权经销商,同时供应 Phoseon、Fusion UV 与 Noblelight UV 固化系统。*
