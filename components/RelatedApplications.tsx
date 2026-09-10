@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { getApplicationsForProduct } from "@/data/applicationsData";
+import { isPublishedApplication } from "@/components/industrySolutions";
 
 export default function RelatedApplications({ productSlug, limit = 3 }: { productSlug: string; limit?: number }) {
-  const applications = getApplicationsForProduct(productSlug, limit);
+  // Only notes one of the five industries claims — the rest are off the shelf.
+  const applications = getApplicationsForProduct(productSlug, limit).filter((a) => isPublishedApplication(a.slug));
   if (!applications.length) return null;
   return (
     <section className="border-t border-gray-100 bg-[#f6f8fb] py-16">

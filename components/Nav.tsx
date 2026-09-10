@@ -7,7 +7,6 @@ import { useLocale, t, type LangText, type Locale, LOCALE_LABELS, ACTIVE_LOCALES
 import { inquiryMailto } from "@/components/contact";
 import { localizeHref, delocalizeHref } from "@/components/localeHref";
 import { LIGHT_SOURCES } from "@/components/lightSources";
-import { publishedIndustries, industryHref } from "@/components/industrySolutions";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 
 const languages: Locale[] = ["en", "zh", "vi", "th"];
@@ -21,8 +20,7 @@ type MenuGroup = { heading: LangText; links: MenuLink[] };
 // PRODUCT opens two columns: the light sources customers search for — the
 // same seven, in the same order, as the home page row — and the brands they
 // already know. The inquiry shop leads the first column: it is where every
-// product on the site can be picked and asked for. APPLICATION opens the five
-// industries.
+// product on the site can be picked and asked for.
 const productMenu: MenuGroup[] = [
   {
     heading: { en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" },
@@ -40,13 +38,6 @@ const productMenu: MenuGroup[] = [
   },
 ];
 
-const applicationMenu: MenuGroup[] = [
-  {
-    heading: { en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" },
-    links: publishedIndustries.map((i) => ({ href: industryHref(i.slug), label: i.name })),
-  },
-];
-
 // Top-level nav. An item with `groups` opens a dropdown; `href` is still the
 // destination when the item itself is clicked, so PRODUCT and APPLICATION stay
 // reachable on touch devices and for keyboard users.
@@ -59,11 +50,9 @@ const navItems: NavItem[] = [
     label: { en: "Product", zh: "产品中心", vi: "Sản phẩm", th: "ผลิตภัณฑ์" },
     groups: productMenu,
   },
-  {
-    href: "/applications",
-    label: { en: "Application", zh: "行业应用", vi: "Ứng dụng", th: "การใช้งาน" },
-    groups: applicationMenu,
-  },
+  // APPLICATION is one page: the five industries as filters over every note
+  // the site lists. No dropdown — the page is the menu.
+  { href: "/applications", label: { en: "Application", zh: "行业应用", vi: "Ứng dụng", th: "การใช้งาน" } },
   { href: "/insights", label: { en: "Insight", zh: "洞察", vi: "Thông tin", th: "บทความ" } },
   { href: "/contact", label: { en: "Sales & Service", zh: "销售与服务", vi: "Bán hàng & dịch vụ", th: "ฝ่ายขายและบริการ" } },
 ];

@@ -458,6 +458,22 @@ export const industryList: IndustrySolution[] = INDUSTRY_ORDER.map((slug) => ind
 // What the site actually shows: menus, grids, cross-links and the sitemap.
 export const publishedIndustries: IndustrySolution[] = industryList.filter((i) => !i.draft);
 
+// The application notes the five industries claim, in industry order. These
+// are the only notes the site lists — on /applications, in the sitemap, on
+// product pages. A note no industry claims still resolves at its URL (nothing
+// indexed 404s) but carries noindex and is linked from nowhere, until an
+// industry takes it or it is retired.
+export const publishedApplicationSlugs: string[] = Array.from(
+  new Set(publishedIndustries.flatMap((i) => i.applicationSlugs))
+);
+const PUBLISHED_APP = new Set(publishedApplicationSlugs);
+export function isPublishedApplication(slug: string): boolean {
+  return PUBLISHED_APP.has(slug);
+}
+export function industryOfApplication(slug: string): IndustrySlug | undefined {
+  return publishedIndustries.find((i) => i.applicationSlugs.includes(slug))?.slug;
+}
+
 export function industryHref(slug: IndustrySlug): string {
   return `/solutions/${slug}`;
 }

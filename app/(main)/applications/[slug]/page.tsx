@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ApplicationCaseStudyView from "@/components/ApplicationCaseStudyView";
 import { applicationsData, getApplicationBySlug } from "@/data/applicationsData";
 import { languageAlternates } from "@/components/localePageSeo";
+import { isPublishedApplication } from "@/components/industrySolutions";
 
 const SITE = "https://www.etiatech.com";
 
@@ -19,6 +20,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: application.seo.title,
     description: application.seo.description,
     keywords: application.seo.keywords,
+    // A note no industry claims is not on the shelf: it resolves, but is not
+    // indexed and is linked from nowhere.
+    ...(isPublishedApplication(slug) ? {} : { robots: { index: false, follow: false } }),
     alternates: { canonical: url, languages: languageAlternates(`/applications/${slug}`) },
     openGraph: { title: application.seo.title, description: application.seo.description, url, type: "article", images: [application.image] },
   };

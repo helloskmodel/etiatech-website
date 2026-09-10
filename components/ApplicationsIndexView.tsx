@@ -10,37 +10,31 @@ import { inquiryMailto } from "@/components/contact";
 import TrustStrip from "@/components/TrustStrip";
 import UvCuringSelector from "@/components/UvCuringSelector";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
-import { CATEGORY_LABEL } from "@/components/industries";
-import { APPLICATION_CATEGORIES, getListedApplications } from "@/data/applicationsData";
+import { localizeHref } from "@/components/localeHref";
+import { getListedApplications } from "@/data/applicationsData";
 import type { Application } from "@/data/applicationTypes";
+import { publishedIndustries, industryHref, industryOfApplication, type IndustrySlug } from "@/components/industrySolutions";
 
-const listedApplications = getListedApplications();
+// The notes the five industries claim, in industry order — the only ones the
+// page lists. A note no industry has taken is not on the shelf yet.
+const listedApplications: Application[] = (() => {
+  const all = getListedApplications();
+  const bySlug = new Map(all.map((a) => [a.slug, a]));
+  return publishedIndustries.flatMap((i) =>
+    i.applicationSlugs.map((s) => bySlug.get(s)).filter((a): a is Application => Boolean(a))
+  );
+})();
 
-// Product filter bar — match against each case's recommendedProducts text.
-const PRODUCT_FILTERS: { key: string; label: LangText; token?: string }[] = [
-  { key: "All", label: { en: "All Products", zh: "全部产品" , vi: "Tất cả sản phẩm" } },
-  { key: "s2000", label: { en: "OmniCure S2000 Elite", zh: "OmniCure S2000 Elite" }, token: "S2000" },
-  { key: "lx500", label: { en: "OmniCure LX500", zh: "OmniCure LX500" }, token: "LX500" },
-  { key: "ac", label: { en: "OmniCure AC Series", zh: "OmniCure AC 系列" }, token: "AC" },
-];
-
-function matchesProduct(application: Application, key: string): boolean {
-  if (key === "All") return true;
-  const token = PRODUCT_FILTERS.find((p) => p.key === key)?.token;
-  if (!token) return true;
-  return (application.recommendedProducts as string[]).some((p) => p.includes(token));
-}
+const ALL: LangText = { en: "All", zh: "全部", th: "ทั้งหมด", vi: "Tất cả" };
 
 export default function ApplicationsIndexView() {
   const { locale } = useLocale();
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("All Applications");
-  const [product, setProduct] = useState("All");
+  const [industry, setIndustry] = useState<IndustrySlug | "all">("all");
   const applications = useMemo(() => {
     const term = query.trim().toLowerCase();
     return listedApplications.filter((application) => {
-      if (category !== "All Applications" && application.industryCategory !== category) return false;
-      if (!matchesProduct(application, product)) return false;
+      if (industry !== "all" && industryOfApplication(application.slug) !== industry) return false;
       if (!term) return true;
       return [
       application.title,
@@ -52,7 +46,7 @@ export default function ApplicationsIndexView() {
       ...application.recommendedProducts,
       ].join(" ").toLowerCase().includes(term);
     });
-  }, [category, product, query]);
+  }, [industry, query]);
 
   return (
     <>
@@ -76,37 +70,35 @@ export default function ApplicationsIndexView() {
 
       <main className="bg-[#f6f8fb] py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Product filter bar */}
-          <div className="mb-4">
-            <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#41A62A]">{t({ en: "Filter by Product", zh: "按产品筛选", th: "กรองตามผลิตภัณฑ์", vi: "Lọc theo sản phẩm" }, locale)}</p>
-            <div className="flex gap-2 overflow-x-auto pb-2">
-              {PRODUCT_FILTERS.map((p) => {
-                const count = p.key === "All" ? listedApplications.length : listedApplications.filter((a) => matchesProduct(a, p.key)).length;
-                return (
-                  <button key={p.key} type="button" onClick={() => setProduct(p.key)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${product === p.key ? "border-[#41A62A] bg-[#41A62A] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#41A62A] hover:text-[#41A62A]"}`}>
-                    {t(p.label, locale)} <span className="ml-1 opacity-70">{count}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Industry filter */}
-          <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#1A56DB]">{t({ en: "Filter by Industry", zh: "按行业筛选", th: "กรองตามอุตสาหกรรม", vi: "Lọc theo ngành" }, locale)}</p>
-          <nav aria-label="Application industries" className="mb-8 flex gap-2 overflow-x-auto pb-2">
-            {["All Applications", ...APPLICATION_CATEGORIES].map((item) => {
-              const count = item === "All Applications" ? listedApplications.length : listedApplications.filter((application) => application.industryCategory === item).length;
+          {/* One filter: the five industries. The active one links on to its
+              solution page, where the industry is explained in full. */}
+          <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#1A56DB]">{t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}</p>
+          <nav aria-label="Application industries" className="mb-6 flex gap-2 overflow-x-auto pb-2">
+            <button type="button" onClick={() => setIndustry("all")} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${industry === "all" ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-gray-200 bg-white text-gray-700 hover:border-[#1A56DB]"}`}>
+              {t(ALL, locale)} <span className="ml-1 opacity-70">{listedApplications.length}</span>
+            </button>
+            {publishedIndustries.map((i) => {
+              const count = listedApplications.filter((a) => industryOfApplication(a.slug) === i.slug).length;
+              const active = industry === i.slug;
               return (
-                <button key={item} type="button" onClick={() => setCategory(item)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${category === item ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-gray-200 bg-white text-gray-600 hover:border-[#1A56DB] hover:text-[#1A56DB]"}`}>
-                  {CATEGORY_LABEL[item] ? t(CATEGORY_LABEL[item], locale) : item} <span className="ml-1 opacity-70">{count}</span>
+                <button key={i.slug} type="button" onClick={() => setIndustry(i.slug)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${active ? "text-white" : "border-gray-200 bg-white text-gray-700 hover:border-[#1A56DB]"}`} style={active ? { background: i.accent, borderColor: i.accent } : undefined}>
+                  {t(i.name, locale)} <span className="ml-1 opacity-70">{count}</span>
                 </button>
               );
             })}
           </nav>
+          {industry !== "all" && (
+            <p className="mb-6 text-sm text-gray-600">
+              {t(publishedIndustries.find((i) => i.slug === industry)!.tagline, locale)}{" "}
+              <Link href={localizeHref(industryHref(industry), locale)} className="font-bold text-[#1A56DB] hover:underline">
+                {t({ en: "Industry solution →", zh: "行业方案 →", th: "โซลูชันอุตสาหกรรม →", vi: "Giải pháp ngành →" }, locale)}
+              </Link>
+            </p>
+          )}
           <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
             <div>
               <p className="text-sm font-semibold text-gray-900">{t({ en: `${applications.length} of ${listedApplications.length} application case studies`, zh: `共 ${listedApplications.length} 个应用案例，当前显示 ${applications.length} 个`, th: `${applications.length} จาก ${listedApplications.length} กรณีศึกษา`, vi: `${applications.length} / ${listedApplications.length} case study ứng dụng` }, locale)}</p>
-              <p className="mt-1 text-xs text-gray-500">{t({ en: "Filter by industry, process, technology, or product.", zh: "可按行业、工艺、技术或产品筛选。", th: "กรองตามอุตสาหกรรม กระบวนการ เทคโนโลยี หรือผลิตภัณฑ์", vi: "Lọc theo ngành, quy trình, công nghệ hoặc sản phẩm." }, locale)}</p>
+              <p className="mt-1 text-xs text-gray-500">{t({ en: "Filter by industry, or search by process, technology or product.", zh: "按行业筛选，或按工艺、技术、产品搜索。", th: "กรองตามอุตสาหกรรม กระบวนการ เทคโนโลยี หรือผลิตภัณฑ์", vi: "Lọc theo ngành, quy trình, công nghệ hoặc sản phẩm." }, locale)}</p>
             </div>
             <label className="w-full sm:max-w-sm">
               <span className="sr-only">{t({ en: "Search applications", zh: "搜索应用", th: "ค้นหาการใช้งาน", vi: "Tìm ứng dụng" }, locale)}</span>
