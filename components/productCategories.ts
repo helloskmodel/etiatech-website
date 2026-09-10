@@ -22,7 +22,6 @@ export type ProductCategorySlug =
   | "mercury-uv-lamp"
   | "uv-led"
   | "microwave-uv-lamp"
-  | "uv-measurement"
   | "infrared-heating"
   | "analytical-light-sources";
 
@@ -73,9 +72,9 @@ export type ProductCategory = {
 
 // The two radiometers are catalogued under "UV Spot Curing" because they ship
 // with the S-Series spot systems, which is also where they are sold from: they
-// appear under the mercury lamp category alongside the S2000. The measurement
-// category still claims them, so it is ready if it is ever published — it is a
-// draft, so no product shows up twice on the live site.
+// belong to the mercury lamp category, alongside the S2000 they calibrate.
+// Naming them here lets that category claim them, lets the UV LED category pass
+// over them, and orders them after the systems rather than before.
 const MEASUREMENT_SLUGS = new Set(["r2000", "ls200"]);
 
 export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
@@ -434,46 +433,6 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     match: (p) => p.tech === "Microwave UV Curing",
   },
 
-  // ───────────────────────── 4. 精密检测仪表 ─────────────────────────
-  "uv-measurement": {
-    slug: "uv-measurement",
-    accent: "#0ea5e9",
-    name: { en: "Precision UV Measurement Instruments", zh: "精密检测仪表", vi: "Thiết bị đo UV chính xác", th: "เครื่องมือวัด UV ความแม่นยำสูง" },
-    tagline: {
-      en: "Radiometers and calibration systems — the instruments that turn a UV process from 'it looked cured' into a documented number.",
-      zh: "辐照计与校准系统——把紫外工艺从「看起来固化了」变成可记录数据的仪表。",
-      vi: "Thiết bị đo bức xạ và hệ hiệu chuẩn — những công cụ biến quy trình UV từ “trông có vẻ đã đóng rắn” thành một con số có hồ sơ.",
-      th: "เครื่องวัดรังสีและระบบสอบเทียบ — เครื่องมือที่เปลี่ยนกระบวนการ UV จาก “ดูเหมือนบ่มแล้ว” ให้เป็นตัวเลขที่บันทึกได้",
-    },
-    intro: [
-      {
-        en: "A UV process is only controlled if it is measured. Radiometers verify that the irradiance and dose reaching the bond line are what the process was validated at — before a drifting lamp, a contaminated light guide or a changed working distance turns into a field failure.",
-        zh: "紫外工艺唯有可测量，方能可控。辐照计用于验证抵达粘接面的辐照度与剂量是否与工艺验证值一致——避免灯泡衰减、光导污染或工作距离变化演变为现场失效。",
-        vi: "Một quy trình UV chỉ được kiểm soát nếu nó được đo. Thiết bị đo bức xạ xác nhận rằng cường độ và liều chiếu tới đường dán đúng bằng giá trị quy trình đã được thẩm định — trước khi một bóng đèn suy giảm, một ống dẫn sáng bị bẩn hay một khoảng cách làm việc bị thay đổi trở thành lỗi ngoài hiện trường.",
-        th: "กระบวนการ UV จะถือว่าควบคุมได้ก็ต่อเมื่อมีการวัด เครื่องวัดรังสียืนยันว่าความเข้มและปริมาณแสงที่ไปถึงแนวยึดตรงกับค่าที่กระบวนการผ่านการตรวจรับรองไว้ — ก่อนที่หลอดที่เสื่อมลง ตัวนำแสงที่ปนเปื้อน หรือระยะทำงานที่เปลี่ยนไป จะกลายเป็นความเสียหายในภาคสนาม",
-      },
-      {
-        en: "ETIA supplies the OmniCure® R2000 radiometer for lamp-based spot systems and the LS200 UV LED radiometry and calibration system, both with traceable factory calibration. For regulated medical device and aerospace production, these are what makes your process records defensible in an audit.",
-        zh: "ETIA 供应用于灯式点固化系统的 OmniCure® R2000 辐照计，以及 LS200 UV LED 辐照测量与校准系统，均具备可溯源的出厂校准。对于受监管的医疗器械与航空航天生产而言，这正是让工艺记录在审核中站得住脚的依据。",
-        vi: "ETIA cung cấp thiết bị đo bức xạ OmniCure® R2000 cho hệ đóng rắn điểm dùng đèn và hệ đo–hiệu chuẩn UV LED LS200, cả hai đều có hiệu chuẩn xuất xưởng truy xuất được. Với sản xuất thiết bị y tế và hàng không vũ trụ chịu quản lý, đây chính là thứ khiến hồ sơ quy trình của bạn đứng vững trong một cuộc đánh giá.",
-        th: "ETIA จัดหาเครื่องวัดรังสี OmniCure® R2000 สำหรับระบบบ่มแบบจุดที่ใช้หลอด และระบบวัด–สอบเทียบ UV LED รุ่น LS200 ทั้งสองมาพร้อมการสอบเทียบจากโรงงานที่สอบกลับได้ สำหรับการผลิตอุปกรณ์การแพทย์และอากาศยานที่อยู่ภายใต้การกำกับดูแล นี่คือสิ่งที่ทำให้บันทึกกระบวนการของคุณยืนหยัดได้ในการตรวจประเมิน",
-      },
-    ],
-    applications: [
-      { en: "Medical device process validation", zh: "医疗器械工艺验证", vi: "Thẩm định quy trình thiết bị y tế", th: "การตรวจรับรองกระบวนการอุปกรณ์การแพทย์" },
-      { en: "Routine production QA checks", zh: "量产例行质量检查", vi: "Kiểm tra chất lượng định kỳ trong sản xuất", th: "การตรวจสอบคุณภาพประจำในการผลิต" },
-      { en: "Lamp & LED ageing monitoring", zh: "灯泡与 LED 衰减监控", vi: "Giám sát lão hóa đèn & LED", th: "การเฝ้าติดตามการเสื่อมของหลอด & LED" },
-      { en: "Line qualification (IQ/OQ/PQ)", zh: "产线确认（IQ/OQ/PQ）", vi: "Xác nhận dây chuyền (IQ/OQ/PQ)", th: "การรับรองสายการผลิต (IQ/OQ/PQ)" },
-      { en: "R&D process development", zh: "研发工艺开发", vi: "Phát triển quy trình R&D", th: "การพัฒนากระบวนการ R&D" },
-    ],
-    metaTitle: "UV Radiometers & Calibration Instruments | OmniCure R2000, LS200 | ETIA",
-    metaDescription:
-      "Precision UV measurement instruments — OmniCure R2000 radiometer and LS200 UV LED radiometry and calibration system with traceable calibration, for process validation and production QA. Supplied by ETIA.",
-    match: (p) => MEASUREMENT_SLUGS.has(p.slug),
-    // Awaiting the customer's own instrument line-up and copy.
-    draft: true,
-  },
-
   // ────────────────────────── 5. 红外加热 ──────────────────────────
   "infrared-heating": {
     slug: "infrared-heating",
@@ -669,7 +628,6 @@ export const PRODUCT_CATEGORY_ORDER: ProductCategorySlug[] = [
   "mercury-uv-lamp",
   "uv-led",
   "microwave-uv-lamp",
-  "uv-measurement",
   "infrared-heating",
   "analytical-light-sources",
 ];
