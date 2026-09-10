@@ -23,6 +23,7 @@ import FinalCta from "@/components/FinalCta";
 import NewsTicker from "@/components/NewsTicker";
 import CustomerLogos from "@/components/CustomerLogos";
 import HomeCarousel from "@/components/HomeCarousel";
+import { LIGHT_SOURCES } from "@/components/lightSources";
 
 const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
   { title: { en: "20 Years of Application Experience", zh: "20 年应用经验", th: "ประสบการณ์ด้านการใช้งาน 20 ปี", vi: "20 năm kinh nghiệm ứng dụng" }, body: { en: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", zh: "覆盖医疗、电子、光子、汽车及工业制造场景，提供贴近现场的紫外线固化经验。", th: "เรามีความรู้ด้าน UV curing จากประสบการณ์จริง ครอบคลุมงานผลิตในอุตสาหกรรมการแพทย์ อิเล็กทรอนิกส์ โฟโตนิกส์ ยานยนต์ และอุตสาหกรรมการผลิตทั่วไป", vi: "Chúng tôi có kiến thức thực tiễn về UV curing trong các lĩnh vực sản xuất thiết bị y tế, điện tử, quang tử, ô tô và sản xuất công nghiệp." }, icon: GraduationCap },
@@ -31,52 +32,6 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
   { title: { en: "In-House Repair & Lifecycle Support", zh: "内部维修 长期支持", th: "บริการซ่อมและการสนับสนุนตลอดอายุการใช้งาน", vi: "Sửa chữa nội bộ & hỗ trợ vòng đời sản phẩm" }, body: { en: "Troubleshooting, maintenance and repair coordination to keep your process running.", zh: "故障排查、维护保养与维修协调，保障工艺持续稳定运行。", th: "ให้การสนับสนุนด้านการแก้ไขปัญหา การบำรุงรักษา และการประสานงานซ่อม เพื่อช่วยให้กระบวนการผลิตดำเนินต่อไปอย่างมั่นคง", vi: "Hỗ trợ xử lý sự cố, bảo trì và điều phối sửa chữa nhằm giúp quy trình sản xuất vận hành ổn định." }, icon: Wrench },
 ];
 
-// The light sources ETIA leads with, in the order ETIA sells them: the lamp
-// spot systems that are most of the business, then LED spot, the two area
-// families, microwave, and infrared last. The eyebrow on each card still names
-// the family the manufacturer's own selector guide puts it in — broad spectrum
-// (a lamp, the whole 200–400 nm band) against single wavelength (an LED at one
-// peak), with infrared outside UV altogether — so the classification stays
-// readable without a paragraph above the row.
-const COS_IMAGE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE";
-
-// `photo` is an image ETIA supplied for this card. A photograph of the source
-// at work fills the card edge to edge; one shot against white is letterboxed
-// like every other product picture, which `fit: "contain"` asks for. Without a
-// `photo` the card falls back to `model` — the catalogue shot of a
-// representative machine.
-const BROAD = { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" };
-const SINGLE = { en: "UV Curing · Single Wavelength", zh: "紫外固化 · 单波长", th: "การบ่ม UV · ความยาวคลื่นเดียว", vi: "Đóng rắn UV · Đơn bước sóng" };
-const IR = { en: "Infrared Heating", zh: "红外加热", th: "การให้ความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" };
-
-const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: string; photo?: string; fit?: "cover" | "contain"; accent: string }[] = [
-  { family: BROAD,
-    name: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", th: "ระบบบ่มแบบจุดด้วยหลอด UV", vi: "Hệ thống đóng rắn điểm bằng đèn UV" },
-    href: "/product/technology/mercury-uv-lamp", model: "s2000-elite", accent: "#1A56DB" },
-  { family: SINGLE,
-    name: { en: "UV LED Spot Curing Systems", zh: "UV LED 点固化系统", th: "ระบบบ่มแบบจุด UV LED", vi: "Hệ thống đóng rắn điểm UV LED" },
-    // The LX505's own photograph is shot on a blue gradient, which sits oddly
-    // in a row of white-background equipment shots. The LX500 stands in for
-    // the shelf instead; the card names the category, not the model.
-    href: "/product/technology/uv-led#uv-led-spot-curing-systems", model: "lx500", accent: "#41A62A" },
-  { family: SINGLE,
-    name: { en: "Water-Cooled UV LED Area Curing Systems", zh: "水冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยน้ำ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng nước" },
-    href: "/product/technology/uv-led#uv-led-water-cooled-systems", model: "fl400", accent: "#7c3aed" },
-  { family: SINGLE,
-    name: { en: "Air-Cooled UV LED Area Curing Systems", zh: "风冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยอากาศ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng khí" },
-    href: "/product/technology/uv-led#uv-led-air-cooled-systems", model: "ac8", accent: "#0ea5e9" },
-  { family: BROAD,
-    name: { en: "Microwave UV Curing Systems", zh: "微波无极灯固化系统", th: "ระบบบ่ม UV ไมโครเวฟ", vi: "Hệ thống đóng rắn UV vi sóng" },
-    href: "/product/technology/microwave-uv-lamp", model: "f-series", accent: "#f59e0b",
-    photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/FUSION%20UV`, fit: "contain" },
-  { family: IR,
-    name: { en: "Infrared Emitters", zh: "红外发射器", th: "ตัวเปล่งอินฟราเรด", vi: "Bộ phát hồng ngoại" },
-    href: "/product/technology/infrared-emitters", model: "ir-golden8", accent: "#dc2626",
-    photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/Infrared%20Heating` },
-  { family: IR,
-    name: { en: "Infrared Systems", zh: "红外加热系统", th: "ระบบอินฟราเรด", vi: "Hệ thống hồng ngoại" },
-    href: "/product/technology/infrared-heating", model: "ir-m85", accent: "#dc2626" },
-];
 
 // The four Excelitas brands, in the order they are shown under BY BRAND.
 const HOME_BRAND_ORDER: BrandSlug[] = ["omnicure", "noblelight", "phoseon", "fusion-uv"];

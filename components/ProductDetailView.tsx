@@ -8,6 +8,9 @@ import FinalCta from "@/components/FinalCta";
 import { localizeSpecLabel } from "@/components/specLabels.zh";
 import { useLocale, t } from "@/components/LocaleContext";
 import RelatedApplications from "@/components/RelatedApplications";
+import AddToInquiryButton from "@/components/inquiry/AddToInquiryButton";
+import PartPicker from "@/components/inquiry/PartPicker";
+import { partsForModel } from "@/components/omnicureParts";
 
 const brandPageSlug: Record<Product["brandId"], string> = {
   omnicure: "omnicure",
@@ -61,6 +64,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             )}
             <p className="text-base text-gray-600 leading-relaxed mb-8 max-w-xl">{p.intro}</p>
             <div className="flex flex-wrap gap-4">
+              <AddToInquiryButton item={{ kind: "product", slug: product.slug }} accent={accent} size="lg" />
               <a href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: product.name })} className="px-6 py-3 rounded font-semibold text-white hover:opacity-90 transition-all" style={{ background: accent }}>{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร", vi: "Trao đổi với kỹ sư" }, locale)}</a>
               <a href={inquiryMailto(locale, { subject: "Datasheet Request", context: product.name })} className="px-6 py-3 rounded font-semibold text-gray-700 border border-gray-300 hover:border-gray-500 transition-all">⬇ {t({ en: "Request Datasheet", zh: "索取数据表", th: "ขอเอกสารข้อมูล", vi: "Yêu cầu bảng dữ liệu" }, locale)}</a>
             </div>
@@ -131,6 +135,17 @@ export default function ProductDetailView({ product, accent }: { product: Produc
                 </tbody>
               </table>
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Part numbers the catalogue lists for this model (OmniCure only) */}
+      {partsForModel[product.slug] && (
+        <section className="py-16 bg-white border-t border-gray-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Lamps, Light Guides & Part Numbers", zh: "灯泡、导光管与料号", th: "หลอด ท่อนำแสง & หมายเลขชิ้นส่วน", vi: "Đèn, ống dẫn sáng & mã linh kiện" }, locale)}</h2>
+            <p className="text-sm text-gray-600 mb-6">{t({ en: "Everything the catalogue lists for this model. Pick by what it is — the part number is filled in — and add it to your inquiry with the system.", zh: "目录里给这个机型列的全部配件。按用途逐项选，料号自动带出，和整机一起加进询单。", th: "ทุกอย่างที่แคตตาล็อกระบุสำหรับรุ่นนี้ เลือกตามสิ่งที่เป็น หมายเลขชิ้นส่วนจะถูกกรอกให้ แล้วเพิ่มลงในรายการสอบถามพร้อมกับระบบ", vi: "Mọi thứ catalogue liệt kê cho mẫu này. Chọn theo mô tả — mã linh kiện tự điền — rồi thêm vào yêu cầu cùng hệ thống." }, locale)}</p>
+            <PartPicker families={partsForModel[product.slug]} model={product.slug} heading={false} />
           </div>
         </section>
       )}
