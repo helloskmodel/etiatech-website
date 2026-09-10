@@ -136,9 +136,9 @@ export default function HomeView() {
               const img = src.photo ? cosResize(src.photo, 900) : stand ? productImage(stand) : "";
               const boxed = src.photo ? src.fit === "contain" : true;
               return (
-                <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[23%]">
-                  <div className="relative h-32 bg-[#F7FAFC] sm:h-36">
-                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${boxed ? "object-contain p-4" : "object-cover"}`} />}
+                <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[calc(25%-15px)]">
+                  <div className="relative h-24 bg-[#F7FAFC] sm:h-28">
+                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${boxed ? "object-contain p-3" : "object-cover"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: src.accent }} />
                   </div>
                   <div className="flex flex-1 flex-col p-4">
@@ -168,9 +168,9 @@ export default function HomeView() {
         <div className="mt-8">
           <HomeCarousel label={t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}>
             {publishedIndustries.map((s) => (
-              <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[23%]">
+              <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[calc(25%-15px)]">
                 {s.cardImage ? (
-                  <div className="relative h-32 bg-[#F7FAFC] sm:h-36">
+                  <div className="relative h-24 bg-[#F7FAFC] sm:h-28">
                     <Image src={cosResize(s.cardImage, 900)} alt={t(s.name, locale)} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className="object-cover transition duration-300 group-hover:scale-105" />
                   </div>
                 ) : (
@@ -200,9 +200,9 @@ export default function HomeView() {
               const shot = b.cardImage ? cosResize(b.cardImage, 900) : hero ? productImage(hero) : "";
               const cats = categoriesForBrand(b.catalogBrandId);
               return (
-                <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[23%]">
-                  <div className="relative h-32 bg-[#F7FAFC] sm:h-36">
-                    {shot && <Image src={shot} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${b.cardImage ? "object-cover" : "object-contain p-4"}`} />}
+                <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[calc(25%-15px)]">
+                  <div className="relative h-24 bg-[#F7FAFC] sm:h-28">
+                    {shot && <Image src={shot} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${b.cardImage ? "object-cover" : "object-contain p-3"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: b.color }} />
                   </div>
                   <div className="flex flex-1 flex-col p-4">
