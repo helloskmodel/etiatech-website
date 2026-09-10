@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import type { LangText } from "@/components/LocaleContext";
 import { products, type Product, type ProductDoc } from "@/components/productCatalog";
+import { cosResize } from "@/components/cosImage";
+
+const COS_LIGHT = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LIGHT%20RESOURCE%20";
 
 const SITE = "https://www.etiatech.com";
 const COS_PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
@@ -465,7 +468,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
         base: COS_PDF,
       },
     ],
-    heroImage: "/images/infrared/emitter-array.jpg",
+    heroImage: cosResize(`${COS_LIGHT}/IR%20SYSTEM`, 1600),
     gallery: [
       {
         src: "/images/infrared/automotive-body-drying.jpg",
@@ -522,8 +525,8 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     metaTitle: "Infrared Emitters | Noblelight Golden 8, Carbon CIR & Special Emitters | ETIA",
     metaDescription:
       "Excelitas Noblelight infrared emitters — Golden 8 twin tube (short-wave, fast medium-wave, medium-wave), Carbon CIR\u00ae, round tube and Infralight\u00ae NIR, contoured, spotlight, spiral, omega, slot, QRC\u00ae and IP 65 special emitters, plus mountings and guards. Specified to your process by ETIA.",
-    heroImage: "/images/infrared/emitters/golden8.jpg",
-    cardImage: "/images/infrared/emitters/golden8.jpg",
+    heroImage: cosResize(`${COS_LIGHT}/IR%20EMMITTER`, 1600),
+    cardImage: cosResize(`${COS_LIGHT}/IR%20EMMITTER`, 900),
     gallery: [
       {
         src: "/images/infrared/emitters/twin-tube-diagram.jpg",

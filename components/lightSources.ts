@@ -52,9 +52,12 @@ export const LIGHT_SOURCES: LightSource[] = [
     photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/FUSION%20UV`, fit: "contain" },
   { family: IR,
     name: { en: "Infrared Emitters", zh: "红外发射器", th: "ตัวเปล่งอินฟราเรด", vi: "Bộ phát hồng ngoại" },
+    // Three Golden 8 twin tubes on white — boxed like the Fusion shot so the
+    // tubes are not cropped. (The bucket key is spelt "EMMITTER".)
     href: "/product/technology/infrared-emitters", model: "ir-golden8", accent: "#dc2626",
-    photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/Infrared%20Heating` },
+    photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/IR%20EMMITTER`, fit: "contain" },
   { family: IR,
     name: { en: "Infrared Systems", zh: "红外加热系统", th: "ระบบอินฟราเรด", vi: "Hệ thống hồng ngoại" },
-    href: "/product/technology/infrared-heating", model: "ir-m85", accent: "#dc2626" },
+    href: "/product/technology/infrared-heating", model: "ir-m85", accent: "#dc2626",
+    photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/IR%20SYSTEM` },
 ];
