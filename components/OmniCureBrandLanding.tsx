@@ -39,7 +39,8 @@ import TrustStrip from "@/components/TrustStrip";
 type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
 
 const order = [
-  "s2000-elite", "s1500-pro", "r2000", "s-series-light-guides",
+  "s2000-elite", "s1500-pro", "r2000",
+  "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter",
   "lx500", "v3-led-heads", "ls200",
   "ac2", "ac4", "ac5", "ac7", "ac8", "ac8-hd", "ac9225", "ac9225-f",
   "s2e-network-module",
@@ -49,7 +50,12 @@ const categoryBySlug: Record<string, Exclude<RouteId, "all">> = {
   "s2000-elite": "lamp-spot",
   "s1500-pro": "lamp-spot",
   r2000: "lamp-spot",
-  "s-series-light-guides": "lamp-spot",
+  "s-liquid-light-guide": "lamp-spot",
+  "s-fiber-light-guide": "lamp-spot",
+  "s-fiber-light-line": "lamp-spot",
+  "s-cure-ring-adapter": "lamp-spot",
+  "s-light-line-adapter": "lamp-spot",
+  "s-collimating-adapter": "lamp-spot",
   "s2e-network-module": "lamp-spot",
   "s2000-lamp": "lamp-spot",
   lx500: "led-spot",
