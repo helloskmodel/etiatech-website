@@ -33,12 +33,15 @@ export default function LampStockBand() {
 
   return (
     <section className="px-4 pt-10 pb-2 sm:px-6 md:pt-14 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-5 rounded-2xl border border-[#DCE9EE] bg-gradient-to-r from-[#F3F7FF] to-[#F2FBF8] p-5 sm:p-6 lg:flex-row lg:items-center lg:gap-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-2xl border border-[#DCE9EE] bg-gradient-to-r from-[#F3F7FF] to-[#F2FBF8] p-4 sm:p-6 lg:flex-row lg:items-center lg:gap-8">
+        {/* Picture and words share a row at every width; on a phone the
+            picture is a thumbnail beside the claim, not a banner above it. */}
+        <div className="flex min-w-0 flex-1 items-start gap-4 lg:gap-6">
         <Link
           href={LAMP_PATHS[locale]}
-          className="relative block aspect-video w-full shrink-0 overflow-hidden rounded-xl border border-white bg-white sm:w-56 lg:w-52"
+          className="relative block aspect-video w-24 shrink-0 overflow-hidden rounded-lg border border-white bg-white sm:w-40 lg:w-52 lg:rounded-xl"
         >
-          <Image src={LAMP.promoImage} alt={LAMP.heroAlt} fill sizes="(max-width: 640px) 100vw, 224px" className="object-cover" />
+          <Image src={LAMP.promoImage} alt={LAMP.heroAlt} fill sizes="(max-width: 640px) 96px, 224px" className="object-cover" />
         </Link>
 
         <div className="min-w-0 flex-1">
@@ -67,19 +70,20 @@ export default function LampStockBand() {
             {LAMP.primaryCode} · {LAMP.spec} · {t({ en: "2,000 h guaranteed", zh: "保证寿命 2,000 h", th: "รับประกัน 2,000 ชม.", vi: "bảo đảm 2.000 h" }, locale)}
           </p>
         </div>
+        </div>
 
-        <div className="flex shrink-0 flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
+        <div className="flex shrink-0 flex-row gap-2 lg:flex-col xl:flex-row">
           <button
             type="button"
             onClick={checkStock}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#087F6B] px-5 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5"
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#087F6B] px-4 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5 lg:flex-none"
           >
             {t({ en: "Check the stock", zh: "查询库存", th: "เช็คสต็อก", vi: "Kiểm tra tồn kho" }, locale)}
             <ArrowRight className="h-4 w-4" />
           </button>
           <a
             href={compat}
-            className="inline-flex items-center justify-center rounded-xl border border-[#D9E4EA] bg-white px-5 py-2.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96]"
+            className="inline-flex flex-1 items-center justify-center rounded-xl border border-[#D9E4EA] bg-white px-4 py-2.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96] lg:flex-none"
           >
             {t({ en: "Check compatibility", zh: "确认兼容性", th: "ตรวจสอบความเข้ากันได้", vi: "Kiểm tra tương thích" }, locale)}
           </a>
