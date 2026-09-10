@@ -116,11 +116,15 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     groups: [
       {
         title: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", vi: "Hệ thống đóng rắn điểm bằng đèn UV", th: "ระบบบ่มแบบจุดด้วยหลอด UV" },
-        match: (p) => p.sub === "UV Lamp Spot" || p.sub === "S-Series Accessory",
+        match: (p) => p.sub === "UV Lamp Spot",
       },
+      // The only lamp we catalogue is the S2000's own replacement bulb — an
+      // accessory to the systems above, not the Amba medium-pressure lamp line
+      // the manufacturer files under "Mercury Arc Lamps". It shelves with the
+      // light guides and the network module until that line is carried.
       {
-        title: { en: "Mercury Arc Lamps", zh: "汞灯灯管与替换灯", vi: "Đèn hồ quang thủy ngân", th: "หลอดอาร์กปรอท" },
-        match: (p) => p.sub === "Replacement Lamp",
+        title: { en: "S-Series Accessories & Replacement Lamps", zh: "S 系列配件与替换灯", vi: "Phụ kiện & đèn thay thế S-Series", th: "อุปกรณ์เสริม & หลอดเปลี่ยน S-Series" },
+        match: (p) => p.sub === "S-Series Accessory" || p.sub === "Replacement Lamp",
       },
       {
         title: { en: "UV Measurement", zh: "紫外测量", vi: "Đo lường UV", th: "การวัดค่า UV" },

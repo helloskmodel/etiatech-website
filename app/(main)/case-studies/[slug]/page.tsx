@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const seoDesc = cn.seoDesc.en;
   const keywords = [cn.primaryKw.en, cn.primaryKw.zh, ...`${cn.secondaryKw.en}，${cn.secondaryKw.zh ?? ""}`.split(/[，,]/).map((s) => s.trim())].filter((s): s is string => Boolean(s));
   return {
+    robots: { index: false, follow: false },
     title: `${seoTitle} | ETIA`,
     description: seoDesc,
     keywords,

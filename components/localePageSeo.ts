@@ -3,6 +3,7 @@ import type { Locale } from "@/components/LocaleContext";
 import { applicationsZh } from "@/data/applicationsData.zh";
 import { getApplicationBySlug } from "@/data/applicationsData";
 import { getCaseCnBySlug } from "@/data/caseStudiesCn";
+import { isPublishedApplication } from "@/components/industrySolutions";
 
 // Shared SEO plumbing for the locale-locked (/zh /vi /th) versions of the
 // main-site pages. Every group member must emit the SAME hreflang group.
@@ -61,7 +62,9 @@ export function applicationDetailMetadata(slug: string, locale: SubLocale): Meta
   const description = l10n?.subtitle?.[locale] ?? application.seo.description;
   const path = `/applications/${slug}`;
   const url = `${SITE}/${locale}${path}`;
+  const noindex = isPublishedApplication(slug) ? {} : { robots: { index: false as const, follow: false as const } };
   return {
+    ...noindex,
     title,
     description,
     keywords: application.seo.keywords,
@@ -109,6 +112,7 @@ const CASE_INDEX_META: Record<SubLocale, { title: string; description: string }>
 
 export function caseStudiesIndexMetadata(locale: SubLocale): Metadata {
   return {
+    robots: { index: false, follow: false },
     ...CASE_INDEX_META[locale],
     alternates: { canonical: `${SITE}/${locale}/case-studies`, languages: languageAlternates("/case-studies") },
   };
@@ -122,6 +126,7 @@ export function caseStudyDetailMetadata(slug: string, locale: SubLocale): Metada
   const path = `/case-studies/${slug}`;
   const url = `${SITE}/${locale}${path}`;
   return {
+    robots: { index: false, follow: false },
     title: `${title} | ETIA`,
     description,
     alternates: { canonical: url, languages: languageAlternates(path) },

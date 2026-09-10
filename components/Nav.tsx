@@ -6,8 +6,7 @@ import { usePathname } from "next/navigation";
 import { useLocale, t, type LangText, type Locale, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
 import { inquiryMailto } from "@/components/contact";
 import { localizeHref, delocalizeHref } from "@/components/localeHref";
-import { publishedProductCategories, productCategoryHref } from "@/components/productCategories";
-import { publishedIndustries, industryHref } from "@/components/industrySolutions";
+import { LIGHT_SOURCES } from "@/components/lightSources";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 
 const languages: Locale[] = ["en", "zh", "vi", "th"];
@@ -18,12 +17,17 @@ const BRAND_ORDER: BrandSlug[] = ["omnicure", "noblelight", "phoseon", "fusion-u
 type MenuLink = { href: string; label: LangText; note?: LangText };
 type MenuGroup = { heading: LangText; links: MenuLink[] };
 
-// PRODUCT opens two columns: the light-source technology customers search for,
-// and the brands they already know. APPLICATION opens the five industries.
+// PRODUCT opens two columns: the light sources customers search for — the
+// same seven, in the same order, as the home page row — and the brands they
+// already know. The inquiry shop leads the first column: it is where every
+// product on the site can be picked and asked for.
 const productMenu: MenuGroup[] = [
   {
-    heading: { en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" },
-    links: publishedProductCategories.map((c) => ({ href: productCategoryHref(c.slug), label: c.name })),
+    heading: { en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" },
+    links: [
+      { href: "/product", label: { en: "All products · Inquiry shop", zh: "全部产品 · 询单商城", th: "ผลิตภัณฑ์ทั้งหมด · ร้านสอบถาม", vi: "Tất cả sản phẩm · Gian hàng báo giá" } },
+      ...LIGHT_SOURCES.map((s) => ({ href: s.href, label: s.name })),
+    ],
   },
   {
     heading: { en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" },
@@ -31,13 +35,6 @@ const productMenu: MenuGroup[] = [
       href: `/product/${slug}`,
       label: { en: brandLanding[slug].name, zh: brandLanding[slug].name },
     })),
-  },
-];
-
-const applicationMenu: MenuGroup[] = [
-  {
-    heading: { en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" },
-    links: publishedIndustries.map((i) => ({ href: industryHref(i.slug), label: i.name })),
   },
 ];
 
@@ -53,11 +50,9 @@ const navItems: NavItem[] = [
     label: { en: "Product", zh: "产品中心", vi: "Sản phẩm", th: "ผลิตภัณฑ์" },
     groups: productMenu,
   },
-  {
-    href: "/applications",
-    label: { en: "Application", zh: "行业应用", vi: "Ứng dụng", th: "การใช้งาน" },
-    groups: applicationMenu,
-  },
+  // APPLICATION is one page: the five industries as filters over every note
+  // the site lists. No dropdown — the page is the menu.
+  { href: "/applications", label: { en: "Application", zh: "行业应用", vi: "Ứng dụng", th: "การใช้งาน" } },
   { href: "/insights", label: { en: "Insight", zh: "洞察", vi: "Thông tin", th: "บทความ" } },
   { href: "/contact", label: { en: "Sales & Service", zh: "销售与服务", vi: "Bán hàng & dịch vụ", th: "ฝ่ายขายและบริการ" } },
 ];

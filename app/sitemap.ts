@@ -1,13 +1,12 @@
 import type { MetadataRoute } from "next";
 import { products, productHref, productImage } from "@/components/productCatalog";
-import { caseStudiesCn } from "@/data/caseStudiesCn";
 import { applicationsData } from "@/data/applicationsData";
 import { getAllArticles, articleLocales } from "@/components/insights";
 import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
 import { LAMP_PATHS, LAMP_LANGUAGES } from "@/components/omnicure/s2000Lamp";
 import { languageAlternates, brandLanguageAlternates } from "@/components/localePageSeo";
 import { publishedProductCategories, productCategoryHref } from "@/components/productCategories";
-import { publishedIndustries, industryHref } from "@/components/industrySolutions";
+import { publishedIndustries, industryHref, isPublishedApplication } from "@/components/industrySolutions";
 
 // URL prefixes of the four language versions of a mirrored main-site path.
 const LOCALE_PREFIXES = ["", "/zh", "/vi", "/th"] as const;
@@ -78,12 +77,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
     // NOTE: /industries was retired — next.config redirects it (and its slugs)
     // to /applications, so it must not be listed here.
-    ...LOCALE_PREFIXES.map((prefix) => ({
-      url: `${SITE}${prefix}/case-studies`,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-      alternates: { languages: languageAlternates("/case-studies") },
-    })),
+    // NOTE: /case-studies is withdrawn for now — unlinked and noindex — so it
+    // is not listed.
     ...LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/insights`,
       changeFrequency: "weekly" as const,
@@ -170,22 +165,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Individual case-study landing pages (EN + ZH + VI + TH each), with the
-  // hero image attached for image-search indexing.
-  const casePages: MetadataRoute.Sitemap = caseStudiesCn.flatMap((c) =>
-    LOCALE_PREFIXES.map((prefix) => ({
-      url: `${SITE}${prefix}/case-studies/${c.slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-      alternates: { languages: languageAlternates(`/case-studies/${c.slug}`) },
-      ...(c.image ? { images: [c.image] } : {}),
-    }))
-  );
-
   // Application case-study pages (EN + ZH + VI + TH each), with images.
-  // Unpublished notes (published: false) are excluded like everywhere else.
+  // Only the notes one of the five industries claims — the same rule as the
+  // /applications page and the product pages.
   const applicationCasePages: MetadataRoute.Sitemap = applicationsData
-    .filter((application: { published?: boolean }) => application.published !== false)
+    .filter((application: { published?: boolean; slug: string }) => application.published !== false && isPublishedApplication(application.slug))
     .flatMap((application) =>
     LOCALE_PREFIXES.map((prefix) => ({
       url: `${SITE}${prefix}/applications/${application.slug}`,
@@ -217,5 +201,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
-  return [...core, ...productPages, ...applicationCasePages, ...insightPages, ...casePages];
+  return [...core, ...productPages, ...applicationCasePages, ...insightPages, ];
 }

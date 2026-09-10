@@ -46,7 +46,7 @@ export const markets: Record<MarketId, Market> = {
       p.brandId === "omnicure" &&
       p.tech === "UV Spot Curing" &&
       p.slug !== "v3-led-heads" &&
-      p.slug !== "s-series-light-guides",
+      p.sub !== "S-Series Accessory",
     // Thailand features applications in three focus areas only — Electronics,
     // Medical, and automotive connectors/interfaces — and only those that run
     // on the UV Spot products sold here.

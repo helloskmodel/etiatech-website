@@ -22,6 +22,14 @@ const nextConfig: NextConfig = {
     return [
       // Thailand /th/{th,en,zh} language microsite retired — redirect its old
       // indexed URLs to the (English) main site so they don't 404.
+      // The single "S Series Light Guides & Adapters" catalogue entry is now six
+      // products, one per accessory. Its URL points at the shelf that holds
+      // them all rather than at whichever one we picked.
+      {
+        source: "/product/systems/s-series-light-guides",
+        destination: "/product/technology/mercury-uv-lamp#s-series-accessories-replacement-lamps",
+        permanent: true,
+      },
       { source: "/th/th/:path*", destination: "/", permanent: true },
       { source: "/th/en/:path*", destination: "/", permanent: true },
       { source: "/th/zh/:path*", destination: "/", permanent: true },

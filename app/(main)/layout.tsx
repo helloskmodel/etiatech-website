@@ -7,6 +7,8 @@ import CookieConsent from "@/components/CookieConsent";
 import ChatFloatingButton from "@/components/ChatFloatingButton";
 import Analytics from "@/components/Analytics";
 import { LocaleProvider, type Locale } from "@/components/LocaleContext";
+import { InquiryProvider } from "@/components/inquiry/InquiryContext";
+import InquiryBar from "@/components/inquiry/InquiryBar";
 
 const LOCALES: Locale[] = ["en", "zh", "vi", "th"];
 
@@ -49,11 +51,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className="min-h-screen flex flex-col" style={{ background: "#ffffff", color: "#111827" }}>
         <Analytics />
         <LocaleProvider initialLocale={locale} cookieDriven={!isHome}>
-          <Nav />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <CookieConsent />
-          <ChatFloatingButton />
+          <InquiryProvider>
+            <Nav />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <CookieConsent />
+            <ChatFloatingButton />
+            <InquiryBar />
+          </InquiryProvider>
         </LocaleProvider>
       </body>
     </html>
