@@ -78,6 +78,112 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
         </div>
       </header>
 
+      {/* The catalogue leads. This page used to open with the overview and
+          the selection guide, so a visitor met several screens of prose
+          before the first product — on a phone, the grid was below the
+          fold twice over. The prose still follows, for the visitor who
+          wants it and for search; it simply no longer stands in front of
+          the pictures. */}
+      {/* Models */}
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-end justify-between gap-4">
+            <h2 className="text-2xl font-bold text-[#143C96] md:text-3xl">
+              {t({ en: "Systems & Models", zh: "产品型号", th: "ระบบและรุ่น", vi: "Hệ thống & model" }, locale)}
+            </h2>
+            {models.length > 0 && (
+              <span className="text-xs text-gray-400">
+                {models.length} {t({ en: "models", zh: "款", th: "รุ่น", vi: "model" }, locale)}
+              </span>
+            )}
+          </div>
+
+          {models.length > 0 ? (
+            // Grouped when the category defines sub-headings — UV LED is 30
+            // models, which stops being readable as one flat grid. Categories
+            // without groups come back as a single untitled group, so there is
+            // only ever one code path here.
+            <div className="mt-8 space-y-10">
+              {modelGroups.map((group, gi) => (
+                <div key={group.title ? group.title.en : `rest-${gi}`}>
+                  {group.title && (
+                    <div className="mb-4 flex items-baseline gap-3">
+                      <h3 className="shrink-0 text-lg font-bold text-[#143C96]">{t(group.title, locale)}</h3>
+                      <span className="h-px flex-1 bg-[#E6EAF0]" />
+                      <span className="shrink-0 text-xs text-gray-400">
+                        {group.items.length} {t({ en: "models", zh: "款", th: "รุ่น", vi: "model" }, locale)}
+                      </span>
+                    </div>
+                  )}
+                  <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
+                    {group.items.map((raw) => {
+                      const p = localizeProduct(raw, locale);
+                      return (
+                        <Link
+                          key={p.slug}
+                          href={productHref(p)}
+                          className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all hover:shadow-md"
+                        >
+                          <div className="relative h-32 overflow-hidden bg-gray-50 sm:h-56">
+                            {productImage(p) ? (
+                              <Image
+                                src={productImage(p)}
+                                alt={p.name}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                              />
+                            ) : (
+                              <span className="absolute inset-0 flex items-center justify-center px-3 text-center text-sm font-semibold" style={{ color: brandAccent[p.brandId] }}>
+                                {p.brand}
+                              </span>
+                            )}
+                            <span className="absolute left-2 top-2 rounded px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: brandAccent[p.brandId] }}>
+                              {p.brand}
+                            </span>
+                          </div>
+                          {/* Name and nothing else. The blurb belongs on the
+                              product page; in a grid of thirty it turned
+                              browsing into reading. */}
+                          <div className="flex flex-1 flex-col p-3 sm:p-4">
+                            <h4 className="text-xs font-bold leading-snug text-[#1A56DB] sm:text-sm">{p.name}</h4>
+                            <span className="mt-auto pt-2 text-[11px] font-semibold group-hover:underline sm:pt-3 sm:text-xs" style={{ color: brandAccent[p.brandId] }}>
+                              {t({ en: "View details →", zh: "查看详情 →", th: "ดูรายละเอียด →", vi: "Xem chi tiết →" }, locale)}
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            // No models published yet — invite the enquiry instead of showing
+            // an empty grid or placeholder specs.
+            <div className="mt-8 rounded-2xl border border-dashed border-[#D9E4EA] bg-[#F7FAFC] p-10 text-center">
+              <p className="mx-auto max-w-xl text-base leading-7 text-[#475467]">
+                {t(
+                  {
+                    en: "We size this equipment to the process rather than selling it from a shelf. Send us your temperature, line speed and product geometry and our engineers will specify it.",
+                    zh: "这类设备我们按工艺选型，而非现货照单发货。请把您的工艺温度、产线速度与产品尺寸发给我们，工程师将为您确定方案。",
+                  },
+                  locale
+                )}
+              </p>
+              <a
+                href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: c.name.en })}
+                className="mt-6 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5"
+                style={{ background: c.accent }}
+              >
+                {t({ en: "Request a Specification", zh: "索取选型方案", th: "ขอข้อมูลจำเพาะ", vi: "Yêu cầu cấu hình" }, locale)}
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Overview */}
       <section className="border-b border-gray-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
@@ -150,104 +256,6 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
           </div>
         </section>
       )}
-
-      {/* Models */}
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl font-bold text-[#143C96] md:text-3xl">
-              {t({ en: "Systems & Models", zh: "产品型号", th: "ระบบและรุ่น", vi: "Hệ thống & model" }, locale)}
-            </h2>
-            {models.length > 0 && (
-              <span className="text-xs text-gray-400">
-                {models.length} {t({ en: "models", zh: "款", th: "รุ่น", vi: "model" }, locale)}
-              </span>
-            )}
-          </div>
-
-          {models.length > 0 ? (
-            // Grouped when the category defines sub-headings — UV LED is 30
-            // models, which stops being readable as one flat grid. Categories
-            // without groups come back as a single untitled group, so there is
-            // only ever one code path here.
-            <div className="mt-8 space-y-10">
-              {modelGroups.map((group, gi) => (
-                <div key={group.title ? group.title.en : `rest-${gi}`}>
-                  {group.title && (
-                    <div className="mb-4 flex items-baseline gap-3">
-                      <h3 className="shrink-0 text-lg font-bold text-[#143C96]">{t(group.title, locale)}</h3>
-                      <span className="h-px flex-1 bg-[#E6EAF0]" />
-                      <span className="shrink-0 text-xs text-gray-400">
-                        {group.items.length} {t({ en: "models", zh: "款", th: "รุ่น", vi: "model" }, locale)}
-                      </span>
-                    </div>
-                  )}
-                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {group.items.map((raw) => {
-                      const p = localizeProduct(raw, locale);
-                      return (
-                        <Link
-                          key={p.slug}
-                          href={productHref(p)}
-                          className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all hover:shadow-md"
-                        >
-                          <div className="relative h-40 overflow-hidden bg-gray-50">
-                            {productImage(p) ? (
-                              <Image
-                                src={productImage(p)}
-                                alt={p.name}
-                                fill
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                              />
-                            ) : (
-                              <span className="absolute inset-0 flex items-center justify-center px-3 text-center text-sm font-semibold" style={{ color: brandAccent[p.brandId] }}>
-                                {p.brand}
-                              </span>
-                            )}
-                            <span className="absolute left-2 top-2 rounded px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: brandAccent[p.brandId] }}>
-                              {p.brand}
-                            </span>
-                          </div>
-                          <div className="flex flex-1 flex-col p-5">
-                            <h4 className="mb-2 text-base font-bold leading-snug text-[#1A56DB]">{p.name}</h4>
-                            <p className="line-clamp-3 flex-1 text-sm leading-relaxed text-gray-500">{p.intro}</p>
-                            <span className="mt-4 text-sm font-semibold group-hover:underline" style={{ color: brandAccent[p.brandId] }}>
-                              {t({ en: "View details →", zh: "查看详情 →", th: "ดูรายละเอียด →", vi: "Xem chi tiết →" }, locale)}
-                            </span>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            // No models published yet — invite the enquiry instead of showing
-            // an empty grid or placeholder specs.
-            <div className="mt-8 rounded-2xl border border-dashed border-[#D9E4EA] bg-[#F7FAFC] p-10 text-center">
-              <p className="mx-auto max-w-xl text-base leading-7 text-[#475467]">
-                {t(
-                  {
-                    en: "We size this equipment to the process rather than selling it from a shelf. Send us your temperature, line speed and product geometry and our engineers will specify it.",
-                    zh: "这类设备我们按工艺选型，而非现货照单发货。请把您的工艺温度、产线速度与产品尺寸发给我们，工程师将为您确定方案。",
-                  },
-                  locale
-                )}
-              </p>
-              <a
-                href={inquiryMailto(locale, { subject: "Engineering Inquiry", context: c.name.en })}
-                className="mt-6 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5"
-                style={{ background: c.accent }}
-              >
-                {t({ en: "Request a Specification", zh: "索取选型方案", th: "ขอข้อมูลจำเพาะ", vi: "Yêu cầu cấu hình" }, locale)}
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* Downloads — literature covering the whole category. */}
       {c.docs && c.docs.length > 0 && (
