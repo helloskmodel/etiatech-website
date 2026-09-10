@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useLocale, t, type LangText } from "@/components/LocaleContext";
+import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
 import TrustStrip from "@/components/TrustStrip";
 import SalesSupportContent from "@/components/SalesSupportContent";
 import HeroBanner from "@/components/HeroBanner";
@@ -38,17 +38,21 @@ export default function ContactView() {
 
   const offices: {
     region: { en: string; zh: string; th?: string; vi?: string };
-    contact?: string;
+    contact?: LangText;
     title?: { en: string; zh: string; th?: string; vi?: string };
     phone?: string;
     email: string;
+    // The address as written in the local script, plus the language it is
+    // written in: it is shown only to a reader of that language, so an English
+    // visitor is not met with a Chinese address.
     local?: string;
+    localLang?: Locale;
     en?: string;
   }[] = [
-    { region: { en: "China · Shanghai", zh: "中国 · 上海", th: "จีน · เซี่ยงไฮ้", vi: "Trung Quốc · Thượng Hải" }, contact: "Mark Tang", phone: "400 990 8448 · +86-21-6432-7144 转106", email: "sales@etia-tech.com", local: "上海市普陀区中江路388弄国盛中心2号楼1903室", en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China" },
-    { region: { en: "Hong Kong", zh: "中国 · 香港", th: "จีน · ฮ่องกง", vi: "Trung Quốc · Hồng Kông" }, contact: "Mark Tang", phone: "+86 151 2119 7091", email: "sales@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
-    { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷", th: "ไทย · กรุงเทพฯ", vi: "Thái Lan · Bangkok" }, contact: "Mr. Sompoch Ratchakom (Job)", title: { en: "Sales Director", zh: "销售总监", th: "ผู้อำนวยการฝ่ายขาย", vi: "Giám đốc kinh doanh" }, phone: "+66 811 746 947", email: "sales@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
-    { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁", th: "เวียดนาม · บั๊กนิญ", vi: "Việt Nam · Bắc Ninh" }, contact: "Tien Nguyen", title: { en: "Technical Engineer", zh: "技术工程师", th: "วิศวกรเทคนิค", vi: "Kỹ sư kỹ thuật" }, phone: "+84 344 590 091", email: "sales@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
+    { region: { en: "China · Shanghai", zh: "中国 · 上海", th: "จีน · เซี่ยงไฮ้", vi: "Trung Quốc · Thượng Hải" }, contact: { en: "Mark Tang", zh: "唐先生 Mark Tang", th: "Mark Tang", vi: "Mark Tang" }, phone: "+86 151 2119 7091", email: "sales@etia-tech.com", local: "上海市普陀区中江路388弄国盛中心2号楼1903室", localLang: "zh", en: "Rm. 1903, 2# Building, Guoson Centre, No. 388 Zhongjiang Rd, Putuo District, Shanghai, China" },
+    { region: { en: "Hong Kong", zh: "中国 · 香港", th: "จีน · ฮ่องกง", vi: "Trung Quốc · Hồng Kông" }, contact: { en: "Vincent Wang", zh: "汪先生 Vincent Wang", th: "Vincent Wang", vi: "Vincent Wang" }, phone: "00852-69150539", email: "sales@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
+    { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷", th: "ไทย · กรุงเทพฯ", vi: "Thái Lan · Bangkok" }, contact: { en: "Mr. Sompoch Ratchakom (Job)", zh: "Mr. Sompoch Ratchakom (Job)", th: "คุณสมโภช รัชกร (จ๊อบ)", vi: "Mr. Sompoch Ratchakom (Job)" }, title: { en: "Sales Director", zh: "销售总监", th: "ผู้อำนวยการฝ่ายขาย", vi: "Giám đốc kinh doanh" }, phone: "+66 811 746 947", email: "sales@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", localLang: "th", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
+    { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁", th: "เวียดนาม · บั๊กนิญ", vi: "Việt Nam · Bắc Ninh" }, contact: { en: "Tien Nguyen", zh: "Tien Nguyen", th: "Tien Nguyen", vi: "Tiến Nguyễn" }, title: { en: "Technical Engineer", zh: "技术工程师", th: "วิศวกรเทคนิค", vi: "Kỹ sư kỹ thuật" }, phone: "+84 344 590 091", email: "sales@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", localLang: "vi", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
   ];
 
   return (
@@ -112,27 +116,36 @@ export default function ContactView() {
           <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Global Contacts", zh: "全球联系", th: "ติดต่อทั่วโลก", vi: "Liên hệ toàn cầu" }, locale)}</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Talk to Your Local ETIA Team", zh: "联系您所在地区的 ETIA 团队", th: "ติดต่อทีม ETIA ในพื้นที่ของคุณ", vi: "Liên hệ đội ngũ ETIA địa phương" }, locale)}</h2>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {offices.map((c) => (
+            {offices.map((c) => {
+              // Lead with the address the visitor can read. The local-script
+              // version used to render unconditionally, so the English site put
+              // a Chinese address above the English one. It stays for readers
+              // of that language — a courier needs it — as the second line.
+              const showLocal = Boolean(c.local && c.localLang === locale);
+              const primary = showLocal ? c.local : c.en;
+              const secondary = showLocal ? c.en : undefined;
+              return (
               <div key={c.en ?? c.email} className="rounded-2xl border border-[#E6EAF0] bg-white p-6 transition-all hover:shadow-md">
                 <span className="font-bold text-[#1A56DB]">{t(c.region, locale)}</span>
                 {c.contact && (
                   <p className="mt-2 text-xs text-gray-600">
-                    <span className="font-semibold">{c.contact}</span>
+                    <span className="font-semibold">{t(c.contact, locale)}</span>
                     {c.title && <span className="text-gray-400"> · {t(c.title, locale)}</span>}
                   </p>
                 )}
-                {c.local && (
-                  <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-gray-500"><MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gray-400" /> {c.local}</p>
+                {primary && (
+                  <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-gray-500"><MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gray-400" /> {primary}</p>
                 )}
-                {c.en && (
-                  <p className="mt-1 text-xs leading-relaxed text-gray-400">{c.en}</p>
+                {secondary && (
+                  <p className="mt-1 text-xs leading-relaxed text-gray-400">{secondary}</p>
                 )}
                 {c.phone && (
                   <p className="mt-2 flex items-center gap-1.5 text-xs text-gray-600"><Phone className="h-3.5 w-3.5 text-gray-400" /> <a href={`tel:${c.phone.split("·")[0].replace(/[^\d+]/g, "")}`} className="hover:underline">{c.phone}</a></p>
                 )}
                 <p className="mt-2 flex items-center gap-1.5 text-xs"><Mail className="h-3.5 w-3.5 text-[#41A62A]" /> <a href={`mailto:${c.email}`} className="font-semibold text-[#41A62A] hover:underline">{c.email}</a></p>
               </div>
-            ))}
+              );
+            })}
           </div>
           <p className="mt-6 text-xs text-gray-400">{t({ en: "* Contact us by email for the fastest response — our team typically replies within one business day.", zh: "* 通过邮件联系我们可获得快速响应——我们的团队通常在1个工作日内回复。", th: "* ติดต่อเราทางอีเมลเพื่อการตอบกลับที่รวดเร็ว — ทีมงานของเรามักตอบกลับภายในหนึ่งวันทำการ", vi: "* Liên hệ qua email để được phản hồi nhanh chóng — đội ngũ của chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
         </div>
