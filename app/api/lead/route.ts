@@ -1,6 +1,5 @@
 // Lead capture endpoint: the OmniCure landing-page quote form, and the
-// inquiry basket (a list of systems and part numbers with quantities, sent
-// as a quote or a sample request).
+// inquiry basket (a list of systems and part numbers with quantities).
 //
 // Delivery is configured with env vars, first match wins:
 //   LEAD_WEBHOOK_URL — POST the lead as JSON (Zapier/Make/Slack/CRM webhook)
@@ -31,12 +30,7 @@ type LeadPayload = {
   lang?: unknown;
   website?: unknown; // honeypot — humans never fill this hidden field
   // Inquiry basket
-  kind?: unknown; // "quote" | "sample"
   items?: unknown; // [{ ref, description, qty }]
-  application?: unknown;
-  adhesive?: unknown;
-  substrate?: unknown;
-  address?: unknown;
 };
 
 type Item = { ref: string; description: string; qty: number };
@@ -59,8 +53,7 @@ const str = (v: unknown, max = 500) =>
 
 function subjectFor(lead: Record<string, string>, items: Item[]): string {
   if (items.length) {
-    const what = lead.kind === "sample" ? "Sample request" : "Quote request";
-    return `${what} — ${lead.name}${lead.company ? `, ${lead.company}` : ""} (${items.length} item${items.length === 1 ? "" : "s"})`;
+    return `Quote request — ${lead.name}${lead.company ? `, ${lead.company}` : ""} (${items.length} item${items.length === 1 ? "" : "s"})`;
   }
   return `New lead — ${lead.name}${lead.model ? ` (${lead.model})` : ""} via ${lead.page || "landing page"}`;
 }
@@ -133,20 +126,14 @@ export async function POST(request: Request) {
     return Response.json({ error: "missing_fields" }, { status: 422 });
   }
 
-  const kindRaw = str(body.kind, 10);
   const items = readItems(body.items);
   const lead = {
-    kind: items.length ? (kindRaw === "sample" ? "sample" : "quote") : "",
     name,
     company: str(body.company, 160),
     email,
     phone,
     country: str(body.country, 80),
     model: str(body.model, 40),
-    application: str(body.application, 300),
-    adhesive: str(body.adhesive, 200),
-    substrate: str(body.substrate, 200),
-    address: str(body.address, 500),
     message: str(body.message, 2000),
     page: str(body.page, 80),
     lang: str(body.lang, 8),
@@ -158,7 +145,7 @@ export async function POST(request: Request) {
       console.warn("[lead] no delivery configured (LEAD_WEBHOOK_URL or RESEND_API_KEY+LEAD_TO_EMAIL) — client falls back to mailto");
       return Response.json({ error: "not_configured" }, { status: 503 });
     }
-    console.log("[lead] delivered", { page: lead.page, lang: lead.lang, model: lead.model, kind: lead.kind, items: items.length });
+    console.log("[lead] delivered", { page: lead.page, lang: lead.lang, model: lead.model, items: items.length });
     return Response.json({ ok: true }, { status: 200 });
   } catch (err) {
     // Delivery was configured but failed: log the full lead as a recovery

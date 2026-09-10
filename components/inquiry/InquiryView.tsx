@@ -13,15 +13,11 @@ import PartPicker from "./PartPicker";
 
 // Review and send. The basket as a table with quantities, a part-number
 // picker scoped to whatever systems are already in it (an S2000 in the basket
-// offers its lamps and light guides), and one form. A quote and a sample
-// request share the form; the sample request asks three more questions —
-// the application, the adhesive and the substrate — because a sample that is
-// wrong for the chemistry helps nobody, and where to ship it.
+// offers its lamps and light guides), and one short form. Everything is a
+// quote request: name, one way to reach them, and the list.
 //
 // Delivery goes through /api/lead. If that is not configured, the browser's
 // mail client opens with the same list, so nothing is lost.
-
-type Kind = "quote" | "sample";
 
 function describe(item: InquiryItem): { title: string; sub: string; href?: string; img?: string } | null {
   if (item.kind === "product") {
@@ -37,7 +33,6 @@ function describe(item: InquiryItem): { title: string; sub: string; href?: strin
 export default function InquiryView() {
   const { locale } = useLocale();
   const { items, setQty, remove, clear, ready } = useInquiry();
-  const [kind, setKind] = useState<Kind>("quote");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [err, setErr] = useState("");
 
@@ -56,16 +51,11 @@ export default function InquiryView() {
     const fd = new FormData(e.currentTarget);
     const get = (k: string) => String(fd.get(k) || "").trim();
     const payload = {
-      kind,
       name: get("name"),
       company: get("company"),
       email: get("email"),
       phone: get("phone"),
       country: get("country"),
-      application: get("application"),
-      adhesive: get("adhesive"),
-      substrate: get("substrate"),
-      address: get("address"),
       message: get("message"),
       website: get("website"), // honeypot
       page: "inquiry",
@@ -98,17 +88,13 @@ export default function InquiryView() {
     } catch {
       /* fall through to mailto */
     }
-    const subject = `${kind === "sample" ? "Sample request" : "Quote request"} — ${payload.name}${payload.company ? `, ${payload.company}` : ""} (${payload.items.length} items)`;
+    const subject = `Quote request — ${payload.name}${payload.company ? `, ${payload.company}` : ""} (${payload.items.length} items)`;
     const head = [
       `Name: ${payload.name}`,
       payload.company && `Company: ${payload.company}`,
       payload.email && `Email: ${payload.email}`,
       payload.phone && `Phone: ${payload.phone}`,
       payload.country && `Country: ${payload.country}`,
-      payload.application && `Application: ${payload.application}`,
-      payload.adhesive && `Adhesive: ${payload.adhesive}`,
-      payload.substrate && `Substrate: ${payload.substrate}`,
-      payload.address && `Ship to: ${payload.address}`,
       payload.message && `Message: ${payload.message}`,
     ].filter((l) => l !== "");
     const body = [
@@ -241,23 +227,7 @@ export default function InquiryView() {
             <input id="inq-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {(["quote", "sample"] as Kind[]).map((k) => (
-              <button
-                key={k}
-                type="button"
-                onClick={() => setKind(k)}
-                className={`rounded-full border px-4 py-2 text-sm font-bold transition ${kind === k ? "border-[#143C96] bg-[#143C96] text-white" : "border-[#D9E4EA] bg-white text-[#143C96] hover:border-[#143C96]"}`}
-                aria-pressed={kind === k}
-              >
-                {k === "quote"
-                  ? t({ en: "Request a quote", zh: "询价", th: "ขอใบเสนอราคา", vi: "Yêu cầu báo giá" }, locale)
-                  : t({ en: "Request a sample", zh: "申请样品", th: "ขอตัวอย่าง", vi: "Yêu cầu mẫu" }, locale)}
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="inq-name" className={label}>{t({ en: "Name", zh: "姓名", th: "ชื่อ", vi: "Tên" }, locale)} *</label>
               <input id="inq-name" name="name" required className={field} autoComplete="name" />
@@ -280,30 +250,6 @@ export default function InquiryView() {
             </div>
           </div>
 
-          {kind === "sample" && (
-            <div className="mt-4 grid gap-4 rounded-xl border border-[#41A62A]/30 bg-[#F1FAEF] p-4 sm:grid-cols-2">
-              <p className="text-xs text-[#15803d] sm:col-span-2">
-                {t({ en: "For a sample we match the wavelength and dose to your chemistry — three short answers save a round trip.", zh: "样品要按你的胶水匹配波长和剂量——这三项填一下，省一轮来回。", th: "สำหรับตัวอย่าง เราจับคู่ความยาวคลื่นและปริมาณกับเคมีของคุณ — สามคำตอบสั้น ๆ ช่วยประหยัดเวลา", vi: "Với mẫu, chúng tôi khớp bước sóng và liều với hóa chất của bạn — ba câu trả lời ngắn tiết kiệm một vòng trao đổi." }, locale)}
-              </p>
-              <div>
-                <label htmlFor="inq-application" className={label}>{t({ en: "Application", zh: "应用", th: "การใช้งาน", vi: "Ứng dụng" }, locale)}</label>
-                <input id="inq-application" name="application" className={field} placeholder={t({ en: "e.g. catheter tip bonding", zh: "例如：导管尖端粘接", th: "เช่น การยึดปลายสายสวน", vi: "vd: dán đầu ống thông" }, locale)} />
-              </div>
-              <div>
-                <label htmlFor="inq-adhesive" className={label}>{t({ en: "Adhesive / ink (brand & grade)", zh: "胶水 / 油墨（品牌与型号）", th: "กาว / หมึก (ยี่ห้อ & เกรด)", vi: "Keo / mực (hãng & mã)" }, locale)}</label>
-                <input id="inq-adhesive" name="adhesive" className={field} />
-              </div>
-              <div>
-                <label htmlFor="inq-substrate" className={label}>{t({ en: "Substrate", zh: "基材", th: "วัสดุรอง", vi: "Vật liệu nền" }, locale)}</label>
-                <input id="inq-substrate" name="substrate" className={field} />
-              </div>
-              <div>
-                <label htmlFor="inq-address" className={label}>{t({ en: "Ship-to address", zh: "收样地址", th: "ที่อยู่จัดส่ง", vi: "Địa chỉ nhận mẫu" }, locale)}</label>
-                <input id="inq-address" name="address" className={field} autoComplete="street-address" />
-              </div>
-            </div>
-          )}
-
           <div className="mt-4">
             <label htmlFor="inq-message" className={label}>{t({ en: "Message (optional)", zh: "留言（可选）", th: "ข้อความ (ไม่บังคับ)", vi: "Lời nhắn (tùy chọn)" }, locale)}</label>
             <textarea id="inq-message" name="message" rows={3} className={field} />
@@ -316,11 +262,7 @@ export default function InquiryView() {
             disabled={status === "sending"}
             className="mt-5 w-full rounded-full bg-[#41A62A] px-6 py-3 text-sm font-bold text-white hover:bg-[#368a22] disabled:opacity-60 sm:w-auto"
           >
-            {status === "sending"
-              ? "…"
-              : kind === "sample"
-              ? t({ en: "Send sample request", zh: "发送样品申请", th: "ส่งคำขอตัวอย่าง", vi: "Gửi yêu cầu mẫu" }, locale)
-              : t({ en: "Send inquiry", zh: "发送询单", th: "ส่งรายการสอบถาม", vi: "Gửi yêu cầu báo giá" }, locale)}
+            {status === "sending" ? "…" : t({ en: "Send inquiry", zh: "发送询单", th: "ส่งรายการสอบถาม", vi: "Gửi yêu cầu báo giá" }, locale)}
           </button>
           <p className="mt-3 text-[11px] leading-4 text-[#98a2b3]">
             {t({ en: "By sending, you agree that ETIA may use these details to answer your inquiry. See our Privacy Policy.", zh: "发送即表示你同意 ETIA 使用这些信息回复你的询问。详见隐私政策。", th: "การส่งถือว่าคุณยินยอมให้ ETIA ใช้ข้อมูลนี้เพื่อตอบคำถามของคุณ ดูนโยบายความเป็นส่วนตัว", vi: "Khi gửi, bạn đồng ý để ETIA dùng các thông tin này để trả lời yêu cầu. Xem Chính sách quyền riêng tư." }, locale)}
