@@ -123,7 +123,9 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       "Mercury UV lamp curing sources explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
     match: (p) =>
       (p.tech === "UV Spot Curing" &&
-        (p.sub === "UV Lamp Spot" || p.sub === "S-Series Accessory")) ||
+        (p.sub === "UV Lamp Spot" ||
+          p.sub === "Replacement Lamp" ||
+          p.sub === "S-Series Accessory")) ||
       // The R2000 and LS200 are sold as S2000 companions — dose calibration for
       // the systems above — so they belong on this page rather than nowhere.
       MEASUREMENT_SLUGS.has(p.slug),

@@ -302,6 +302,51 @@ export const products: Product[] = [
       ["Calibration", "NIST-traceable via OmniCure R2000"],
     ],
   },
+  // The replacement lamp is the repeat purchase behind the S-Series, and it has
+  // its own four-language landing page — the href override sends the card there
+  // and keeps /product/systems from building a second, competing page for it.
+  {
+    slug: "s2000-lamp",
+    name: "OmniCure S2000 Elite Replacement Lamp — 012-64000R",
+    brand: "OmniCure",
+    brandId: "omnicure",
+    tech: "UV Spot Curing",
+    sub: "Replacement Lamp",
+    accent: "#1A56DB",
+    href: "/product/omnicure/s2000-lamp",
+    imageUrl: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20LAMP.png",
+    intro:
+      "The genuine 200 W high-pressure mercury short-arc lamp for the S2000 Elite and S1500 Pro — a 250–600 nm continuous spectrum, up to 40 W/cm² in the long-wave UV, guaranteed for 2,000 hours and typically running to about 4,000. Standard and Surface Cure spectra, held in regional stock.",
+    features: [
+      "Genuine Excelitas lamp for the OmniCure S2000 Elite and S1500 Pro",
+      "200 W high-pressure mercury short-arc with a continuous 250–600 nm spectrum",
+      "Up to 40 W/cm² in the long-wave UV",
+      "Guaranteed 2,000 hours; approximately 4,000 hours typical in service",
+      "Standard spectrum (012-68000R / 012-64000R) covers the widest range of UV adhesive bonding",
+      "Surface Cure spectrum (012-69000R / 012-54000R) reshapes the power spectrum for a smooth, tack-free finish on acrylic resins, overcoming oxygen inhibition",
+      "Supplied as a bare spare lamp or as a complete Elite lamp module",
+      "Held in regional stock, so a lamp change is a delivery rather than a lead time",
+    ],
+    applications: [
+      "Medical device and catheter bonding",
+      "Needle and syringe assembly",
+      "Electronics and optical component bonding",
+      "Any installed S2000 Elite or S1500 Pro reaching end of lamp life",
+      "Acrylic resin surface curing, using the Surface Cure spectrum",
+      "Laboratory and R&D curing",
+    ],
+    specs: [
+      ["Primary Part Number", "012-64000R — standard spare 200 W lamp, S2000 and S1500"],
+      ["Surface Cure Spare", "012-54000R — spare 200 W lamp for surface curing, S2000"],
+      ["Lamp Module — Standard", "012-68000R"],
+      ["Lamp Module — Surface Cure", "012-69000R"],
+      ["Spectral Range", "250–600 nm, continuous"],
+      ["Lamp Type", "200 W high-pressure mercury short-arc"],
+      ["Long-Wave UV Irradiance", "Up to 40 W/cm²"],
+      ["Lamp Life", "2,000 hours guaranteed; approximately 4,000 hours typical"],
+      ["Fits", "OmniCure S2000 Elite, OmniCure S1500 Pro"],
+    ],
+  },
   {
     slug: "s1500-pro",
     name: "OmniCure S1500 Pro UV Spot Curing System",
@@ -2234,7 +2279,7 @@ export function productHref(p: Product): string {
 // brand are badged "Popular" in the UI.
 export const productPopularity: string[] = [
   // OmniCure
-  "s2000-elite", "lx500", "ac8", "s1500-pro", "ac8-hd", "v3-led-heads", "ac5", "ac7",
+  "s2000-elite", "s2000-lamp", "lx500", "ac8", "s1500-pro", "ac8-hd", "v3-led-heads", "ac5", "ac7",
   "r2000", "ls200", "ac9225", "ac4", "ac2", "ac9225-f", "s-series-light-guides", "s2e-network-module",
   // Phoseon
   "firejet-one", "fl400", "fj800", "nexus-ii", "vericure", "fe400", "fl440", "fl200",
