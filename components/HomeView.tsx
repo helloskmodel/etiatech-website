@@ -14,7 +14,7 @@ import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
 import { productImage, products } from "@/components/productCatalog";
 import { localizeHref } from "@/components/localeHref";
-import { publishedProductCategories, productCategoryHref, categoriesForBrand, categoryProducts } from "@/components/productCategories";
+import { categoriesForBrand } from "@/components/productCategories";
 import { publishedIndustries, industryHref } from "@/components/industrySolutions";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
 import TrustStrip from "@/components/TrustStrip";
@@ -33,18 +33,39 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
 // The six light sources, named as Excelitas names them. Three of them are
 // sections of the UV LED page rather than pages of their own, so they link to
 // the shelf by anchor — no new routes, no URL churn.
-const LIGHT_SOURCES: { name: LangText; href: string; model: string; accent: string }[] = [
-  { name: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", th: "ระบบบ่มแบบจุดด้วยหลอด UV", vi: "Hệ thống đóng rắn điểm bằng đèn UV" },
+// The light sources, in the two families Excelitas' own UV Curing Product
+// Selector Guide uses: broad spectrum (a lamp, the whole 200–400 nm band) and
+// single wavelength (an LED at one peak). Infrared sits outside UV altogether
+// and splits again into the emitter and the system built around it. The family
+// label rides on the card so the classification is readable at a glance
+// instead of living in a paragraph above the row.
+const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: string; accent: string }[] = [
+  // ── UV curing · broad spectrum (lamp) ──
+  { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
+    name: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", th: "ระบบบ่มแบบจุดด้วยหลอด UV", vi: "Hệ thống đóng rắn điểm bằng đèn UV" },
     href: "/product/technology/mercury-uv-lamp", model: "s2000-elite", accent: "#1A56DB" },
-  { name: { en: "UV LED Spot Curing Systems", zh: "UV LED 点固化系统", th: "ระบบบ่มแบบจุด UV LED", vi: "Hệ thống đóng rắn điểm UV LED" },
-    href: "/product/technology/uv-led#uv-led-spot-curing-systems", model: "lx505", accent: "#41A62A" },
-  { name: { en: "Air-Cooled UV LED Area Curing Systems", zh: "风冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยอากาศ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng khí" },
-    href: "/product/technology/uv-led#uv-led-air-cooled-systems", model: "ac8", accent: "#0ea5e9" },
-  { name: { en: "Water-Cooled UV LED Area Curing Systems", zh: "水冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยน้ำ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng nước" },
-    href: "/product/technology/uv-led#uv-led-water-cooled-systems", model: "fl400", accent: "#7c3aed" },
-  { name: { en: "Microwave UV Curing Systems", zh: "微波无极灯固化系统", th: "ระบบบ่ม UV ไมโครเวฟ", vi: "Hệ thống đóng rắn UV vi sóng" },
+  { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
+    name: { en: "Microwave UV Curing Systems", zh: "微波无极灯固化系统", th: "ระบบบ่ม UV ไมโครเวฟ", vi: "Hệ thống đóng rắn UV vi sóng" },
     href: "/product/technology/microwave-uv-lamp", model: "f-series", accent: "#f59e0b" },
-  { name: { en: "Infrared Heating Emitters", zh: "红外加热发射器", th: "ตัวเปล่งความร้อนอินฟราเรด", vi: "Bộ phát nhiệt hồng ngoại" },
+  { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
+    name: { en: "Mercury Arc Lamps", zh: "汞灯灯管与替换灯", th: "หลอดอาร์กปรอท", vi: "Đèn hồ quang thủy ngân" },
+    href: "/product/technology/mercury-uv-lamp#mercury-arc-lamps", model: "s2000-lamp", accent: "#1A56DB" },
+  // ── UV curing · single wavelength (LED) ──
+  { family: { en: "UV Curing · Single Wavelength", zh: "紫外固化 · 单波长", th: "การบ่ม UV · ความยาวคลื่นเดียว", vi: "Đóng rắn UV · Đơn bước sóng" },
+    name: { en: "UV LED Spot Curing Systems", zh: "UV LED 点固化系统", th: "ระบบบ่มแบบจุด UV LED", vi: "Hệ thống đóng rắn điểm UV LED" },
+    href: "/product/technology/uv-led#uv-led-spot-curing-systems", model: "lx505", accent: "#41A62A" },
+  { family: { en: "UV Curing · Single Wavelength", zh: "紫外固化 · 单波长", th: "การบ่ม UV · ความยาวคลื่นเดียว", vi: "Đóng rắn UV · Đơn bước sóng" },
+    name: { en: "Air-Cooled UV LED Area Curing Systems", zh: "风冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยอากาศ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng khí" },
+    href: "/product/technology/uv-led#uv-led-air-cooled-systems", model: "ac8", accent: "#0ea5e9" },
+  { family: { en: "UV Curing · Single Wavelength", zh: "紫外固化 · 单波长", th: "การบ่ม UV · ความยาวคลื่นเดียว", vi: "Đóng rắn UV · Đơn bước sóng" },
+    name: { en: "Water-Cooled UV LED Area Curing Systems", zh: "水冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยน้ำ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng nước" },
+    href: "/product/technology/uv-led#uv-led-water-cooled-systems", model: "fl400", accent: "#7c3aed" },
+  // ── Infrared ──
+  { family: { en: "Infrared Heating", zh: "红外加热", th: "การให้ความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" },
+    name: { en: "Infrared Emitters", zh: "红外发射器", th: "ตัวเปล่งอินฟราเรด", vi: "Bộ phát hồng ngoại" },
+    href: "/product/technology/infrared-emitters", model: "ir-golden8", accent: "#dc2626" },
+  { family: { en: "Infrared Heating", zh: "红外加热", th: "การให้ความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" },
+    name: { en: "Infrared Systems", zh: "红外加热系统", th: "ระบบอินฟราเรด", vi: "Hệ thống hồng ngoại" },
     href: "/product/technology/infrared-heating", model: "ir-m85", accent: "#dc2626" },
 ];
 
@@ -133,11 +154,13 @@ export default function HomeView() {
         Order follows how customers actually arrive: the technology they
         need, then their industry, then the brand they already run. */}
 
-    {/* BY LIGHT SOURCE — the six sources Excelitas itself lists, not our four
-        catalogue pages. A customer looking for a water-cooled LED array does
-        not want to land on a thirty-model page and hunt; the card takes them
-        to that shelf. Where a source is a section of a larger page, the link
-        carries its anchor. */}
+    {/* BY LIGHT SOURCE — the sources as the manufacturer's own selector guide
+        classifies them: UV curing splits into broad spectrum (a lamp) and
+        single wavelength (an LED), and infrared splits into the emitter and
+        the system built around it. A customer looking for a water-cooled LED
+        array does not want to land on a thirty-model page and hunt; the card
+        takes them to that shelf. Where a source is a section of a larger page,
+        the link carries its anchor. */}
     <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" }, locale)}</h2>
@@ -153,7 +176,8 @@ export default function HomeView() {
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: src.accent }} />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <h3 className="text-base font-bold leading-snug text-[#143C96]">{t(src.name, locale)}</h3>
+                    <span className="text-[10px] font-bold uppercase tracking-[.12em]" style={{ color: src.accent }}>{t(src.family, locale)}</span>
+                    <h3 className="mt-1.5 text-base font-bold leading-snug text-[#143C96]">{t(src.name, locale)}</h3>
                     <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-xs font-bold" style={{ color: src.accent }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
                   </div>
                 </Link>

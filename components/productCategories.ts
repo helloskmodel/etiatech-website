@@ -23,6 +23,7 @@ export type ProductCategorySlug =
   | "uv-led"
   | "microwave-uv-lamp"
   | "infrared-heating"
+  | "infrared-emitters"
   | "analytical-light-sources";
 
 export type ProductCategory = {
@@ -112,6 +113,20 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     metaTitle: "UV Lamp Spot Curing Systems | OmniCure S2000 & S1500 | ETIA",
     metaDescription:
       "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
+    groups: [
+      {
+        title: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", vi: "Hệ thống đóng rắn điểm bằng đèn UV", th: "ระบบบ่มแบบจุดด้วยหลอด UV" },
+        match: (p) => p.sub === "UV Lamp Spot" || p.sub === "S-Series Accessory",
+      },
+      {
+        title: { en: "Mercury Arc Lamps", zh: "汞灯灯管与替换灯", vi: "Đèn hồ quang thủy ngân", th: "หลอดอาร์กปรอท" },
+        match: (p) => p.sub === "Replacement Lamp",
+      },
+      {
+        title: { en: "UV Measurement", zh: "紫外测量", vi: "Đo lường UV", th: "การวัดค่า UV" },
+        match: (p) => MEASUREMENT_SLUGS.has(p.slug),
+      },
+    ],
     match: (p) =>
       (p.tech === "UV Spot Curing" &&
         (p.sub === "UV Lamp Spot" ||
@@ -409,7 +424,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "infrared-heating": {
     slug: "infrared-heating",
     accent: "#dc2626",
-    name: { en: "Infrared Heating Systems", zh: "红外加热", vi: "Hệ thống gia nhiệt hồng ngoại", th: "ระบบให้ความร้อนอินฟราเรด" },
+    name: { en: "Infrared Systems", zh: "红外加热系统", vi: "Hệ thống hồng ngoại", th: "ระบบอินฟราเรด" },
     tagline: {
       en: "Noblelight infrared modules — heat delivered into the product, exactly where the process needs it.",
       zh: "Noblelight 红外模块——将热量直接送入产品，精确投放在工艺所需之处。",
@@ -436,7 +451,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Printing ink drying", zh: "印刷油墨干燥", vi: "Sấy mực in", th: "การอบแห้งหมึกพิมพ์" },
       { en: "Paper, cardboard & non-woven heating", zh: "纸张、纸板与无纺布加热", vi: "Gia nhiệt giấy, bìa carton & vải không dệt", th: "การให้ความร้อนกระดาษ กระดาษแข็ง & ผ้าไม่ทอ" },
     ],
-    metaTitle: "Infrared Heating Systems | Noblelight M & MX Series | ETIA",
+    metaTitle: "Infrared Systems | Noblelight M & MX Heating Modules | ETIA",
     metaDescription:
       "Excelitas Noblelight infrared heating modules for industrial process technology — M 85, M 110, M 115, scalable MX modules with integrated control, custom MX systems and infrared control systems. Specified to your process by ETIA.",
     docs: [
@@ -468,7 +483,93 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     match: (p) => p.tech === "Infrared Heating",
   },
 
-  // ────────────────────── 6. 分析光源 ──────────────────────
+  // ───────────────────────── 6. 红外发射器 ─────────────────────────
+  // Noblelight splits infrared into emitters and systems. This is the emitter
+  // half — the quartz lamp itself, in the manufacturer's own order: twin tube
+  // (Golden 8), round tube, special emitters, accessories. The M / MX modules
+  // and controls sit in "infrared-heating" above, which is the systems half.
+  "infrared-emitters": {
+    slug: "infrared-emitters",
+    accent: "#dc2626",
+    name: { en: "Infrared Emitters", zh: "红外发射器", vi: "Bộ phát hồng ngoại", th: "ตัวเปล่งอินฟราเรด" },
+    tagline: {
+      en: "Noblelight quartz infrared emitters — the emitter is matched to the process, not the process to the emitter.",
+      zh: "Noblelight 石英红外发射器——按工艺选灯，而不是让工艺迁就灯。",
+      vi: "Bộ phát hồng ngoại thạch anh Noblelight — chọn đèn theo quy trình, không phải ngược lại.",
+      th: "ตัวเปล่งอินฟราเรดควอตซ์ Noblelight — เลือกหลอดให้เข้ากับกระบวนการ ไม่ใช่ให้กระบวนการตามหลอด",
+    },
+    intro: [
+      { en: "Pick the emitter for the material: wavelength, shape and power are all matched to what you are heating.", zh: "先看材料再选灯：波长、形状、功率都按被加热的对象来配。", vi: "Chọn bộ phát theo vật liệu: bước sóng, hình dạng và công suất đều khớp với thứ bạn gia nhiệt.", th: "เลือกตัวเปล่งตามวัสดุ: ความยาวคลื่น รูปทรง และกำลัง ล้วนจับคู่กับสิ่งที่คุณให้ความร้อน" },
+    ],
+    applications: [
+      { en: "Drying of water-based coatings", zh: "水性涂料干燥", vi: "Sấy lớp phủ gốc nước", th: "การอบแห้งสารเคลือบสูตรน้ำ" },
+      { en: "Powder coating flow-out & cure", zh: "粉末涂层流平与固化", vi: "Làm chảy & đóng rắn sơn bột", th: "การไหลตัว & บ่มสารเคลือบผง" },
+      { en: "Plastics welding, riveting & hot staking", zh: "塑料焊接、铆接与热铆", vi: "Hàn, tán đinh & hot staking nhựa", th: "การเชื่อม ย้ำหมุด & hot staking พลาสติก" },
+      { en: "Deburring of plastic parts", zh: "塑料件去毛刺", vi: "Làm sạch bavia chi tiết nhựa", th: "การลบครีบชิ้นงานพลาสติก" },
+      { en: "Pre-heating before forming or bonding", zh: "成型或粘接前预热", vi: "Gia nhiệt sơ bộ trước tạo hình hoặc dán", th: "การอุ่นก่อนขึ้นรูปหรือยึดติด" },
+      { en: "Laminating & embossing", zh: "层压与压花", vi: "Ép lớp & dập nổi", th: "การลามิเนต & ปั๊มลาย" },
+      { en: "Glass and safety glass processing", zh: "玻璃与安全玻璃加工", vi: "Gia công kính & kính an toàn", th: "การแปรรูปกระจกและกระจกนิรภัย" },
+      { en: "Chemical fibre & textile yarn drying", zh: "化纤与纺织纱线干燥", vi: "Sấy sợi hóa học & sợi dệt", th: "การอบแห้งเส้นใยเคมี & เส้นด้ายสิ่งทอ" },
+      { en: "Battery electrode foil drying", zh: "电池极片箔材干燥", vi: "Sấy lá điện cực pin", th: "การอบแห้งฟอยล์ขั้วไฟฟ้าแบตเตอรี่" },
+      { en: "Coating under vacuum & solar cell coating", zh: "真空镀膜与太阳能电池涂层", vi: "Phủ trong chân không & phủ pin mặt trời", th: "การเคลือบในสุญญากาศ & เคลือบเซลล์แสงอาทิตย์" },
+      { en: "Anti-icing outdoors (IP 65)", zh: "户外防结冰（IP 65）", vi: "Chống đóng băng ngoài trời (IP 65)", th: "การป้องกันน้ำแข็งกลางแจ้ง (IP 65)" },
+      { en: "Food browning & finishing", zh: "食品上色与后处理", vi: "Làm vàng & hoàn thiện thực phẩm", th: "การทำให้อาหารเป็นสีน้ำตาล & ตกแต่งขั้นสุดท้าย" },
+    ],
+    metaTitle: "Infrared Emitters | Noblelight Golden 8, Carbon CIR & Special Emitters | ETIA",
+    metaDescription:
+      "Excelitas Noblelight infrared emitters — Golden 8 twin tube (short-wave, fast medium-wave, medium-wave), Carbon CIR\u00ae, round tube and Infralight\u00ae NIR, contoured, spotlight, spiral, omega, slot, QRC\u00ae and IP 65 special emitters, plus mountings and guards. Specified to your process by ETIA.",
+    heroImage: "/images/infrared/emitters/golden8.jpg",
+    cardImage: "/images/infrared/emitters/golden8.jpg",
+    gallery: [
+      {
+        src: "/images/infrared/emitters/twin-tube-diagram.jpg",
+        caption: { en: "The twin tube: quartz, gold reflector, filament, ceramic base", zh: "双管结构：石英管、金反射层、灯丝、陶瓷灯头", vi: "Ống đôi: thạch anh, gương vàng, dây tóc, đế gốm", th: "หลอดคู่: ควอตซ์ กระจกทอง ไส้หลอด ขั้วเซรามิก" },
+      },
+      {
+        src: "/images/infrared/emitters/contoured.jpg",
+        caption: { en: "A contoured emitter following the edge of the part", zh: "随形发射器贴合工件边缘", vi: "Bộ phát tạo hình bám theo cạnh chi tiết", th: "ตัวเปล่งขึ้นรูปตามขอบชิ้นงาน" },
+      },
+      {
+        src: "/images/infrared/emitters/omega.jpg",
+        caption: { en: "Omega emitters heat the rivet, not the whole part", zh: "欧米伽发射器只加热铆点，不烤整件", vi: "Bộ phát omega chỉ nung đinh tán, không nung cả chi tiết", th: "ตัวเปล่งโอเมกาให้ความร้อนที่หมุดย้ำ ไม่ใช่ทั้งชิ้น" },
+      },
+      {
+        src: "/images/infrared/emitters/accessories.jpg",
+        caption: { en: "Clamps, springs and guards — every emitter needs them", zh: "夹簧、支撑与防护——每支灯都要配", vi: "Kẹp, lò xo và tấm bảo vệ — bộ phát nào cũng cần", th: "แคลมป์ สปริง และแผ่นกันภัย — ตัวเปล่งทุกตัวต้องมี" },
+      },
+    ],
+    match: (p) => p.tech === "Infrared Emitters",
+    groups: [
+      {
+        title: { en: "Twin Tube Emitters (Golden 8)", zh: "双管发射器（Golden 8）", vi: "Bộ phát ống đôi (Golden 8)", th: "ตัวเปล่งหลอดคู่ (Golden 8)" },
+        match: (p) => p.slug === "ir-golden8" || p.slug === "ir-carbon-cir",
+      },
+      {
+        title: { en: "Round Tube Emitters", zh: "单管发射器", vi: "Bộ phát ống tròn", th: "ตัวเปล่งหลอดกลม" },
+        match: (p) => p.slug === "ir-round-tube",
+      },
+      {
+        title: { en: "Special Emitters", zh: "异形与特种发射器", vi: "Bộ phát đặc biệt", th: "ตัวเปล่งชนิดพิเศษ" },
+        match: (p) =>
+          [
+            "ir-contoured",
+            "ir-spotlight",
+            "ir-spiral",
+            "ir-small-surface",
+            "ir-omega",
+            "ir-slot",
+            "ir-qrc",
+            "ir-ip65",
+          ].includes(p.slug),
+      },
+      {
+        title: { en: "Accessories", zh: "配件", vi: "Phụ kiện", th: "อุปกรณ์เสริม" },
+        match: (p) => p.slug === "ir-emitter-accessories",
+      },
+    ],
+  },
+
+  // ────────────────────── 7. 分析光源 ──────────────────────
   // Not curing equipment: these are OEM light sources built into someone
   // else's analytical instrument. Sourced from the public Excelitas
   // "High-quality light sources for analytical instruments" brochure.
@@ -577,10 +678,16 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
 };
 
 // Menu / page order — the order the customer specified.
+// Ordered the way the manufacturer's own UV Curing Product Selector Guide
+// classifies the portfolio: broad spectrum sources (a lamp, the whole
+// 200–400 nm band) first, then single wavelength (an LED at one peak), then
+// infrared — which is not UV at all and splits into the emitter and the
+// system built around it.
 export const PRODUCT_CATEGORY_ORDER: ProductCategorySlug[] = [
   "mercury-uv-lamp",
-  "uv-led",
   "microwave-uv-lamp",
+  "uv-led",
+  "infrared-emitters",
   "infrared-heating",
   "analytical-light-sources",
 ];
