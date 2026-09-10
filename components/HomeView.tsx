@@ -50,6 +50,9 @@ function product(slug: string) {
 export default function HomeView() {
   const { locale } = useLocale();
   const engineerMail = inquiryMailto(locale, { subject: "UV Curing Engineering Inquiry", context: "Application / adhesive / curing area / wavelength / production requirements" });
+  // The hero offers two ways to reach a person rather than a browse link: one
+  // for a commercial conversation, one for a technical one.
+  const salesMail = inquiryMailto(locale, { subject: "UV Curing Sales Inquiry", context: "Product or model of interest / quantity / delivery location / timeline" });
 
   const heroProducts = heroProductSlugs
     .map((slug) => product(slug))
@@ -73,7 +76,7 @@ export default function HomeView() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" />{t({ en: "Authorized Distributor · Genuine Products Through Official Channels", zh: "授权经销 · 官方渠道正品", th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต · สินค้าของแท้ผ่านช่องทางอย่างเป็นทางการ" , vi: "Nhà phân phối được ủy quyền · Sản phẩm chính hãng qua kênh chính thức" }, locale)}</span>
           <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl"><CjkHeading locale={locale} text={{ en: "Your UV Curing Solution Partner", zh: "紫外线固化 就找 ETIA", th: "โซลูชัน UV Curing เลือก ETIA", vi: "Giải pháp UV Curing, hãy chọn ETIA" }} zh={<>紫外线固化 就找 ETIA</>} /><span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "From Selection to Support.", zh: "选型 应用 售后 一站支持", th: "การเลือกอุปกรณ์ การใช้งาน และบริการหลังการขาย — รองรับครบวงจร", vi: "Tư vấn lựa chọn, ứng dụng và hậu mãi — hỗ trợ trọn gói." }, locale)}</span></h1>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Link href="/product/omnicure" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Explore Products", zh: "浏览产品", th: "ดูสินค้า" , vi: "Khám phá sản phẩm" }, locale)} <ArrowRight className="h-4 w-4" /></Link><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Talk to an Engineer", zh: "咨询工程师", th: "ปรึกษาวิศวกร" , vi: "Trao đổi với kỹ sư" }, locale)}</a></div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href={salesMail} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to Sales", zh: "联系销售", th: "ติดต่อฝ่ายขาย" , vi: "Liên hệ kinh doanh" }, locale)} <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Connect with Engineer", zh: "对接工程师", th: "เชื่อมต่อกับวิศวกร" , vi: "Kết nối với kỹ sư" }, locale)}</a></div>
         </div>
         <div className="relative min-h-[340px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
           <div className="absolute left-10 right-10 top-1/2 h-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1A56DB]/20 via-[#63C94A]/35 to-transparent blur-2xl" />
