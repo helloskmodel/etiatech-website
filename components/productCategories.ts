@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { LangText } from "@/components/LocaleContext";
 import { products, type Product, type ProductDoc } from "@/components/productCatalog";
 import { cosResize } from "@/components/cosImage";
+import { seoDescription, seoTitle } from "@/components/seoText";
 
 const COS_LIGHT = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LIGHT%20RESOURCE%20";
 
@@ -682,8 +683,8 @@ export function isProductCategorySlug(s: string): s is ProductCategorySlug {
 export function productCategoryMetadata(slug: ProductCategorySlug): Metadata {
   const c = productCategories[slug];
   return {
-    title: c.metaTitle,
-    description: c.metaDescription,
+    title: seoTitle(c.metaTitle),
+    description: seoDescription(c.metaDescription),
     alternates: { canonical: `${SITE}${productCategoryHref(slug)}` },
     ...(c.draft ? { robots: { index: false, follow: false } } : {}),
   };

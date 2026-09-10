@@ -9,8 +9,8 @@ export const whyEtia: { Icon: typeof FlaskConical; title: LangText; desc: LangTe
     Icon: FlaskConical,
     title: { en: "Deep Application Expertise", zh: "深厚的应用专业能力" , vi: "Chuyên môn ứng dụng chuyên sâu" },
     desc: {
-      en: "20 years of validated industry cases across 10 industries. From medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
-      zh: "20年、覆盖10大行业的验证案例。从医疗器械粘接到AI数据中心光子封装——工艺我们已替你验证。",
+      en: "20 years of validated cases from medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
+      zh: "20 年验证案例，从医疗器械粘接到 AI 数据中心光子封装——工艺我们已替你验证。",
     },
   },
   {

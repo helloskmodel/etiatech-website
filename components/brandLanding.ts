@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription, seoTitle } from "@/components/seoText";
 import type { Product } from "@/components/productCatalog";
 import type { LangText } from "@/components/LocaleContext";
 import { brandLanguageAlternates } from "@/components/localePageSeo";
@@ -139,8 +140,8 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
 export function brandMetadata(slug: BrandSlug): Metadata {
   const b = brandLanding[slug];
   return {
-    title: b.metaTitle,
-    description: b.metaDescription,
+    title: seoTitle(b.metaTitle),
+    description: seoDescription(b.metaDescription),
     alternates: {
       canonical: `${SITE}/product/${slug}`,
       // Brands with a Chinese page link their en<->zh hreflang group here.

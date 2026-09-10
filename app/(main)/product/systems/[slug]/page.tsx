@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription, seoTitle } from "@/components/seoText";
 import { notFound, permanentRedirect } from "next/navigation";
 import { products, getProduct, brandAccent, productJsonLd, productBreadcrumbJsonLd } from "@/components/productCatalog";
 import ProductDetailView from "@/components/ProductDetailView";
@@ -14,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getProduct(slug);
   if (!p) return { title: "Product — ETIA Technology" };
   return {
-    title: `${p.name} — ETIA Technology`,
-    description: p.intro.slice(0, 160),
+    title: seoTitle(p.name),
+    description: seoDescription(p.intro),
     alternates: {
       canonical: `https://www.etiatech.com/product/systems/${p.slug}`,
       // Products with locale-locked pages (/zh|/vi|/th/...) link the group here.

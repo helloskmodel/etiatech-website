@@ -12,8 +12,8 @@ const POSTER_V = "3";
 const COMMITMENT_POSTER: Record<Locale, string> = {
   en: `${IMG}/ETIA%20SERVICE-EN.png?v=${POSTER_V}`,
   zh: `${IMG}/ETIA%20SERVICE-CN.png?v=${POSTER_V}`,
-  th: `${IMG}/ETIA%20SERVICE-TH.png?v=${POSTER_V}`,
-  vi: `${IMG}/ETIA%20SERVICE-VN.png?v=${POSTER_V}`,
+  th: `${IMG}/ETIA%20SERVICE.TH?v=${POSTER_V}`,
+  vi: `${IMG}/ETIA%20SERVICE-VN?v=${POSTER_V}`,
 };
 
 const lifecycle: Array<{ icon: typeof ClipboardCheck; phase: LangText; title: LangText; lead: LangText; pills: LangText[]; cta: LangText; href: string; accent: string }> = [

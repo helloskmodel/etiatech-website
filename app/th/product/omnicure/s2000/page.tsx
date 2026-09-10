@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription } from "@/components/seoText";
 import S2000LandingTh from "@/components/S2000LandingTh";
 import { s2000FaqsTh } from "@/components/s2000FaqTh";
 
@@ -11,7 +12,7 @@ const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 export const metadata: Metadata = {
   title: "OmniCure S2000 Elite | ระบบ UV Spot Curing | ETIA Thailand",
   description:
-    "OmniCure S2000 Elite คือระบบ UV spot curing แบบใช้หลอดกำลังสูง รองรับ Closed-Loop Feedback, Web UI, PLC, NFC, StepCure การเปลี่ยนหลอด การ calibration การบำรุงรักษา และการสนับสนุนทางเทคนิคจาก ETIA",
+    seoDescription("OmniCure S2000 Elite คือระบบ UV spot curing แบบใช้หลอดกำลังสูง รองรับ Closed-Loop Feedback, Web UI, PLC, NFC, StepCure การเปลี่ยนหลอด การ calibration การบำรุงรักษา และการสนับสนุนทางเทคนิคจาก ETIA"),
   keywords: [
     "OmniCure S2000 Elite",
     "OmniCure S2000 Elite Thailand",

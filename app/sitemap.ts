@@ -166,7 +166,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Application case-study pages (EN + ZH + VI + TH each), with images.
-  // Only the notes one of the five industries claims — the same rule as the
+  // Only the notes one of the published industries claims — the same rule as the
   // /applications page and the product pages.
   const applicationCasePages: MetadataRoute.Sitemap = applicationsData
     .filter((application: { published?: boolean; slug: string }) => application.published !== false && isPublishedApplication(application.slug))

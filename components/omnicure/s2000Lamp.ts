@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription, seoTitle } from "@/components/seoText";
 
 // OmniCure S2000 Elite Lamp — repeat-purchase replacement-lamp SEM landing page.
 // Copy is the client's OFFICIAL 4-language content (EN/ZH/TH/VI, from the
@@ -305,9 +306,19 @@ const META: Record<LampLang, { title: string; description: string }> = {
 export function lampMetadata(lang: LampLang): Metadata {
   return {
     ...META[lang],
+    title: seoTitle(META[lang].title),
+    description: seoDescription(META[lang].description),
     alternates: {
       canonical: SITE + LAMP_PATHS[lang],
       languages: LAMP_LANGUAGES,
+    },
+    openGraph: {
+      type: "website",
+      url: SITE + LAMP_PATHS[lang],
+      siteName: "ETIA Technology",
+      title: META[lang].title,
+      description: seoDescription(META[lang].description),
+      images: [LAMP.promoImage],
     },
   };
 }

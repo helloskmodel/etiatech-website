@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription, seoTitle } from "@/components/seoText";
 import { notFound } from "next/navigation";
 import ApplicationCaseStudyView from "@/components/ApplicationCaseStudyView";
 import { applicationsData, getApplicationBySlug } from "@/data/applicationsData";
@@ -17,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!application) return { title: "Application Case Study | ETIA Technology" };
   const url = `${SITE}/${application.seo.urlSlug}`;
   return {
-    title: application.seo.title,
-    description: application.seo.description,
+    title: seoTitle(application.seo.title),
+    description: seoDescription(application.seo.description),
     keywords: application.seo.keywords,
     // A note no industry claims is not on the shelf: it resolves, but is not
     // indexed and is linked from nowhere.

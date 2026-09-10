@@ -107,7 +107,7 @@ const tri = {
   ctaButton: { th: "ติดต่อฝ่ายขาย", en: "Talk to Our Sales", zh: "联系我们的销售" } as Tri,
   footerTagline: {
     th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบ UV curing ระดับโลก ประสบการณ์ความเชี่ยวชาญเชิงการใช้งานกว่า 20 ปี ใน 10 อุตสาหกรรม",
-    en: "Authorized distributor of industrial UV curing systems from recognized manufacturers. 20 years of application expertise across 10 industries.",
+    en: "Authorized distributor of industrial UV curing systems from recognized manufacturers. 20 years of application expertise across Asia.",
     zh: "世界级 UV Curing 紫外线固化系统授权代理，20 年应用专业经验，覆盖 10 大行业。",
   } as Tri,
   footerRights: {
@@ -221,7 +221,7 @@ const whyCards: { title: Tri; desc: Tri }[] = [
     title: { th: "ความเชี่ยวชาญเชิงการใช้งานอย่างลึกซึ้ง", en: "Deep Application Expertise", zh: "深厚的应用专业能力" },
     desc: {
       th: "กรณีใช้งานจริงที่ผ่านการพิสูจน์กว่า 20 ปี ใน 10 อุตสาหกรรม ตั้งแต่การยึดติดอุปกรณ์การแพทย์ ไปจนถึงการแพ็กเกจโฟโตนิกส์สำหรับศูนย์ข้อมูล AI — เราพิสูจน์กระบวนการมาแล้ว คุณจึงไม่ต้องเริ่มจากศูนย์",
-      en: "20 years of validated industry cases across 10 industries. From medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
+      en: "20 years of validated cases from medical device bonding to AI-data-center photonics packaging — we've proven the process so you don't have to.",
       zh: "20年、覆盖10大行业的验证案例。从医疗器械粘接到AI数据中心光子封装——工艺我们已替你验证。",
     },
   },

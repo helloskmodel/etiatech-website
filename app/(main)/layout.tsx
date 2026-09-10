@@ -9,12 +9,17 @@ import Analytics from "@/components/Analytics";
 import { LocaleProvider, type Locale } from "@/components/LocaleContext";
 import { InquiryProvider } from "@/components/inquiry/InquiryContext";
 import InquiryBar from "@/components/inquiry/InquiryBar";
+import { DEFAULT_OG_IMAGE, SITE_URL } from "@/components/seoText";
 
 const LOCALES: Locale[] = ["en", "zh", "vi", "th"];
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "ETIA Technology — UV Curing Solutions",
-  description: "Your UV Curing Partner — From Selection to Support. 20 years of expertise across 9 industries.",
+  description: "Your UV Curing Partner — From Selection to Support. 20 years of application expertise across Asia.",
+  // Pages that set no openGraph of their own inherit this, so every link
+  // preview has a picture; pages with their own openGraph add `images` too.
+  openGraph: { siteName: "ETIA Technology", type: "website", images: [DEFAULT_OG_IMAGE] },
   // Google Search Console verification (HTML-tag method for a URL-prefix property).
   // Renders <meta name="google-site-verification" content="…"> site-wide.
   verification: {

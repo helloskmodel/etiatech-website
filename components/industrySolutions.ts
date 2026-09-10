@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription, seoTitle } from "@/components/seoText";
 import type { LangText } from "@/components/LocaleContext";
 import type { ProductCategorySlug } from "@/components/productCategories";
 import { applicationsData } from "@/data/applicationsData";
@@ -573,14 +574,16 @@ const BY_SLUG = new Map<string, Application>(
 export function industryApplications(slug: IndustrySlug): Application[] {
   return industrySolutions[slug].applicationSlugs
     .map((s) => BY_SLUG.get(s))
-    .filter((a): a is Application => Boolean(a));
+    // A note held back with `published: false` resolves to a 404, so the
+    // industry page must not list it.
+    .filter((a): a is Application => Boolean(a) && a?.published !== false);
 }
 
 export function industryMetadata(slug: IndustrySlug): Metadata {
   const i = industrySolutions[slug];
   return {
-    title: i.metaTitle,
-    description: i.metaDescription,
+    title: seoTitle(i.metaTitle),
+    description: seoDescription(i.metaDescription),
     alternates: { canonical: `${SITE}${industryHref(slug)}` },
     ...(i.draft ? { robots: { index: false, follow: false } } : {}),
   };

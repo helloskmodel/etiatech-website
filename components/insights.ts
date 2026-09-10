@@ -8,6 +8,7 @@ import path from "node:path";
 import { marked } from "marked";
 import { optimizeBodyImages } from "./cosImage";
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE, seoDescription, seoTitle } from "@/components/seoText";
 
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -241,13 +242,13 @@ const INDEX_META: Record<InsightLocale, { title: string; description: string }> 
 export function insightsIndexMetadata(locale: InsightLocale): Metadata {
   const m = INDEX_META[locale];
   return {
-    title: m.title,
-    description: m.description,
+    title: seoTitle(m.title),
+    description: seoDescription(m.description),
     alternates: {
       canonical: `${SITE}${PREFIX[locale]}/insights`,
       languages: insightHreflang("/insights", ["en", "zh", "vi", "th"]),
     },
-    openGraph: { title: m.title, description: m.description, url: `${SITE}${PREFIX[locale]}/insights`, type: "website", locale: OG_LOCALE[locale] },
+    openGraph: { title: m.title, description: m.description, url: `${SITE}${PREFIX[locale]}/insights`, type: "website", locale: OG_LOCALE[locale], images: [DEFAULT_OG_IMAGE] },
   };
 }
 
@@ -257,8 +258,8 @@ export function insightsDetailMetadata(slug: string, locale: InsightLocale): Met
   const c = articleContent(a, locale);
   const url = `${SITE}${PREFIX[locale]}/insights/${slug}`;
   return {
-    title: `${c.title} | ETIA Technology`,
-    description: c.description,
+    title: seoTitle(c.title),
+    description: seoDescription(c.description),
     keywords: a.tags,
     alternates: { canonical: url, languages: insightHreflang(`/insights/${slug}`, articleLocales(a)) },
     openGraph: {
@@ -268,7 +269,7 @@ export function insightsDetailMetadata(slug: string, locale: InsightLocale): Met
       url,
       locale: OG_LOCALE[locale],
       publishedTime: a.date,
-      ...(a.cover ? { images: [a.cover] } : {}),
+      images: [a.cover ?? DEFAULT_OG_IMAGE],
     },
   };
 }

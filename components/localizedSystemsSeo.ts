@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/components/LocaleContext";
 import { getProduct, localizeProduct, productTagline } from "@/components/productCatalog";
+import { DEFAULT_OG_IMAGE, seoDescription, seoTitle } from "@/components/seoText";
 
 const SITE = "https://www.etiatech.com";
 
@@ -29,8 +30,10 @@ export function localizedSystemMetadata(slug: string, locale: Exclude<Locale, "e
   const p = localizeProduct(base, locale);
   const tagline = productTagline[slug]?.[locale] ?? productTagline[slug]?.en;
   return {
-    title: tagline ? `${p.name} — ${tagline} | ETIA` : `${p.name} — ETIA Technology`,
-    description: p.intro.slice(0, 160),
+    // The tagline stays on the page and in the preview card; the tab and
+    // the search result get the name alone.
+    title: seoTitle(p.name),
+    description: seoDescription(p.intro),
     alternates: {
       canonical: `${SITE}/${locale}/product/systems/${slug}`,
       languages: systemLanguages(slug),
@@ -41,7 +44,8 @@ export function localizedSystemMetadata(slug: string, locale: Exclude<Locale, "e
       siteName: "ETIA Technology",
       locale: locale === "zh" ? "zh_CN" : locale === "vi" ? "vi_VN" : "th_TH",
       title: tagline ? `${p.name} — ${tagline}` : p.name,
-      description: p.intro.slice(0, 160),
+      description: seoDescription(p.intro),
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }
