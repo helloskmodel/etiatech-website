@@ -620,6 +620,10 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     metaDescription:
       "Excelitas analytical light sources for instrument OEMs — D2 plus deuterium lamps for HPLC/UHPLC and UV-Vis, PID lamps for GC, MS and VOC detection, and the FiberLight D2 integrated UV-Vis module. Specified and supplied by ETIA.",
     match: (p) => p.tech === "Analytical Light Sources",
+    // Held back from launch at the customer's request, alongside the precision
+    // measurement category that was removed. The content and the models stay in
+    // place — clear the flag to publish.
+    draft: true,
   },
 };
 
