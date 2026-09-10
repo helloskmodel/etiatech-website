@@ -71,8 +71,11 @@ export type ProductCategory = {
   draft?: boolean;
 };
 
-// Measurement instruments are catalogued under "UV Spot Curing" because they
-// ship with the spot systems, but they belong to their own category here.
+// The two radiometers are catalogued under "UV Spot Curing" because they ship
+// with the S-Series spot systems, which is also where they are sold from: they
+// appear under the mercury lamp category alongside the S2000. The measurement
+// category still claims them, so it is ready if it is ever published — it is a
+// draft, so no product shows up twice on the live site.
 const MEASUREMENT_SLUGS = new Set(["r2000", "ls200"]);
 
 export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
@@ -113,12 +116,17 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Electronics assembly", zh: "电子装配", vi: "Lắp ráp điện tử", th: "การประกอบอิเล็กทรอนิกส์" },
       { en: "Optical component bonding", zh: "光学元件粘接", vi: "Liên kết linh kiện quang", th: "การยึดติดชิ้นส่วนออปติก" },
       { en: "Laboratory & R&D curing", zh: "实验室与研发固化", vi: "Đóng rắn trong phòng thí nghiệm & R&D", th: "การบ่มในห้องปฏิบัติการ & R&D" },
+      { en: "Dose measurement & calibration", zh: "剂量测量与校准", vi: "Đo liều & hiệu chuẩn", th: "การวัดโดส & การสอบเทียบ" },
     ],
     metaTitle: "Mercury UV Lamp Curing Sources | OmniCure S-Series | ETIA",
     metaDescription:
       "Mercury UV lamp curing sources explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
     match: (p) =>
-      p.tech === "UV Spot Curing" && (p.sub === "UV Lamp Spot" || p.sub === "S-Series Accessory"),
+      (p.tech === "UV Spot Curing" &&
+        (p.sub === "UV Lamp Spot" || p.sub === "S-Series Accessory")) ||
+      // The R2000 and LS200 are sold as S2000 companions — dose calibration for
+      // the systems above — so they belong on this page rather than nowhere.
+      MEASUREMENT_SLUGS.has(p.slug),
   },
 
   // ─────────────────────────── 2. LED紫外光源 ───────────────────────────
@@ -679,9 +687,15 @@ export function productCategoryHref(slug: ProductCategorySlug): string {
   return `/product/technology/${slug}`;
 }
 
-// The catalog models in a category, in catalog order.
+// The catalog models in a category, in catalog order — except that the two
+// radiometers read last. They are companions to the systems they calibrate, and
+// catalog order would otherwise open the mercury lamp page with them.
 export function categoryProducts(slug: ProductCategorySlug): Product[] {
-  return products.filter(productCategories[slug].match);
+  const list = products.filter(productCategories[slug].match);
+  return [
+    ...list.filter((p) => !MEASUREMENT_SLUGS.has(p.slug)),
+    ...list.filter((p) => MEASUREMENT_SLUGS.has(p.slug)),
+  ];
 }
 
 // The technology categories a brand actually has products in. Computed from
