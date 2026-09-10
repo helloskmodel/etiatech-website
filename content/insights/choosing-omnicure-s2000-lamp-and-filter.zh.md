@@ -62,6 +62,6 @@ S2000 Elite 支持两种可现场更换、即插即用的 Intelli-Lamp® 模块�
 
 只要告诉我们你的胶粘剂、基材与固化要求，我们就能为你的工艺确认确切的灯管模块与滤光片料号。ETIA 是 OmniCure 授权分销商，提供正品灯管、滤光片与导光管并具备本地支持。
 
-- 分步安装与配置：请见[OmniCure S2000 Elite 安装与技术支持指南](/product/omnicure/s2000/support)。
+- 分步安装与配置：请见[OmniCure S2000 Elite 安装与技术支持指南](/zh/product/omnicure/s2000)。
 - 按料号订购正品替换灯管：[S2000 灯管页面](/product/omnicure/s2000-lamp)。
 - 完整系统概览：[OmniCure S2000 Elite](/product/omnicure/s2000)。

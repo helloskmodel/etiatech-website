@@ -15,7 +15,7 @@ import { getListedApplications } from "@/data/applicationsData";
 import type { Application } from "@/data/applicationTypes";
 import { publishedIndustries, industryHref, industryOfApplication, type IndustrySlug } from "@/components/industrySolutions";
 
-// The notes the five industries claim, in industry order — the only ones the
+// The notes the published industries claim, in industry order — the only ones the
 // page lists. A note no industry has taken is not on the shelf yet.
 const listedApplications: Application[] = (() => {
   const all = getListedApplications();
@@ -70,7 +70,7 @@ export default function ApplicationsIndexView() {
 
       <main className="bg-[#f6f8fb] py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* One filter: the five industries. The active one links on to its
+          {/* One filter: the industries. The active one links on to its
               solution page, where the industry is explained in full. */}
           <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#1A56DB]">{t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}</p>
           <nav aria-label="Application industries" className="mb-6 flex gap-2 overflow-x-auto pb-2">

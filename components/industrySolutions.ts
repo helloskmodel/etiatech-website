@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription, seoTitle } from "@/components/seoText";
 import type { LangText } from "@/components/LocaleContext";
 import type { ProductCategorySlug } from "@/components/productCategories";
 import { applicationsData } from "@/data/applicationsData";
@@ -147,6 +148,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
   "optical-fiber": {
     slug: "optical-fiber",
     accent: "#0d9488",
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20/0501-fiber-cable.jpg",
     name: { en: "Optical Fiber & Cable", zh: "光纤与线缆", vi: "Sợi quang & cáp", th: "เส้นใยแก้วนำแสง & สายเคเบิล" },
     tagline: {
       en: "Draw-tower coating, ribboning, termination and cable marking — 360° cure at line speed.",
@@ -468,8 +470,8 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
   },
 
   // ───────────────────────── 5. 科学实验 ─────────────────────────
-  // Now backed by a real product line — the Excelitas analytical light
-  // sources — rather than by third-party evidence about rheometers alone.
+  // Backed by the S2000 Elite / LX500 bench notes (photorheology, adhesive
+  // screening, radiometry) — the analytical OEM lamp line was discontinued.
   // Photocalorimetry stays out: Mettler Toledo's kit uses Hamamatsu and DELO
   // sources and TA's PCA has its own lamp, so there is no claim to make there.
   "scientific-instruments": {
@@ -572,14 +574,16 @@ const BY_SLUG = new Map<string, Application>(
 export function industryApplications(slug: IndustrySlug): Application[] {
   return industrySolutions[slug].applicationSlugs
     .map((s) => BY_SLUG.get(s))
-    .filter((a): a is Application => Boolean(a));
+    // A note held back with `published: false` resolves to a 404, so the
+    // industry page must not list it.
+    .filter((a): a is Application => Boolean(a) && a?.published !== false);
 }
 
 export function industryMetadata(slug: IndustrySlug): Metadata {
   const i = industrySolutions[slug];
   return {
-    title: i.metaTitle,
-    description: i.metaDescription,
+    title: seoTitle(i.metaTitle),
+    description: seoDescription(i.metaDescription),
     alternates: { canonical: `${SITE}${industryHref(slug)}` },
     ...(i.draft ? { robots: { index: false, follow: false } } : {}),
   };

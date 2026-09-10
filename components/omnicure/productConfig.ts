@@ -40,8 +40,8 @@ const META: Record<string, {
     tagline: { en: "Maximum Power. Total Control.", th: "พลังสูงสุด ควบคุมได้ทุกขั้นตอน" },
     stats: [["30 W/cm²", "Peak Irradiance"], ["±5%", "CLF Stability"], ["30 ms", "Shutter"], ["200 W", "Hg Lamp"]],
     metaTitle: {
-      en: "OmniCure S2000 Elite UV Spot Curing — Thailand | Authorized Distributor",
-      th: "OmniCure S2000 Elite ระบบบ่มยูวีแบบจุด — ประเทศไทย | ตัวแทนจำหน่ายที่ได้รับอนุญาต",
+      en: "OmniCure S2000 Elite UV Spot Curing — Thailand | ETIA",
+      th: "OmniCure S2000 Elite บ่มยูวีแบบจุด — ตัวแทนจำหน่ายในไทย | ETIA",
     },
     faq: [
       { q: { en: "Is the OmniCure S2000 Elite available in Thailand?", th: "OmniCure S2000 Elite มีจำหน่ายในประเทศไทยหรือไม่?" },
@@ -58,8 +58,8 @@ const META: Record<string, {
     tagline: { en: "Automation-Ready UV Spot Curing.", th: "ระบบบ่มยูวีแบบจุด พร้อมสำหรับไลน์ผลิตอัตโนมัติ" },
     stats: [["30 W/cm²", "Peak Irradiance"], ["2,000 h", "Lamp Guarantee"], ['4.3"', "Touch Screen"], ["PLC", "DB50 Output"]],
     metaTitle: {
-      en: "OmniCure S1500 Pro UV Spot Curing — Thailand | Authorized Distributor",
-      th: "OmniCure S1500 Pro ระบบบ่มยูวีแบบจุด — ประเทศไทย | ตัวแทนจำหน่ายที่ได้รับอนุญาต",
+      en: "OmniCure S1500 Pro UV Spot Curing — Thailand | ETIA",
+      th: "OmniCure S1500 Pro บ่มยูวีแบบจุด — ตัวแทนจำหน่ายในไทย | ETIA",
     },
     landingSubhead: {
       en: "200 W lamp-based UV spot curing built for automated manufacturing — up to 30 W/cm², a guaranteed 2,000-hour lamp, PLC output and full Industry 4.0 traceability.",
@@ -129,8 +129,8 @@ const META: Record<string, {
       ],
     },
     metaTitle: {
-      en: "OmniCure LX500 UV LED Spot Curing — Thailand | Authorized Distributor",
-      th: "OmniCure LX500 UV LED บ่มแบบจุด — ประเทศไทย | ตัวแทนจำหน่ายที่ได้รับอนุญาต",
+      en: "OmniCure LX500 UV LED Spot Curing — Thailand | ETIA",
+      th: "OmniCure LX500 UV LED บ่มแบบจุด — ตัวแทนจำหน่ายในไทย | ETIA",
     },
     faq: [
       { q: { en: "Is the OmniCure LX500 available in Thailand?", th: "OmniCure LX500 มีจำหน่ายในประเทศไทยหรือไม่?" },

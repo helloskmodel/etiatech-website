@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription, seoTitle } from "@/components/seoText";
 import type { Product } from "@/components/productCatalog";
 import type { LangText } from "@/components/LocaleContext";
 import { brandLanguageAlternates } from "@/components/localePageSeo";
@@ -117,22 +118,21 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     logo: "■",
     color: "#7c3aed",
     cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LIGHT%20RESOURCE%20/NOBLELIGHT",
-    tagline: { en: "UV LED · Infrared Heating · Analytical Sources", zh: "UV LED · 红外加热 · 分析光源" },
+    tagline: { en: "UV LED · Infrared Heating", zh: "UV LED · 红外加热" },
     intro: {
-      en: "Excelitas Noblelight is the industrial light-source arm of Excelitas, and ETIA carries three of its lines.\n\nSemray® delivers scalable, water-cooled UV LED systems for large-area industrial curing, with emission widths from 400 to 1300 mm and purpose-built solutions for optical fiber draw and wire marking. Customized optics bring high intensity even at large working distances.\n\nThe M and MX infrared heating modules bring contact-free process heat to drying, laminating, embossing and pre-heating steps, with the emitter spectrum matched to each material's own absorption. The analytical line — FiberLight® D2, deuterium lamps and PID lamps — goes inside spectrometers, chromatographs and gas detectors as an OEM module.\n\nOn naming: Excelitas has consolidated the earlier Semray UV LED range under the Phoseon brand. Semray UV2000 is now Phoseon® FireEdge, UV4203 is FireJet, and UV5000 is FireLine; Semray continues as UV3004, UV PC6003 and UV5000+. The two brands are one product lineage, not competing alternatives.",
-      zh: "Excelitas Noblelight 是 Excelitas 旗下的工业光源业务,ETIA 代理其中三条产品线。\n\nSemray® 提供可扩展的水冷 UV LED 系统,用于大面积工业固化,发光宽度 400 至 1300 毫米,并为光纤拉丝与线材标识打造专用方案。定制光学设计即使在大工作距离下也能保持高强度。\n\nM 与 MX 红外加热模块以非接触方式为干燥、层压、压花与预热工序提供工艺热量,发射器光谱可与材料自身的吸收光谱匹配。分析光源线 —— FiberLight® D2、氘灯与 PID 灯 —— 则作为 OEM 模块内置于光谱仪、色谱仪与气体检测仪中。\n\n关于命名:Excelitas 已将早期的 Semray UV LED 系列并入 Phoseon 品牌。Semray UV2000 现为 Phoseon® FireEdge,UV4203 现为 FireJet,UV5000 现为 FireLine;Semray 现存型号为 UV3004、UV PC6003 与 UV5000+。两个品牌是同一条产品谱系,并非相互竞争的替代方案。",
+      en: "Excelitas Noblelight is the industrial light-source arm of Excelitas, and ETIA carries two of its lines.\n\nSemray® delivers scalable, water-cooled UV LED systems for large-area industrial curing, with emission widths from 400 to 1300 mm and purpose-built solutions for optical fiber draw and wire marking. Customized optics bring high intensity even at large working distances.\n\nThe M and MX infrared heating modules bring contact-free process heat to drying, laminating, embossing and pre-heating steps, with the emitter spectrum matched to each material's own absorption.\n\nOn naming: Excelitas has consolidated the earlier Semray UV LED range under the Phoseon brand. Semray UV2000 is now Phoseon® FireEdge, UV4203 is FireJet, and UV5000 is FireLine; Semray continues as UV3004, UV PC6003 and UV5000+. The two brands are one product lineage, not competing alternatives.",
+      zh: "Excelitas Noblelight 是 Excelitas 旗下的工业光源业务,ETIA 代理其中两条产品线。\n\nSemray® 提供可扩展的水冷 UV LED 系统,用于大面积工业固化,发光宽度 400 至 1300 毫米,并为光纤拉丝与线材标识打造专用方案。定制光学设计即使在大工作距离下也能保持高强度。\n\nM 与 MX 红外加热模块以非接触方式为干燥、层压、压花与预热工序提供工艺热量,发射器光谱可与材料自身的吸收光谱匹配。\n\n关于命名:Excelitas 已将早期的 Semray UV LED 系列并入 Phoseon 品牌。Semray UV2000 现为 Phoseon® FireEdge,UV4203 现为 FireJet,UV5000 现为 FireLine;Semray 现存型号为 UV3004、UV PC6003 与 UV5000+。两个品牌是同一条产品谱系,并非相互竞争的替代方案。",
     },
     applications: [
       { en: "Industrial Large-Area Curing", zh: "工业大面积固化" },
       { en: "Optical Fiber Draw Tower", zh: "光纤拉丝塔" },
       { en: "Wire Marking", zh: "线材标识" },
       { en: "Infrared Process Heating", zh: "红外工艺加热" },
-      { en: "Analytical & OEM Light Sources", zh: "分析与 OEM 光源" },
       { en: "Custom Solutions", zh: "定制方案" },
     ],
-    metaTitle: "NobleLight UV LED Curing, Infrared Heating & Analytical Lamps | ETIA",
+    metaTitle: "NobleLight UV LED Curing & Infrared Heating | ETIA",
     metaDescription:
-      "Excelitas Noblelight — Semray water-cooled UV LED (400–1300 mm) and 360° fiber curing, M and MX infrared heating modules, and FiberLight D2, deuterium and PID analytical lamps. Supplied and supported by ETIA in Thailand and Vietnam.",
+      "Excelitas Noblelight — Semray water-cooled UV LED (400–1300 mm) and 360° fiber curing and M and MX infrared heating modules. Supplied and supported by ETIA in Thailand and Vietnam.",
   },
 };
 
@@ -140,8 +140,8 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
 export function brandMetadata(slug: BrandSlug): Metadata {
   const b = brandLanding[slug];
   return {
-    title: b.metaTitle,
-    description: b.metaDescription,
+    title: seoTitle(b.metaTitle),
+    description: seoDescription(b.metaDescription),
     alternates: {
       canonical: `${SITE}/product/${slug}`,
       // Brands with a Chinese page link their en<->zh hreflang group here.

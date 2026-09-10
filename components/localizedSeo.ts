@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/components/LocaleContext";
 import { localeSalesEmail } from "@/components/contact";
+import { DEFAULT_OG_IMAGE } from "@/components/seoText";
 
 const SITE = "https://www.etiatech.com";
 
@@ -38,6 +39,7 @@ export function localizedHomeMetadata(locale: Exclude<Locale, "en">): Metadata {
       locale: locale === "zh" ? "zh_CN" : locale === "vi" ? "vi_VN" : "th_TH",
       title: seo[locale].title,
       description: seo[locale].description,
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

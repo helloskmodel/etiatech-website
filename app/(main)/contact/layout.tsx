@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/components/seoText";
 
 const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/contact";
@@ -6,7 +7,7 @@ const PAGE_PATH = "/contact";
 export const metadata: Metadata = {
   title: "UV Curing Service & Support — From Selection to Service | ETIA",
   description:
-    "Application-driven UV curing support across China and Southeast Asia: system selection, application review, local supply, installation, training, maintenance, repair and radiometer calibration for OmniCure® and Phoseon systems.",
+    "UV curing support across China and Southeast Asia: system selection, application review, local supply, installation, training, repair and calibration.",
   keywords: [
     "UV curing support",
     "UV curing service",
@@ -41,6 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE + PAGE_PATH,
     siteName: "ETIA",
+    images: [DEFAULT_OG_IMAGE],
     title: "UV Curing Service & Support — From Selection to Service | ETIA",
     description:
       "Reliable, application-driven UV curing support across China and Southeast Asia — selection, implementation, and long-term service for OmniCure® and Phoseon systems.",

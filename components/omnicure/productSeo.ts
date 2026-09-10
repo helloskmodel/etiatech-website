@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE, seoDescription, seoTitle } from "@/components/seoText";
 import { buildProductConfig } from "./productConfig";
 import type { Lang } from "./copy";
 
@@ -16,11 +17,19 @@ export function productLandingMetadata(slug: string, lang: Lang): Metadata {
   const paths = PRODUCT_PATHS[slug];
   if (!c || !paths) return {};
   return {
-    title: c.metaTitle,
-    description: c.metaDescription,
+    title: seoTitle(c.metaTitle),
+    description: seoDescription(c.metaDescription),
     alternates: {
       canonical: SITE + paths[lang],
       languages: { en: SITE + paths.en, th: SITE + paths.th, "x-default": SITE + paths.en },
+    },
+    openGraph: {
+      type: "website",
+      url: SITE + paths[lang],
+      siteName: "ETIA Technology",
+      title: c.metaTitle,
+      description: seoDescription(c.metaDescription),
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

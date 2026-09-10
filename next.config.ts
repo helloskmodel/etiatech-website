@@ -30,6 +30,14 @@ const nextConfig: NextConfig = {
         destination: "/product/technology/mercury-uv-lamp#s-series-accessories-replacement-lamps",
         permanent: true,
       },
+      // The analytical OEM lamp line (FiberLight, deuterium, PID, hollow
+      // cathode) is discontinued; its indexed pages go to the brand shelf.
+      ...["fiberlight-d2", "pid-lamps", "deuterium-lamps", "fiberlight-l3", "hollow-cathode-lamps"].map((slug) => ({
+        source: `/product/systems/${slug}`,
+        destination: "/product/noblelight",
+        permanent: true,
+      })),
+      { source: "/product/technology/analytical-light-sources", destination: "/product", permanent: true },
       { source: "/th/th/:path*", destination: "/", permanent: true },
       { source: "/th/en/:path*", destination: "/", permanent: true },
       { source: "/th/zh/:path*", destination: "/", permanent: true },

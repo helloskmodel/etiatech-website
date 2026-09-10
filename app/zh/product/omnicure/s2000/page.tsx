@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription } from "@/components/seoText";
 import S2000View from "@/components/S2000View";
 import LocalizedChrome from "@/components/LocalizedChrome";
 import { s2000Faqs } from "@/components/s2000Faq";
@@ -20,9 +21,9 @@ const S2000_LANGUAGES = {
 const PDF = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/PDF";
 
 export const metadata: Metadata = {
-  title: "OmniCure S2000 Elite UV 点固化系统 | 用户指南与技术支持 | ETIA",
+  title: "OmniCure S2000 Elite | 用户指南与技术支持 | ETIA",
   description:
-    "OmniCure S2000 Elite UV 点固化系统——下载用户指南、快速入门指南与产品手册。涵盖设置、校准、灯管更换、光学滤镜、导光管、PLC、Web UI、故障排除与 ETIA 技术支持。",
+    seoDescription("OmniCure S2000 Elite UV 点固化系统——下载用户指南、快速入门指南与产品手册。涵盖设置、校准、灯管更换、光学滤镜、导光管、PLC、Web UI、故障排除与 ETIA 技术支持。"),
   keywords: [
     "OmniCure S2000 Elite",
     "OmniCure S2000 Elite UV 点固化系统",

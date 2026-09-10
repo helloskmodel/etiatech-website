@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoDescription } from "@/components/seoText";
 import S2000View from "@/components/S2000View";
 import { S2000_FAQ } from "@/components/s2000Faq";
 
@@ -17,9 +18,9 @@ const PDF = {
 };
 
 export const metadata: Metadata = {
-  title: "OmniCure S2000 Elite UV Spot Curing System | User Guide & Support | ETIA",
+  title: "OmniCure S2000 Elite | User Guide & Support | ETIA",
   description:
-    "OmniCure S2000 Elite UV Spot Curing System — download the user guide, quick start guide, and brochure. Setup, calibration, lamp replacement, optical filter, light guide, PLC, Web UI, troubleshooting, and ETIA technical support.",
+    seoDescription("OmniCure S2000 Elite UV Spot Curing System — download the user guide, quick start guide, and brochure. Setup, calibration, lamp replacement, optical filter, light guide, PLC, Web UI, troubleshooting, and ETIA technical support."),
   keywords: [
     "OmniCure S2000 Elite",
     "OmniCure S2000 Elite UV Spot Curing System",

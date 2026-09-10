@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE, seoDescription, seoTitle } from "@/components/seoText";
 import type { Locale } from "@/components/LocaleContext";
 import { applicationsZh } from "@/data/applicationsData.zh";
 import { getApplicationBySlug } from "@/data/applicationsData";
@@ -47,7 +48,9 @@ const APPLICATIONS_INDEX_META: Record<SubLocale, { title: string; description: s
 export function applicationsIndexMetadata(locale: SubLocale): Metadata {
   return {
     ...APPLICATIONS_INDEX_META[locale],
+    description: seoDescription(APPLICATIONS_INDEX_META[locale].description),
     alternates: { canonical: `${SITE}/${locale}/applications`, languages: languageAlternates("/applications") },
+    openGraph: { ...APPLICATIONS_INDEX_META[locale], url: `${SITE}/${locale}/applications`, type: "website", locale: OG_LOCALE[locale], images: [DEFAULT_OG_IMAGE] },
   };
 }
 
@@ -65,8 +68,8 @@ export function applicationDetailMetadata(slug: string, locale: SubLocale): Meta
   const noindex = isPublishedApplication(slug) ? {} : { robots: { index: false as const, follow: false as const } };
   return {
     ...noindex,
-    title,
-    description,
+    title: seoTitle(title),
+    description: seoDescription(description),
     keywords: application.seo.keywords,
     alternates: { canonical: url, languages: languageAlternates(path) },
     openGraph: { title, description, url, type: "article", locale: OG_LOCALE[locale], images: [application.image] },
@@ -173,7 +176,9 @@ const CONTACT_META: Record<SubLocale, { title: string; description: string }> = 
 export function contactMetadata(locale: SubLocale): Metadata {
   return {
     ...CONTACT_META[locale],
+    description: seoDescription(CONTACT_META[locale].description),
     alternates: { canonical: `${SITE}/${locale}/contact`, languages: languageAlternates("/contact") },
+    openGraph: { ...CONTACT_META[locale], url: `${SITE}/${locale}/contact`, type: "website", locale: OG_LOCALE[locale], images: [DEFAULT_OG_IMAGE] },
   };
 }
 
@@ -232,7 +237,9 @@ export function brandLocaleMetadata(slug: "omnicure" | "phoseon", locale: SubLoc
   const meta = BRAND_LOCALE_META[slug][locale];
   return {
     ...meta,
+    title: seoTitle(meta.title),
+    description: seoDescription(meta.description),
     alternates: { canonical: `${SITE}/${locale}/product/${slug}`, languages: brandLanguageAlternates(slug) },
-    openGraph: { ...meta, url: `${SITE}/${locale}/product/${slug}`, type: "website", locale: OG_LOCALE[locale] },
+    openGraph: { ...meta, url: `${SITE}/${locale}/product/${slug}`, type: "website", locale: OG_LOCALE[locale], images: [DEFAULT_OG_IMAGE] },
   };
 }
