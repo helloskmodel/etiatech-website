@@ -146,12 +146,13 @@ export const partFamilies: PartFamily[] = [
 
 export const parts: Part[] = [
   // ── lamps ──
-  { pn: "012-68000R", desc: "S2000 Elite / S1500 Pro Lamp Module (Standard)", family: "lamps", attrs: {"system": "S2000 Elite / S1500 Pro", "type": "Standard"} },
-  { pn: "012-69000R", desc: "S2000 Elite / S1500 Pro Lamp Module – Surface Cure", family: "lamps", attrs: {"system": "S2000 Elite / S1500 Pro", "type": "Surface Cure"} },
-  { pn: "012-64000R", desc: "Standard Spare 200 W Lamp for S2000 and S1500", family: "lamps", attrs: {"system": "S2000 / S1500 (previous generation)", "type": "Standard"} },
-  { pn: "012-65000R", desc: "Spare 200 W Lamp for Surface Curing, S2000", family: "lamps", attrs: {"system": "S2000 / S1500 (previous generation)", "type": "Surface Cure"} },
-  { pn: "012-60850", desc: "Standard Spare 100 W Lamp for S1000, Novacure N2100 and Acticure", family: "lamps", attrs: {"system": "S1000 / Novacure N2100 / Acticure", "type": "Standard"} },
-  { pn: "012-60650", desc: "Spare Novacure Lamp for N2001-A1, N2001-A, N2001, N2000", family: "lamps", attrs: {"system": "Novacure N2000 series", "type": "Standard"} },
+  // Lamps: ETIA supplies the S2000 and S2000 Elite. Elite numbers from the
+  // S2000 Elite user guide (035-00707 Rev 3, table 3-1); S2000 numbers from
+  // the catalogue's S-Series compatibility table.
+  { pn: "012-68000R", desc: "S2000 Elite Lamp Module – Standard", family: "lamps", attrs: {"system": "S2000 Elite", "type": "Standard"} },
+  { pn: "012-69000R", desc: "S2000 Elite Lamp Module – Surface Cure", family: "lamps", attrs: {"system": "S2000 Elite", "type": "Surface Cure"} },
+  { pn: "012-64000R", desc: "S2000 Replacement Lamp – Standard (200 W)", family: "lamps", attrs: {"system": "S2000", "type": "Standard"} },
+  { pn: "012-65000R", desc: "S2000 Replacement Lamp – Surface Cure (200 W)", family: "lamps", attrs: {"system": "S2000", "type": "Surface Cure"} },
   // ── s2000-elite ──
   { pn: "010-00464R", desc: "S2000 Elite – System Only (lamp and bandpass filter ordered separately)", family: "s2000-elite", attrs: {"kind": "System", "item": "System only"} },
   { pn: "010-00529R", desc: "S2000 Elite – 320–500 nm (incl. 012-68000R Standard lamp + 320–500 nm filter cartridge)", family: "s2000-elite", attrs: {"kind": "System", "item": "320–500 nm bundle"} },
