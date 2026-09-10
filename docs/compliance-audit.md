@@ -48,14 +48,11 @@
 - **隐私政策**（四语）：列明实际处理者（Vercel、Google GA4/GTM、Resend、腾讯云 COS、WhatsApp/微信）；保留期说明；撤回同意与投诉权；新增"法律依据与适用法律"（香港 PDPO、泰国 PDPA B.E. 2562、越南 13/2023/ND-CP、中国 PIPL）；更新日期。
 - **Cookie 政策**（四语）：列明实际存储项 `etia-cookie-consent`、`etia-lang`、`etia-inquiry`、`_ga/_ga_*` 及其期限与触发条件；"Cookie 设置"撤回路径。
 
-### 建议（未做，需决定）
+### 已决定（2026-09-10）
 
-1. **`/api/ask`**：站内没有任何页面调用这个 Anthropic 问答接口，但它仍对外可访问（有速率限制）。建议删除，或在启用前把"用户提问会发送至 Anthropic 处理"写入隐私政策。
-2. **CSP**：未设 Content-Security-Policy。GTM/GA 与 Next 内联样式需要 nonce 方案（放在 `proxy.ts`），建议先以 `Content-Security-Policy-Report-Only` 上线观察。
-3. **法律页面本地化路由**：隐私/Cookie/条款内容已是四语（按语言 Cookie 切换），但只有 `/privacy` 一个 URL；PDPA 建议以用户语言可直达，可加 `/th/privacy` 等路由。
-4. **PDPA 合规动作**（泰国）：指定数据保护联系人并写入政策；与 Resend、Vercel 签订数据处理协议（两者均提供标准 DPA）。
-5. **GA4 保留期**：在 GA 后台把数据保留期设为 2 个月或 14 个月，并与政策表述一致。
-6. **速率限制**：当前为单实例内存计数，Serverless 下每个实例独立；流量上来后换 Upstash/Vercel KV。
+- **`/api/ask` 已删除**（连同 `@anthropic-ai/sdk` 依赖）：站内无页面调用，不再对外暴露一个连着付费模型的接口。
+- 业主决定**不做**：CSP、法律页本地化路由（`/th/privacy` 等）、泰国 PDPA 联系人、与 Resend/Vercel 签 DPA、GA 后台保留期调整。
+- 速率限制仍为单实例内存计数；流量上来后再换 Upstash/Vercel KV。
 
 ## 三、其他检查
 
