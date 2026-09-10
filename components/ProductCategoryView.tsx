@@ -27,6 +27,12 @@ import { productHref, productImage, brandAccent, localizeProduct, productDocUrl 
  * models) renders the overview and an inquiry CTA rather than an empty grid —
  * we never invent specs to fill a page.
  */
+// Stable anchor for a group heading, so the home page can link straight to a
+// shelf rather than dropping the visitor at the top of a thirty-model page.
+export function groupAnchor(titleEn: string): string {
+  return titleEn.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 export default function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
   const { locale } = useLocale();
   const c = productCategories[slug];
@@ -78,79 +84,12 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
         </div>
       </header>
 
-      {/* Overview */}
-      <section className="border-b border-gray-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">
-            {t({ en: "Overview", zh: "技术概述", th: "ภาพรวม", vi: "Tổng quan" }, locale)}
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-[#143C96] md:text-3xl">
-            {t({ en: `About ${c.name.en}`, zh: `关于${c.name.zh ?? c.name.en}` }, locale)}
-          </h2>
-          <div className="mt-4 mb-6 h-1 w-12 rounded" style={{ background: c.accent }} />
-          {c.intro.map((para, i) => (
-            <p key={i} className="mb-4 text-base leading-7 text-[#475467] last:mb-0">
-              {t(para, locale)}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      {/* Selection guide — reference content for categories where picking the
-          right variant is the customer's actual problem. */}
-      {c.selectionGuide && (
-        <section className="border-t border-gray-100 bg-[#F7FAFC] px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="text-2xl font-bold text-[#143C96] md:text-3xl">{t(c.selectionGuide.heading, locale)}</h2>
-            <div className="mt-4 mb-6 h-1 w-12 rounded" style={{ background: c.accent }} />
-            <p className="max-w-3xl text-base leading-7 text-[#475467]">{t(c.selectionGuide.standfirst, locale)}</p>
-
-            <div className="mt-10 space-y-7">
-              {c.selectionGuide.steps.map((step, i) => (
-                <div key={i} className="border-l-2 pl-5" style={{ borderColor: c.accent }}>
-                  <h3 className="text-base font-bold text-[#143C96]">{t(step.title, locale)}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#667085]">{t(step.body, locale)}</p>
-                </div>
-              ))}
-            </div>
-
-            {c.selectionGuide.tables?.map((table, ti) => (
-              <figure key={ti} className="mt-12">
-                <figcaption className="mb-4 text-xs font-bold uppercase tracking-[.14em] text-[#41A62A]">
-                  {t(table.caption, locale)}
-                </figcaption>
-                {/* Wide tables scroll inside their own container so the page body never does. */}
-                <div className="overflow-x-auto rounded-2xl border border-[#D9E4EA] bg-white">
-                  <table className="w-full min-w-[44rem] border-collapse text-left text-sm">
-                    <thead>
-                      <tr className="border-b border-[#D9E4EA] bg-[#F7FAFC]">
-                        {table.columns.map((col, i) => (
-                          <th key={i} scope="col" className="px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#475467]">
-                            {t(col, locale)}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {table.rows.map((row, i) => (
-                        <tr key={i} className="border-b border-[#E6EDF3] last:border-0">
-                          {row.map((cell, j) => (
-                            <td key={j} className={`px-5 py-4 align-top leading-6 ${j === 0 ? "font-bold text-[#143C96]" : "text-[#667085]"}`}>
-                              {t(cell, locale)}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                {table.footnote && <p className="mt-3 text-xs leading-5 text-[#98A2B3]">{t(table.footnote, locale)}</p>}
-              </figure>
-            ))}
-          </div>
-        </section>
-      )}
-
+      {/* The catalogue leads. This page used to open with the overview and
+          the selection guide, so a visitor met several screens of prose
+          before the first product — on a phone, the grid was below the
+          fold twice over. The prose still follows, for the visitor who
+          wants it and for search; it simply no longer stands in front of
+          the pictures. */}
       {/* Models */}
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -172,7 +111,7 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
             // only ever one code path here.
             <div className="mt-8 space-y-10">
               {modelGroups.map((group, gi) => (
-                <div key={group.title ? group.title.en : `rest-${gi}`}>
+                <div key={group.title ? group.title.en : `rest-${gi}`} id={group.title ? groupAnchor(group.title.en) : undefined} className="scroll-mt-24">
                   {group.title && (
                     <div className="mb-4 flex items-baseline gap-3">
                       <h3 className="shrink-0 text-lg font-bold text-[#143C96]">{t(group.title, locale)}</h3>
@@ -182,7 +121,7 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
                       </span>
                     </div>
                   )}
-                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
                     {group.items.map((raw) => {
                       const p = localizeProduct(raw, locale);
                       return (
@@ -191,7 +130,7 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
                           href={productHref(p)}
                           className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all hover:shadow-md"
                         >
-                          <div className="relative h-40 overflow-hidden bg-gray-50">
+                          <div className="relative h-32 overflow-hidden bg-gray-50 sm:h-56">
                             {productImage(p) ? (
                               <Image
                                 src={productImage(p)}
@@ -209,10 +148,12 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
                               {p.brand}
                             </span>
                           </div>
-                          <div className="flex flex-1 flex-col p-5">
-                            <h4 className="mb-2 text-base font-bold leading-snug text-[#1A56DB]">{p.name}</h4>
-                            <p className="line-clamp-3 flex-1 text-sm leading-relaxed text-gray-500">{p.intro}</p>
-                            <span className="mt-4 text-sm font-semibold group-hover:underline" style={{ color: brandAccent[p.brandId] }}>
+                          {/* Name and nothing else. The blurb belongs on the
+                              product page; in a grid of thirty it turned
+                              browsing into reading. */}
+                          <div className="flex flex-1 flex-col p-3 sm:p-4">
+                            <h4 className="text-xs font-bold leading-snug text-[#1A56DB] sm:text-sm">{p.name}</h4>
+                            <span className="mt-auto pt-2 text-[11px] font-semibold group-hover:underline sm:pt-3 sm:text-xs" style={{ color: brandAccent[p.brandId] }}>
                               {t({ en: "View details →", zh: "查看详情 →", th: "ดูรายละเอียด →", vi: "Xem chi tiết →" }, locale)}
                             </span>
                           </div>
@@ -246,6 +187,24 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
               </a>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="border-b border-gray-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">
+            {t({ en: "Overview", zh: "技术概述", th: "ภาพรวม", vi: "Tổng quan" }, locale)}
+          </p>
+          <h2 className="mt-3 text-2xl font-bold text-[#143C96] md:text-3xl">
+            {t({ en: `About ${c.name.en}`, zh: `关于${c.name.zh ?? c.name.en}` }, locale)}
+          </h2>
+          <div className="mt-4 mb-6 h-1 w-12 rounded" style={{ background: c.accent }} />
+          {c.intro.map((para, i) => (
+            <p key={i} className="mb-4 text-base leading-7 text-[#475467] last:mb-0">
+              {t(para, locale)}
+            </p>
+          ))}
         </div>
       </section>
 

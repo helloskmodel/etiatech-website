@@ -16,6 +16,10 @@ export type BrandLanding = {
   logo: string;
   color: string;
   tagline: LangText;
+  // Photograph for the home page brand card, supplied by ETIA. Fills the card
+  // edge to edge; without one the card falls back to a catalogue shot of the
+  // brand's first photographed model, letterboxed on white.
+  cardImage?: string;
   // Optional brand-specific hero copy. When present, the hero shows this
   // eyebrow / headline / subline instead of the generic "{brand} UV Curing
   // Systems" title. headline may contain "\n" for a line break (the last
@@ -33,6 +37,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     name: "OmniCure",
     logo: "●",
     color: "#1A56DB",
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LIGHT%20RESOURCE%20/OMNICURE",
     tagline: { en: "", zh: "" },
     hero: {
       eyebrow: { en: "OmniCure®", zh: "OmniCure®" },
@@ -61,6 +66,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     name: "Phoseon",
     logo: "◆",
     color: "#0ea5e9",
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LIGHT%20RESOURCE%20/PHOESON",
     tagline: { en: "", zh: "" },
     hero: {
       eyebrow: { en: "Phoseon®", zh: "Phoseon®" },
@@ -89,6 +95,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     name: "Fusion UV",
     logo: "▲",
     color: "#f59e0b",
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LIGHT%20RESOURCE%20/FUSION%20",
     tagline: { en: "Microwave UV · Broad Spectrum 200–600 nm", zh: "微波 UV · 宽光谱 200–600 nm" },
     intro: {
       en: "Fusion UV electrodeless microwave lamps deliver broad-spectrum 200–600 nm output with long bulb life and consistent performance. The F Series and flagship LightHammer platforms power printing, coatings, optical fiber and wide-web applications, and retrofit easily into existing production lines.",
@@ -109,6 +116,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
     name: "NobleLight",
     logo: "■",
     color: "#7c3aed",
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LIGHT%20RESOURCE%20/NOBLELIGHT",
     tagline: { en: "UV LED · Infrared Heating · Analytical Sources", zh: "UV LED · 红外加热 · 分析光源" },
     intro: {
       en: "Excelitas Noblelight is the industrial light-source arm of Excelitas, and ETIA carries three of its lines.\n\nSemray® delivers scalable, water-cooled UV LED systems for large-area industrial curing, with emission widths from 400 to 1300 mm and purpose-built solutions for optical fiber draw and wire marking. Customized optics bring high intensity even at large working distances.\n\nThe M and MX infrared heating modules bring contact-free process heat to drying, laminating, embossing and pre-heating steps, with the emitter spectrum matched to each material's own absorption. The analytical line — FiberLight® D2, deuterium lamps and PID lamps — goes inside spectrometers, chromatographs and gas detectors as an OEM module.\n\nOn naming: Excelitas has consolidated the earlier Semray UV LED range under the Phoseon brand. Semray UV2000 is now Phoseon® FireEdge, UV4203 is FireJet, and UV5000 is FireLine; Semray continues as UV3004, UV PC6003 and UV5000+. The two brands are one product lineage, not competing alternatives.",

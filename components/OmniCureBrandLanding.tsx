@@ -26,7 +26,7 @@ import {
   localizeProduct,
   popularityRank,
   productHref,
-  productHighlights,
+  
   productImage,
   products,
 } from "@/components/productCatalog";
@@ -35,8 +35,6 @@ import HeroBanner from "@/components/HeroBanner";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import FinalCta from "@/components/FinalCta";
 import TrustStrip from "@/components/TrustStrip";
-import { getApplicationsForProduct } from "@/data/applicationsData";
-import { applicationsZh } from "@/data/applicationsData.zh";
 
 type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
 
@@ -53,7 +51,9 @@ const categoryBySlug: Record<string, Exclude<RouteId, "all">> = {
   r2000: "lamp-spot",
   "s-series-light-guides": "lamp-spot",
   "s2e-network-module": "lamp-spot",
+  "s2000-lamp": "lamp-spot",
   lx500: "led-spot",
+  lx505: "led-spot",
   "v3-led-heads": "led-spot",
   ls200: "led-spot",
   ac2: "small-area",
@@ -64,6 +64,7 @@ const categoryBySlug: Record<string, Exclude<RouteId, "all">> = {
   "ac8-hd": "large-area",
   ac9225: "large-area",
   "ac9225-f": "large-area",
+  "cv300-conveyor": "large-area",
 };
 
 const routes: Array<{
@@ -79,7 +80,7 @@ const routes: Array<{
   {
     id: "lamp-spot",
     eyebrow: { en: "UV Lamp Spot Curing", zh: "紫外灯点固化", th: "การคิวริ่งแบบจุดด้วยหลอด UV", vi: "Đóng rắn điểm bằng đèn UV" },
-    title: { en: "High-Intensity Spot Curing", zh: "高强度点固化", th: "การคิวริ่งแบบจุดความเข้มสูง", vi: "Đóng rắn điểm cường độ cao" },
+    title: { en: "UV Spot Lamp Curing", zh: "汞灯点固化", th: "การบ่มแบบจุดด้วยหลอด", vi: "Đóng rắn điểm bằng đèn" },
     body: { en: "Broad-spectrum UV output for precise adhesive bonding and established production processes.", zh: "宽光谱紫外输出，实现精准胶粘与成熟的量产工艺。", th: "เอาต์พุต UV แบบสเปกตรัมกว้าง สำหรับการยึดติดกาวที่แม่นยำและกระบวนการผลิตที่ผ่านการพิสูจน์แล้ว", vi: "Đầu ra UV phổ rộng cho liên kết keo chính xác và quy trình sản xuất đã được kiểm chứng." },
     featured: "S2000 Elite",
     color: "#1A56DB",
@@ -89,7 +90,7 @@ const routes: Array<{
   {
     id: "led-spot",
     eyebrow: { en: "UV LED Spot Curing", zh: "UV LED 点固化", th: "การคิวริ่งแบบจุดด้วย UV LED", vi: "Đóng rắn điểm bằng UV LED" },
-    title: { en: "LED Precision, Flexible Control", zh: "LED 精准控制 灵活可调", th: "ความแม่นยำแบบ LED ควบคุมได้ยืดหยุ่น", vi: "Độ chính xác LED, kiểm soát linh hoạt" },
+    title: { en: "UV LED Spot Curing", zh: "LED 点固化", th: "การบ่มแบบจุด UV LED", vi: "Đóng rắn điểm UV LED" },
     body: { en: "Wavelength-specific LED spot curing with long life, modular control and low maintenance.", zh: "特定波长 LED 点固化，寿命长、模块化控制、维护成本低。", th: "การคิวริ่งแบบจุดด้วย LED เฉพาะความยาวคลื่น อายุการใช้งานยาว ควบคุมแบบโมดูลาร์ และบำรุงรักษาน้อย", vi: "Đóng rắn điểm bằng LED theo bước sóng riêng, tuổi thọ dài, điều khiển mô-đun và ít bảo trì." },
     featured: "LX500",
     color: "#2F80ED",
@@ -99,7 +100,7 @@ const routes: Array<{
   {
     id: "large-area",
     eyebrow: { en: "UV LED Air-Cooled Large-Area", zh: "UV LED 风冷大面积", th: "UV LED ระบายความร้อนด้วยอากาศ พื้นที่กว้าง", vi: "UV LED làm mát bằng khí, diện tích lớn" },
-    title: { en: "Uniform Exposure for Wider Areas", zh: "大面积均匀照射", th: "การฉายแสงสม่ำเสมอสำหรับพื้นที่กว้าง", vi: "Chiếu xạ đồng đều cho diện tích rộng" },
+    title: { en: "UV LED Large-Area Curing", zh: "LED 大面积固化", th: "การบ่มพื้นที่กว้าง UV LED", vi: "Đóng rắn diện rộng UV LED" },
     body: { en: "Scalable UV LED curing for fixtures, larger bonding zones and production assemblies.", zh: "可扩展的 UV LED 固化，适用于工装夹具、较大粘接区域与量产装配。", th: "การคิวริ่ง UV LED ที่ขยายได้ สำหรับฟิกซ์เจอร์ พื้นที่ยึดติดขนาดใหญ่ และงานประกอบในสายการผลิต", vi: "Đóng rắn UV LED có thể mở rộng cho đồ gá, vùng liên kết lớn và cụm lắp ráp sản xuất." },
     featured: "AC8 Series",
     color: "#087F6B",
@@ -109,7 +110,7 @@ const routes: Array<{
   {
     id: "small-area",
     eyebrow: { en: "UV LED Air-Cooled Small-Area", zh: "UV LED 风冷小面积", th: "UV LED ระบายความร้อนด้วยอากาศ พื้นที่เล็ก", vi: "UV LED làm mát bằng khí, diện tích nhỏ" },
-    title: { en: "Compact Curing, Controlled Zones", zh: "紧凑固化 精准区域", th: "การคิวริ่งขนาดกะทัดรัด ควบคุมเฉพาะจุด", vi: "Đóng rắn nhỏ gọn, vùng kiểm soát" },
+    title: { en: "UV LED Small-Area Curing", zh: "LED 小面积固化", th: "การบ่มพื้นที่เล็ก UV LED", vi: "Đóng rắn diện hẹp UV LED" },
     body: { en: "Compact area curing for small components, controlled windows and laboratory workflows.", zh: "紧凑型面固化，适用于小型部件、受控窗口与实验室工艺。", th: "การคิวริ่งพื้นที่ขนาดกะทัดรัด สำหรับชิ้นส่วนขนาดเล็ก หน้าต่างควบคุม และงานในห้องปฏิบัติการ", vi: "Đóng rắn diện tích nhỏ gọn cho linh kiện nhỏ, cửa sổ kiểm soát và quy trình phòng thí nghiệm." },
     featured: "AC5 Series",
     color: "#25A970",
@@ -121,7 +122,6 @@ const routes: Array<{
 
 export default function OmniCureBrandLanding() {
   const { locale } = useLocale();
-  const [activeRoute, setActiveRoute] = useState<RouteId>("all");
   const allProducts = useMemo(() => products
     .filter((product) => product.brandId === "omnicure")
     .sort((a, b) => {
@@ -129,9 +129,6 @@ export default function OmniCureBrandLanding() {
       const bi = order.indexOf(b.slug);
       return (ai < 0 ? 999 : ai) - (bi < 0 ? 999 : bi) || popularityRank(a.slug) - popularityRank(b.slug);
     }), []);
-  const visibleProducts = activeRoute === "all"
-    ? allProducts
-    : allProducts.filter((product) => categoryBySlug[product.slug] === activeRoute);
   const mailto = inquiryMailto(locale, { subject: "OmniCure Engineering Inquiry", context: "OmniCure technology selection" });
 
   const [showOrder, setShowOrder] = useState(false);
@@ -140,9 +137,10 @@ export default function OmniCureBrandLanding() {
   const orderTotal = orderLines.reduce((sum, [code]) => sum + (orderQty[code] ?? 0), 0);
   const orderMailto = `mailto:${localeSalesEmail(locale)}?subject=${encodeURIComponent("OmniCure S2000 Elite Lamp — Stock Check")}&body=${encodeURIComponent(["OmniCure S2000 Elite Lamp — Stock / Availability Check", "", ...orderLines.map(([code, desc]) => `${code} x ${orderQty[code]}  — ${desc}`), "", "Company / contact / phone:", "Delivery location / country:", "", "Thank you!"].join("\n"))}`;
 
+  // The routes are sections now, not filters: the button jumps to the right
+  // shelf rather than hiding the others.
   function chooseRoute(id: Exclude<RouteId, "all">) {
-    setActiveRoute(id);
-    document.getElementById("omnicure-products")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById(`route-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   return (
@@ -194,40 +192,52 @@ export default function OmniCureBrandLanding() {
         </div>
       </section>
 
+      {/* Every route laid out, all of it visible. The grid used to be filtered
+          by the route buttons above, so a visitor saw one slice at a time and
+          had to guess which slice held the machine they wanted. A distributor's
+          page should behave like a shop: the whole shelf, grouped, with the
+          picture doing the work. */}
       <section id="omnicure-products" className="scroll-mt-20 bg-[#F7FAFC] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "OmniCure Product Family", zh: "OmniCure 产品家族", th: "ตระกูลผลิตภัณฑ์ OmniCure", vi: "Dòng sản phẩm OmniCure" }, locale)}</p>
-          <div className="mt-3 flex flex-col justify-between gap-5 lg:flex-row lg:items-end"><div><h2 className="text-3xl font-bold text-[#102A43] md:text-4xl">{t({ en: "Find Your OmniCure System", zh: "找到适合您的 OmniCure 系统", th: "ค้นหาระบบ OmniCure ที่ใช่สำหรับคุณ", vi: "Tìm hệ thống OmniCure phù hợp" }, locale)}</h2><p className="mt-3 max-w-2xl text-[#5F6C7B]">{t({ en: "All systems are shown on one page. Filter by curing route, then open the detailed product page.", zh: "所有系统均在同一页面展示。按固化路线筛选，再打开详细产品页面。", th: "แสดงทุกระบบไว้ในหน้าเดียว กรองตามแนวทางการคิวริ่ง แล้วเปิดหน้าผลิตภัณฑ์แบบละเอียด", vi: "Tất cả hệ thống được hiển thị trên một trang. Lọc theo phương thức đóng rắn, rồi mở trang chi tiết sản phẩm." }, locale)}</p></div><div className="flex flex-wrap gap-2"><button onClick={() => setActiveRoute("all")} className={`rounded-full border px-4 py-2 text-xs font-bold transition ${activeRoute === "all" ? "border-[#1A56DB] bg-[#1A56DB] text-white" : "border-[#D9E3EE] bg-white text-[#5F6C7B]"}`}>{t({ en: "All Products", zh: "全部产品", th: "ผลิตภัณฑ์ทั้งหมด", vi: "Tất cả sản phẩm" }, locale)} ({allProducts.length})</button>{routes.map((route) => <button key={route.id} onClick={() => setActiveRoute(route.id)} className="rounded-full border bg-white px-4 py-2 text-xs font-bold transition" style={activeRoute === route.id ? { background: route.color, borderColor: route.color, color: "white" } : { borderColor: "#D9E3EE", color: "#5F6C7B" }}>{route.id === "lamp-spot" ? t({ en: "Lamp Spot", zh: "灯管点固化", th: "จุด (หลอด)", vi: "Điểm (đèn)" }, locale) : route.id === "led-spot" ? t({ en: "LED Spot", zh: "LED 点固化", th: "จุด (LED)", vi: "Điểm (LED)" }, locale) : route.id === "large-area" ? t({ en: "Large Area", zh: "大面积", th: "พื้นที่กว้าง", vi: "Diện tích lớn" }, locale) : t({ en: "Small Area", zh: "小面积", th: "พื้นที่เล็ก", vi: "Diện tích nhỏ" }, locale)}</button>)}</div></div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {visibleProducts.map((raw) => {
-              const product = localizeProduct(raw, locale);
-              // The S Series light-guides slot is repurposed as the S2000 Elite
-              // replacement-lamp card, linking straight to the lamp landing page.
-              const isLamp = raw.slug === "s-series-light-guides";
-              const cardHref = isLamp ? LAMP_PATHS.en : productHref(product);
-              const cardName = isLamp ? LAMP.name : product.name;
-              const cardImg = isLamp ? LAMP.heroImage : productImage(product);
-              const routeCat = categoryBySlug[product.slug];
-              const catLabel: Record<Exclude<RouteId, "all">, LangText> = {
-                "lamp-spot": { en: "Lamp Spot", zh: "灯管点固化", th: "จุด (หลอด)", vi: "Điểm (đèn)" },
-                "led-spot": { en: "LED Spot", zh: "LED 点固化", th: "จุด (LED)", vi: "Điểm (LED)" },
-                "large-area": { en: "Large Area", zh: "大面积", th: "พื้นที่กว้าง", vi: "Diện tích lớn" },
-                "small-area": { en: "Small Area", zh: "小面积", th: "พื้นที่เล็ก", vi: "Diện tích nhỏ" },
-              };
-              const cardCategory = isLamp ? t({ en: "Replacement Lamp", zh: "替换灯管", th: "หลอดเปลี่ยน", vi: "Đèn thay thế" }, locale) : (routeCat ? t(catLabel[routeCat], locale) : product.tech);
-              const highlights = isLamp ? [] : (productHighlights[product.slug] ?? []);
-              const related = isLamp ? [] : getApplicationsForProduct(product.slug, 1);
-              const relatedTitle = related.length > 0
-                ? (locale !== "en" && applicationsZh[related[0].slug]?.title?.[locale as "zh" | "th" | "vi"]) || related[0].title
-                : "";
-              return <Link key={product.slug} href={cardHref} className="group flex min-h-[390px] flex-col overflow-hidden rounded-2xl border border-[#E3EAF2] bg-white transition hover:-translate-y-1 hover:border-[#B9CCE2] hover:shadow-[0_16px_45px_rgba(15,36,68,.09)]">
-                <div className="relative h-48 border-b border-[#EEF2F6] bg-white p-4">{cardImg ? <Image src={cardImg} alt={cardName} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-contain p-5 transition duration-300 group-hover:scale-105" /> : <span className="absolute inset-0 flex items-center justify-center font-bold text-[#1A56DB]">OmniCure</span>}</div>
-                <div className="flex flex-1 flex-col p-5"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#1A56DB]">{cardCategory}</p><h3 className="mt-2 text-base font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB]">{cardName}</h3>{isLamp && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Genuine spare lamp · Part No.", zh: "原厂替换灯管 · 料号", th: "หลอดอะไหล่ของแท้ · รหัสชิ้นส่วน", vi: "Đèn thay thế chính hãng · Mã số" }, locale)} {LAMP.primaryCode}</p>}{highlights.length > 0 && <div className="mt-4 flex flex-wrap gap-1.5">{highlights.slice(0, 2).map((item) => <span key={item.en} className="rounded-full bg-[#F3F7FF] px-2.5 py-1 text-[10px] font-semibold text-[#1A56DB]">{t(item, locale)}</span>)}</div>}{related.length > 0 && <p className="mt-4 line-clamp-2 text-xs leading-5 text-[#7B8794]">{t({ en: "Application:", zh: "应用：", th: "การใช้งาน:", vi: "Ứng dụng:" }, locale)} {relatedTitle}</p>}<span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-[#1A56DB]">{isLamp ? t({ en: "Check stock", zh: "查询库存", th: "เช็คสต็อก", vi: "Kiểm tra tồn kho" }, locale) : t({ en: "View product", zh: "查看产品", th: "ดูผลิตภัณฑ์", vi: "Xem sản phẩm" }, locale)} <ArrowRight className="h-4 w-4" /></span></div>
-              </Link>;
-            })}
-          </div>
+          <h2 className="mt-3 text-3xl font-bold text-[#102A43] md:text-4xl">{t({ en: "The full OmniCure range", zh: "OmniCure 全系列", th: "ผลิตภัณฑ์ OmniCure ทั้งหมด", vi: "Toàn bộ dải sản phẩm OmniCure" }, locale)}</h2>
+
+          {routes.map((route) => {
+            const items = allProducts.filter((product) => categoryBySlug[product.slug] === route.id);
+            if (items.length === 0) return null;
+            return (
+              <div key={route.id} id={`route-${route.id}`} className="mt-12 scroll-mt-24">
+                <div className="mb-5 flex items-baseline gap-3">
+                  <h3 className="shrink-0 text-lg font-bold sm:text-xl" style={{ color: route.color }}>{t(route.title, locale)}</h3>
+                  <span className="h-px flex-1" style={{ background: "#E1E8F0" }} />
+                  <span className="shrink-0 text-xs text-[#7B8794]">{items.length} {t({ en: "models", zh: "款", th: "รุ่น", vi: "model" }, locale)}</span>
+                </div>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+                  {items.map((raw) => {
+                    const product = localizeProduct(raw, locale);
+                    return (
+                      <Link key={product.slug} href={productHref(product)} className="group flex flex-col overflow-hidden rounded-2xl border border-[#E3EAF2] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg">
+                        <div className="relative h-28 border-b border-[#EEF2F6] bg-white sm:h-40">
+                          {productImage(product) ? (
+                            <Image src={productImage(product)} alt={product.name} fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 31vw, 24vw" className="object-contain p-3 transition duration-300 group-hover:scale-105 sm:p-5" />
+                          ) : (
+                            <span className="absolute inset-0 flex items-center justify-center font-bold text-[#1A56DB]">OmniCure</span>
+                          )}
+                        </div>
+                        <div className="flex flex-1 flex-col p-3 sm:p-4">
+                          <h4 className="text-[12px] font-bold leading-snug text-[#102A43] group-hover:text-[#1A56DB] sm:text-sm">{product.name}</h4>
+                          <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-[11px] font-bold text-[#1A56DB] sm:text-xs">{t({ en: "View product", zh: "查看产品", th: "ดูผลิตภัณฑ์", vi: "Xem sản phẩm" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
+
 
       {/* Product literature — full OmniCure family catalog downloads */}
       <section className="px-4 pb-4 sm:px-6 lg:px-8">

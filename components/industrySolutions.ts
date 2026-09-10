@@ -40,6 +40,10 @@ export type IndustrySolution = {
   applications?: LangText[];
   // Product categories to steer this industry's visitors towards, in order.
   recommends: ProductCategorySlug[];
+  // Photograph for the home page industry card. Nothing to fall back to here —
+  // an industry has no catalogue model of its own — so a card without one
+  // renders as a tinted tile until the picture arrives.
+  cardImage?: string;
   // Application notes belonging to this industry, in display order.
   applicationSlugs: string[];
   metaTitle: string;
@@ -124,6 +128,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       },
     ],
     recommends: ["uv-led", "mercury-uv-lamp"],
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/INDUSTRY/CPO",
     applicationSlugs: [
       "uv-curing-optical-transceiver-manufacturing",
       "uv-curing-co-packaged-optics-fiber-array-bonding",
@@ -209,6 +214,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       },
     ],
     recommends: ["uv-led", "mercury-uv-lamp"],
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/INDUSTRY/PCB%20",
     applicationSlugs: [
       "uv-curing-advanced-semiconductor-packaging",
       "uv-led-curing-display-module-oca-bonding",
@@ -287,6 +293,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       },
     ],
     recommends: ["uv-led", "mercury-uv-lamp", "infrared-heating"],
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/INDUSTRY/AUTO",
     applicationSlugs: [
       "uv-spot-curing-adas-camera-module-assembly",
       "uv-led-curing-automotive-lidar-sensor-assembly",
@@ -374,6 +381,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       { en: "Atraumatic guidewire tips", zh: "无创导丝头端", vi: "Đầu dây dẫn không gây tổn thương", th: "ปลายลวดนำแบบไม่ทำให้บาดเจ็บ" },
     ],
     recommends: ["mercury-uv-lamp", "uv-led"],
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/INDUSTRY/MEDICAL%20DEVICE",
     applicationSlugs: [
       "uv-spot-curing-cardiovascular-catheter-bonding",
       "uv-led-curing-hypodermic-needle-cannula-assembly",
@@ -427,6 +435,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       },
     ],
     recommends: ["mercury-uv-lamp", "uv-led"],
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/INDUSTRY/RND",
     applicationSlugs: [],
     metaTitle: "UV Curing Modules for Photo-Rheology & Photo-DSC | OmniCure S2000 & LX500 | ETIA",
     metaDescription:
