@@ -99,24 +99,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       th: "การบ่ม UV ด้วยหลอดปรอทสเปกตรัมกว้าง — ตัวเลือกที่พิสูจน์แล้วเมื่อกาวของคุณต้องการเอาต์พุตเต็มช่วง 320–500 nm",
     },
     intro: [
-      {
-        en: "Mercury arc lamp UV sources deliver a broad, continuous spectrum from roughly 250 to 600 nm. That full spectral coverage is why they remain the reference light source for adhesives, coatings and inks whose photoinitiators absorb outside the narrow UV LED bands — and why many validated medical and electronics processes are still specified around them.",
-        zh: "汞弧灯紫外光源提供约 250–600 nm 的宽广连续光谱。正是这种完整的光谱覆盖，使其在光引发剂吸收峰位于 UV LED 窄带之外的胶粘剂、涂层与油墨领域，始终是基准光源——也是大量已验证的医疗与电子工艺至今仍按其规格设计的原因。",
-        vi: "Nguồn UV đèn hồ quang thủy ngân phát ra phổ rộng, liên tục từ khoảng 250 đến 600 nm. Chính độ phủ phổ trọn vẹn đó khiến chúng vẫn là nguồn sáng chuẩn cho keo, lớp phủ và mực có chất khơi mào quang hấp thụ ngoài các dải hẹp của UV LED — và là lý do nhiều quy trình y tế, điện tử đã được thẩm định vẫn quy định dùng chúng.",
-        th: "แหล่งกำเนิด UV แบบหลอดอาร์กปรอทให้สเปกตรัมกว้างและต่อเนื่องตั้งแต่ราว 250 ถึง 600 nm ความครอบคลุมสเปกตรัมที่เต็มช่วงนี้เองที่ทำให้ยังเป็นแหล่งกำเนิดแสงอ้างอิงสำหรับกาว สารเคลือบ และหมึกที่มีโฟโตอินิชิเอเตอร์ดูดกลืนนอกย่านแคบของ UV LED — และเป็นเหตุผลที่กระบวนการทางการแพทย์และอิเล็กทรอนิกส์จำนวนมากที่ผ่านการตรวจรับรองแล้วยังคงระบุให้ใช้",
-      },
-      {
-        en: "Mercury UV divides into two families. Electroded medium-pressure arc lamps strike an arc between two electrodes in a mercury fill: Excelitas Noblelight builds them from 0.4 to 10 kW as standard and up to 60 kW for high-power duty, in arc lengths from 4 to 150 cm and at power densities around 100 W/cm², with metal-halide additives used to shape the spectrum around a given formulation. Electrodeless lamps excite the same mercury fill with microwave energy instead — with no electrodes to erode, output holds flatter across lamp life. ETIA catalogues the electrodeless side separately, under 微波无极灯 (Microwave Electrodeless UV).",
-        zh: "汞灯紫外分两大类。一是有电极中压弧光灯，在汞填充管内两电极间起弧：Excelitas Noblelight 标准型 0.4–10 kW，高功率型可至 60 kW，弧长 4–150 cm，功率密度约 100 W/cm²，并可通过金属卤化物掺杂将光谱调整到配方所需的位置。二是无极灯，用微波能量激发同样的汞填充——没有电极可损耗，输出在整个灯寿命内更平稳。无极灯这一侧 ETIA 单列在「微波无极灯」品类下。",
-        vi: "UV thủy ngân chia thành hai họ. Đèn hồ quang áp suất trung bình có điện cực tạo hồ quang giữa hai điện cực trong khí thủy ngân: Excelitas Noblelight chế tạo loại tiêu chuẩn từ 0,4 đến 10 kW và tới 60 kW cho ứng dụng công suất cao, chiều dài hồ quang 4–150 cm, mật độ công suất khoảng 100 W/cm², với phụ gia halogenua kim loại để điều chỉnh phổ theo từng công thức. Đèn không điện cực kích thích cùng loại khí thủy ngân bằng năng lượng vi sóng — không có điện cực bị ăn mòn nên đầu ra ổn định hơn suốt tuổi thọ đèn. ETIA xếp riêng nhóm không điện cực trong danh mục UV vi sóng không điện cực.",
-        th: "UV ปรอทแบ่งเป็นสองตระกูล หลอดอาร์กความดันปานกลางแบบมีขั้วไฟฟ้าสร้างอาร์กระหว่างขั้วสองข้างในไอปรอท: Excelitas Noblelight ผลิตรุ่นมาตรฐานตั้งแต่ 0.4 ถึง 10 kW และสูงถึง 60 kW สำหรับงานกำลังสูง ความยาวอาร์ก 4–150 ซม. ความหนาแน่นกำลังราว 100 W/cm² พร้อมสารเติมเมทัลฮาไลด์เพื่อปรับสเปกตรัมให้เข้ากับสูตรเคมี ส่วนหลอดไร้ขั้วไฟฟ้ากระตุ้นไอปรอทชนิดเดียวกันด้วยพลังงานไมโครเวฟ — ไม่มีขั้วไฟฟ้าให้สึกกร่อน เอาต์พุตจึงคงที่กว่าตลอดอายุหลอด ETIA จัดหมวดหลอดไร้ขั้วไฟฟ้าแยกไว้ภายใต้ UV ไมโครเวฟไร้ขั้วไฟฟ้า",
-      },
-      {
-        en: "ETIA supplies the OmniCure® S-Series spot curing systems: closed-loop optical feedback holds intensity constant over lamp life, so the dose your process was validated at on day one is the dose it still receives 2,000 hours later. Genuine replacement lamps, light guides and calibration are stocked in-region.",
-        zh: "ETIA 供应 OmniCure® S 系列点固化系统：闭环光学反馈在整个灯泡寿命内保持光强恒定——工艺首日验证的剂量，2000 小时后依然一致。原厂替换灯泡、光导与校准服务均有区域备货。",
-        vi: "ETIA cung cấp hệ thống đóng rắn điểm OmniCure® S-Series: phản hồi quang vòng kín giữ cường độ ổn định suốt tuổi thọ đèn, nên liều chiếu mà quy trình của bạn được thẩm định trong ngày đầu vẫn là liều chiếu nhận được sau 2.000 giờ. Đèn thay thế chính hãng, ống dẫn sáng và dịch vụ hiệu chuẩn đều có sẵn trong khu vực.",
-        th: "ETIA จัดหาระบบบ่มแบบจุด OmniCure® S-Series: การป้อนกลับเชิงแสงแบบวงปิดรักษาความเข้มให้คงที่ตลอดอายุหลอด ปริมาณแสงที่กระบวนการของคุณผ่านการตรวจรับรองในวันแรก จึงเป็นปริมาณเดิมที่ได้รับเมื่อผ่านไป 2,000 ชั่วโมง หลอดเปลี่ยนของแท้ ตัวนำแสง และการสอบเทียบ มีสต็อกในภูมิภาค",
-      },
+      { en: "OmniCure S-Series mercury spot curing — a 250–600 nm broad spectrum, with closed-loop feedback holding the dose constant across lamp life.", zh: "OmniCure S 系列汞灯点固化——250–600 nm 宽光谱，闭环反馈让剂量在灯泡整个寿命内保持恒定。", vi: "Đóng rắn điểm bằng đèn thủy ngân OmniCure S-Series — phổ rộng 250–600 nm, phản hồi vòng kín giữ liều chiếu ổn định suốt tuổi thọ đèn.", th: "การบ่มแบบจุดด้วยหลอดปรอท OmniCure S-Series — สเปกตรัมกว้าง 250–600 nm พร้อมการป้อนกลับวงปิดที่รักษาปริมาณแสงให้คงที่ตลอดอายุหลอด" },
     ],
     applications: [
       { en: "Medical device bonding", zh: "医疗器械粘接", vi: "Liên kết thiết bị y tế", th: "การยึดติดอุปกรณ์การแพทย์" },
@@ -151,18 +134,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       th: "ตั้งแต่หัวฉายจุดเดียวไปจนถึงอาร์เรย์การผลิตกว้าง 1350 มม. — การบ่ม UV LED ปลอดปรอทในทุกขนาด",
     },
     intro: [
-      {
-        en: "UV LED sources emit a narrow band at 365, 385, 395 or 405 nm with no warm-up, no ozone and no mercury. They switch instantly, run tens of thousands of hours, and put far less infrared heat into the part — which is what makes them the default choice for temperature-sensitive assemblies and for lines that cannot afford lamp-change downtime.",
-        zh: "UV LED 光源在 365、385、395 或 405 nm 发射窄带光，无需预热、无臭氧、无汞。瞬时开关、寿命数万小时，且向工件传递的红外热量极低——这正是温度敏感装配以及无法承受换灯停机的产线以其为首选的原因。",
-        vi: "Nguồn UV LED phát dải hẹp tại 365, 385, 395 hoặc 405 nm, không cần khởi động nóng, không sinh ozon và không chứa thủy ngân. Chúng bật tắt tức thời, chạy hàng chục nghìn giờ và truyền ít nhiệt hồng ngoại vào chi tiết hơn nhiều — đó là lý do chúng trở thành lựa chọn mặc định cho cụm lắp ráp nhạy nhiệt và cho dây chuyền không thể chịu thời gian dừng để thay đèn.",
-        th: "แหล่งกำเนิด UV LED เปล่งแสงย่านแคบที่ 365, 385, 395 หรือ 405 nm โดยไม่ต้องอุ่นเครื่อง ไม่เกิดโอโซน และไม่มีปรอท เปิดปิดได้ทันที ใช้งานได้หลายหมื่นชั่วโมง และถ่ายเทความร้อนอินฟราเรดสู่ชิ้นงานน้อยกว่ามาก — จึงเป็นตัวเลือกหลักสำหรับงานประกอบที่ไวต่ออุณหภูมิ และสายการผลิตที่รับภาระการหยุดเปลี่ยนหลอดไม่ได้",
-      },
-      {
-        en: "ETIA covers the full range: OmniCure® LX spot curing and AC Series air-cooled arrays, Phoseon® FireEdge / FireJet / FireLine, and Noblelight Semray® water-cooled systems up to 1350 mm emission width. We size the head, wavelength and working distance to your adhesive's datasheet and your line speed — not the other way round.",
-        zh: "ETIA 覆盖完整产品线：OmniCure® LX 点固化与 AC 系列风冷阵列、Phoseon® FireEdge / FireJet / FireLine，以及发光宽度达 1350 mm 的 Noblelight Semray® 水冷系统。我们依据您的胶水技术数据与产线速度来选定灯头、波长与工作距离——而不是反过来。",
-        vi: "ETIA bao phủ trọn dải sản phẩm: đóng rắn điểm OmniCure® LX và dàn làm mát bằng khí AC Series, Phoseon® FireEdge / FireJet / FireLine, cùng hệ làm mát bằng nước Noblelight Semray® với bề rộng phát xạ đến 1350 mm. Chúng tôi chọn đầu đèn, bước sóng và khoảng cách làm việc theo thông số keo và tốc độ dây chuyền của bạn — chứ không phải ngược lại.",
-        th: "ETIA ครอบคลุมผลิตภัณฑ์เต็มช่วง: การบ่มแบบจุด OmniCure® LX และอาร์เรย์ระบายความร้อนด้วยอากาศซีรีส์ AC, Phoseon® FireEdge / FireJet / FireLine และระบบระบายความร้อนด้วยน้ำ Noblelight Semray® ที่มีความกว้างการเปล่งแสงถึง 1350 มม. เรากำหนดหัวโคม ความยาวคลื่น และระยะทำงานตามเอกสารข้อมูลกาวและความเร็วสายการผลิตของคุณ — ไม่ใช่ในทางกลับกัน",
-      },
+      { en: "Narrow-band LED at 365, 385, 395 or 405 nm — no warm-up, no ozone, no mercury. Single-point heads through to 1350 mm production arrays, air- or water-cooled.", zh: "365/385/395/405 nm 窄带 LED，无预热、无臭氧、无汞。从单点光斑到 1350 mm 产线阵列，风冷水冷齐全。", vi: "LED dải hẹp ở 365, 385, 395 hoặc 405 nm — không cần khởi động, không ozone, không thủy ngân. Từ đầu chiếu điểm đến dàn 1350 mm, làm mát bằng khí hoặc nước.", th: "LED ย่านแคบที่ 365, 385, 395 หรือ 405 nm — ไม่ต้องอุ่นเครื่อง ไม่มีโอโซน ไม่มีปรอท ตั้งแต่หัวฉายแบบจุดจนถึงแถวยาว 1350 มม. ระบายความร้อนด้วยอากาศหรือน้ำ" },
     ],
     applications: [
       { en: "Optical module & transceiver assembly", zh: "光模块与光收发器装配", vi: "Lắp ráp mô-đun quang & bộ thu phát", th: "การประกอบออปติคัลโมดูล & ทรานซีฟเวอร์" },
@@ -210,30 +182,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       th: "การบ่มด้วยพลังไมโครเวฟ Fusion UV® — ไม่มีขั้วไฟฟ้าให้สึกกร่อน สเปกตรัมกว้าง 200–600 nm และความกว้างการบ่มไม่จำกัดด้วยการต่อหลอดเรียงกัน",
     },
     intro: [
-      {
-        en: "Fusion UV® was founded in 1971 with the invention of microwave-powered UV curing technology, and Excelitas acquired the Fusion UV microwave portfolio in 2024 through its acquisition of Noblelight. Microwave-powered lamps excite the bulb fill with microwave energy rather than electrodes — there are no electrodes to erode, which is the root of the platform's output stability and long service life.",
-        zh: "Fusion UV® 创立于 1971 年，以微波紫外固化技术的发明起家；2024 年，Excelitas 通过收购 Noblelight 获得 Fusion UV 微波产品线。微波灯以微波能量激发灯泡填充物，而非依靠电极——不存在电极损耗，这正是该平台输出稳定、寿命长久的技术根源。",
-        vi: "Fusion UV® được thành lập năm 1971 cùng với phát minh công nghệ đóng rắn UV bằng vi sóng, và Excelitas tiếp nhận danh mục vi sóng Fusion UV vào năm 2024 thông qua việc mua lại Noblelight. Đèn vi sóng kích thích chất nạp trong bóng bằng năng lượng vi sóng thay vì điện cực — không có điện cực để mòn, và đó là gốc rễ của độ ổn định công suất cùng tuổi thọ dài của nền tảng này.",
-        th: "Fusion UV® ก่อตั้งในปี 1971 พร้อมการประดิษฐ์เทคโนโลยีการบ่ม UV ด้วยพลังไมโครเวฟ และ Excelitas ได้รับพอร์ตผลิตภัณฑ์ไมโครเวฟของ Fusion UV มาในปี 2024 ผ่านการเข้าซื้อ Noblelight หลอดไมโครเวฟกระตุ้นสารบรรจุในหลอดด้วยพลังงานไมโครเวฟแทนการใช้ขั้วไฟฟ้า — จึงไม่มีขั้วไฟฟ้าให้สึกกร่อน ซึ่งเป็นรากฐานของความเสถียรของกำลังส่งและอายุการใช้งานที่ยาวนานของแพลตฟอร์มนี้",
-      },
-      {
-        en: "The technology significantly improves production speed, process consistency and operating lifetime, while putting less heat into the substrate. An easy-to-service modular design gives process flexibility at a lower cost of ownership, and the systems are available in a range of power classes and UV broadband wavelengths. They retrofit into existing production lines or integrate into new ones, and the latest systems are Industry 4.0 ready with embedded sensors and microprocessors.",
-        zh: "该技术显著提升生产速度、工艺一致性与运行寿命，同时降低传递到基材上的热量。易于维护的模块化设计带来工艺灵活性与更低的使用成本；系统提供多种功率等级与紫外宽光谱波长可选。设备既可改造接入现有产线，也可集成进新建产线；最新机型已具备工业 4.0 能力，内置传感器与微处理器。",
-        vi: "Công nghệ này cải thiện đáng kể tốc độ sản xuất, tính nhất quán của quy trình và tuổi thọ vận hành, đồng thời truyền ít nhiệt vào vật liệu nền hơn. Thiết kế mô-đun dễ bảo trì mang lại sự linh hoạt trong quy trình với chi phí sở hữu thấp hơn, và hệ thống có nhiều cấp công suất cùng dải bước sóng UV rộng. Chúng lắp bổ sung được vào dây chuyền hiện có hoặc tích hợp vào dây chuyền mới, và các hệ thống mới nhất đã sẵn sàng cho Công nghiệp 4.0 với cảm biến và vi xử lý tích hợp.",
-        th: "เทคโนโลยีนี้ช่วยเพิ่มความเร็วการผลิต ความสม่ำเสมอของกระบวนการ และอายุการใช้งานอย่างมีนัยสำคัญ พร้อมกับถ่ายเทความร้อนสู่วัสดุน้อยลง การออกแบบแบบโมดูลที่ซ่อมบำรุงง่ายให้ความยืดหยุ่นของกระบวนการด้วยต้นทุนการเป็นเจ้าของที่ต่ำลง และมีให้เลือกหลายระดับกำลังไฟพร้อมความยาวคลื่น UV ย่านกว้าง ระบบสามารถติดตั้งเพิ่มในสายการผลิตเดิมหรือผสานเข้ากับสายใหม่ และรุ่นล่าสุดพร้อมรองรับอุตสาหกรรม 4.0 ด้วยเซ็นเซอร์และไมโครโปรเซสเซอร์ในตัว",
-      },
-      {
-        en: "ETIA supplies the full range — from the economical F300S to the ultra-high-output 10-inch LightHammer® 10 Mark III — together with the DRF Series for optical fibre draw towers. Fusion UV lamps are used in hundreds of industrial curing applications, from automotive headlamps to flooring to medical devices, wire marking and electronic components.",
-        zh: "ETIA 提供完整产品线——从经济型 F300S 到超高输出的 10 英寸 LightHammer® 10 Mark III，以及用于光纤拉丝塔的 DRF 系列。Fusion UV 灯已应用于数百种工业固化场景，涵盖汽车大灯、地板材料、医疗器械、线缆打标与电子元器件。",
-        vi: "ETIA cung cấp trọn dải sản phẩm — từ F300S kinh tế đến LightHammer® 10 Mark III 10 inch công suất siêu cao — cùng dòng DRF cho tháp kéo sợi quang. Đèn Fusion UV được dùng trong hàng trăm ứng dụng đóng rắn công nghiệp, từ đèn pha ô tô đến vật liệu sàn, thiết bị y tế, đánh dấu dây cáp và linh kiện điện tử.",
-        th: "ETIA จัดหาผลิตภัณฑ์เต็มช่วง — ตั้งแต่ F300S รุ่นประหยัด ไปจนถึง LightHammer® 10 Mark III ขนาด 10 นิ้วที่ให้กำลังสูงมาก — พร้อมซีรีส์ DRF สำหรับหอดึงเส้นใยแก้วนำแสง หลอด Fusion UV ถูกใช้ในงานบ่มเชิงอุตสาหกรรมนับร้อยประเภท ตั้งแต่ไฟหน้ารถยนต์ วัสดุปูพื้น อุปกรณ์การแพทย์ การทำเครื่องหมายสายไฟ ไปจนถึงชิ้นส่วนอิเล็กทรอนิกส์",
-      },
-      {
-        en: "UV curing of coatings, inks, paints and adhesives is regarded as a green technology: compared with solvent-based processes it cuts VOC emissions, air pollutants and flammability risk, and gives production staff a healthier working environment.",
-        zh: "涂层、油墨、涂料与胶粘剂的紫外固化被视为一项绿色技术：相比溶剂型工艺，可大幅减少 VOC 排放、降低大气污染物与易燃风险，并为一线作业人员提供更健康的工作环境。",
-        vi: "Đóng rắn bằng UV cho lớp phủ, mực, sơn và keo được xem là công nghệ xanh: so với quy trình gốc dung môi, nó cắt giảm phát thải VOC, chất ô nhiễm không khí và nguy cơ cháy, đồng thời mang lại môi trường làm việc lành mạnh hơn cho công nhân sản xuất.",
-        th: "การบ่มสารเคลือบ หมึก สี และกาวด้วย UV ถือเป็นเทคโนโลยีสีเขียว: เมื่อเทียบกับกระบวนการที่ใช้ตัวทำละลาย จะลดการปล่อย VOC มลพิษทางอากาศ และความเสี่ยงจากการติดไฟ ทั้งยังให้สภาพแวดล้อมการทำงานที่ดีต่อสุขภาพพนักงานผลิตมากขึ้น",
-      },
+      { en: "Fusion UV microwave-powered electrodeless lamps — no electrodes to erode. A 200–600 nm broad spectrum, and cure width extended without limit by butting lamps end to end.", zh: "Fusion UV 微波激发无极灯，没有电极可损耗。200–600 nm 宽光谱，灯管首尾相接即可无限拓宽固化幅面。", vi: "Đèn không điện cực kích thích vi sóng Fusion UV — không có điện cực bị ăn mòn. Phổ rộng 200–600 nm, nối đèn liền nhau để mở rộng bề rộng đóng rắn không giới hạn.", th: "หลอดไร้ขั้วไฟฟ้ากระตุ้นด้วยไมโครเวฟจาก Fusion UV — ไม่มีขั้วไฟฟ้าให้สึกกร่อน สเปกตรัมกว้าง 200–600 nm และขยายความกว้างการบ่มได้ไม่จำกัดด้วยการต่อหลอดเรียงกัน" },
     ],
     applications: [
       { en: "Automotive headlamps", zh: "汽车大灯", vi: "Đèn pha ô tô", th: "ไฟหน้ารถยนต์" },
@@ -471,30 +420,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     // Process Technology" brochure. The source text still says "Heraeus" —
     // the pre-acquisition brand — so it reads as Excelitas here.
     intro: [
-      {
-        en: "Noblelight infrared modules from Excelitas deliver thermal energy in a practical form. This simplifies and accelerates operating stages, optimises energy usage and results in an exceptional finished product. Whether they are large heating fields, tunnels, ovens or individual modules, our modular infrared systems are always precisely matched to your processes and materials — so the infrared heat is supplied in the right amounts, exactly where it is required.",
-        zh: "Excelitas 的 Noblelight 红外模块以切实可用的形式输出热能，从而简化并加快工序、优化能耗，并带来出色的成品质量。无论是大型加热面、隧道炉、烘箱还是单个模块，我们的模块化红外系统始终与您的工艺和材料精确匹配——让红外热量以恰当的量，投放在恰当的位置。",
-        vi: "Mô-đun hồng ngoại Noblelight của Excelitas cung cấp năng lượng nhiệt ở dạng thiết thực. Điều này đơn giản hóa và đẩy nhanh các công đoạn vận hành, tối ưu hóa việc sử dụng năng lượng và cho ra thành phẩm xuất sắc. Dù là trường gia nhiệt lớn, hầm, lò hay từng mô-đun riêng lẻ, hệ hồng ngoại mô-đun của chúng tôi luôn được khớp chính xác với quy trình và vật liệu của bạn — để nhiệt hồng ngoại được cấp đúng lượng, đúng nơi cần thiết.",
-        th: "โมดูลอินฟราเรด Noblelight จาก Excelitas ส่งมอบพลังงานความร้อนในรูปแบบที่ใช้งานได้จริง ซึ่งช่วยลดความยุ่งยากและเร่งขั้นตอนการทำงาน เพิ่มประสิทธิภาพการใช้พลังงาน และให้ผลงานสำเร็จรูปที่ยอดเยี่ยม ไม่ว่าจะเป็นพื้นที่ทำความร้อนขนาดใหญ่ อุโมงค์ เตาอบ หรือโมดูลเดี่ยว ระบบอินฟราเรดแบบโมดูลของเราจับคู่กับกระบวนการและวัสดุของคุณอย่างแม่นยำเสมอ — เพื่อให้ความร้อนอินฟราเรดถูกจ่ายในปริมาณที่เหมาะสม ตรงจุดที่ต้องการพอดี",
-      },
-      {
-        en: "Infrared heat is intelligent heat, because it heats the material precisely and efficiently. Noblelight infrared modules are supplied ready-to-fit and can be integrated directly into the production process, and can be supplied with matching control units and housings — the ideal solution for industrial heating processes.",
-        zh: "红外热是「聪明的热」，因为它精确而高效地加热材料本身。Noblelight 红外模块以可直接安装的状态交付，能够直接集成进生产工序，并可配套相应的控制单元与外壳——是工业加热工艺的理想方案。",
-        vi: "Nhiệt hồng ngoại là nhiệt thông minh, bởi nó gia nhiệt vật liệu một cách chính xác và hiệu quả. Mô-đun hồng ngoại Noblelight được giao ở trạng thái sẵn sàng lắp đặt và có thể tích hợp trực tiếp vào quy trình sản xuất, đồng thời có thể đi kèm bộ điều khiển và vỏ tương ứng — giải pháp lý tưởng cho các quy trình gia nhiệt công nghiệp.",
-        th: "ความร้อนอินฟราเรดคือความร้อนที่ชาญฉลาด เพราะให้ความร้อนแก่วัสดุอย่างแม่นยำและมีประสิทธิภาพ โมดูลอินฟราเรด Noblelight จัดส่งในสภาพพร้อมติดตั้งและผสานเข้ากับกระบวนการผลิตได้โดยตรง อีกทั้งยังจัดหาพร้อมชุดควบคุมและตัวครอบที่เข้าชุดกันได้ — เป็นโซลูชันที่เหมาะที่สุดสำหรับกระบวนการให้ความร้อนในอุตสาหกรรม",
-      },
-      {
-        en: "Our speciality is problem solving. Solutions range from a simple module through to a purpose-built system with control: the simply constructed M series for retrofits and single heating stations, the scalable MX series with integrated control for complete heating systems, and custom-engineered MX solutions built around your geometry. Emitter output, voltage and wavelength are selected for the material actually being heated.",
-        zh: "我们的专长是解决问题。方案从单个模块，到带控制系统的专门定制设备：结构简明的 M 系列，适用于改造与单工位加热；带集成控制的 MX 可扩展系列，构成完整加热系统；以及围绕您的几何形状定制开发的 MX 方案。发射器的功率、电压与波长，均依据实际受热材料选定。",
-        vi: "Chuyên môn của chúng tôi là giải quyết vấn đề. Giải pháp trải từ một mô-đun đơn giản đến hệ thống chế tạo riêng kèm điều khiển: dòng M cấu tạo đơn giản cho việc cải tạo và trạm gia nhiệt đơn lẻ, dòng MX mở rộng được với điều khiển tích hợp cho hệ gia nhiệt hoàn chỉnh, và giải pháp MX thiết kế riêng theo hình học của bạn. Công suất, điện áp và bước sóng của bộ phát được chọn theo đúng vật liệu thực sự được gia nhiệt.",
-        th: "ความเชี่ยวชาญของเราคือการแก้ปัญหา โซลูชันมีตั้งแต่โมดูลเดี่ยวแบบเรียบง่าย ไปจนถึงระบบที่สร้างขึ้นเฉพาะพร้อมระบบควบคุม: ซีรีส์ M ที่มีโครงสร้างเรียบง่ายสำหรับการปรับปรุงและสถานีทำความร้อนเดี่ยว ซีรีส์ MX ที่ขยายได้พร้อมชุดควบคุมในตัวสำหรับระบบทำความร้อนครบชุด และโซลูชัน MX ที่ออกแบบเฉพาะตามรูปทรงของคุณ กำลังไฟ แรงดัน และความยาวคลื่นของหลอดถูกเลือกตามวัสดุที่ได้รับความร้อนจริง",
-      },
-      {
-        en: "ETIA supplies and supports these modules in Asia-Pacific — tell us your process temperature, line speed and product geometry, and our engineers will specify the emitter, module and control system for it.",
-        zh: "ETIA 在亚太区提供这些模块的供应与支持——请告知您的工艺温度、产线速度与产品几何形状，我们的工程师将据此确定发射器、模块与控制系统方案。",
-        vi: "ETIA cung cấp và hỗ trợ các mô-đun này tại châu Á – Thái Bình Dương — hãy cho chúng tôi biết nhiệt độ quy trình, tốc độ dây chuyền và hình học sản phẩm, kỹ sư của chúng tôi sẽ xác định bộ phát, mô-đun và hệ điều khiển phù hợp.",
-        th: "ETIA จัดหาและให้การสนับสนุนโมดูลเหล่านี้ในภูมิภาคเอเชียแปซิฟิก — เพียงแจ้งอุณหภูมิกระบวนการ ความเร็วสายการผลิต และรูปทรงผลิตภัณฑ์ วิศวกรของเราจะกำหนดหลอด โมดูล และระบบควบคุมที่เหมาะสมให้",
-      },
+      { en: "Noblelight infrared modules put the heat into the product rather than the room. Match the emitter spectrum to the material's absorption and it heats faster, on less energy.", zh: "Noblelight 红外模块把热直接送进产品，而不是烘整个空间。发射器光谱与材料吸收光谱匹配，升温更快、能耗更低。", vi: "Mô-đun hồng ngoại Noblelight đưa nhiệt vào sản phẩm chứ không vào không gian. Khớp phổ phát xạ với phổ hấp thụ của vật liệu thì nóng nhanh hơn và tốn ít năng lượng hơn.", th: "โมดูลอินฟราเรดของ Noblelight ส่งความร้อนเข้าสู่ตัวผลิตภัณฑ์ ไม่ใช่ทั้งห้อง เมื่อจับคู่สเปกตรัมของตัวเปล่งกับการดูดกลืนของวัสดุ วัสดุจะร้อนเร็วขึ้นและใช้พลังงานน้อยลง" },
     ],
     applications: [
       { en: "Automotive component drying & activation", zh: "汽车零部件干燥与活化", vi: "Sấy & hoạt hóa linh kiện ô tô", th: "การอบแห้ง & กระตุ้นผิวชิ้นส่วนยานยนต์" },
@@ -702,6 +628,36 @@ export function categoryProducts(slug: ProductCategorySlug): Product[] {
     ...list.filter((p) => !MEASUREMENT_SLUGS.has(p.slug)),
     ...list.filter((p) => MEASUREMENT_SLUGS.has(p.slug)),
   ];
+}
+
+// A brand's models grouped for its shop grid, in category order and then by
+// the category's own sub-headings — which for OmniCure comes out as UV Spot
+// Curing, UV LED Spot Curing and UV LED Air-Cooled, the split a customer of
+// that brand actually thinks in.
+//
+// Draft categories are included here on purpose: the flag hides a category
+// page, not the models, and they are still sold from the brand page.
+export function brandModelGroups(
+  brandId: Product["brandId"]
+): { title: LangText; items: Product[] }[] {
+  const out: { title: LangText; items: Product[] }[] = [];
+  for (const c of productCategoryList) {
+    const mine = categoryProducts(c.slug).filter((p) => p.brandId === brandId);
+    if (mine.length === 0) continue;
+    if (!c.groups) {
+      out.push({ title: c.name, items: mine });
+      continue;
+    }
+    const claimed = new Set<string>();
+    for (const g of c.groups) {
+      const items = mine.filter((p) => g.match(p));
+      items.forEach((p) => claimed.add(p.slug));
+      if (items.length > 0) out.push({ title: g.title, items });
+    }
+    const rest = mine.filter((p) => !claimed.has(p.slug));
+    if (rest.length > 0) out.push({ title: c.name, items: rest });
+  }
+  return out;
 }
 
 // The technology categories a brand actually has products in. Computed from

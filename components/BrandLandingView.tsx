@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { products, productHref, productImage, localizeProduct, productHighlights, popularityRank, techRouteFor } from "@/components/productCatalog";
+import { products, productHref, productImage, localizeProduct, popularityRank } from "@/components/productCatalog";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
-import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
+import { brandModelGroups } from "@/components/productCategories";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import { heroBannerImages } from "@/components/caseStudies";
 import WhyEtiaCards from "@/components/WhyEtiaCards";
@@ -11,12 +11,10 @@ import FinalCta from "@/components/FinalCta";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t } from "@/components/LocaleContext";
 import { APPLICATION_CATEGORIES, getApplicationsForProduct } from "@/data/applicationsData";
-import { applicationsZh } from "@/data/applicationsData.zh";
 import OmniCureBrandLanding from "@/components/OmniCureBrandLanding";
 import PhoseonBrandLanding from "@/components/PhoseonBrandLanding";
 
 // Number of top products (per brand) that get the "Popular" badge.
-const POPULAR_COUNT = 2;
 
 // Mirrors the sequence in the current OmniCure UV Curing Product Catalog:
 // lamp spot systems → LED spot systems → area systems → fiber system.
@@ -28,19 +26,6 @@ const OMNICURE_CATALOG_ORDER = [
 ];
 
 // Short technology tag shown on each product card (English + Chinese).
-const tagZh: Record<string, string> = {
-  "UV Lamp Spot": "UV 灯式点固化",
-  "UV LED Spot": "UV LED 点固化",
-  "UV Radiometer": "UV 辐射计",
-  "S-Series Accessory": "S 系列配件",
-  "Small-Area": "小面积",
-  "Large-Area": "大面积",
-  "Large-Area · High-Dose": "大面积 · 高剂量",
-  "UV Spot Curing": "UV 点固化",
-  "Air-Cooled UV LED Curing": "风冷 UV LED",
-  "Water-Cooled UV LED Area Curing": "水冷 UV LED 面固化",
-  "Microwave UV Curing": "微波 UV Curing 紫外线固化",
-};
 
 export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
   const { locale } = useLocale();
@@ -119,86 +104,48 @@ export default function BrandLandingView({ slug }: { slug: BrandSlug }) {
         </div>
       </section>
 
-      {/* Technology routes */}
+      {/* Products — a shop, grouped the way a customer of this brand thinks.
+          It used to be one flat grid where every card carried a route tag, a
+          three-line name, highlight pills and a list of related applications;
+          nineteen of those is not a catalogue, it is an essay. Picture, name,
+          link. */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Products", zh: "产品" }, locale)}</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: slug === "omnicure" ? "OmniCure UV Curing Product Catalog" : `Shop ${b.name} Systems`, zh: slug === "omnicure" ? "OmniCure UV Curing 紫外线固化产品清单" : `${b.name} 全系产品` }, locale)}</h2>
-          <p className="mb-8 text-sm text-gray-500">{t({ en: slug === "omnicure" ? "Lamp and LED spot curing, small- and large-area UV LED systems, fiber curing, radiometry, and accessories." : "Browse systems by product and technology.", zh: slug === "omnicure" ? "涵盖灯式与 LED 点固化、小面积与大面积 UV LED、光纤固化、辐射测量及配件。" : "按产品与技术浏览系统。" }, locale)}</p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {brandProducts.map((raw, i) => {
-              const p = localizeProduct(raw, locale);
-              const tags = productHighlights[p.slug] ?? [];
-              const popular = i < POPULAR_COUNT;
-              const relatedApplications = getApplicationsForProduct(p.slug, 2);
-              return (
-                <div key={p.slug} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
-                  <Link href={productHref(p)} className="relative block h-32 sm:h-36 bg-white">
-                    {popular && (
-                      <span className="absolute top-2 left-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: "#41A62A" }}>★ {t({ en: "POPULAR", zh: "热门" }, locale)}</span>
-                    )}
-                    {productImage(p) ? (
-                      <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-300" />
-                    ) : (
-                      <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-center px-3" style={{ color: b.color }}>{p.brand}</span>
-                    )}
-                  </Link>
-                  <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
-                    {(() => {
-                      // Canonical technology route (one of the six). Accessories
-                      // (no curing route) fall back to their short sub label.
-                      const r = techRouteFor(p);
-                      const label = r ? t(r, locale) : (locale === "zh" ? tagZh[p.sub || p.tech] ?? (p.sub || p.tech) : (p.sub || p.tech));
-                      return label ? (
-                        <span className="inline-block self-start text-[9px] font-bold uppercase tracking-wide px-2 py-0.5 rounded mb-2" style={{ background: `${b.color}12`, color: b.color }}>
-                          {label}
-                        </span>
-                      ) : null;
-                    })()}
-                    <Link href={productHref(p)} className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3 hover:text-[#1A56DB]">{p.name}</Link>
-                    {tags.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mb-3">
-                        {tags.slice(0, 3).map((h) => (
-                          <span key={h.en} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{t(h, locale)}</span>
-                        ))}
-                      </div>
-                    )}
-                    {relatedApplications.length > 0 && (
-                      <div className="mb-3 border-t border-gray-100 pt-3">
-                        <p className="mb-1 text-[9px] font-bold uppercase tracking-wide text-[#41A62A]">{t({ en: "Related applications", zh: "相关应用", th: "การใช้งานที่เกี่ยวข้อง", vi: "Ứng dụng liên quan" }, locale)}</p>
-                        {relatedApplications.map((application) => { const at = (locale !== "en" && applicationsZh[application.slug]?.title?.[locale as "zh" | "th" | "vi"]) || application.title; return <Link key={application.slug} href={`/applications/${application.slug}`} className="block line-clamp-1 text-[10px] font-medium leading-relaxed text-gray-500 hover:text-[#1A56DB] hover:underline">{at}</Link>; })}
-                      </div>
-                    )}
-                    <Link href={productHref(p)} className="mt-auto text-xs font-semibold hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</Link>
-                  </div>
-                </div>
-              );
-            })}
+          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Products", zh: "产品", th: "สินค้า", vi: "Sản phẩm" }, locale)}</p>
+          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "#1A56DB" }}>{b.name}</h2>
 
-            {/* Consumable — OmniCure S2000 Elite replacement lamp (links to the SEM landing page) */}
-            {slug === "omnicure" && (
-              <Link href={LAMP_PATHS.en} className="rounded-xl border border-gray-100 overflow-hidden bg-white flex flex-col group hover:shadow-md hover:border-gray-200 transition-all">
-                <div className="relative h-32 sm:h-36 bg-white">
-                  <span className="absolute top-2 left-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: "#0d9488" }}>{t({ en: "CONSUMABLE", zh: "耗材" }, locale)}</span>
-                  <Image src={LAMP.heroImage} alt={LAMP.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
-                  <span className="inline-block self-start text-[9px] font-bold uppercase tracking-wide px-2 py-0.5 rounded mb-2" style={{ background: `${b.color}12`, color: b.color }}>
-                    {t({ en: "Replacement Lamp", zh: "替换灯管" }, locale)}
-                  </span>
-                  <h3 className="font-bold text-[13px] leading-snug text-gray-800 mb-2 line-clamp-3">{LAMP.name}</h3>
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {["012-64000R", "200W", t({ en: "Genuine", zh: "原厂正品" }, locale)].map((h) => (
-                      <span key={h} className="text-[10px] font-medium px-2 py-0.5 rounded-full border" style={{ borderColor: `${b.color}30`, color: b.color, background: `${b.color}0a` }}>{h}</span>
-                    ))}
-                  </div>
-                  <span className="mt-auto text-xs font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →" }, locale)}</span>
-                </div>
-              </Link>
-            )}
-          </div>
+          {brandModelGroups(b.catalogBrandId).map((group) => (
+            <div key={group.title.en} className="mt-10">
+              <div className="mb-4 flex items-baseline gap-3">
+                <h3 className="shrink-0 text-base font-bold text-[#143C96] sm:text-lg">{t(group.title, locale)}</h3>
+                <span className="h-px flex-1 bg-[#E6EAF0]" />
+                <span className="shrink-0 text-xs text-gray-400">{group.items.length} {t({ en: "models", zh: "款", th: "รุ่น", vi: "model" }, locale)}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+                {group.items.map((raw) => {
+                  const p = localizeProduct(raw, locale);
+                  return (
+                    <Link key={p.slug} href={productHref(p)} className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white transition-all hover:border-gray-200 hover:shadow-md">
+                      <div className="relative h-28 bg-white sm:h-36">
+                        {productImage(p) ? (
+                          <Image src={productImage(p)} alt={p.name} fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 31vw, 24vw" className="object-contain p-3 transition-transform duration-300 group-hover:scale-105" />
+                        ) : (
+                          <span className="absolute inset-0 flex items-center justify-center px-3 text-center text-sm font-semibold" style={{ color: b.color }}>{p.brand}</span>
+                        )}
+                      </div>
+                      <div className="flex flex-1 flex-col border-t border-gray-50 p-3">
+                        <h4 className="text-[12px] font-bold leading-snug text-gray-800 group-hover:text-[#1A56DB] sm:text-[13px]">{p.name}</h4>
+                        <span className="mt-auto pt-2 text-[11px] font-semibold group-hover:underline" style={{ color: b.color }}>{t({ en: "View details →", zh: "查看详情 →", th: "ดูรายละเอียด →", vi: "Xem chi tiết →" }, locale)}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
+
 
       {/* Typical applications */}
       <section className="py-14" style={{ background: "#f0f4f8" }}>
