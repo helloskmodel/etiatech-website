@@ -10,7 +10,7 @@ const BASE =
 // Serve a small webp via COS on-the-fly processing (imageMogr2) — the source
 // PNGs are 10–40 KB each and 14 load at once, which was slow. ~2–3 KB each now.
 const logoUrl = (file: string) =>
-  `${BASE}/${file.replace(/ /g, "%20").replace(/\(/g, "%28").replace(/\)/g, "%29")}?imageMogr2/thumbnail/280x/format/webp/quality/85`;
+  `${BASE}/${file.replace(/ /g, "%20").replace(/\(/g, "%28").replace(/\)/g, "%29")}?imageMogr2/thumbnail/280x%3E/format/webp/quality/85`;
 
 const CUSTOMERS: [string, string][] = [
   ["Baxter", "UV_logo (Baxter).png"],

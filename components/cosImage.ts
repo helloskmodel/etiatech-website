@@ -14,7 +14,10 @@ const COS_HOST = "etiatech-1303055923.cos.ap-singapore.myqcloud.com";
 export function cosResize(url: string, width = 1600, webp = false): string {
   if (!url || !url.includes(COS_HOST) || url.includes("imageMogr2")) return url;
   if (url.includes("?")) return url; // don't fight an existing query
-  return `${url}?imageMogr2/thumbnail/${width}x${webp ? "/format/webp" : ""}`;
+  // `900x>` (encoded) means "shrink to this width, never enlarge". Plain
+  // `900x` scales both ways, which re-encoded a 600 px source up to 900 and
+  // made the file bigger than the original.
+  return `${url}?imageMogr2/thumbnail/${width}x%3E${webp ? "/format/webp" : ""}`;
 }
 
 /**
