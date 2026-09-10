@@ -511,7 +511,11 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     ],
     recommends: ["mercury-uv-lamp", "uv-led"],
     cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/INDUSTRY/RND",
-    applicationSlugs: [],
+    applicationSlugs: [
+      "uv-spot-curing-photorheology-rotational-rheometer",
+      "uv-spot-curing-laboratory-adhesive-screening-specimen-preparation",
+      "uv-radiometry-irradiance-measurement-process-validation",
+    ],
     metaTitle: "UV Curing Modules for Photo-Rheology & Photo-DSC | OmniCure S2000 & LX500 | ETIA",
     metaDescription:
       "UV modules for laboratory instruments — OmniCure S2000 broad-spectrum 250–600 nm and LX500 UV LED for photo-rheology on rotational rheometers and for photo-DSC, with light-guide delivery, external shutter control and traceable radiometry at the sample plane. Supplied and supported by ETIA.",
