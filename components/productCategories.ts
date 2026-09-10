@@ -26,8 +26,7 @@ export type ProductCategorySlug =
   | "uv-led"
   | "microwave-uv-lamp"
   | "infrared-heating"
-  | "infrared-emitters"
-  | "analytical-light-sources";
+  | "infrared-emitters";
 
 export type ProductCategory = {
   slug: ProductCategorySlug;
@@ -576,112 +575,6 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     ],
   },
 
-  // ────────────────────── 7. 分析光源 ──────────────────────
-  // Not curing equipment: these are OEM light sources built into someone
-  // else's analytical instrument. Sourced from the public Excelitas
-  // "High-quality light sources for analytical instruments" brochure.
-  "analytical-light-sources": {
-    slug: "analytical-light-sources",
-    accent: "#0ea5e9",
-    name: { en: "Analytical Light Sources", zh: "分析光源", vi: "Nguồn sáng phân tích", th: "แหล่งกำเนิดแสงสำหรับงานวิเคราะห์" },
-    tagline: {
-      en: "Deuterium, PID and integrated UV-Vis sources — the lamp inside the spectrometer, the chromatograph and the gas detector.",
-      zh: "氘灯、PID 灯与一体化 UV-Vis 光源——分光光度计、色谱仪与气体检测仪内部的那只灯。",
-      vi: "Nguồn deuterium, PID và mô-đun UV-Vis tích hợp — chiếc đèn bên trong máy quang phổ, máy sắc ký và thiết bị dò khí.",
-      th: "แหล่งกำเนิดแสงดิวทีเรียม PID และโมดูล UV-Vis แบบรวม — หลอดที่อยู่ภายในสเปกโตรมิเตอร์ โครมาโทกราฟ และเครื่องตรวจจับแก๊ส",
-    },
-    intro: [
-      {
-        en: "An analytical instrument is only as good as its light source. In UV-Vis spectrophotometry and HPLC the detection limit is set by how stable and how intense the lamp is; in photoionisation detection it is set by the photon energy and the purity of the window. These are not accessories bolted on afterwards — they are the component the instrument's specification is written around.",
-        zh: "分析仪器的性能上限，取决于它的光源。在 UV-Vis 分光光度法与 HPLC 中，检测限由灯的稳定性与强度决定；在光电离检测中，则由光子能量与窗口材料的纯度决定。这些不是事后加装的配件——而是仪器规格书据以撰写的那个核心部件。",
-        vi: "Một thiết bị phân tích chỉ tốt ngang nguồn sáng của nó. Trong quang phổ UV-Vis và HPLC, giới hạn phát hiện được quyết định bởi độ ổn định và cường độ của đèn; trong phát hiện quang ion hóa, nó do năng lượng photon và độ tinh khiết của cửa sổ quyết định. Đây không phải phụ kiện lắp thêm về sau — mà là linh kiện mà bản đặc tả của thiết bị được viết dựa trên nó.",
-        th: "เครื่องมือวิเคราะห์จะดีได้เท่าที่แหล่งกำเนิดแสงของมันดี ในสเปกโตรโฟโตเมตรี UV-Vis และ HPLC ขีดจำกัดการตรวจวัดถูกกำหนดด้วยความเสถียรและความเข้มของหลอด ส่วนในการตรวจจับแบบโฟโตไอออไนเซชันถูกกำหนดด้วยพลังงานโฟตอนและความบริสุทธิ์ของวัสดุหน้าต่าง สิ่งเหล่านี้ไม่ใช่อุปกรณ์เสริมที่ติดเพิ่มภายหลัง — แต่เป็นชิ้นส่วนที่ข้อกำหนดของเครื่องมือถูกเขียนขึ้นรอบตัวมัน",
-      },
-      {
-        en: "ETIA supplies the Excelitas analytical range: deuterium lamps of the D2 plus series for HPLC, UHPLC and high-end UV-Vis; photoionisation detector lamps in DC and RF excitation for gas chromatography, mass spectrometry, VOC monitoring and explosives trace detection; and the FiberLight® D2, which packs a deuterium lamp, a tungsten lamp, a shutter, the optics and an SMA connector into one 6 W module for instruments with no room to spare.",
-        zh: "ETIA 供应 Excelitas 完整的分析光源产品线：用于 HPLC、UHPLC 与高端 UV-Vis 的 D2 plus 系列氘灯；DC 与 RF 两种激发方式的 PID 光电离检测灯，用于气相色谱、质谱、VOC 监测与爆炸物痕量检测；以及 FiberLight® D2——将氘灯、钨灯、快门、光学系统与 SMA 接口集成于一个 6 W 模块，专为空间紧张的仪器而设计。",
-        vi: "ETIA cung cấp trọn dải sản phẩm phân tích của Excelitas: đèn deuterium dòng D2 plus cho HPLC, UHPLC và UV-Vis cao cấp; đèn dò quang ion hóa (PID) kích thích DC và RF cho sắc ký khí, khối phổ, giám sát VOC và phát hiện vết chất nổ; cùng FiberLight® D2 gói đèn deuterium, đèn vonfram, cửa chắn, hệ quang và đầu nối SMA vào một mô-đun 6 W dành cho thiết bị không còn chỗ trống.",
-        th: "ETIA จัดหาผลิตภัณฑ์งานวิเคราะห์ของ Excelitas ครบช่วง: หลอดดิวทีเรียมซีรีส์ D2 plus สำหรับ HPLC, UHPLC และ UV-Vis ระดับสูง; หลอด PID แบบกระตุ้น DC และ RF สำหรับแก๊สโครมาโทกราฟี แมสสเปกโตรเมตรี การเฝ้าระวัง VOC และการตรวจหาร่องรอยวัตถุระเบิด; และ FiberLight® D2 ที่รวมหลอดดิวทีเรียม หลอดทังสเตน ชัตเตอร์ ระบบออปติก และขั้วต่อ SMA ไว้ในโมดูลขนาด 6 วัตต์เดียว สำหรับเครื่องมือที่ไม่มีพื้นที่เหลือ",
-      },
-      {
-        en: "Excelitas builds these alongside the OEMs that use them, to the dimensions and performance the instrument requires — and the PID lamps come off the industry's first fully automated production line, which is what lets lamp-to-lamp consistency and short lead times exist at the same time. ETIA handles specification, supply and replacement in Asia-Pacific.",
-        zh: "Excelitas 与使用这些光源的 OEM 客户共同开发，按仪器所需的尺寸与性能定制——其中 PID 灯出自业内首条全自动化产线，这正是灯与灯之间的一致性与短交期能够并存的原因。ETIA 在亚太区负责选型、供应与更换。",
-        vi: "Excelitas phát triển chúng cùng với chính các OEM sử dụng, theo đúng kích thước và hiệu năng mà thiết bị yêu cầu — và đèn PID được sản xuất trên dây chuyền tự động hóa hoàn toàn đầu tiên của ngành, điều khiến tính đồng nhất giữa các đèn và thời gian giao hàng ngắn cùng tồn tại được. ETIA phụ trách xác định cấu hình, cung ứng và thay thế tại châu Á – Thái Bình Dương.",
-        th: "Excelitas พัฒนาผลิตภัณฑ์เหล่านี้ร่วมกับ OEM ที่นำไปใช้ ตามขนาดและสมรรถนะที่เครื่องมือต้องการ — และหลอด PID ผลิตจากสายการผลิตอัตโนมัติเต็มรูปแบบสายแรกของวงการ ซึ่งเป็นเหตุผลที่ความสม่ำเสมอระหว่างหลอดกับระยะเวลาส่งมอบที่สั้นเกิดขึ้นพร้อมกันได้ ETIA ดูแลการกำหนดสเปก การจัดหา และการเปลี่ยนทดแทนในภูมิภาคเอเชียแปซิฟิก",
-      },
-    ],
-    applications: [
-      { en: "UV-Vis spectroscopy", zh: "UV-Vis 光谱分析", vi: "Quang phổ UV-Vis", th: "สเปกโทรสโกปี UV-Vis" },
-      { en: "HPLC & UHPLC", zh: "HPLC 与 UHPLC", vi: "HPLC & UHPLC", th: "HPLC & UHPLC" },
-      { en: "Gas chromatography & mass spectrometry", zh: "气相色谱与质谱", vi: "Sắc ký khí & khối phổ", th: "แก๊สโครมาโทกราฟี & แมสสเปกโตรเมตรี" },
-      { en: "Atomic absorption spectroscopy", zh: "原子吸收光谱", vi: "Quang phổ hấp thụ nguyên tử", th: "อะตอมมิกแอบซอร์พชันสเปกโทรสโกปี" },
-      { en: "VOC & air quality monitoring", zh: "VOC 与空气质量监测", vi: "Giám sát VOC & chất lượng không khí", th: "การเฝ้าระวัง VOC & คุณภาพอากาศ" },
-      { en: "Explosives trace detection", zh: "爆炸物痕量检测", vi: "Phát hiện vết chất nổ", th: "การตรวจหาร่องรอยวัตถุระเบิด" },
-      { en: "Water & pollution monitoring", zh: "水质与污染监测", vi: "Giám sát nước & ô nhiễm", th: "การเฝ้าระวังน้ำ & มลพิษ" },
-      { en: "Thin layer chromatography & HPCE", zh: "薄层色谱与毛细管电泳", vi: "Sắc ký lớp mỏng & HPCE", th: "ทินเลเยอร์โครมาโทกราฟี & HPCE" },
-      { en: "Semiconductor inspection", zh: "半导体检测", vi: "Kiểm tra bán dẫn", th: "การตรวจสอบเซมิคอนดักเตอร์" },
-    ],
-    selectionGuide: {
-      heading: { en: "Which lamp for which measurement", zh: "哪种测量用哪种灯", vi: "Đèn nào cho phép đo nào", th: "หลอดชนิดใดสำหรับการวัดแบบใด" },
-      standfirst: { en: "Excelitas indexes its analytical range by measurement technique rather than by lamp. The table below is that index: find the method your instrument runs, and it names the light source families built for it.", zh: "Excelitas 的分析光源是按测量方法索引的，而不是按灯型。下表就是这个索引：找到你的仪器所用的方法，即可看到为它设计的光源类别。", vi: "Excelitas lập chỉ mục dải sản phẩm phân tích theo kỹ thuật đo chứ không theo loại đèn. Bảng dưới đây chính là chỉ mục đó: tìm phương pháp thiết bị của bạn đang chạy, bảng sẽ chỉ ra các họ nguồn sáng được thiết kế cho nó.", th: "Excelitas จัดทำดัชนีผลิตภัณฑ์งานวิเคราะห์ตามเทคนิคการวัด ไม่ใช่ตามชนิดหลอด ตารางด้านล่างคือดัชนีนั้น: ค้นหาวิธีที่เครื่องมือของคุณใช้ แล้วตารางจะระบุตระกูลแหล่งกำเนิดแสงที่ออกแบบมาเพื่อวิธีนั้น" },
-      steps: [
-        {
-          title: { en: "FiberLight® — when the instrument has to move", zh: "FiberLight® —— 当仪器需要移动", vi: "FiberLight® — khi thiết bị phải di chuyển", th: "FiberLight® — เมื่อเครื่องมือต้องเคลื่อนที่" },
-          body: { en: "Reach for the FiberLight family when the constraint is space and power rather than ultimate sensitivity — portable, handheld or battery-driven instruments. L3 is a broadband UV LED covering 250–490 nm from a single emitter, under 1.5 W. D2 is a full UV-Vis module: deuterium plus tungsten lamp, shutter, optics and SMA 905 connector on one 6 W board, switching instantly on with stable output.", zh: "当制约条件是空间与功耗、而非极限灵敏度时，选 FiberLight 系列——便携式、手持式或电池供电仪器。L3 是宽谱 UV LED，单颗发光体覆盖 250–490 nm，功耗低于 1.5 W。D2 则是完整的 UV-Vis 模块：氘灯加钨灯、快门、光学系统与 SMA 905 接口集成在一块 6 W 电路板上，瞬时点亮且输出稳定。", vi: "Chọn dòng FiberLight khi ràng buộc là không gian và công suất chứ không phải độ nhạy tối đa — thiết bị xách tay, cầm tay hoặc chạy pin. L3 là UV LED dải rộng phủ 250–490 nm từ một nguồn phát duy nhất, dưới 1,5 W. D2 là mô-đun UV-Vis đầy đủ: đèn deuterium cùng đèn vonfram, cửa chắn, hệ quang và đầu nối SMA 905 trên một bo mạch 6 W, bật tức thì với đầu ra ổn định.", th: "เลือกตระกูล FiberLight เมื่อข้อจำกัดคือพื้นที่และกำลังไฟ ไม่ใช่ความไวสูงสุด — เครื่องมือแบบพกพา มือถือ หรือใช้แบตเตอรี่ L3 เป็น UV LED สเปกตรัมกว้างครอบคลุม 250–490 nm จากตัวเปล่งแสงเดียว ใช้กำลังต่ำกว่า 1.5 วัตต์ ส่วน D2 เป็นโมดูล UV-Vis เต็มรูปแบบ: หลอดดิวทีเรียมพร้อมหลอดทังสเตน ชัตเตอร์ ระบบออปติก และขั้วต่อ SMA 905 บนบอร์ด 6 วัตต์เดียว เปิดติดทันทีพร้อมเอาต์พุตที่เสถียร" },
-        },
-        {
-          title: { en: "PID lamps — when you are detecting a gas", zh: "PID 灯 —— 当你检测的是气体", vi: "Đèn PID — khi bạn phát hiện chất khí", th: "หลอด PID — เมื่อคุณกำลังตรวจจับแก๊ส" },
-          body: { en: "Every gas-phase method on the list runs on a PID lamp. Selection is by photon energy: the lamp is offered from 8.4 to 10.6 eV, and a compound only ionises if its ionisation energy sits below the lamp's photon energy — styrene at 8.4 eV, benzene at 9.24, isopropanol at 10.10, pentane at 10.34. A lower photon energy buys selectivity; a higher one buys coverage.", zh: "表中所有气相方法都用 PID 灯。选型依据是光子能量：灯的可选范围为 8.4 至 10.6 eV，只有电离能低于灯光子能量的化合物才会被电离——苯乙烯 8.4 eV、苯 9.24、异丙醇 10.10、戊烷 10.34。光子能量低则选择性好，高则覆盖面广。", vi: "Mọi phương pháp pha khí trong bảng đều dùng đèn PID. Việc chọn dựa trên năng lượng photon: đèn có từ 8,4 đến 10,6 eV, và một hợp chất chỉ bị ion hóa nếu năng lượng ion hóa của nó thấp hơn năng lượng photon của đèn — styrene 8,4 eV, benzene 9,24, isopropanol 10,10, pentane 10,34. Năng lượng photon thấp cho tính chọn lọc; cao cho độ bao phủ.", th: "ทุกวิธีในเฟสแก๊สในตารางใช้หลอด PID การเลือกอิงตามพลังงานโฟตอน: หลอดมีให้ตั้งแต่ 8.4 ถึง 10.6 eV และสารจะแตกตัวเป็นไอออนก็ต่อเมื่อพลังงานไอออไนเซชันของมันต่ำกว่าพลังงานโฟตอนของหลอด — สไตรีน 8.4 eV เบนซีน 9.24 ไอโซโพรพานอล 10.10 เพนเทน 10.34 พลังงานโฟตอนต่ำให้ความจำเพาะ สูงให้ความครอบคลุม" },
-        },
-        {
-          title: { en: "Deuterium lamps — the UV workhorse", zh: "氘灯 —— 紫外的主力", vi: "Đèn deuterium — chủ lực vùng UV", th: "หลอดดิวทีเรียม — ตัวหลักของย่าน UV" },
-          body: { en: "Deuterium covers more of the table than any other family: liquid chromatography, UV-Vis, TLC, HPCE, semiconductor inspection, and background correction in AAS. The choice within the range is the envelope — UV glass cuts off at 185 nm, high-transmission synthetic quartz at 160 nm — plus a 0.5 or 1.0 mm aperture for more focused intensity, and a see-through version if the instrument would otherwise need a moveable mirror or beam splitter.", zh: "氘灯覆盖表中最多的方法：液相色谱、UV-Vis、薄层色谱、毛细管电泳、半导体检测，以及原子吸收中的背景校正。系列内的选择在于壳体——UV 玻璃截止于 185 nm，高透过率合成石英截止于 160 nm；此外还有 0.5 或 1.0 mm 光阑以获得更集中的强度，以及在仪器原本需要动镜或分光镜时可选的直通式版本。", vi: "Deuterium bao phủ nhiều mục trong bảng hơn bất kỳ họ nào khác: sắc ký lỏng, UV-Vis, TLC, HPCE, kiểm tra bán dẫn và hiệu chỉnh nền trong AAS. Lựa chọn trong dải là lớp vỏ — kính UV cắt tại 185 nm, thạch anh tổng hợp truyền quang cao tại 160 nm — cùng khẩu độ 0,5 hoặc 1,0 mm cho cường độ tập trung hơn, và bản xuyên suốt nếu thiết bị lẽ ra cần gương di động hoặc bộ chia chùm.", th: "ดิวทีเรียมครอบคลุมรายการในตารางมากกว่าตระกูลใด: โครมาโทกราฟีของเหลว UV-Vis TLC HPCE การตรวจสอบเซมิคอนดักเตอร์ และการแก้ไขพื้นหลังใน AAS ตัวเลือกภายในช่วงคือหลอดแก้ว — กระจก UV ตัดที่ 185 nm ควอตซ์สังเคราะห์ส่งผ่านสูงที่ 160 nm — พร้อมรูรับแสง 0.5 หรือ 1.0 มม. เพื่อความเข้มที่รวมศูนย์กว่า และรุ่นแบบมองทะลุหากเครื่องมือจำเป็นต้องใช้กระจกเคลื่อนที่หรือบีมสปลิตเตอร์" },
-        },
-        {
-          title: { en: "Hollow cathode lamps — chosen by element", zh: "空心阴极灯 —— 按元素选", vi: "Đèn cathode rỗng — chọn theo nguyên tố", th: "หลอดแคโทดกลวง — เลือกตามธาตุ" },
-          body: { en: "In AAS the cathode is made from the element you are measuring, so the lamp is selected by element, not by specification: 70 single-element lamps in 37 mm and 50 mm. For routine work across several elements in one sample — alloys, for instance — multi-element lamps combine two to seven elements, offered only where the energy and lifetime hold up and the lines do not interfere. Data-coded versions exist for PerkinElmer and Thermo Fisher Scientific instruments.", zh: "在原子吸收中，阴极就是用你要测的那个元素做的，因此灯是按元素而不是按规格选：单元素灯 70 种，直径 37 mm 与 50 mm。若一个样品中要常规测多个元素——比如合金——则用多元素灯，可组合 2 至 7 种元素，且仅在能量与寿命足够、谱线互不干扰时才提供。PerkinElmer 与 Thermo Fisher Scientific 的仪器另有数据编码版本。", vi: "Trong AAS, cathode được làm từ chính nguyên tố bạn đo, nên đèn được chọn theo nguyên tố chứ không theo thông số: 70 đèn đơn nguyên tố, đường kính 37 mm và 50 mm. Với công việc thường quy đo nhiều nguyên tố trong cùng một mẫu — hợp kim chẳng hạn — đèn đa nguyên tố kết hợp từ hai đến bảy nguyên tố, chỉ được cung cấp khi năng lượng và tuổi thọ đủ và các vạch phổ không nhiễu nhau. Có bản mã hóa dữ liệu cho thiết bị PerkinElmer và Thermo Fisher Scientific.", th: "ใน AAS แคโทดทำจากธาตุที่คุณกำลังวัด หลอดจึงถูกเลือกตามธาตุ ไม่ใช่ตามสเปก: หลอดธาตุเดี่ยว 70 ชนิด ขนาด 37 มม. และ 50 มม. สำหรับงานประจำที่วัดหลายธาตุในตัวอย่างเดียว เช่น โลหะผสม หลอดหลายธาตุผสมได้ตั้งแต่สองถึงเจ็ดธาตุ และเสนอเฉพาะกรณีที่พลังงานและอายุการใช้งานเพียงพอและเส้นสเปกตรัมไม่รบกวนกัน มีรุ่นเข้ารหัสข้อมูลสำหรับเครื่อง PerkinElmer และ Thermo Fisher Scientific" },
-        },
-      ],
-      tables: [
-        {
-          caption: { en: "Measurement technique to light source family", zh: "测量方法与光源类别对照", vi: "Kỹ thuật đo và họ nguồn sáng", th: "เทคนิคการวัดกับตระกูลแหล่งกำเนิดแสง" },
-          columns: [
-            { en: "Technique", zh: "方法", vi: "Kỹ thuật", th: "เทคนิค" },
-            { en: "FiberLight®", zh: "FiberLight®", vi: "FiberLight®", th: "FiberLight®" },
-            { en: "PID", zh: "PID", vi: "PID", th: "PID" },
-            { en: "Deuterium", zh: "氘灯", vi: "Deuterium", th: "ดิวทีเรียม" },
-            { en: "Hollow cathode", zh: "空心阴极灯", vi: "Cathode rỗng", th: "แคโทดกลวง" },
-          ],
-          rows: [
-        [{ en: "Atomic absorption spectroscopy", zh: "原子吸收光谱", vi: "Quang phổ hấp thụ nguyên tử", th: "อะตอมมิกแอบซอร์พชันสเปกโทรสโกปี" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }],
-        [{ en: "Atomic fluorescence spectroscopy", zh: "原子荧光光谱", vi: "Quang phổ huỳnh quang nguyên tử", th: "อะตอมมิกฟลูออเรสเซนซ์สเปกโทรสโกปี" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }],
-        [{ en: "Emergency first response", zh: "应急处置", vi: "Ứng phó khẩn cấp", th: "การตอบสนองเหตุฉุกเฉิน" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Exhaust monitoring", zh: "尾气监测", vi: "Giám sát khí thải", th: "การเฝ้าระวังไอเสีย" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Gas chromatography (GC)", zh: "气相色谱（GC）", vi: "Sắc ký khí (GC)", th: "แก๊สโครมาโทกราฟี (GC)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "High performance capillary electrophoresis (HPCE)", zh: "高效毛细管电泳（HPCE）", vi: "Điện di mao quản hiệu năng cao (HPCE)", th: "แคปิลลารีอิเล็กโทรโฟรีซิสสมรรถนะสูง (HPCE)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "HPLC + UHPLC", zh: "HPLC 与 UHPLC", vi: "HPLC + UHPLC", th: "HPLC + UHPLC" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Leak detection", zh: "泄漏检测", vi: "Phát hiện rò rỉ", th: "การตรวจหารอยรั่ว" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Mass spectrometry (MS)", zh: "质谱（MS）", vi: "Khối phổ (MS)", th: "แมสสเปกโตรเมตรี (MS)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Personnel safety in confined spaces", zh: "受限空间人员安全", vi: "An toàn nhân sự trong không gian hạn chế", th: "ความปลอดภัยของบุคลากรในพื้นที่อับอากาศ" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Pollution monitors", zh: "污染监测仪", vi: "Thiết bị giám sát ô nhiễm", th: "เครื่องเฝ้าระวังมลพิษ" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Process control", zh: "过程控制", vi: "Kiểm soát quy trình", th: "การควบคุมกระบวนการ" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Semiconductor inspection", zh: "半导体检测", vi: "Kiểm tra bán dẫn", th: "การตรวจสอบเซมิคอนดักเตอร์" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "Thin layer chromatography (TLC)", zh: "薄层色谱（TLC）", vi: "Sắc ký lớp mỏng (TLC)", th: "ทินเลเยอร์โครมาโทกราฟี (TLC)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-        [{ en: "UV-Vis spectroscopy", zh: "UV-Vis 光谱分析", vi: "Quang phổ UV-Vis", th: "สเปกโทรสโกปี UV-Vis" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
-          ],
-          footnote: { en: "Source: Excelitas, High-quality light sources for analytical instruments (Inhouse XNG 05/25), applications index.", zh: "来源：Excelitas《High-quality light sources for analytical instruments》（Inhouse XNG 05/25）应用索引。", vi: "Nguồn: Excelitas, High-quality light sources for analytical instruments (Inhouse XNG 05/25), chỉ mục ứng dụng.", th: "ที่มา: Excelitas, High-quality light sources for analytical instruments (Inhouse XNG 05/25) ดัชนีการใช้งาน" },
-        },
-      ],
-    },
-    metaTitle: "Analytical Light Sources | Deuterium, PID & FiberLight D2 | ETIA",
-    metaDescription:
-      "Excelitas analytical light sources for instrument OEMs — D2 plus deuterium lamps for HPLC/UHPLC and UV-Vis, PID lamps for GC, MS and VOC detection, and the FiberLight D2 integrated UV-Vis module. Specified and supplied by ETIA.",
-    match: (p) => p.tech === "Analytical Light Sources",
-    // Held back from launch at the customer's request, alongside the precision
-    // measurement category that was removed. The content and the models stay in
-    // place — clear the flag to publish.
-    draft: true,
-  },
 };
 
 // Menu / page order — the order the customer specified.
@@ -696,7 +589,6 @@ export const PRODUCT_CATEGORY_ORDER: ProductCategorySlug[] = [
   "uv-led",
   "infrared-emitters",
   "infrared-heating",
-  "analytical-light-sources",
 ];
 
 // Every category, drafts included — for the route's static params and for

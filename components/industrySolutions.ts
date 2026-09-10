@@ -469,8 +469,8 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
   },
 
   // ───────────────────────── 5. 科学实验 ─────────────────────────
-  // Now backed by a real product line — the Excelitas analytical light
-  // sources — rather than by third-party evidence about rheometers alone.
+  // Backed by the S2000 Elite / LX500 bench notes (photorheology, adhesive
+  // screening, radiometry) — the analytical OEM lamp line was discontinued.
   // Photocalorimetry stays out: Mettler Toledo's kit uses Hamamatsu and DELO
   // sources and TA's PCA has its own lamp, so there is no claim to make there.
   "scientific-instruments": {

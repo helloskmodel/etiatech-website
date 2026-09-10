@@ -12,13 +12,10 @@ const ACCESSORIES = { id: "accessories", en: "Accessories", zh: "配件", th: "�
 // Infrared modules are not a UV curing route, so they need their own group
 // rather than falling into the accessories catch-all.
 const INFRARED = { id: "infrared", en: "Infrared Heating", zh: "红外加热", th: "ระบบทำความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" };
-const ANALYTICAL = { id: "analytical", en: "Analytical Light Sources", zh: "分析光源", th: "แหล่งกำเนิดแสงสำหรับงานวิเคราะห์", vi: "Nguồn sáng phân tích" };
-const groupsInOrder = [...TECH_ROUTES, INFRARED, ANALYTICAL, ACCESSORIES];
+const groupsInOrder = [...TECH_ROUTES, INFRARED, ACCESSORIES];
 const groupOf = (p: Product) =>
   p.tech === "Infrared Heating"
     ? INFRARED.id
-    : p.tech === "Analytical Light Sources"
-    ? ANALYTICAL.id
     : techRouteFor(p)?.id ?? ACCESSORIES.id;
 
 export default function SystemsIndexView() {
