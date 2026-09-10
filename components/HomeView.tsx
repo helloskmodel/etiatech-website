@@ -23,6 +23,7 @@ import FinalCta from "@/components/FinalCta";
 import NewsTicker from "@/components/NewsTicker";
 import CustomerLogos from "@/components/CustomerLogos";
 import HomeCarousel from "@/components/HomeCarousel";
+import LampStockBand from "@/components/LampStockBand";
 import { LIGHT_SOURCES } from "@/components/lightSources";
 
 const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
@@ -153,6 +154,9 @@ export default function HomeView() {
       </div>
     </section>
 
+
+    {/* The S2000 lamp, in stock — the consumable the region cannot get elsewhere */}
+    <LampStockBand />
 
     {/* BY INDUSTRY */}
     <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 lg:px-8">
