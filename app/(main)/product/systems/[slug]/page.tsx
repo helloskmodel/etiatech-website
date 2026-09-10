@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { products, getProduct, brandAccent, productJsonLd, productBreadcrumbJsonLd } from "@/components/productCatalog";
 import ProductDetailView from "@/components/ProductDetailView";
 import { LOCALIZED_SYSTEM_SLUGS, systemLanguages } from "@/components/localizedSystemsSeo";
@@ -28,6 +28,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const { slug } = await params;
   const p = getProduct(slug);
   if (!p) notFound();
+  // Products with a dedicated rich page are left out of generateStaticParams,
+  // but the route still renders them on demand — which left /product/systems/
+  // s2000-elite serving the flagship's content at a second, competing URL.
+  // Send both to the page that owns the content.
+  if (p.href) permanentRedirect(p.href);
 
   const accent = brandAccent[p.brandId];
 

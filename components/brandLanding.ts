@@ -122,7 +122,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Analytical & OEM Light Sources", zh: "分析与 OEM 光源" },
       { en: "Custom Solutions", zh: "定制方案" },
     ],
-    metaTitle: "NobleLight UV LED, Infrared & Analytical Light Sources | ETIA",
+    metaTitle: "NobleLight UV LED Curing, Infrared Heating & Analytical Lamps | ETIA",
     metaDescription:
       "Excelitas Noblelight — Semray water-cooled UV LED (400–1300 mm) and 360° fiber curing, M and MX infrared heating modules, and FiberLight D2, deuterium and PID analytical lamps. Supplied and supported by ETIA in Thailand and Vietnam.",
   },

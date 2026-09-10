@@ -22,7 +22,6 @@ export type ProductCategorySlug =
   | "mercury-uv-lamp"
   | "uv-led"
   | "microwave-uv-lamp"
-  | "uv-measurement"
   | "infrared-heating"
   | "analytical-light-sources";
 
@@ -64,6 +63,11 @@ export type ProductCategory = {
   };
   // Selects this category's models out of the product catalog.
   match: (p: Product) => boolean;
+  // Optional sub-headings for a category whose model list is long enough that a
+  // flat grid stops being navigable. Anything a group does not claim falls to
+  // the end of the list under no heading, so a new catalog entry can never go
+  // missing just because nobody updated the groups.
+  groups?: { title: LangText; match: (p: Product) => boolean }[];
   // Not published yet. A draft category is hidden from the menu, the product
   // centre, the home page and the cross-links, and stays out of the sitemap;
   // its page still builds so it can be previewed at its URL, but carries
@@ -71,8 +75,11 @@ export type ProductCategory = {
   draft?: boolean;
 };
 
-// Measurement instruments are catalogued under "UV Spot Curing" because they
-// ship with the spot systems, but they belong to their own category here.
+// The two radiometers are catalogued under "UV Spot Curing" because they ship
+// with the S-Series spot systems, which is also where they are sold from: they
+// belong to the mercury lamp category, alongside the S2000 they calibrate.
+// Naming them here lets that category claim them, lets the UV LED category pass
+// over them, and orders them after the systems rather than before.
 const MEASUREMENT_SLUGS = new Set(["r2000", "ls200"]);
 
 export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
@@ -80,7 +87,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "mercury-uv-lamp": {
     slug: "mercury-uv-lamp",
     accent: "#1A56DB",
-    name: { en: "Mercury UV Lamp Sources", zh: "汞灯紫外光源", vi: "Nguồn UV đèn thủy ngân", th: "แหล่งกำเนิด UV หลอดปรอท" },
+    name: { en: "UV Spot Curing Systems", zh: "汞灯紫外光源", vi: "Hệ thống đóng rắn UV điểm", th: "ระบบบ่ม UV แบบจุด" },
     tagline: {
       en: "Broad-spectrum mercury lamp UV curing — the proven choice when your adhesive needs full 320–500 nm output.",
       zh: "宽光谱汞灯紫外固化——当胶水需要完整 320–500 nm 输出时，久经验证的选择。",
@@ -113,19 +120,26 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Electronics assembly", zh: "电子装配", vi: "Lắp ráp điện tử", th: "การประกอบอิเล็กทรอนิกส์" },
       { en: "Optical component bonding", zh: "光学元件粘接", vi: "Liên kết linh kiện quang", th: "การยึดติดชิ้นส่วนออปติก" },
       { en: "Laboratory & R&D curing", zh: "实验室与研发固化", vi: "Đóng rắn trong phòng thí nghiệm & R&D", th: "การบ่มในห้องปฏิบัติการ & R&D" },
+      { en: "Dose measurement & calibration", zh: "剂量测量与校准", vi: "Đo liều & hiệu chuẩn", th: "การวัดโดส & การสอบเทียบ" },
     ],
-    metaTitle: "Mercury UV Lamp Curing Sources | OmniCure S-Series | ETIA",
+    metaTitle: "UV Spot Curing Systems | OmniCure S2000 & S1500 | ETIA",
     metaDescription:
-      "Mercury UV lamp curing sources explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
+      "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
     match: (p) =>
-      p.tech === "UV Spot Curing" && (p.sub === "UV Lamp Spot" || p.sub === "S-Series Accessory"),
+      (p.tech === "UV Spot Curing" &&
+        (p.sub === "UV Lamp Spot" ||
+          p.sub === "Replacement Lamp" ||
+          p.sub === "S-Series Accessory")) ||
+      // The R2000 and LS200 are sold as S2000 companions — dose calibration for
+      // the systems above — so they belong on this page rather than nowhere.
+      MEASUREMENT_SLUGS.has(p.slug),
   },
 
   // ─────────────────────────── 2. LED紫外光源 ───────────────────────────
   "uv-led": {
     slug: "uv-led",
     accent: "#41A62A",
-    name: { en: "UV LED Light Sources", zh: "LED紫外光源", vi: "Nguồn sáng UV LED", th: "แหล่งกำเนิดแสง UV LED" },
+    name: { en: "UV LED Curing Systems", zh: "LED紫外光源", vi: "Hệ thống đóng rắn UV LED", th: "ระบบบ่ม UV LED" },
     tagline: {
       en: "From single-point spot heads to 1350 mm production arrays — mercury-free UV LED curing at every scale.",
       zh: "从单点点固化头到 1350 mm 产线阵列——覆盖各种规模的无汞 UV LED 固化。",
@@ -154,9 +168,23 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Optical fibre coating & marking", zh: "光纤涂覆与标识", vi: "Phủ & đánh dấu sợi quang", th: "การเคลือบ & ทำเครื่องหมายเส้นใยแก้วนำแสง" },
       { en: "Printing, coating & packaging", zh: "印刷、涂层与包装", vi: "In ấn, phủ & bao bì", th: "งานพิมพ์ เคลือบ & บรรจุภัณฑ์" },
     ],
-    metaTitle: "UV LED Curing Light Sources | Spot, Area & Wide-Web | ETIA",
+    groups: [
+      {
+        title: { en: "UV LED Spot Curing Systems", zh: "UV LED 点固化系统", vi: "Hệ thống đóng rắn điểm UV LED", th: "ระบบบ่มแบบจุด UV LED" },
+        match: (p) => p.tech === "UV Spot Curing",
+      },
+      {
+        title: { en: "UV LED Air-Cooled Systems", zh: "UV LED 风冷系统", vi: "Hệ thống UV LED làm mát bằng không khí", th: "ระบบ UV LED ระบายความร้อนด้วยอากาศ" },
+        match: (p) => p.tech === "Air-Cooled UV LED Curing",
+      },
+      {
+        title: { en: "UV LED Water-Cooled Systems", zh: "UV LED 水冷系统", vi: "Hệ thống UV LED làm mát bằng nước", th: "ระบบ UV LED ระบายความร้อนด้วยน้ำ" },
+        match: (p) => p.tech === "Water-Cooled UV LED Area Curing",
+      },
+    ],
+    metaTitle: "UV LED Curing Systems | Spot, Air-Cooled & Water-Cooled | ETIA",
     metaDescription:
-      "UV LED curing light sources at 365/385/395/405 nm — OmniCure LX spot and AC Series, Phoseon FireEdge, FireJet and FireLine, Noblelight Semray water-cooled arrays to 1350 mm. Application-matched and supported by ETIA.",
+      "UV LED curing systems at 365/385/395/405 nm — OmniCure LX spot and AC Series, Phoseon FireEdge, FireJet and FireLine, Noblelight Semray water-cooled arrays to 1350 mm. Application-matched and supported by ETIA.",
     match: (p) =>
       !MEASUREMENT_SLUGS.has(p.slug) &&
       ((p.tech === "UV Spot Curing" && p.sub === "UV LED Spot") ||
@@ -170,7 +198,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "microwave-uv-lamp": {
     slug: "microwave-uv-lamp",
     accent: "#f59e0b",
-    name: { en: "Microwave Electrodeless UV Lamps", zh: "微波无极灯", vi: "Đèn UV vi sóng không điện cực", th: "หลอด UV ไมโครเวฟไร้ขั้วไฟฟ้า" },
+    name: { en: "Microwave UV Curing Systems", zh: "微波无极灯", vi: "Hệ thống đóng rắn UV vi sóng", th: "ระบบบ่ม UV ไมโครเวฟ" },
     tagline: {
       en: "Fusion UV® microwave-powered curing — no electrodes to erode, 200–600 nm broad spectrum, and unlimited cure width by stacking lamps end to end.",
       zh: "Fusion UV® 微波无极紫外固化——无电极损耗、200–600 nm 宽光谱，灯头端对端拼接实现固化宽度无限扩展。",
@@ -215,7 +243,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Metal coating & finishing", zh: "金属涂层与表面处理", vi: "Phủ & hoàn thiện bề mặt kim loại", th: "การเคลือบ & ตกแต่งผิวโลหะ" },
       { en: "Powder coating cure on MDF board", zh: "MDF 板粉末涂层固化", vi: "Đóng rắn lớp phủ bột trên ván MDF", th: "การบ่มสารเคลือบผงบนแผ่น MDF" },
     ],
-    metaTitle: "Microwave Electrodeless UV Lamps | Fusion UV F Series & LightHammer | ETIA",
+    metaTitle: "Microwave UV Curing Systems | Fusion UV F Series & LightHammer | ETIA",
     metaDescription:
       "Fusion UV microwave-powered UV curing systems — electrodeless lamps from the economical F300S to the LightHammer 10 Mark III, with H, D and V bulb fills, unlimited cure width and Industry 4.0 sensing. Supplied and supported by ETIA.",
     docs: [
@@ -424,51 +452,11 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     match: (p) => p.tech === "Microwave UV Curing",
   },
 
-  // ───────────────────────── 4. 精密检测仪表 ─────────────────────────
-  "uv-measurement": {
-    slug: "uv-measurement",
-    accent: "#0ea5e9",
-    name: { en: "Precision UV Measurement Instruments", zh: "精密检测仪表", vi: "Thiết bị đo UV chính xác", th: "เครื่องมือวัด UV ความแม่นยำสูง" },
-    tagline: {
-      en: "Radiometers and calibration systems — the instruments that turn a UV process from 'it looked cured' into a documented number.",
-      zh: "辐照计与校准系统——把紫外工艺从「看起来固化了」变成可记录数据的仪表。",
-      vi: "Thiết bị đo bức xạ và hệ hiệu chuẩn — những công cụ biến quy trình UV từ “trông có vẻ đã đóng rắn” thành một con số có hồ sơ.",
-      th: "เครื่องวัดรังสีและระบบสอบเทียบ — เครื่องมือที่เปลี่ยนกระบวนการ UV จาก “ดูเหมือนบ่มแล้ว” ให้เป็นตัวเลขที่บันทึกได้",
-    },
-    intro: [
-      {
-        en: "A UV process is only controlled if it is measured. Radiometers verify that the irradiance and dose reaching the bond line are what the process was validated at — before a drifting lamp, a contaminated light guide or a changed working distance turns into a field failure.",
-        zh: "紫外工艺唯有可测量，方能可控。辐照计用于验证抵达粘接面的辐照度与剂量是否与工艺验证值一致——避免灯泡衰减、光导污染或工作距离变化演变为现场失效。",
-        vi: "Một quy trình UV chỉ được kiểm soát nếu nó được đo. Thiết bị đo bức xạ xác nhận rằng cường độ và liều chiếu tới đường dán đúng bằng giá trị quy trình đã được thẩm định — trước khi một bóng đèn suy giảm, một ống dẫn sáng bị bẩn hay một khoảng cách làm việc bị thay đổi trở thành lỗi ngoài hiện trường.",
-        th: "กระบวนการ UV จะถือว่าควบคุมได้ก็ต่อเมื่อมีการวัด เครื่องวัดรังสียืนยันว่าความเข้มและปริมาณแสงที่ไปถึงแนวยึดตรงกับค่าที่กระบวนการผ่านการตรวจรับรองไว้ — ก่อนที่หลอดที่เสื่อมลง ตัวนำแสงที่ปนเปื้อน หรือระยะทำงานที่เปลี่ยนไป จะกลายเป็นความเสียหายในภาคสนาม",
-      },
-      {
-        en: "ETIA supplies the OmniCure® R2000 radiometer for lamp-based spot systems and the LS200 UV LED radiometry and calibration system, both with traceable factory calibration. For regulated medical device and aerospace production, these are what makes your process records defensible in an audit.",
-        zh: "ETIA 供应用于灯式点固化系统的 OmniCure® R2000 辐照计，以及 LS200 UV LED 辐照测量与校准系统，均具备可溯源的出厂校准。对于受监管的医疗器械与航空航天生产而言，这正是让工艺记录在审核中站得住脚的依据。",
-        vi: "ETIA cung cấp thiết bị đo bức xạ OmniCure® R2000 cho hệ đóng rắn điểm dùng đèn và hệ đo–hiệu chuẩn UV LED LS200, cả hai đều có hiệu chuẩn xuất xưởng truy xuất được. Với sản xuất thiết bị y tế và hàng không vũ trụ chịu quản lý, đây chính là thứ khiến hồ sơ quy trình của bạn đứng vững trong một cuộc đánh giá.",
-        th: "ETIA จัดหาเครื่องวัดรังสี OmniCure® R2000 สำหรับระบบบ่มแบบจุดที่ใช้หลอด และระบบวัด–สอบเทียบ UV LED รุ่น LS200 ทั้งสองมาพร้อมการสอบเทียบจากโรงงานที่สอบกลับได้ สำหรับการผลิตอุปกรณ์การแพทย์และอากาศยานที่อยู่ภายใต้การกำกับดูแล นี่คือสิ่งที่ทำให้บันทึกกระบวนการของคุณยืนหยัดได้ในการตรวจประเมิน",
-      },
-    ],
-    applications: [
-      { en: "Medical device process validation", zh: "医疗器械工艺验证", vi: "Thẩm định quy trình thiết bị y tế", th: "การตรวจรับรองกระบวนการอุปกรณ์การแพทย์" },
-      { en: "Routine production QA checks", zh: "量产例行质量检查", vi: "Kiểm tra chất lượng định kỳ trong sản xuất", th: "การตรวจสอบคุณภาพประจำในการผลิต" },
-      { en: "Lamp & LED ageing monitoring", zh: "灯泡与 LED 衰减监控", vi: "Giám sát lão hóa đèn & LED", th: "การเฝ้าติดตามการเสื่อมของหลอด & LED" },
-      { en: "Line qualification (IQ/OQ/PQ)", zh: "产线确认（IQ/OQ/PQ）", vi: "Xác nhận dây chuyền (IQ/OQ/PQ)", th: "การรับรองสายการผลิต (IQ/OQ/PQ)" },
-      { en: "R&D process development", zh: "研发工艺开发", vi: "Phát triển quy trình R&D", th: "การพัฒนากระบวนการ R&D" },
-    ],
-    metaTitle: "UV Radiometers & Calibration Instruments | OmniCure R2000, LS200 | ETIA",
-    metaDescription:
-      "Precision UV measurement instruments — OmniCure R2000 radiometer and LS200 UV LED radiometry and calibration system with traceable calibration, for process validation and production QA. Supplied by ETIA.",
-    match: (p) => MEASUREMENT_SLUGS.has(p.slug),
-    // Awaiting the customer's own instrument line-up and copy.
-    draft: true,
-  },
-
   // ────────────────────────── 5. 红外加热 ──────────────────────────
   "infrared-heating": {
     slug: "infrared-heating",
     accent: "#dc2626",
-    name: { en: "Infrared Heating", zh: "红外加热", vi: "Gia nhiệt hồng ngoại", th: "การให้ความร้อนอินฟราเรด" },
+    name: { en: "Infrared Heating Systems", zh: "红外加热", vi: "Hệ thống gia nhiệt hồng ngoại", th: "ระบบให้ความร้อนอินฟราเรด" },
     tagline: {
       en: "Noblelight infrared modules — heat delivered into the product, exactly where the process needs it.",
       zh: "Noblelight 红外模块——将热量直接送入产品，精确投放在工艺所需之处。",
@@ -518,7 +506,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Printing ink drying", zh: "印刷油墨干燥", vi: "Sấy mực in", th: "การอบแห้งหมึกพิมพ์" },
       { en: "Paper, cardboard & non-woven heating", zh: "纸张、纸板与无纺布加热", vi: "Gia nhiệt giấy, bìa carton & vải không dệt", th: "การให้ความร้อนกระดาษ กระดาษแข็ง & ผ้าไม่ทอ" },
     ],
-    metaTitle: "Industrial Infrared Heating Modules | Noblelight M & MX Series | ETIA",
+    metaTitle: "Infrared Heating Systems | Noblelight M & MX Series | ETIA",
     metaDescription:
       "Excelitas Noblelight infrared heating modules for industrial process technology — M 85, M 110, M 115, scalable MX modules with integrated control, custom MX systems and infrared control systems. Specified to your process by ETIA.",
     docs: [
@@ -595,10 +583,66 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Thin layer chromatography & HPCE", zh: "薄层色谱与毛细管电泳", vi: "Sắc ký lớp mỏng & HPCE", th: "ทินเลเยอร์โครมาโทกราฟี & HPCE" },
       { en: "Semiconductor inspection", zh: "半导体检测", vi: "Kiểm tra bán dẫn", th: "การตรวจสอบเซมิคอนดักเตอร์" },
     ],
+    selectionGuide: {
+      heading: { en: "Which lamp for which measurement", zh: "哪种测量用哪种灯", vi: "Đèn nào cho phép đo nào", th: "หลอดชนิดใดสำหรับการวัดแบบใด" },
+      standfirst: { en: "Excelitas indexes its analytical range by measurement technique rather than by lamp. The table below is that index: find the method your instrument runs, and it names the light source families built for it.", zh: "Excelitas 的分析光源是按测量方法索引的，而不是按灯型。下表就是这个索引：找到你的仪器所用的方法，即可看到为它设计的光源类别。", vi: "Excelitas lập chỉ mục dải sản phẩm phân tích theo kỹ thuật đo chứ không theo loại đèn. Bảng dưới đây chính là chỉ mục đó: tìm phương pháp thiết bị của bạn đang chạy, bảng sẽ chỉ ra các họ nguồn sáng được thiết kế cho nó.", th: "Excelitas จัดทำดัชนีผลิตภัณฑ์งานวิเคราะห์ตามเทคนิคการวัด ไม่ใช่ตามชนิดหลอด ตารางด้านล่างคือดัชนีนั้น: ค้นหาวิธีที่เครื่องมือของคุณใช้ แล้วตารางจะระบุตระกูลแหล่งกำเนิดแสงที่ออกแบบมาเพื่อวิธีนั้น" },
+      steps: [
+        {
+          title: { en: "FiberLight® — when the instrument has to move", zh: "FiberLight® —— 当仪器需要移动", vi: "FiberLight® — khi thiết bị phải di chuyển", th: "FiberLight® — เมื่อเครื่องมือต้องเคลื่อนที่" },
+          body: { en: "Reach for the FiberLight family when the constraint is space and power rather than ultimate sensitivity — portable, handheld or battery-driven instruments. L3 is a broadband UV LED covering 250–490 nm from a single emitter, under 1.5 W. D2 is a full UV-Vis module: deuterium plus tungsten lamp, shutter, optics and SMA 905 connector on one 6 W board, switching instantly on with stable output.", zh: "当制约条件是空间与功耗、而非极限灵敏度时，选 FiberLight 系列——便携式、手持式或电池供电仪器。L3 是宽谱 UV LED，单颗发光体覆盖 250–490 nm，功耗低于 1.5 W。D2 则是完整的 UV-Vis 模块：氘灯加钨灯、快门、光学系统与 SMA 905 接口集成在一块 6 W 电路板上，瞬时点亮且输出稳定。", vi: "Chọn dòng FiberLight khi ràng buộc là không gian và công suất chứ không phải độ nhạy tối đa — thiết bị xách tay, cầm tay hoặc chạy pin. L3 là UV LED dải rộng phủ 250–490 nm từ một nguồn phát duy nhất, dưới 1,5 W. D2 là mô-đun UV-Vis đầy đủ: đèn deuterium cùng đèn vonfram, cửa chắn, hệ quang và đầu nối SMA 905 trên một bo mạch 6 W, bật tức thì với đầu ra ổn định.", th: "เลือกตระกูล FiberLight เมื่อข้อจำกัดคือพื้นที่และกำลังไฟ ไม่ใช่ความไวสูงสุด — เครื่องมือแบบพกพา มือถือ หรือใช้แบตเตอรี่ L3 เป็น UV LED สเปกตรัมกว้างครอบคลุม 250–490 nm จากตัวเปล่งแสงเดียว ใช้กำลังต่ำกว่า 1.5 วัตต์ ส่วน D2 เป็นโมดูล UV-Vis เต็มรูปแบบ: หลอดดิวทีเรียมพร้อมหลอดทังสเตน ชัตเตอร์ ระบบออปติก และขั้วต่อ SMA 905 บนบอร์ด 6 วัตต์เดียว เปิดติดทันทีพร้อมเอาต์พุตที่เสถียร" },
+        },
+        {
+          title: { en: "PID lamps — when you are detecting a gas", zh: "PID 灯 —— 当你检测的是气体", vi: "Đèn PID — khi bạn phát hiện chất khí", th: "หลอด PID — เมื่อคุณกำลังตรวจจับแก๊ส" },
+          body: { en: "Every gas-phase method on the list runs on a PID lamp. Selection is by photon energy: the lamp is offered from 8.4 to 10.6 eV, and a compound only ionises if its ionisation energy sits below the lamp's photon energy — styrene at 8.4 eV, benzene at 9.24, isopropanol at 10.10, pentane at 10.34. A lower photon energy buys selectivity; a higher one buys coverage.", zh: "表中所有气相方法都用 PID 灯。选型依据是光子能量：灯的可选范围为 8.4 至 10.6 eV，只有电离能低于灯光子能量的化合物才会被电离——苯乙烯 8.4 eV、苯 9.24、异丙醇 10.10、戊烷 10.34。光子能量低则选择性好，高则覆盖面广。", vi: "Mọi phương pháp pha khí trong bảng đều dùng đèn PID. Việc chọn dựa trên năng lượng photon: đèn có từ 8,4 đến 10,6 eV, và một hợp chất chỉ bị ion hóa nếu năng lượng ion hóa của nó thấp hơn năng lượng photon của đèn — styrene 8,4 eV, benzene 9,24, isopropanol 10,10, pentane 10,34. Năng lượng photon thấp cho tính chọn lọc; cao cho độ bao phủ.", th: "ทุกวิธีในเฟสแก๊สในตารางใช้หลอด PID การเลือกอิงตามพลังงานโฟตอน: หลอดมีให้ตั้งแต่ 8.4 ถึง 10.6 eV และสารจะแตกตัวเป็นไอออนก็ต่อเมื่อพลังงานไอออไนเซชันของมันต่ำกว่าพลังงานโฟตอนของหลอด — สไตรีน 8.4 eV เบนซีน 9.24 ไอโซโพรพานอล 10.10 เพนเทน 10.34 พลังงานโฟตอนต่ำให้ความจำเพาะ สูงให้ความครอบคลุม" },
+        },
+        {
+          title: { en: "Deuterium lamps — the UV workhorse", zh: "氘灯 —— 紫外的主力", vi: "Đèn deuterium — chủ lực vùng UV", th: "หลอดดิวทีเรียม — ตัวหลักของย่าน UV" },
+          body: { en: "Deuterium covers more of the table than any other family: liquid chromatography, UV-Vis, TLC, HPCE, semiconductor inspection, and background correction in AAS. The choice within the range is the envelope — UV glass cuts off at 185 nm, high-transmission synthetic quartz at 160 nm — plus a 0.5 or 1.0 mm aperture for more focused intensity, and a see-through version if the instrument would otherwise need a moveable mirror or beam splitter.", zh: "氘灯覆盖表中最多的方法：液相色谱、UV-Vis、薄层色谱、毛细管电泳、半导体检测，以及原子吸收中的背景校正。系列内的选择在于壳体——UV 玻璃截止于 185 nm，高透过率合成石英截止于 160 nm；此外还有 0.5 或 1.0 mm 光阑以获得更集中的强度，以及在仪器原本需要动镜或分光镜时可选的直通式版本。", vi: "Deuterium bao phủ nhiều mục trong bảng hơn bất kỳ họ nào khác: sắc ký lỏng, UV-Vis, TLC, HPCE, kiểm tra bán dẫn và hiệu chỉnh nền trong AAS. Lựa chọn trong dải là lớp vỏ — kính UV cắt tại 185 nm, thạch anh tổng hợp truyền quang cao tại 160 nm — cùng khẩu độ 0,5 hoặc 1,0 mm cho cường độ tập trung hơn, và bản xuyên suốt nếu thiết bị lẽ ra cần gương di động hoặc bộ chia chùm.", th: "ดิวทีเรียมครอบคลุมรายการในตารางมากกว่าตระกูลใด: โครมาโทกราฟีของเหลว UV-Vis TLC HPCE การตรวจสอบเซมิคอนดักเตอร์ และการแก้ไขพื้นหลังใน AAS ตัวเลือกภายในช่วงคือหลอดแก้ว — กระจก UV ตัดที่ 185 nm ควอตซ์สังเคราะห์ส่งผ่านสูงที่ 160 nm — พร้อมรูรับแสง 0.5 หรือ 1.0 มม. เพื่อความเข้มที่รวมศูนย์กว่า และรุ่นแบบมองทะลุหากเครื่องมือจำเป็นต้องใช้กระจกเคลื่อนที่หรือบีมสปลิตเตอร์" },
+        },
+        {
+          title: { en: "Hollow cathode lamps — chosen by element", zh: "空心阴极灯 —— 按元素选", vi: "Đèn cathode rỗng — chọn theo nguyên tố", th: "หลอดแคโทดกลวง — เลือกตามธาตุ" },
+          body: { en: "In AAS the cathode is made from the element you are measuring, so the lamp is selected by element, not by specification: 70 single-element lamps in 37 mm and 50 mm. For routine work across several elements in one sample — alloys, for instance — multi-element lamps combine two to seven elements, offered only where the energy and lifetime hold up and the lines do not interfere. Data-coded versions exist for PerkinElmer and Thermo Fisher Scientific instruments.", zh: "在原子吸收中，阴极就是用你要测的那个元素做的，因此灯是按元素而不是按规格选：单元素灯 70 种，直径 37 mm 与 50 mm。若一个样品中要常规测多个元素——比如合金——则用多元素灯，可组合 2 至 7 种元素，且仅在能量与寿命足够、谱线互不干扰时才提供。PerkinElmer 与 Thermo Fisher Scientific 的仪器另有数据编码版本。", vi: "Trong AAS, cathode được làm từ chính nguyên tố bạn đo, nên đèn được chọn theo nguyên tố chứ không theo thông số: 70 đèn đơn nguyên tố, đường kính 37 mm và 50 mm. Với công việc thường quy đo nhiều nguyên tố trong cùng một mẫu — hợp kim chẳng hạn — đèn đa nguyên tố kết hợp từ hai đến bảy nguyên tố, chỉ được cung cấp khi năng lượng và tuổi thọ đủ và các vạch phổ không nhiễu nhau. Có bản mã hóa dữ liệu cho thiết bị PerkinElmer và Thermo Fisher Scientific.", th: "ใน AAS แคโทดทำจากธาตุที่คุณกำลังวัด หลอดจึงถูกเลือกตามธาตุ ไม่ใช่ตามสเปก: หลอดธาตุเดี่ยว 70 ชนิด ขนาด 37 มม. และ 50 มม. สำหรับงานประจำที่วัดหลายธาตุในตัวอย่างเดียว เช่น โลหะผสม หลอดหลายธาตุผสมได้ตั้งแต่สองถึงเจ็ดธาตุ และเสนอเฉพาะกรณีที่พลังงานและอายุการใช้งานเพียงพอและเส้นสเปกตรัมไม่รบกวนกัน มีรุ่นเข้ารหัสข้อมูลสำหรับเครื่อง PerkinElmer และ Thermo Fisher Scientific" },
+        },
+      ],
+      tables: [
+        {
+          caption: { en: "Measurement technique to light source family", zh: "测量方法与光源类别对照", vi: "Kỹ thuật đo và họ nguồn sáng", th: "เทคนิคการวัดกับตระกูลแหล่งกำเนิดแสง" },
+          columns: [
+            { en: "Technique", zh: "方法", vi: "Kỹ thuật", th: "เทคนิค" },
+            { en: "FiberLight®", zh: "FiberLight®", vi: "FiberLight®", th: "FiberLight®" },
+            { en: "PID", zh: "PID", vi: "PID", th: "PID" },
+            { en: "Deuterium", zh: "氘灯", vi: "Deuterium", th: "ดิวทีเรียม" },
+            { en: "Hollow cathode", zh: "空心阴极灯", vi: "Cathode rỗng", th: "แคโทดกลวง" },
+          ],
+          rows: [
+        [{ en: "Atomic absorption spectroscopy", zh: "原子吸收光谱", vi: "Quang phổ hấp thụ nguyên tử", th: "อะตอมมิกแอบซอร์พชันสเปกโทรสโกปี" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }],
+        [{ en: "Atomic fluorescence spectroscopy", zh: "原子荧光光谱", vi: "Quang phổ huỳnh quang nguyên tử", th: "อะตอมมิกฟลูออเรสเซนซ์สเปกโทรสโกปี" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }],
+        [{ en: "Emergency first response", zh: "应急处置", vi: "Ứng phó khẩn cấp", th: "การตอบสนองเหตุฉุกเฉิน" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Exhaust monitoring", zh: "尾气监测", vi: "Giám sát khí thải", th: "การเฝ้าระวังไอเสีย" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Gas chromatography (GC)", zh: "气相色谱（GC）", vi: "Sắc ký khí (GC)", th: "แก๊สโครมาโทกราฟี (GC)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "High performance capillary electrophoresis (HPCE)", zh: "高效毛细管电泳（HPCE）", vi: "Điện di mao quản hiệu năng cao (HPCE)", th: "แคปิลลารีอิเล็กโทรโฟรีซิสสมรรถนะสูง (HPCE)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "HPLC + UHPLC", zh: "HPLC 与 UHPLC", vi: "HPLC + UHPLC", th: "HPLC + UHPLC" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Leak detection", zh: "泄漏检测", vi: "Phát hiện rò rỉ", th: "การตรวจหารอยรั่ว" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Mass spectrometry (MS)", zh: "质谱（MS）", vi: "Khối phổ (MS)", th: "แมสสเปกโตรเมตรี (MS)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Personnel safety in confined spaces", zh: "受限空间人员安全", vi: "An toàn nhân sự trong không gian hạn chế", th: "ความปลอดภัยของบุคลากรในพื้นที่อับอากาศ" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Pollution monitors", zh: "污染监测仪", vi: "Thiết bị giám sát ô nhiễm", th: "เครื่องเฝ้าระวังมลพิษ" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Process control", zh: "过程控制", vi: "Kiểm soát quy trình", th: "การควบคุมกระบวนการ" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Semiconductor inspection", zh: "半导体检测", vi: "Kiểm tra bán dẫn", th: "การตรวจสอบเซมิคอนดักเตอร์" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "Thin layer chromatography (TLC)", zh: "薄层色谱（TLC）", vi: "Sắc ký lớp mỏng (TLC)", th: "ทินเลเยอร์โครมาโทกราฟี (TLC)" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+        [{ en: "UV-Vis spectroscopy", zh: "UV-Vis 光谱分析", vi: "Quang phổ UV-Vis", th: "สเปกโทรสโกปี UV-Vis" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }, { en: "●", zh: "●", vi: "●", th: "●" }, { en: "—", zh: "—", vi: "—", th: "—" }],
+          ],
+          footnote: { en: "Source: Excelitas, High-quality light sources for analytical instruments (Inhouse XNG 05/25), applications index.", zh: "来源：Excelitas《High-quality light sources for analytical instruments》（Inhouse XNG 05/25）应用索引。", vi: "Nguồn: Excelitas, High-quality light sources for analytical instruments (Inhouse XNG 05/25), chỉ mục ứng dụng.", th: "ที่มา: Excelitas, High-quality light sources for analytical instruments (Inhouse XNG 05/25) ดัชนีการใช้งาน" },
+        },
+      ],
+    },
     metaTitle: "Analytical Light Sources | Deuterium, PID & FiberLight D2 | ETIA",
     metaDescription:
       "Excelitas analytical light sources for instrument OEMs — D2 plus deuterium lamps for HPLC/UHPLC and UV-Vis, PID lamps for GC, MS and VOC detection, and the FiberLight D2 integrated UV-Vis module. Specified and supplied by ETIA.",
     match: (p) => p.tech === "Analytical Light Sources",
+    // Held back from launch at the customer's request, alongside the precision
+    // measurement category that was removed. The content and the models stay in
+    // place — clear the flag to publish.
+    draft: true,
   },
 };
 
@@ -607,7 +651,6 @@ export const PRODUCT_CATEGORY_ORDER: ProductCategorySlug[] = [
   "mercury-uv-lamp",
   "uv-led",
   "microwave-uv-lamp",
-  "uv-measurement",
   "infrared-heating",
   "analytical-light-sources",
 ];
@@ -627,9 +670,34 @@ export function productCategoryHref(slug: ProductCategorySlug): string {
   return `/product/technology/${slug}`;
 }
 
-// The catalog models in a category, in catalog order.
+// A category's models split under its sub-headings, in group order, with any
+// model no group claims appended under an empty title. Categories without
+// groups return a single untitled group, so callers need only one code path.
+export function categoryModelGroups(
+  slug: ProductCategorySlug
+): { title: LangText | null; items: Product[] }[] {
+  const all = categoryProducts(slug);
+  const groups = productCategories[slug].groups;
+  if (!groups) return [{ title: null, items: all }];
+  const claimed = new Set<string>();
+  const out = groups.map((g) => {
+    const items = all.filter((p) => g.match(p));
+    items.forEach((p) => claimed.add(p.slug));
+    return { title: g.title, items };
+  }).filter((g) => g.items.length > 0);
+  const rest = all.filter((p) => !claimed.has(p.slug));
+  return rest.length > 0 ? [...out, { title: null, items: rest }] : out;
+}
+
+// The catalog models in a category, in catalog order — except that the two
+// radiometers read last. They are companions to the systems they calibrate, and
+// catalog order would otherwise open the mercury lamp page with them.
 export function categoryProducts(slug: ProductCategorySlug): Product[] {
-  return products.filter(productCategories[slug].match);
+  const list = products.filter(productCategories[slug].match);
+  return [
+    ...list.filter((p) => !MEASUREMENT_SLUGS.has(p.slug)),
+    ...list.filter((p) => MEASUREMENT_SLUGS.has(p.slug)),
+  ];
 }
 
 // The technology categories a brand actually has products in. Computed from

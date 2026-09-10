@@ -35,14 +35,14 @@ export default function ProductCenterView() {
           </p>
           <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight text-[#143C96] md:text-5xl">
             {t(
-              { en: "UV Curing & Industrial Light Sources", zh: "紫外固化与工业光源", th: "แหล่งกำเนิดแสง UV Curing และอุตสาหกรรม", vi: "Nguồn sáng UV Curing & công nghiệp" },
+              { en: "UV Curing & Infrared Heating Systems", zh: "紫外固化与红外加热系统", th: "ระบบบ่ม UV และให้ความร้อนอินฟราเรด", vi: "Hệ thống đóng rắn UV & gia nhiệt hồng ngoại" },
               locale
             )}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-[#475467] md:text-lg">
             {t(
               {
-                en: "Find your system by the light source technology you need, or by the brand you already run. Both routes land on the same engineers.",
+                en: "Find your system by the curing technology you need, or by the brand you already run. Both routes land on the same engineers.",
                 zh: "您可以按所需的光源技术查找设备，也可以按您正在使用的品牌查找。两条路径都由同一批工程师为您服务。",
               },
               locale
@@ -58,7 +58,7 @@ export default function ProductCenterView() {
             {t({ en: "By Technology", zh: "按技术分类", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}
           </p>
           <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">
-            {t({ en: "Choose your light source", zh: "选择您的光源", th: "เลือกแหล่งกำเนิดแสงของคุณ", vi: "Chọn nguồn sáng của bạn" }, locale)}
+            {t({ en: "Choose your technology", zh: "选择技术路线", th: "เลือกเทคโนโลยีของคุณ", vi: "Chọn công nghệ của bạn" }, locale)}
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {publishedProductCategories.map((c) => {
@@ -102,7 +102,7 @@ export default function ProductCenterView() {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-[#667085]">
             {t(
               {
-                en: "Four brands that cross the technologies rather than map onto them — the chips on each card show which light sources that brand covers.",
+                en: "Four brands that cross the technologies rather than map onto them — the chips on each card show which technologies that brand covers.",
                 zh: "四个品牌横跨不同技术，并非与技术一一对应——每张卡片上的标签显示该品牌覆盖哪些光源。",
               },
               locale
@@ -174,7 +174,7 @@ export default function ProductCenterView() {
         )}
         body={t(
           {
-            en: "Tell us the material, the joint and the line speed. Our engineers will specify the light source — you don't need to know the model number first.",
+            en: "Tell us the material, the joint and the line speed. Our engineers will specify the system — you don't need to know the model number first.",
             zh: "告诉我们材料、接合部位与产线速度。工程师会为您确定光源方案——您无需先知道型号。",
           },
           locale

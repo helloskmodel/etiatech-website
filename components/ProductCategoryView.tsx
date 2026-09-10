@@ -13,6 +13,7 @@ import {
   publishedProductCategories,
   productCategoryHref,
   categoryProducts,
+  categoryModelGroups,
   type ProductCategorySlug,
 } from "@/components/productCategories";
 import { productHref, productImage, brandAccent, localizeProduct, productDocUrl } from "@/components/productCatalog";
@@ -30,6 +31,7 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
   const { locale } = useLocale();
   const c = productCategories[slug];
   const models = categoryProducts(slug);
+  const modelGroups = categoryModelGroups(slug);
   // A draft category still lists the published ones, but never the reverse.
   const others = publishedProductCategories.filter((o) => o.slug !== slug);
 
@@ -164,43 +166,62 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
           </div>
 
           {models.length > 0 ? (
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {models.map((raw) => {
-                const p = localizeProduct(raw, locale);
-                return (
-                  <Link
-                    key={p.slug}
-                    href={productHref(p)}
-                    className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all hover:shadow-md"
-                  >
-                    <div className="relative h-40 overflow-hidden bg-gray-50">
-                      {productImage(p) ? (
-                        <Image
-                          src={productImage(p)}
-                          alt={p.name}
-                          fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                        />
-                      ) : (
-                        <span className="absolute inset-0 flex items-center justify-center px-3 text-center text-sm font-semibold" style={{ color: brandAccent[p.brandId] }}>
-                          {p.brand}
-                        </span>
-                      )}
-                      <span className="absolute left-2 top-2 rounded px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: brandAccent[p.brandId] }}>
-                        {p.brand}
+            // Grouped when the category defines sub-headings — UV LED is 30
+            // models, which stops being readable as one flat grid. Categories
+            // without groups come back as a single untitled group, so there is
+            // only ever one code path here.
+            <div className="mt-8 space-y-10">
+              {modelGroups.map((group, gi) => (
+                <div key={group.title ? group.title.en : `rest-${gi}`}>
+                  {group.title && (
+                    <div className="mb-4 flex items-baseline gap-3">
+                      <h3 className="shrink-0 text-lg font-bold text-[#143C96]">{t(group.title, locale)}</h3>
+                      <span className="h-px flex-1 bg-[#E6EAF0]" />
+                      <span className="shrink-0 text-xs text-gray-400">
+                        {group.items.length} {t({ en: "models", zh: "款", th: "รุ่น", vi: "model" }, locale)}
                       </span>
                     </div>
-                    <div className="flex flex-1 flex-col p-5">
-                      <h3 className="mb-2 text-base font-bold leading-snug text-[#1A56DB]">{p.name}</h3>
-                      <p className="line-clamp-3 flex-1 text-sm leading-relaxed text-gray-500">{p.intro}</p>
-                      <span className="mt-4 text-sm font-semibold group-hover:underline" style={{ color: brandAccent[p.brandId] }}>
-                        {t({ en: "View details →", zh: "查看详情 →", th: "ดูรายละเอียด →", vi: "Xem chi tiết →" }, locale)}
-                      </span>
-                    </div>
-                  </Link>
-                );
-              })}
+                  )}
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {group.items.map((raw) => {
+                      const p = localizeProduct(raw, locale);
+                      return (
+                        <Link
+                          key={p.slug}
+                          href={productHref(p)}
+                          className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all hover:shadow-md"
+                        >
+                          <div className="relative h-40 overflow-hidden bg-gray-50">
+                            {productImage(p) ? (
+                              <Image
+                                src={productImage(p)}
+                                alt={p.name}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                              />
+                            ) : (
+                              <span className="absolute inset-0 flex items-center justify-center px-3 text-center text-sm font-semibold" style={{ color: brandAccent[p.brandId] }}>
+                                {p.brand}
+                              </span>
+                            )}
+                            <span className="absolute left-2 top-2 rounded px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: brandAccent[p.brandId] }}>
+                              {p.brand}
+                            </span>
+                          </div>
+                          <div className="flex flex-1 flex-col p-5">
+                            <h4 className="mb-2 text-base font-bold leading-snug text-[#1A56DB]">{p.name}</h4>
+                            <p className="line-clamp-3 flex-1 text-sm leading-relaxed text-gray-500">{p.intro}</p>
+                            <span className="mt-4 text-sm font-semibold group-hover:underline" style={{ color: brandAccent[p.brandId] }}>
+                              {t({ en: "View details →", zh: "查看详情 →", th: "ดูรายละเอียด →", vi: "Xem chi tiết →" }, locale)}
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
           ) : (
             // No models published yet — invite the enquiry instead of showing
@@ -321,7 +342,7 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
 
       <FinalCta
         heading={t(
-          { en: "Not sure which light source fits your process?", zh: "不确定哪种光源适合您的工艺？", th: "ไม่แน่ใจว่าแหล่งกำเนิดแสงใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc nguồn sáng nào phù hợp với quy trình của bạn?" },
+          { en: "Not sure which system fits your process?", zh: "不确定哪套系统适合您的工艺？", th: "ไม่แน่ใจว่าระบบใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với quy trình của bạn?" },
           locale
         )}
         body={t(

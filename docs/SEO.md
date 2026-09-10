@@ -89,7 +89,7 @@ card automatically.
 
 ## 5. Standing constraints (MUST follow)
 
-- **Emails:** sales = `mark_tang@etia-tech.com`; service/repair =
+- **Emails:** sales = `sales@etia-tech.com`; service/repair =
   `guoren_wang@etia-tech.com`. **Never** use `support@etiatech.com`.
 - **Bilingual EN/ZH** via `t()`/`LangText`; keep structured for VN/TH later.
 - **Dev branch:** `claude/product-image-assets-30ar7q`. Don't push elsewhere

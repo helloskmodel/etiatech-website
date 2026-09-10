@@ -92,8 +92,9 @@ Landing-page SEO architecture and many polish passes are already live:
 
 ## 5. Standing constraints (MUST follow)
 
-- **Emails:** sales `mark_tang@etia-tech.com`; service `guoren_wang@etia-tech.com`.
-  **Never** `support@etiatech.com`.
+- **Emails:** sales `sales@etia-tech.com`; service `guoren_wang@etia-tech.com`.
+  **Never** `support@etiatech.com`, and **never** `Omnicure@etia-tech.com` — that
+  mailbox is retired.
 - Bilingual **EN/ZH** via `t()`/`LangText`; keep structured for VN/TH.
 - Push only to `claude/product-image-assets-30ar7q` unless told otherwise.
 - Don't put the model identifier in commits/PRs/code.

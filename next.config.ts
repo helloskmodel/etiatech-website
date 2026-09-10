@@ -60,6 +60,14 @@ const nextConfig: NextConfig = {
       // Industry solution pages live at /solutions/[slug]; the bare index is
       // the applications page, which lists all five industries.
       { source: "/solutions", destination: "/applications", permanent: true },
+      // Renamed case study. Google still serves the old URL — 533 impressions
+      // in the last quarter, every one of them landing on a 404 — so send it
+      // to the study that now carries the same subject.
+      {
+        source: "/case-studies/optical-fiber-draw-tower",
+        destination: "/case-studies/omnicure-ac-large-optical-fiber-coating",
+        permanent: true,
+      },
       { source: "/industries/:path*", destination: "/applications", permanent: true },
       { source: "/omnicure-s2000-lamp", destination: "/product/omnicure/s2000-lamp", permanent: true },
       { source: "/product/systems", destination: "/product/omnicure", permanent: true },

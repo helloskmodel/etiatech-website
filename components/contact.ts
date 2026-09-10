@@ -4,12 +4,12 @@ import type { Locale } from "@/components/LocaleContext";
 // inbox. `locale` is kept for call-site compatibility.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function localeSalesEmail(locale: Locale): string {
-  return "Omnicure@etia-tech.com";
+  return "sales@etia-tech.com";
 }
 
 // Static default (English / Chinese). Prefer localeSalesEmail(locale) where a
 // locale is available so the address follows the visitor's country.
-export const SALES_EMAIL = "Omnicure@etia-tech.com";
+export const SALES_EMAIL = "sales@etia-tech.com";
 export const SERVICE_EMAIL = "guoren_wang@etia-tech.com";
 
 // Builds a mailto link with a helpful pre-filled subject AND body, so the
