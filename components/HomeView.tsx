@@ -118,8 +118,9 @@ export default function HomeView() {
     {/* BY TECHNOLOGY */}
     <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}</p>
-        <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Find your curing technology", zh: "按技术选型", th: "ค้นหาเทคโนโลยีการบ่มของคุณ", vi: "Tìm công nghệ đóng rắn của bạn" }, locale)}</h2>
+        {/* The label is the heading. A second line restating it in longer
+            words was one more thing to read before the pictures. */}
+        <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}</h2>
         <div className="mt-8">
           <HomeCarousel label={t({ en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}>
             {publishedProductCategories.map((c) => {
@@ -151,9 +152,8 @@ export default function HomeView() {
     {/* BY INDUSTRY */}
     <section className="mt-10 bg-gradient-to-br from-[#143C96] to-[#1A56DB] px-4 py-16 text-white sm:px-6 lg:px-8 md:py-20">
       <div className="mx-auto max-w-7xl">
-        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#8BE172]">{t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}</p>
-        <div className="mt-3 flex items-end justify-between gap-4">
-          <h2 className="text-3xl font-bold md:text-4xl">{t({ en: "Industry Solutions", zh: "行业解决方案", th: "โซลูชันอุตสาหกรรม", vi: "Giải pháp theo ngành" }, locale)}</h2>
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#8BE172]">{t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}</h2>
           <Link href={localizeHref("/applications", locale)} className="hidden shrink-0 items-center gap-2 text-sm font-bold text-white sm:inline-flex">{t({ en: "All applications", zh: "全部应用", th: "การใช้งานทั้งหมด", vi: "Tất cả ứng dụng" }, locale)} <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <div className="mt-8">
@@ -182,8 +182,7 @@ export default function HomeView() {
     {/* BY BRAND */}
     <section className="px-4 pt-14 pb-20 sm:px-6 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" }, locale)}</p>
-        <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Industry-Leading UV Curing Brands", zh: "行业知名的紫外线固化品牌", th: "แบรนด์ UV Curing ชั้นนำในอุตสาหกรรม", vi: "Các thương hiệu UV Curing uy tín trong ngành" }, locale)}</h2>
+        <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" }, locale)}</h2>
         <div className="mt-8">
           <HomeCarousel label={t({ en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" }, locale)}>
             {HOME_BRAND_ORDER.map((slug) => {
