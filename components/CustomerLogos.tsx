@@ -1,16 +1,15 @@
 "use client";
 import { useLocale, t } from "@/components/LocaleContext";
-import HomeCarousel from "@/components/HomeCarousel";
 
 // Logos of manufacturers that run OmniCure / Phoseon UV curing systems supplied
 // & supported by ETIA. Grayscale wall — a quiet, credible trust signal.
 // Files live in the COS bucket; names contain spaces + parentheses, so encode.
 const BASE =
   "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
-// Serve a small webp via COS on-the-fly processing (imageMogr2) — the source
-// PNGs are 10–40 KB each and 14 load at once, which was slow. ~2–3 KB each now.
+// Serve a webp via COS on-the-fly processing (imageMogr2) — the source PNGs
+// are 10–40 KB each and all fourteen load at once, which was slow.
 const logoUrl = (file: string) =>
-  `${BASE}/${file.replace(/ /g, "%20").replace(/\(/g, "%28").replace(/\)/g, "%29")}?imageMogr2/thumbnail/280x%3E/format/webp/quality/85`;
+  `${BASE}/${file.replace(/ /g, "%20").replace(/\(/g, "%28").replace(/\)/g, "%29")}?imageMogr2/thumbnail/400x%3E/format/webp/quality/85`;
 
 const CUSTOMERS: [string, string][] = [
   ["Baxter", "UV_logo (Baxter).png"],
@@ -45,24 +44,23 @@ export default function CustomerLogos() {
             vi: "Được các nhà sản xuất hàng đầu ngành y tế, quang tử & điện tử tin dùng",
           }, locale)}
         </h2>
-        {/* A row rather than a grid: the list grows as ETIA wins accounts, and
-            a fifteenth logo should extend the row, not start a ragged third
-            line. Seven are in view at desktop width, the same as before. */}
-        <div className="mt-7 text-left">
-          <HomeCarousel label={t({ en: "Trusted by", zh: "合作客户", th: "ลูกค้าที่ไว้วางใจเรา", vi: "Khách hàng tin dùng" }, locale)}>
-            {CUSTOMERS.map(([name, file]) => (
-              <div key={name} className="flex w-1/3 shrink-0 snap-start items-center justify-center sm:w-1/5 lg:w-[12.5%]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={logoUrl(file)}
-                  alt={name}
-                  title={name}
-                  loading="lazy"
-                  className="h-7 w-auto max-w-[112px] object-contain transition duration-200 hover:scale-105"
-                />
-              </div>
-            ))}
-          </HomeCarousel>
+        {/* Every logo on screen at once — seven across, two rows at desktop
+            width — rather than a row that hides half the list behind a swipe.
+            These are the names that earn trust, so they are worth the space
+            and worth reading. */}
+        <div className="mt-8 grid grid-cols-3 items-center gap-x-6 gap-y-8 sm:grid-cols-5 md:gap-x-8 lg:grid-cols-7">
+          {CUSTOMERS.map(([name, file]) => (
+            <div key={name} className="flex items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logoUrl(file)}
+                alt={name}
+                title={name}
+                loading="lazy"
+                className="h-10 w-auto max-w-[104px] object-contain transition duration-200 hover:scale-105 sm:h-12 sm:max-w-[140px] lg:h-14 lg:max-w-[152px]"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

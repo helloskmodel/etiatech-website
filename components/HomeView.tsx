@@ -180,14 +180,14 @@ export default function HomeView() {
               const img = src.photo ? cosResize(src.photo, 900) : stand ? productImage(stand) : "";
               const boxed = src.photo ? src.fit === "contain" : true;
               return (
-                <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[46%] lg:w-[31%]">
-                  <div className="relative h-40 bg-[#F7FAFC] sm:h-48">
-                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className={`transition duration-300 group-hover:scale-105 ${boxed ? "object-contain p-4" : "object-cover"}`} />}
+                <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[23%]">
+                  <div className="relative h-32 bg-[#F7FAFC] sm:h-36">
+                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${boxed ? "object-contain p-4" : "object-cover"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: src.accent }} />
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
+                  <div className="flex flex-1 flex-col p-4">
                     <span className="text-[10px] font-bold uppercase tracking-[.12em]" style={{ color: src.accent }}>{t(src.family, locale)}</span>
-                    <h3 className="mt-1.5 text-base font-bold leading-snug text-[#143C96]">{t(src.name, locale)}</h3>
+                    <h3 className="mt-1 text-sm font-bold leading-snug text-[#143C96]">{t(src.name, locale)}</h3>
                     <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-xs font-bold" style={{ color: src.accent }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
                   </div>
                 </Link>
@@ -200,27 +200,27 @@ export default function HomeView() {
 
 
     {/* BY INDUSTRY */}
-    <section className="mt-10 bg-gradient-to-br from-[#143C96] to-[#1A56DB] px-4 py-16 text-white sm:px-6 lg:px-8 md:py-20">
+    <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#8BE172]">{t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}</h2>
-          <Link href={localizeHref("/applications", locale)} className="hidden shrink-0 items-center gap-2 text-sm font-bold text-white sm:inline-flex">{t({ en: "All applications", zh: "全部应用", th: "การใช้งานทั้งหมด", vi: "Tất cả ứng dụng" }, locale)} <ArrowRight className="h-4 w-4" /></Link>
+          <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}</h2>
+          <Link href={localizeHref("/applications", locale)} className="hidden shrink-0 items-center gap-2 text-sm font-bold text-[#143C96] sm:inline-flex">{t({ en: "All applications", zh: "全部应用", th: "การใช้งานทั้งหมด", vi: "Tất cả ứng dụng" }, locale)} <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <div className="mt-8">
-          <HomeCarousel tone="dark" label={t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}>
+          <HomeCarousel label={t({ en: "By Industry", zh: "按行业", th: "ตามอุตสาหกรรม", vi: "Theo ngành" }, locale)}>
             {publishedIndustries.map((s) => (
-              <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-white/15 bg-white/10 transition hover:border-white/40 hover:bg-white/15 sm:w-[46%] lg:w-[31%]">
+              <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[23%]">
                 {s.cardImage ? (
-                  <div className="relative h-40 bg-white/5 sm:h-48">
-                    <Image src={cosResize(s.cardImage, 900)} alt={t(s.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className="object-cover transition duration-300 group-hover:scale-105" />
+                  <div className="relative h-32 bg-[#F7FAFC] sm:h-36">
+                    <Image src={cosResize(s.cardImage, 900)} alt={t(s.name, locale)} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className="object-cover transition duration-300 group-hover:scale-105" />
                   </div>
                 ) : (
                   <div className="h-2 w-full" style={{ background: s.accent }} />
                 )}
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-base font-bold">{t(s.name, locale)}</h3>
-                  <p className="mt-2 line-clamp-2 flex-1 text-xs leading-5 text-white/75">{t(s.tagline, locale)}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#8BE172]">{t({ en: "View solutions", zh: "查看方案", th: "ดูโซลูชัน", vi: "Xem giải pháp" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
+                <div className="flex flex-1 flex-col p-4">
+                  <h3 className="text-sm font-bold text-[#143C96]">{t(s.name, locale)}</h3>
+                  <p className="mt-2 line-clamp-2 flex-1 text-xs leading-5 text-[#667085]">{t(s.tagline, locale)}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold" style={{ color: s.accent }}>{t({ en: "View solutions", zh: "查看方案", th: "ดูโซลูชัน", vi: "Xem giải pháp" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
                 </div>
               </Link>
             ))}
@@ -241,13 +241,13 @@ export default function HomeView() {
               const shot = b.cardImage ? cosResize(b.cardImage, 900) : hero ? productImage(hero) : "";
               const cats = categoriesForBrand(b.catalogBrandId);
               return (
-                <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[46%] lg:w-[31%]">
-                  <div className="relative h-40 bg-[#F7FAFC] sm:h-48">
-                    {shot && <Image src={shot} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className={`transition duration-300 group-hover:scale-105 ${b.cardImage ? "object-cover" : "object-contain p-4"}`} />}
+                <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[23%]">
+                  <div className="relative h-32 bg-[#F7FAFC] sm:h-36">
+                    {shot && <Image src={shot} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${b.cardImage ? "object-cover" : "object-contain p-4"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: b.color }} />
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <h3 className="text-base font-bold text-[#143C96]">{b.name}</h3>
+                  <div className="flex flex-1 flex-col p-4">
+                    <h3 className="text-sm font-bold text-[#143C96]">{b.name}</h3>
                     {cats.length > 0 && <div className="mt-2 flex flex-wrap gap-1">{cats.map((c) => <span key={c.slug} className="rounded-full border px-2 py-0.5 text-[10px] font-semibold" style={{ borderColor: `${c.accent}55`, color: c.accent }}>{t(c.name, locale)}</span>)}</div>}
                     <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold" style={{ color: b.color }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
                   </div>
