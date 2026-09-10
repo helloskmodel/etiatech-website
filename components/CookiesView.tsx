@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useLocale, t, type LangText } from "@/components/LocaleContext";
 import { localeSalesEmail } from "@/components/contact";
 
-const LAST_UPDATED: LangText = { en: "29 June 2026", zh: "2026年6月29日", th: "29 มิถุนายน 2026", vi: "29 tháng 6 năm 2026" };
+const LAST_UPDATED: LangText = { en: "10 September 2026", zh: "2026年9月10日", th: "10 กันยายน 2026", vi: "10 tháng 9 năm 2026" };
 
 const cookieTypes: { name: LangText; purpose: LangText; color: string }[] = [
   {
@@ -80,9 +80,19 @@ export default function CookiesView() {
           </div>
 
           <div>
+            <h2 className="text-lg font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "What this site actually stores", zh: "本站实际存储的内容", th: "สิ่งที่เว็บไซต์นี้จัดเก็บจริง", vi: "Những gì website này thực sự lưu" }, locale)}</h2>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><code>etia-cookie-consent</code> — {t({ en: "your cookie choice (browser storage, kept until you clear it or change it).", zh: "您的 Cookie 选择（浏览器存储，保留至您清除或更改为止）。", th: "ตัวเลือกคุกกี้ของท่าน (ที่เก็บของเบราว์เซอร์ เก็บจนกว่าท่านจะล้างหรือเปลี่ยน)", vi: "lựa chọn cookie của bạn (bộ nhớ trình duyệt, giữ đến khi bạn xóa hoặc thay đổi)." }, locale)}</li>
+              <li><code>etia-lang</code> — {t({ en: "your language (cookie, 1 year).", zh: "您的语言（Cookie，1 年）。", th: "ภาษาของท่าน (คุกกี้ 1 ปี)", vi: "ngôn ngữ của bạn (cookie, 1 năm)." }, locale)}</li>
+              <li><code>etia-inquiry</code> — {t({ en: "the products and part numbers in your inquiry basket (browser storage; no personal data).", zh: "您询单篮中的产品与料号（浏览器存储；不含个人数据）。", th: "ผลิตภัณฑ์และหมายเลขชิ้นส่วนในตะกร้าสอบถามของท่าน (ที่เก็บของเบราว์เซอร์ ไม่มีข้อมูลส่วนบุคคล)", vi: "sản phẩm và mã linh kiện trong giỏ yêu cầu của bạn (bộ nhớ trình duyệt; không có dữ liệu cá nhân)." }, locale)}</li>
+              <li><code>_ga</code>, <code>_ga_*</code> — {t({ en: "Google Analytics 4 (via Google Tag Manager), up to 2 years — set only after you choose \"Accept all\". Usage data is sent to Google; IP addresses are not stored by GA4.", zh: "Google Analytics 4（通过 Google Tag Manager），最长 2 年——仅在您选择「全部接受」后设置。使用数据发送至 Google；GA4 不存储 IP 地址。", th: "Google Analytics 4 (ผ่าน Google Tag Manager) สูงสุด 2 ปี — ตั้งค่าเฉพาะเมื่อท่านเลือก \"ยอมรับทั้งหมด\" ข้อมูลการใช้งานถูกส่งไปยัง Google โดย GA4 ไม่จัดเก็บที่อยู่ IP", vi: "Google Analytics 4 (qua Google Tag Manager), tối đa 2 năm — chỉ được đặt sau khi bạn chọn \"Chấp nhận tất cả\". Dữ liệu sử dụng được gửi tới Google; GA4 không lưu địa chỉ IP." }, locale)}</li>
+            </ul>
+          </div>
+
+          <div>
             <h2 className="text-lg font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Managing your cookies", zh: "管理您的 Cookie", th: "การจัดการคุกกี้ของคุณ", vi: "Quản lý cookie của bạn" }, locale)}</h2>
             <p>{t({ en: "When you first visit, we ask for your consent through a banner where you can accept all cookies or choose necessary-only. You can also control cookies through your browser settings — most browsers let you refuse or delete cookies. Please note that blocking some cookies may affect how the site works.", zh: "当您首次访问时，我们会通过横幅征求您的同意，您可以选择接受全部 Cookie 或仅接受必要 Cookie。您也可以通过浏览器设置控制 Cookie——大多数浏览器允许您拒绝或删除 Cookie。请注意，屏蔽某些 Cookie 可能会影响网站的运行。", th: "เมื่อคุณเยี่ยมชมเป็นครั้งแรก เราจะขอความยินยอมจากคุณผ่านแบนเนอร์ ซึ่งคุณสามารถยอมรับคุกกี้ทั้งหมดหรือเลือกเฉพาะคุกกี้ที่จำเป็นได้ คุณยังสามารถควบคุมคุกกี้ผ่านการตั้งค่าเบราว์เซอร์ของคุณ — เบราว์เซอร์ส่วนใหญ่อนุญาตให้คุณปฏิเสธหรือลบคุกกี้ได้ โปรดทราบว่าการบล็อกคุกกี้บางรายการอาจส่งผลต่อการทำงานของเว็บไซต์", vi: "Khi bạn truy cập lần đầu, chúng tôi yêu cầu sự đồng ý của bạn thông qua một biểu ngữ, nơi bạn có thể chấp nhận tất cả cookie hoặc chỉ chọn cookie cần thiết. Bạn cũng có thể kiểm soát cookie thông qua cài đặt trình duyệt của mình — hầu hết các trình duyệt cho phép bạn từ chối hoặc xóa cookie. Xin lưu ý rằng việc chặn một số cookie có thể ảnh hưởng đến cách trang web hoạt động." }, locale)}</p>
-            <p className="mt-2">{t({ en: "To reset your choice on this site, clear this site's data in your browser and the consent banner will appear again on your next visit.", zh: "如需重置您在本网站上的选择，请在浏览器中清除本网站的数据，下次访问时同意横幅将再次出现。", th: "หากต้องการรีเซ็ตการเลือกของคุณบนเว็บไซต์นี้ ให้ล้างข้อมูลของเว็บไซต์นี้ในเบราว์เซอร์ของคุณ แล้วแบนเนอร์ขอความยินยอมจะปรากฏขึ้นอีกครั้งในการเยี่ยมชมครั้งถัดไป", vi: "Để đặt lại lựa chọn của bạn trên trang web này, hãy xóa dữ liệu của trang web này trong trình duyệt của bạn và biểu ngữ đồng ý sẽ xuất hiện lại trong lần truy cập tiếp theo." }, locale)}</p>
+            <p className="mt-2">{t({ en: 'You can change your choice at any time via "Cookie settings" in the page footer. Clearing this site\'s data in your browser also resets it.', zh: "您可随时通过页脚的「Cookie 设置」更改选择；在浏览器中清除本站数据同样会重置该选择。", th: 'ท่านสามารถเปลี่ยนตัวเลือกได้ทุกเมื่อผ่าน "การตั้งค่าคุกกี้" ที่ส่วนท้ายของหน้าเว็บ การล้างข้อมูลของเว็บไซต์นี้ในเบราว์เซอร์ก็รีเซ็ตตัวเลือกเช่นกัน', vi: 'Bạn có thể thay đổi lựa chọn bất cứ lúc nào qua "Cài đặt cookie" ở chân trang. Xóa dữ liệu của website này trong trình duyệt cũng đặt lại lựa chọn.' }, locale)}</p>
           </div>
 
           <div>

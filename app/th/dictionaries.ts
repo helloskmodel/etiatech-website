@@ -175,7 +175,7 @@ const homeTri = {
     zh: "ETIA Thailand 是 OmniCure 产品在泰国的授权分销商。",
   } as Tri,
   whyIntro: {
-    th: "ด้วยรากฐานความเป็นเลิศทางวิศวกรรม ETIA ร่วมมือกับแบรนด์ UV curing ชั้นนำระดับโลก เพื่อส่งมอบโซลูชันที่พิสูจน์แล้ว เชื่อถือได้ และดูแลครบวงจร — ตั้งแต่การเลือกจนถึงการสนับสนุน",
+    th: "ด้วยรากฐานความเป็นเลิศทางวิศวกรรม ETIA ร่วมมือกับแบรนด์ UV curing ที่ได้รับการยอมรับระดับโลก เพื่อส่งมอบโซลูชันที่พิสูจน์แล้ว เชื่อถือได้ และดูแลครบวงจร — ตั้งแต่การเลือกจนถึงการสนับสนุน",
     en: "Rooted in engineering excellence, ETIA partners with established UV curing brands to deliver solutions that are proven, reliable, and backed end-to-end — from selection to support.",
     zh: "立足硬核工程技术，携手全球头部 UV Curing 紫外线固化品牌，提供经过市场验证、性能稳定、全流程保障的一体化方案，从设备选型到终身售后全程护航。",
   } as Tri,

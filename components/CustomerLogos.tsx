@@ -38,10 +38,10 @@ export default function CustomerLogos() {
         </p>
         <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-bold text-[#143C96] md:text-3xl">
           {t({
-            en: "Trusted by leading medical, photonics & electronics manufacturers",
-            zh: "服务医疗、光电子与电子领域的头部制造企业",
-            th: "ได้รับความไว้วางใจจากผู้ผลิตชั้นนำด้านการแพทย์ โฟโตนิกส์ และอิเล็กทรอนิกส์",
-            vi: "Được các nhà sản xuất hàng đầu ngành y tế, quang tử & điện tử tin dùng",
+            en: "Trusted by medical, photonics & electronics manufacturers across Asia",
+            zh: "服务亚洲医疗、光电子与电子领域的制造企业",
+            th: "ได้รับความไว้วางใจจากผู้ผลิตด้านการแพทย์ โฟโตนิกส์ และอิเล็กทรอนิกส์",
+            vi: "Được các nhà sản xuất ngành y tế, quang tử & điện tử tin dùng",
           }, locale)}
         </h2>
         {/* Every logo on screen at once — seven across, two rows at desktop

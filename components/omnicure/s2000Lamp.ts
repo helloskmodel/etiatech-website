@@ -74,7 +74,7 @@ export const LAMP = {
         en: "Broad-spectrum output for the widest range of UV adhesive bonding applications.",
         zh: "宽光谱输出，适用范围最广的 UV 粘合剂粘接应用。",
         th: "แสงสเปกตรัมกว้าง รองรับงานบ่มกาวยูวีได้หลากหลายที่สุด",
-        vi: "Phổ phát xạ rộng, đáp ứng dải ứng dụng dán keo UV rộng nhất.",
+        vi: "Phổ phát xạ rộng, đáp ứng dải ứng dụng dán keo UV rất rộng.",
       } as Record<LampLang, string>,
     },
     {
@@ -176,9 +176,9 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
       "This makes the S2000 suitable for high-volume, large-scale production as well as small-batch experiments in university laboratories and research institutes.",
     ],
     features: [
-      "Intelli-Lamp smart lamp technology — patented technology gives the S2000 automatic time-tracking and broad-spectrum output, so it adapts to a wide range of adhesive and substrate bonding applications.",
+      "Intelli-Lamp smart lamp technology — this technology gives the S2000 automatic time-tracking and broad-spectrum output, so it adapts to a wide range of adhesive and substrate bonding applications.",
       "Selectable peak irradiance — for any application you can select one of the most effective peak irradiance levels to serve as the spot source of the curing system.",
-      "Overcomes oxygen inhibition — where adhesives are prone to oxygen inhibition, our unique tube technology outputs enough optical power in the short-wave UV range to promote a smooth, seamless surface polish on acrylic resins.",
+      "Overcomes oxygen inhibition — where adhesives are prone to oxygen inhibition, the lamp's tube technology outputs enough optical power in the short-wave UV range to promote a smooth, seamless surface polish on acrylic resins.",
       "No inert gas, no secondary cure — curing needs no inert-gas environment and no high-temperature secondary cure.",
     ],
     benefits: [
@@ -202,9 +202,9 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
       "这既适合大批量、大规模生产的企业，同时也适合大学实验室和研究所的小批量实验。",
     ],
     features: [
-      "Intelli-Lamp® 智能灯具专利技术 — 凭借专利技术，S2000 具备自动时间跟踪和宽光谱输出的能力，可以适用于各种粘合剂／基质的粘合应用。",
+      "Intelli-Lamp® 智能灯具技术 — 凭借这项技术，S2000 具备自动时间跟踪和宽光谱输出的能力，可以适用于各种粘合剂／基质的粘合应用。",
       "可选峰值辐照度 — 对于各种应用，都可以选择其中一个最有效的最高峰值辐照度，作为固化系统的点光源。",
-      "克服氧阻聚现象 — 在某些粘合剂容易出现氧阻聚现象的场合，我们独有的灯管技术可以让灯管在短波紫外线的波长范围上输出足够的光功率，促进丙烯酸树脂平滑无缝的表面抛光。",
+      "克服氧阻聚现象 — 在某些粘合剂容易出现氧阻聚现象的场合，其灯管技术可以让灯管在短波紫外线的波长范围上输出足够的光功率，促进丙烯酸树脂平滑无缝的表面抛光。",
       "无需惰性气体与二次固化 — 在固化过程中不需要惰性气体环境，也不需要高温二次固化。",
     ],
     benefits: [
@@ -228,7 +228,7 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
       "จึงเหมาะทั้งกับองค์กรที่ผลิตปริมาณมากในขนาดใหญ่ และการทดลองปริมาณน้อยในห้องปฏิบัติการมหาวิทยาลัยและสถาบันวิจัย",
     ],
     features: [
-      "เทคโนโลยีหลอดอัจฉริยะ Intelli-Lamp — เทคโนโลยีที่จดสิทธิบัตรทำให้ S2000 ติดตามเวลาอัตโนมัติและให้แสงสเปกตรัมกว้าง จึงรองรับการยึดติดกาวและวัสดุพื้นผิวได้หลากหลาย",
+      "เทคโนโลยีหลอดอัจฉริยะ Intelli-Lamp — เทคโนโลยีนี้ทำให้ S2000 ติดตามเวลาอัตโนมัติและให้แสงสเปกตรัมกว้าง จึงรองรับการยึดติดกาวและวัสดุพื้นผิวได้หลากหลาย",
       "เลือกความเข้มแสงสูงสุดได้ — สำหรับทุกงาน คุณสามารถเลือกระดับความเข้มแสงสูงสุดที่มีประสิทธิภาพที่สุดหนึ่งระดับ เพื่อใช้เป็นแหล่งกำเนิดแสงจุดของระบบบ่ม",
       "เอาชนะการยับยั้งจากออกซิเจน — ในกรณีที่กาวมีแนวโน้มถูกออกซิเจนยับยั้ง เทคโนโลยีหลอดเฉพาะของเราให้กำลังแสงเพียงพอในย่านยูวีคลื่นสั้น ส่งเสริมให้พื้นผิวเรซินอะคริลิกเรียบเนียนไร้รอยต่อ",
       "ไม่ต้องใช้ก๊าซเฉื่อยหรือบ่มซ้ำ — การบ่มไม่ต้องใช้สภาพแวดล้อมก๊าซเฉื่อยและไม่ต้องบ่มซ้ำที่อุณหภูมิสูง",
@@ -254,7 +254,7 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
       "Điều này khiến S2000 phù hợp cho cả doanh nghiệp sản xuất hàng loạt quy mô lớn lẫn các thí nghiệm lô nhỏ tại phòng thí nghiệm đại học và viện nghiên cứu.",
     ],
     features: [
-      "Công nghệ đèn thông minh Intelli-Lamp® — Công nghệ được cấp bằng sáng chế giúp S2000 tự động theo dõi thời gian và xuất phổ rộng, nhờ đó thích ứng với nhiều ứng dụng dán keo và vật liệu nền.",
+      "Công nghệ đèn thông minh Intelli-Lamp® — Công nghệ này giúp S2000 tự động theo dõi thời gian và xuất phổ rộng, nhờ đó thích ứng với nhiều ứng dụng dán keo và vật liệu nền.",
       "Cường độ đỉnh tùy chọn — Với mọi ứng dụng, bạn có thể chọn một trong những mức cường độ đỉnh hiệu quả nhất làm nguồn sáng điểm của hệ thống bảo dưỡng.",
       "Khắc phục ức chế oxy — Khi keo dễ bị ức chế oxy, công nghệ ống đèn độc quyền của chúng tôi phát đủ công suất quang trong dải UV bước sóng ngắn, giúp bề mặt nhựa acrylic nhẵn mịn liền mạch.",
       "Không cần khí trơ hay bảo dưỡng lại — Quá trình bảo dưỡng không cần môi trường khí trơ và không cần bảo dưỡng lần hai ở nhiệt độ cao.",
