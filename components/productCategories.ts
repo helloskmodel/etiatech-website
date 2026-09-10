@@ -87,7 +87,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "mercury-uv-lamp": {
     slug: "mercury-uv-lamp",
     accent: "#1A56DB",
-    name: { en: "UV Spot Lamp Curing Systems", zh: "汞灯紫外光源", vi: "Hệ thống đóng rắn UV đèn điểm", th: "ระบบบ่ม UV แบบจุดด้วยหลอดปรอท" },
+    name: { en: "UV Spot Curing Systems", zh: "汞灯紫外光源", vi: "Hệ thống đóng rắn UV điểm", th: "ระบบบ่ม UV แบบจุด" },
     tagline: {
       en: "Broad-spectrum mercury lamp UV curing — the proven choice when your adhesive needs full 320–500 nm output.",
       zh: "宽光谱汞灯紫外固化——当胶水需要完整 320–500 nm 输出时，久经验证的选择。",
@@ -122,7 +122,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Laboratory & R&D curing", zh: "实验室与研发固化", vi: "Đóng rắn trong phòng thí nghiệm & R&D", th: "การบ่มในห้องปฏิบัติการ & R&D" },
       { en: "Dose measurement & calibration", zh: "剂量测量与校准", vi: "Đo liều & hiệu chuẩn", th: "การวัดโดส & การสอบเทียบ" },
     ],
-    metaTitle: "UV Spot Lamp Curing Systems | OmniCure S2000 & S1500 | ETIA",
+    metaTitle: "UV Spot Curing Systems | OmniCure S2000 & S1500 | ETIA",
     metaDescription:
       "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
     match: (p) =>
@@ -170,15 +170,15 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     ],
     groups: [
       {
-        title: { en: "Spot curing", zh: "点固化", vi: "Đóng rắn điểm", th: "การบ่มแบบจุด" },
+        title: { en: "UV LED Spot Curing Systems", zh: "UV LED 点固化系统", vi: "Hệ thống đóng rắn điểm UV LED", th: "ระบบบ่มแบบจุด UV LED" },
         match: (p) => p.tech === "UV Spot Curing",
       },
       {
-        title: { en: "Air-cooled", zh: "风冷", vi: "Làm mát bằng không khí", th: "ระบายความร้อนด้วยอากาศ" },
+        title: { en: "UV LED Air-Cooled Systems", zh: "UV LED 风冷系统", vi: "Hệ thống UV LED làm mát bằng không khí", th: "ระบบ UV LED ระบายความร้อนด้วยอากาศ" },
         match: (p) => p.tech === "Air-Cooled UV LED Curing",
       },
       {
-        title: { en: "Water-cooled", zh: "水冷", vi: "Làm mát bằng nước", th: "ระบายความร้อนด้วยน้ำ" },
+        title: { en: "UV LED Water-Cooled Systems", zh: "UV LED 水冷系统", vi: "Hệ thống UV LED làm mát bằng nước", th: "ระบบ UV LED ระบายความร้อนด้วยน้ำ" },
         match: (p) => p.tech === "Water-Cooled UV LED Area Curing",
       },
     ],
@@ -198,7 +198,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "microwave-uv-lamp": {
     slug: "microwave-uv-lamp",
     accent: "#f59e0b",
-    name: { en: "Microwave Electrodeless UV Lamps", zh: "微波无极灯", vi: "Đèn UV vi sóng không điện cực", th: "หลอด UV ไมโครเวฟไร้ขั้วไฟฟ้า" },
+    name: { en: "Microwave UV Curing Systems", zh: "微波无极灯", vi: "Hệ thống đóng rắn UV vi sóng", th: "ระบบบ่ม UV ไมโครเวฟ" },
     tagline: {
       en: "Fusion UV® microwave-powered curing — no electrodes to erode, 200–600 nm broad spectrum, and unlimited cure width by stacking lamps end to end.",
       zh: "Fusion UV® 微波无极紫外固化——无电极损耗、200–600 nm 宽光谱，灯头端对端拼接实现固化宽度无限扩展。",
@@ -243,7 +243,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Metal coating & finishing", zh: "金属涂层与表面处理", vi: "Phủ & hoàn thiện bề mặt kim loại", th: "การเคลือบ & ตกแต่งผิวโลหะ" },
       { en: "Powder coating cure on MDF board", zh: "MDF 板粉末涂层固化", vi: "Đóng rắn lớp phủ bột trên ván MDF", th: "การบ่มสารเคลือบผงบนแผ่น MDF" },
     ],
-    metaTitle: "Microwave Electrodeless UV Lamps | Fusion UV F Series & LightHammer | ETIA",
+    metaTitle: "Microwave UV Curing Systems | Fusion UV F Series & LightHammer | ETIA",
     metaDescription:
       "Fusion UV microwave-powered UV curing systems — electrodeless lamps from the economical F300S to the LightHammer 10 Mark III, with H, D and V bulb fills, unlimited cure width and Industry 4.0 sensing. Supplied and supported by ETIA.",
     docs: [
@@ -456,7 +456,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "infrared-heating": {
     slug: "infrared-heating",
     accent: "#dc2626",
-    name: { en: "Infrared Heating", zh: "红外加热", vi: "Gia nhiệt hồng ngoại", th: "การให้ความร้อนอินฟราเรด" },
+    name: { en: "Infrared Heating Systems", zh: "红外加热", vi: "Hệ thống gia nhiệt hồng ngoại", th: "ระบบให้ความร้อนอินฟราเรด" },
     tagline: {
       en: "Noblelight infrared modules — heat delivered into the product, exactly where the process needs it.",
       zh: "Noblelight 红外模块——将热量直接送入产品，精确投放在工艺所需之处。",
@@ -506,7 +506,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Printing ink drying", zh: "印刷油墨干燥", vi: "Sấy mực in", th: "การอบแห้งหมึกพิมพ์" },
       { en: "Paper, cardboard & non-woven heating", zh: "纸张、纸板与无纺布加热", vi: "Gia nhiệt giấy, bìa carton & vải không dệt", th: "การให้ความร้อนกระดาษ กระดาษแข็ง & ผ้าไม่ทอ" },
     ],
-    metaTitle: "Industrial Infrared Heating Modules | Noblelight M & MX Series | ETIA",
+    metaTitle: "Infrared Heating Systems | Noblelight M & MX Series | ETIA",
     metaDescription:
       "Excelitas Noblelight infrared heating modules for industrial process technology — M 85, M 110, M 115, scalable MX modules with integrated control, custom MX systems and infrared control systems. Specified to your process by ETIA.",
     docs: [
