@@ -63,6 +63,11 @@ export type ProductCategory = {
   };
   // Selects this category's models out of the product catalog.
   match: (p: Product) => boolean;
+  // Optional sub-headings for a category whose model list is long enough that a
+  // flat grid stops being navigable. Anything a group does not claim falls to
+  // the end of the list under no heading, so a new catalog entry can never go
+  // missing just because nobody updated the groups.
+  groups?: { title: LangText; match: (p: Product) => boolean }[];
   // Not published yet. A draft category is hidden from the menu, the product
   // centre, the home page and the cross-links, and stays out of the sitemap;
   // its page still builds so it can be previewed at its URL, but carries
@@ -162,6 +167,20 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "PCB conformal coating", zh: "PCB 三防漆涂覆", vi: "Phủ bảo vệ PCB", th: "การเคลือบป้องกัน PCB" },
       { en: "Optical fibre coating & marking", zh: "光纤涂覆与标识", vi: "Phủ & đánh dấu sợi quang", th: "การเคลือบ & ทำเครื่องหมายเส้นใยแก้วนำแสง" },
       { en: "Printing, coating & packaging", zh: "印刷、涂层与包装", vi: "In ấn, phủ & bao bì", th: "งานพิมพ์ เคลือบ & บรรจุภัณฑ์" },
+    ],
+    groups: [
+      {
+        title: { en: "Spot curing", zh: "点固化", vi: "Đóng rắn điểm", th: "การบ่มแบบจุด" },
+        match: (p) => p.tech === "UV Spot Curing",
+      },
+      {
+        title: { en: "Air-cooled", zh: "风冷", vi: "Làm mát bằng không khí", th: "ระบายความร้อนด้วยอากาศ" },
+        match: (p) => p.tech === "Air-Cooled UV LED Curing",
+      },
+      {
+        title: { en: "Water-cooled", zh: "水冷", vi: "Làm mát bằng nước", th: "ระบายความร้อนด้วยน้ำ" },
+        match: (p) => p.tech === "Water-Cooled UV LED Area Curing",
+      },
     ],
     metaTitle: "UV LED Curing Light Sources | Spot, Area & Wide-Web | ETIA",
     metaDescription:
@@ -649,6 +668,25 @@ export const publishedProductCategories: ProductCategory[] = productCategoryList
 
 export function productCategoryHref(slug: ProductCategorySlug): string {
   return `/product/technology/${slug}`;
+}
+
+// A category's models split under its sub-headings, in group order, with any
+// model no group claims appended under an empty title. Categories without
+// groups return a single untitled group, so callers need only one code path.
+export function categoryModelGroups(
+  slug: ProductCategorySlug
+): { title: LangText | null; items: Product[] }[] {
+  const all = categoryProducts(slug);
+  const groups = productCategories[slug].groups;
+  if (!groups) return [{ title: null, items: all }];
+  const claimed = new Set<string>();
+  const out = groups.map((g) => {
+    const items = all.filter((p) => g.match(p));
+    items.forEach((p) => claimed.add(p.slug));
+    return { title: g.title, items };
+  }).filter((g) => g.items.length > 0);
+  const rest = all.filter((p) => !claimed.has(p.slug));
+  return rest.length > 0 ? [...out, { title: null, items: rest }] : out;
 }
 
 // The catalog models in a category, in catalog order — except that the two
