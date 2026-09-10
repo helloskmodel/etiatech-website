@@ -123,7 +123,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
         },
       },
     ],
-    recommends: ["uv-led", "mercury-uv-lamp"],
+    recommends: ["uv-led", "mercury-uv-lamp", "uv-measurement"],
     applicationSlugs: [
       "uv-curing-optical-transceiver-manufacturing",
       "uv-curing-co-packaged-optics-fiber-array-bonding",
@@ -208,7 +208,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
         },
       },
     ],
-    recommends: ["uv-led", "mercury-uv-lamp"],
+    recommends: ["uv-led", "uv-measurement", "mercury-uv-lamp"],
     applicationSlugs: [
       "uv-curing-advanced-semiconductor-packaging",
       "uv-led-curing-display-module-oca-bonding",
@@ -373,7 +373,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       { en: "Arterial locators", zh: "动脉定位器", vi: "Thiết bị định vị động mạch", th: "อุปกรณ์ระบุตำแหน่งหลอดเลือดแดง" },
       { en: "Atraumatic guidewire tips", zh: "无创导丝头端", vi: "Đầu dây dẫn không gây tổn thương", th: "ปลายลวดนำแบบไม่ทำให้บาดเจ็บ" },
     ],
-    recommends: ["mercury-uv-lamp", "uv-led"],
+    recommends: ["mercury-uv-lamp", "uv-led", "uv-measurement"],
     applicationSlugs: [
       "uv-spot-curing-cardiovascular-catheter-bonding",
       "uv-led-curing-hypodermic-needle-cannula-assembly",
