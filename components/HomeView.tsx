@@ -59,7 +59,10 @@ const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: st
   // ── UV curing · single wavelength (LED) ──
   { family: { en: "UV Curing · Single Wavelength", zh: "紫外固化 · 单波长", th: "การบ่ม UV · ความยาวคลื่นเดียว", vi: "Đóng rắn UV · Đơn bước sóng" },
     name: { en: "UV LED Spot Curing Systems", zh: "UV LED 点固化系统", th: "ระบบบ่มแบบจุด UV LED", vi: "Hệ thống đóng rắn điểm UV LED" },
-    href: "/product/technology/uv-led#uv-led-spot-curing-systems", model: "lx505", accent: "#41A62A" },
+    // The LX505's own photograph is shot on a blue gradient, which sits oddly
+    // in a row of white-background equipment shots. The LX500 stands in for
+    // the shelf instead; the card names the category, not the model.
+    href: "/product/technology/uv-led#uv-led-spot-curing-systems", model: "lx500", accent: "#41A62A" },
   { family: { en: "UV Curing · Single Wavelength", zh: "紫外固化 · 单波长", th: "การบ่ม UV · ความยาวคลื่นเดียว", vi: "Đóng rắn UV · Đơn bước sóng" },
     name: { en: "Air-Cooled UV LED Area Curing Systems", zh: "风冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยอากาศ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng khí" },
     href: "/product/technology/uv-led#uv-led-air-cooled-systems", model: "ac8", accent: "#0ea5e9" },
