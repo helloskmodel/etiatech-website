@@ -342,7 +342,7 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
 
       <FinalCta
         heading={t(
-          { en: "Not sure which light source fits your process?", zh: "不确定哪种光源适合您的工艺？", th: "ไม่แน่ใจว่าแหล่งกำเนิดแสงใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc nguồn sáng nào phù hợp với quy trình của bạn?" },
+          { en: "Not sure which system fits your process?", zh: "不确定哪套系统适合您的工艺？", th: "ไม่แน่ใจว่าระบบใดเหมาะกับกระบวนการของคุณ?", vi: "Chưa chắc hệ thống nào phù hợp với quy trình của bạn?" },
           locale
         )}
         body={t(

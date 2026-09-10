@@ -87,7 +87,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "mercury-uv-lamp": {
     slug: "mercury-uv-lamp",
     accent: "#1A56DB",
-    name: { en: "Mercury UV Lamp Sources", zh: "汞灯紫外光源", vi: "Nguồn UV đèn thủy ngân", th: "แหล่งกำเนิด UV หลอดปรอท" },
+    name: { en: "UV Spot Lamp Curing Systems", zh: "汞灯紫外光源", vi: "Hệ thống đóng rắn UV đèn điểm", th: "ระบบบ่ม UV แบบจุดด้วยหลอดปรอท" },
     tagline: {
       en: "Broad-spectrum mercury lamp UV curing — the proven choice when your adhesive needs full 320–500 nm output.",
       zh: "宽光谱汞灯紫外固化——当胶水需要完整 320–500 nm 输出时，久经验证的选择。",
@@ -122,9 +122,9 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Laboratory & R&D curing", zh: "实验室与研发固化", vi: "Đóng rắn trong phòng thí nghiệm & R&D", th: "การบ่มในห้องปฏิบัติการ & R&D" },
       { en: "Dose measurement & calibration", zh: "剂量测量与校准", vi: "Đo liều & hiệu chuẩn", th: "การวัดโดส & การสอบเทียบ" },
     ],
-    metaTitle: "Mercury UV Lamp Curing Sources | OmniCure S-Series | ETIA",
+    metaTitle: "UV Spot Lamp Curing Systems | OmniCure S2000 & S1500 | ETIA",
     metaDescription:
-      "Mercury UV lamp curing sources explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
+      "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
     match: (p) =>
       (p.tech === "UV Spot Curing" &&
         (p.sub === "UV Lamp Spot" ||
@@ -139,7 +139,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "uv-led": {
     slug: "uv-led",
     accent: "#41A62A",
-    name: { en: "UV LED Light Sources", zh: "LED紫外光源", vi: "Nguồn sáng UV LED", th: "แหล่งกำเนิดแสง UV LED" },
+    name: { en: "UV LED Curing Systems", zh: "LED紫外光源", vi: "Hệ thống đóng rắn UV LED", th: "ระบบบ่ม UV LED" },
     tagline: {
       en: "From single-point spot heads to 1350 mm production arrays — mercury-free UV LED curing at every scale.",
       zh: "从单点点固化头到 1350 mm 产线阵列——覆盖各种规模的无汞 UV LED 固化。",
@@ -182,9 +182,9 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
         match: (p) => p.tech === "Water-Cooled UV LED Area Curing",
       },
     ],
-    metaTitle: "UV LED Curing Light Sources | Spot, Area & Wide-Web | ETIA",
+    metaTitle: "UV LED Curing Systems | Spot, Air-Cooled & Water-Cooled | ETIA",
     metaDescription:
-      "UV LED curing light sources at 365/385/395/405 nm — OmniCure LX spot and AC Series, Phoseon FireEdge, FireJet and FireLine, Noblelight Semray water-cooled arrays to 1350 mm. Application-matched and supported by ETIA.",
+      "UV LED curing systems at 365/385/395/405 nm — OmniCure LX spot and AC Series, Phoseon FireEdge, FireJet and FireLine, Noblelight Semray water-cooled arrays to 1350 mm. Application-matched and supported by ETIA.",
     match: (p) =>
       !MEASUREMENT_SLUGS.has(p.slug) &&
       ((p.tech === "UV Spot Curing" && p.sub === "UV LED Spot") ||

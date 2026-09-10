@@ -110,7 +110,7 @@ export default function HomeView() {
     <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}</p>
-        <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Find your light source", zh: "按光源技术选型", th: "ค้นหาแหล่งกำเนิดแสงของคุณ", vi: "Tìm nguồn sáng của bạn" }, locale)}</h2>
+        <h2 className="mt-3 text-3xl font-bold text-[#143C96] md:text-4xl">{t({ en: "Find your curing technology", zh: "按技术选型", th: "ค้นหาเทคโนโลยีการบ่มของคุณ", vi: "Tìm công nghệ đóng rắn của bạn" }, locale)}</h2>
         <p className="mt-4 max-w-2xl text-sm leading-6 text-[#667085]">{t({ en: "Mercury lamp, UV LED, microwave electrodeless, measurement and infrared — pick the technology your process needs.", zh: "汞灯、UV LED、微波无极灯、精密检测与红外加热——按您工艺所需的技术选择。", th: "หลอดปรอท UV LED ไมโครเวฟไร้ขั้ว เครื่องมือวัด และอินฟราเรด — เลือกเทคโนโลยีที่กระบวนการของคุณต้องการ", vi: "Đèn thủy ngân, UV LED, vi sóng không điện cực, thiết bị đo và hồng ngoại — chọn công nghệ mà quy trình của bạn cần." }, locale)}</p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {publishedProductCategories.map((c) => (
