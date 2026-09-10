@@ -22,6 +22,7 @@ const SITE = "https://www.etiatech.com";
 
 export type IndustrySlug =
   | "optical-modules"
+  | "optical-fiber"
   | "semiconductor"
   | "automotive"
   | "medical-device"
@@ -133,12 +134,86 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       "uv-curing-optical-transceiver-manufacturing",
       "uv-curing-co-packaged-optics-fiber-array-bonding",
       "uv-curing-photonic-integrated-circuit-packaging",
-      "uv-spot-curing-fiber-optic-connector-termination",
-      "uv-led-curing-optical-fiber-draw-tower-coating",
     ],
     metaTitle: "UV Curing for Optical Modules & Transceivers | 400G–1.6T | ETIA",
     metaDescription:
       "UV curing solutions for optical module manufacturing — fibre array bonding, co-packaged optics, lens attach, connector termination and fibre draw coating. Sub-micron alignment retention, specified by ETIA's engineers.",
+  },
+
+  // ────────────────────────── 2. 光纤与线缆 ──────────────────────────
+  // Split out of optical modules: a draw tower and a cable plant are a
+  // different customer from a transceiver line, and fibre is the one place
+  // the AC9225-F exists for.
+  "optical-fiber": {
+    slug: "optical-fiber",
+    accent: "#0d9488",
+    name: { en: "Optical Fiber & Cable", zh: "光纤与线缆", vi: "Sợi quang & cáp", th: "เส้นใยแก้วนำแสง & สายเคเบิล" },
+    tagline: {
+      en: "Draw-tower coating, ribboning, termination and cable marking — 360° cure at line speed.",
+      zh: "拉丝塔涂覆、带纤、端接与线缆标识——产线速度下的 360° 固化。",
+      vi: "Phủ tháp kéo sợi, ghép băng, đầu nối và đánh dấu cáp — đóng rắn 360° ở tốc độ dây chuyền.",
+      th: "การเคลือบที่หอดึงเส้นใย การทำริบบอน การเข้าหัว และการทำเครื่องหมายสายเคเบิล — บ่ม 360° ที่ความเร็วสายการผลิต",
+    },
+    intro: [
+      {
+        en: "A draw tower does not slow down for the UV lamp. Primary and secondary coatings have to cure fully, all the way round, at the speed the fibre is moving — or the line runs slower than the tower was bought for.",
+        zh: "拉丝塔不会为紫外灯减速。一次、二次涂层必须在光纤走线速度下全周向固化透——否则产线跑不到塔的设计速度。",
+        vi: "Tháp kéo sợi không chậm lại vì đèn UV. Lớp phủ sơ cấp và thứ cấp phải đóng rắn hoàn toàn, quanh chu vi, ở đúng tốc độ sợi đang chạy — nếu không dây chuyền chạy chậm hơn mức tháp được mua để làm.",
+        th: "หอดึงเส้นใยไม่ชะลอเพื่อหลอด UV ชั้นเคลือบปฐมภูมิและทุติยภูมิต้องบ่มเต็มที่รอบเส้นที่ความเร็วเดิม — ไม่เช่นนั้นสายการผลิตจะช้ากว่าที่ซื้อหอมาทำ",
+      },
+      {
+        en: "ETIA specifies the fibre-optimised LED head, its face-to-face arrangement and the dose at working distance, and supports the connector and splice work downstream with spot systems.",
+        zh: "ETIA 选定光纤专用 LED 灯头、对射布置与工作距离下的剂量，后段的连接器端接与熔接保护则由点光源系统承接。",
+        vi: "ETIA xác định đầu LED tối ưu cho sợi quang, cách bố trí đối diện và liều ở khoảng cách làm việc, và hỗ trợ khâu đầu nối, bảo vệ mối hàn phía sau bằng hệ thống điểm.",
+        th: "ETIA กำหนดหัว LED ที่ปรับให้เหมาะกับเส้นใย การจัดวางแบบหันหน้าเข้าหากัน และปริมาณที่ระยะทำงาน พร้อมรองรับงานเข้าหัวและป้องกันจุดต่อปลายน้ำด้วยระบบจุด",
+      },
+    ],
+    processes: [
+      {
+        title: { en: "Draw-tower primary & secondary coating", zh: "拉丝塔一次 / 二次涂覆", vi: "Phủ sơ cấp & thứ cấp tại tháp kéo", th: "การเคลือบปฐมภูมิ & ทุติยภูมิที่หอดึง" },
+        body: {
+          en: "Face-to-face AC9225-F heads: up to 88 W/cm² at the fibre, 10–18 mm working distance, 40,000 h LED life.",
+          zh: "AC9225-F 对射布置：光纤处最高 88 W/cm²，工作距离 10–18 mm，LED 寿命 40,000 小时。",
+          vi: "Đầu AC9225-F đối diện: tới 88 W/cm² tại sợi, khoảng cách làm việc 10–18 mm, tuổi thọ LED 40.000 h.",
+          th: "หัว AC9225-F แบบหันหน้าเข้าหากัน: สูงถึง 88 W/cm² ที่เส้นใย ระยะทำงาน 10–18 มม. อายุ LED 40,000 ชม.",
+        },
+      },
+      {
+        title: { en: "Ribbon & tight-buffer coating", zh: "带纤与紧套涂覆", vi: "Phủ băng sợi & lớp đệm chặt", th: "การเคลือบริบบอน & ทิกต์บัฟเฟอร์" },
+        body: {
+          en: "Even cure across a ribbon width; heads adjoin without a uniformity gap.",
+          zh: "整幅带纤均匀固化；多灯头拼接无均匀性断点。",
+          vi: "Đóng rắn đều trên toàn bề rộng băng; các đầu ghép nối không có khe hụt đồng đều.",
+          th: "บ่มสม่ำเสมอทั่วความกว้างริบบอน หัวต่อกันได้โดยไม่มีช่องว่างความสม่ำเสมอ",
+        },
+      },
+      {
+        title: { en: "Connector termination & splice protection", zh: "连接器端接与熔接保护", vi: "Đầu nối & bảo vệ mối hàn", th: "การเข้าหัวคอนเนกเตอร์ & ป้องกันจุดต่อ" },
+        body: {
+          en: "Repeatable ferrule bonding and recoat with the S2000 Elite or LX500, radiometer-verified.",
+          zh: "S2000 Elite 或 LX500 完成可重复的插芯粘接与再涂覆，辐射计验证剂量。",
+          vi: "Dán ferrule và phủ lại lặp lại được bằng S2000 Elite hoặc LX500, xác nhận bằng máy đo bức xạ.",
+          th: "การยึดเฟอร์รูลและเคลือบซ้ำอย่างทำซ้ำได้ด้วย S2000 Elite หรือ LX500 ตรวจสอบด้วยเรดิโอมิเตอร์",
+        },
+      },
+      {
+        title: { en: "Cable marking & ribboning inks", zh: "线缆标识与带纤油墨", vi: "Mực đánh dấu cáp & ghép băng", th: "หมึกทำเครื่องหมายสายเคเบิล & ริบบอน" },
+        body: {
+          en: "UV-curable inks fixed inline by air-cooled LED heads, no solvent, no oven.",
+          zh: "UV 油墨由风冷 LED 灯头在线固化，无溶剂、无烘箱。",
+          vi: "Mực UV được cố định trên dây chuyền bằng đầu LED làm mát khí, không dung môi, không lò.",
+          th: "หมึก UV ถูกบ่มในไลน์ด้วยหัว LED ระบายอากาศ ไม่มีตัวทำละลาย ไม่มีเตาอบ",
+        },
+      },
+    ],
+    recommends: ["uv-led", "mercury-uv-lamp"],
+    applicationSlugs: [
+      "uv-led-curing-optical-fiber-draw-tower-coating",
+      "uv-spot-curing-fiber-optic-connector-termination",
+    ],
+    metaTitle: "UV Curing for Optical Fiber & Cable Manufacturing | Draw Tower, Ribbon, Termination | ETIA",
+    metaDescription:
+      "UV curing for fibre and cable plants — draw-tower primary and secondary coating with the fibre-optimised OmniCure AC9225-F, ribbon and tight-buffer coating, connector termination and splice protection, cable marking inks. Specified by ETIA's engineers.",
   },
 
   // ────────────────────────── 2. 半导体行业 ──────────────────────────
@@ -446,6 +521,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
 // Menu / page order — the order the customer specified.
 export const INDUSTRY_ORDER: IndustrySlug[] = [
   "optical-modules",
+  "optical-fiber",
   "semiconductor",
   "automotive",
   "medical-device",
