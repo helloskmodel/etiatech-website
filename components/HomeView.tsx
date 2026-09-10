@@ -39,10 +39,12 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
 // instead of living in a paragraph above the row.
 const COS_IMAGE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE";
 
-// `scene` is a photograph of the source at work, supplied by ETIA. It fills the
-// card edge to edge; `model` is the fallback — the catalogue shot of a
-// representative machine, letterboxed on white the way product photos are.
-const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: string; scene?: string; accent: string }[] = [
+// `photo` is an image ETIA supplied for this card. A photograph of the source
+// at work fills the card edge to edge; one shot against white is letterboxed
+// like every other product picture, which `fit: "contain"` asks for. Without a
+// `photo` the card falls back to `model` — the catalogue shot of a
+// representative machine.
+const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: string; photo?: string; fit?: "cover" | "contain"; accent: string }[] = [
   // ── UV curing · broad spectrum (lamp) ──
   { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
     name: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", th: "ระบบบ่มแบบจุดด้วยหลอด UV", vi: "Hệ thống đóng rắn điểm bằng đèn UV" },
@@ -50,7 +52,7 @@ const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: st
   { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
     name: { en: "Microwave UV Curing Systems", zh: "微波无极灯固化系统", th: "ระบบบ่ม UV ไมโครเวฟ", vi: "Hệ thống đóng rắn UV vi sóng" },
     href: "/product/technology/microwave-uv-lamp", model: "f-series", accent: "#f59e0b",
-    scene: `${COS_IMAGE}/LIGHT%20RESOURCE%20/MICROWAVE` },
+    photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/FUSION%20UV`, fit: "contain" },
   { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
     name: { en: "Mercury Arc Lamps", zh: "汞灯灯管与替换灯", th: "หลอดอาร์กปรอท", vi: "Đèn hồ quang thủy ngân" },
     href: "/product/technology/mercury-uv-lamp#mercury-arc-lamps", model: "s2000-lamp", accent: "#1A56DB" },
@@ -68,7 +70,7 @@ const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: st
   { family: { en: "Infrared Heating", zh: "红外加热", th: "การให้ความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" },
     name: { en: "Infrared Emitters", zh: "红外发射器", th: "ตัวเปล่งอินฟราเรด", vi: "Bộ phát hồng ngoại" },
     href: "/product/technology/infrared-emitters", model: "ir-golden8", accent: "#dc2626",
-    scene: `${COS_IMAGE}/LIGHT%20RESOURCE%20/Infrared%20Heating` },
+    photo: `${COS_IMAGE}/LIGHT%20RESOURCE%20/Infrared%20Heating` },
   { family: { en: "Infrared Heating", zh: "红外加热", th: "การให้ความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" },
     name: { en: "Infrared Systems", zh: "红外加热系统", th: "ระบบอินฟราเรด", vi: "Hệ thống hồng ngoại" },
     href: "/product/technology/infrared-heating", model: "ir-m85", accent: "#dc2626" },
@@ -173,11 +175,12 @@ export default function HomeView() {
           <HomeCarousel label={t({ en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" }, locale)}>
             {LIGHT_SOURCES.map((src) => {
               const stand = products.find((p) => p.slug === src.model);
-              const img = src.scene ? cosResize(src.scene, 900) : stand ? productImage(stand) : "";
+              const img = src.photo ? cosResize(src.photo, 900) : stand ? productImage(stand) : "";
+              const boxed = src.photo ? src.fit === "contain" : true;
               return (
                 <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[46%] lg:w-[31%]">
                   <div className="relative h-40 bg-[#F7FAFC] sm:h-48">
-                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className={`transition duration-300 group-hover:scale-105 ${src.scene ? "object-cover" : "object-contain p-4"}`} />}
+                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className={`transition duration-300 group-hover:scale-105 ${boxed ? "object-contain p-4" : "object-cover"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: src.accent }} />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
@@ -233,11 +236,12 @@ export default function HomeView() {
             {HOME_BRAND_ORDER.map((slug) => {
               const b = brandLanding[slug];
               const hero = products.find((p) => p.brandId === b.catalogBrandId && productImage(p));
+              const shot = b.cardImage ? cosResize(b.cardImage, 900) : hero ? productImage(hero) : "";
               const cats = categoriesForBrand(b.catalogBrandId);
               return (
                 <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[46%] lg:w-[31%]">
                   <div className="relative h-40 bg-[#F7FAFC] sm:h-48">
-                    {hero && <Image src={productImage(hero)} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className="object-contain p-4 transition duration-300 group-hover:scale-105" />}
+                    {shot && <Image src={shot} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className={`transition duration-300 group-hover:scale-105 ${b.cardImage ? "object-cover" : "object-contain p-4"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: b.color }} />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
