@@ -147,6 +147,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
   "optical-fiber": {
     slug: "optical-fiber",
     accent: "#0d9488",
+    cardImage: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/case%20studies%20/0501-fiber-cable.jpg",
     name: { en: "Optical Fiber & Cable", zh: "光纤与线缆", vi: "Sợi quang & cáp", th: "เส้นใยแก้วนำแสง & สายเคเบิล" },
     tagline: {
       en: "Draw-tower coating, ribboning, termination and cable marking — 360° cure at line speed.",
