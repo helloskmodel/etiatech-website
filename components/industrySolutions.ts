@@ -40,6 +40,10 @@ export type IndustrySolution = {
   applications?: LangText[];
   // Product categories to steer this industry's visitors towards, in order.
   recommends: ProductCategorySlug[];
+  // Photograph for the home page industry card. Nothing to fall back to here —
+  // an industry has no catalogue model of its own — so a card without one
+  // renders as a tinted tile until the picture arrives.
+  cardImage?: string;
   // Application notes belonging to this industry, in display order.
   applicationSlugs: string[];
   metaTitle: string;

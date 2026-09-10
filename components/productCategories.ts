@@ -41,6 +41,10 @@ export type ProductCategory = {
   // Optional hero photograph for the category page. Falls back to the shared
   // page banner when absent.
   heroImage?: string;
+  // Photograph for the home page technology card. When absent the card falls
+  // back to the first catalogued model that has one, so the row is never empty
+  // while a proper technology shot is being prepared.
+  cardImage?: string;
   // Optional photographs of the technology in production, shown alongside the
   // typical-applications list.
   gallery?: { src: string; caption: LangText }[];
