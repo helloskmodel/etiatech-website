@@ -30,6 +30,24 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
   { title: { en: "In-House Repair & Lifecycle Support", zh: "内部维修 长期支持", th: "บริการซ่อมและการสนับสนุนตลอดอายุการใช้งาน", vi: "Sửa chữa nội bộ & hỗ trợ vòng đời sản phẩm" }, body: { en: "Troubleshooting, maintenance and repair coordination to keep your process running.", zh: "故障排查、维护保养与维修协调，保障工艺持续稳定运行。", th: "ให้การสนับสนุนด้านการแก้ไขปัญหา การบำรุงรักษา และการประสานงานซ่อม เพื่อช่วยให้กระบวนการผลิตดำเนินต่อไปอย่างมั่นคง", vi: "Hỗ trợ xử lý sự cố, bảo trì và điều phối sửa chữa nhằm giúp quy trình sản xuất vận hành ổn định." }, icon: Wrench },
 ];
 
+// The six light sources, named as Excelitas names them. Three of them are
+// sections of the UV LED page rather than pages of their own, so they link to
+// the shelf by anchor — no new routes, no URL churn.
+const LIGHT_SOURCES: { name: LangText; href: string; model: string; accent: string }[] = [
+  { name: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", th: "ระบบบ่มแบบจุดด้วยหลอด UV", vi: "Hệ thống đóng rắn điểm bằng đèn UV" },
+    href: "/product/technology/mercury-uv-lamp", model: "s2000-elite", accent: "#1A56DB" },
+  { name: { en: "UV LED Spot Curing Systems", zh: "UV LED 点固化系统", th: "ระบบบ่มแบบจุด UV LED", vi: "Hệ thống đóng rắn điểm UV LED" },
+    href: "/product/technology/uv-led#uv-led-spot-curing-systems", model: "lx505", accent: "#41A62A" },
+  { name: { en: "Air-Cooled UV LED Area Curing Systems", zh: "风冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยอากาศ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng khí" },
+    href: "/product/technology/uv-led#uv-led-air-cooled-systems", model: "ac8", accent: "#0ea5e9" },
+  { name: { en: "Water-Cooled UV LED Area Curing Systems", zh: "水冷 UV LED 面固化系统", th: "ระบบบ่มพื้นที่ UV LED ระบายความร้อนด้วยน้ำ", vi: "Hệ thống đóng rắn diện rộng UV LED làm mát bằng nước" },
+    href: "/product/technology/uv-led#uv-led-water-cooled-systems", model: "fl400", accent: "#7c3aed" },
+  { name: { en: "Microwave UV Curing Systems", zh: "微波无极灯固化系统", th: "ระบบบ่ม UV ไมโครเวฟ", vi: "Hệ thống đóng rắn UV vi sóng" },
+    href: "/product/technology/microwave-uv-lamp", model: "f-series", accent: "#f59e0b" },
+  { name: { en: "Infrared Heating Emitters", zh: "红外加热发射器", th: "ตัวเปล่งความร้อนอินฟราเรด", vi: "Bộ phát nhiệt hồng ngoại" },
+    href: "/product/technology/infrared-heating", model: "ir-m85", accent: "#dc2626" },
+];
+
 // The four Excelitas brands, in the order they are shown under BY BRAND.
 const HOME_BRAND_ORDER: BrandSlug[] = ["omnicure", "noblelight", "phoseon", "fusion-uv"];
 
@@ -115,31 +133,28 @@ export default function HomeView() {
         Order follows how customers actually arrive: the technology they
         need, then their industry, then the brand they already run. */}
 
-    {/* BY TECHNOLOGY */}
+    {/* BY LIGHT SOURCE — the six sources Excelitas itself lists, not our four
+        catalogue pages. A customer looking for a water-cooled LED array does
+        not want to land on a thirty-model page and hunt; the card takes them
+        to that shelf. Where a source is a section of a larger page, the link
+        carries its anchor. */}
     <section className="px-4 pt-14 pb-4 sm:px-6 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        {/* The label is the heading. A second line restating it in longer
-            words was one more thing to read before the pictures. */}
-        <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}</h2>
+        <h2 className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" }, locale)}</h2>
         <div className="mt-8">
-          <HomeCarousel label={t({ en: "By Technology", zh: "按技术", th: "ตามเทคโนโลยี", vi: "Theo công nghệ" }, locale)}>
-            {publishedProductCategories.map((c) => {
-              // Until a technology photograph is supplied, borrow one from the
-              // category's own first model — better a real machine than a
-              // placeholder. Category order, not catalogue order: the latter
-              // put a radiometer on the front of the S2000 line.
-              const stand = categoryProducts(c.slug).find((p) => productImage(p));
-              const img = c.cardImage ?? c.heroImage ?? (stand ? productImage(stand) : "");
+          <HomeCarousel label={t({ en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" }, locale)}>
+            {LIGHT_SOURCES.map((src) => {
+              const stand = products.find((p) => p.slug === src.model);
+              const img = stand ? productImage(stand) : "";
               return (
-                <Link key={c.slug} href={localizeHref(productCategoryHref(c.slug), locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[46%] lg:w-[31%]">
+                <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[46%] lg:w-[31%]">
                   <div className="relative h-40 bg-[#F7FAFC] sm:h-48">
-                    {img && <Image src={img} alt={t(c.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className="object-contain p-4 transition duration-300 group-hover:scale-105" />}
-                    <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: c.accent }} />
+                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className="object-contain p-4 transition duration-300 group-hover:scale-105" />}
+                    <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: src.accent }} />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <h3 className="text-base font-bold text-[#143C96]">{t(c.name, locale)}</h3>
-                    <p className="mt-2 line-clamp-2 flex-1 text-xs leading-5 text-[#667085]">{t(c.tagline, locale)}</p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold" style={{ color: c.accent }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
+                    <h3 className="text-base font-bold leading-snug text-[#143C96]">{t(src.name, locale)}</h3>
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-xs font-bold" style={{ color: src.accent }}>{t({ en: "Explore", zh: "查看", th: "ดูเพิ่มเติม", vi: "Khám phá" }, locale)} <ArrowRight className="h-3.5 w-3.5" /></span>
                   </div>
                 </Link>
               );
@@ -148,6 +163,7 @@ export default function HomeView() {
         </div>
       </div>
     </section>
+
 
     {/* BY INDUSTRY */}
     <section className="mt-10 bg-gradient-to-br from-[#143C96] to-[#1A56DB] px-4 py-16 text-white sm:px-6 lg:px-8 md:py-20">

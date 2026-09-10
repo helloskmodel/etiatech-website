@@ -91,7 +91,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
   "mercury-uv-lamp": {
     slug: "mercury-uv-lamp",
     accent: "#1A56DB",
-    name: { en: "UV Spot Curing Systems", zh: "汞灯紫外光源", vi: "Hệ thống đóng rắn UV điểm", th: "ระบบบ่ม UV แบบจุด" },
+    name: { en: "UV Lamp Spot Curing Systems", zh: "汞灯紫外光源", vi: "Hệ thống đóng rắn điểm bằng đèn UV", th: "ระบบบ่ม UV แบบจุดด้วยหลอด" },
     tagline: {
       en: "Broad-spectrum mercury lamp UV curing — the proven choice when your adhesive needs full 320–500 nm output.",
       zh: "宽光谱汞灯紫外固化——当胶水需要完整 320–500 nm 输出时，久经验证的选择。",
@@ -109,7 +109,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
       { en: "Laboratory & R&D curing", zh: "实验室与研发固化", vi: "Đóng rắn trong phòng thí nghiệm & R&D", th: "การบ่มในห้องปฏิบัติการ & R&D" },
       { en: "Dose measurement & calibration", zh: "剂量测量与校准", vi: "Đo liều & hiệu chuẩn", th: "การวัดโดส & การสอบเทียบ" },
     ],
-    metaTitle: "UV Spot Curing Systems | OmniCure S2000 & S1500 | ETIA",
+    metaTitle: "UV Lamp Spot Curing Systems | OmniCure S2000 & S1500 | ETIA",
     metaDescription:
       "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
     match: (p) =>

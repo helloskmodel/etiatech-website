@@ -27,6 +27,12 @@ import { productHref, productImage, brandAccent, localizeProduct, productDocUrl 
  * models) renders the overview and an inquiry CTA rather than an empty grid —
  * we never invent specs to fill a page.
  */
+// Stable anchor for a group heading, so the home page can link straight to a
+// shelf rather than dropping the visitor at the top of a thirty-model page.
+export function groupAnchor(titleEn: string): string {
+  return titleEn.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 export default function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
   const { locale } = useLocale();
   const c = productCategories[slug];
@@ -105,7 +111,7 @@ export default function ProductCategoryView({ slug }: { slug: ProductCategorySlu
             // only ever one code path here.
             <div className="mt-8 space-y-10">
               {modelGroups.map((group, gi) => (
-                <div key={group.title ? group.title.en : `rest-${gi}`}>
+                <div key={group.title ? group.title.en : `rest-${gi}`} id={group.title ? groupAnchor(group.title.en) : undefined} className="scroll-mt-24">
                   {group.title && (
                     <div className="mb-4 flex items-baseline gap-3">
                       <h3 className="shrink-0 text-lg font-bold text-[#143C96]">{t(group.title, locale)}</h3>
