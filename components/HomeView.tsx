@@ -13,6 +13,7 @@ import {
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
 import { productImage, products } from "@/components/productCatalog";
+import { cosResize } from "@/components/cosImage";
 import { localizeHref } from "@/components/localeHref";
 import { categoriesForBrand } from "@/components/productCategories";
 import { publishedIndustries, industryHref } from "@/components/industrySolutions";
@@ -30,23 +31,26 @@ const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ classNa
   { title: { en: "In-House Repair & Lifecycle Support", zh: "内部维修 长期支持", th: "บริการซ่อมและการสนับสนุนตลอดอายุการใช้งาน", vi: "Sửa chữa nội bộ & hỗ trợ vòng đời sản phẩm" }, body: { en: "Troubleshooting, maintenance and repair coordination to keep your process running.", zh: "故障排查、维护保养与维修协调，保障工艺持续稳定运行。", th: "ให้การสนับสนุนด้านการแก้ไขปัญหา การบำรุงรักษา และการประสานงานซ่อม เพื่อช่วยให้กระบวนการผลิตดำเนินต่อไปอย่างมั่นคง", vi: "Hỗ trợ xử lý sự cố, bảo trì và điều phối sửa chữa nhằm giúp quy trình sản xuất vận hành ổn định." }, icon: Wrench },
 ];
 
-// The six light sources, named as Excelitas names them. Three of them are
-// sections of the UV LED page rather than pages of their own, so they link to
-// the shelf by anchor — no new routes, no URL churn.
 // The light sources, in the two families Excelitas' own UV Curing Product
 // Selector Guide uses: broad spectrum (a lamp, the whole 200–400 nm band) and
 // single wavelength (an LED at one peak). Infrared sits outside UV altogether
 // and splits again into the emitter and the system built around it. The family
 // label rides on the card so the classification is readable at a glance
 // instead of living in a paragraph above the row.
-const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: string; accent: string }[] = [
+const COS_IMAGE = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE";
+
+// `scene` is a photograph of the source at work, supplied by ETIA. It fills the
+// card edge to edge; `model` is the fallback — the catalogue shot of a
+// representative machine, letterboxed on white the way product photos are.
+const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: string; scene?: string; accent: string }[] = [
   // ── UV curing · broad spectrum (lamp) ──
   { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
     name: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", th: "ระบบบ่มแบบจุดด้วยหลอด UV", vi: "Hệ thống đóng rắn điểm bằng đèn UV" },
     href: "/product/technology/mercury-uv-lamp", model: "s2000-elite", accent: "#1A56DB" },
   { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
     name: { en: "Microwave UV Curing Systems", zh: "微波无极灯固化系统", th: "ระบบบ่ม UV ไมโครเวฟ", vi: "Hệ thống đóng rắn UV vi sóng" },
-    href: "/product/technology/microwave-uv-lamp", model: "f-series", accent: "#f59e0b" },
+    href: "/product/technology/microwave-uv-lamp", model: "f-series", accent: "#f59e0b",
+    scene: `${COS_IMAGE}/LIGHT%20RESOURCE%20/MICROWAVE` },
   { family: { en: "UV Curing · Broad Spectrum", zh: "紫外固化 · 宽光谱", th: "การบ่ม UV · สเปกตรัมกว้าง", vi: "Đóng rắn UV · Phổ rộng" },
     name: { en: "Mercury Arc Lamps", zh: "汞灯灯管与替换灯", th: "หลอดอาร์กปรอท", vi: "Đèn hồ quang thủy ngân" },
     href: "/product/technology/mercury-uv-lamp#mercury-arc-lamps", model: "s2000-lamp", accent: "#1A56DB" },
@@ -63,7 +67,8 @@ const LIGHT_SOURCES: { family: LangText; name: LangText; href: string; model: st
   // ── Infrared ──
   { family: { en: "Infrared Heating", zh: "红外加热", th: "การให้ความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" },
     name: { en: "Infrared Emitters", zh: "红外发射器", th: "ตัวเปล่งอินฟราเรด", vi: "Bộ phát hồng ngoại" },
-    href: "/product/technology/infrared-emitters", model: "ir-golden8", accent: "#dc2626" },
+    href: "/product/technology/infrared-emitters", model: "ir-golden8", accent: "#dc2626",
+    scene: `${COS_IMAGE}/LIGHT%20RESOURCE%20/Infrared%20Heating` },
   { family: { en: "Infrared Heating", zh: "红外加热", th: "การให้ความร้อนอินฟราเรด", vi: "Gia nhiệt hồng ngoại" },
     name: { en: "Infrared Systems", zh: "红外加热系统", th: "ระบบอินฟราเรด", vi: "Hệ thống hồng ngoại" },
     href: "/product/technology/infrared-heating", model: "ir-m85", accent: "#dc2626" },
@@ -168,11 +173,11 @@ export default function HomeView() {
           <HomeCarousel label={t({ en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" }, locale)}>
             {LIGHT_SOURCES.map((src) => {
               const stand = products.find((p) => p.slug === src.model);
-              const img = stand ? productImage(stand) : "";
+              const img = src.scene ? cosResize(src.scene, 900) : stand ? productImage(stand) : "";
               return (
                 <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[46%] lg:w-[31%]">
                   <div className="relative h-40 bg-[#F7FAFC] sm:h-48">
-                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className="object-contain p-4 transition duration-300 group-hover:scale-105" />}
+                    {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className={`transition duration-300 group-hover:scale-105 ${src.scene ? "object-cover" : "object-contain p-4"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: src.accent }} />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
@@ -202,7 +207,7 @@ export default function HomeView() {
               <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex w-[76%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-white/15 bg-white/10 transition hover:border-white/40 hover:bg-white/15 sm:w-[46%] lg:w-[31%]">
                 {s.cardImage ? (
                   <div className="relative h-40 bg-white/5 sm:h-48">
-                    <Image src={s.cardImage} alt={t(s.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className="object-cover transition duration-300 group-hover:scale-105" />
+                    <Image src={cosResize(s.cardImage, 900)} alt={t(s.name, locale)} fill sizes="(max-width:640px) 76vw, (max-width:1024px) 46vw, 31vw" className="object-cover transition duration-300 group-hover:scale-105" />
                   </div>
                 ) : (
                   <div className="h-2 w-full" style={{ background: s.accent }} />
