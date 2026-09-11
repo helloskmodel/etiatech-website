@@ -49,7 +49,7 @@ data/skuMaster.json        308 个 SKU：存货编码 / 料号 / 描述 / 类别
 data/serialRegistry.json   发码登记（只追加，禁止手改）
       │
       ├─→ /tools/labels?codes=…        打标签
-      └─→ /s/<CODE>                    扫码落地页
+      └─→ /scan?id=<CODE>              扫码落地页
 ```
 
 存货表三个关键列名不符直觉：**存货编码**是 ETIA 自己的物料编码，**存货名称**里放的是
@@ -198,7 +198,7 @@ URL 形状**已冻结**。`components/labels/serial.ts` 的 `SCAN_BASE` 是唯�
 
 二维码里只放 ID，不放任何客户信息（草案 §7 同一要求）。
 
-关于 `LAMP.ETIATECH.COM`：如果要用这个短域名，做成 301 到 `www.etiatech.com/s/…`
+关于 `LAMP.ETIATECH.COM`：如果要用这个短域名，做成 301 到 `www.etiatech.com/scan?id=…`
 即可，不要做成第二套页面。已经印出去的二维码指向 `www`，两套页面意味着两套真相。
 
 ## 5 · 以旧换新
@@ -219,10 +219,10 @@ URL 形状**已冻结**。`components/labels/serial.ts` 的 `SCAN_BASE` 是唯�
 |---|---|---|
 | Code 128 编码 | `node --experimental-strip-types scripts/check-code128.mjs`——用按标准另写的解码器把自己的输出读回来，校验模 103 校验位与子集切换 | 53 例全通过 |
 | Code 128 交叉核对 | 与 python-barcode 0.16.1 逐条比对 138 个字符串 | 136 例完全一致；2 例含数字对 `99` 的不一致，符号级解码显示对方丢了一对数字，我方正确 |
-| 二维码 | 以 6 倍像素渲染四张标签上的二维码，用 OpenCV 解码 | 四张全部解回 `https://www.etiatech.com/s/<CODE>` |
+| 二维码 | 以 8 倍像素渲染四张标签上的二维码，用 OpenCV 解码 | 四张全部解回 `https://www.etiatech.com/scan?id=<CODE>` |
 | 校验位 | `parseSerial` 对改一位、换相邻两位、L↔G 混淆全部拒绝 | 通过 |
 | 重复发码 | 对 P 类型二次发码 | 按设计拒绝并回显已有码 |
-| 页面 | `/tools/labels`、`/s/<CODE>`（有效 / 未发出 / 非法）、四语渲染 | 全部 200，渲染核对 |
+| 页面 | `/tools/labels`、`/scan?id=<CODE>` 与别名 `/s/<CODE>`（有效 / 未发出 / 非法）、四语渲染 | 全部 200，渲染核对 |
 
 ## 7 · 还没做的
 
