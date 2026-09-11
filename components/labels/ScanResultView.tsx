@@ -5,6 +5,13 @@ import { useLocale, t } from "@/components/LocaleContext";
 import { localizeHref } from "@/components/localeHref";
 import { inquiryMailto } from "@/components/contact";
 import { formatSerial, serialTypes, type SerialType } from "@/components/labels/serial";
+import AddToInquiryButton from "@/components/inquiry/AddToInquiryButton";
+import {
+  consumablesHref,
+  machineBySlug,
+  machineForEquipmentPn,
+  primaryConsumableFor,
+} from "@/components/consumables";
 
 /**
  * What a person sees after scanning an ETIA label. It is usually a phone, in a
@@ -95,6 +102,14 @@ export default function ScanResultView({ result }: { result: ScanResult }) {
   const isLamp = result.type === "L";
   const isGuide = result.type === "G";
 
+  // A machine and its lamp both count hours, so the customer learns the lamp is
+  // due from the machine itself. At that moment the nearest thing to hand is
+  // the label on the machine — so scanning it has to land on the lamp that
+  // fits, not on a contact form. Unmapped machines fall through to the generic
+  // doors rather than to a guessed part number.
+  const machine = result.type === "E" ? machineBySlug.get(machineForEquipmentPn[result.pn] ?? "") : undefined;
+  const next = machine ? primaryConsumableFor(machine.slug) : null;
+
   return (
     <Shell>
       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-[#41A62A]">
@@ -171,6 +186,84 @@ export default function ScanResultView({ result }: { result: ScanResult }) {
             )}
             <ArrowRight className="h-4 w-4" />
           </a>
+        </div>
+      )}
+
+      {machine && !next && (
+        <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-5">
+          <p className="text-sm leading-relaxed text-gray-700">
+            {t(
+              {
+                en: `Consumables and spare parts for the ${machine.name}, with what each one's service life is and the signs that say it is due.`,
+                zh: `${machine.name} 的耗材与备件——每一项的使用寿命，以及该换了的判断依据。`,
+                th: `วัสดุสิ้นเปลืองและอะไหล่สำหรับ ${machine.name} พร้อมอายุใช้งานของแต่ละชิ้นและสัญญาณที่บอกว่าถึงเวลาเปลี่ยน`,
+                vi: `Vật tư tiêu hao và phụ tùng cho ${machine.name}, kèm tuổi thọ của từng thứ và dấu hiệu cho biết đã tới lúc thay.`,
+              },
+              locale
+            )}
+          </p>
+          <Link
+            href={localizeHref(consumablesHref(machine.slug), locale)}
+            className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#1A56DB] hover:underline"
+          >
+            {t(
+              { en: "Open the parts list", zh: "打开耗材清单", th: "เปิดรายการอะไหล่", vi: "Mở danh sách phụ tùng" },
+              locale
+            )}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      )}
+
+      {machine && next && (
+        <div className="mt-6 rounded-2xl border border-[#1A56DB]/20 bg-[#1A56DB]/5 p-5">
+          <h2 className="flex items-center gap-2 text-sm font-bold text-[#1A56DB]">
+            <Package className="h-4 w-4" />
+            {t(
+              {
+                en: `Lamps for this ${machine.name}`,
+                zh: `这台 ${machine.name} 用的灯泡`,
+                th: `หลอดสำหรับ ${machine.name} เครื่องนี้`,
+                vi: `Đèn cho chiếc ${machine.name} này`,
+              },
+              locale
+            )}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-gray-700">
+            {t(
+              {
+                en: "The system and the lamp both count hours, so it tells you when the lamp is due. Order it here — the part numbers below are the ones that fit this machine.",
+                zh: "机器和灯泡都在计时，所以灯到期机器会告诉你。到期直接在这里订——下面的料号就是这台机器能装的。",
+                th: "ทั้งตัวเครื่องและหลอดต่างนับชั่วโมง เครื่องจึงบอกได้ว่าถึงเวลาเปลี่ยนหลอด สั่งได้ที่นี่ — รหัสอะไหล่ด้านล่างคือรุ่นที่ใช้กับเครื่องนี้ได้",
+                vi: "Cả hệ thống và đèn đều đếm giờ, nên máy sẽ báo khi đèn tới hạn. Đặt ngay tại đây — các mã hàng bên dưới là loại lắp vừa máy này.",
+              },
+              locale
+            )}
+          </p>
+          <ul className="mt-4 divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 bg-white">
+            {next.parts.map((p) => (
+              <li key={p.pn} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3">
+                <code className="w-28 shrink-0 font-mono text-xs font-bold text-[#1A56DB]">{p.pn}</code>
+                <span className="min-w-[10rem] flex-1 text-sm text-gray-700">{p.desc}</span>
+                <AddToInquiryButton item={{ kind: "part", pn: p.pn }} />
+              </li>
+            ))}
+          </ul>
+          <Link
+            href={localizeHref(consumablesHref(machine.slug), locale)}
+            className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#1A56DB] hover:underline"
+          >
+            {t(
+              {
+                en: "Every consumable for this machine, with service life",
+                zh: "这台机器的全部耗材与使用寿命",
+                th: "วัสดุสิ้นเปลืองทั้งหมดของเครื่องนี้ พร้อมอายุใช้งาน",
+                vi: "Toàn bộ vật tư cho máy này, kèm tuổi thọ",
+              },
+              locale
+            )}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       )}
 

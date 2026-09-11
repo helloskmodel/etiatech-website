@@ -9,9 +9,10 @@
 // px "to make them easier": a label that comes out 6% small does not fit the
 // die-cut stock, and nobody notices until a roll has been run.
 //
-//   asset   50 × 25 mm  equipment and parts — the ETIA service label
-//   lamp    50 × 30 mm  one per lamp, with the trade-in line
-//   guide   70 × 25 mm  light guides — the do-not-bend warning, four languages
+//   asset      50 × 25 mm  parts and consumables — the ETIA service label
+//   equipment  50 × 30 mm  machines — the lamp-reorder entry point
+//   lamp       50 × 30 mm  one per lamp, with the trade-in line
+//   guide      70 × 25 mm  light guides — the do-not-bend warning, four languages
 //
 // Server component: the barcode and QR are computed once at render and the
 // browser only has to print them.
@@ -20,17 +21,18 @@ import { code128Svg } from "./code128";
 import { qrSvgPath } from "./qr";
 import { formatSerial, serialTypes, serialUrl, type SerialType } from "./serial";
 
-export type LabelTemplate = "asset" | "lamp" | "guide";
+export type LabelTemplate = "asset" | "equipment" | "lamp" | "guide";
 
 export const labelTemplates: Record<LabelTemplate, { w: number; h: number; title: string }> = {
-  asset: { w: 50, h: 25, title: "Asset / service label" },
+  asset: { w: 50, h: 25, title: "Part / service label" },
+  equipment: { w: 50, h: 30, title: "Equipment label (reorder)" },
   lamp: { w: 50, h: 30, title: "Lamp label (trade-in)" },
   guide: { w: 70, h: 25, title: "Light guide warning label" },
 };
 
 /** The template a code's type gets unless the operator overrides it. */
 export const templateForType = (type: SerialType): LabelTemplate =>
-  type === "L" ? "lamp" : type === "G" ? "guide" : "asset";
+  type === "L" ? "lamp" : type === "G" ? "guide" : type === "E" ? "equipment" : "asset";
 
 export type LabelData = {
   code: string;
@@ -91,6 +93,7 @@ function Barcode({ code, width, height }: { code: string; width: number; height:
 
 function AssetLabel({ data, template }: { data: LabelData; template: LabelTemplate }) {
   const lamp = template === "lamp";
+  const equipment = template === "equipment";
   return (
     <div className="flex h-full gap-[1.5mm]">
       <div className="flex min-w-0 flex-1 flex-col">
@@ -104,7 +107,7 @@ function AssetLabel({ data, template }: { data: LabelData; template: LabelTempla
         <div className="mt-[0.8mm] font-bold leading-tight" style={{ fontSize: "3.4mm" }}>
           {data.pn}
         </div>
-        <div className="truncate leading-tight text-black/80" style={{ fontSize: "1.9mm" }}>
+        <div className="truncate text-black/80" style={{ fontSize: "1.9mm", lineHeight: 1.4 }}>
           {data.name}
         </div>
 
@@ -113,9 +116,18 @@ function AssetLabel({ data, template }: { data: LabelData; template: LabelTempla
             {data.batch ? `Batch ${data.batch} · ` : ""}
             {data.issued ?? ""}
           </div>
+        ) : equipment ? (
+          // The label on a machine is the one that has to earn its place. The
+          // system and its lamp both count hours, so the customer finds out the
+          // lamp is due from the machine itself — and at that moment the nearest
+          // thing to hand is this label. It has to send them to us rather than
+          // to a search engine, so it says what to do, not who we are.
+          <div className="mt-[1mm] font-bold" style={{ fontSize: "1.9mm", lineHeight: 1.35 }}>
+            灯泡到期？扫码订购
+            <br />
+            <span className="font-normal">Lamp due? Scan to reorder</span>
+          </div>
         ) : (
-          // The whole reason for the label: whoever is holding this thing can
-          // reach the people who service it without knowing who we are.
           <div className="mt-[0.6mm] leading-tight text-black/80" style={{ fontSize: "1.7mm" }}>
             Service &amp; spares · 服务与备件
             <br />
@@ -124,7 +136,7 @@ function AssetLabel({ data, template }: { data: LabelData; template: LabelTempla
         )}
 
         <div className="mt-auto">
-          <Barcode code={data.code} width={lamp ? 30 : 30} height={lamp ? 5 : 4.5} />
+          <Barcode code={data.code} width={30} height={lamp || equipment ? 5 : 4.5} />
           <div className="flex items-baseline justify-between leading-none" style={{ fontSize: "2.1mm" }}>
             <span className="font-mono font-bold tracking-tight">{formatSerial(data.code)}</span>
             <span style={{ fontSize: "1.7mm" }}>{SERVICE_HOST}</span>
@@ -138,7 +150,7 @@ function AssetLabel({ data, template }: { data: LabelData; template: LabelTempla
       </div>
 
       <div className="flex shrink-0 flex-col items-center justify-center">
-        <Qr code={data.code} size={lamp ? 15 : 14} />
+        <Qr code={data.code} size={lamp || equipment ? 15 : 14} />
       </div>
     </div>
   );

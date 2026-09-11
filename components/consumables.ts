@@ -99,6 +99,15 @@ export type Consumable = {
   href?: string;
   /** Shown as a warning band on the card. Used for the light guide bend rule. */
   caution?: LangText;
+  /**
+   * The system counts this one down and tells the operator when it is due.
+   * True of a mercury lamp, whose hours the machine and the Intelli-Lamp chip
+   * both track; not true of an LED head, which is rated for 20,000 h and is
+   * replaced on a measurement, not on a countdown. Only a countdown consumable
+   * is offered on a scanned machine's page — offering to reorder an LED head
+   * would be answering a question the customer did not ask.
+   */
+  countdown?: true;
 };
 
 // Sources, written once so the wording stays identical everywhere:
@@ -120,6 +129,7 @@ export const consumables: Consumable[] = [
   {
     id: "lamp-s2000-elite",
     kind: "lamp",
+    countdown: true,
     name: { en: "S2000 Elite lamp module", zh: "S2000 Elite 灯泡模块", th: "โมดูลหลอด S2000 Elite", vi: "Mô-đun đèn S2000 Elite" },
     what: {
       en: "The 200 W mercury lamp in its own module, with the Intelli-Lamp chip that tells the system how many hours the lamp has run. Standard for adhesive curing, Surface Cure for tack-free acrylic surfaces.",
@@ -192,6 +202,7 @@ export const consumables: Consumable[] = [
   {
     id: "lamp-s2000",
     kind: "lamp",
+    countdown: true,
     name: { en: "S2000 replacement lamp", zh: "S2000 替换灯泡", th: "หลอดเปลี่ยน S2000", vi: "Đèn thay thế S2000" },
     what: {
       en: "The 200 W replacement lamp for the S2000 and S2000-XLA platform, Standard and Surface Cure. It carries Intelli-Lamp too, so the system reads the hours off the lamp itself. Same 200 W mercury arc source as the Elite's; the module differs and the two are not interchangeable.",
@@ -786,5 +797,52 @@ export const machineForProduct: Record<string, string> = {
   ac9225: "ac-series",
   "ac9225-f": "ac-series",
 };
+
+/**
+ * A machine's catalogue part number to its consumables page.
+ *
+ * This is what turns the label on the back of a machine into a way back to
+ * ETIA. Both the system and the lamp count hours, so the customer learns the
+ * lamp is due from the machine itself — at which point the nearest thing to
+ * hand is our label. Scanning it has to land on the lamp that fits, not on a
+ * generic contact form, or they will go and search instead and find somebody
+ * else.
+ *
+ * Explicit rather than pattern-matched: a wrong lamp part number here costs a
+ * customer a wasted order, so an unmapped machine falls through to the generic
+ * page rather than to a guess.
+ */
+export const machineForEquipmentPn: Record<string, string> = {
+  "010-00148R": "s2000",
+  "010-00148R-DEMO": "s2000",
+  "010-00464R": "s2000-elite",
+  "010-00529R": "s2000-elite",
+  "010-00530R": "s2000-elite",
+  "010-00577R": "s2000-elite",
+  // The radiometer belongs with the system it calibrates.
+  "010-00208": "s2000-elite",
+  "010-00369R": "lx500",
+  "010-00375R": "lx500",
+  "010-00376R": "lx500",
+  "010-00377R": "lx500",
+  "010-00520R": "lx500",
+  "010-00521R": "lx500",
+  "010-00522R": "lx500",
+  "010-00523R": "lx500",
+  "010-00295R": "lx500",
+  "010-00248R": "lx500",
+};
+
+/**
+ * The consumable a scanned machine will ask for next — the one it counts down.
+ * Returned with its part numbers already resolved, so a scan page can offer
+ * them directly. Null for a machine that counts nothing down.
+ */
+export function primaryConsumableFor(slug: string): { consumable: Consumable; parts: ConsumablePart[] } | null {
+  const c = consumablesFor(slug).find((x) => x.countdown);
+  if (!c) return null;
+  const parts = partsFor(c);
+  return parts.length ? { consumable: c, parts } : null;
+}
 
 export const consumablesHref = (slug?: string) => (slug ? `/consumables/${slug}` : "/consumables");
