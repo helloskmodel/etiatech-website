@@ -185,6 +185,10 @@ export const parts: Part[] = [
   { pn: "010-00253R", desc: "Cure Ring Detector, 15 mm", family: "radiometry-s", attrs: {"kind": "Detector", "item": "Cure Ring Detector 15 mm"} },
   { pn: "010-00256R", desc: "Cure Site Detector Controller", family: "radiometry-s", attrs: {"kind": "Detector", "item": "Detector Controller"} },
   // ── light-guides ──
+  // These are the OmniCure catalogue numbers, kept because customers order by
+  // them and ETIA stocks them. The light guides ETIA sells as its own product
+  // line are the SR series in data/skuMaster.json; the product pages for light
+  // guides in productCatalog.ts are ETIA-branded for that reason.
   { pn: "805-00002", desc: "Liquid Light Guide (5 mm x 1000 mm)", family: "light-guides", attrs: {"type": "Liquid Light Guide", "legs": "Single", "tip": "5 mm", "length": "1000 mm"}, stocked: true },
   { pn: "805-00004", desc: "Liquid Light Guide (3 mm x 1000 mm)", family: "light-guides", attrs: {"type": "Liquid Light Guide", "legs": "Single", "tip": "3 mm", "length": "1000 mm"}, stocked: true },
   { pn: "805-00007", desc: "Liquid Light Guide (5 mm x 1500 mm)", family: "light-guides", attrs: {"type": "Liquid Light Guide", "legs": "Single", "tip": "5 mm", "length": "1500 mm"}, stocked: true },

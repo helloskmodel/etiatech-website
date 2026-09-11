@@ -115,7 +115,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     ],
     metaTitle: "UV Lamp Spot Curing Systems | OmniCure S2000 & S1500 | ETIA",
     metaDescription:
-      "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
+      "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and filters plus ETIA's own light guides, supplied and serviced by ETIA in Asia-Pacific.",
     groups: [
       {
         title: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", vi: "Hệ thống đóng rắn điểm bằng đèn UV", th: "ระบบบ่มแบบจุดด้วยหลอด UV" },

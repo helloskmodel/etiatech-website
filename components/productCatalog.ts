@@ -22,6 +22,16 @@ export type Product = {
   imageUrl?: string;
 };
 
+// The name of the brand group a product sits in — not the same thing as its
+// own `brand`. ETIA's light guides sit in the OmniCure group because that is
+// where a customer shopping for an S Series looks for them.
+export const brandGroupName: Record<Product["brandId"], string> = {
+  omnicure: "OmniCure",
+  phoseon: "Phoseon",
+  fusionuv: "Fusion UV",
+  noblelight: "Noblelight",
+};
+
 export const brandAccent: Record<Product["brandId"], string> = {
   omnicure: "#1A56DB",
   phoseon: "#0ea5e9",
@@ -432,17 +442,23 @@ export const products: Product[] = [
   // The six S-Series accessories the manufacturer lists individually, in its
   // own order. They were one catalogue entry with six bullets, which is not
   // something a customer can point at and ask for.
+  //
+  // The three light guides among them are ETIA's own line, not Excelitas
+  // catalogue parts: they are built for us and sold under our name, and they
+  // fit the OmniCure S Series light guide port. The 805-/806- numbers stay in
+  // the parts picker because customers order by them, and we stock those too.
   {
     slug: "s-liquid-light-guide",
-    name: "OmniCure Liquid Light Guide",
-    brand: "OmniCure",
+    name: "ETIA Liquid Light Guide",
+    brand: "ETIA",
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "S-Series Accessory",
     accent: "#1A56DB",
     intro:
-      "The standard way to get an S Series lamp's output to the joint: a liquid-filled guide in 3, 5 and 8 mm tip diameters and standard lengths from 750 to 3000 mm. Dual and triple-leg versions split one lamp across several cure sites.",
+      "ETIA's own liquid-filled light guide, built to fit the OmniCure S Series light guide port: 3, 5 and 8 mm tip diameters, standard lengths from 750 to 3000 mm. Dual and triple-leg versions split one lamp across several cure sites. We stock the OmniCure 805- series alongside it, so an existing part number keeps working.",
     features: [
+      "ETIA's own light guide line, held in regional stock",
       "Tip diameters of 3, 5 and 8 mm",
       "Standard lengths from 750 to 3000 mm",
       "Dual and triple-leg configurations for multi-site curing",
@@ -456,23 +472,26 @@ export const products: Product[] = [
       "Bench and automated spot curing alike",
     ],
     specs: [
+      ["Supplied By", "ETIA — our own light guide line"],
       ["Tip Diameters", "3, 5 and 8 mm"],
       ["Standard Lengths", "750–3000 mm"],
       ["Configurations", "Single, dual-leg and triple-leg"],
       ["Fits", "OmniCure S1500 Pro · S2000 Elite"],
+      ["Also Stocked", "OmniCure 805- series equivalents"],
     ],
   },
   {
     slug: "s-fiber-light-guide",
-    name: "OmniCure High-Power Fiber Light Guide",
-    brand: "OmniCure",
+    name: "ETIA High-Power Fiber Light Guide",
+    brand: "ETIA",
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "S-Series Accessory",
     accent: "#1A56DB",
     intro:
-      "A fibre guide that splits one lamp's output evenly across several cure sites — the same energy at every leg, rather than the brightest at the shortest.",
+      "ETIA's own fibre light guide, which splits one lamp's output evenly across several cure sites — the same energy at every leg, rather than the brightest at the shortest. Single, dual, triple and four-leg builds with 3, 5 and 8 mm tips, 1000 to 3000 mm. The OmniCure 806- series is stocked alongside it.",
     features: [
+      "ETIA's own light guide line, held in regional stock",
       "Equal distribution of light energy to multiple cure sites",
       "Driven from a single light source",
       "Fibre construction for high-power duty",
@@ -484,23 +503,26 @@ export const products: Product[] = [
       "Balanced curing across a fixture",
     ],
     specs: [
+      ["Supplied By", "ETIA — our own light guide line"],
       ["Construction", "Fibre light guide"],
       ["Distribution", "Equal light energy to multiple cure sites"],
-      ["Source", "One light source drives all legs"],
+      ["Legs", "Single, 2-leg, 3-leg and 4-leg"],
       ["Fits", "OmniCure S1500 Pro · S2000 Elite"],
+      ["Also Stocked", "OmniCure 806- series equivalents"],
     ],
   },
   {
     slug: "s-fiber-light-line",
-    name: "OmniCure High-Power Fiber Light Line",
-    brand: "OmniCure",
+    name: "ETIA High-Power Fiber Light Line",
+    brand: "ETIA",
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "S-Series Accessory",
     accent: "#1A56DB",
     intro:
-      "A high-output linear beam. The fibres run unbroken from the guide input to the termination, so the coupling losses of a bolted-on light-line accessory do not arise.",
+      "ETIA's own light line: a high-output linear beam in which the fibres run unbroken from the guide input to the termination, so the coupling losses of a bolted-on light-line accessory do not arise. Built to the line length and width the job needs, single or dual leg.",
     features: [
+      "ETIA's own light guide line, built to order on line length and width",
       "High-output linear beam of curing energy",
       "Fibres continuous from light guide input to termination",
       "Eliminates the coupling losses of standard light-line accessories",
@@ -512,10 +534,12 @@ export const products: Product[] = [
       "Seams and linear beads",
     ],
     specs: [
-      ["Beam", "High-output linear"],
+      ["Supplied By", "ETIA — our own light guide line"],
+      ["Beam", "High-output linear, built to the line length required"],
       ["Fibre Path", "Continuous, input to termination"],
       ["Coupling Loss", "None at the termination joint"],
       ["Fits", "OmniCure S1500 Pro · S2000 Elite"],
+      ["Also Stocked", "OmniCure 806- series light lines"],
     ],
   },
   // The seven filter cartridges for the S2000 Elite and S1500 Pro. The lamp

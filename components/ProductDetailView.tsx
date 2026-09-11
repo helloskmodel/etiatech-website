@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FileText, Download } from "lucide-react";
-import { productImage, productHref, products, localizeProduct, productTagline, techRouteFor, productDocs, productDocUrl, type Product } from "@/components/productCatalog";
+import { brandGroupName, productImage, productHref, products, localizeProduct, productTagline, techRouteFor, productDocs, productDocUrl, type Product } from "@/components/productCatalog";
 import { inquiryMailto } from "@/components/contact";
 import FinalCta from "@/components/FinalCta";
 import { localizeSpecLabel } from "@/components/specLabels.zh";
@@ -33,6 +33,10 @@ export default function ProductDetailView({ product, accent }: { product: Produc
   // and its filter cartridges — five pairs of products ended up with the same
   // heading. Drop only the part-number tail the name carries after a dash.
   const shortName = p.name.split(" — ")[0];
+  // The related block is the brand group, so it is named after the group. A
+  // product's own brand is not the same thing: ETIA's light guides sit in the
+  // OmniCure group, and "More ETIA Systems" over four OmniCure lamps is wrong.
+  const groupName = brandGroupName[product.brandId];
   const related = products
     .filter((x) => x.brandId === product.brandId && x.slug !== product.slug)
     .slice(0, 4)
@@ -202,7 +206,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         <section className="py-16 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Related Products", zh: "相关产品", th: "ผลิตภัณฑ์ที่เกี่ยวข้อง", vi: "Sản phẩm liên quan" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `More ${p.brand} Systems`, zh: `更多 ${p.brand} 系统`, th: `ระบบ ${p.brand} เพิ่มเติม`, vi: `Thêm hệ thống ${p.brand}` }, locale)}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `More ${groupName} Systems`, zh: `更多 ${groupName} 系统`, th: `ระบบ ${groupName} เพิ่มเติม`, vi: `Thêm hệ thống ${groupName}` }, locale)}</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((x) => (
                 <Link key={x.slug} href={productHref(x)} className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-[#1A56DB]/30 transition-all">
