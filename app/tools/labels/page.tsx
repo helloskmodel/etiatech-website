@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Label, { labelTemplates, templateForType, type LabelTemplate, type LabelData } from "@/components/labels/Label";
+import Label, { labelTemplates, pairedWith, templateForType, type LabelTemplate, type LabelData } from "@/components/labels/Label";
 import { lookupSerial, recentSerials } from "@/components/labels/registry";
 import { formatSerial, normalizeSerial, serialTypes } from "@/components/labels/serial";
 
@@ -61,7 +61,14 @@ export default async function LabelToolPage({
       issued: r.issued,
     };
     const template = forced ?? templateForType(r.type);
-    for (let i = 0; i < copies; i++) printable.push({ data, template });
+    const pair = pairedWith(template);
+    for (let i = 0; i < copies; i++) {
+      printable.push({ data, template });
+      // A light guide gets two labels on the same backing: the identity half
+      // and the red warning half. Printing one without the other is how a
+      // guide ends up on a bench with nothing telling anyone not to bend it.
+      if (pair) printable.push({ data, template: pair });
+    }
   }
 
   const recent = recentSerials(24);
@@ -138,6 +145,30 @@ export default async function LabelToolPage({
               ))}
             </ul>
           )}
+
+          {/* Placement is the half of a label system that lives outside the
+              software, and getting it wrong is a compliance problem rather
+              than a cosmetic one: covering a CE mark or a mercury warning is
+              defacing required safety information. */}
+          <details className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-3 text-xs text-gray-600">
+            <summary className="cursor-pointer font-semibold text-gray-700">Where each label goes</summary>
+            <ul className="mt-2 space-y-1">
+              <li>
+                <b>Equipment</b> — near the factory nameplate, never over it. Never over the CE, UKCA or ETL marks,
+                the serial number, the rating plate or any safety text.
+              </li>
+              <li>
+                <b>Lamp</b> — on the lamp box, not over the mercury warning sticker or the part number.
+              </li>
+              <li>
+                <b>Light guide</b> — both halves on the same backing: the ID label and the red DO NOT BEND label,
+                near the connector end where a person picks the guide up.
+              </li>
+              <li>
+                <b>Part</b> — on the bag or box, not over the manufacturer&rsquo;s own part label.
+              </li>
+            </ul>
+          </details>
 
           {printable.length > 0 && (
             <p className="mt-4 text-xs text-gray-500">

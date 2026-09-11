@@ -1,46 +1,17 @@
 import type { Metadata } from "next";
-import ScanResultView, { type ScanResult } from "@/components/labels/ScanResultView";
-import { lookupSerial } from "@/components/labels/registry";
+import ScanResultView from "@/components/labels/ScanResultView";
+import { scanResultFor } from "@/components/labels/scanResult";
 
-// Where every ETIA QR lands: /s/<CODE>.
-//
-// The URL is printed on labels that will be on equipment for years, so the
-// shape of it is frozen — `SCAN_BASE` in components/labels/serial.ts is the
-// single place it is written, and this route has to keep answering it.
-//
-// noindex: these pages are for whoever is holding the item. They are thin,
-// numerous and would be a doorway-page pattern in a search index.
+// The short alias for the gateway. `/scan?id=<CODE>` is what the QR codes
+// carry; this exists because a code read off a barcode or spoken down a phone
+// is easier to type after a slash than after a query string, and because any
+// label printed before the gateway existed points here.
 export const metadata: Metadata = {
   title: "ETIA asset code",
   robots: { index: false, follow: false, nocache: true },
 };
 
-export default async function ScanPage({ params }: { params: Promise<{ code: string }> }) {
+export default async function ScanAliasPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
-  const lookup = lookupSerial(decodeURIComponent(code));
-
-  let result: ScanResult;
-  if (lookup.status === "invalid") {
-    result = { status: "invalid", reason: lookup.reason };
-  } else if (lookup.status === "unknown") {
-    result = { status: "unknown", code: lookup.code };
-  } else {
-    const r = lookup.record;
-    result = {
-      status: "ok",
-      code: r.code,
-      type: r.type,
-      pn: r.pn,
-      name: r.name,
-      issued: r.issued,
-      ...(r.batch ? { batch: r.batch } : {}),
-      // Deliberately not `origin`: the inventory's 产地 column is where ETIA
-      // buys from, not a declared country of origin, and the two disagree —
-      // a 012-64000R box is stamped MADE IN USA where the inventory says
-      // 加拿大. Country of origin belongs on a commercial invoice.
-      ...(lookup.item?.category ? { category: lookup.item.category } : {}),
-    };
-  }
-
-  return <ScanResultView result={result} />;
+  return <ScanResultView result={scanResultFor(decodeURIComponent(code))} />;
 }

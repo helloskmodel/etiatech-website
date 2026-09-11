@@ -28,8 +28,15 @@ import type { LangText } from "@/components/LocaleContext";
 export const SERIAL_PREFIX = "ET";
 export const SERIAL_LENGTH = 12;
 
-/** Where a scanned code goes. Printed on every QR, so it must never change. */
-export const SCAN_BASE = "https://www.etiatech.com/s";
+/**
+ * Where a scanned code goes. Printed on every QR, so it must never change.
+ *
+ * One gateway for every label, as the Label & QR Service System draft asks:
+ * the page works out from the code itself whether it is equipment, a lamp, a
+ * light guide or a part, and shows the right thing. `/s/<code>` still resolves,
+ * so a code typed by hand or read off a barcode gets to the same place.
+ */
+export const SCAN_BASE = "https://www.etiatech.com/scan";
 
 export type SerialType = "E" | "P" | "L" | "G";
 
@@ -113,12 +120,15 @@ export function buildSerial({ type, year, seq }: SerialParts): string {
 
 /**
  * Accept what a person or a scanner actually hands over: the bare code, the
- * hyphenated form off a label, a full scanned URL, lower case, stray spaces.
+ * hyphenated form off a label, a scanned URL in either shape, lower case,
+ * stray spaces.
  */
 export function normalizeSerial(input: string): string {
-  const trimmed = input.trim();
-  const fromUrl = /\/s\/([^/?#\s]+)/i.exec(trimmed);
-  return (fromUrl ? fromUrl[1] : trimmed).replace(/[\s\-_.]/g, "").toUpperCase();
+  const trimmed = (input ?? "").trim();
+  const fromQuery = /[?&]id=([^&#\s]+)/i.exec(trimmed);
+  const fromPath = /\/s\/([^/?#\s]+)/i.exec(trimmed);
+  const raw = fromQuery ? decodeURIComponent(fromQuery[1]) : fromPath ? fromPath[1] : trimmed;
+  return raw.replace(/[\s\-_.]/g, "").toUpperCase();
 }
 
 export type ParsedSerial =
@@ -150,4 +160,4 @@ export function formatSerial(code: string): string {
 }
 
 /** The URL inside the QR. Printed permanently, so it is built in one place. */
-export const serialUrl = (code: string): string => `${SCAN_BASE}/${normalizeSerial(code)}`;
+export const serialUrl = (code: string): string => `${SCAN_BASE}?id=${normalizeSerial(code)}`;
