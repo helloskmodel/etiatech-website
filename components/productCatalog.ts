@@ -518,6 +518,48 @@ export const products: Product[] = [
       ["Fits", "OmniCure S1500 Pro · S2000 Elite"],
     ],
   },
+  // The seven filter cartridges for the S2000 Elite and S1500 Pro. The lamp
+  // emits 250–600 nm continuously; the cartridge is what decides which part of
+  // that reaches the part, so choosing it is choosing the process. Sold singly
+  // and swapped by the operator without tools, which is why a plant running
+  // several adhesives keeps two or three on the shelf.
+  {
+    slug: "s2000-elite-filters",
+    name: "OmniCure S2000 Elite Optical Bandpass Filters",
+    brand: "OmniCure",
+    brandId: "omnicure",
+    tech: "UV Spot Curing",
+    sub: "S-Series Accessory",
+    accent: "#1A56DB",
+    imageUrl: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20FILTER",
+    intro:
+      "Seven user-interchangeable filter cartridges for the S2000 Elite and S1500 Pro. The 200 W lamp emits a continuous 250–600 nm spectrum; the cartridge selects the band the photoinitiator actually needs and discards the rest — the UVC that damages a substrate, the infrared that heats it, the visible light that does nothing for the cure.",
+    features: [
+      "250–450 nm — the full band including UVC, for maximum cure and surface tack-free finish",
+      "320–390 nm — the standard adhesive filter: depth cure of clear acrylates, least heat and substrate damage",
+      "320–500 nm — UVA plus violet, for pigmented, filled or thick sections and cationic epoxies",
+      "365 nm — narrow UVA, to match a formulation specified at 365 nm or compare against a 365 nm LED",
+      "400–500 nm — visible-light photoinitiators, dental-type and biocompatible formulations, light-sensitive substrates",
+      "Blank — passes the lamp's full output, used with the Surface Cure lamp",
+      "Custom — a band specified on order when none of the standard six fits",
+      "Changed by the operator without tools; the system logs which cartridge is fitted",
+    ],
+    applications: [
+      "Matching the filter to the adhesive's photoinitiator absorption peak",
+      "One lamp serving several adhesives on the same bench",
+      "Protecting polycarbonate, plated parts and optics from short-wave UV",
+      "Laboratory work where the band under test changes week to week",
+      "Photorheology and photo-DSC, where the band is part of the method",
+    ],
+    specs: [
+      ["Standard Bands", "250–450 · 320–390 · 320–500 · 365 · 400–500 nm"],
+      ["Blank Cartridge", "019-00392R — full lamp output, no band selection"],
+      ["Custom Cartridge", "019-00394R — band specified on order"],
+      ["Filter Kit", "019-00410R — the standard bands as one set"],
+      ["Fits", "OmniCure S2000 Elite · OmniCure S1500 Pro"],
+      ["Changeover", "User-interchangeable, no tools"],
+    ],
+  },
   {
     slug: "s-cure-ring-adapter",
     name: "OmniCure UV Cure-Ring Optical Adapter",

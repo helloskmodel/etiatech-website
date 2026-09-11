@@ -28,7 +28,11 @@ export default function ProductDetailView({ product, accent }: { product: Produc
   const { locale } = useLocale();
   const p = localizeProduct(product, locale);
   const docs = productDocs[product.slug] ?? [];
-  const shortName = product.name.split(" ").slice(0, 3).join(" ");
+  // The heading names the product, so it has to be the product's name. Taking
+  // the first three words made "OmniCure S2000 Elite" out of both the system
+  // and its filter cartridges — five pairs of products ended up with the same
+  // heading. Drop only the part-number tail the name carries after a dash.
+  const shortName = p.name.split(" — ")[0];
   const related = products
     .filter((x) => x.brandId === product.brandId && x.slug !== product.slug)
     .slice(0, 4)
