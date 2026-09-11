@@ -278,6 +278,15 @@ export const parts: Part[] = [
   { pn: "810-00048", desc: "Cure ring, slotted, 63.5 mm OD, 10 mm ID for 5 mm LG", family: "optical", attrs: {"kind": "Cure ring", "item": "Slotted, 10 mm ID, 5 mm LG"} },
   { pn: "810-00049", desc: "Cure ring, no-slot, 63.5 mm OD, 10 mm ID for 8 mm LG", family: "optical", attrs: {"kind": "Cure ring", "item": "No-slot, 10 mm ID, 8 mm LG"} },
   { pn: "810-00050", desc: "Cure ring, no-slot, 63.5 mm OD, 15 mm ID for 5 mm LG", family: "optical", attrs: {"kind": "Cure ring", "item": "No-slot, 15 mm ID, 5 mm LG"} },
+  // The five internal filter cartridges for the S2000 / S2000-XLA and S1500,
+  // in the order they are printed on the "Filter Option Installed" label on the
+  // back of the machine — a technician reads the ticked box and finds the same
+  // row here. Part numbers are off that label (919-00022 Rev.1).
+  { pn: "019-01046R", desc: "S2000 / S1500 Filter 250–450 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "250–450 nm"} },
+  { pn: "019-01048R", desc: "S2000 / S1500 Filter 320–390 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "320–390 nm"} },
+  { pn: "019-01049R", desc: "S2000 / S1500 Filter 320–500 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "320–500 nm"} },
+  { pn: "019-01047R", desc: "S2000 / S1500 Filter 400–500 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "400–500 nm"} },
+  { pn: "019-01045R", desc: "S2000 / S1500 Filter 365 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "365 nm"} },
   { pn: "019-00108", desc: "External Filter Adapter Kit", family: "optical", attrs: {"kind": "External filter", "item": "Adapter kit"} },
   { pn: "019-01022", desc: "320–480 nm External Filter", family: "optical", attrs: {"kind": "External filter", "item": "320–480 nm"} },
   { pn: "019-01023", desc: "320–390 nm External Filter", family: "optical", attrs: {"kind": "External filter", "item": "320–390 nm"} },

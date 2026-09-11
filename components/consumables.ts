@@ -183,10 +183,10 @@ export const consumables: Consumable[] = [
       },
     ],
     caution: {
-      en: "Never interrupt the warm-up cycle. A lamp that is shut down mid-warm-up is not covered by the manufacturer's guarantee.",
-      zh: "预热过程绝对不能中断。预热中途断电的灯泡不在厂家保证范围内。",
-      th: "ห้ามขัดจังหวะรอบอุ่นเครื่องเด็ดขาด หลอดที่ถูกปิดกลางคันระหว่างอุ่นเครื่องไม่อยู่ในการรับประกันของผู้ผลิต",
-      vi: "Tuyệt đối không ngắt chu trình khởi động làm nóng. Đèn bị tắt giữa chừng khi đang làm nóng không được nhà sản xuất bảo đảm.",
+      en: "Never interrupt the warm-up cycle: a lamp shut down mid-warm-up is not covered by the manufacturer's guarantee. The lamp contains mercury and its box says so — it is hazardous waste, and it must be disposed of under the law of the country it is in, never in general waste.",
+      zh: "预热过程绝对不能中断：预热中途断电的灯泡不在厂家保证范围内。灯泡含汞，包装盒上就写着——属危险废物，必须按所在国法律处置，绝不可混入一般垃圾。",
+      th: "ห้ามขัดจังหวะรอบอุ่นเครื่องเด็ดขาด หลอดที่ถูกปิดกลางคันระหว่างอุ่นเครื่องไม่อยู่ในการรับประกันของผู้ผลิต หลอดมีสารปรอทตามที่ระบุบนกล่อง จัดเป็นของเสียอันตราย ต้องกำจัดตามกฎหมายของประเทศที่หลอดอยู่ ห้ามทิ้งรวมกับขยะทั่วไป",
+      vi: "Tuyệt đối không ngắt chu trình khởi động làm nóng: đèn bị tắt giữa chừng khi đang làm nóng không được nhà sản xuất bảo đảm. Đèn có chứa thủy ngân — hộp đèn ghi rõ điều đó — nên là chất thải nguy hại và phải được xử lý theo luật của nước nơi đèn đang ở, tuyệt đối không bỏ vào rác thường.",
     },
   },
   {
@@ -194,10 +194,10 @@ export const consumables: Consumable[] = [
     kind: "lamp",
     name: { en: "S2000 replacement lamp", zh: "S2000 替换灯泡", th: "หลอดเปลี่ยน S2000", vi: "Đèn thay thế S2000" },
     what: {
-      en: "The 200 W replacement lamp for the original S2000 platform, Standard and Surface Cure. Same 200 W mercury source; the module differs from the Elite's and the two are not interchangeable.",
-      zh: "原 S2000 平台的 200 W 替换灯泡，分标准型与表面固化型。同为 200 W 汞灯，但模块与 Elite 不同，两者不能互换。",
-      th: "หลอดเปลี่ยน 200 วัตต์สำหรับแพลตฟอร์ม S2000 เดิม มีทั้งรุ่นมาตรฐานและ Surface Cure เป็นหลอดปรอท 200 วัตต์เหมือนกัน แต่โมดูลต่างจากของ Elite และใช้แทนกันไม่ได้",
-      vi: "Đèn thay thế 200 W cho nền tảng S2000 gốc, bản Standard và Surface Cure. Cùng nguồn thủy ngân 200 W; mô-đun khác với bản Elite và hai loại không thay cho nhau được.",
+      en: "The 200 W replacement lamp for the S2000 and S2000-XLA platform, Standard and Surface Cure. It carries Intelli-Lamp too, so the system reads the hours off the lamp itself. Same 200 W mercury arc source as the Elite's; the module differs and the two are not interchangeable.",
+      zh: "S2000 与 S2000-XLA 平台的 200 W 替换灯泡，分标准型与表面固化型。它同样带 Intelli-Lamp，机器直接从灯上读灯时。与 Elite 同为 200 W 汞灯，但模块不同，两者不能互换。",
+      th: "หลอดเปลี่ยน 200 วัตต์สำหรับแพลตฟอร์ม S2000 และ S2000-XLA มีทั้งรุ่นมาตรฐานและ Surface Cure มีชิป Intelli-Lamp เช่นกัน ระบบจึงอ่านชั่วโมงจากตัวหลอดได้ เป็นหลอดปรอท 200 วัตต์เหมือนของ Elite แต่โมดูลต่างกันและใช้แทนกันไม่ได้",
+      vi: "Đèn thay thế 200 W cho nền tảng S2000 và S2000-XLA, bản Standard và Surface Cure. Đèn cũng mang chip Intelli-Lamp nên hệ thống đọc số giờ ngay trên đèn. Cùng nguồn hồ quang thủy ngân 200 W như bản Elite; mô-đun khác nhau và hai loại không thay cho nhau được.",
     },
     pns: ["012-64000R", "012-65000R"],
     href: "/product/systems/s2000-lamp",
@@ -211,10 +211,10 @@ export const consumables: Consumable[] = [
         {
           label: { en: "Counted by", zh: "计时方式", th: "นับโดย", vi: "Được đếm bởi" },
           value: {
-            en: "The system's own lamp-hour counter",
-            zh: "机器自带的灯时计数器",
-            th: "ตัวนับชั่วโมงหลอดของระบบเอง",
-            vi: "Bộ đếm giờ đèn của chính hệ thống",
+            en: "Intelli-Lamp chip on the lamp, read by the system",
+            zh: "灯上的 Intelli-Lamp 芯片，由机器读取",
+            th: "ชิป Intelli-Lamp บนหลอด อ่านค่าโดยระบบ",
+            vi: "Chip Intelli-Lamp trên đèn, được hệ thống đọc",
           },
         },
       ],
@@ -246,10 +246,10 @@ export const consumables: Consumable[] = [
       },
     ],
     caution: {
-      en: "Never interrupt the warm-up cycle. A lamp that is shut down mid-warm-up is not covered by the manufacturer's guarantee.",
-      zh: "预热过程绝对不能中断。预热中途断电的灯泡不在厂家保证范围内。",
-      th: "ห้ามขัดจังหวะรอบอุ่นเครื่องเด็ดขาด หลอดที่ถูกปิดกลางคันระหว่างอุ่นเครื่องไม่อยู่ในการรับประกันของผู้ผลิต",
-      vi: "Tuyệt đối không ngắt chu trình khởi động làm nóng. Đèn bị tắt giữa chừng khi đang làm nóng không được nhà sản xuất bảo đảm.",
+      en: "Never interrupt the warm-up cycle: a lamp shut down mid-warm-up is not covered by the manufacturer's guarantee. The lamp contains mercury and its box says so — it is hazardous waste, and it must be disposed of under the law of the country it is in, never in general waste.",
+      zh: "预热过程绝对不能中断：预热中途断电的灯泡不在厂家保证范围内。灯泡含汞，包装盒上就写着——属危险废物，必须按所在国法律处置，绝不可混入一般垃圾。",
+      th: "ห้ามขัดจังหวะรอบอุ่นเครื่องเด็ดขาด หลอดที่ถูกปิดกลางคันระหว่างอุ่นเครื่องไม่อยู่ในการรับประกันของผู้ผลิต หลอดมีสารปรอทตามที่ระบุบนกล่อง จัดเป็นของเสียอันตราย ต้องกำจัดตามกฎหมายของประเทศที่หลอดอยู่ ห้ามทิ้งรวมกับขยะทั่วไป",
+      vi: "Tuyệt đối không ngắt chu trình khởi động làm nóng: đèn bị tắt giữa chừng khi đang làm nóng không được nhà sản xuất bảo đảm. Đèn có chứa thủy ngân — hộp đèn ghi rõ điều đó — nên là chất thải nguy hại và phải được xử lý theo luật của nước nơi đèn đang ở, tuyệt đối không bỏ vào rác thường.",
     },
   },
 
@@ -307,12 +307,15 @@ export const consumables: Consumable[] = [
     kind: "filter",
     name: { en: "S2000 / S1500 filter", zh: "S2000 / S1500 滤片", th: "ฟิลเตอร์ S2000 / S1500", vi: "Kính lọc S2000 / S1500" },
     what: {
-      en: "Genuine Excelitas internal filters for the original S-Series platform, in the same five bands as the Elite cartridges, plus external filters that mount ahead of the light guide.",
-      zh: "原 S 系列平台的 Excelitas 原厂内置滤片，波段与 Elite 滤片相同的五种，另有装在导光管前的外置滤片。",
-      th: "ฟิลเตอร์ภายในแท้จาก Excelitas สำหรับแพลตฟอร์ม S-Series เดิม มีห้าแถบเดียวกับคาร์ทริดจ์ของ Elite พร้อมฟิลเตอร์ภายนอกที่ติดหน้าท่อนำแสง",
-      vi: "Kính lọc trong chính hãng Excelitas cho nền tảng S-Series gốc, cùng năm dải như hộp kính lọc của bản Elite, kèm kính lọc ngoài lắp phía trước ống dẫn sáng.",
+      en: "Genuine Excelitas internal filters for the S2000, S2000-XLA and S1500, in five bands, plus external filters that mount ahead of the light guide. Which band is fitted is ticked on the label on the back of the machine.",
+      zh: "S2000、S2000-XLA 与 S1500 的 Excelitas 原厂内置滤片，五种波段，另有装在导光管前的外置滤片。现装的是哪一种，机器背面的标签上勾着。",
+      th: "ฟิลเตอร์ภายในแท้จาก Excelitas สำหรับ S2000, S2000-XLA และ S1500 มีห้าแถบ พร้อมฟิลเตอร์ภายนอกที่ติดหน้าท่อนำแสง แถบที่ติดตั้งอยู่ถูกติ๊กไว้บนฉลากด้านหลังเครื่อง",
+      vi: "Kính lọc trong chính hãng Excelitas cho S2000, S2000-XLA và S1500, năm dải, kèm kính lọc ngoài lắp phía trước ống dẫn sáng. Dải nào đang lắp được đánh dấu trên nhãn ở mặt sau máy.",
     },
-    pns: ["019-01046R", "019-01048R", "019-01049R", "019-01045R", "019-01047R", "019-01023", "019-01024", "019-01022", "019-01026", "019-01025", "019-00108"],
+    // The five internal filters are in the order of the "Filter Option
+    // Installed" label on the back of the machine, so a technician reads the
+    // ticked box and finds the same row here. External filters follow.
+    pns: ["019-01046R", "019-01048R", "019-01049R", "019-01047R", "019-01045R", "019-01023", "019-01024", "019-01022", "019-01026", "019-01025", "019-00108"],
     life: {
       kind: "measured",
       basis: {
@@ -675,15 +678,17 @@ export const consumableMachines: ConsumableMachine[] = [
   },
   {
     slug: "s2000",
-    name: "OmniCure S2000",
+    // The nameplate says S2000-XLA, so the page does too: a customer reading
+    // the plate on the back of their machine has to recognise this page.
+    name: "OmniCure S2000 / S2000-XLA",
     brand: "OmniCure",
     tech: { en: "UV spot curing", zh: "紫外点固化", th: "การบ่มจุดด้วย UV", vi: "Đóng rắn điểm bằng UV" },
     productHref: "/product/omnicure/s2000",
     intro: {
-      en: "The original S2000 platform, still in service across the region. Its lamp module and filters are not the Elite's: check the part number before ordering, because the two sets look alike and will not fit each other.",
-      zh: "原始 S2000 平台，区域内仍有大量在用。它的灯泡模块与滤片与 Elite 不通用：下单前先核料号，两套外观相似但装不上。",
-      th: "แพลตฟอร์ม S2000 ดั้งเดิม ยังใช้งานอยู่ทั่วภูมิภาค โมดูลหลอดและฟิลเตอร์ไม่ใช่ของ Elite: ตรวจรหัสอะไหล่ก่อนสั่ง เพราะสองชุดหน้าตาคล้ายกันแต่ใส่แทนกันไม่ได้",
-      vi: "Nền tảng S2000 gốc, vẫn đang chạy khắp khu vực. Mô-đun đèn và kính lọc của nó không phải của bản Elite: hãy kiểm mã hàng trước khi đặt, vì hai bộ trông giống nhau nhưng không lắp cho nhau được.",
+      en: "The S2000 and S2000-XLA platform, still in service across the region. Its lamp module and filters are not the Elite's: check the part number before ordering, because the two sets look alike and will not fit each other. Which filter is fitted to your machine is ticked on the label on its back panel — read that before ordering a replacement.",
+      zh: "S2000 与 S2000-XLA 平台，区域内仍有大量在用。它的灯泡模块与滤片与 Elite 不通用：下单前先核料号，两套外观相似但装不上。机器背面标签上勾了哪一格，现装的就是哪一片滤片——订之前先看那张标签。",
+      th: "แพลตฟอร์ม S2000 และ S2000-XLA ยังใช้งานอยู่ทั่วภูมิภาค โมดูลหลอดและฟิลเตอร์ไม่ใช่ของ Elite: ตรวจรหัสอะไหล่ก่อนสั่ง เพราะสองชุดหน้าตาคล้ายกันแต่ใส่แทนกันไม่ได้ ฟิลเตอร์ที่ติดตั้งอยู่ถูกติ๊กไว้บนฉลากด้านหลังเครื่อง อ่านก่อนสั่งของทดแทน",
+      vi: "Nền tảng S2000 và S2000-XLA, vẫn đang chạy khắp khu vực. Mô-đun đèn và kính lọc của nó không phải của bản Elite: hãy kiểm mã hàng trước khi đặt, vì hai bộ trông giống nhau nhưng không lắp cho nhau được. Kính lọc đang lắp được đánh dấu trên nhãn ở mặt sau máy — hãy đọc nhãn đó trước khi đặt hàng thay thế.",
     },
     items: ["lamp-s2000", "filter-s2000", "light-guide", "lg-optics", "r2000-calibration", "bench-consumables"],
   },

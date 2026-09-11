@@ -34,8 +34,11 @@ export default async function ScanPage({ params }: { params: Promise<{ code: str
       name: r.name,
       issued: r.issued,
       ...(r.batch ? { batch: r.batch } : {}),
+      // Deliberately not `origin`: the inventory's 产地 column is where ETIA
+      // buys from, not a declared country of origin, and the two disagree —
+      // a 012-64000R box is stamped MADE IN USA where the inventory says
+      // 加拿大. Country of origin belongs on a commercial invoice.
       ...(lookup.item?.category ? { category: lookup.item.category } : {}),
-      ...(lookup.item?.origin ? { origin: lookup.item.origin } : {}),
     };
   }
 

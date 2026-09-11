@@ -26,7 +26,6 @@ export type ScanResult =
       issued: string;
       batch?: string;
       category?: string;
-      origin?: string;
     }
   | { status: "unknown"; code: string }
   | { status: "invalid"; reason: "empty" | "format" | "type" | "check" };
@@ -119,9 +118,6 @@ export default function ScanResultView({ result }: { result: ScanResult }) {
           label={{ en: "Registered", zh: "登记日期", th: "วันที่ลงทะเบียน", vi: "Ngày đăng ký" }}
           value={result.issued}
         />
-        {result.origin && (
-          <Row label={{ en: "Origin", zh: "产地", th: "แหล่งผลิต", vi: "Xuất xứ" }} value={result.origin} />
-        )}
       </dl>
 
       {isGuide && (
