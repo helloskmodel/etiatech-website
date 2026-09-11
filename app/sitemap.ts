@@ -7,6 +7,7 @@ import { LAMP_PATHS, LAMP_LANGUAGES } from "@/components/omnicure/s2000Lamp";
 import { languageAlternates, brandLanguageAlternates } from "@/components/localePageSeo";
 import { publishedProductCategories, productCategoryHref } from "@/components/productCategories";
 import { publishedIndustries, industryHref, isPublishedApplication } from "@/components/industrySolutions";
+import { consumablesUrls } from "@/components/consumablesSeo";
 
 // URL prefixes of the four language versions of a mirrored main-site path.
 const LOCALE_PREFIXES = ["", "/zh", "/vi", "/th"] as const;
@@ -69,6 +70,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE}${industryHref(i.slug)}`,
       changeFrequency: "monthly" as const,
       priority: 0.85,
+    })),
+    // Consumables centre: the index plus one page per machine. These are the
+    // pages a customer with a machine already running lands on, so they rank
+    // ahead of the product pages for part-number searches.
+    ...consumablesUrls().map((href) => ({
+      url: `${SITE}${href}`,
+      changeFrequency: "monthly" as const,
+      priority: href === "/consumables" ? 0.85 : 0.8,
     })),
     // NOTE: /application and /product/systems are intentionally NOT listed —
     // next.config redirects them (308) to /applications and /product/omnicure.

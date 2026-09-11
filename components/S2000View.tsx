@@ -643,6 +643,14 @@ export default function S2000View() {
               {t({ en: "OmniCure S2000 Replacement Lamps", zh: "OmniCure S2000 替换灯管" }, locale)}
               <ArrowRight className="h-4 w-4" />
             </Link>
+            <Link
+              href="/consumables/s2000-elite"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D4DFEC] bg-white px-6 py-3 text-sm font-bold transition hover:-translate-y-0.5 hover:border-[#1A56DB]"
+              style={{ color: BLUE }}
+            >
+              {t({ en: "Consumables & Service Life", zh: "耗材与使用寿命" }, locale)}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
             <a
               href={supportMail}
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D4DFEC] bg-white px-6 py-3 text-sm font-bold transition hover:-translate-y-0.5 hover:border-[#1A56DB]"

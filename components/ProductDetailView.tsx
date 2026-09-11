@@ -11,6 +11,7 @@ import RelatedApplications from "@/components/RelatedApplications";
 import AddToInquiryButton from "@/components/inquiry/AddToInquiryButton";
 import PartPicker from "@/components/inquiry/PartPicker";
 import { partsForModel } from "@/components/omnicureParts";
+import { consumablesHref, machineBySlug, machineForProduct } from "@/components/consumables";
 
 const brandPageSlug: Record<Product["brandId"], string> = {
   omnicure: "omnicure",
@@ -37,6 +38,9 @@ export default function ProductDetailView({ product, accent }: { product: Produc
   // product's own brand is not the same thing: ETIA's light guides sit in the
   // OmniCure group, and "More ETIA Systems" over four OmniCure lamps is wrong.
   const groupName = brandGroupName[product.brandId];
+  // Where this model's wear parts, their service life and their replacement
+  // signs live. Not every product has one — only the machines ETIA services.
+  const consumablesMachine = machineBySlug.get(machineForProduct[product.slug] ?? "");
   const related = products
     .filter((x) => x.brandId === product.brandId && x.slug !== product.slug)
     .slice(0, 4)
@@ -154,6 +158,23 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Lamps, Light Guides & Part Numbers", zh: "灯泡、导光管与料号", th: "หลอด ท่อนำแสง & หมายเลขชิ้นส่วน", vi: "Đèn, ống dẫn sáng & mã linh kiện" }, locale)}</h2>
             <p className="text-sm text-gray-600 mb-6">{t({ en: "Everything the catalogue lists for this model. Pick by what it is — the part number is filled in — and add it to your inquiry with the system.", zh: "目录里给这个机型列的全部配件。按用途逐项选，料号自动带出，和整机一起加进询单。", th: "ทุกอย่างที่แคตตาล็อกระบุสำหรับรุ่นนี้ เลือกตามสิ่งที่เป็น หมายเลขชิ้นส่วนจะถูกกรอกให้ แล้วเพิ่มลงในรายการสอบถามพร้อมกับระบบ", vi: "Mọi thứ catalogue liệt kê cho mẫu này. Chọn theo mô tả — mã linh kiện tự điền — rồi thêm vào yêu cầu cùng hệ thống." }, locale)}</p>
             <PartPicker families={partsForModel[product.slug]} model={product.slug} heading={false} />
+            {consumablesMachine && (
+              <Link
+                href={consumablesHref(consumablesMachine.slug)}
+                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#1A56DB] hover:underline"
+              >
+                {t(
+                  {
+                    en: `Service life and replacement signs for ${consumablesMachine.name} consumables`,
+                    zh: `${consumablesMachine.name} 耗材的使用寿命与更换判断`,
+                    th: `อายุใช้งานและสัญญาณการเปลี่ยนวัสดุสิ้นเปลืองของ ${consumablesMachine.name}`,
+                    vi: `Tuổi thọ và dấu hiệu thay thế vật tư cho ${consumablesMachine.name}`,
+                  },
+                  locale
+                )}
+                <span aria-hidden>→</span>
+              </Link>
+            )}
           </div>
         </section>
       )}
