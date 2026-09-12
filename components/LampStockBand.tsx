@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, PackageCheck } from "lucide-react";
 import { useLocale, t } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
 
 // The S2000 lamp, on the home page. The one thing a production manager in
@@ -38,10 +37,6 @@ export default function LampStockBand() {
   const { locale } = useLocale();
   const shop = `${LAMP_PATHS[locale]}#shop`;
 
-  const compat = inquiryMailto(locale, {
-    subject: "S2000 lamp compatibility check",
-    context: "System model / serial number / a photo of the lamp",
-  });
 
   return (
     <section className="px-4 pt-10 pb-2 sm:px-6 md:pt-14 lg:px-8">
@@ -96,21 +91,13 @@ export default function LampStockBand() {
               })}
             </ul>
 
-            <div className="mt-3 flex flex-col gap-2 sm:flex-row">
-              <Link
-                href={shop}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#087F6B] px-4 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5"
-              >
-                {t({ en: "Choose a lamp & ask price", zh: "选灯泡，问价格与交期", th: "เลือกหลอดและสอบถามราคา", vi: "Chọn đèn & hỏi giá" }, locale)}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a
-                href={compat}
-                className="inline-flex flex-1 items-center justify-center rounded-xl border border-[#D9E4EA] bg-white px-4 py-2.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96]"
-              >
-                {t({ en: "Not sure which?", zh: "不确定是哪一支？", th: "ไม่แน่ใจว่ารุ่นไหน?", vi: "Chưa chắc loại nào?" }, locale)}
-              </a>
-            </div>
+            <Link
+              href={shop}
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#087F6B] px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5"
+            >
+              {t({ en: "Choose a lamp & ask price", zh: "选灯泡，问价格与交期", th: "เลือกหลอดและสอบถามราคา", vi: "Chọn đèn & hỏi giá" }, locale)}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
 
             <p className="mt-2 font-mono text-[11px] text-[#7B8794]">
               {LAMP.spec} · {t({ en: "2,000 h guaranteed", zh: "保证寿命 2,000 h", th: "รับประกัน 2,000 ชม.", vi: "bảo đảm 2.000 h" }, locale)}
