@@ -25,6 +25,8 @@ type LeadPayload = {
   email?: unknown;
   country?: unknown;
   model?: unknown;
+  /** Free text: when the customer needs the goods. */
+  leadTime?: unknown;
   message?: unknown;
   page?: unknown;
   lang?: unknown;
@@ -134,6 +136,7 @@ export async function POST(request: Request) {
     phone,
     country: str(body.country, 80),
     model: str(body.model, 40),
+    leadTime: str(body.leadTime, 200),
     message: str(body.message, 2000),
     page: str(body.page, 80),
     lang: str(body.lang, 8),

@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
 import { BRAND, CONTACT } from "./copy";
-import { track } from "./track";
-import LeadForm from "./LeadForm";
 import { LAMP, LAMP_UI, getLampContent, type LampLang } from "./s2000Lamp";
 import { localeSalesEmail } from "@/components/contact";
+import { OfficeBar, LampShop, defaultOfficeId } from "./LampShop";
+import { useState } from "react";
 
 export default function S2000LampLanding({ lang }: { lang: LampLang }) {
   const page = `s2000-lamp-${lang}`;
   const c = getLampContent(lang);
   const L = LAMP_UI[lang];
+  // Which country's contact details the page is showing. The shop reads it too,
+  // so an inquiry carries the market it came from.
+  const [officeId, setOfficeId] = useState<string>(defaultOfficeId(lang));
   // EN/TH are the Thailand SEM pair (Bangkok office); ZH/VI route to the
   // country-specific sales inbox and drop the Thailand address line.
   const thailandContact = lang === "en" || lang === "th";
@@ -25,16 +28,16 @@ export default function S2000LampLanding({ lang }: { lang: LampLang }) {
             <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight mb-2">{c.h1}</h1>
             <p className="text-base text-white/80 mb-1">{LAMP.tagline}</p>
             <p className="text-sm font-semibold mb-6" style={{ color: BRAND.green }}>{LAMP.spec}</p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-              {LAMP.stats.map(([val, label]) => (
-                <div key={label} className="rounded-lg px-3 py-2.5" style={{ background: "#ffffff1a", border: "1px solid #ffffff33" }}>
-                  <p className="text-base font-bold text-white leading-tight">{val}</p>
-                  <p className="text-[11px] text-white/70 leading-tight mt-0.5">{label}</p>
+            <div className="mb-8 space-y-3">
+              {LAMP.pillars.map((p) => (
+                <div key={p.icon} className="rounded-lg px-4 py-3" style={{ background: "#ffffff1a", border: "1px solid #ffffff33" }}>
+                  <p className="text-sm font-bold leading-tight text-white">{p.title[lang]}</p>
+                  <p className="mt-1 text-[12px] leading-relaxed text-white/75">{p.body[lang]}</p>
                 </div>
               ))}
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="#quote" className="rounded-lg px-6 py-3 text-sm font-bold text-white hover:opacity-90" style={{ background: BRAND.green }}>{L.request}</a>
+              <a href="#shop" className="rounded-lg px-6 py-3 text-sm font-bold text-white hover:opacity-90" style={{ background: BRAND.green }}>{L.request}</a>
             </div>
           </div>
           <div>
@@ -46,6 +49,8 @@ export default function S2000LampLanding({ lang }: { lang: LampLang }) {
           </div>
         </div>
       </section>
+
+      <OfficeBar lang={lang} officeId={officeId} onPick={setOfficeId} />
 
       {/* OVERVIEW + spectral image */}
       <section className="bg-white">
@@ -115,40 +120,17 @@ export default function S2000LampLanding({ lang }: { lang: LampLang }) {
         </div>
       </section>
 
-      {/* PART NUMBERS */}
-      <section className="bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: BRAND.blue }}>{L.parts}</h2>
-          <p className="text-sm text-gray-500 mb-6">{L.partsHint}</p>
-          <div className="overflow-x-auto rounded-xl border border-gray-100">
-            <table className="w-full text-sm border-collapse">
-              <tbody>
-                {LAMP.parts.map(([pn, desc]) => (
-                  <tr key={pn} id={pn} className="border-b border-gray-100 last:border-0 scroll-mt-24">
-                    <th className="text-left font-mono font-semibold py-3 px-4 align-top whitespace-nowrap" style={{ color: BRAND.blue }}>{pn}</th>
-                    <td className="py-3 px-4 text-gray-700">{desc}</td>
-                    <td className="py-3 px-4 text-right">
-                      <a href="#quote" onClick={() => track("ask_price", { page, lang, model: pn })} className="text-xs font-semibold whitespace-nowrap hover:underline" style={{ color: BRAND.green }}>{L.askPrice}</a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-gray-400 mt-3">{L.alsoSearched}{LAMP.variants}</p>
-        </div>
-      </section>
+      {/* SHOP — the four lamps, a quantity box, one ask for price and date */}
+      <LampShop lang={lang} officeId={officeId} page={page} />
 
-      {/* CLOSING CTA */}
+      {/* CLOSING CTA — contact only; the ask lives in the shop above */}
       <section style={{ background: BRAND.blue }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{L.closing}</h2>
-            <p className="text-sm text-white/80">✉ {email}{thailandContact && " · 📍 Bangkok, Thailand"}</p>
-          </div>
-          <div id="quote" className="scroll-mt-24">
-            <LeadForm lang={lang} page={`${page}-closing`} compact showModel={false} />
-          </div>
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">{L.closing}</h2>
+          <p className="text-sm text-white/80">✉ {email}{thailandContact && " · 📍 Bangkok, Thailand"}</p>
+          <a href="#shop" className="mt-6 inline-block rounded-lg px-6 py-3 text-sm font-bold text-white hover:opacity-90" style={{ background: BRAND.green }}>
+            {L.request}
+          </a>
         </div>
       </section>
 
