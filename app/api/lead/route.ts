@@ -27,6 +27,10 @@ type LeadPayload = {
   model?: unknown;
   /** Free text: when the customer needs the goods. */
   leadTime?: unknown;
+  /** "trade-in" for a lamp trade-in registration; absent for a quote. */
+  kind?: unknown;
+  /** The TR-… reference shown to the customer on the trade-in page. */
+  reference?: unknown;
   message?: unknown;
   page?: unknown;
   lang?: unknown;
@@ -54,6 +58,9 @@ const str = (v: unknown, max = 500) =>
   typeof v === "string" ? v.trim().slice(0, max) : "";
 
 function subjectFor(lead: Record<string, string>, items: Item[]): string {
+  if (lead.kind === "trade-in") {
+    return `Lamp trade-in ${lead.reference} — ${lead.name}${lead.company ? `, ${lead.company}` : ""}`;
+  }
   if (items.length) {
     return `Quote request — ${lead.name}${lead.company ? `, ${lead.company}` : ""} (${items.length} item${items.length === 1 ? "" : "s"})`;
   }
@@ -136,6 +143,8 @@ export async function POST(request: Request) {
     phone,
     country: str(body.country, 80),
     model: str(body.model, 40),
+    kind: str(body.kind, 20),
+    reference: str(body.reference, 40),
     leadTime: str(body.leadTime, 200),
     message: str(body.message, 2000),
     page: str(body.page, 80),

@@ -41,6 +41,12 @@ const T = {
   fits: { en: "Fits", zh: "适用机型", th: "ใช้กับ", vi: "Dùng cho" },
   qty: { en: "Qty", zh: "数量", th: "จำนวน", vi: "SL" },
   genuine: { en: "Genuine Excelitas", zh: "Excelitas 原厂件", th: "ของแท้ Excelitas", vi: "Chính hãng Excelitas" },
+  tradeIn: {
+    en: "Trading in the old one? US$20 off →",
+    zh: "旧灯以旧换新？立减 20 美元 →",
+    th: "แลกหลอดเก่า? ลด 20 ดอลลาร์สหรัฐ →",
+    vi: "Đổi đèn cũ? Giảm 20 USD →",
+  },
 
   selected: { en: "Selected", zh: "已选", th: "ที่เลือก", vi: "Đã chọn" },
   nothing: { en: "Set a quantity on at least one lamp above.", zh: "请在上面至少给一支灯填个数量。", th: "กรุณาระบุจำนวนอย่างน้อยหนึ่งรายการด้านบน", vi: "Hãy nhập số lượng cho ít nhất một loại đèn ở trên." },
@@ -92,7 +98,7 @@ const LAMPS: {
   {
     pn: "012-64000R",
     name: "S2000 Replacement Lamp — Standard (200 W)",
-    fits: "S2000 · S2000-XLA",
+    fits: "S2000 · S2000-XLA · S1500",
     spectrum: {
       en: "Broad spectrum — the widest range of UV adhesive bonding",
       zh: "宽光谱——适用范围最广的 UV 胶粘接",
@@ -103,7 +109,7 @@ const LAMPS: {
   {
     pn: "012-65000R",
     name: "S2000 Replacement Lamp — Surface Cure (200 W)",
-    fits: "S2000 · S2000-XLA",
+    fits: "S2000 · S2000-XLA · S1500",
     spectrum: {
       en: "Surface cure — tack-free finish on acrylic resins",
       zh: "表面固化——丙烯酸树脂表面不发粘",
@@ -292,6 +298,10 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
                 <p className="mt-2 text-xs text-gray-500">
                   <span className="font-semibold text-gray-600">{tr("fits", lang)}:</span> {l.fits}
                 </p>
+
+                <a href="/trade-in" className="mt-2 text-xs font-semibold text-[#2F7A1E] hover:underline">
+                  {tr("tradeIn", lang)}
+                </a>
 
                 <div className="mt-4 flex items-center gap-3 border-t border-gray-100 pt-4">
                   <span className="text-xs font-bold uppercase tracking-wide text-gray-400">{tr("qty", lang)}</span>
