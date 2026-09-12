@@ -130,7 +130,7 @@ export const consumables: Consumable[] = [
     id: "lamp-s2000-elite",
     kind: "lamp",
     countdown: true,
-    name: { en: "S2000 Elite lamp module", zh: "S2000 Elite 灯泡模块", th: "โมดูลหลอด S2000 Elite", vi: "Mô-đun đèn S2000 Elite" },
+    name: { en: "S2000 Elite / S1500 Pro lamp module", zh: "S2000 Elite / S1500 Pro 灯泡模块", th: "โมดูลหลอด S2000 Elite / S1500 Pro", vi: "Mô-đun đèn S2000 Elite / S1500 Pro" },
     what: {
       en: "The 200 W mercury lamp in its own module, with the Intelli-Lamp chip that tells the system how many hours the lamp has run. Standard for adhesive curing, Surface Cure for tack-free acrylic surfaces.",
       zh: "200 W 汞灯连同模块本体，带 Intelli-Lamp 芯片，机器据此知道这支灯已经点了多少小时。标准型用于胶粘剂固化，表面固化型用于丙烯酸表面不发粘。",
@@ -268,7 +268,7 @@ export const consumables: Consumable[] = [
   {
     id: "filter-s2000-elite",
     kind: "filter",
-    name: { en: "S2000 Elite filter cartridge", zh: "S2000 Elite 滤片", th: "คาร์ทริดจ์ฟิลเตอร์ S2000 Elite", vi: "Hộp kính lọc S2000 Elite" },
+    name: { en: "S2000 Elite / S1500 Pro filter cartridge", zh: "S2000 Elite / S1500 Pro 滤片", th: "คาร์ทริดจ์ฟิลเตอร์ S2000 Elite / S1500 Pro", vi: "Hộp kính lọc S2000 Elite / S1500 Pro" },
     what: {
       en: "Genuine Excelitas cartridges. The lamp emits 250–600 nm continuously; the cartridge decides which part of that reaches the part, so choosing it is choosing the process. Seven bands, changed by the operator without tools.",
       zh: "Excelitas 原厂滤片。灯连续发射 250–600 nm，由滤片决定哪一段打到工件上——选滤片就是选工艺。七种波段，操作工免工具更换。",
@@ -688,6 +688,26 @@ export const consumableMachines: ConsumableMachine[] = [
     items: ["lamp-s2000-elite", "filter-s2000-elite", "light-guide", "lg-optics", "r2000-calibration", "bench-consumables"],
   },
   {
+    // The S1500 Pro takes the Elite's lamp modules and the Elite's filter
+    // cartridges — Excelitas ships one user guide for both machines
+    // (035-00707 Rev.3, Table 3-1 and Table 3-3). What it does not have is the
+    // closed-loop intensity monitor or R2000 calibration, so the R2000 block
+    // is deliberately absent from this list: telling an S1500 Pro owner to
+    // budget for a calibration his machine cannot do is worse than silence.
+    slug: "s1500-pro",
+    name: "OmniCure S1500 Pro",
+    brand: "OmniCure",
+    tech: { en: "UV spot curing", zh: "紫外点固化", th: "การบ่มจุดด้วย UV", vi: "Đóng rắn điểm bằng UV" },
+    productHref: "/product/systems/s1500-pro",
+    intro: {
+      en: "Same lamp modules and same filter cartridges as the S2000 Elite — one factory user guide covers both machines. The difference that matters here is that the S1500 Pro has no closed-loop intensity monitor and takes no R2000: the machine will not tell you its output has fallen, so measure it on a schedule you set yourself and work the optical path in order — lamp, filter, light guide.",
+      zh: "灯泡模块与滤片与 S2000 Elite 完全相同——原厂一本手册同时覆盖两个机型。这里真正的差别是：S1500 Pro 没有闭环光强监测，也不支持 R2000，机器不会告诉你光输出掉了。请按自己定的周期实测，并按光路顺序排查——灯泡、滤片、导光管。",
+      th: "ใช้โมดูลหลอดและคาร์ทริดจ์ฟิลเตอร์ชุดเดียวกับ S2000 Elite — คู่มือผู้ใช้จากโรงงานเล่มเดียวครอบคลุมทั้งสองเครื่อง ข้อแตกต่างที่สำคัญคือ S1500 Pro ไม่มีระบบมอนิเตอร์ความเข้มแบบวงปิดและใช้ R2000 ไม่ได้ เครื่องจะไม่บอกคุณว่ากำลังแสงตกลง ให้วัดเองตามรอบที่คุณกำหนด และไล่ตามเส้นทางแสงตามลำดับ — หลอด ฟิลเตอร์ ท่อนำแสง",
+      vi: "Dùng chung mô-đun đèn và hộp kính lọc với S2000 Elite — nhà máy phát hành một cuốn hướng dẫn cho cả hai máy. Khác biệt đáng kể ở đây là S1500 Pro không có bộ giám sát cường độ vòng kín và không dùng được R2000: máy sẽ không báo cho bạn biết công suất đã giảm, nên hãy tự đo theo chu kỳ bạn đặt ra và kiểm theo thứ tự đường quang — đèn, kính lọc, ống dẫn sáng.",
+    },
+    items: ["lamp-s2000-elite", "filter-s2000-elite", "light-guide", "lg-optics", "bench-consumables"],
+  },
+  {
     slug: "s2000",
     // The nameplate says S2000-XLA, so the page does too: a customer reading
     // the plate on the back of their machine has to recognise this page.
@@ -774,9 +794,9 @@ export function machinesUsing(id: string): ConsumableMachine[] {
  */
 export const machineForProduct: Record<string, string> = {
   "s2000-elite": "s2000-elite",
+  "s1500-pro": "s1500-pro",
   "s2000-elite-filters": "s2000-elite",
   "s2000-lamp": "s2000-elite",
-  "s1500-pro": "s2000",
   "s-liquid-light-guide": "s2000-elite",
   "s-fiber-light-guide": "s2000-elite",
   "s-fiber-light-line": "s2000-elite",

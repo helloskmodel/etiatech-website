@@ -12,6 +12,7 @@ import type { LangText } from "./LocaleContext";
 export type PartFamilyId =
   | "lamps"
   | "s2000-elite"
+  | "elite-filters"
   | "radiometry-s"
   | "light-guides"
   | "optical"
@@ -52,7 +53,20 @@ export const partFamilies: PartFamily[] = [
   },
   {
     id: "s2000-elite",
-    name: {"en": "S2000 Elite Systems, Filters & Accessories", "zh": "S2000 Elite 整机、滤片与配件", "vi": "Hệ S2000 Elite, kính lọc & phụ kiện", "th": "ระบบ S2000 Elite ฟิลเตอร์ & อุปกรณ์เสริม"},
+    name: {"en": "S2000 Elite Systems & Accessories", "zh": "S2000 Elite 整机与配件", "vi": "Hệ S2000 Elite & phụ kiện", "th": "ระบบ S2000 Elite & อุปกรณ์เสริม"},
+    dims: [
+      { key: "kind", label: {"en": "Kind", "zh": "类别", "vi": "Loại", "th": "ประเภท"} },
+      { key: "item", label: {"en": "Item", "zh": "项目", "vi": "Mục", "th": "รายการ"} },
+    ],
+  },
+  // The filter cartridges are their own family because two machines take them.
+  // Excelitas ships one user guide for the S2000 Elite and the S1500 Pro
+  // (035-00707 Rev.3) and Table 3-3 in it is a single list: the same seven
+  // cartridges fit both. Leaving them inside the "S2000 Elite" family told an
+  // S1500 Pro owner these were not his.
+  {
+    id: "elite-filters",
+    name: {"en": "S2000 Elite / S1500 Pro Filter Cartridges", "zh": "S2000 Elite / S1500 Pro 滤片", "vi": "Hộp kính lọc S2000 Elite / S1500 Pro", "th": "คาร์ทริดจ์ฟิลเตอร์ S2000 Elite / S1500 Pro"},
     dims: [
       { key: "kind", label: {"en": "Kind", "zh": "类别", "vi": "Loại", "th": "ประเภท"} },
       { key: "item", label: {"en": "Item", "zh": "项目", "vi": "Mục", "th": "รายการ"} },
@@ -149,8 +163,8 @@ export const parts: Part[] = [
   // Lamps: ETIA supplies the S2000 and S2000 Elite. Elite numbers from the
   // S2000 Elite user guide (035-00707 Rev 3, table 3-1); S2000 numbers from
   // the catalogue's S-Series compatibility table.
-  { pn: "012-68000R", desc: "S2000 Elite Lamp Module – Standard", family: "lamps", attrs: {"system": "S2000 Elite", "type": "Standard"} },
-  { pn: "012-69000R", desc: "S2000 Elite Lamp Module – Surface Cure", family: "lamps", attrs: {"system": "S2000 Elite", "type": "Surface Cure"} },
+  { pn: "012-68000R", desc: "S2000 Elite / S1500 Pro Lamp Module – Standard", family: "lamps", attrs: {"system": "S2000 Elite / S1500 Pro", "type": "Standard"} },
+  { pn: "012-69000R", desc: "S2000 Elite / S1500 Pro Lamp Module – Surface Cure", family: "lamps", attrs: {"system": "S2000 Elite / S1500 Pro", "type": "Surface Cure"} },
   { pn: "012-64000R", desc: "S2000 Replacement Lamp – Standard (200 W)", family: "lamps", attrs: {"system": "S2000", "type": "Standard"} },
   { pn: "012-65000R", desc: "S2000 Replacement Lamp – Surface Cure (200 W)", family: "lamps", attrs: {"system": "S2000", "type": "Surface Cure"} },
   // ── s2000-elite ──
@@ -158,14 +172,14 @@ export const parts: Part[] = [
   { pn: "010-00529R", desc: "S2000 Elite – 320–500 nm (incl. 012-68000R Standard lamp + 320–500 nm filter cartridge)", family: "s2000-elite", attrs: {"kind": "System", "item": "320–500 nm bundle"} },
   { pn: "010-00530R", desc: "S2000 Elite – Surface Cure (incl. 012-69000R Surface Cure lamp + blank filter cartridge)", family: "s2000-elite", attrs: {"kind": "System", "item": "Surface Cure bundle"} },
   { pn: "010-00577R", desc: "S2000 Elite – Legacy Replacement Kit (Standard lamp, 320–500 nm filter, external PLC adapter)", family: "s2000-elite", attrs: {"kind": "System", "item": "Legacy Replacement Kit"} },
-  { pn: "019-00387R", desc: "S2000 Elite Filter 400–500 nm", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "400–500 nm"} },
-  { pn: "019-00388R", desc: "S2000 Elite Filter 365 nm", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "365 nm"} },
-  { pn: "019-00389R", desc: "S2000 Elite Filter 320–390 nm", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "320–390 nm"} },
-  { pn: "019-00390R", desc: "S2000 Elite Filter 250–450 nm", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "250–450 nm"} },
-  { pn: "019-00391R", desc: "S2000 Elite Filter 320–500 nm", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "320–500 nm"} },
-  { pn: "019-00392R", desc: "S2000 Elite Filter Blank", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "Blank"} },
-  { pn: "019-00394R", desc: "S2000 Elite Custom Filter (band specified on order)", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "Custom band"} },
-  { pn: "019-00410R", desc: "S2000 Elite optical bandpass filter kit", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "Filter kit"} },
+  { pn: "019-00387R", desc: "S2000 Elite Filter 400–500 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "400–500 nm"} },
+  { pn: "019-00388R", desc: "S2000 Elite Filter 365 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "365 nm"} },
+  { pn: "019-00389R", desc: "S2000 Elite Filter 320–390 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "320–390 nm"} },
+  { pn: "019-00390R", desc: "S2000 Elite Filter 250–450 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "250–450 nm"} },
+  { pn: "019-00391R", desc: "S2000 Elite Filter 320–500 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "320–500 nm"} },
+  { pn: "019-00392R", desc: "S2000 Elite Filter Blank", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "Blank"} },
+  { pn: "019-00394R", desc: "S2000 Elite Custom Filter (band specified on order)", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "Custom band"} },
+  { pn: "019-00410R", desc: "S2000 Elite optical bandpass filter kit", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "Filter kit"} },
   { pn: "019-00406R", desc: "S2000 Elite Intelli-Tap Supervisor NFC card", family: "s2000-elite", attrs: {"kind": "Accessory", "item": "Intelli-Tap Supervisor NFC card"} },
   { pn: "019-00407R", desc: "S2000 Elite Intelli-Tap Admin NFC card", family: "s2000-elite", attrs: {"kind": "Accessory", "item": "Intelli-Tap Admin NFC card"} },
   { pn: "019-00395R", desc: "S2000 to S2000 Elite External PLC adapter", family: "s2000-elite", attrs: {"kind": "Accessory", "item": "External PLC adapter"} },
@@ -467,7 +481,7 @@ export function partFamily(id: PartFamilyId): PartFamily {
 
 // Which families a product page offers, keyed by catalogue slug. A page
 // that is not listed shows no picker.
-export const partsForModel: Record<string, PartFamilyId[]> = {"s2000-elite": ["lamps", "s2000-elite", "light-guides", "optical", "radiometry-s", "general"], "s1500-pro": ["lamps", "light-guides", "optical", "general"], "s2000-lamp": ["lamps"], "r2000": ["radiometry-s"], "s-liquid-light-guide": ["light-guides"], "s-fiber-light-guide": ["light-guides"], "s-fiber-light-line": ["light-guides"], "s2000-elite-filters": ["s2000-elite"], "s-cure-ring-adapter": ["optical"], "s-light-line-adapter": ["optical"], "s-collimating-adapter": ["optical"], "lx500": ["lx500", "ls200"], "lx505": ["lx500", "ls200"], "v3-led-heads": ["lx500"], "ls200": ["ls200"], "ac2": ["ac-heads", "ac-power", "ac-spares"], "ac4": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac5": ["ac-heads", "ac-power", "ac-spares"], "ac7": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8-hd": ["ac-heads", "ac-power", "ac-spares"], "ac9225": ["ac-heads", "ac-power", "ac-spares"], "ac9225-f": ["ac-heads", "ac-power", "ac-spares"]};
+export const partsForModel: Record<string, PartFamilyId[]> = {"s2000-elite": ["lamps", "elite-filters", "s2000-elite", "light-guides", "optical", "radiometry-s", "general"], "s1500-pro": ["lamps", "elite-filters", "light-guides", "optical", "general"], "s2000-lamp": ["lamps"], "r2000": ["radiometry-s"], "s-liquid-light-guide": ["light-guides"], "s-fiber-light-guide": ["light-guides"], "s-fiber-light-line": ["light-guides"], "s2000-elite-filters": ["elite-filters"], "s-cure-ring-adapter": ["optical"], "s-light-line-adapter": ["optical"], "s-collimating-adapter": ["optical"], "lx500": ["lx500", "ls200"], "lx505": ["lx500", "ls200"], "v3-led-heads": ["lx500"], "ls200": ["ls200"], "ac2": ["ac-heads", "ac-power", "ac-spares"], "ac4": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac5": ["ac-heads", "ac-power", "ac-spares"], "ac7": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8-hd": ["ac-heads", "ac-power", "ac-spares"], "ac9225": ["ac-heads", "ac-power", "ac-spares"], "ac9225-f": ["ac-heads", "ac-power", "ac-spares"]};
 
 // An AC model page shows only the heads and bundles of its own series.
 export const seriesForModel: Record<string, string> = {"ac2": "AC2", "ac4": "AC4", "ac5": "AC5", "ac7": "AC7", "ac8": "AC8", "ac8-hd": "AC8-HD", "ac9225": "AC9", "ac9225-f": "AC9225-F"};
