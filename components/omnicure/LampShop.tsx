@@ -39,19 +39,6 @@ const T = {
     vi: "Chọn mã hàng và số lượng. Một lần gửi, nhận giá và thời gian giao.",
   },
   fits: { en: "Fits", zh: "适用机型", th: "ใช้กับ", vi: "Dùng cho" },
-  whichMachine: {
-    en: "Which machine is yours?",
-    zh: "你的机器是哪一台？",
-    th: "เครื่องของคุณคือรุ่นไหน?",
-    vi: "Máy của bạn là loại nào?",
-  },
-  notSure: { en: "Not sure — show all four", zh: "不确定——四支都看", th: "ไม่แน่ใจ — ดูทั้งสี่", vi: "Chưa chắc — xem cả bốn" },
-  notSureHint: {
-    en: "The model is on the plate on the back of the machine. Not sure? Pick \u201cnot sure\u201d, tell us in the note, and we will confirm the part number before quoting.",
-    zh: "机型印在机器背面的铭牌上。不确定就选「不确定」，在备注里说一句，我们报价前先帮你核对料号。",
-    th: "รุ่นอยู่บนป้ายด้านหลังเครื่อง ถ้าไม่แน่ใจให้เลือก \u201cไม่แน่ใจ\u201d แล้วเขียนบอกในหมายเหตุ เราจะยืนยันหมายเลขชิ้นส่วนก่อนเสนอราคา",
-    vi: "Model nằm trên nhãn phía sau máy. Chưa chắc? Hãy chọn \u201cchưa chắc\u201d và ghi vào ghi chú, chúng tôi sẽ xác nhận mã hàng trước khi báo giá.",
-  },
   qty: { en: "Qty", zh: "数量", th: "จำนวน", vi: "SL" },
   genuine: { en: "Genuine Excelitas", zh: "Excelitas 原厂件", th: "ของแท้ Excelitas", vi: "Chính hãng Excelitas" },
 
@@ -75,30 +62,21 @@ const tr = (k: keyof typeof T, lang: L) => T[k][lang];
 
 /**
  * Every lamp ETIA supplies — two spectra across two platforms, so four part
- * numbers and no more. `machine` is what the customer actually knows about
- * their own plant; the part number is what falls out of it.
+ * numbers and no more. Four is few enough to read, and each card says what it
+ * fits, so there is no step in front of them: the list IS the choice.
  *
  * S1500 sits with the S2000 rather than with the Pro: ETIA's own inventory
  * says so — "L02C002 012-64000R Standard Spare 200W Lamp for S2000 and S1500".
  * The S1500 *Pro* is the one that shares the Elite's lamp.
  */
-type MachineId = "elite" | "s2000";
-
-const MACHINES: { id: MachineId; label: string }[] = [
-  { id: "elite", label: "S2000 Elite · S1500 Pro" },
-  { id: "s2000", label: "S2000 · S2000-XLA · S1500" },
-];
-
 const LAMPS: {
   pn: string;
-  machine: MachineId;
   name: string;
   fits: string;
   spectrum: Record<L, string>;
 }[] = [
   {
     pn: "012-68000R",
-    machine: "elite",
     name: "S2000 Elite Lamp Module — Standard",
     fits: "S2000 Elite · S1500 Pro",
     spectrum: {
@@ -110,7 +88,6 @@ const LAMPS: {
   },
   {
     pn: "012-69000R",
-    machine: "elite",
     name: "S2000 Elite Lamp Module — Surface Cure",
     fits: "S2000 Elite · S1500 Pro",
     spectrum: {
@@ -122,7 +99,6 @@ const LAMPS: {
   },
   {
     pn: "012-64000R",
-    machine: "s2000",
     name: "S2000 Replacement Lamp — Standard (200 W)",
     fits: "S2000 · S2000-XLA · S1500",
     spectrum: {
@@ -134,7 +110,6 @@ const LAMPS: {
   },
   {
     pn: "012-65000R",
-    machine: "s2000",
     name: "S2000 Replacement Lamp — Surface Cure (200 W)",
     fits: "S2000 · S2000-XLA · S1500",
     spectrum: {
@@ -203,15 +178,9 @@ export function OfficeBar({ lang, officeId, onPick }: { lang: L; officeId: strin
 // ---------------------------------------------------------------------------
 
 export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; page: string }) {
-  // A new customer does not know which of four lamps is theirs — but they do
-  // know what machine is on their floor. Ask that first and two of the four
-  // disappear. "Not sure" keeps all four and tells sales to confirm.
-  const [machine, setMachine] = useState<MachineId | "">("");
   const [qty, setQty] = useState<Record<string, number>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [err, setErr] = useState("");
-
-  const visible = useMemo(() => (machine ? LAMPS.filter((l) => l.machine === machine) : LAMPS), [machine]);
 
   const chosen = useMemo(
     () => LAMPS.filter((l) => (qty[l.pn] ?? 0) > 0).map((l) => ({ ...l, n: qty[l.pn] })),
@@ -249,7 +218,6 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
       email: isEmail ? contact : "",
       phone: isEmail ? "" : contact,
       country: office?.country.en ?? "",
-      model: machine ? MACHINES.find((m) => m.id === machine)!.label : "not sure",
       leadTime: get("leadTime"),
       message: get("message"),
       website: get("website"), // honeypot
@@ -311,39 +279,8 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
         <h2 className="text-2xl font-bold md:text-3xl" style={{ color: BRAND.blue }}>{tr("shopTitle", lang)}</h2>
         <p className="mt-2 text-sm text-gray-500">{tr("shopHint", lang)}</p>
 
-        {/* Which machine — the question that turns four part numbers into two */}
-        <fieldset className="mt-7">
-          <legend className="text-sm font-bold text-[#102A43]">{tr("whichMachine", lang)}</legend>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {MACHINES.map((m) => (
-              <button
-                key={m.id}
-                type="button"
-                onClick={() => setMachine(m.id)}
-                aria-pressed={machine === m.id}
-                className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                  machine === m.id ? "border-[#1A3DAD] bg-[#1A3DAD] text-white" : "border-gray-300 bg-white text-[#334E68] hover:border-[#1A3DAD]"
-                }`}
-              >
-                {m.label}
-              </button>
-            ))}
-            <button
-              type="button"
-              onClick={() => setMachine("")}
-              aria-pressed={machine === ""}
-              className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                machine === "" ? "border-[#1A3DAD] bg-[#1A3DAD] text-white" : "border-gray-300 bg-white text-[#334E68] hover:border-[#1A3DAD]"
-              }`}
-            >
-              {tr("notSure", lang)}
-            </button>
-          </div>
-          <p className="mt-2 text-xs leading-relaxed text-gray-500">{tr("notSureHint", lang)}</p>
-        </fieldset>
-
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {visible.map((l) => {
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {LAMPS.map((l) => {
             const n = qty[l.pn] ?? 0;
             return (
               <div
