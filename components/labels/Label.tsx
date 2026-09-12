@@ -249,9 +249,9 @@ function IdentityLabel({ data, template }: { data: LabelData; template: LabelTem
  * no ID on it, because it is the identity label next to it that carries the ID
  * and this one has to be readable across a bench.
  *
- * No bend-radius figure is printed. ETIA has not stated one, and a number
- * invented to fill a label is worse than the plain rule, which is that it must
- * not be bent at all.
+ * No bend-radius figure is printed, and none ever will be: ETIA's rule, given
+ * 2026-09-12, is that the guide is not bent at all. There is no minimum radius
+ * to print because there is no radius that is allowed.
  */
 function GuideWarning() {
   return (

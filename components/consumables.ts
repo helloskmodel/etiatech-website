@@ -366,10 +366,10 @@ export const consumables: Consumable[] = [
     pns: ["805-00002", "805-00004", "805-00007", "805-00009", "805-00011", "806-00005", "806-00011", "806-00012"],
     href: "/product/systems/s-liquid-light-guide",
     caution: {
-      en: "Do not bend, kink, coil tightly or hang a light guide by its tip. A liquid-filled guide that is bent past its limit is damaged permanently, and the damage is often invisible from the outside — the first sign is a cure that will not pass. Keep it in gentle sweeps, support its weight, and cap the tip when it is off the machine.",
-      zh: "导光管不可弯折、不可打死弯、不可紧绕成盘、不可提着出光端吊挂。液芯管一旦弯过极限就是永久损伤，而且外表往往看不出来——第一个征兆是固化不合格。走线要走大弧度，重量要有支撑，下机后给端面盖上保护帽。",
-      th: "ห้ามดัด หักพับ ม้วนแน่น หรือแขวนท่อนำแสงด้วยปลายของมัน ท่อแบบไส้ของเหลวที่ถูกดัดเกินขีดจำกัดจะเสียหายถาวร และความเสียหายมักมองไม่เห็นจากภายนอก — สัญญาณแรกคือการบ่มที่ไม่ผ่าน ให้เดินท่อเป็นส่วนโค้งกว้าง รองรับน้ำหนัก และครอบปลายเมื่อถอดออกจากเครื่อง",
-      vi: "Không được uốn gập, làm gãy khúc, cuộn chặt hay treo ống dẫn sáng bằng chính đầu của nó. Ống lõi lỏng bị uốn quá giới hạn sẽ hỏng vĩnh viễn, và hư hỏng đó thường không nhìn thấy từ bên ngoài — dấu hiệu đầu tiên là mẻ đóng rắn không đạt. Hãy đi ống theo đường cong rộng, đỡ lấy trọng lượng của nó, và đậy nắp đầu ống khi tháo khỏi máy.",
+      en: "Do not bend a light guide. Not into a curve, not into a coil, not by hanging it from its tip. There is no safe bend radius to work to — ETIA's rule is that the guide is not bent at all. Bending damage is permanent and is usually invisible from the outside: the first sign is a cure that will not pass. Route it straight, support its weight along its whole length, and cap the tip when it is off the machine.",
+      zh: "导光管不可弯曲。不可弯成弧、不可盘绕、不可提着出光端吊挂。没有所谓「安全弯曲半径」可以照着做——ETIA 的规定就是不弯。弯折损伤不可逆，外表往往看不出来：第一个征兆是固化不合格。走线要直，全长都要有支撑，下机后给端面盖上保护帽。",
+      th: "ห้ามดัดท่อนำแสง ไม่ว่าจะเป็นการดัดโค้ง ม้วนเป็นวง หรือแขวนด้วยปลายของมัน ไม่มีรัศมีการดัดที่ปลอดภัยให้ยึดถือ — กฎของ ETIA คือห้ามดัดเลย ความเสียหายจากการดัดเป็นแบบถาวรและมักมองไม่เห็นจากภายนอก: สัญญาณแรกคือการบ่มที่ไม่ผ่าน ให้เดินท่อเป็นแนวตรง รองรับน้ำหนักตลอดความยาว และครอบปลายเมื่อถอดออกจากเครื่อง",
+      vi: "Không uốn ống dẫn sáng. Không uốn cong, không cuộn vòng, không treo bằng chính đầu ống. Không có bán kính uốn an toàn nào để làm theo — quy định của ETIA là không uốn. Hư hỏng do uốn là vĩnh viễn và thường không nhìn thấy từ bên ngoài: dấu hiệu đầu tiên là mẻ đóng rắn không đạt. Hãy đi ống thẳng, đỡ trọng lượng trên suốt chiều dài, và đậy nắp đầu ống khi tháo khỏi máy.",
     },
   },
 
