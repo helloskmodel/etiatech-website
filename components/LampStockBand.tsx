@@ -10,28 +10,11 @@ import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
 // lamps are hard to find across much of the region and, when they can be
 // ordered, take weeks. A line that stops for a lamp is the call ETIA gets most.
 //
-// It used to be a strip with one button that dropped a single catalogue entry
-// — "S2000 / S2000 Elite Replacement Lamps" — into the inquiry basket. That is
-// four part numbers wearing one name, so a customer asking for four lamps was
-// not saying which four, and sales had to go back and ask. Now the four lamps
-// are on the strip itself with a quantity box each: the basket carries real
-// part numbers, and the inquiry that lands is one a salesperson can price.
-//
-// Still a strip, not a billboard — it should register on the way down the page
-// without becoming the page.
-
-/** The four lamps, in the order a customer meets them: newest platform first. */
-const LAMPS: { pn: string; fits: string; spectrumKey: "standard" | "surface" }[] = [
-  { pn: "012-68000R", fits: "S2000 Elite · S1500 Pro", spectrumKey: "standard" },
-  { pn: "012-69000R", fits: "S2000 Elite · S1500 Pro", spectrumKey: "surface" },
-  { pn: "012-64000R", fits: "S2000 · S2000-XLA · S1500", spectrumKey: "standard" },
-  { pn: "012-65000R", fits: "S2000 · S2000-XLA · S1500", spectrumKey: "surface" },
-];
-
-const SPECTRUM = {
-  standard: { en: "Standard", zh: "标准型", th: "มาตรฐาน", vi: "Tiêu chuẩn" },
-  surface: { en: "Surface Cure", zh: "表面固化型", th: "Surface Cure", vi: "Surface Cure" },
-};
+// The strip's whole job is to be noticed on the way past and to hand the
+// visitor to the lamp page. The four part numbers are NOT listed here: a home
+// page is not a shelf, and showing the goods before anyone asked made the
+// strip the tallest thing on the page. Tap it and the four lamps, the
+// quantities and the price-and-delivery form are all on one page.
 
 export default function LampStockBand() {
   const { locale } = useLocale();
@@ -65,10 +48,10 @@ export default function LampStockBand() {
               <p className="mt-1.5 text-sm leading-6 text-[#5F6C7B]">
                 {t(
                   {
-                    en: "Four part numbers in all. Tell us your machine, pick the quantity, and one send gets you a price and a delivery date.",
-                    zh: "一共四个料号。告诉我们你的机型，选好数量，一次提交就能拿到价格和交期。",
-                    th: "มีทั้งหมดสี่หมายเลขชิ้นส่วน บอกรุ่นเครื่องของคุณ เลือกจำนวน ส่งครั้งเดียวก็ได้ราคาและกำหนดส่ง",
-                    vi: "Tổng cộng bốn mã hàng. Cho biết máy của bạn, chọn số lượng, gửi một lần là có giá và thời gian giao.",
+                    en: "Across much of Southeast Asia a genuine S2000 lamp is hard to find and takes weeks to order. Pick the part number and the quantity, and one send gets you a price and a delivery date.",
+                    zh: "东南亚不少地方原厂 S2000 灯泡买不到，能订的也要等几周。选好料号和数量，一次提交就能拿到价格和交期。",
+                    th: "ในหลายพื้นที่ของเอเชียตะวันออกเฉียงใต้ หลอด S2000 ของแท้หาซื้อยากและต้องรอสั่งเป็นสัปดาห์ เลือกหมายเลขชิ้นส่วนและจำนวน ส่งครั้งเดียวก็ได้ราคาและกำหนดส่ง",
+                    vi: "Ở nhiều nơi tại Đông Nam Á, đèn S2000 chính hãng khó mua và phải chờ hàng tuần. Chọn mã hàng và số lượng, gửi một lần là có giá và thời gian giao.",
                   },
                   locale
                 )}
@@ -78,19 +61,6 @@ export default function LampStockBand() {
 
           {/* Which one, and how many */}
           <div className="w-full shrink-0 lg:w-[26rem]">
-            <ul className="divide-y divide-[#E3EDF2] overflow-hidden rounded-xl border border-[#E3EDF2] bg-white">
-              {LAMPS.map((l) => {
-                return (
-                  <li key={l.pn} className="px-3 py-2">
-                    <p className="font-mono text-[13px] font-bold leading-tight text-[#143C96]">{l.pn}</p>
-                    <p className="mt-0.5 text-[11px] leading-tight text-[#7B8794]">
-                      {t(SPECTRUM[l.spectrumKey], locale)} · {l.fits}
-                    </p>
-                  </li>
-                );
-              })}
-            </ul>
-
             <Link
               href={shop}
               className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#087F6B] px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5"
