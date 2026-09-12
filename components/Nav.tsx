@@ -20,6 +20,11 @@ type MenuGroup = { heading: LangText; links: MenuLink[] };
 // same seven, in the same order, as the home page row — and the brands they
 // already know. The inquiry shop leads the first column: it is where every
 // product on the site can be picked and asked for.
+//
+// BY BRAND lists brands and nothing else. Consumables used to sit here as a
+// sixth line, which read as if spare parts were a brand of their own; every
+// consumable ETIA stocks is an OmniCure part, so they belong on the OmniCure
+// brand page, where the machine that takes them is.
 const productMenu: MenuGroup[] = [
   {
     heading: { en: "By Light Source", zh: "按光源", th: "ตามแหล่งกำเนิดแสง", vi: "Theo nguồn sáng" },
@@ -35,17 +40,6 @@ const productMenu: MenuGroup[] = [
         href: `/product/${slug}`,
         label: { en: brandLanding[slug].name, zh: brandLanding[slug].name } as LangText,
       })),
-      // The customer who already owns the machine is not shopping for another
-      // one. Give them their own door out of the product menu.
-      {
-        href: "/consumables",
-        label: {
-          en: "Consumables & spare parts",
-          zh: "耗材与备件",
-          th: "วัสดุสิ้นเปลืองและอะไหล่",
-          vi: "Vật tư tiêu hao & phụ tùng",
-        } as LangText,
-      },
     ],
   },
 ];
