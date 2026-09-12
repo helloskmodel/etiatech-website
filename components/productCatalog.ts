@@ -71,15 +71,10 @@ const catalogProducts: Product[] = [
     intro:
       "The next-generation UV LED spot curing system — ±5% optical stability, LED cooling, StepCure® 2.0 multi-step control and new color-coded LED MAX heads for fast, uniform, repeatable curing.",
     features: [
-      "±5% optical stability with LED cooling technology that monitors head temperature and life data",
       "StepCure® 2.0 — program exposure time, intensity, duty cycle and trigger per channel, across single or multiple heads",
       "Controls up to 4 UV LED heads simultaneously or independently, or one head per controller",
       "New color-coded LED MAX heads (55 & 130 mm) cut setup time — 365 / 385 / 400 nm",
-      "High peak irradiance at 10 mm with 3 mm focusing lens: 14 W/cm² (365 nm), 16 W/cm² (385 nm), 9 W/cm² (400 nm)",
-      "Exposure time to ±0.1 s and intensity to ±1% for a repeatable, validated process",
-      "New 2.4\" full-color LCD; control by 4-way keypad, PLC or USB to PC",
-      "Improved connector with integrated locking for faster install and swap",
-      "Cylindrical-lens option delivers a focused elliptical beam for small-area cures",
+      "Cylindrical-lens option delivers a focused elliptical beam for small-area cures"
     ],
     applications: [
       "Medical device manufacturing (catheters, cannulas, needles, syringes)",
@@ -126,11 +121,7 @@ const catalogProducts: Product[] = [
       "±5% optical stability with Intelli-Lamp® LED technology",
       "High peak irradiance — up to 27 W/cm² (365 / 385 / 395 / 405 nm)",
       "StepCure® 2.0 — multi-step cure profiles for full process control",
-      "Controls up to 4 UV LED heads, together or independently",
-      "1% intensity steps (5–100%) for a repeatable process",
-      "Real-time programming and data logging via Micro SD",
-      "Calibration utility maintains long-term UV stability",
-      "V3 LED heads — cool-running, ~75% less energy than arc lamps",
+      "Real-time programming and data logging via Micro SD"
     ],
     applications: [
       "Medical device manufacturing (catheters, cannulas, endoscopes, syringes)",
@@ -164,14 +155,9 @@ const catalogProducts: Product[] = [
     intro:
       "Next-generation LED heads for the LX500 — up to 22 W/cm² and 1,100 mW at 365–405 nm, with an exceptionally uniform beam for faster, more consistent cures.",
     features: [
-      "High irradiance and optical power at 365, 385, 395 and 405 nm",
-      "Up to 22 W/cm² peak irradiance and 1,100 mW total optical power",
       "Improved radiation distribution across the beam cross-section for consistent, controlled curing",
-      "Up to 120% increased optical power vs. predecessor MAX LED Heads",
       "More energy efficient, lower maintenance, and longer service life",
-      "Wide range of cross-compatible accessories: focusing lenses, adapters, extension cables",
-      "Backward compatible with existing LX500 Controller",
-      "Paired with LX500 for outstanding ±5% optical stability",
+      "Wide range of cross-compatible accessories: focusing lenses, adapters, extension cables"
     ],
     applications: [
       "Precision UV adhesive curing in medical device assembly (catheters, endoscopes)",
@@ -204,16 +190,10 @@ const catalogProducts: Product[] = [
     intro:
       "UV LED radiometry and calibration at the cure site — ±10% accuracy, 1 mW/cm² resolution, NRC-traceable sensors, and direct integration with the LX500 controller.",
     features: [
-      "Measurement accuracy ±10%; resolution 1 mW/cm² (irradiance) and 1 mW (power)",
-      "Wide measurement range: 1–2,000 mW (power) and 50 mW/cm²–40 W/cm² (irradiance)",
-      "NRC-traceable factory calibration for accuracy and reliability",
       "Seamless integration with OmniCure LX500 via Beam Positioning Kit",
-      "Selectable wavelengths programmable from 320–750 nm",
       "Sensor optimized for monochromatic LED sources",
       "Backward compatible with LS100",
-      "Two versions: LS200 (irradiance, W/cm²) and LS200P (optical power, W)",
-      "Compact sensor for measurements in confined curing areas",
-      "USB connectivity to LM2011 light meter or LX500 for real-time measurement",
+      "Compact sensor for measurements in confined curing areas"
     ],
     applications: [
       "UV LED spot curing process control and calibration in electronics assembly",
@@ -247,15 +227,9 @@ const catalogProducts: Product[] = [
       "The reference radiometer for OmniCure spot curing — real-time NIST-accurate calibration with the S2000 Elite, plus custom cure-site and cure-ring sensors.",
     features: [
       "Purpose-built, accurate UV radiometer for OmniCure UV lamp spot curing systems",
-      "Serial communication with S2000 Elite / S2000 XLA / S1500: set irradiance levels and calibrate from a single reference point",
-      "Real-time NIST-traceable calibration with the S2000 Elite",
-      "Proprietary wide-band detector for accurate measurements across many systems",
       "Light guide detector with color-coded adapters auto-identifies light guide diameter",
       "Compatible with OmniCure UV Cure Ring Radiometer for cure-ring fixture process control",
-      "Compatible with OmniCure UV Cure Site Radiometer for measuring irradiance at the bonding site",
-      "Sets identical irradiance output across multiple S2000 Elite systems from one reference point",
-      "Ideal for large-scale manufacturing with multiple UV curing stations",
-      "NIST-traceable calibration recommended every 12 months",
+      "Compatible with OmniCure UV Cure Site Radiometer for measuring irradiance at the bonding site"
     ],
     applications: [
       "UV irradiance and power measurement for S2000 Elite, S2000 XLA and S1500 spot curing systems",
@@ -294,14 +268,9 @@ const catalogProducts: Product[] = [
       "Flagship 200 W lamp-based UV spot curing — Closed-Loop Feedback holds output within ±5%, 30 ms shutter, and Industry 4.0 connectivity (Ethernet, NFC, PLC).",
     features: [
       "Proprietary Closed-Loop Feedback (CLF): regulates UV output in real-time (±5% of set point)",
-      "Intelli-Lamp 2.0: 2,000 hours guaranteed, 3,500–4,000 hours typical lamp life",
-      "High-speed mechanical shutter with 30 ms response time",
-      "200-Watt UV lamp with outputs up to 30 W/cm²",
       "Industry 4.0 / IIoT ready: Ethernet, USB, SD card, NFC, programmable PLC I/O",
       "WEB UI for remote control and monitoring of single or multiple systems",
-      "Field-interchangeable lamps and 7 optical band-pass filter options",
-      "NIST-traceable calibration with OmniCure R2000 Radiometer",
-      "Backward compatible with original S2000 XLA",
+      "Backward compatible with original S2000 XLA"
     ],
     applications: [
       "Medical device assembly: catheters, cannulas, blood oxygenators, syringes, endoscopes",
@@ -339,13 +308,9 @@ const catalogProducts: Product[] = [
       "The genuine 200 W high-pressure mercury short-arc lamp for the S2000, S2000 Elite and S1500 Pro — a 250–600 nm continuous spectrum, up to 40 W/cm² in the long-wave UV, guaranteed for 2,000 hours and typically running to about 4,000. Standard and Surface Cure spectra, held in regional stock.",
     features: [
       "Genuine Excelitas lamp for the OmniCure S2000, S2000 Elite and S1500 Pro",
-      "200 W high-pressure mercury short-arc with a continuous 250–600 nm spectrum",
-      "Up to 40 W/cm² in the long-wave UV",
-      "Guaranteed 2,000 hours; approximately 4,000 hours typical in service",
       "Standard spectrum (S2000 Elite / S1500 Pro 012-68000R · S2000 012-64000R) covers the widest range of UV adhesive bonding",
       "Surface Cure spectrum (S2000 Elite / S1500 Pro 012-69000R · S2000 012-65000R) reshapes the power spectrum for a smooth, tack-free finish on acrylic resins, overcoming oxygen inhibition",
-      "Supplied as the S2000 spare lamp or the S2000 Elite lamp module",
-      "Held in regional stock, so a lamp change is a delivery rather than a lead time",
+      "Held in regional stock, so a lamp change is a delivery rather than a lead time"
     ],
     applications: [
       "Medical device and catheter bonding",
@@ -380,15 +345,9 @@ const catalogProducts: Product[] = [
     features: [
       "Intelli-Lamp 2.0: constantly monitors lamp parameters, optimizes lamp life (2,000 h guaranteed)",
       "StepCure 2.0: precise programming of multi-phase curing profiles",
-      '4.3" high-resolution LCD touch screen',
-      "200-Watt UV lamp with outputs up to 30 W/cm²",
-      "User-interchangeable optical filters (7 options) and lamp types",
-      "Programmable PLC output (DB50 port)",
       "NFC with Intelli-Tap keycards (Admin, Supervisor levels)",
       "Flight Recorder system event tracking for Industry 4.0 traceability",
-      "USB Type B and SD card connectivity",
-      "Cleanroom-ready with dedicated duct attachment area",
-      "Full backward compatibility with original S1500 light guides and radiometers",
+      "Cleanroom-ready with dedicated duct attachment area"
     ],
     applications: [
       "High-throughput UV adhesive curing in micro-electronic manufacturing",
@@ -422,12 +381,10 @@ const catalogProducts: Product[] = [
     intro:
       "Ethernet adapter for S-Series spot curing — remotely monitor and control up to 300 systems on a LAN through the OmniCure Monitoring Station software.",
     features: [
-      "Save maintenance time and keep production running smoothly with OmniCure Monitoring Station software",
       "Proactively trend and predict maintenance requirements with continuous operational data logging",
-      "Enhance visibility of production activity and quickly isolate issues that result in potential waste/rework",
       "Increase productivity and eliminate time lost identifying system faults with real-time email alerts",
       "Remotely access and monitor up to 300 UV curing systems on a local area network",
-      "Adds StepCure process functionality to the S1500",
+      "Adds StepCure process functionality to the S1500"
     ],
     applications: [
       "Remote process monitoring of OmniCure S2000 and S1500 spot curing systems",
@@ -469,11 +426,8 @@ const catalogProducts: Product[] = [
       "ETIA's own liquid-filled light guide, built to fit the OmniCure S Series light guide port: 3, 5 and 8 mm tip diameters, standard lengths from 750 to 3000 mm. Dual and triple-leg versions split one lamp across several cure sites. We stock the OmniCure 805- series alongside it, so an existing part number keeps working.",
     features: [
       "ETIA's own light guide line, held in regional stock",
-      "Tip diameters of 3, 5 and 8 mm",
-      "Standard lengths from 750 to 3000 mm",
       "Dual and triple-leg configurations for multi-site curing",
-      "Liquid-filled core rather than bundled fibre",
-      "Fits the OmniCure S1500 Pro and S2000 Elite",
+      "Liquid-filled core rather than bundled fibre"
     ],
     applications: [
       "Single-point curing on an assembly fixture",
@@ -503,9 +457,7 @@ const catalogProducts: Product[] = [
     features: [
       "ETIA's own light guide line, held in regional stock",
       "Equal distribution of light energy to multiple cure sites",
-      "Driven from a single light source",
-      "Fibre construction for high-power duty",
-      "Fits the OmniCure S1500 Pro and S2000 Elite",
+      "Fibre construction for high-power duty"
     ],
     applications: [
       "Multi-site curing where every joint must see the same dose",
@@ -534,9 +486,7 @@ const catalogProducts: Product[] = [
     features: [
       "ETIA's own light guide line, built to order on line length and width",
       "High-output linear beam of curing energy",
-      "Fibres continuous from light guide input to termination",
-      "Eliminates the coupling losses of standard light-line accessories",
-      "Fits the OmniCure S1500 Pro and S2000 Elite",
+      "Eliminates the coupling losses of standard light-line accessories"
     ],
     applications: [
       "Curing a row of components in one pass",
@@ -576,7 +526,7 @@ const catalogProducts: Product[] = [
       "400–500 nm — visible-light photoinitiators, dental-type and biocompatible formulations, light-sensitive substrates",
       "Blank — passes the lamp's full output, used with the Surface Cure lamp",
       "Custom — a band specified on order when none of the standard six fits",
-      "Changed by the operator without tools; the system logs which cartridge is fitted",
+      "Changed by the operator without tools; the system logs which cartridge is fitted"
     ],
     applications: [
       "Matching the filter to the adhesive's photoinitiator absorption peak",
@@ -606,9 +556,7 @@ const catalogProducts: Product[] = [
       "Turns a light guide into a ring: the part passes through the middle and is cured from all sides at once. The standard ring for Liquid Light Guides, in solid or slotted form.",
     features: [
       "Gives a light guide 360° of curing power",
-      "Standard ring for use with Liquid Light Guides",
-      "Available in solid or slotted versions",
-      "Slotted version lets a continuous part be loaded from the side",
+      "Slotted version lets a continuous part be loaded from the side"
     ],
     applications: [
       "360° curing of catheters and tubing",
@@ -634,9 +582,7 @@ const catalogProducts: Product[] = [
       "Focuses the beam into a line rather than a spot, for a short row of parts — components, tubing or cable up to two inches of line length.",
     features: [
       "Focused, linear beam of curing energy",
-      "Cures small rows of components, tubing and cables",
-      "Suits anything requiring up to two inches of line length",
-      "Fits the OmniCure S1500 Pro and S2000 Elite",
+      "Cures small rows of components, tubing and cables"
     ],
     applications: [
       "Short rows of components on a board",
@@ -662,9 +608,7 @@ const catalogProducts: Product[] = [
       "Opens the spot out to a uniform circle anywhere from 1\" to 6\" (2.54 to 15.2 cm), with the power spread evenly across it rather than piled into the centre.",
     features: [
       "Uniform spot adjustable from 1\" up to 6\" (2.54 cm to 15.2 cm)",
-      "Equal power distribution across the spot for even curing",
-      "One adapter covers the whole range",
-      "Fits the OmniCure S1500 Pro and S2000 Elite",
+      "Equal power distribution across the spot for even curing"
     ],
     applications: [
       "Curing an area rather than a point",
@@ -691,13 +635,9 @@ const catalogProducts: Product[] = [
       "Water-cooled UV LED curing for flexographic printing — proprietary thermal management and ValidCure deliver high total UV energy; optional high-airflow model.",
     features: [
       "Highest total UV energy (dose) for flexographic printing — higher dose than the air-cooled variant",
-      "Wider web: up to 675 mm, with print speeds up to 1050 ft (320 m)/min",
-      "90 W per cm maximum electrical power for sustained high-output curing",
       "ValidCure Technology for reliable, consistent UV output and process control",
       "Proprietary thermal management for reliable high-temperature performance",
-      "108 diodes per 25 mm segment — highest diode count in the industry (>60,000 h at L90)",
-      "Up to 60% less energy consumption; quick, easy retrofit to any press",
-      "5-year warranty on the full system",
+      "Up to 60% less energy consumption; quick, easy retrofit to any press"
     ],
     applications: [
       "Flexographic printing (primary application)",
@@ -732,13 +672,8 @@ const catalogProducts: Product[] = [
       "Air-cooled Nexus II — chiller-free flexo printing performance in 300–600 mm widths, with Ethernet communications and easy common-form-factor mounting.",
     features: [
       "Air-cooled — no chiller or fan blower needed, reduced routine maintenance",
-      "Up to 70% less energy consumption — the most efficient of the Nexus II range",
-      "Web width 300 – 600 mm; print speeds up to 720 ft (220 m)/min",
-      "65 W per cm maximum electrical power; 45 °C maximum operating temperature",
-      "108 diodes per 25 mm segment — highest diode count in the industry (>60,000 h at L90)",
       "Quick, easy retrofit to any press with the common Nexus II form factor",
-      "ValidCure Technology; approved with all UV LED inks",
-      "5-year warranty on the full system",
+      "ValidCure Technology; approved with all UV LED inks"
     ],
     applications: [
       "Flexographic printing (primary application)",
@@ -770,10 +705,7 @@ const catalogProducts: Product[] = [
       "Compact water-cooled light source scalable to 2 m — 25 W/cm² at 385/395/405 nm with exceptional uniformity, ideal for medical device assembly.",
     features: [
       "Compact and scalable design — up to 2 meters in length",
-      "High peak irradiance: 25 W/cm² at 385/395/405 nm; 10 W/cm² at 365 nm",
-      "Exceptional optical uniformity for consistent curing across the area",
-      "Separate controller for flexible system integration",
-      "Water-cooled for sustained high-performance, low-noise operation",
+      "Exceptional optical uniformity for consistent curing across the area"
     ],
     applications: [
       "Medical device UV curing assembly",
@@ -802,10 +734,7 @@ const catalogProducts: Product[] = [
     features: [
       "Versatile connection options: straight or barbed water fittings",
       "Enhanced window seal protecting against contaminants",
-      "Available lengths: 125 mm to 350 mm",
-      "Modbus TCP protocol for high-speed data exchange and remote access",
-      "High peak irradiance: 8–24 W/cm² at 385, 395, 405 nm",
-      "Water-cooled for sustained performance in demanding environments",
+      "Modbus TCP protocol for high-speed data exchange and remote access"
     ],
     applications: [
       "Digital inkjet printing",
@@ -835,11 +764,8 @@ const catalogProducts: Product[] = [
     features: [
       "IP66-rated ruggedized enclosure for harsh, high-contaminant environments",
       "Advanced window sealing protects against heat, liquid, and dirt intrusion",
-      "Versatile connection options: straight or barbed water fittings",
       "CDA (clean, dry air) ports to protect against condensation",
-      "Optional sacrificial glass to shield primary optics",
-      "Same optical uniformity and high dose performance as FL400",
-      "Robust endcaps engineered for challenging industrial environments",
+      "Optional sacrificial glass to shield primary optics"
     ],
     applications: [
       "Pipe coating UV curing in industrial environments",
@@ -867,11 +793,8 @@ const catalogProducts: Product[] = [
       "IP66 water-cooled system with a 40 mm-wide emitting window — longer exposure and a higher UV dose for complete single-pass curing.",
     features: [
       "40 mm-wide LED emitting window for longer exposure and greater dose per pass",
-      "IP66-compliant for robust operation in demanding environments",
-      "Scalable to various lengths based on application requirements",
       "Exceptional optical uniformity across the entire curing area",
-      "Single-pass complete curing capability — eliminates multiple passes",
-      "Water-cooled design for sustained high-performance operation",
+      "Single-pass complete curing capability — eliminates multiple passes"
     ],
     applications: [
       "Demanding printing applications requiring maximum UV power",
@@ -900,14 +823,9 @@ const catalogProducts: Product[] = [
     features: [
       "Proprietary Semiconductor Light Matrix (SLM) array for high optical power",
       "Proprietary SLM control technology for optimum uniformity across the irradiation area",
-      "High-efficiency cooling design for outstanding dose performance",
-      "Five wide-format models: 750, 900, 1050, 1200 and 1350 mm emission windows",
       "High dose at high line speed: 500 mJ/cm² typical at 50 mm working distance, 50 m/min",
-      "Long LED lifetime: >60,000 hours at L90",
       "Optional secondary glass assembly to protect the emitting window",
-      "Extensive communication: OmniCure AC Series, Analog, Modbus TCP/IP, Phoseon CLIP, Ethernet/PLC",
-      "Eco-friendly: no mercury, no ozone",
-      "Available wavelengths: 365, 395, 405 nm (385 nm on request)",
+      "Eco-friendly: no mercury, no ozone"
     ],
     applications: [
       "Industrial wide-format coatings",
@@ -943,15 +861,10 @@ const catalogProducts: Product[] = [
       "Water-cooled UV LED printing system delivering up to 30% more active UV energy at greater working distances — faster speeds, heat-sensitive substrates, easy press retrofits.",
     features: [
       "Highest UV LED output at 60 mm working distance — dramatically increases printing speed",
-      "Up to 30% more active UV energy to the printed product vs. conventional UV LED systems",
       "Fast ON/OFF switching — system can turn off between each sheet for significant energy savings",
       "'Dry sheet concept': minimizes powder usage in sheetfed offset, enables immediate post-press processing",
       "Prints on heat-sensitive materials — reduced heat transfer to substrate",
-      "Compact design with flexible integration for easy retrofitting into existing presses",
-      "Format-based energy selection reduces consumption by matching format to sheet size",
-      "Significantly longer lifespan than traditional UV mercury lamp systems",
-      "Plug & play concept with global technical support for maximum uptime",
-      "Ideal for online print shops and overnight delivery using the dry sheet concept",
+      "Compact design with flexible integration for easy retrofitting into existing presses"
     ],
     applications: [
       "Wide web printing (flexographic and other wide-format web printing)",
@@ -983,12 +896,8 @@ const catalogProducts: Product[] = [
       "Purpose-built for optical fiber draw and wire marking — full 360° curing with 65–70 W/cm² radiance at the target and a 165 mm emission length at 395 nm.",
     features: [
       "Purpose-built for optical fiber draw and wire marking manufacturing",
-      "Full 360° curing coverage around the fiber/wire",
-      "High radiance at target: 65–70 W/cm²",
-      "395 nm peak wavelength",
-      "165 mm emission length",
       "UV LED efficiency — energy saving, long lifetime, no mercury, no ozone",
-      "Engineered for continuous high-speed production processes",
+      "Engineered for continuous high-speed production processes"
     ],
     applications: [
       "Optical fiber draw tower coating cure",
@@ -1021,11 +930,7 @@ const catalogProducts: Product[] = [
     features: [
       "Customized high-intensity Semray UV LED variant with dedicated optics",
       "Special optical concepts direct more energy to larger working distances",
-      "Multiple wavelengths: 365, 385, 395 and 405 nm",
-      "Peak irradiance up to 20 W/cm² at the emission window (395 nm)",
-      "Wide 1300 × 84 mm emission window",
-      "Flexible in size/length, peripheral connections and optical concepts",
-      "UV LED efficiency — energy saving, long lifetime, no mercury, no ozone",
+      "Flexible in size/length, peripheral connections and optical concepts"
     ],
     applications: [
       "High-dose industrial UV LED curing",
@@ -1059,12 +964,9 @@ const catalogProducts: Product[] = [
     intro:
       "Compact air-cooled UV LED heads for space-constrained small-area curing — 75 mm or 114 mm lengths, up to 4 W/cm² at 365/395 nm.",
     features: [
-      "Up to 3 W/cm² at 365 nm and 4 W/cm² at 395 nm",
       "Exceptional uniformity across the entire small curing area",
-      "Proprietary individual UV LED module output for consistent results",
       "Compact and air-cooled — no chiller required",
-      "Modular design suitable for both low- and high-power applications",
-      "Available in AC275 and AC2110 configurations",
+      "Modular design suitable for both low- and high-power applications"
     ],
     applications: [
       "UV curing of inks, adhesives, and coatings in small-area applications",
@@ -1092,12 +994,9 @@ const catalogProducts: Product[] = [
     intro:
       "High-output small-area curing — 8 W/cm² with exceptional uniformity across 50 mm and 75 mm lengths at 365/395 nm; 'P' variants optimized for printing.",
     features: [
-      "8 W/cm² peak irradiance with exceptional uniformity",
       "Custom optics enabling high irradiance at long working distances",
       "Precise control of UV irradiance level and time for correct dose delivery",
-      "Air-cooled — no chiller required",
-      "Models: AC450, AC450P, AC475 and AC475P ('P' = Print optics)",
-      "Ensures highly repeatable UV curing process",
+      "Air-cooled — no chiller required"
     ],
     applications: [
       "Small-area UV adhesive curing requiring high irradiance",
@@ -1127,12 +1026,9 @@ const catalogProducts: Product[] = [
     intro:
       "Compact air-cooled small-area curing at flexible working distances — up to 15 W/cm² (405 nm), any mounting orientation, no chiller or ozone extraction.",
     features: [
-      "14 W/cm² at 395 nm; up to 15 W/cm² with AC575-405",
       "Advanced front-end optics for exceptional uniformity",
       "Proprietary LED UV module output ensures consistent results",
-      "Air-cooled — no chiller required",
-      "Models: AC550, AC550P, AC575, AC575P",
-      "'P' variants use optics optimized for printing applications",
+      "Air-cooled — no chiller required"
     ],
     applications: [
       "Small-area UV curing requiring 14 W/cm² irradiance",
@@ -1160,15 +1056,9 @@ const catalogProducts: Product[] = [
     intro:
       "Uniform air-cooled large-area curing in 150 mm and 300 mm lengths — up to 5 W/cm², with heads adjoinable without compromising uniformity.",
     features: [
-      "3 W/cm² at 365 nm or 5 W/cm² at 395 nm",
       "Custom front-end optics: high peak irradiance available at longer working distances",
       "High longitudinal uniformity for consistent and repeatable curing of all parts",
-      "Multiple systems adjoinable (AC7150 + AC7300 combinations) for any curing width",
-      "Air-cooled — no chiller required; simple, cost-effective integration",
-      "Curing widths: 150 mm (AC7150) and 300 mm (AC7300)",
-      "PLC interface for a high degree of automation and optical output control",
-      "LED head lifetime >20,000 hours with effective thermal management",
-      "Proprietary individual UV LED module output for exceptional uniformity",
+      "Air-cooled — no chiller required; simple, cost-effective integration"
     ],
     applications: [
       "Display and touch panel adhesive curing",
@@ -1202,16 +1092,9 @@ const catalogProducts: Product[] = [
     intro:
       "Air-cooled large-area curing with over 8 W/cm² and high longitudinal uniformity — 150/225/300 mm widths, adjoinable to any curing size.",
     features: [
-      "Peak irradiance >8 W/cm² with exceptional uniformity for even curing",
-      "Proprietary individual UV LED module output addressing for high uniformity",
       "Multiple heads adjoinable while maintaining optical uniformity between systems",
-      "'P' versions: enhanced optics optimized for short working distance (print applications)",
       "High longitudinal uniformity across the entire 150–300 mm curing area",
-      "Air-cooled — no chiller required; compact form factor",
-      "Curing widths: 150 mm, 225 mm, 300 mm",
-      "PLC interface for a high degree of automation and optical output control",
-      "LED head lifetime >20,000 hours of accumulated on-time",
-      "Flexible curing area scaling for improved throughput without compromise",
+      "Air-cooled — no chiller required; compact form factor"
     ],
     applications: [
       "Display, touch panel and thin film adhesive/coating curing",
@@ -1245,15 +1128,8 @@ const catalogProducts: Product[] = [
       "Double the dose of the standard AC8 — over 15 W/cm² at 385–405 nm, proprietary per-module output addressing, and 20,000+ hour LED lifetime.",
     features: [
       "Peak irradiance >15 W/cm² — double the dose of the standard AC8 Series",
-      "Proprietary technology for high uniformity across the entire irradiation area",
       "Proprietary individual UV LED module output for customizable outputs and tighter process control",
-      "Available wavelengths: 385, 395, 405 nm (±5 nm)",
-      "Three standard cure widths: 150 mm, 225 mm, 300 mm",
-      "Systems adjoinable to any curing size without uniformity compromise",
-      "Air-cooled — no chiller required; compact form factor",
-      "PLC interface for a high degree of automation and optical output control",
-      "LED head lifetime >20,000 hours accumulated on-time",
-      "Modern electronics with effective thermal management",
+      "Air-cooled — no chiller required; compact form factor"
     ],
     applications: [
       "Large-area UV curing demanding the highest optical dose",
@@ -1286,16 +1162,9 @@ const catalogProducts: Product[] = [
     intro:
       "14 W/cm² air-cooled curing for inks, adhesives and coatings — 150/225/300 mm lengths at 385/395 nm, adjoinable without losing uniformity.",
     features: [
-      "14 W/cm² peak irradiance for fast curing of inks, adhesives and coatings",
-      "150 mm, 225 mm and 300 mm emitting lengths",
-      "Proprietary individual UV LED module output for exceptional uniformity",
       "High longitudinal uniformity for consistent, repeatable results across all parts",
       "Multiple heads adjoinable while maintaining optical uniformity between systems",
-      "Air-cooled — no chiller required; compact form factor with best-in-class irradiance",
-      "395 nm 'P' variants use optics optimized for print applications",
-      "PLC interface for a high degree of automation and optical output control",
-      "LED head lifetime >20,000 hours accumulated on-time",
-      "Scalable to curing widths from 150 mm to 300 mm across the AC9 Series",
+      "Air-cooled — no chiller required; compact form factor with best-in-class irradiance"
     ],
     applications: [
       "High-speed UV ink curing requiring >14 W/cm² irradiance",
@@ -1330,13 +1199,8 @@ const catalogProducts: Product[] = [
     features: [
       "Purpose-designed for optical fiber curing applications",
       "Innovative optics enhance output and UV delivery onto the fiber",
-      "Up to 88 W/cm² peak irradiance at the fiber (face-to-face configuration)",
-      "10–18 mm working distance",
       "Replaceable outer window for easy maintenance and production scaling",
-      "Air-cooled — no chiller required",
-      "Multiple systems joinable for wider cure area with maintained uniformity",
-      "Up to 60% lower power consumption vs. traditional arc-lamp systems",
-      "Over 40,000 hours LED lifetime with no replacement parts",
+      "Up to 60% lower power consumption vs. traditional arc-lamp systems"
     ],
     applications: [
       "Optical fiber coating cure",
@@ -1367,14 +1231,10 @@ const catalogProducts: Product[] = [
     intro:
       "Fanless, passively cooled UV LED source for inkjet pinning and edge curing — ultra-slim, 2 W/cm², 80–240 mm windows, no chiller or forced air.",
     features: [
-      "Peak irradiance 2 W/cm² at 385, 395, 405 nm (1 W/cm² at 365 nm)",
       "Proprietary WhisperCure technology for quieter operation",
       "Natural convection cooling — no external cooling system or chiller required",
       "No internal fans: thinner, more reliable curing source",
-      "Slim form factor ideal for space-constrained environments",
-      "Analog control for ease of use",
-      "Phoseon SLM LED technology",
-      "Available emitting windows: 80, 120, 180, 240 mm (× 10 mm)",
+      "Slim form factor ideal for space-constrained environments"
     ],
     applications: [
       "Digital inkjet printing (pinning & full cure)",
@@ -1408,13 +1268,9 @@ const catalogProducts: Product[] = [
     intro:
       "Air-cooled curing and pinning with built-in intensity and segment control — proprietary SLM stability, 80–240 mm lengths, up to six sources per Hub.",
     features: [
-      "Built-in intensity control: full-cure, low-intensity (pinning), and half-source modes",
       "Proprietary SLM technology for process stability and repeatable output",
-      "Available lengths: 80, 120, 160, 180, 240 mm",
-      "Air-cooled — no water connections required",
       "Segment control: disable left or right half for precise UV coverage",
-      "Scalable: stack end-to-end for contiguous uniform UV output",
-      "Hub supports up to six light sources, managed as a single unit",
+      "Scalable: stack end-to-end for contiguous uniform UV output"
     ],
     applications: [
       "Digital inkjet printing (UV pinning and full cure)",
@@ -1445,12 +1301,8 @@ const catalogProducts: Product[] = [
     features: [
       "Up to 50% higher irradiance, power, and dose than the FE400",
       "Proprietary TargetCure technology for precise, predictable UV output",
-      "Built-in intensity control for full-cure and pinning applications",
       "Segment control to save energy and achieve precise UV coverage",
-      "Scalable: stackable end-to-end for contiguous uniform output",
-      "Available lengths: 80, 120, 160, 180, 240 mm",
-      "Air-cooled — no water connections required",
-      "FE400 Hub backward compatible",
+      "FE400 Hub backward compatible"
     ],
     applications: [
       "Digital inkjet printing — UV pinning and full cure",
@@ -1481,10 +1333,7 @@ const catalogProducts: Product[] = [
     features: [
       "Modular and scalable: 100 mm × 100 mm base, scalable in all four directions",
       "Contiguous, uniform UV output across the entire curing area",
-      "Simple controller supporting up to six light sources",
-      "Available wavelengths: 365, 395 nm",
-      "Air-cooled for flexible, cost-effective integration",
-      "Optimized for large-area curing requiring low irradiance and long dwell time",
+      "Optimized for large-area curing requiring low irradiance and long dwell time"
     ],
     applications: [
       "Micro-speaker manufacturing (adhesive curing)",
@@ -1516,10 +1365,7 @@ const catalogProducts: Product[] = [
     features: [
       "Proprietary TargetCure technology for precise, predictable UV output",
       "Modular and scalable: 100 mm × 100 mm base, scalable in all directions",
-      "Available wavelengths: 365, 385, 395, 405 nm (wider than FJ800)",
-      "FJ801 controller backward compatible with FJ800 lamp",
-      "Air-cooled for flexible integration without chiller",
-      "Contiguous and uniform UV output across the curing area",
+      "FJ801 controller backward compatible with FJ800 lamp"
     ],
     applications: [
       "Micro-speaker manufacturing",
@@ -1548,15 +1394,9 @@ const catalogProducts: Product[] = [
     intro:
       "Premium 20 W/cm² self-contained curing in 75–375 mm widths — daisy-chainable side by side, with PLC control or Modbus TCP remote access.",
     features: [
-      "Premium 20 W/cm² peak irradiance in a compact, high-power design",
-      "Five emitting-window widths: 75, 150, 225, 300, 375 mm",
       "Scalable — place units side by side and daisy-chain for wider coverage",
       "Dedicated optics for consistent uniformity at the substrate surface",
-      "Fully self-contained unit for simple integration",
-      "PLC control for instant on/off, intensity and primary functions",
-      "Digital control with Modbus TCP for advanced status and remote access",
-      "Air-cooled — no chiller required",
-      "Available wavelengths: 385, 395, 405 nm",
+      "Fully self-contained unit for simple integration"
     ],
     applications: [
       "UV curing of inks, coatings and adhesives",
@@ -1589,14 +1429,8 @@ const catalogProducts: Product[] = [
     features: [
       "Compact, fully self-contained design — ideal for space-constrained environments",
       "End-to-end scalability: units stack to create any required curing length",
-      "Five window lengths for flexible integration into any press or coater",
       "WhisperCure technology: reliable, consistent performance at a quiet operating level",
-      "TargetCure technology: precise and predictable UV output",
-      "PLC signal control: instant on/off, intensity and primary functions",
-      "Advanced digital control option for detailed status and operation",
-      "Air-cooled — no water connections or chiller required",
-      "High-intensity output suitable for UV inkjet and coating curing at speed",
-      "Supports RS485 and Modbus TCP communication",
+      "TargetCure technology: precise and predictable UV output"
     ],
     applications: [
       "UV inkjet printing (primary application)",
@@ -1631,13 +1465,8 @@ const catalogProducts: Product[] = [
     features: [
       "40 mm-wide LED window: maximum dose and dwell time for scanning cure applications",
       "Higher UV power than FireJet ONE and FJ100 — for the highest curing performance demands",
-      "Peak irradiance up to 16 W/cm² at 385, 395 and 405 nm",
       "WhisperCure technology: consistent, reliable, quiet operation",
-      "TargetCure technology: precise and predictable UV output",
-      "Available window lengths: 75, 150, 225, 300 and 375 mm",
-      "Air-cooled — no chiller required, easy installation and low maintenance",
-      "Scalable: FireJet family products combine end-to-end for larger lengths",
-      "Modbus TCP and RS485 communication for high-speed data exchange and remote access",
+      "TargetCure technology: precise and predictable UV output"
     ],
     applications: [
       "Digital inkjet printing requiring high UV dose and dwell time",
@@ -1671,14 +1500,9 @@ const catalogProducts: Product[] = [
     intro:
       "Production-proven microwave-powered curing with electrodeless bulbs — long lamp life, low maintenance, and modular retrofits into existing lines. Bulbs contain mercury; dispose per local law.",
     features: [
-      "Production-proven, simple-to-use design for broad industrial applications",
       "Electrodeless bulb design: avoids electrode degradation, extends lamp life",
-      "Multiple UV broadband wavelengths (D, H, V, Q, M bulb fills)",
       "Easy-to-service modular design for lower cost of ownership",
-      "Easily retrofits into existing production lines",
-      "Multiple power classes: F300 (3 kW) and F600 (6 kW)",
-      "High-intensity UV output for fast, uniform curing",
-      "Wide selection of accessories and replacement parts",
+      "Easily retrofits into existing production lines"
     ],
     applications: [
       "Industrial UV curing of adhesives, coatings, and inks",
@@ -1710,12 +1534,8 @@ const catalogProducts: Product[] = [
     features: [
       "Smart solid-state power supply: flexible software-based control, reduced operating costs",
       "Power Factor Correction >99% at full load — eliminates electrical harmonics",
-      "Reduced weight and better airflow for efficient cooling",
       "Modular design: combine systems for wider widths or complex surfaces",
-      "Available with internal or external cooling blower",
-      "150 mm (6 inch) irradiator with 200 W/cm (500 W/inch) power class",
-      "Smaller and lighter than previous generation for easy integration",
-      "Mercury-containing bulbs — manage per disposal laws",
+      "Smaller and lighter than previous generation for easy integration"
     ],
     applications: [
       "High-speed converting, printing, and coating production lines",
@@ -1747,14 +1567,8 @@ const catalogProducts: Product[] = [
     features: [
       "IoT-ready: sensors in both irradiator and power supply for real-time monitoring",
       "Intelligent irradiator measures 8 operating parameters",
-      "Reduces total cost of ownership via increased uptime",
-      "240 W/cm (600 W/in) — highest power class in the LightHammer series",
-      "Smart solid-state power supply with software-based control",
-      "Optional AIMS software for centralized monitoring",
       "Direct drop-in replacement for existing LHI10 Mark II irradiators",
-      "Systems combinable to increase curing width or cure complex 3D surfaces",
-      "Available in D, H, H+, M, Q, V bulb spectral fills",
-      "Mercury-containing bulbs — manage per disposal laws",
+      "Systems combinable to increase curing width or cure complex 3D surfaces"
     ],
     applications: [
       "Converting, printing, and high-speed coating production lines",
@@ -1787,15 +1601,9 @@ const catalogProducts: Product[] = [
       "The fiber-industry standard for coating and ink curing — proprietary elliptical reflectors focus intense UV on the fiber through a sealed quartz tube; 1.8–6 kW.",
     features: [
       "Proprietary secondary elliptical reflector: highest UV irradiance per watt",
-      "Highly focused, intense UV energy for optical fiber curing",
       "Sealed quartz tube enables full-surface UV exposure with minimal stray radiation",
-      "Noblelight microwave-powered electrodeless lamp: stable, consistent UV output",
       "Reaches maximum curing power within seconds of ignition",
-      "Modular design for easy maintenance and component replacement",
-      "Interchangeable bulbs to match spectral output to coating needs",
-      "Optional easy-align lamp mounting system",
-      "Optional proprietary back reflector for enhanced UV efficiency",
-      "Individual lamp switching in multi-lamp setups for line-speed adjustment",
+      "Individual lamp switching in multi-lamp setups for line-speed adjustment"
     ],
     applications: [
       "Optical fiber coating production — photoresponsive coatings on fiber",
@@ -1828,13 +1636,8 @@ const catalogProducts: Product[] = [
       "The conveyor built around the OmniCure AC Series of high-power UV LED heads — substrates to 310 mm wide on an open-mesh Teflon®-coated fibreglass belt, with the head height and angle adjustable to the part. Suits production, laboratory and R&D alike.",
     features: [
       "Designed to complement the OmniCure AC Series of high-power UV LED curing systems",
-      "Handles substrates up to 310 mm (12.2 in.) wide",
-      "Effective curing area up to 300 mm (12 in.), depending on the LED system fitted",
       "Open-mesh Teflon®-coated fibreglass belt",
-      "Belt speed adjustable from 1 to 14.5 m/min (3 to 48 ft/min)",
-      "Head height adjustable from 30 to 60 mm in 10 mm increments",
-      "Head angle adjustable 0 to 90° to the direction of belt travel, in 15° increments",
-      "Suitable for production, laboratory and R&D use",
+      "Head angle adjustable 0 to 90° to the direction of belt travel, in 15° increments"
     ],
     applications: [
       "Low-volume and short production runs",
@@ -1876,16 +1679,10 @@ const catalogProducts: Product[] = [
     intro:
       "The benchtop conveyor for laboratory and R&D evaluation — substrates to 190 mm wide with an effective UV width to 152 mm, paired with an F300S or LightHammer 6 Mark II lamp. Compact enough for a bench, rugged enough for small-part production.",
     features: [
-      "Handles substrates up to 190 mm (7.5 in.) wide; effective UV width up to 152 mm (6 in.)",
       "LC6B: lamp rotates 360° and adjusts vertically from focus at the belt to 76.2 mm beyond focus",
-      "LC6B-2: vertical lamp adjustment only, up to 76.2 mm beyond focus",
       "Air flows through the belt to cool the part and hold small sheets in place through the cure",
-      "Teflon®-coated open-weave Kevlar® belt, carbon-impregnated and treated to eliminate static charge",
       "Fold-back loop seam gives an essentially uninterrupted belt surface",
-      "Four speed ranges from 0.6 to 76 m/min (2.0 to 250 fpm)",
-      "Front-panel lamp control switch; zero-speed sensor protects the lamp and the belt",
-      "Internal exhaust blower included; external blower optional and required for some configurations",
-      "Adjustable lightshield entry/exit doors accommodate differing part heights",
+      "Front-panel lamp control switch; zero-speed sensor protects the lamp and the belt"
     ],
     applications: [
       "Formulation development for UV-curable adhesives, inks and coatings",
@@ -1930,15 +1727,9 @@ const catalogProducts: Product[] = [
       "The floor-standing conveyor that takes one or two rows of Fusion UV modular curing systems — two 6-inch lamps side by side for a nominal 12-inch cure width, or 10-inch lamps in a two-row arrangement, over parts up to 4 inches high.",
     features: [
       "Accepts one or two rows of Fusion UV modular microwave UV curing systems",
-      "Two 6-inch lamps (F300S or LH6 Mark II) side by side for a nominal 12-inch curing width",
-      "Two 10-inch lamps (F600S, LH10 Mark II or LH10 Mark III) in a two-row arrangement",
-      "Accommodates a variety of part geometries up to 4 inches high",
       "Flexibility to switch between different microwave-powered UV curing systems",
       "Lamp height, orientation, rows, cure width and belt speed all adjustable",
-      "Digital speed indicator and safety interlocks",
-      "Welded steel conveyor frame and lamp housing; built-in exhaust blower",
-      "Base cabinet accommodates two power supplies",
-      "LED heads available as a custom solution",
+      "LED heads available as a custom solution"
     ],
     applications: [
       "Low-volume and short production runs",
@@ -1979,13 +1770,9 @@ const catalogProducts: Product[] = [
       "The nitrogen-inerted version of the DRS floor-standing conveyor: an inerted cure zone with a chill bed reaching below 50 ppm oxygen, for chemistries that oxygen inhibits and for substrates that must not take the heat.",
     features: [
       "Nitrogen-inerted cure zone with chill bed",
-      "Below 50 ppm O₂ at 15 m/min (50 fpm) with a 6.4 mm (0.25 in.) snout opening",
-      "Oxygen analyzer available",
       "Rotatable lamp boots",
       "Chill bed protects thermally sensitive substrates",
-      "Same lamp flexibility as the DRS 10/12 — 6-inch and 10-inch systems, one or two rows",
-      "Welded steel construction with built-in exhaust blower",
-      "LED heads available as a custom solution",
+      "LED heads available as a custom solution"
     ],
     applications: [
       "Oxygen-inhibited chemistries that will not surface-cure in air",
@@ -2020,10 +1807,8 @@ const catalogProducts: Product[] = [
       "The simplest module in the M series — an infrared emitter with its matched heat-reflector plate and holder, ready to fit where radiant heat is needed and nothing more complex is warranted.",
     features: [
       "Infrared emitter with an associated heat-reflector plate and holder",
-      "Supplied assembled and ready for installation, with the necessary electrical connections",
       "Several modules can be combined to build larger heating panels",
-      "Retrofits easily into existing systems",
-      "Cost-efficient, not least because of its long service life",
+      "Retrofits easily into existing systems"
     ],
     applications: [
       "Drying and water removal in existing production lines",
@@ -2052,11 +1837,9 @@ const catalogProducts: Product[] = [
     intro:
       "One or more infrared emitters with the necessary ventilation, for installation where heat has to be applied rapidly and directly. Built from standard components, so it can be produced and supplied quickly.",
     features: [
-      "One or more infrared emitters with the necessary ventilation",
       "For applications where heat must be applied rapidly and directly",
       "Built from standard components — quick to produce and supply",
-      "Supplied assembled and ready for installation",
-      "Several modules can be combined for larger heating panels",
+      "Several modules can be combined for larger heating panels"
     ],
     applications: [
       "Rapid, direct surface heating in production lines",
@@ -2086,10 +1869,8 @@ const catalogProducts: Product[] = [
       "One or two length-adjusted infrared emitters with ventilation, and the option to integrate pyrometers, temperature switches and temperature fuses — the M-series module for processes that need to be measured, not just heated.",
     features: [
       "One or two length-adjusted infrared emitters",
-      "Ventilation system included",
       "Pyrometers can be integrated for non-contact temperature measurement",
-      "Temperature switches and temperature fuses can be integrated",
-      "Supplied assembled and ready for installation",
+      "Temperature switches and temperature fuses can be integrated"
     ],
     applications: [
       "Temperature-controlled drying and curing",
@@ -2120,9 +1901,7 @@ const catalogProducts: Product[] = [
     features: [
       "Integrated control unit — a system solution for the whole heating process",
       "Each module optimised in size and wavelength for the surface being heated",
-      "Complete control systems available to regulate module power to line conditions",
-      "Scales from an individual module to large heating fields, tunnels and ovens",
-      "Applied across virtually all industrial sectors",
+      "Scales from an individual module to large heating fields, tunnels and ovens"
     ],
     applications: [
       "Automotive component coating, drying, welding and activation",
@@ -2155,9 +1934,7 @@ const catalogProducts: Product[] = [
       "Tailor-made system solutions developed in close co-operation with you",
       "Databank of over 3,000 successful infrared test reports",
       "Application centres worldwide determine the optimum heating solution",
-      "Emitters selected on output, voltage and wavelength for your requirement",
-      "CAD data accepted in STEP, IGES, DWG and DXF formats",
-      "CAE simulation instead of trial and error — shorter development, lower cost",
+      "CAE simulation instead of trial and error — shorter development, lower cost"
     ],
     applications: [
       "Non-standard geometries and heating fields",
@@ -2187,15 +1964,9 @@ const catalogProducts: Product[] = [
       "A wide range of infrared control systems, from simple power controllers to complex, fully integrated PLC-based automation, designed to optimise the performance of your infrared emitters across all power ranges. Depending on the application, an optimised emitter can be combined with a custom IR module and adapted control system into a solution tailored to your heating process.",
     features: [
       "Infinitely variable power output setting, with zero wear, low loss semi-conductor power boards",
-      "Power-setting methods matched to your process",
-      "Nominal value setting for infrared output by potentiometers, regulators or external signals",
-      "Interface points with control can be classical contacts, analog signals or through modern fieldbus systems",
       "Robust housing with maximum protection and electrical safety, making it suitable for harsh industrial applications",
-      "Contact breakers or fuses to protect emitter connections with small, easily manageable power cross-sections",
-      "An emergency stop for isolating the load from the main supply",
       "Identification and reporting of failure of an emitter, a load fuse, a load board or a load voltage",
-      "Control and monitoring of the infrared emitter module, including automatic control of module ventilation and temperature monitoring",
-      "Industry-standard regulators, flexibly configurable, displaying nominal and actual values, timers, program indicators, ramp functions, limit function, PID self-optimization and manual/automatic tests",
+      "Industry-standard regulators, flexibly configurable, displaying nominal and actual values, timers, program indicators, ramp functions, limit function, PID self-optimization and manual/automatic tests"
     ],
     applications: [
       "Power regulation of M and MX infrared modules",
@@ -2233,9 +2004,7 @@ const catalogProducts: Product[] = [
       "High-purity quartz glass for good transmission and thermal stability",
       "Gold reflector emits the heat directly at the product, almost doubling the effective radiation",
       "Twin tube (the “Golden 8”) for high radiation density and stability, even at 6.5 m",
-      "Three wavelengths — short-wave, fast-response medium-wave and medium-wave",
-      "Wavelength, dimensions and filament made to the application",
-      "Robust ceramic lamp base",
+      "Wavelength, dimensions and filament made to the application"
     ],
     applications: [
       "Drying of coatings and inks in infrared ovens",
@@ -2269,12 +2038,10 @@ const catalogProducts: Product[] = [
     intro:
       "A carbon heating filament inside the Golden 8 twin tube — medium-wave radiation at high power density, but with a response time in seconds. On water-based coatings it does the same drying job as a short-wave emitter on up to 30% less energy.",
     features: [
-      "Carbon heating filament — medium-wave radiation with a 1–2 s response time",
       "Up to 30% less energy than short-wave emitters when drying water-based coatings",
       "Medium-wave radiation is absorbed particularly well by water, glass and many plastics",
       "Twin tube (the “Golden 8”) for double power and mechanical stability",
-      "Also available as a round tube",
-      "Gold reflector for directed radiation; robust ceramic lamp base",
+      "Gold reflector for directed radiation; robust ceramic lamp base"
     ],
     applications: [
       "Flow-out and curing of powder coatings",
@@ -2307,12 +2074,10 @@ const catalogProducts: Product[] = [
     intro:
       "A single heating filament in a quartz tube. Usually shorter than a twin tube and the right answer when the heated area is small — with a gold or QRC® reflector as required, and as an Infralight® NIR halogen emitter where very high power density is needed.",
     features: [
-      "One heating filament in high-quality quartz glass",
       "Shorter than twin-tube emitters in most cases — suits compact heating fields",
       "Optional gold reflector almost doubles the radiation reaching the product",
       "QRC® quartz reflector available for aggressive environments and vacuum",
-      "Infralight® NIR halogen version: near-infrared spectrum, very fast response",
-      "Available as carbon or short-wave; can be built into a complete IR system",
+      "Infralight® NIR halogen version: near-infrared spectrum, very fast response"
     ],
     applications: [
       "Compact heating fields where a twin tube will not fit",
@@ -2345,12 +2110,10 @@ const catalogProducts: Product[] = [
     intro:
       "Shaped to the part. The emitter follows the corners, edges and contours of the product so the heat lands only where the process needs it — and nowhere else.",
     features: [
-      "Shape, size and spectrum adjusted to the process",
       "Directed heating of edges, corners, rims and burrs",
       "High power on a small area",
-      "Switches on and off within seconds",
       "Saves energy because heat is generated only where it is needed",
-      "Also available as a contoured QRC® emitter",
+      "Also available as a contoured QRC® emitter"
     ],
     applications: [
       "Automated deburring of plastic parts",
@@ -2381,9 +2144,7 @@ const catalogProducts: Product[] = [
     features: [
       "Concentrates high intensity on a very small area",
       "Heat only where the process needs it, with minimal loss to the surroundings",
-      "Switches on and off within seconds",
-      "Shape, size and spectrum adjusted to the process",
-      "Suits automation of short-cycle operations",
+      "Suits automation of short-cycle operations"
     ],
     applications: [
       "Deburring",
@@ -2413,9 +2174,7 @@ const catalogProducts: Product[] = [
     features: [
       "Flat spiral shape for homogeneous heating of round parts",
       "Suitable for operation in a vacuum",
-      "Available with short-wave or medium-wave radiation",
-      "Shape, size and spectrum adjusted to the process",
-      "Switches on and off within seconds",
+      "Available with short-wave or medium-wave radiation"
     ],
     applications: [
       "Homogeneous heating of disks, rods and tubes",
@@ -2445,9 +2204,7 @@ const catalogProducts: Product[] = [
     features: [
       "Twin and quattro designs for edges of three-dimensional products",
       "High energy into a limited area within a short time",
-      "Very well controllable",
-      "Short-wave radiation",
-      "Arrangement adjusted to the part",
+      "Very well controllable"
     ],
     applications: [
       "Homogeneous heating of headliners and hat racks before lining",
@@ -2477,9 +2234,7 @@ const catalogProducts: Product[] = [
     features: [
       "Circular short-wave emitter for hot staking",
       "Heats only the rivet or joint, not the whole part",
-      "Heat-up and cool-down in seconds",
-      "Very short process times",
-      "Ideal for automated joining cells",
+      "Ideal for automated joining cells"
     ],
     applications: [
       "Joining, riveting and welding of plastics",
@@ -2509,9 +2264,7 @@ const catalogProducts: Product[] = [
     features: [
       "Slot in one channel of the twin tube forms a heating channel",
       "The running material passes through the emitter itself",
-      "Gold reflector increases efficiency",
-      "Compact — no separate oven around the line",
-      "Shape and spectrum adjusted to the process",
+      "Compact — no separate oven around the line"
     ],
     applications: [
       "Chemical fibres",
@@ -2541,10 +2294,8 @@ const catalogProducts: Product[] = [
     features: [
       "Nano-reflector of opaque quartz glass rather than gold or metal oxide",
       "Extremely resistant to heat, acid, alkaline solutions and corroding substances",
-      "Survives plants that are cleaned regularly with corrosive agents",
       "Can be bent or formed to the edges and contours of a product",
-      "Nano XP version for applications with high power demands",
-      "Available on twin tube and round tube emitters",
+      "Nano XP version for applications with high power demands"
     ],
     applications: [
       "Coating under vacuum conditions",
@@ -2575,11 +2326,9 @@ const catalogProducts: Product[] = [
       "A medium-wave emitter with a special-design sealing and the electrical connection routed into a terminal box — dust-tight and splash-proof, so it can heat outdoors and in wet plant.",
     features: [
       "IP 65 — sealed against dust and splash water",
-      "Tested by VDE Offenbach over several days; dust-tight and splash-proof",
       "Electrical connection routed into a terminal box via a special sealing",
       "Shock-resistant quartz glass, suitable for outdoor use",
-      "Contact-free, well controllable heat transfer",
-      "Medium-wave radiation with extended unheated ends",
+      "Medium-wave radiation with extended unheated ends"
     ],
     applications: [
       "Anti-icing of Bowden cables, filters, rails and locks outdoors",
@@ -2609,12 +2358,9 @@ const catalogProducts: Product[] = [
       "An infrared emitter is only as good as what holds it. Every emitter needs a clamping spring and a holding spring so it sits elastically; long emitters need a centre support, and medium-wave emitters last longer on a right-angled safety bracket.",
     features: [
       "Mounting clamps and spring supports make installation straightforward",
-      "Every emitter needs a clamping spring and a holding spring to be held elastically",
-      "Long emitters should be supported in the middle",
-      "Medium-wave emitters last longer when supported by a right-angled safety bracket",
       "Wire gratings and safety plates in quartz glass and glass ceramics protect emitter and product",
       "Extraction strips and air-knife modules for optimal air flow",
-      "Wavelength converter raises the energy yield on very thin or transparent products",
+      "Wavelength converter raises the energy yield on very thin or transparent products"
     ],
     applications: [
       "Installation and retrofit of infrared emitters",
