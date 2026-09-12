@@ -38,6 +38,7 @@ Surface Cure Lamp Module 012-69000R có thể hỗ trợ các loại keo tương
 - 019-00390R — 250–450 nm
 - 019-00391R — 320–500 nm
 - 019-00392R — Blank / không dùng kính lọc dải thông
+- 019-00394R — Dải tùy chọn, chỉ định khi đặt hàng
 Hãy chọn dải truyền theo vùng hấp thụ của keo và kết quả xác nhận quy trình. Công suất tổng cao hơn không đồng nghĩa với kết quả tốt hơn; yếu tố quan trọng là năng lượng mà keo hấp thụ tại vùng liên kết.
 
 

@@ -177,7 +177,7 @@ export const parts: Part[] = [
   { pn: "019-00389R", desc: "S2000 Elite Filter 320–390 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "320–390 nm"} },
   { pn: "019-00390R", desc: "S2000 Elite Filter 250–450 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "250–450 nm"} },
   { pn: "019-00391R", desc: "S2000 Elite Filter 320–500 nm", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "320–500 nm"} },
-  { pn: "019-00392R", desc: "S2000 Elite Filter Blank", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "Blank"} },
+  { pn: "019-00392R", desc: "S2000 Elite Blank Filter", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "Blank"} },
   { pn: "019-00394R", desc: "S2000 Elite Custom Filter (band specified on order)", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "Custom band"} },
   { pn: "019-00410R", desc: "S2000 Elite optical bandpass filter kit", family: "elite-filters", attrs: {"kind": "Optical filter", "item": "Filter kit"} },
   { pn: "019-00406R", desc: "S2000 Elite Intelli-Tap Supervisor NFC card", family: "s2000-elite", attrs: {"kind": "Accessory", "item": "Intelli-Tap Supervisor NFC card"} },

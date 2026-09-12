@@ -45,6 +45,7 @@ On top of the lamp, the S2000 Elite lets you insert a selectable optical band-pa
 | 019-00390R | 250–450 nm |
 | 019-00391R | 320–500 nm |
 | 019-00392R | Blank (full spectrum, no band-pass) |
+| 019-00394R | Custom band, specified on order |
 
 A few rules of thumb:
 
