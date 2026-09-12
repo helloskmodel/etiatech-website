@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FileText, Download } from "lucide-react";
@@ -13,6 +14,18 @@ import PartPicker from "@/components/inquiry/PartPicker";
 import { partsForModel } from "@/components/omnicureParts";
 import { consumablesHref, machineBySlug, machineForProduct } from "@/components/consumables";
 
+/** One line, one job: name the section. No eyebrow, no rule, no product name. */
+function SectionHead({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-xl md:text-2xl font-bold mb-5" style={{ color: "#1A56DB" }}>
+      {children}
+    </h2>
+  );
+}
+
+/** Rows of the spec table shown before the reader asks for the rest. */
+const SPEC_PREVIEW = 6;
+
 const brandPageSlug: Record<Product["brandId"], string> = {
   omnicure: "omnicure",
   phoseon: "phoseon",
@@ -21,12 +34,23 @@ const brandPageSlug: Record<Product["brandId"], string> = {
 };
 
 // Unified standard product template. Section order is fixed for every catalog
-// product: Hero / Key Benefits / Technical Overview / Specifications /
-// (Documents) / Ideal Applications / Application Notes / Related Products / CTA.
+// product: Hero / Key Benefits / Specifications / Part numbers / (Documents) /
+// Ideal Applications / Application Notes / Related Products / CTA.
 // Applications sit at the bottom, right above the application-note links, so
 // the top of the page stays focused on the product itself.
+//
+// Two things this template used to do, and no longer does. It printed the
+// specifications twice — the first six as cards under "At a Glance", then all
+// of them again as a table — which on 27 of the catalogue's products meant two
+// sections with identical content. And every section wore the same heavy shell:
+// 64px of padding top and bottom, a green eyebrow, a heading that spelled out
+// the product's full name again, and a green rule. Measured on a phone, that
+// shell cost 287px to deliver twelve words. One spec block now, one heading per
+// section, and the section's name rather than the product's — the reader worked
+// out what product they were looking at in the hero.
 export default function ProductDetailView({ product, accent }: { product: Product; accent: string }) {
   const { locale } = useLocale();
+  const [allSpecs, setAllSpecs] = useState(false);
   const p = localizeProduct(product, locale);
   const docs = productDocs[product.slug] ?? [];
   // The heading names the product, so it has to be the product's name. Taking
@@ -97,11 +121,9 @@ export default function ProductDetailView({ product, accent }: { product: Produc
 
       {/* 2 · Key Benefits */}
       {p.features.length > 0 && (
-        <section className="py-16" style={{ background: "#f0f4f8" }}>
+        <section className="py-10" style={{ background: "#f0f4f8" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Key Benefits", zh: "核心优势", th: "ประโยชน์หลัก", vi: "Lợi ích chính" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: `Why Choose the ${shortName}`, zh: "为何选择该产品", th: `เหตุใดจึงเลือก ${shortName}`, vi: `Vì sao chọn ${shortName}` }, locale)}</h2>
-            <div className="w-12 h-1 rounded mb-8" style={{ background: "#41A62A" }} />
+            <SectionHead>{t({ en: "Key Benefits", zh: "核心优势", th: "ประโยชน์หลัก", vi: "Lợi ích chính" }, locale)}</SectionHead>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {p.features.map((f, i) => (
                 <div key={f} className="rounded-xl p-5 border border-gray-100 bg-white">
@@ -114,35 +136,18 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         </section>
       )}
 
-      {/* 3 · Technical Overview */}
+      {/* 3 · Specifications — the whole table, six rows at a time.
+          Six is what the old "At a Glance" cards showed, and for 27 products
+          that is already everything; the rest open on request rather than
+          unrolling nineteen rows nobody asked for. */}
       {p.specs.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Technical Overview", zh: "技术概览", th: "ภาพรวมทางเทคนิค", vi: "Tổng quan kỹ thuật" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "At a Glance", zh: "关键参数一览", th: "โดยสรุป", vi: "Tổng quan nhanh" }, locale)}</h2>
-            <div className="w-12 h-1 rounded mb-8" style={{ background: "#41A62A" }} />
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {p.specs.slice(0, 6).map(([label, value]) => (
-                <div key={label} className="rounded-xl border border-gray-100 bg-gray-50 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">{localizeSpecLabel(label, locale)}</p>
-                  <p className="text-sm font-bold leading-snug" style={{ color: "#1A56DB" }}>{value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 4 · Specifications */}
-      {p.specs.length > 0 && (
-        <section className="py-16" style={{ background: "#f0f4f8" }}>
+        <section className="py-10 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Specifications", zh: "规格参数", th: "ข้อมูลจำเพาะ", vi: "Thông số kỹ thuật" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Technical Specifications", zh: "技术规格", th: "ข้อมูลจำเพาะทางเทคนิค", vi: "Thông số kỹ thuật chi tiết" }, locale)}</h2>
+            <SectionHead>{t({ en: "Specifications", zh: "规格参数", th: "ข้อมูลจำเพาะ", vi: "Thông số kỹ thuật" }, locale)}</SectionHead>
             <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
               <table className="w-full text-sm">
                 <tbody>
-                  {p.specs.map(([label, value], i) => (
+                  {(allSpecs ? p.specs : p.specs.slice(0, SPEC_PREVIEW)).map(([label, value], i) => (
                     <tr key={label} className={i % 2 === 1 ? "bg-gray-50" : "bg-white"}>
                       <td className="px-5 py-3 font-medium text-gray-700 align-top w-2/5">{localizeSpecLabel(label, locale)}</td>
                       <td className="px-5 py-3 text-gray-500">{value}</td>
@@ -151,15 +156,33 @@ export default function ProductDetailView({ product, accent }: { product: Produc
                 </tbody>
               </table>
             </div>
+            {p.specs.length > SPEC_PREVIEW && !allSpecs && (
+              <button
+                type="button"
+                onClick={() => setAllSpecs(true)}
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1A56DB] hover:underline"
+              >
+                {t(
+                  {
+                    en: `Show all ${p.specs.length} specifications`,
+                    zh: `展开全部 ${p.specs.length} 项规格`,
+                    th: `ดูข้อมูลจำเพาะทั้งหมด ${p.specs.length} รายการ`,
+                    vi: `Xem toàn bộ ${p.specs.length} thông số`,
+                  },
+                  locale
+                )}
+                <span aria-hidden>↓</span>
+              </button>
+            )}
           </div>
         </section>
       )}
 
       {/* Part numbers the catalogue lists for this model (OmniCure only) */}
       {partsForModel[product.slug] && (
-        <section className="py-16 bg-white border-t border-gray-100">
+        <section className="py-10 bg-white border-t border-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>
+            <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: "#1A56DB" }}>
               {accessoryParts
                 ? t({ en: "Part Numbers for This Product", zh: "本产品料号", th: "หมายเลขชิ้นส่วนของผลิตภัณฑ์นี้", vi: "Mã linh kiện của sản phẩm này" }, locale)
                 : t({ en: "Lamps, Light Guides & Part Numbers", zh: "灯泡、导光管与料号", th: "หลอด ท่อนำแสง & หมายเลขชิ้นส่วน", vi: "Đèn, ống dẫn sáng & mã linh kiện" }, locale)}
@@ -193,10 +216,9 @@ export default function ProductDetailView({ product, accent }: { product: Produc
 
       {/* Documents & Downloads (optional) */}
       {docs.length > 0 && (
-        <section className="py-16 bg-white border-t border-gray-100">
+        <section className="py-10 bg-white border-t border-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Documents", zh: "资料下载", th: "เอกสาร", vi: "Tài liệu" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#1A56DB" }}>{t({ en: "Brochures & Guides", zh: "产品手册与指南", th: "โบรชัวร์และคู่มือ", vi: "Tài liệu & hướng dẫn" }, locale)}</h2>
+            <SectionHead>{t({ en: "Brochures & Guides", zh: "产品手册与指南", th: "โบรชัวร์และคู่มือ", vi: "Tài liệu & hướng dẫn" }, locale)}</SectionHead>
             <div className="grid sm:grid-cols-2 gap-4">
               {docs.map((d) => (
                 <a key={d.file} href={productDocUrl(d)} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-gray-400 hover:shadow-sm transition-all">
@@ -217,11 +239,9 @@ export default function ProductDetailView({ product, accent }: { product: Produc
 
       {/* 5 · Ideal Applications */}
       {p.applications.length > 0 && (
-        <section className="py-14 bg-white border-t border-gray-100">
+        <section className="py-10 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Best For", zh: "适用场景", th: "เหมาะสำหรับ", vi: "Phù hợp cho" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Ideal Applications", zh: "理想应用", th: "การใช้งานที่เหมาะสม", vi: "Ứng dụng lý tưởng" }, locale)}</h2>
-            <div className="w-12 h-1 rounded mb-6" style={{ background: "#41A62A" }} />
+            <SectionHead>{t({ en: "Ideal Applications", zh: "理想应用", th: "การใช้งานที่เหมาะสม", vi: "Ứng dụng lý tưởng" }, locale)}</SectionHead>
             <div className="flex flex-wrap gap-2.5">
               {p.applications.map((a) => (
                 <span key={a} className="text-sm font-semibold px-4 py-2 rounded-full border" style={{ borderColor: `${accent}33`, color: accent, background: `${accent}0d` }}>{a}</span>
@@ -236,10 +256,9 @@ export default function ProductDetailView({ product, accent }: { product: Produc
 
       {/* 7 · Related Products */}
       {related.length > 0 && (
-        <section className="py-16 bg-white border-t border-gray-100">
+        <section className="py-10 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Related Products", zh: "相关产品", th: "ผลิตภัณฑ์ที่เกี่ยวข้อง", vi: "Sản phẩm liên quan" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `More ${groupName} Systems`, zh: `更多 ${groupName} 系统`, th: `ระบบ ${groupName} เพิ่มเติม`, vi: `Thêm hệ thống ${groupName}` }, locale)}</h2>
+            <SectionHead>{t({ en: `More ${groupName} Systems`, zh: `更多 ${groupName} 系统`, th: `ระบบ ${groupName} เพิ่มเติม`, vi: `Thêm hệ thống ${groupName}` }, locale)}</SectionHead>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((x) => (
                 <Link key={x.slug} href={productHref(x)} className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-[#1A56DB]/30 transition-all">
