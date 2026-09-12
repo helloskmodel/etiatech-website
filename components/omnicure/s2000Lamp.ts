@@ -58,6 +58,50 @@ export const LAMP = {
     ["Up to 40 W/cm²", "Long-wave UV"],
     ["2,000 h", "Guaranteed · ~4,000 h typical"],
   ] as [string, string][],
+  // The three things a repeat buyer of a consumable actually weighs, in the
+  // order they weigh them. Each one is a claim ETIA can stand behind:
+  //   · 原厂 — the lamp is the manufacturer's own part, not a compatible
+  //   · 可验真 — from the ETIA code on the box (see docs/label-system.md)
+  //   · 快速 — the 24-hour reply the rest of the site already promises
+  // Nothing here claims stock levels: the inventory carries part numbers, not
+  // quantities, so "in stock" would be a promise we cannot check.
+  pillars: [
+    {
+      icon: "factory",
+      title: {
+        en: "Manufacturer's own part",
+        zh: "原厂供应",
+        th: "อะไหล่แท้จากผู้ผลิต",
+        vi: "Phụ tùng chính hãng",
+      },
+      body: {
+        en: "Excelitas lamp modules in the manufacturer's own packaging, with the factory part number and lot code intact — not a compatible equivalent.",
+        zh: "Excelitas 原厂灯泡模块，原厂包装，厂家料号与批号完整——不是兼容替代件。",
+        th: "โมดูลหลอด Excelitas ในบรรจุภัณฑ์ของผู้ผลิตเอง พร้อมหมายเลขชิ้นส่วนและรหัสล็อตครบถ้วน — ไม่ใช่ของเทียบเท่า",
+        vi: "Mô-đun đèn Excelitas trong bao bì của chính nhà sản xuất, còn nguyên mã hàng và mã lô — không phải hàng tương đương.",
+      },
+    },
+    {
+      icon: "scan",
+      title: { en: "Verifiable", zh: "可验真", th: "ตรวจสอบได้", vi: "Kiểm chứng được" },
+      body: {
+        en: "Every lamp ETIA ships carries its own ETIA code. Scan it and the part number, the factory lot and the date it left us come back from our register — so you can tell before you fit it.",
+        zh: "ETIA 出库的每一支灯都带自己的 ETIA 码。扫一下，料号、原厂批号、出库日期从我们的登记里返回——装机之前就能确认。",
+        th: "หลอดทุกดวงที่ ETIA ส่งออกมีรหัส ETIA ของตัวเอง สแกนแล้วจะได้หมายเลขชิ้นส่วน ล็อตจากโรงงาน และวันที่ส่งออกจากทะเบียนของเรา — ตรวจได้ก่อนติดตั้ง",
+        vi: "Mỗi bóng đèn ETIA giao đều mang mã ETIA riêng. Quét mã là có mã hàng, lô sản xuất và ngày xuất kho từ sổ đăng ký của chúng tôi — kiểm tra được trước khi lắp.",
+      },
+    },
+    {
+      icon: "clock",
+      title: { en: "Answered fast", zh: "回复快", th: "ตอบกลับเร็ว", vi: "Phản hồi nhanh" },
+      body: {
+        en: "Ask here and a sales engineer comes back within 24 hours with a price and a delivery date — from a team in your own region, not a head office on the other side of the world.",
+        zh: "在这里问询，销售工程师 24 小时内带着价格和交期回复——本区域的团队，不是地球另一边的总部。",
+        th: "สอบถามที่นี่ วิศวกรฝ่ายขายจะตอบกลับภายใน 24 ชั่วโมงพร้อมราคาและกำหนดส่ง — จากทีมในภูมิภาคของคุณเอง ไม่ใช่สำนักงานใหญ่อีกซีกโลก",
+        vi: "Hỏi tại đây, kỹ sư kinh doanh phản hồi trong 24 giờ kèm giá và thời gian giao — từ đội ngũ ngay trong khu vực của bạn, không phải trụ sở ở nửa kia địa cầu.",
+      },
+    },
+  ] as { icon: "factory" | "scan" | "clock"; title: Record<LampLang, string>; body: Record<LampLang, string> }[],
   // Part-number table stays in English on every language page (ordering accuracy
   // + these codes are the primary search keywords). Kept as plain text.
   parts: [

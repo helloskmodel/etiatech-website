@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, t, type LangText, type Locale, LOCALE_LABELS, ACTIVE_LOCALES } from "@/components/LocaleContext";
-import { inquiryMailto } from "@/components/contact";
 import { localizeHref, delocalizeHref } from "@/components/localeHref";
 import { LIGHT_SOURCES } from "@/components/lightSources";
 import { brandLanding, type BrandSlug } from "@/components/brandLanding";
@@ -257,9 +256,6 @@ export default function Nav() {
               </div>
             )}
           </div>
-          <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="rounded-lg bg-[#41A62A] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#358B22]">
-            {t({ en: "Talk to an Engineer", zh: "咨询工程师", vi: "Trao đổi với kỹ sư", th: "ปรึกษาวิศวกร" }, locale)}
-          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -359,9 +355,6 @@ export default function Nav() {
               );
             })}
           </div>
-          <a href={inquiryMailto(locale, { subject: "Engineering Inquiry" })} className="mt-3 rounded-lg bg-[#41A62A] px-4 py-3 text-center text-sm font-bold text-white">
-            {t({ en: "Talk to an Engineer", zh: "咨询工程师", vi: "Trao đổi với kỹ sư", th: "ปรึกษาวิศวกร" }, locale)}
-          </a>
         </div>
       )}
     </nav>
