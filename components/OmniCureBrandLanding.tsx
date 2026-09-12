@@ -31,6 +31,7 @@ import {
   products,
 } from "@/components/productCatalog";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
+import { consumableMachines, consumablesHref } from "@/components/consumables";
 import HeroBanner from "@/components/HeroBanner";
 import { PAGE_BANNERS } from "@/components/caseStudies";
 import FinalCta from "@/components/FinalCta";
@@ -241,6 +242,38 @@ export default function OmniCureBrandLanding() {
               </div>
             );
           })}
+
+          {/* Consumables belong to the brand, not beside it. Every consumable
+              ETIA stocks is an OmniCure part, so the owner of an OmniCure
+              machine finds the lamp, the filter and the guide in the same
+              place he finds the machine — one more group at the foot of the
+              range, keyed by the model printed on his nameplate. */}
+          <div id="omnicure-consumables" className="mt-12 scroll-mt-24">
+            <div className="mb-5 flex items-baseline gap-3">
+              <h3 className="shrink-0 text-lg font-bold text-[#087F6B] sm:text-xl">{t({ en: "Consumables & spare parts", zh: "耗材与备件", th: "วัสดุสิ้นเปลืองและอะไหล่", vi: "Vật tư tiêu hao & phụ tùng" }, locale)}</h3>
+              <span className="h-px flex-1" style={{ background: "#E1E8F0" }} />
+              <Link href={consumablesHref()} className="shrink-0 text-xs font-bold text-[#1A56DB] hover:underline">{t({ en: "All consumables", zh: "全部耗材", th: "วัสดุสิ้นเปลืองทั้งหมด", vi: "Tất cả vật tư" }, locale)} →</Link>
+            </div>
+            <p className="mb-5 max-w-3xl text-sm leading-6 text-[#5F6C7B]">
+              {t({
+                en: "Lamps, filter cartridges, light guides, LED optics and windows — by the model on your nameplate, with the part numbers and what each one is for.",
+                zh: "灯泡、滤片、导光管、LED 光学件与保护视窗——按机器铭牌上的型号查，附料号与用途说明。",
+                th: "หลอด คาร์ทริดจ์ฟิลเตอร์ ท่อนำแสง ออปติก LED และหน้าต่างป้องกัน — ค้นตามรุ่นบนป้ายเครื่อง พร้อมรหัสอะไหล่และหน้าที่ของแต่ละชิ้น",
+                vi: "Đèn, hộp kính lọc, ống dẫn sáng, quang học LED và cửa sổ bảo vệ — tra theo model trên nhãn máy, kèm mã hàng và công dụng.",
+              }, locale)}
+            </p>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {consumableMachines.map((machine) => (
+                <Link key={machine.slug} href={consumablesHref(machine.slug)} className="group flex items-center justify-between gap-3 rounded-2xl border border-[#E3EAF2] bg-white p-4 transition hover:border-[#087F6B]/40 hover:shadow-lg">
+                  <span className="min-w-0">
+                    <span className="block text-sm font-bold leading-snug text-[#102A43] group-hover:text-[#087F6B]">{machine.name}</span>
+                    <span className="mt-0.5 block text-xs text-[#7B8794]">{t(machine.tech, locale)}</span>
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[#087F6B]" />
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
