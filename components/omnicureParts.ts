@@ -483,6 +483,18 @@ export function partFamily(id: PartFamilyId): PartFamily {
 // that is not listed shows no picker.
 export const partsForModel: Record<string, PartFamilyId[]> = {"s2000-elite": ["lamps", "elite-filters", "s2000-elite", "light-guides", "optical", "radiometry-s", "general"], "s1500-pro": ["lamps", "elite-filters", "light-guides", "optical", "general"], "s2000-lamp": ["lamps"], "r2000": ["radiometry-s"], "s-liquid-light-guide": ["light-guides"], "s-fiber-light-guide": ["light-guides"], "s-fiber-light-line": ["light-guides"], "s2000-elite-filters": ["elite-filters"], "s-cure-ring-adapter": ["optical"], "s-light-line-adapter": ["optical"], "s-collimating-adapter": ["optical"], "lx500": ["lx500", "ls200"], "lx505": ["lx500", "ls200"], "v3-led-heads": ["lx500"], "ls200": ["ls200"], "ac2": ["ac-heads", "ac-power", "ac-spares"], "ac4": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac5": ["ac-heads", "ac-power", "ac-spares"], "ac7": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8-hd": ["ac-heads", "ac-power", "ac-spares"], "ac9225": ["ac-heads", "ac-power", "ac-spares"], "ac9225-f": ["ac-heads", "ac-power", "ac-spares"]};
 
+// A light-guide accessory page shows only its own guides. The `light-guides`
+// family holds all four kinds — liquid, ER liquid, high-power fiber and fiber
+// light line — which is right on a machine page, where the customer is choosing
+// between them, and wrong on the product page for one of them: seventy-odd part
+// numbers of which two thirds belong to a different product. Keyed by the
+// `type` attribute each part already carries.
+export const partTypesForModel: Record<string, string[]> = {
+  "s-liquid-light-guide": ["Liquid Light Guide", "ER Liquid Light Guide"],
+  "s-fiber-light-guide": ["High-Power Fiber Light Guide"],
+  "s-fiber-light-line": ["High-Power Fiber Light Line"],
+};
+
 // An AC model page shows only the heads and bundles of its own series.
 export const seriesForModel: Record<string, string> = {"ac2": "AC2", "ac4": "AC4", "ac5": "AC5", "ac7": "AC7", "ac8": "AC8", "ac8-hd": "AC8-HD", "ac9225": "AC9", "ac9225-f": "AC9225-F"};
 

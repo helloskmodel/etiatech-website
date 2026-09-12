@@ -41,6 +41,10 @@ export default function ProductDetailView({ product, accent }: { product: Produc
   // Where this model's wear parts, their service life and their replacement
   // signs live. Not every product has one — only the machines ETIA services.
   const consumablesMachine = machineBySlug.get(machineForProduct[product.slug] ?? "");
+  // An accessory page (a light guide, a filter, an adapter) draws on one part
+  // family and is not a machine. Calling its table "Lamps, Light Guides & Part
+  // Numbers" put the word "lamp" at the top of a page that sells no lamp.
+  const accessoryParts = (partsForModel[product.slug]?.length ?? 0) === 1;
   const related = products
     .filter((x) => x.brandId === product.brandId && x.slug !== product.slug)
     .slice(0, 4)
@@ -155,8 +159,16 @@ export default function ProductDetailView({ product, accent }: { product: Produc
       {partsForModel[product.slug] && (
         <section className="py-16 bg-white border-t border-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Lamps, Light Guides & Part Numbers", zh: "灯泡、导光管与料号", th: "หลอด ท่อนำแสง & หมายเลขชิ้นส่วน", vi: "Đèn, ống dẫn sáng & mã linh kiện" }, locale)}</h2>
-            <p className="text-sm text-gray-600 mb-6">{t({ en: "Everything the catalogue lists for this model. Pick by what it is — the part number is filled in — and add it to your inquiry with the system.", zh: "目录里给这个机型列的全部配件。按用途逐项选，料号自动带出，和整机一起加进询单。", th: "ทุกอย่างที่แคตตาล็อกระบุสำหรับรุ่นนี้ เลือกตามสิ่งที่เป็น หมายเลขชิ้นส่วนจะถูกกรอกให้ แล้วเพิ่มลงในรายการสอบถามพร้อมกับระบบ", vi: "Mọi thứ catalogue liệt kê cho mẫu này. Chọn theo mô tả — mã linh kiện tự điền — rồi thêm vào yêu cầu cùng hệ thống." }, locale)}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>
+              {accessoryParts
+                ? t({ en: "Part Numbers for This Product", zh: "本产品料号", th: "หมายเลขชิ้นส่วนของผลิตภัณฑ์นี้", vi: "Mã linh kiện của sản phẩm này" }, locale)
+                : t({ en: "Lamps, Light Guides & Part Numbers", zh: "灯泡、导光管与料号", th: "หลอด ท่อนำแสง & หมายเลขชิ้นส่วน", vi: "Đèn, ống dẫn sáng & mã linh kiện" }, locale)}
+            </h2>
+            <p className="text-sm text-gray-600 mb-6">
+              {accessoryParts
+                ? t({ en: "Every size the catalogue lists for this product. Pick the one you need — the part number is filled in — and add it to your inquiry.", zh: "目录里为这个产品列出的全部规格。选中需要的那一条，料号自动带出，直接加进询单。", th: "ทุกขนาดที่แคตตาล็อกระบุสำหรับผลิตภัณฑ์นี้ เลือกรายการที่ต้องการ หมายเลขชิ้นส่วนจะถูกกรอกให้ แล้วเพิ่มลงในรายการสอบถาม", vi: "Mọi kích thước catalogue liệt kê cho sản phẩm này. Chọn mục bạn cần — mã linh kiện tự điền — rồi thêm vào yêu cầu." }, locale)
+                : t({ en: "Everything the catalogue lists for this model. Pick by what it is — the part number is filled in — and add it to your inquiry with the system.", zh: "目录里给这个机型列的全部配件。按用途逐项选，料号自动带出，和整机一起加进询单。", th: "ทุกอย่างที่แคตตาล็อกระบุสำหรับรุ่นนี้ เลือกตามสิ่งที่เป็น หมายเลขชิ้นส่วนจะถูกกรอกให้ แล้วเพิ่มลงในรายการสอบถามพร้อมกับระบบ", vi: "Mọi thứ catalogue liệt kê cho mẫu này. Chọn theo mô tả — mã linh kiện tự điền — rồi thêm vào yêu cầu cùng hệ thống." }, locale)}
+            </p>
             <PartPicker families={partsForModel[product.slug]} model={product.slug} heading={false} />
             {consumablesMachine && (
               <Link

@@ -46,7 +46,17 @@ export const technologies = [
   "Microwave UV Curing",
 ];
 
-export const products: Product[] = [
+// Products ETIA has asked us to take off the site for now. The catalogue entry
+// below stays exactly where it is — a delisted product usually comes back, and
+// keeping the entry means nothing has to be rewritten when it does. Everything
+// on the site reads `products`, so one filter takes it off the shop, the brand
+// pages, the sitemap and its own route in one move.
+const DELISTED = new Set<string>([
+  // The "ETIA's own line" copy needs confirming before this goes back up.
+  "s-liquid-light-guide",
+]);
+
+const catalogProducts: Product[] = [
   // ───────────────── TECHNOLOGY 1: UV SPOT CURING ─────────────────
   {
     slug: "lx505",
@@ -2622,6 +2632,8 @@ export const products: Product[] = [
   },
 ];
 
+export const products: Product[] = catalogProducts.filter((p) => !DELISTED.has(p.slug));
+
 export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
@@ -2636,7 +2648,6 @@ export const modelToSlug: Record<string, string> = {
   "UV LED Heads (V3)": "v3-led-heads",
   "R2000 Radiometer": "r2000",
   "S2E Network Module": "s2e-network-module",
-  "S Series Light Guide": "s-liquid-light-guide",
   "AC2": "ac2",
   "AC4": "ac4",
   "AC5": "ac5",
@@ -2772,6 +2783,14 @@ const DOC_SPEC_GUIDE = { en: "Specification Guide", zh: "规格指南", vi: "Hư
 // Chinese brochures live in /PRODUCTPDFCN (PRODUCT_PDF_CN_BASE). Every URL
 // below was verified to return HTTP 200 before being added.
 export const productDocs: Record<string, ProductDoc[]> = {
+  // S-Series optics. Like the LX505 hero image, these objects carry no file
+  // extension in the bucket; encodeURIComponent handles the spaces.
+  "s-fiber-light-guide": [
+    { file: "Brochure - OmniCure High Power Fiber Light Guide", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
+  "s-cure-ring-adapter": [
+    { file: "Brochure - OmniCure Cure Ring Optical Accessory", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
+  ],
   "ir-m85": [
     { file: "Custom MX Infrared Heating Modules Brochure.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
   ],
@@ -2950,6 +2969,14 @@ const productImageFile: Record<string, string> = {
   "ac9225": "ac9225.png",
   "ac9225-f": "AC9225-F.png",
   "r2000": "R2000.png",
+  // S-Series optics and guides. Like the LX505 hero, these objects carry no
+  // file extension in the bucket; the names are the product names in capitals,
+  // spaces and all, so they are percent-encoded on the way out.
+  "s-collimating-adapter": "ADJUSTABLE SPOT COLLIMATING ADAPTER",
+  "s-light-line-adapter": "UV LIGHT-LINE OPTICAL ADAPTER",
+  "s-cure-ring-adapter": "UV CURE-RING OPTICAL ADAPTER",
+  "s-fiber-light-guide": "HIGH-POWER FIBER LIGHT GUIDE",
+  "s-fiber-light-line": "HIGH-POWER FIBER LIGHT LINE",
 };
 
 // Full image URL for a product, or "" when no asset is available (the UI

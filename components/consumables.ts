@@ -364,7 +364,6 @@ export const consumables: Consumable[] = [
       vi: "Dòng ống dẫn sáng của chính ETIA: lõi lỏng và sợi quang công suất cao, đầu 3, 5 và 8 mm, dài 750–5000 mm, từ một tới bốn nhánh, kèm đầu ra dạng vạch. Đây là chi tiết bị cầm nắm mỗi ca, nên cũng là chi tiết hỏng trước tiên.",
     },
     pns: ["805-00002", "805-00004", "805-00007", "805-00009", "805-00011", "806-00005", "806-00011", "806-00012"],
-    href: "/product/systems/s-liquid-light-guide",
     caution: {
       en: "Do not bend a light guide. Not into a curve, not into a coil, not by hanging it from its tip. There is no safe bend radius to work to — ETIA's rule is that the guide is not bent at all. Bending damage is permanent and is usually invisible from the outside: the first sign is a cure that will not pass. Route it straight, support its weight along its whole length, and cap the tip when it is off the machine.",
       zh: "导光管不可弯曲。不可弯成弧、不可盘绕、不可提着出光端吊挂。没有所谓「安全弯曲半径」可以照着做——ETIA 的规定就是不弯。弯折损伤不可逆，外表往往看不出来：第一个征兆是固化不合格。走线要直，全长都要有支撑，下机后给端面盖上保护帽。",
