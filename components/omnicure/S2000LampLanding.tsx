@@ -123,14 +123,11 @@ export default function S2000LampLanding({ lang }: { lang: LampLang }) {
       {/* SHOP — the four lamps, a quantity box, one ask for price and date */}
       <LampShop lang={lang} officeId={officeId} page={page} />
 
-      {/* CLOSING CTA — contact only; the ask lives in the shop above */}
+      {/* CLOSING — contact only. The ask is the form directly above; repeating
+          it here asked a visitor who has just filled it in to do it again. */}
       <section style={{ background: BRAND.blue }}>
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">{L.closing}</h2>
+        <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
           <p className="text-sm text-white/80">✉ {email}{thailandContact && " · 📍 Bangkok, Thailand"}</p>
-          <a href="#shop" className="mt-6 inline-block rounded-lg px-6 py-3 text-sm font-bold text-white hover:opacity-90" style={{ background: BRAND.green }}>
-            {L.request}
-          </a>
         </div>
       </section>
 
