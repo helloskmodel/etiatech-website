@@ -2950,6 +2950,14 @@ const productImageFile: Record<string, string> = {
   "ac9225": "ac9225.png",
   "ac9225-f": "AC9225-F.png",
   "r2000": "R2000.png",
+  // S-Series optics and guides. Like the LX505 hero, these objects carry no
+  // file extension in the bucket; the names are the product names in capitals,
+  // spaces and all, so they are percent-encoded on the way out.
+  "s-collimating-adapter": "ADJUSTABLE SPOT COLLIMATING ADAPTER",
+  "s-light-line-adapter": "UV LIGHT-LINE OPTICAL ADAPTER",
+  "s-cure-ring-adapter": "UV CURE-RING OPTICAL ADAPTER",
+  "s-fiber-light-guide": "HIGH-POWER FIBER LIGHT GUIDE",
+  "s-fiber-light-line": "HIGH-POWER FIBER LIGHT LINE",
 };
 
 // Full image URL for a product, or "" when no asset is available (the UI
