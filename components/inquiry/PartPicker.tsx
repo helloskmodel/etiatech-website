@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import { Plus, Check, Clock, Search } from "lucide-react";
-import { partFamilies, parts, seriesForModel, type Part, type PartFamilyId } from "@/components/omnicureParts";
+import { partFamilies, parts, partTypesForModel, seriesForModel, type Part, type PartFamilyId } from "@/components/omnicureParts";
 import { useInquiry } from "./InquiryContext";
 import { useLocale, t } from "@/components/LocaleContext";
 
@@ -19,7 +19,7 @@ import { useLocale, t } from "@/components/LocaleContext";
 //
 // `families` scopes the list to a product page (a lamp page only offers lamps
 // and light guides); `model` narrows AC heads and bundles to that model's
-// series.
+// series, and light guides to the kind that page is actually about.
 
 /** Fold a string for matching: case and separators must not decide a hit. */
 const fold = (s: string) => s.toLowerCase().replace(/[\s\-_./]/g, "");
@@ -53,6 +53,7 @@ export default function PartPicker({
   const [query, setQuery] = useState("");
 
   const series = model ? seriesForModel[model] : undefined;
+  const guideTypes = model ? partTypesForModel[model] : undefined;
 
   // Everything this picker is allowed to offer, before the chip or the query.
   const pool = useMemo(() => {
@@ -60,9 +61,10 @@ export default function PartPicker({
     return parts.filter((p) => {
       if (!allowed.has(p.family)) return false;
       if (series && (p.family === "ac-heads" || p.family === "ac-bundles")) return p.attrs.series === series;
+      if (guideTypes && p.family === "light-guides") return guideTypes.includes(String(p.attrs.type));
       return true;
     });
-  }, [fams, series]);
+  }, [fams, series, guideTypes]);
 
   const q = fold(query.trim());
 
