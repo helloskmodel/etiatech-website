@@ -39,6 +39,12 @@ const T = {
     vi: "Chọn mã hàng và số lượng. Một lần gửi, nhận giá và thời gian giao.",
   },
   qty: { en: "Qty", zh: "数量", th: "จำนวน", vi: "SL" },
+  legend: {
+    en: "Elite = S2000 Elite / S1500 Pro　·　S2000 = S2000 / S2000-XLA / S1500",
+    zh: "Elite = S2000 Elite / S1500 Pro　·　S2000 = S2000 / S2000-XLA / S1500",
+    th: "Elite = S2000 Elite / S1500 Pro　·　S2000 = S2000 / S2000-XLA / S1500",
+    vi: "Elite = S2000 Elite / S1500 Pro　·　S2000 = S2000 / S2000-XLA / S1500",
+  },
   genuine: { en: "Genuine Excelitas", zh: "Excelitas 原厂件", th: "ของแท้ Excelitas", vi: "Chính hãng Excelitas" },
 
   selected: { en: "Selected", zh: "已选", th: "ที่เลือก", vi: "Đã chọn" },
@@ -67,41 +73,27 @@ const tr = (k: keyof typeof T, lang: L) => T[k][lang];
  * glance, not studied.
  */
 const LAMPS: { pn: string; what: Record<L, string> }[] = [
+  // One line per lamp on a 390 px phone leaves about seven characters after the
+  // part number and the quantity box, so the machine is abbreviated to the word
+  // the customer would say out loud — "Elite", "S2000" — and the full list of
+  // what each covers is one footnote under the table. Cutting the machine
+  // entirely was the other way to make it fit, but then 68000R and 64000R read
+  // identically and nobody can tell which is theirs.
   {
     pn: "012-68000R",
-    what: {
-      en: "Standard · S2000 Elite / S1500 Pro",
-      zh: "标准型 · S2000 Elite / S1500 Pro",
-      th: "มาตรฐาน · S2000 Elite / S1500 Pro",
-      vi: "Tiêu chuẩn · S2000 Elite / S1500 Pro",
-    },
+    what: { en: "Elite · Standard", zh: "Elite · 标准", th: "Elite · มาตรฐาน", vi: "Elite · Tiêu chuẩn" },
   },
   {
     pn: "012-69000R",
-    what: {
-      en: "Surface Cure · S2000 Elite / S1500 Pro",
-      zh: "表面固化型 · S2000 Elite / S1500 Pro",
-      th: "Surface Cure · S2000 Elite / S1500 Pro",
-      vi: "Surface Cure · S2000 Elite / S1500 Pro",
-    },
+    what: { en: "Elite · Surface Cure", zh: "Elite · 表面固化", th: "Elite · Surface Cure", vi: "Elite · Surface Cure" },
   },
   {
     pn: "012-64000R",
-    what: {
-      en: "Standard · S2000 / S2000-XLA / S1500",
-      zh: "标准型 · S2000 / S2000-XLA / S1500",
-      th: "มาตรฐาน · S2000 / S2000-XLA / S1500",
-      vi: "Tiêu chuẩn · S2000 / S2000-XLA / S1500",
-    },
+    what: { en: "S2000 · Standard", zh: "S2000 · 标准", th: "S2000 · มาตรฐาน", vi: "S2000 · Tiêu chuẩn" },
   },
   {
     pn: "012-65000R",
-    what: {
-      en: "Surface Cure · S2000 / S2000-XLA / S1500",
-      zh: "表面固化型 · S2000 / S2000-XLA / S1500",
-      th: "Surface Cure · S2000 / S2000-XLA / S1500",
-      vi: "Surface Cure · S2000 / S2000-XLA / S1500",
-    },
+    what: { en: "S2000 · Surface Cure", zh: "S2000 · 表面固化", th: "S2000 · Surface Cure", vi: "S2000 · Surface Cure" },
   },
 ];
 
@@ -273,22 +265,22 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
             const n = qty[l.pn] ?? 0;
             return (
               <li key={l.pn} className={`flex items-center gap-4 p-4 ${n > 0 ? "bg-[#F3FAF1]" : ""}`}>
-                <div className="min-w-0 flex-1">
-                  <p className="font-mono text-base font-bold" style={{ color: BRAND.blue }}>{l.pn}</p>
-                  <p className="mt-0.5 text-sm leading-snug text-gray-600">{l.what[lang]}</p>
-                </div>
+                <p className="min-w-0 flex-1 truncate text-[13px] leading-tight">
+                  <span className="font-mono font-bold" style={{ color: BRAND.blue }}>{l.pn}</span>
+                  <span className="text-gray-600">　{l.what[lang]}</span>
+                </p>
                 <div className="flex shrink-0 items-center overflow-hidden rounded-lg border border-gray-300">
-                  <button type="button" onClick={() => bump(l.pn, -1)} aria-label={`${l.pn} −`} className="px-3 py-2 text-lg leading-none text-gray-500 hover:bg-gray-50">
+                  <button type="button" onClick={() => bump(l.pn, -1)} aria-label={`${l.pn} −`} className="px-2.5 py-1.5 text-base leading-none text-gray-500 hover:bg-gray-50">
                     −
                   </button>
                   <input
                     value={n}
                     onChange={(e) => setQty((q) => ({ ...q, [l.pn]: Math.max(0, Math.min(999, Number(e.target.value.replace(/\D/g, "")) || 0)) }))}
                     inputMode="numeric"
-                    className="w-12 border-x border-gray-300 py-2 text-center text-sm font-bold"
+                    className="w-10 border-x border-gray-300 py-1.5 text-center text-sm font-bold"
                     aria-label={`${l.pn} ${tr("qty", lang)}`}
                   />
-                  <button type="button" onClick={() => bump(l.pn, 1)} aria-label={`${l.pn} +`} className="px-3 py-2 text-lg leading-none text-gray-500 hover:bg-gray-50">
+                  <button type="button" onClick={() => bump(l.pn, 1)} aria-label={`${l.pn} +`} className="px-2.5 py-1.5 text-base leading-none text-gray-500 hover:bg-gray-50">
                     ＋
                   </button>
                 </div>
@@ -296,6 +288,7 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
             );
           })}
         </ul>
+        <p className="mt-2 text-xs text-gray-500">{tr("legend", lang)}</p>
 
         {/* The ask */}
         <form onSubmit={onSubmit} className="mt-8 rounded-2xl border border-gray-100 bg-white p-6">
