@@ -83,10 +83,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // next.config redirects them (308) to /applications and /product/omnicure.
     // Only the canonical 200 destinations belong in the sitemap; listing a
     // redirect makes Google report "Page with redirect".
-    // The lamp trade-in. Worth ranking on its own: a plant searching how to get
-    // rid of a used mercury lamp is a plant that needs the next one, and most
-    // of them have never bought from ETIA.
-    { url: `${SITE}/trade-in`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.6 },
     // NOTE: /industries was retired — next.config redirects it (and its slugs)
     // to /applications, so it must not be listed here.

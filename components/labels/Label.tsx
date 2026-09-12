@@ -85,8 +85,8 @@ const HEADLINE: Record<SerialType, string> = {
 /** What scanning it is good for. The reason a customer bothers. */
 const ACTIONS: Record<SerialType, string> = {
   E: "Calibration / PM / repair / lamp",
-  L: "Verify / re-order / warranty / trade-in",
-  G: "Verify / cleaning / re-order / trade-in",
+  L: "Verify / re-order / warranty",
+  G: "Verify / cleaning / re-order",
   P: "Verify / re-order / support",
 };
 
