@@ -1,14 +1,10 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ArrowRight, PackageCheck } from "lucide-react";
 import { useLocale, t } from "@/components/LocaleContext";
-import { localizeHref } from "@/components/localeHref";
 import { inquiryMailto } from "@/components/contact";
 import { LAMP, LAMP_PATHS } from "@/components/omnicure/s2000Lamp";
-import { useInquiry } from "@/components/inquiry/InquiryContext";
 
 // The S2000 lamp, on the home page. The one thing a production manager in
 // Southeast Asia wants to know is whether the lamp can be had at all — genuine
@@ -40,25 +36,7 @@ const SPECTRUM = {
 
 export default function LampStockBand() {
   const { locale } = useLocale();
-  const router = useRouter();
-  const { add, setQty } = useInquiry();
-  const [qty, setLocalQty] = useState<Record<string, number>>({});
-
-  const total = Object.values(qty).reduce((a, b) => a + b, 0);
-
-  const bump = (pn: string, d: number) =>
-    setLocalQty((q) => ({ ...q, [pn]: Math.max(0, Math.min(99, (q[pn] ?? 0) + d)) }));
-
-  // Put exactly what was chosen into the basket, then go and send it.
-  const ask = () => {
-    for (const [pn, n] of Object.entries(qty)) {
-      if (n > 0) {
-        add({ kind: "part", pn });
-        setQty({ kind: "part", pn }, n);
-      }
-    }
-    router.push(localizeHref("/inquiry", locale));
-  };
+  const shop = `${LAMP_PATHS[locale]}#shop`;
 
   const compat = inquiryMailto(locale, {
     subject: "S2000 lamp compatibility check",
@@ -92,10 +70,10 @@ export default function LampStockBand() {
               <p className="mt-1.5 text-sm leading-6 text-[#5F6C7B]">
                 {t(
                   {
-                    en: "Pick the part number and how many. One send and you get a price and a delivery date.",
-                    zh: "选料号，填数量。发一次，拿到价格和交期。",
-                    th: "เลือกหมายเลขชิ้นส่วนและจำนวน ส่งครั้งเดียว รับราคาและกำหนดส่ง",
-                    vi: "Chọn mã hàng và số lượng. Gửi một lần, nhận giá và thời gian giao.",
+                    en: "Four part numbers in all. Tell us your machine, pick the quantity, and one send gets you a price and a delivery date.",
+                    zh: "一共四个料号。告诉我们你的机型，选好数量，一次提交就能拿到价格和交期。",
+                    th: "มีทั้งหมดสี่หมายเลขชิ้นส่วน บอกรุ่นเครื่องของคุณ เลือกจำนวน ส่งครั้งเดียวก็ได้ราคาและกำหนดส่ง",
+                    vi: "Tổng cộng bốn mã hàng. Cho biết máy của bạn, chọn số lượng, gửi một lần là có giá và thời gian giao.",
                   },
                   locale
                 )}
@@ -107,39 +85,25 @@ export default function LampStockBand() {
           <div className="w-full shrink-0 lg:w-[26rem]">
             <ul className="divide-y divide-[#E3EDF2] overflow-hidden rounded-xl border border-[#E3EDF2] bg-white">
               {LAMPS.map((l) => {
-                const n = qty[l.pn] ?? 0;
                 return (
-                  <li key={l.pn} className="flex items-center gap-3 px-3 py-2.5">
-                    <div className="min-w-0 flex-1">
-                      <p className="font-mono text-[13px] font-bold leading-tight text-[#143C96]">{l.pn}</p>
-                      <p className="mt-0.5 text-[11px] leading-tight text-[#7B8794]">
-                        {t(SPECTRUM[l.spectrumKey], locale)} · {l.fits}
-                      </p>
-                    </div>
-                    <div className="flex shrink-0 items-center overflow-hidden rounded-lg border border-[#D9E4EA]">
-                      <button type="button" onClick={() => bump(l.pn, -1)} aria-label={`${l.pn} −`} className="px-2.5 py-1 text-base leading-none text-[#667085] hover:bg-[#F7F9FC]">
-                        −
-                      </button>
-                      <span className="w-8 border-x border-[#D9E4EA] py-1 text-center text-sm font-bold text-[#102A43]">{n}</span>
-                      <button type="button" onClick={() => bump(l.pn, 1)} aria-label={`${l.pn} +`} className="px-2.5 py-1 text-base leading-none text-[#667085] hover:bg-[#F7F9FC]">
-                        ＋
-                      </button>
-                    </div>
+                  <li key={l.pn} className="px-3 py-2">
+                    <p className="font-mono text-[13px] font-bold leading-tight text-[#143C96]">{l.pn}</p>
+                    <p className="mt-0.5 text-[11px] leading-tight text-[#7B8794]">
+                      {t(SPECTRUM[l.spectrumKey], locale)} · {l.fits}
+                    </p>
                   </li>
                 );
               })}
             </ul>
 
             <div className="mt-3 flex flex-col gap-2 sm:flex-row">
-              <button
-                type="button"
-                onClick={ask}
-                disabled={total === 0}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#087F6B] px-4 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-40"
+              <Link
+                href={shop}
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#087F6B] px-4 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5"
               >
-                {t({ en: "Ask price & delivery", zh: "问报价与交期", th: "สอบถามราคาและกำหนดส่ง", vi: "Hỏi giá & thời gian giao" }, locale)}
+                {t({ en: "Choose a lamp & ask price", zh: "选灯泡，问价格与交期", th: "เลือกหลอดและสอบถามราคา", vi: "Chọn đèn & hỏi giá" }, locale)}
                 <ArrowRight className="h-4 w-4" />
-              </button>
+              </Link>
               <a
                 href={compat}
                 className="inline-flex flex-1 items-center justify-center rounded-xl border border-[#D9E4EA] bg-white px-4 py-2.5 text-sm font-bold text-[#143C96] transition hover:border-[#143C96]"
