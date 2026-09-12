@@ -9,6 +9,25 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Baseline browser hardening. Vercel already sends HSTS; these stop MIME
+  // sniffing, framing by other sites, referrer leakage of full URLs, and
+  // browser features the site never uses. A Content-Security-Policy is not
+  // set here: GTM/GA and inline Next styles need a nonce-based policy, which
+  // belongs in proxy.ts when it is introduced.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+          { key: "X-DNS-Prefetch-Control", value: "on" },
+        ],
+      },
+    ];
+  },
   // Pretty URL for the static self-contained troubleshooter tool in
   // public/tools/ (it fetches its data JSON from the same directory).
   async rewrites() {

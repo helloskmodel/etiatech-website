@@ -115,7 +115,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
     ],
     metaTitle: "UV Lamp Spot Curing Systems | OmniCure S2000 & S1500 | ETIA",
     metaDescription:
-      "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and light guides, supplied and serviced by ETIA in Asia-Pacific.",
+      "UV spot lamp curing explained: electroded medium-pressure arc lamps (0.4–60 kW, 200–600 nm) versus microwave electrodeless. OmniCure S2000 Elite and S1500 Pro spot curing systems with closed-loop intensity control, genuine lamps and filters plus ETIA's own light guides, supplied and serviced by ETIA in Asia-Pacific.",
     groups: [
       {
         title: { en: "UV Lamp Spot Curing Systems", zh: "汞灯点固化系统", vi: "Hệ thống đóng rắn điểm bằng đèn UV", th: "ระบบบ่มแบบจุดด้วยหลอด UV" },
@@ -408,7 +408,7 @@ export const productCategories: Record<ProductCategorySlug, ProductCategory> = {
             ],
             [
               { en: "Wire, cable & fibre", zh: "线缆与光纤系统", vi: "Dây, cáp & sợi quang", th: "สายไฟ เคเบิล & เส้นใยแก้ว" },
-              { en: "360° reflector systems for maximum efficiency; high-intensity, well-defined sweet spot for line speed; patented reflector for optical fibre production; nitrogen inerting available", zh: "360° 反射器设计以实现最高效率；高强度、边界清晰的甜点区以提升产线速度；光纤生产专用反射器已获专利；可配氮气惰化", vi: "Hệ gương phản xạ 360° cho hiệu suất tối đa; vùng hội tụ cường độ cao, ranh giới rõ ràng để tăng tốc độ dây chuyền; gương phản xạ được cấp bằng sáng chế cho sản xuất sợi quang; có sẵn trơ hóa bằng nitơ", th: "ระบบกระจกสะท้อน 360° เพื่อประสิทธิภาพสูงสุด; จุดโฟกัสความเข้มสูงที่มีขอบเขตชัดเจนเพื่อเพิ่มความเร็วสายการผลิต; กระจกสะท้อนที่จดสิทธิบัตรสำหรับการผลิตเส้นใยแก้วนำแสง; มีการไล่ออกซิเจนด้วยไนโตรเจนให้เลือก" },
+              { en: "360° reflector systems for maximum efficiency; high-intensity, well-defined sweet spot for line speed; proprietary reflector for optical fibre production; nitrogen inerting available", zh: "360° 反射器设计以实现最高效率；高强度、边界清晰的甜点区以提升产线速度；光纤生产专用反射器已获专有；可配氮气惰化", vi: "Hệ gương phản xạ 360° cho hiệu suất tối đa; vùng hội tụ cường độ cao, ranh giới rõ ràng để tăng tốc độ dây chuyền; gương phản xạ độc quyền cho sản xuất sợi quang; có sẵn trơ hóa bằng nitơ", th: "ระบบกระจกสะท้อน 360° เพื่อประสิทธิภาพสูงสุด; จุดโฟกัสความเข้มสูงที่มีขอบเขตชัดเจนเพื่อเพิ่มความเร็วสายการผลิต; กระจกสะท้อนสำหรับการผลิตเส้นใยแก้วนำแสง; มีการไล่ออกซิเจนด้วยไนโตรเจนให้เลือก" },
             ],
             [
               { en: "Special product handling", zh: "特殊工件处理系统", vi: "Xử lý sản phẩm đặc biệt", th: "การลำเลียงชิ้นงานพิเศษ" },

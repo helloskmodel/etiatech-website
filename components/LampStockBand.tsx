@@ -67,7 +67,7 @@ export default function LampStockBand() {
             )}
           </p>
           <p className="mt-1.5 font-mono text-[11px] text-[#7B8794]">
-            {LAMP.primaryCode} · {LAMP.spec} · {t({ en: "2,000 h guaranteed", zh: "保证寿命 2,000 h", th: "รับประกัน 2,000 ชม.", vi: "bảo đảm 2.000 h" }, locale)}
+            S2000 {LAMP.primaryCode} · S2000 Elite 012-68000R · {LAMP.spec} · {t({ en: "2,000 h guaranteed", zh: "保证寿命 2,000 h", th: "รับประกัน 2,000 ชม.", vi: "bảo đảm 2.000 h" }, locale)}
           </p>
         </div>
         </div>

@@ -146,12 +146,13 @@ export const partFamilies: PartFamily[] = [
 
 export const parts: Part[] = [
   // ── lamps ──
-  { pn: "012-68000R", desc: "S2000 Elite / S1500 Pro Lamp Module (Standard)", family: "lamps", attrs: {"system": "S2000 Elite / S1500 Pro", "type": "Standard"} },
-  { pn: "012-69000R", desc: "S2000 Elite / S1500 Pro Lamp Module – Surface Cure", family: "lamps", attrs: {"system": "S2000 Elite / S1500 Pro", "type": "Surface Cure"} },
-  { pn: "012-64000R", desc: "Standard Spare 200 W Lamp for S2000 and S1500", family: "lamps", attrs: {"system": "S2000 / S1500 (previous generation)", "type": "Standard"} },
-  { pn: "012-65000R", desc: "Spare 200 W Lamp for Surface Curing, S2000", family: "lamps", attrs: {"system": "S2000 / S1500 (previous generation)", "type": "Surface Cure"} },
-  { pn: "012-60850", desc: "Standard Spare 100 W Lamp for S1000, Novacure N2100 and Acticure", family: "lamps", attrs: {"system": "S1000 / Novacure N2100 / Acticure", "type": "Standard"} },
-  { pn: "012-60650", desc: "Spare Novacure Lamp for N2001-A1, N2001-A, N2001, N2000", family: "lamps", attrs: {"system": "Novacure N2000 series", "type": "Standard"} },
+  // Lamps: ETIA supplies the S2000 and S2000 Elite. Elite numbers from the
+  // S2000 Elite user guide (035-00707 Rev 3, table 3-1); S2000 numbers from
+  // the catalogue's S-Series compatibility table.
+  { pn: "012-68000R", desc: "S2000 Elite Lamp Module – Standard", family: "lamps", attrs: {"system": "S2000 Elite", "type": "Standard"} },
+  { pn: "012-69000R", desc: "S2000 Elite Lamp Module – Surface Cure", family: "lamps", attrs: {"system": "S2000 Elite", "type": "Surface Cure"} },
+  { pn: "012-64000R", desc: "S2000 Replacement Lamp – Standard (200 W)", family: "lamps", attrs: {"system": "S2000", "type": "Standard"} },
+  { pn: "012-65000R", desc: "S2000 Replacement Lamp – Surface Cure (200 W)", family: "lamps", attrs: {"system": "S2000", "type": "Surface Cure"} },
   // ── s2000-elite ──
   { pn: "010-00464R", desc: "S2000 Elite – System Only (lamp and bandpass filter ordered separately)", family: "s2000-elite", attrs: {"kind": "System", "item": "System only"} },
   { pn: "010-00529R", desc: "S2000 Elite – 320–500 nm (incl. 012-68000R Standard lamp + 320–500 nm filter cartridge)", family: "s2000-elite", attrs: {"kind": "System", "item": "320–500 nm bundle"} },
@@ -163,6 +164,7 @@ export const parts: Part[] = [
   { pn: "019-00390R", desc: "S2000 Elite Filter 250–450 nm", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "250–450 nm"} },
   { pn: "019-00391R", desc: "S2000 Elite Filter 320–500 nm", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "320–500 nm"} },
   { pn: "019-00392R", desc: "S2000 Elite Filter Blank", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "Blank"} },
+  { pn: "019-00394R", desc: "S2000 Elite Custom Filter (band specified on order)", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "Custom band"} },
   { pn: "019-00410R", desc: "S2000 Elite optical bandpass filter kit", family: "s2000-elite", attrs: {"kind": "Optical filter", "item": "Filter kit"} },
   { pn: "019-00406R", desc: "S2000 Elite Intelli-Tap Supervisor NFC card", family: "s2000-elite", attrs: {"kind": "Accessory", "item": "Intelli-Tap Supervisor NFC card"} },
   { pn: "019-00407R", desc: "S2000 Elite Intelli-Tap Admin NFC card", family: "s2000-elite", attrs: {"kind": "Accessory", "item": "Intelli-Tap Admin NFC card"} },
@@ -183,6 +185,10 @@ export const parts: Part[] = [
   { pn: "010-00253R", desc: "Cure Ring Detector, 15 mm", family: "radiometry-s", attrs: {"kind": "Detector", "item": "Cure Ring Detector 15 mm"} },
   { pn: "010-00256R", desc: "Cure Site Detector Controller", family: "radiometry-s", attrs: {"kind": "Detector", "item": "Detector Controller"} },
   // ── light-guides ──
+  // These are the OmniCure catalogue numbers, kept because customers order by
+  // them and ETIA stocks them. The light guides ETIA sells as its own product
+  // line are the SR series in data/skuMaster.json; the product pages for light
+  // guides in productCatalog.ts are ETIA-branded for that reason.
   { pn: "805-00002", desc: "Liquid Light Guide (5 mm x 1000 mm)", family: "light-guides", attrs: {"type": "Liquid Light Guide", "legs": "Single", "tip": "5 mm", "length": "1000 mm"}, stocked: true },
   { pn: "805-00004", desc: "Liquid Light Guide (3 mm x 1000 mm)", family: "light-guides", attrs: {"type": "Liquid Light Guide", "legs": "Single", "tip": "3 mm", "length": "1000 mm"}, stocked: true },
   { pn: "805-00007", desc: "Liquid Light Guide (5 mm x 1500 mm)", family: "light-guides", attrs: {"type": "Liquid Light Guide", "legs": "Single", "tip": "5 mm", "length": "1500 mm"}, stocked: true },
@@ -272,6 +278,15 @@ export const parts: Part[] = [
   { pn: "810-00048", desc: "Cure ring, slotted, 63.5 mm OD, 10 mm ID for 5 mm LG", family: "optical", attrs: {"kind": "Cure ring", "item": "Slotted, 10 mm ID, 5 mm LG"} },
   { pn: "810-00049", desc: "Cure ring, no-slot, 63.5 mm OD, 10 mm ID for 8 mm LG", family: "optical", attrs: {"kind": "Cure ring", "item": "No-slot, 10 mm ID, 8 mm LG"} },
   { pn: "810-00050", desc: "Cure ring, no-slot, 63.5 mm OD, 15 mm ID for 5 mm LG", family: "optical", attrs: {"kind": "Cure ring", "item": "No-slot, 15 mm ID, 5 mm LG"} },
+  // The five internal filter cartridges for the S2000 / S2000-XLA and S1500,
+  // in the order they are printed on the "Filter Option Installed" label on the
+  // back of the machine — a technician reads the ticked box and finds the same
+  // row here. Part numbers are off that label (919-00022 Rev.1).
+  { pn: "019-01046R", desc: "S2000 / S1500 Filter 250–450 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "250–450 nm"} },
+  { pn: "019-01048R", desc: "S2000 / S1500 Filter 320–390 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "320–390 nm"} },
+  { pn: "019-01049R", desc: "S2000 / S1500 Filter 320–500 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "320–500 nm"} },
+  { pn: "019-01047R", desc: "S2000 / S1500 Filter 400–500 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "400–500 nm"} },
+  { pn: "019-01045R", desc: "S2000 / S1500 Filter 365 nm", family: "optical", attrs: {"kind": "Internal filter", "item": "365 nm"} },
   { pn: "019-00108", desc: "External Filter Adapter Kit", family: "optical", attrs: {"kind": "External filter", "item": "Adapter kit"} },
   { pn: "019-01022", desc: "320–480 nm External Filter", family: "optical", attrs: {"kind": "External filter", "item": "320–480 nm"} },
   { pn: "019-01023", desc: "320–390 nm External Filter", family: "optical", attrs: {"kind": "External filter", "item": "320–390 nm"} },
@@ -452,7 +467,7 @@ export function partFamily(id: PartFamilyId): PartFamily {
 
 // Which families a product page offers, keyed by catalogue slug. A page
 // that is not listed shows no picker.
-export const partsForModel: Record<string, PartFamilyId[]> = {"s2000-elite": ["lamps", "s2000-elite", "light-guides", "optical", "radiometry-s", "general"], "s1500-pro": ["lamps", "light-guides", "optical", "general"], "s2000-lamp": ["lamps"], "r2000": ["radiometry-s"], "s-liquid-light-guide": ["light-guides"], "s-fiber-light-guide": ["light-guides"], "s-fiber-light-line": ["light-guides"], "s-cure-ring-adapter": ["optical"], "s-light-line-adapter": ["optical"], "s-collimating-adapter": ["optical"], "lx500": ["lx500", "ls200"], "lx505": ["lx500", "ls200"], "v3-led-heads": ["lx500"], "ls200": ["ls200"], "ac2": ["ac-heads", "ac-power", "ac-spares"], "ac4": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac5": ["ac-heads", "ac-power", "ac-spares"], "ac7": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8-hd": ["ac-heads", "ac-power", "ac-spares"], "ac9225": ["ac-heads", "ac-power", "ac-spares"], "ac9225-f": ["ac-heads", "ac-power", "ac-spares"]};
+export const partsForModel: Record<string, PartFamilyId[]> = {"s2000-elite": ["lamps", "s2000-elite", "light-guides", "optical", "radiometry-s", "general"], "s1500-pro": ["lamps", "light-guides", "optical", "general"], "s2000-lamp": ["lamps"], "r2000": ["radiometry-s"], "s-liquid-light-guide": ["light-guides"], "s-fiber-light-guide": ["light-guides"], "s-fiber-light-line": ["light-guides"], "s2000-elite-filters": ["s2000-elite"], "s-cure-ring-adapter": ["optical"], "s-light-line-adapter": ["optical"], "s-collimating-adapter": ["optical"], "lx500": ["lx500", "ls200"], "lx505": ["lx500", "ls200"], "v3-led-heads": ["lx500"], "ls200": ["ls200"], "ac2": ["ac-heads", "ac-power", "ac-spares"], "ac4": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac5": ["ac-heads", "ac-power", "ac-spares"], "ac7": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8": ["ac-heads", "ac-bundles", "ac-power", "ac-spares"], "ac8-hd": ["ac-heads", "ac-power", "ac-spares"], "ac9225": ["ac-heads", "ac-power", "ac-spares"], "ac9225-f": ["ac-heads", "ac-power", "ac-spares"]};
 
 // An AC model page shows only the heads and bundles of its own series.
 export const seriesForModel: Record<string, string> = {"ac2": "AC2", "ac4": "AC4", "ac5": "AC5", "ac7": "AC7", "ac8": "AC8", "ac8-hd": "AC8-HD", "ac9225": "AC9", "ac9225-f": "AC9225-F"};

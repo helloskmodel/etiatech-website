@@ -22,6 +22,16 @@ export type Product = {
   imageUrl?: string;
 };
 
+// The name of the brand group a product sits in — not the same thing as its
+// own `brand`. ETIA's light guides sit in the OmniCure group because that is
+// where a customer shopping for an S Series looks for them.
+export const brandGroupName: Record<Product["brandId"], string> = {
+  omnicure: "OmniCure",
+  phoseon: "Phoseon",
+  fusionuv: "Fusion UV",
+  noblelight: "Noblelight",
+};
+
 export const brandAccent: Record<Product["brandId"], string> = {
   omnicure: "#1A56DB",
   phoseon: "#0ea5e9",
@@ -144,7 +154,7 @@ export const products: Product[] = [
     intro:
       "Next-generation LED heads for the LX500 — up to 22 W/cm² and 1,100 mW at 365–405 nm, with an exceptionally uniform beam for faster, more consistent cures.",
     features: [
-      "Class-leading irradiance and optical power at 365, 385, 395 and 405 nm",
+      "High irradiance and optical power at 365, 385, 395 and 405 nm",
       "Up to 22 W/cm² peak irradiance and 1,100 mW total optical power",
       "Improved radiation distribution across the beam cross-section for consistent, controlled curing",
       "Up to 120% increased optical power vs. predecessor MAX LED Heads",
@@ -226,9 +236,9 @@ export const products: Product[] = [
     intro:
       "The reference radiometer for OmniCure spot curing — real-time NIST-accurate calibration with the S2000 Elite, plus custom cure-site and cure-ring sensors.",
     features: [
-      "Most advanced and accurate UV radiometer for OmniCure UV lamp spot curing systems",
+      "Purpose-built, accurate UV radiometer for OmniCure UV lamp spot curing systems",
       "Serial communication with S2000 Elite / S2000 XLA / S1500: set irradiance levels and calibrate from a single reference point",
-      "Real-time NIST-traceable calibration with S2000 Elite — the only system with this capability",
+      "Real-time NIST-traceable calibration with the S2000 Elite",
       "Proprietary wide-band detector for accurate measurements across many systems",
       "Light guide detector with color-coded adapters auto-identifies light guide diameter",
       "Compatible with OmniCure UV Cure Ring Radiometer for cure-ring fixture process control",
@@ -273,7 +283,7 @@ export const products: Product[] = [
     intro:
       "Flagship 200 W lamp-based UV spot curing — Closed-Loop Feedback holds output within ±5%, 30 ms shutter, and Industry 4.0 connectivity (Ethernet, NFC, PLC).",
     features: [
-      "Patented Closed-Loop Feedback (CLF): regulates UV output in real-time (±5% of set point)",
+      "Proprietary Closed-Loop Feedback (CLF): regulates UV output in real-time (±5% of set point)",
       "Intelli-Lamp 2.0: 2,000 hours guaranteed, 3,500–4,000 hours typical lamp life",
       "High-speed mechanical shutter with 30 ms response time",
       "200-Watt UV lamp with outputs up to 30 W/cm²",
@@ -307,7 +317,7 @@ export const products: Product[] = [
   // and keeps /product/systems from building a second, competing page for it.
   {
     slug: "s2000-lamp",
-    name: "OmniCure S2000 Elite Replacement Lamp — 012-64000R",
+    name: "OmniCure S2000 / S2000 Elite Replacement Lamps — 012-64000R · 012-68000R",
     brand: "OmniCure",
     brandId: "omnicure",
     tech: "UV Spot Curing",
@@ -316,35 +326,35 @@ export const products: Product[] = [
     href: "/product/omnicure/s2000-lamp",
     imageUrl: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20LAMP.png",
     intro:
-      "The genuine 200 W high-pressure mercury short-arc lamp for the S2000 Elite and S1500 Pro — a 250–600 nm continuous spectrum, up to 40 W/cm² in the long-wave UV, guaranteed for 2,000 hours and typically running to about 4,000. Standard and Surface Cure spectra, held in regional stock.",
+      "The genuine 200 W high-pressure mercury short-arc lamp for the S2000 and S2000 Elite — a 250–600 nm continuous spectrum, up to 40 W/cm² in the long-wave UV, guaranteed for 2,000 hours and typically running to about 4,000. Standard and Surface Cure spectra, held in regional stock.",
     features: [
-      "Genuine Excelitas lamp for the OmniCure S2000 Elite and S1500 Pro",
+      "Genuine Excelitas lamp for the OmniCure S2000 and S2000 Elite",
       "200 W high-pressure mercury short-arc with a continuous 250–600 nm spectrum",
       "Up to 40 W/cm² in the long-wave UV",
       "Guaranteed 2,000 hours; approximately 4,000 hours typical in service",
-      "Standard spectrum (012-68000R / 012-64000R) covers the widest range of UV adhesive bonding",
-      "Surface Cure spectrum (012-69000R / 012-54000R) reshapes the power spectrum for a smooth, tack-free finish on acrylic resins, overcoming oxygen inhibition",
-      "Supplied as a bare spare lamp or as a complete Elite lamp module",
+      "Standard spectrum (S2000 Elite 012-68000R · S2000 012-64000R) covers the widest range of UV adhesive bonding",
+      "Surface Cure spectrum (S2000 Elite 012-69000R · S2000 012-65000R) reshapes the power spectrum for a smooth, tack-free finish on acrylic resins, overcoming oxygen inhibition",
+      "Supplied as the S2000 spare lamp or the S2000 Elite lamp module",
       "Held in regional stock, so a lamp change is a delivery rather than a lead time",
     ],
     applications: [
       "Medical device and catheter bonding",
       "Needle and syringe assembly",
       "Electronics and optical component bonding",
-      "Any installed S2000 Elite or S1500 Pro reaching end of lamp life",
+      "Any installed S2000 or S2000 Elite reaching end of lamp life",
       "Acrylic resin surface curing, using the Surface Cure spectrum",
       "Laboratory and R&D curing",
     ],
     specs: [
-      ["Primary Part Number", "012-64000R — standard spare 200 W lamp, S2000 and S1500"],
-      ["Surface Cure Spare", "012-54000R — spare 200 W lamp for surface curing, S2000"],
-      ["Lamp Module — Standard", "012-68000R"],
-      ["Lamp Module — Surface Cure", "012-69000R"],
+      ["S2000 Elite — Standard", "012-68000R (lamp module)"],
+      ["S2000 Elite — Surface Cure", "012-69000R (lamp module)"],
+      ["S2000 — Standard", "012-64000R (200 W replacement lamp)"],
+      ["S2000 — Surface Cure", "012-65000R (200 W replacement lamp)"],
       ["Spectral Range", "250–600 nm, continuous"],
       ["Lamp Type", "200 W high-pressure mercury short-arc"],
       ["Long-Wave UV Irradiance", "Up to 40 W/cm²"],
       ["Lamp Life", "2,000 hours guaranteed; approximately 4,000 hours typical"],
-      ["Fits", "OmniCure S2000 Elite, OmniCure S1500 Pro"],
+      ["Fits", "OmniCure S2000 Elite (012-68000R / 69000R) · OmniCure S2000 (012-64000R / 65000R)"],
     ],
   },
   {
@@ -432,17 +442,23 @@ export const products: Product[] = [
   // The six S-Series accessories the manufacturer lists individually, in its
   // own order. They were one catalogue entry with six bullets, which is not
   // something a customer can point at and ask for.
+  //
+  // The three light guides among them are ETIA's own line, not Excelitas
+  // catalogue parts: they are built for us and sold under our name, and they
+  // fit the OmniCure S Series light guide port. The 805-/806- numbers stay in
+  // the parts picker because customers order by them, and we stock those too.
   {
     slug: "s-liquid-light-guide",
-    name: "OmniCure Liquid Light Guide",
-    brand: "OmniCure",
+    name: "ETIA Liquid Light Guide",
+    brand: "ETIA",
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "S-Series Accessory",
     accent: "#1A56DB",
     intro:
-      "The standard way to get an S Series lamp's output to the joint: a liquid-filled guide in 3, 5 and 8 mm tip diameters and standard lengths from 750 to 3000 mm. Dual and triple-leg versions split one lamp across several cure sites.",
+      "ETIA's own liquid-filled light guide, built to fit the OmniCure S Series light guide port: 3, 5 and 8 mm tip diameters, standard lengths from 750 to 3000 mm. Dual and triple-leg versions split one lamp across several cure sites. We stock the OmniCure 805- series alongside it, so an existing part number keeps working.",
     features: [
+      "ETIA's own light guide line, held in regional stock",
       "Tip diameters of 3, 5 and 8 mm",
       "Standard lengths from 750 to 3000 mm",
       "Dual and triple-leg configurations for multi-site curing",
@@ -456,23 +472,26 @@ export const products: Product[] = [
       "Bench and automated spot curing alike",
     ],
     specs: [
+      ["Supplied By", "ETIA — our own light guide line"],
       ["Tip Diameters", "3, 5 and 8 mm"],
       ["Standard Lengths", "750–3000 mm"],
       ["Configurations", "Single, dual-leg and triple-leg"],
       ["Fits", "OmniCure S1500 Pro · S2000 Elite"],
+      ["Also Stocked", "OmniCure 805- series equivalents"],
     ],
   },
   {
     slug: "s-fiber-light-guide",
-    name: "OmniCure High-Power Fiber Light Guide",
-    brand: "OmniCure",
+    name: "ETIA High-Power Fiber Light Guide",
+    brand: "ETIA",
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "S-Series Accessory",
     accent: "#1A56DB",
     intro:
-      "A fibre guide that splits one lamp's output evenly across several cure sites — the same energy at every leg, rather than the brightest at the shortest.",
+      "ETIA's own fibre light guide, which splits one lamp's output evenly across several cure sites — the same energy at every leg, rather than the brightest at the shortest. Single, dual, triple and four-leg builds with 3, 5 and 8 mm tips, 1000 to 3000 mm. The OmniCure 806- series is stocked alongside it.",
     features: [
+      "ETIA's own light guide line, held in regional stock",
       "Equal distribution of light energy to multiple cure sites",
       "Driven from a single light source",
       "Fibre construction for high-power duty",
@@ -484,23 +503,26 @@ export const products: Product[] = [
       "Balanced curing across a fixture",
     ],
     specs: [
+      ["Supplied By", "ETIA — our own light guide line"],
       ["Construction", "Fibre light guide"],
       ["Distribution", "Equal light energy to multiple cure sites"],
-      ["Source", "One light source drives all legs"],
+      ["Legs", "Single, 2-leg, 3-leg and 4-leg"],
       ["Fits", "OmniCure S1500 Pro · S2000 Elite"],
+      ["Also Stocked", "OmniCure 806- series equivalents"],
     ],
   },
   {
     slug: "s-fiber-light-line",
-    name: "OmniCure High-Power Fiber Light Line",
-    brand: "OmniCure",
+    name: "ETIA High-Power Fiber Light Line",
+    brand: "ETIA",
     brandId: "omnicure",
     tech: "UV Spot Curing",
     sub: "S-Series Accessory",
     accent: "#1A56DB",
     intro:
-      "A high-output linear beam. The fibres run unbroken from the guide input to the termination, so the coupling losses of a bolted-on light-line accessory do not arise.",
+      "ETIA's own light line: a high-output linear beam in which the fibres run unbroken from the guide input to the termination, so the coupling losses of a bolted-on light-line accessory do not arise. Built to the line length and width the job needs, single or dual leg.",
     features: [
+      "ETIA's own light guide line, built to order on line length and width",
       "High-output linear beam of curing energy",
       "Fibres continuous from light guide input to termination",
       "Eliminates the coupling losses of standard light-line accessories",
@@ -512,10 +534,54 @@ export const products: Product[] = [
       "Seams and linear beads",
     ],
     specs: [
-      ["Beam", "High-output linear"],
+      ["Supplied By", "ETIA — our own light guide line"],
+      ["Beam", "High-output linear, built to the line length required"],
       ["Fibre Path", "Continuous, input to termination"],
       ["Coupling Loss", "None at the termination joint"],
       ["Fits", "OmniCure S1500 Pro · S2000 Elite"],
+      ["Also Stocked", "OmniCure 806- series light lines"],
+    ],
+  },
+  // The seven filter cartridges for the S2000 Elite and S1500 Pro. The lamp
+  // emits 250–600 nm continuously; the cartridge is what decides which part of
+  // that reaches the part, so choosing it is choosing the process. Sold singly
+  // and swapped by the operator without tools, which is why a plant running
+  // several adhesives keeps two or three on the shelf.
+  {
+    slug: "s2000-elite-filters",
+    name: "OmniCure S2000 Elite Optical Bandpass Filters",
+    brand: "OmniCure",
+    brandId: "omnicure",
+    tech: "UV Spot Curing",
+    sub: "S-Series Accessory",
+    accent: "#1A56DB",
+    imageUrl: "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20FILTER",
+    intro:
+      "Seven user-interchangeable filter cartridges for the S2000 Elite and S1500 Pro. The 200 W lamp emits a continuous 250–600 nm spectrum; the cartridge selects the band the photoinitiator actually needs and discards the rest — the UVC that damages a substrate, the infrared that heats it, the visible light that does nothing for the cure.",
+    features: [
+      "250–450 nm — the full band including UVC, for maximum cure and surface tack-free finish",
+      "320–390 nm — the standard adhesive filter: depth cure of clear acrylates, least heat and substrate damage",
+      "320–500 nm — UVA plus violet, for pigmented, filled or thick sections and cationic epoxies",
+      "365 nm — narrow UVA, to match a formulation specified at 365 nm or compare against a 365 nm LED",
+      "400–500 nm — visible-light photoinitiators, dental-type and biocompatible formulations, light-sensitive substrates",
+      "Blank — passes the lamp's full output, used with the Surface Cure lamp",
+      "Custom — a band specified on order when none of the standard six fits",
+      "Changed by the operator without tools; the system logs which cartridge is fitted",
+    ],
+    applications: [
+      "Matching the filter to the adhesive's photoinitiator absorption peak",
+      "One lamp serving several adhesives on the same bench",
+      "Protecting polycarbonate, plated parts and optics from short-wave UV",
+      "Laboratory work where the band under test changes week to week",
+      "Photorheology and photo-DSC, where the band is part of the method",
+    ],
+    specs: [
+      ["Standard Bands", "250–450 · 320–390 · 320–500 · 365 · 400–500 nm"],
+      ["Blank Cartridge", "019-00392R — full lamp output, no band selection"],
+      ["Custom Cartridge", "019-00394R — band specified on order"],
+      ["Filter Kit", "019-00410R — the standard bands as one set"],
+      ["Fits", "OmniCure S2000 Elite · OmniCure S1500 Pro"],
+      ["Changeover", "User-interchangeable, no tools"],
     ],
   },
   {
@@ -612,13 +678,13 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "Water-cooled UV LED curing for flexographic printing — patented thermal management and ValidCure deliver the industry's highest total UV energy; optional high-airflow model.",
+      "Water-cooled UV LED curing for flexographic printing — proprietary thermal management and ValidCure deliver high total UV energy; optional high-airflow model.",
     features: [
       "Highest total UV energy (dose) for flexographic printing — higher dose than the air-cooled variant",
       "Wider web: up to 675 mm, with print speeds up to 1050 ft (320 m)/min",
       "90 W per cm maximum electrical power for sustained high-output curing",
       "ValidCure Technology for reliable, consistent UV output and process control",
-      "Patented thermal management for superior high-temperature performance",
+      "Proprietary thermal management for reliable high-temperature performance",
       "108 diodes per 25 mm segment — highest diode count in the industry (>60,000 h at L90)",
       "Up to 60% less energy consumption; quick, easy retrofit to any press",
       "5-year warranty on the full system",
@@ -639,7 +705,7 @@ export const products: Product[] = [
       ["Diode Lifetime", ">60,000 h at L90"],
       ["Cross Section", "110 mm W × 190 mm H"],
       ["Communication", "Modbus over TCP/IP"],
-      ["Key Technology", "ValidCure, patented thermal management"],
+      ["Key Technology", "ValidCure, proprietary thermal management"],
       ["Warranty", "5-year full-system warranty"],
       ["Primary Application", "Flexographic printing"],
     ],
@@ -820,11 +886,11 @@ export const products: Product[] = [
     tech: "Water-Cooled UV LED Area Curing",
     accent: "#0d9488",
     intro:
-      "Wide-format water-cooled UV LED curing — patented SLM array, 750–1350 mm emission widths at 365/395/405 nm, built for high-speed industrial coating and print lines.",
+      "Wide-format water-cooled UV LED curing — proprietary SLM array, 750–1350 mm emission widths at 365/395/405 nm, built for high-speed industrial coating and print lines.",
     features: [
-      "Patented Semiconductor Light Matrix (SLM) array for high optical power",
-      "Patented SLM control technology for optimum uniformity across the irradiation area",
-      "Unique high-efficiency cooling design for outstanding dose performance",
+      "Proprietary Semiconductor Light Matrix (SLM) array for high optical power",
+      "Proprietary SLM control technology for optimum uniformity across the irradiation area",
+      "High-efficiency cooling design for outstanding dose performance",
       "Five wide-format models: 750, 900, 1050, 1200 and 1350 mm emission windows",
       "High dose at high line speed: 500 mJ/cm² typical at 50 mm working distance, 50 m/min",
       "Long LED lifetime: >60,000 hours at L90",
@@ -985,7 +1051,7 @@ export const products: Product[] = [
     features: [
       "Up to 3 W/cm² at 365 nm and 4 W/cm² at 395 nm",
       "Exceptional uniformity across the entire small curing area",
-      "Patented individual UV LED module output for consistent results",
+      "Proprietary individual UV LED module output for consistent results",
       "Compact and air-cooled — no chiller required",
       "Modular design suitable for both low- and high-power applications",
       "Available in AC275 and AC2110 configurations",
@@ -1002,7 +1068,7 @@ export const products: Product[] = [
       ["Models", "AC275 / AC275F, AC2110 / AC2110F"],
       ["Curing Area", "10 × 75 mm (AC275); 10 × 114 mm (AC2110)"],
       ["Wavelengths", "365 nm, 395 nm"],
-      ["Technology", "UV LED, patented individual module output"],
+      ["Technology", "UV LED, proprietary individual module output"],
     ],
   },
   {
@@ -1053,7 +1119,7 @@ export const products: Product[] = [
     features: [
       "14 W/cm² at 395 nm; up to 15 W/cm² with AC575-405",
       "Advanced front-end optics for exceptional uniformity",
-      "Patented LED UV module output ensures consistent results",
+      "Proprietary LED UV module output ensures consistent results",
       "Air-cooled — no chiller required",
       "Models: AC550, AC550P, AC575, AC575P",
       "'P' variants use optics optimized for printing applications",
@@ -1092,7 +1158,7 @@ export const products: Product[] = [
       "Curing widths: 150 mm (AC7150) and 300 mm (AC7300)",
       "PLC interface for a high degree of automation and optical output control",
       "LED head lifetime >20,000 hours with effective thermal management",
-      "Patented individual UV LED module output for exceptional uniformity",
+      "Proprietary individual UV LED module output for exceptional uniformity",
     ],
     applications: [
       "Display and touch panel adhesive curing",
@@ -1112,7 +1178,7 @@ export const products: Product[] = [
       ["Optics", "Custom front-end; high irradiance at extended working distances"],
       ["Control", "PLC interface"],
       ["LED Lifetime", ">20,000 hours accumulated on-time"],
-      ["Technology", "UV LED with patented individual module output"],
+      ["Technology", "UV LED with proprietary individual module output"],
     ],
   },
   {
@@ -1127,7 +1193,7 @@ export const products: Product[] = [
       "Air-cooled large-area curing with over 8 W/cm² and high longitudinal uniformity — 150/225/300 mm widths, adjoinable to any curing size.",
     features: [
       "Peak irradiance >8 W/cm² with exceptional uniformity for even curing",
-      "Patented individual UV LED module output addressing for unbeatable uniformity",
+      "Proprietary individual UV LED module output addressing for high uniformity",
       "Multiple heads adjoinable while maintaining optical uniformity between systems",
       "'P' versions: enhanced optics optimized for short working distance (print applications)",
       "High longitudinal uniformity across the entire 150–300 mm curing area",
@@ -1154,7 +1220,7 @@ export const products: Product[] = [
       ["Control", "PLC interface"],
       ["LED Lifetime", ">20,000 hours accumulated on-time"],
       ["Power Cable", "5-conductor DC (18-00595R); not compatible with AC7/AC4 cables"],
-      ["Technology", "UV LED with patented individual module output"],
+      ["Technology", "UV LED with proprietary individual module output"],
     ],
   },
   {
@@ -1166,18 +1232,18 @@ export const products: Product[] = [
     sub: "Large-Area · High-Dose",
     accent: "#60a5fa",
     intro:
-      "Double the dose of the standard AC8 — over 15 W/cm² at 385–405 nm, patented per-module output addressing, and 20,000+ hour LED lifetime.",
+      "Double the dose of the standard AC8 — over 15 W/cm² at 385–405 nm, proprietary per-module output addressing, and 20,000+ hour LED lifetime.",
     features: [
       "Peak irradiance >15 W/cm² — double the dose of the standard AC8 Series",
-      "Patented technology for unbeatable uniformity across the entire irradiation area",
-      "Patented individual UV LED module output for customizable outputs and tighter process control",
+      "Proprietary technology for high uniformity across the entire irradiation area",
+      "Proprietary individual UV LED module output for customizable outputs and tighter process control",
       "Available wavelengths: 385, 395, 405 nm (±5 nm)",
       "Three standard cure widths: 150 mm, 225 mm, 300 mm",
       "Systems adjoinable to any curing size without uniformity compromise",
       "Air-cooled — no chiller required; compact form factor",
       "PLC interface for a high degree of automation and optical output control",
       "LED head lifetime >20,000 hours accumulated on-time",
-      "State-of-the-art electronics with effective thermal management",
+      "Modern electronics with effective thermal management",
     ],
     applications: [
       "Large-area UV curing demanding the highest optical dose",
@@ -1193,10 +1259,10 @@ export const products: Product[] = [
       ["Curing Widths", "150 mm (AC8150P-HD), 225 mm (AC8225P-HD), 300 mm (AC8300P-HD)"],
       ["Models", "AC8150P-HD, AC8225P-HD, AC8300P-HD"],
       ["Adjoining", "Systems adjoinable without uniformity compromise"],
-      ["Control", "PLC interface; patented individual module output addressing"],
+      ["Control", "PLC interface; proprietary individual module output addressing"],
       ["LED Lifetime", ">20,000 hours accumulated on-time"],
       ["Power Cable", "5-conductor 8 AWG (225/300P-HD); 12 AWG (150P-HD); shielded, <5 m"],
-      ["Technology", "UV LED with patented high-dose individual module output"],
+      ["Technology", "UV LED with proprietary high-dose individual module output"],
     ],
   },
   {
@@ -1212,7 +1278,7 @@ export const products: Product[] = [
     features: [
       "14 W/cm² peak irradiance for fast curing of inks, adhesives and coatings",
       "150 mm, 225 mm and 300 mm emitting lengths",
-      "Patented individual UV LED module output for exceptional uniformity",
+      "Proprietary individual UV LED module output for exceptional uniformity",
       "High longitudinal uniformity for consistent, repeatable results across all parts",
       "Multiple heads adjoinable while maintaining optical uniformity between systems",
       "Air-cooled — no chiller required; compact form factor with best-in-class irradiance",
@@ -1236,9 +1302,9 @@ export const products: Product[] = [
       ["Wavelengths", "385 nm; 395 nm (standard and Print variants)"],
       ["'P' Models", "Print optics optimized for short working distances"],
       ["Adjoining", "Multiple heads adjoinable; optical uniformity maintained"],
-      ["Control", "PLC interface; patented individual module output"],
+      ["Control", "PLC interface; proprietary individual module output"],
       ["LED Lifetime", ">20,000 hours accumulated on-time"],
-      ["Technology", "High-power UV LED with patented individual module output"],
+      ["Technology", "High-power UV LED with proprietary individual module output"],
     ],
   },
   {
@@ -1292,7 +1358,7 @@ export const products: Product[] = [
       "Fanless, passively cooled UV LED source for inkjet pinning and edge curing — ultra-slim, 2 W/cm², 80–240 mm windows, no chiller or forced air.",
     features: [
       "Peak irradiance 2 W/cm² at 385, 395, 405 nm (1 W/cm² at 365 nm)",
-      "Patented WhisperCure technology for quieter operation",
+      "Proprietary WhisperCure technology for quieter operation",
       "Natural convection cooling — no external cooling system or chiller required",
       "No internal fans: thinner, more reliable curing source",
       "Slim form factor ideal for space-constrained environments",
@@ -1330,10 +1396,10 @@ export const products: Product[] = [
     sub: "Small-Area",
     accent: "#60a5fa",
     intro:
-      "Air-cooled curing and pinning with built-in intensity and segment control — patented SLM stability, 80–240 mm lengths, up to six sources per Hub.",
+      "Air-cooled curing and pinning with built-in intensity and segment control — proprietary SLM stability, 80–240 mm lengths, up to six sources per Hub.",
     features: [
       "Built-in intensity control: full-cure, low-intensity (pinning), and half-source modes",
-      "Patented SLM technology for process stability and repeatable output",
+      "Proprietary SLM technology for process stability and repeatable output",
       "Available lengths: 80, 120, 160, 180, 240 mm",
       "Air-cooled — no water connections required",
       "Segment control: disable left or right half for precise UV coverage",
@@ -1348,7 +1414,7 @@ export const products: Product[] = [
     ],
     specs: [
       ["Cooling Method", "Air-cooled"],
-      ["Technology", "Solid-state UV LED with patented SLM"],
+      ["Technology", "Solid-state UV LED with proprietary SLM"],
       ["Available Lengths", "80, 120, 160, 180, 240 mm"],
       ["Intensity Modes", "Full-cure, Low Intensity (pinning), Disable L/R SLM"],
       ["Power Supply", "External switching supply (Mean Well RSP-series)"],
@@ -1368,7 +1434,7 @@ export const products: Product[] = [
       "Up to 50% more irradiance, power and dose than the FE400 — TargetCure precision, segment control, and end-to-end stacking for any application size.",
     features: [
       "Up to 50% higher irradiance, power, and dose than the FE400",
-      "Patented TargetCure technology for precise, predictable UV output",
+      "Proprietary TargetCure technology for precise, predictable UV output",
       "Built-in intensity control for full-cure and pinning applications",
       "Segment control to save energy and achieve precise UV coverage",
       "Scalable: stackable end-to-end for contiguous uniform output",
@@ -1384,7 +1450,7 @@ export const products: Product[] = [
     ],
     specs: [
       ["Cooling Method", "Air-cooled"],
-      ["Technology", "Solid-state UV LED with patented TargetCure"],
+      ["Technology", "Solid-state UV LED with proprietary TargetCure"],
       ["vs FE400", "Up to 50% higher irradiance, power, and dose"],
       ["Available Lengths", "80, 120, 160, 180, 240 mm"],
       ["Intensity Modes", "Full-cure, Low Intensity (pinning), Disable L/R SLM"],
@@ -1438,7 +1504,7 @@ export const products: Product[] = [
     intro:
       "Modular area curing for micro-speaker and camera-module lines — TargetCure precision, 365–405 nm options, controller backward-compatible with the FJ800.",
     features: [
-      "Patented TargetCure technology for precise, predictable UV output",
+      "Proprietary TargetCure technology for precise, predictable UV output",
       "Modular and scalable: 100 mm × 100 mm base, scalable in all directions",
       "Available wavelengths: 365, 385, 395, 405 nm (wider than FJ800)",
       "FJ801 controller backward compatible with FJ800 lamp",
@@ -1456,7 +1522,7 @@ export const products: Product[] = [
       ["Cooling Method", "Air-cooled"],
       ["Base Curing Area", "100 mm × 100 mm (scalable)"],
       ["Available Wavelengths", "365, 385, 395, 405 nm"],
-      ["Key Technology", "Patented TargetCure"],
+      ["Key Technology", "Proprietary TargetCure"],
       ["Controller Compatibility", "Backward compatible with FJ800 lamps"],
       ["Working Distance", "10 mm"],
     ],
@@ -1475,7 +1541,7 @@ export const products: Product[] = [
       "Premium 20 W/cm² peak irradiance in a compact, high-power design",
       "Five emitting-window widths: 75, 150, 225, 300, 375 mm",
       "Scalable — place units side by side and daisy-chain for wider coverage",
-      "Unique optics for consistent uniformity at the substrate surface",
+      "Dedicated optics for consistent uniformity at the substrate surface",
       "Fully self-contained unit for simple integration",
       "PLC control for instant on/off, intensity and primary functions",
       "Digital control with Modbus TCP for advanced status and remote access",
@@ -1708,9 +1774,9 @@ export const products: Product[] = [
     sub: "Optical Fiber",
     accent: "#f59e0b",
     intro:
-      "The fiber-industry standard for coating and ink curing — patented elliptical reflectors focus intense UV on the fiber through a sealed quartz tube; 1.8–6 kW.",
+      "The fiber-industry standard for coating and ink curing — proprietary elliptical reflectors focus intense UV on the fiber through a sealed quartz tube; 1.8–6 kW.",
     features: [
-      "Patented secondary elliptical reflector: highest UV irradiance per watt",
+      "Proprietary secondary elliptical reflector: highest UV irradiance per watt",
       "Highly focused, intense UV energy for optical fiber curing",
       "Sealed quartz tube enables full-surface UV exposure with minimal stray radiation",
       "Noblelight microwave-powered electrodeless lamp: stable, consistent UV output",
@@ -1718,7 +1784,7 @@ export const products: Product[] = [
       "Modular design for easy maintenance and component replacement",
       "Interchangeable bulbs to match spectral output to coating needs",
       "Optional easy-align lamp mounting system",
-      "Optional patented back reflector for enhanced UV efficiency",
+      "Optional proprietary back reflector for enhanced UV efficiency",
       "Individual lamp switching in multi-lamp setups for line-speed adjustment",
     ],
     applications: [
@@ -2665,9 +2731,9 @@ export const productHighlights: Record<string, LangText[]> = {
   "ac4": [{ en: "High Irradiance", zh: "高辐照度", th: "ความเข้มแสงสูง", vi: "Cường độ cao" }, { en: "Long Working Distance", zh: "长工作距离", th: "ระยะทำงานไกล", vi: "Khoảng cách làm việc xa" }, { en: "Precise Dose Control", zh: "精准剂量控制", th: "ควบคุมโดสแม่นยำ", vi: "Kiểm soát liều chính xác" }],
   "ac5": [{ en: "High Irradiance", zh: "高辐照度", th: "ความเข้มแสงสูง", vi: "Cường độ cao" }, { en: "Even, Fast Curing", zh: "均匀快速固化", th: "คิวริ่งสม่ำเสมอและรวดเร็ว", vi: "Đóng rắn đều và nhanh" }, { en: "Optical Power Measurement", zh: "光功率测量", th: "การวัดกำลังแสง", vi: "Đo công suất quang" }],
   "ac7": [{ en: "Large-Area Uniformity", zh: "大面积均匀性", th: "ความสม่ำเสมอพื้นที่กว้าง", vi: "Đồng đều diện tích lớn" }, { en: "Adjoinable Heads", zh: "可拼接机头", th: "หัวต่อขยายได้", vi: "Đầu ghép nối được" }, { en: "Air-Cooled · No Chiller", zh: "风冷 · 免冷水机", th: "ระบายความร้อนด้วยอากาศ · ไม่ต้องใช้ชิลเลอร์", vi: "Làm mát bằng khí · Không chiller" }],
-  "ac8": [{ en: "High Irradiance", zh: "高辐照度", th: "ความเข้มแสงสูง", vi: "Cường độ cao" }, { en: "Patented Uniformity", zh: "专利均匀性", th: "ความสม่ำเสมอที่จดสิทธิบัตร", vi: "Độ đồng đều được cấp bằng sáng chế" }, { en: "Print-Optimized 'P'", zh: "印刷优化「P」型", th: "รุ่น 'P' สำหรับงานพิมพ์", vi: "Bản 'P' tối ưu cho in" }],
+  "ac8": [{ en: "High Irradiance", zh: "高辐照度", th: "ความเข้มแสงสูง", vi: "Cường độ cao" }, { en: "Proprietary Uniformity", zh: "专有均匀性", th: "ความสม่ำเสมอ", vi: "Độ đồng đều độc quyền" }, { en: "Print-Optimized 'P'", zh: "印刷优化「P」型", th: "รุ่น 'P' สำหรับงานพิมพ์", vi: "Bản 'P' tối ưu cho in" }],
   "ac8-hd": [{ en: "Double the Dose", zh: "双倍剂量", th: "โดสสองเท่า", vi: "Liều gấp đôi" }, { en: "High UV Energy", zh: "高紫外能量", th: "พลังงาน UV สูง", vi: "Năng lượng UV cao" }, { en: "Adjoinable", zh: "可拼接", th: "ต่อขยายได้", vi: "Ghép nối được" }],
-  "ac9225": [{ en: "High-Power UV LED", zh: "高功率 UV LED", th: "UV LED กำลังสูง", vi: "UV LED công suất cao" }, { en: "Patented Uniformity", zh: "专利均匀性", th: "ความสม่ำเสมอที่จดสิทธิบัตร", vi: "Độ đồng đều được cấp bằng sáng chế" }, { en: "Scalable Width", zh: "幅宽可扩展", th: "ความกว้างขยายได้", vi: "Khổ mở rộng được" }],
+  "ac9225": [{ en: "High-Power UV LED", zh: "高功率 UV LED", th: "UV LED กำลังสูง", vi: "UV LED công suất cao" }, { en: "Proprietary Uniformity", zh: "专有均匀性", th: "ความสม่ำเสมอ", vi: "Độ đồng đều độc quyền" }, { en: "Scalable Width", zh: "幅宽可扩展", th: "ความกว้างขยายได้", vi: "Khổ mở rộng được" }],
   "ac9225-f": [{ en: "Fiber-Optimized Optics", zh: "光纤优化光学", th: "ออปติกที่ปรับสำหรับไฟเบอร์", vi: "Quang học tối ưu cho sợi quang" }, { en: "Replaceable Window", zh: "可更换视窗", th: "หน้าต่างเปลี่ยนได้", vi: "Cửa sổ thay thế được" }, { en: "40,000+ h LED Life", zh: "LED 寿命 40,000+ 小时", th: "อายุ LED 40,000+ ชม.", vi: "Tuổi thọ LED 40.000+ giờ" }],
   // Phoseon — Nexus II (water-cooled vs air-cooled differ on dose, width & speed)
   "nexus-ii": [{ en: "Higher Dose · 90 W/cm", zh: "更高剂量 · 90 W/cm", th: "โดสสูงขึ้น · 90 W/cm", vi: "Liều cao hơn · 90 W/cm" }, { en: "Up to 320 m/min", zh: "最高 320 m/min", th: "สูงสุด 320 ม./นาที", vi: "Tối đa 320 m/phút" }, { en: "Web Width to 675 mm", zh: "幅宽达 675 mm", th: "ความกว้างเว็บถึง 675 มม.", vi: "Khổ web đến 675 mm" }],

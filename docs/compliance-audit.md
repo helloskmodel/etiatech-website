@@ -1,0 +1,93 @@
+# 合规审计：广告法、隐私安全及其他（2026-09-10）
+
+范围：sitemap 全部 252 页的可见文本 + 元数据（四语），`content/` 与 `components/` 源码，依赖，生产站响应头。方法：脚本扫描 + 人工核对。
+
+## 一、广告法（中国《广告法》§9/§12，泰国《消费者保护法》，越南《广告法》§8）
+
+### 已修正（本次 PR）
+
+| 问题 | 位置 | 改法 |
+|---|---|---|
+| "the only system with this capability" | R2000 | 删去"唯一" |
+| "Most advanced and accurate" | R2000 | → "Purpose-built, accurate" |
+| "Class-leading irradiance" | V3 LED 灯头 | → "High irradiance" |
+| "industry's highest total UV energy"、"unbeatable uniformity"、"superior"、"State-of-the-art"、"Unique" ×3 | Phoseon / AC 系列 | 改为可验证的中性描述 |
+| "Patented / 专利 / สิทธิบัตร / sáng chế"（41 处） | 全站产品文案、Phoseon 品牌页、S2000 灯泡页 | §12：宣传专利须标注专利号与种类；无号在案，一律改为"专有技术 / proprietary" |
+| "Trusted by leading… / 头部 / ชั้นนำ / hàng đầu" | 首页客户 logo 标题 | → "服务亚洲…制造企业" |
+| "完美适配 / 完美匹配 / 极致可靠" | 中文应用案例、Insight | → 适配 / 匹配 / 高可靠 |
+| "our unique tube technology / 我们独有的" | S2000 灯泡页（官方文案） | → "其灯管技术" |
+| "rộng nhất"（最广） | 越南语灯泡页 | → "rất rộng" |
+
+### 扫描后确认无需改的
+
+- "最高 40 W/cm²"、"最小 5%"、"5–100%"、"ที่สุด"（最近的仓库）、"nhất quán"（一致）——技术参数或普通用法，非绝对化宣传语。
+- "Best For"栏目标题——非比较宣传。
+- "2,000 h guaranteed / 保证 2000 小时"——Excelitas 对灯泡的厂家保证，事实陈述；Terms 已声明保修由厂家提供。
+
+### 仍需业主决定
+
+1. **"24 小时内回复"** —— 属承诺，须能兑现；建议改为"工作日 24 小时内"。
+2. **"现货 / In stock"**（首页灯泡条、灯泡页）—— 必须属实；断货时应及时下线该措辞。
+3. **"Authorized distributor / 授权经销商"** —— 应能出示 Excelitas 授权文件；Terms §4 已做范围声明。
+4. 若希望保留"专利"表述，需向 Excelitas 索取专利号并按 §12 标注"专利号 + 种类"。
+
+### 补充：专利号已在机器铭牌上见到（2026-09-11）
+
+S2000-XLA 铭牌（911-00007R Rev.4）印有 `US Patent # 5,521,392 / 6,333,602 /
+6,847,170 / 7,335,901`。**结论仍是不要在站内做专利宣传**，理由有三：
+
+1. 这四个都是**美国专利**，在中国、泰国、越南不产生任何保护，在亚太市场的宣传里引用
+   它们会让读者误以为当地受保护。
+2. 按申请年份推算，其中最早的几个**很可能已过期**。§12 要求宣传的专利处于有效状态。
+3. 专利权人是 Excelitas，不是 ETIA；即使要写，也须写清权利人，而这对 ETIA 的宣传
+   没有增益。
+
+如果日后确实要写，须向 Excelitas 取得**仍在有效期内**的专利清单及其国别，并按
+"专利号 + 专利种类"标注。
+
+### 铭牌上的认证信息（可用但尚未上站）
+
+同一台 S2000-XLA 铭牌与其下方的认证标签（911-00012R_r5）载明：ETL Listed
+（Intertek 3089355）、CONFORMS TO UL STD NO. 61010-1:2012、CERTIFIED TO
+CAN/CSA STD C22.2 NO. 61010-1-12、CE、UKCA、WEEE、China RoHS 环保使用期限 10 年。
+这些是可核实的事实陈述，客户问"有没有 CE"时可用；是否上站由业主决定。
+
+## 二、隐私与数据安全
+
+### 现状（好的方面）
+
+- Cookie 同意横幅：默认仅必要；GA4/GTM **仅在同意后加载**（`Analytics.tsx` / `GtmConsent.tsx`）；页脚有"Cookie 设置"可撤回。
+- 询单接口 `/api/lead`：来源校验、速率限制、蜜罐字段、字段长度上限、纯文本邮件（无 HTML 注入面）。
+- 生产站 HTTPS + HSTS（Vercel）。
+- 仓库无提交的密钥；Google 站点验证码为公开值。
+- 外链 `target=_blank` 均带 `noopener`。
+
+### 已修正（本次 PR）
+
+- **依赖漏洞**：Next.js 16.2.9 存在 1 个 critical（App Router 中间件绕过）+ 1 个 DoS；升级到 16.3.4，`npm audit` 清零（含 sharp / postcss / nanoid / js-yaml / browserslist / brace-expansion）。
+- **安全响应头**（`next.config.ts`）：`X-Content-Type-Options: nosniff`、`X-Frame-Options: SAMEORIGIN`、`Referrer-Policy: strict-origin-when-cross-origin`、`Permissions-Policy`（关闭摄像头/麦克风/定位/支付/USB）。
+- **隐私政策**（四语）：列明实际处理者（Vercel、Google GA4/GTM、Resend、腾讯云 COS、WhatsApp/微信）；保留期说明；撤回同意与投诉权；新增"法律依据与适用法律"（香港 PDPO、泰国 PDPA B.E. 2562、越南 13/2023/ND-CP、中国 PIPL）；更新日期。
+- **Cookie 政策**（四语）：列明实际存储项 `etia-cookie-consent`、`etia-lang`、`etia-inquiry`、`_ga/_ga_*` 及其期限与触发条件；"Cookie 设置"撤回路径。
+
+### 已决定（2026-09-10）
+
+- **`/api/ask` 已删除**（连同 `@anthropic-ai/sdk` 依赖）：站内无页面调用，不再对外暴露一个连着付费模型的接口。
+- 业主决定**不做**：CSP、法律页本地化路由（`/th/privacy` 等）、泰国 PDPA 联系人、与 Resend/Vercel 签 DPA、GA 后台保留期调整。
+- 速率限制仍为单实例内存计数；流量上来后再换 Upstash/Vercel KV。
+
+## 三、其他检查
+
+| 项目 | 结果 |
+|---|---|
+| 断链 / 失效图片 / hreflang / JSON-LD | 209 链接、141 图、170 hreflang 目标全部有效；JSON-LD 全部可解析 |
+| `<html lang>` | en / zh-CN / th / vi 正确 |
+| alt 文本 | 仅装饰性横幅为空 alt（正确做法） |
+| 商标 | Terms §2 已声明 OmniCure®、Phoseon® 归属；产品名带 ® |
+| 公司主体 | 页脚与法律页均为 ETIA-TECH (ASIA) Co., Limited（香港） |
+| robots | 屏蔽百度/搜狗/360/字节爬虫（有意为之，保持） |
+
+### 仍需业主处理
+
+- **手册 PDF 托管**：COS 上托管的 Excelitas / Phoseon / Noblelight 手册属厂家版权物，确认经销协议允许再分发；否则改为链接到厂家官网。
+- **EIR 培训资料**：已确认未出现在站内（仅用于学习，符合约束）。
+- **灯泡保修小时数**（8,000 / 6,000）：已确认不在站内。

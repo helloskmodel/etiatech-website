@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FileText, Download } from "lucide-react";
-import { productImage, productHref, products, localizeProduct, productTagline, techRouteFor, productDocs, productDocUrl, type Product } from "@/components/productCatalog";
+import { brandGroupName, productImage, productHref, products, localizeProduct, productTagline, techRouteFor, productDocs, productDocUrl, type Product } from "@/components/productCatalog";
 import { inquiryMailto } from "@/components/contact";
 import FinalCta from "@/components/FinalCta";
 import { localizeSpecLabel } from "@/components/specLabels.zh";
@@ -11,6 +11,7 @@ import RelatedApplications from "@/components/RelatedApplications";
 import AddToInquiryButton from "@/components/inquiry/AddToInquiryButton";
 import PartPicker from "@/components/inquiry/PartPicker";
 import { partsForModel } from "@/components/omnicureParts";
+import { consumablesHref, machineBySlug, machineForProduct } from "@/components/consumables";
 
 const brandPageSlug: Record<Product["brandId"], string> = {
   omnicure: "omnicure",
@@ -28,7 +29,18 @@ export default function ProductDetailView({ product, accent }: { product: Produc
   const { locale } = useLocale();
   const p = localizeProduct(product, locale);
   const docs = productDocs[product.slug] ?? [];
-  const shortName = product.name.split(" ").slice(0, 3).join(" ");
+  // The heading names the product, so it has to be the product's name. Taking
+  // the first three words made "OmniCure S2000 Elite" out of both the system
+  // and its filter cartridges — five pairs of products ended up with the same
+  // heading. Drop only the part-number tail the name carries after a dash.
+  const shortName = p.name.split(" — ")[0];
+  // The related block is the brand group, so it is named after the group. A
+  // product's own brand is not the same thing: ETIA's light guides sit in the
+  // OmniCure group, and "More ETIA Systems" over four OmniCure lamps is wrong.
+  const groupName = brandGroupName[product.brandId];
+  // Where this model's wear parts, their service life and their replacement
+  // signs live. Not every product has one — only the machines ETIA services.
+  const consumablesMachine = machineBySlug.get(machineForProduct[product.slug] ?? "");
   const related = products
     .filter((x) => x.brandId === product.brandId && x.slug !== product.slug)
     .slice(0, 4)
@@ -146,6 +158,23 @@ export default function ProductDetailView({ product, accent }: { product: Produc
             <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#1A56DB" }}>{t({ en: "Lamps, Light Guides & Part Numbers", zh: "灯泡、导光管与料号", th: "หลอด ท่อนำแสง & หมายเลขชิ้นส่วน", vi: "Đèn, ống dẫn sáng & mã linh kiện" }, locale)}</h2>
             <p className="text-sm text-gray-600 mb-6">{t({ en: "Everything the catalogue lists for this model. Pick by what it is — the part number is filled in — and add it to your inquiry with the system.", zh: "目录里给这个机型列的全部配件。按用途逐项选，料号自动带出，和整机一起加进询单。", th: "ทุกอย่างที่แคตตาล็อกระบุสำหรับรุ่นนี้ เลือกตามสิ่งที่เป็น หมายเลขชิ้นส่วนจะถูกกรอกให้ แล้วเพิ่มลงในรายการสอบถามพร้อมกับระบบ", vi: "Mọi thứ catalogue liệt kê cho mẫu này. Chọn theo mô tả — mã linh kiện tự điền — rồi thêm vào yêu cầu cùng hệ thống." }, locale)}</p>
             <PartPicker families={partsForModel[product.slug]} model={product.slug} heading={false} />
+            {consumablesMachine && (
+              <Link
+                href={consumablesHref(consumablesMachine.slug)}
+                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#1A56DB] hover:underline"
+              >
+                {t(
+                  {
+                    en: `Service life and replacement signs for ${consumablesMachine.name} consumables`,
+                    zh: `${consumablesMachine.name} 耗材的使用寿命与更换判断`,
+                    th: `อายุใช้งานและสัญญาณการเปลี่ยนวัสดุสิ้นเปลืองของ ${consumablesMachine.name}`,
+                    vi: `Tuổi thọ và dấu hiệu thay thế vật tư cho ${consumablesMachine.name}`,
+                  },
+                  locale
+                )}
+                <span aria-hidden>→</span>
+              </Link>
+            )}
           </div>
         </section>
       )}
@@ -198,7 +227,7 @@ export default function ProductDetailView({ product, accent }: { product: Produc
         <section className="py-16 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#41A62A" }}>{t({ en: "Related Products", zh: "相关产品", th: "ผลิตภัณฑ์ที่เกี่ยวข้อง", vi: "Sản phẩm liên quan" }, locale)}</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `More ${p.brand} Systems`, zh: `更多 ${p.brand} 系统`, th: `ระบบ ${p.brand} เพิ่มเติม`, vi: `Thêm hệ thống ${p.brand}` }, locale)}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#1A56DB" }}>{t({ en: `More ${groupName} Systems`, zh: `更多 ${groupName} 系统`, th: `ระบบ ${groupName} เพิ่มเติม`, vi: `Thêm hệ thống ${groupName}` }, locale)}</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((x) => (
                 <Link key={x.slug} href={productHref(x)} className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-[#1A56DB]/30 transition-all">

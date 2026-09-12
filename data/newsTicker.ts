@@ -28,10 +28,10 @@ export const NEWS_ITEMS: NewsItem[] = [
     id: "s2000-lamp-2026",
     kind: "product",
     text: {
-      en: "OmniCure S2000 Elite replacement lamps (012-64000R) — genuine stock, fast delivery",
-      zh: "OmniCure S2000 Elite 替换灯管（012-64000R）——原厂正品现货，快速发货",
-      th: "หลอดเปลี่ยน OmniCure S2000 Elite (012-64000R) — ของแท้ มีสต็อก จัดส่งรวดเร็ว",
-      vi: "Đèn thay thế OmniCure S2000 Elite (012-64000R) — hàng chính hãng, giao nhanh",
+      en: "OmniCure S2000 / S2000 Elite replacement lamps (012-64000R · 012-68000R) — genuine stock, fast delivery",
+      zh: "OmniCure S2000 / S2000 Elite 替换灯管（012-64000R · 012-68000R）——原厂正品现货，快速发货",
+      th: "หลอดเปลี่ยน OmniCure S2000 / S2000 Elite (012-64000R · 012-68000R) — ของแท้ มีสต็อก จัดส่งรวดเร็ว",
+      vi: "Đèn thay thế OmniCure S2000 / S2000 Elite (012-64000R · 012-68000R) — hàng chính hãng, giao nhanh",
     },
     href: {
       en: "/insights/omnicure-s2000-elite-genuine-lamp",

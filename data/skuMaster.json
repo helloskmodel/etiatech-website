@@ -1,0 +1,2777 @@
+{
+ "generated": "2026-09-11",
+ "items": [
+  {
+   "sku": "558434",
+   "pn": "558434",
+   "name": "Noblelight 无极灯管，F300S用，D型",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L01E001",
+   "pn": "010-00148R",
+   "name": "紫外光固化机 OmniCure S2000 with standard filter (320-500nm)",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E001 DEMO",
+   "pn": "010-00148R-DEMO",
+   "name": "S2000 UV CURING DEMO",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E001P",
+   "pn": "010-00148R",
+   "name": "OmniCure S2000 with standard filter (320-500nm)",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E002",
+   "pn": "010-00208",
+   "name": "OmniCure R2000 Radiometer",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E002P",
+   "pn": "010-00208",
+   "name": "OmniCure R2000 Radiometer",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E003",
+   "pn": "010-00224R",
+   "name": "OmniCure S1500 紫外光固化机 (320-500nm)",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E003P",
+   "pn": "010-00224R",
+   "name": "OmniCure S1500 紫外光固化机 (320-500nm)",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E003P2",
+   "pn": "010-00224R-P2",
+   "name": "OmniCure S1500 紫外光固化机",
+   "category": "二手机",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E007",
+   "pn": "010-00248R",
+   "name": "LED照射头，400nm x 55mm LED Head for LX400",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E008",
+   "pn": "010-00261R",
+   "name": "Cure Site Radiometer",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E008.",
+   "pn": "010-00261R",
+   "name": "Cure Site Radiometer",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E009",
+   "pn": "010-00281R",
+   "name": "OmniCure LED Light Meter System",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E010",
+   "pn": "010-00295R",
+   "name": "SR V3 LED Head for LX500",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E011",
+   "pn": "010-00369R",
+   "name": "LX500两通道主机 OmniCure LX500 Controller - 2CH",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E012",
+   "pn": "010-00375R",
+   "name": "LX500四通道主机 OmniCure LX500 Controller - 4CH",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E013",
+   "pn": "010-00376R",
+   "name": "LX505两通道主机 OmniCure LX505 Controller - 2CH",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E014",
+   "pn": "010-00377R",
+   "name": "LX505四通道主机 OmniCure LX505 Controller - 4CH",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E015",
+   "pn": "010-00464R",
+   "name": "紫外光固化机 OmniCure S2000 with standard filter (320-500nm)",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E016P",
+   "pn": "010-00517R",
+   "name": "OmniCure S1500 Pro - System Only",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E017",
+   "pn": "010-00520R",
+   "name": "LX500-2 CONTROLLER 2-CHANNEL V2",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E017P",
+   "pn": "010-00520R",
+   "name": "LX500-2 CONTROLLER 2-CHANNEL V2",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E018P",
+   "pn": "010-00521R",
+   "name": "LX500-4 CH LED 紫外线固化设备",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E019",
+   "pn": "010-00522R",
+   "name": "LX505-2 CONTROLLER 2-CHANNEL V2",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E019P",
+   "pn": "010-00522R",
+   "name": "LX505-2 CONTROLLER 2-CHANNEL V2",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E020P",
+   "pn": "010-00523R",
+   "name": "LX505-4 CONTROLLER 4-CHANNEL V2",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "E"
+  },
+  {
+   "sku": "L01E022P",
+   "pn": "010-00529R",
+   "name": "OmniCure S2000 Elite - 320-500nm",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E023",
+   "pn": "018-00559R",
+   "name": "3PIN电源线 5m, 5W5 DC power cable",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E023P",
+   "pn": "010-00578R",
+   "name": "OmniCure S1500 Pro-320-500nm",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E024",
+   "pn": "018-00624R",
+   "name": "AC2系列电源线 AC2 Series power / control cable",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E024.",
+   "pn": "018-00595R",
+   "name": "5m 5C5W5 DC Cable",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E025",
+   "pn": "019-00131R",
+   "name": "定位套件 OmniCure Beam Positioning Kit",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E026",
+   "pn": "019-00162R",
+   "name": "LC280 UV LED Line Head-LCD applications",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E027",
+   "pn": "019-00169R",
+   "name": "LED照射头 365nm x 55mm UV LED MAX Head",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E028",
+   "pn": "019-00170R",
+   "name": "LED照射头 400nm x 55mm UV LED Head",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E029",
+   "pn": "019-00181R",
+   "name": "LED照射头 365nm x 130mm UV LED MAX Head",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E030",
+   "pn": "019-00191R",
+   "name": "面光源 AC450-395 UV LED head, 8W/cm2, 25x50mm @395nm",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E031",
+   "pn": "019-00194R",
+   "name": "面光源 AC450-365 UV LED head",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E032",
+   "pn": "019-00195R",
+   "name": "电源，650W，单路输出",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E032P",
+   "pn": "019-00195R",
+   "name": "电源，650W，单路输出",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E033",
+   "pn": "019-00197R-04",
+   "name": "面光源 AC7150-365 UV LED head",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E034",
+   "pn": "019-00199R",
+   "name": "电源 750W，双路输出",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E035",
+   "pn": "019-00211R",
+   "name": "电源 2000W，双路输出",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E036",
+   "pn": "019-00214R",
+   "name": "控制器 PLC2000",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E036P",
+   "pn": "019-00214R",
+   "name": "控制器 PLC2000",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E037",
+   "pn": "019-00237R",
+   "name": "LS100, LED Light Sensor - Irradiance (W/cm2)",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E038",
+   "pn": "019-00271R-04",
+   "name": "面光源 AC2110-365 UV LED head:365nm,10x114mm",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E038P",
+   "pn": "019-00261R-04",
+   "name": "AC8150-385 UV LED head, 8W/cm² , 25mm × 150mm @385nm",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E039",
+   "pn": "019-00273R-04",
+   "name": "AC8150-405 UV LED head, 8W/cm² , 25mm × 150mm @405nm",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E039P",
+   "pn": "019-00273R-04",
+   "name": "AC8150-405 UV LED head, 8W/cm² , 25mm × 150mm @405nm",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E040",
+   "pn": "019-00286R",
+   "name": "LED照射头 365nm x 55mm UV LED MAX Head (LX500)",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E041",
+   "pn": "019-00286RB",
+   "name": "365nm x 55mm UV LED MAX Head ( LX500 )",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E042",
+   "pn": "019-00286RB-2",
+   "name": "365nm * 55mm LED Head OEM",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E043",
+   "pn": "019-00287R",
+   "name": "LED照射头 365nm x 125mm UV LED MAX Head (LX500)",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E044",
+   "pn": "019-00288R",
+   "name": "LED照射头 385nm x 55mm UV LED MAX Head (LX500)",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E045",
+   "pn": "019-00289R",
+   "name": "LED照射头385nm x 125mm UV LED MAX Head (LX500)",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E046",
+   "pn": "019-00293R",
+   "name": "LED照射头 400nm x 55mm LED UV HEAD (LX500)",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E047",
+   "pn": "019-00295R",
+   "name": "SR V3 LED Head",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E048",
+   "pn": "019-00299R",
+   "name": "LED测光表探头 OmniCure Calibration Kit - Irradiance",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E049",
+   "pn": "019-00323R-04",
+   "name": "AC8150P-HD-405nm UV LED head, 15W/cm2 , 30x150mm",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E049P",
+   "pn": "019-00323R-04",
+   "name": "AC8150P-HD-405nm UV LED head, 15W/cm2 , 30x150mm",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E050",
+   "pn": "019-00398R",
+   "name": "LX500 365nm x 55mm UV HEAD HDMI V3",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E050B",
+   "pn": "019-00398RB",
+   "name": "365nm x 55mm UV HEAD V3（含散热片）",
+   "category": "LED",
+   "origin": "",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E051P",
+   "pn": "019-00399R",
+   "name": "LX500 365nm x 125mm UV HEAD HDMI V3",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E052P",
+   "pn": "019-00400R",
+   "name": "LX500 385nm x 55mm UV HEAD HDMI V3",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E053P",
+   "pn": "019-00401R",
+   "name": "LX500 385nm x 125mm UV HEAD HDMI V3",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E054P",
+   "pn": "019-00402R",
+   "name": "LX500 395nm x 55mm UV HEAD HDMI V3",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E055P",
+   "pn": "019-00403R",
+   "name": "LX500 395nm x 125mm UV HEAD HDMI V3",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E056P",
+   "pn": "019-00404R",
+   "name": "LX500 405nm x 55mm UV HEAD HDMI V3",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E057P",
+   "pn": "019-00405R",
+   "name": "LX500 405nm x 125mm UV 照射头",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E058",
+   "pn": "019-00409R",
+   "name": "Beam Positioning Kit (BPK) for V3 UV LED Heads",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E058P",
+   "pn": "019-00427R",
+   "name": "OmniCure® LED Light Meter System with LS200 Sensor",
+   "category": "LED",
+   "origin": "加拿大",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E059",
+   "pn": "019-01033",
+   "name": "输出适配器 Radiometer lamp output adaptor",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E070",
+   "pn": "SR8368K-1",
+   "name": "ND Filter, S2000, EFA, OD=1",
+   "category": "汞灯",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E075J-1",
+   "pn": "EIT UVICURE PLUS II",
+   "name": "测光表 365nm",
+   "category": "其他",
+   "origin": "美国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E075J-2",
+   "pn": "EIT UVICURE PLUS II",
+   "name": "26061",
+   "category": "其他",
+   "origin": "美国",
+   "unit": "台",
+   "type": "E"
+  },
+  {
+   "sku": "L01E075J-3",
+   "pn": "EIT SPOTCURING RADIOMETER",
+   "name": "LM90824-1",
+   "category": "其他",
+   "origin": "美国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E075J-4",
+   "pn": "EIT LED CURE L405/40W",
+   "name": "LED测光仪",
+   "category": "其他",
+   "origin": "美国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L01E075J-5",
+   "pn": "EIT UV Power Puck II",
+   "name": "全频谱UV测光仪",
+   "category": "其他",
+   "origin": "美国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C001",
+   "pn": "012-60850",
+   "name": "Standard Spare 100W Lamp for S1000",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C001P",
+   "pn": "012-60850",
+   "name": "Standard Spare 100W Lamp for S1000",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C002",
+   "pn": "012-64000R",
+   "name": "Standard Spare 200W Lamp for S2000 and S1500",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C002B",
+   "pn": "012-64000RB",
+   "name": "Standard Spare 200W Lamp for S2000 and S1500",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C002B2",
+   "pn": "012-64000RB2",
+   "name": "200W Lamp",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C002P",
+   "pn": "012-64000R",
+   "name": "Standard Spare 200W Lamp for S2000 and S1500",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C006",
+   "pn": "012-65000R",
+   "name": "Spare 200W Lamp for Surface Curing for S2000",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C006P",
+   "pn": "012-65000R",
+   "name": "Spare 200W Lamp for Surface Curing for S2000",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C007",
+   "pn": "012-68000R",
+   "name": "Standard Spare 200W Lamp for S2000E",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C007P",
+   "pn": "012-68000R",
+   "name": "Standard Spare 200W Lamp for S2000E",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C008",
+   "pn": "012-69000R",
+   "name": "Spare 200W Lamp for Surface Curing for S2000E",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C009",
+   "pn": "014-00070R",
+   "name": "Foot Switch (audio jack)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C010",
+   "pn": "014-00070RB",
+   "name": "Foot Switch (audio jack)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C011",
+   "pn": "018-00555R",
+   "name": "Cable Assembly, UV LED Head (v1) to LX405S/LX180 Adapter",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C012",
+   "pn": "018-00642R",
+   "name": "Extension Cable: 1m",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C013",
+   "pn": "018-00642RB",
+   "name": "Extension Cable: 1m",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C014",
+   "pn": "018-00643RB",
+   "name": "Extension Cable: 3m",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C015",
+   "pn": "018-00646RB",
+   "name": "Extension Cable: 1.5m, OEM",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C016",
+   "pn": "018-00647RB",
+   "name": "Extension Cable: 2m, OEM",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C016.",
+   "pn": "018-00644RB",
+   "name": "Extension Cable: 5m",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C017",
+   "pn": "018-00652R",
+   "name": "CABLE ASSY,LX405 HEAD TO LX500 ADAPTOR",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C018",
+   "pn": "019-00087R",
+   "name": "散热器",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C019",
+   "pn": "019-00108",
+   "name": "KIT, EXTERNAL FILTER ADAPTOR ASSEMBLY",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C019-1",
+   "pn": "019-00216R-04",
+   "name": "AC8300-395 UV LED head, 8W/cm2，25x300mm@395nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C019-1P",
+   "pn": "019-00216R-04",
+   "name": "AC8300-395 UV LED head, 8W/cm2，25x300mm@395nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C019-2",
+   "pn": "019-00297R",
+   "name": "LS100P, LED Light Sensor -Optical Power (W)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C019-3",
+   "pn": "019-00308R",
+   "name": "SR LS100P Beam Postion Kit",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C020",
+   "pn": "019-00387R",
+   "name": "S2000 Elite Filter 400-500 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C021",
+   "pn": "019-00388R",
+   "name": "S2000 Elite Filter 365 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C022",
+   "pn": "019-00389R",
+   "name": "S2000 Elite Filter 320-390 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C023",
+   "pn": "019-00390R",
+   "name": "S2000 Elite Filter 250-450 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C024",
+   "pn": "019-00391R",
+   "name": "S2000 Elite Filter 320-500 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C025",
+   "pn": "019-00392R",
+   "name": "S2000 Elite Blank Filter",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C026",
+   "pn": "019-00394R",
+   "name": "S2000 Elite Custom Filter",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C027",
+   "pn": "019-00395R",
+   "name": "S2000 External PLC adapter",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C028",
+   "pn": "019-00406R",
+   "name": "S2000 Elite Intelli-Tap Supervisor NFC card",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C029",
+   "pn": "019-00407R",
+   "name": "S2000 Elite Intelli-Tap Admin NFC card",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C030",
+   "pn": "019-00410R",
+   "name": "S2000 Elite, Optical Bandpass Filter Kit",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C030-1",
+   "pn": "019-00421R-04",
+   "name": "AC575-405 UV LED head, 15W/cm2, 25x75mm @405nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C030-1P",
+   "pn": "019-00421R-04",
+   "name": "AC575-405 UV LED head, 15W/cm2, 25x75mm @405nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C030-2",
+   "pn": "019-00427R",
+   "name": "LS200 LED Light Meter System",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C030..",
+   "pn": "019-00413R",
+   "name": "LED测光仪外置探头，型号LS200",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C031",
+   "pn": "019-01022",
+   "name": "External Filter 320-480 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C032",
+   "pn": "019-01023",
+   "name": "External Filter 320-390 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C033",
+   "pn": "019-01024",
+   "name": "External Filter 365 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C034",
+   "pn": "019-01026",
+   "name": "External Filter 400-500 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C035",
+   "pn": "019-01042",
+   "name": "Light Guide Adaptor, 8mm (Green)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C036",
+   "pn": "019-01045R",
+   "name": "Filter 365 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C037",
+   "pn": "019-01046R",
+   "name": "Filter 250-450 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C038",
+   "pn": "019-01047R",
+   "name": "Filter 400-500 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C039",
+   "pn": "019-01048R",
+   "name": "Filter 320-390 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C040",
+   "pn": "019-01049R",
+   "name": "Filter 320-500 nm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C041",
+   "pn": "019-01050",
+   "name": "Light Guide Adaptor, 3mm (Red)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C042",
+   "pn": "019-01051",
+   "name": "Light Guide Adaptor, 5mm (Blue)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C043",
+   "pn": "021-00016",
+   "name": "Calibration (req LM2011 ＆ LS100)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C043.",
+   "pn": "021-00034",
+   "name": "Calibration - LS100",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C044",
+   "pn": "300-00009R2",
+   "name": "200W UV Lamp",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C045",
+   "pn": "300-60651",
+   "name": "Ultracure 100SS Plus",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L02C046P",
+   "pn": "805-00002",
+   "name": "Liquid Fill (5 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C047",
+   "pn": "805-00002",
+   "name": "Liquid Fill (5 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C048",
+   "pn": "805-00002B",
+   "name": "Liquid Fill (5 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C049P",
+   "pn": "805-00004",
+   "name": "Liquid Fill (3 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C050",
+   "pn": "805-00007",
+   "name": "Liquid Fill (5 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C051",
+   "pn": "805-00007B",
+   "name": "Liquid Fill (5 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C051-1",
+   "pn": "805-00008",
+   "name": "Liquid Fill (5 mm x 3000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C051-1.",
+   "pn": "805-00008B",
+   "name": "Liquid Fill (5 mm x 3000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C052",
+   "pn": "805-00009",
+   "name": "Liquid Fill (8 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C053",
+   "pn": "805-00009B",
+   "name": "Liquid Fill (8 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C054",
+   "pn": "805-00010",
+   "name": "Liquid Fill (8 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C055",
+   "pn": "805-00010B",
+   "name": "Liquid Fill (8 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C056",
+   "pn": "805-00011",
+   "name": "Liquid Fill (2 x 3 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C057",
+   "pn": "805-00011B",
+   "name": "Liquid Fill (2 x 3 mm  x 1000mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C057.",
+   "pn": "805-00012B",
+   "name": "Liquid Fill (2 x 3 mm  x 1500mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C057..",
+   "pn": "805-00016B",
+   "name": "Liquid Fill (2 x 3 mm  x 3000mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C057.P",
+   "pn": "805-00021",
+   "name": "Liquid Fill (5 mm x 2000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C058P",
+   "pn": "805-00023",
+   "name": "Liquid Fill (8 mm x 2000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C059P",
+   "pn": "805-00023B",
+   "name": "Liquid Fill (8 mm x 2000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C060",
+   "pn": "806-00005",
+   "name": "High Power Fiber (2 x 3 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C061",
+   "pn": "806-00005B",
+   "name": "High Power Fiber (2 x 3 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C062",
+   "pn": "806-00006B",
+   "name": "High Power Fiber（4 x 3 mm x 1000 mm）",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C063",
+   "pn": "806-00007B",
+   "name": "High Power Fiber (3x 3 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C064",
+   "pn": "806-00010",
+   "name": "High Power Fiber (2 x 3 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C065",
+   "pn": "806-00010B",
+   "name": "High Power Fiber (2 x 3 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C066",
+   "pn": "806-00011",
+   "name": "High Power Fiber (5 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C067",
+   "pn": "806-00011B",
+   "name": "High Power Fiber (5 mm x 1000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C068",
+   "pn": "806-00013B",
+   "name": "Hghi Power Fiber, 5mm x 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C069",
+   "pn": "806-00014",
+   "name": "High Power Fiber (3mm x 1500mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C070",
+   "pn": "806-00014B",
+   "name": "High Power Fiber (3 mm x 1500mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C071",
+   "pn": "806-00018B",
+   "name": "High Power Fiber (2 x 5 mm x 1000mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C072",
+   "pn": "806-00021",
+   "name": "High Power Fiber, Light Line, Dual Leg (65 mm x 2000 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C073",
+   "pn": "806-00020",
+   "name": "High Power Fiber, Light Line, Single Leg (65 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C074",
+   "pn": "806-00023",
+   "name": "High Power Fiber, Light Line, Single Leg (65 mm x 1500 mm)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C075",
+   "pn": "806-00029B",
+   "name": "High Power Fiber (3 x 3mm x 1500mm)",
+   "category": "OmniCure耗材",
+   "origin": "德国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C075-",
+   "pn": "806-00027B",
+   "name": "High Power Fiber (2 x 5mm x 1500mm)",
+   "category": "OmniCure耗材",
+   "origin": "拉脱维亚",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C076",
+   "pn": "810-00001",
+   "name": "Lightguide angle adaptor, 90° angle for 3 mm LG",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C076P",
+   "pn": "810-00002",
+   "name": "Lightguide angle adaptor, 90° angle for 5 mm LG",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C077",
+   "pn": "810-00014",
+   "name": "Large area collimating adaptor dual 1\" lenses for 5 mm LG",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C078",
+   "pn": "810-00016",
+   "name": "Collimating adaptor for 3 mm LG (single lens)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C079",
+   "pn": "810-00017",
+   "name": "Collimating adaptor for 5 mm LG (single lens)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C080",
+   "pn": "810-00041",
+   "name": "准直适配器，5mm Adjustable Collimating Adaptor",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C081",
+   "pn": "810-00042",
+   "name": "5 mm Adjustable Collimating Adaptor",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C082",
+   "pn": "810-00043",
+   "name": "8 mm Adjustable Collimating Adaptor",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C083",
+   "pn": "810-00048",
+   "name": "固化环,Cure ring ,slotted,63.5mm OD,10mm ID for 5mm LG",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C084",
+   "pn": "810-00053R",
+   "name": "3mm Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C085",
+   "pn": "810-00053RB",
+   "name": "3mm Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C086",
+   "pn": "810-00054R",
+   "name": "6mm LED 聚光镜头",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C087",
+   "pn": "810-00054RB",
+   "name": "6mm LED 聚光镜头",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C088",
+   "pn": "810-00060R",
+   "name": "8mm Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C089",
+   "pn": "810-00060RB",
+   "name": "8mm Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C090",
+   "pn": "810-00060R-01",
+   "name": "SR 8mm Focusing Lens",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C091",
+   "pn": "810-00061R",
+   "name": "10mm Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C092",
+   "pn": "810-00061RB",
+   "name": "10mm Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C093",
+   "pn": "810-00062R",
+   "name": "3mm Focusing Lens for 400nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C094",
+   "pn": "810-00063R",
+   "name": "6mm Focusing Lens for 400nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C095",
+   "pn": "810-00064R",
+   "name": "10mm Focusing Lens for 400nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C096",
+   "pn": "810-00065R",
+   "name": "8mm Focusing Lens for 400nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C097",
+   "pn": "810-00066R",
+   "name": "12mm  Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C098",
+   "pn": "810-00066RB",
+   "name": "12mm  Focusing Lens for 365nm/385nm LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C099",
+   "pn": "810-00084RB",
+   "name": "90度转角镜头 90deg Adapter, 8mm spot, 365/385nm LED heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C100",
+   "pn": "854-00001R",
+   "name": "防紫外线安全眼镜 Safety glasses, UV protection grey",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C100B",
+   "pn": "854-00001B",
+   "name": "防紫外线安全眼镜",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C101",
+   "pn": "268813",
+   "name": "RIT MICROCURE MC-0.2A 分体式测光探头",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C102",
+   "pn": "SA-610",
+   "name": "RECEIVER,ASSY, RECEIVER HEAD-10CC",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C103",
+   "pn": "SK5036",
+   "name": "LIGHT,LINE,VTAAP,LUME N DYNAMICS GROUP,SK-5306",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C104",
+   "pn": "SR11107210L-SL",
+   "name": "线型光导管 110 * 0.72mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C105",
+   "pn": "SR12203510L-SL",
+   "name": "线型光导管 220 * 0.35mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C106",
+   "pn": "SR1320-SL",
+   "name": "标准光纤光导管 3mm * 2000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C106-1",
+   "pn": "SR1001",
+   "name": "395nm手持式LED手电筒",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C107",
+   "pn": "SR1310-SL",
+   "name": "标准光纤光导管 3mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C108",
+   "pn": "SR1315-SL",
+   "name": "标准光纤光导管 3mm * 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C108-2",
+   "pn": "SR1410L2-SL",
+   "name": "标准光纤光导管H-POWER,4X14.85X0.92,L10.90",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C109",
+   "pn": "SR1510-SL",
+   "name": "标准纤维光导管 5mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C110",
+   "pn": "SR1510L-SL",
+   "name": "线型特种光导管，50mm * 0.2mm, 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C111",
+   "pn": "SR1510R2-SL",
+   "name": "标准纤维光导管 5mm * 1000mm (出口端尺寸定制)",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C112",
+   "pn": "SR1515-SL",
+   "name": "标准纤维光导管 5mm * 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C113",
+   "pn": "SR1515R2-SL",
+   "name": "标准纤维光导管 5mm * 1500mm （出口端尺寸定制）",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C114",
+   "pn": "SR1520-SL",
+   "name": "标准纤维光导管 5mm * 2000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C115",
+   "pn": "SR1550-SL",
+   "name": "标准纤维光导管 5mm * 5000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C116",
+   "pn": "SR1610L-CH",
+   "name": "线型特种光导管 6 * 14.5mm * 0.92mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C117",
+   "pn": "SR1810-CH",
+   "name": "标准纤维光导管 8mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C118",
+   "pn": "SR1810-SL",
+   "name": "标准纤维光导管 8mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C119",
+   "pn": "SR1810R2-SL",
+   "name": "标准纤维光导管 8mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C120",
+   "pn": "SR1825-SL",
+   "name": "标准纤维光导管 8mm * 2500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C121",
+   "pn": "SR2310-SL",
+   "name": "标准纤维光导管 2 * 3mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C121B",
+   "pn": "SR2310B-SL",
+   "name": "标准纤维光导管 2 * 3.5mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C122",
+   "pn": "SR2310R2-SL",
+   "name": "标准纤维光导管 2 * 3mm * 1000mm, 03.06.GD049.0036",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C123",
+   "pn": "SR2315-CH",
+   "name": "标准纤维光导管 2 * 3mm * 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C124",
+   "pn": "SR2315-SL",
+   "name": "标准纤维光导管 2 * 3mm * 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C125",
+   "pn": "SR2320-SL",
+   "name": "标准纤维光导管 2 * 3mm * 2000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C126",
+   "pn": "SR2325-SL",
+   "name": "标准纤维光导管 2 * 3mm * 2500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C127",
+   "pn": "SR2510-SL",
+   "name": "标准纤维光导管 2 * 5mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C128",
+   "pn": "SR2520-SL",
+   "name": "标准纤维光导管 2 * 5mm * 2000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C129",
+   "pn": "SR2530-SL",
+   "name": "标准纤维光导管 2 * 5mm * 3000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C130",
+   "pn": "SR27320L-SL",
+   "name": "线型特种光导管，73 * 0.45mm，2米，双分支",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C131",
+   "pn": "SR3310-SL",
+   "name": "标准纤维光导管 3 * 3mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C132",
+   "pn": "SR3315-SL",
+   "name": "标准纤维光导管 3 * 3mm * 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C133",
+   "pn": "SR43065L-SL",
+   "name": "线型特种光导管，30mm * 65mm，4分支",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C134",
+   "pn": "SR4310-SL",
+   "name": "标准纤维光导管 4 * 3mm * 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C135",
+   "pn": "SR4315-SL",
+   "name": "标准纤维光导管 4 * 3mm * 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C136",
+   "pn": "SR4320-SL",
+   "name": "标准纤维光导管 4 * 3mm * 2000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C137",
+   "pn": "SR44115-SL",
+   "name": "HPFLL,35MMX14MMX180XX  1LEGX7R",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C138",
+   "pn": "SR4515-SL",
+   "name": "标准纤维光导管 4 * 5mm * 1500mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C139",
+   "pn": "SR5039K",
+   "name": "线型特种光导管，80mm * 0.5, 1000mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L02C140",
+   "pn": "SR8213K",
+   "name": "柱形聚光镜 LX Head Rod Adapter, 25mm x 2mm",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C141",
+   "pn": "SR8368K-1",
+   "name": "定制1%衰减滤光片",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C142",
+   "pn": "1路继电器模块 带外壳 带显示",
+   "name": "",
+   "category": "OmniCure耗材",
+   "origin": "",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C143",
+   "pn": "淘宝购",
+   "name": "见明细",
+   "category": "OmniCure耗材",
+   "origin": "",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C144",
+   "pn": "定制转接器",
+   "name": "12mm转10mm转接器",
+   "category": "OmniCure耗材",
+   "origin": "",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C145",
+   "pn": "810-00078R",
+   "name": "5mm Cylindrical Lens for LED Heads",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C146",
+   "pn": "018-00645R",
+   "name": "LX500 HDMI LED Head Extension Cable, 10m",
+   "category": "OmniCure耗材",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L02C147",
+   "pn": "80002022",
+   "name": "Heraeus MH-Lamp RQ436-Z4",
+   "category": "OmniCure耗材",
+   "origin": "",
+   "unit": "件",
+   "type": "L"
+  },
+  {
+   "sku": "L05R001",
+   "pn": "020-00498",
+   "name": "MOTOR ASSEMBLY WITH DAMP ER SYSTEM, S1000",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R002",
+   "pn": "020-00501",
+   "name": "20pin 排线 20 POSITION CABLE, OMNIC URE",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R003",
+   "pn": "020-00512",
+   "name": "Display/Battery PCB",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R003.",
+   "pn": "020-00510B",
+   "name": "Battery AA 3.6V for R2000",
+   "category": "OmniCure维修配件",
+   "origin": "",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R004",
+   "pn": "020-00514",
+   "name": "Integrating Cavity",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R005",
+   "pn": "020-00523",
+   "name": "DISPLAY PCB",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R006",
+   "pn": "020-00524",
+   "name": "I/O FEEDBACK PCB",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R007",
+   "pn": "020-00526",
+   "name": "电源模块",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R008",
+   "pn": "020-00530",
+   "name": "ELECTRIC IGNITOR",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R009",
+   "pn": "020-00531",
+   "name": "Snubber PCB",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R010",
+   "pn": "020-00538",
+   "name": "灯泡散热涡轮 Lamp Blower",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R011",
+   "pn": "020-00542",
+   "name": "保险丝，240V，5A",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R012",
+   "pn": "020-00543",
+   "name": "光栅挡板 Grating baffle，",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R013",
+   "pn": "020-00547",
+   "name": "Intensity Monitor PCB",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R014",
+   "pn": "020-00552R",
+   "name": "Integrated Electronics PCB",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R015",
+   "pn": "020-00553R",
+   "name": "S2000-XL FEEDBACK AND I",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R016",
+   "pn": "020-00624",
+   "name": "LX400 Controller ASSY",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R017",
+   "pn": "020-00676",
+   "name": "S2000电源 BALLAST PCB",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R018",
+   "pn": "020-00677",
+   "name": "ELECTRONIC IGNITER",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R019",
+   "pn": "020-00706",
+   "name": "Overlay R2000",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R020",
+   "pn": "020-00724",
+   "name": "Power Supply for S1000",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R021",
+   "pn": "020-00845",
+   "name": "PCB Assy, LX405S  Controller",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R022",
+   "pn": "020-00897",
+   "name": "CABLE ASSY, 1-WIRE W/CONN",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R023",
+   "pn": "020-00898",
+   "name": "分光镜BEAM SPLITTER ASSEMBLY",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R024",
+   "pn": "020-00911",
+   "name": "PCB Assy LX500 Controller+ 2Driver",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R025",
+   "pn": "020-00914",
+   "name": "PCB Assy LX 2Driver board",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R026",
+   "pn": "020-00921",
+   "name": "PCB Assy LX505 Controller+ 2Driver",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R027",
+   "pn": "020-00966",
+   "name": "S1500/S2000 Ballast Cable Upgrade Kit",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L05R028",
+   "pn": "报价专用",
+   "name": "",
+   "category": "OmniCure维修配件",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163-D320",
+   "pn": "D320",
+   "name": "电路板组件",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163-HEAD V3",
+   "pn": "HEAD V3",
+   "name": "HEAD 组件",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E012",
+   "pn": "电源线",
+   "name": "绿联，国标电源线，2米，CCC认证",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E013",
+   "pn": "电源适配器",
+   "name": "绿联，12V2A，5.5DC电源适配器，CCC认证",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E014",
+   "pn": "电源插座",
+   "name": "5.5DC * 2.1 直流电源插座",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E022",
+   "pn": "防水接头",
+   "name": "M牙防水接头",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E1040",
+   "pn": "SR1040-XT",
+   "name": "",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E1050",
+   "pn": "SR1050-XT",
+   "name": "LED UV 面光源，150mm x 10mm，365nm，带封闭式固化箱",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E1200",
+   "pn": "SR1200-XT",
+   "name": "",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E1310",
+   "pn": "SR1310L3",
+   "name": "标准线型光纤，65mm * 1500mm",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L163E1500",
+   "pn": "SR1500-XT",
+   "name": "定制，LED固化机台",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E2001",
+   "pn": "SR2001-ZJ",
+   "name": "定制，AC7150支架工装",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E2002",
+   "pn": "SR2002-BJ",
+   "name": "定制，声光报警器",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E2003",
+   "pn": "SR2010-4",
+   "name": "定制，AC575用安装夹具",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E2010-1",
+   "pn": "SR2010-1",
+   "name": "金属板材，氧化铝材质，0.05平方米",
+   "category": "其他",
+   "origin": "",
+   "unit": "块",
+   "type": "P"
+  },
+  {
+   "sku": "L163E2010-1.",
+   "pn": "SR2010-1",
+   "name": "金属板材，氧化铝材质，1250mm x 520mm",
+   "category": "其他",
+   "origin": "",
+   "unit": "块",
+   "type": "P"
+  },
+  {
+   "sku": "L163E2010-2",
+   "pn": "SR2010-2",
+   "name": "紫外线专用透光玻璃",
+   "category": "其他",
+   "origin": "",
+   "unit": "块",
+   "type": "P"
+  },
+  {
+   "sku": "L163E2010-3",
+   "pn": "SR2010-3",
+   "name": "CNC加工费",
+   "category": "其他",
+   "origin": "",
+   "unit": "次",
+   "type": "P"
+  },
+  {
+   "sku": "L163E460901",
+   "pn": "SR460901-SL",
+   "name": "线型光纤，46mm * 0.9mm，1米",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "G"
+  },
+  {
+   "sku": "L163E5001",
+   "pn": "SR5001-AC",
+   "name": "AC系列光源订制控制组件",
+   "category": "其他",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E5037",
+   "pn": "SR5037K",
+   "name": "470nm LED Head SR",
+   "category": "其他",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E6007",
+   "pn": "SR6007A-ET",
+   "name": "延时控制模组",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E6008",
+   "pn": "SR6008",
+   "name": "DB25转接PCB板",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E7001",
+   "pn": "SR7001",
+   "name": "紫外光防护罩",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E7004",
+   "pn": "SR7004-XT",
+   "name": "UV Area Curing System, 405nm, 100mm * 100mm",
+   "category": "其他",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E8087",
+   "pn": "SR8087K-B10",
+   "name": "Area Cure, Dual AC575",
+   "category": "其他",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E8087K",
+   "pn": "SR8087K-OEM",
+   "name": "AC光源安装夹具",
+   "category": "其他",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "L163E8115",
+   "pn": "SR8115K-10",
+   "name": "AC575-405NM UV",
+   "category": "其他",
+   "origin": "加拿大",
+   "unit": "件",
+   "type": "P"
+  },
+  {
+   "sku": "SR2002-BJ-A",
+   "pn": "配件，声光报警器",
+   "name": "配件，声光报警器",
+   "category": "其他",
+   "origin": "中国",
+   "unit": "件",
+   "type": "P"
+  }
+ ]
+}

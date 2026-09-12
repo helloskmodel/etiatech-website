@@ -31,10 +31,23 @@ const productMenu: MenuGroup[] = [
   },
   {
     heading: { en: "By Brand", zh: "按品牌", th: "ตามแบรนด์", vi: "Theo thương hiệu" },
-    links: BRAND_ORDER.map((slug) => ({
-      href: `/product/${slug}`,
-      label: { en: brandLanding[slug].name, zh: brandLanding[slug].name },
-    })),
+    links: [
+      ...BRAND_ORDER.map((slug) => ({
+        href: `/product/${slug}`,
+        label: { en: brandLanding[slug].name, zh: brandLanding[slug].name } as LangText,
+      })),
+      // The customer who already owns the machine is not shopping for another
+      // one. Give them their own door out of the product menu.
+      {
+        href: "/consumables",
+        label: {
+          en: "Consumables & spare parts",
+          zh: "耗材与备件",
+          th: "วัสดุสิ้นเปลืองและอะไหล่",
+          vi: "Vật tư tiêu hao & phụ tùng",
+        } as LangText,
+      },
+    ],
   },
 ];
 
