@@ -46,7 +46,7 @@ export type SerialType = "E" | "P" | "L" | "G";
  *
  * - `unit` — systems, lamps and light guides get their own code each. This is
  *   what makes a lamp traceable from the shipment it arrived in to the
- *   customer who returns it for trade-in.
+ *   customer it was shipped to.
  * - `sku`  — a lens, a cable, a filter: one code for the part number, printed
  *   as many times as there are pieces. Serialising a washer buys nothing.
  */

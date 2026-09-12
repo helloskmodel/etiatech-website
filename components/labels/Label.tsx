@@ -82,12 +82,17 @@ const HEADLINE: Record<SerialType, string> = {
   P: "ETIA PARTS & CONSUMABLES",
 };
 
-/** What scanning it is good for. The reason a customer bothers. */
+/**
+ * What scanning it is good for. The label exists to serve a machine already in
+ * the field — re-ordering the right part, finding the batch, reaching service.
+ * It does not claim to verify anything: the lamp carries its own Intelli-Lamp
+ * chip and the system reads its hours, so a second check from us adds nothing.
+ */
 const ACTIONS: Record<SerialType, string> = {
   E: "Calibration / PM / repair / lamp",
-  L: "Verify / re-order / warranty / trade-in",
-  G: "Verify / cleaning / re-order / trade-in",
-  P: "Verify / re-order / support",
+  L: "Re-order / batch / support",
+  G: "Cleaning / re-order / support",
+  P: "Re-order / support",
 };
 
 export default function Label({ data, template }: { data: LabelData; template: LabelTemplate }) {

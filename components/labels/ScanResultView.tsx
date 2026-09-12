@@ -99,7 +99,6 @@ export default function ScanResultView({ result }: { result: ScanResult }) {
   }
 
   const type = serialTypes[result.type];
-  const isLamp = result.type === "L";
   const isGuide = result.type === "G";
 
   // A machine and its lamp both count hours, so the customer learns the lamp is
@@ -149,43 +148,6 @@ export default function ScanResultView({ result }: { result: ScanResult }) {
               locale
             )}
           </p>
-        </div>
-      )}
-
-      {isLamp && (
-        <div className="mt-6 rounded-2xl border border-[#1A56DB]/20 bg-[#1A56DB]/5 p-5">
-          <h2 className="flex items-center gap-2 text-sm font-bold text-[#1A56DB]">
-            <Package className="h-4 w-4" />
-            {t(
-              { en: "Trade-in on this lamp", zh: "这支灯的以旧换新", th: "โปรแกรมเทิร์นหลอดนี้", vi: "Đổi cũ lấy mới cho đèn này" },
-              locale
-            )}
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-gray-700">
-            {t(
-              {
-                en: "When this lamp reaches end of life, register it with us and we credit the return against the replacement. Mercury lamps are hazardous waste and rules differ by country, so tell us where the lamp is and we will arrange compliant disposal locally rather than shipping it across a border.",
-                zh: "这支灯到寿命后，把它登记给我们，退回可抵扣新灯的货款。汞灯属于危险废物，各国规定不同，所以请告诉我们灯在哪个国家，我们就地安排合规处置，不做跨境运输。",
-                th: "เมื่อหลอดนี้หมดอายุ ให้ลงทะเบียนกับเรา แล้วเราจะให้เครดิตจากการคืนหลอดไปหักกับหลอดใหม่ หลอดปรอทเป็นของเสียอันตรายและกฎระเบียบต่างกันไปในแต่ละประเทศ โปรดแจ้งว่าหลอดอยู่ที่ใด เราจะจัดการกำจัดอย่างถูกต้องในพื้นที่แทนการขนส่งข้ามพรมแดน",
-                vi: "Khi đèn này hết tuổi thọ, hãy đăng ký với chúng tôi và chúng tôi sẽ ghi có khoản trả lại vào đèn thay thế. Đèn thủy ngân là chất thải nguy hại và quy định khác nhau theo từng nước, nên hãy cho biết đèn đang ở đâu — chúng tôi sẽ thu xếp xử lý hợp quy tại chỗ thay vì vận chuyển qua biên giới.",
-              },
-              locale
-            )}
-          </p>
-          <a
-            href={inquiryMailto(locale, {
-              subject: `Lamp trade-in ${formatSerial(result.code)}`,
-              context: `${result.pn} · ${formatSerial(result.code)}`,
-              fields: ["Country where the lamp is installed", "Lamp hours on the system", "Replacement part number needed"],
-            })}
-            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#41A62A] px-5 py-2.5 text-sm font-bold text-white"
-          >
-            {t(
-              { en: "Register this lamp", zh: "登记这支灯", th: "ลงทะเบียนหลอดนี้", vi: "Đăng ký đèn này" },
-              locale
-            )}
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
       )}
 
