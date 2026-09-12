@@ -141,10 +141,10 @@ export default function ScanResultView({ result }: { result: ScanResult }) {
           <p className="text-sm leading-relaxed text-amber-900">
             {t(
               {
-                en: "Do not bend, kink, coil tightly or hang this light guide by its tip. Damage from bending is permanent and is usually invisible from the outside — the first sign is a cure that will not pass.",
-                zh: "这根导光管不可弯折、不可打死弯、不可紧绕成盘、不可提着出光端吊挂。弯折造成的损伤不可逆，而且外表通常看不出来——第一个征兆是固化不合格。",
-                th: "ห้ามดัด หักพับ ม้วนแน่น หรือแขวนท่อนำแสงนี้ด้วยปลายของมัน ความเสียหายจากการดัดเป็นแบบถาวรและมักมองไม่เห็นจากภายนอก — สัญญาณแรกคือการบ่มที่ไม่ผ่าน",
-                vi: "Không uốn gập, làm gãy khúc, cuộn chặt hay treo ống dẫn sáng này bằng chính đầu của nó. Hư hỏng do uốn là vĩnh viễn và thường không nhìn thấy từ bên ngoài — dấu hiệu đầu tiên là mẻ đóng rắn không đạt.",
+                en: "Do not bend this light guide — not into a curve, not into a coil, and never by hanging it from its tip. There is no safe bend radius: ETIA's rule is that it is not bent at all. Damage from bending is permanent and is usually invisible from the outside — the first sign is a cure that will not pass.",
+                zh: "这根导光管不可弯曲——不可弯成弧、不可盘绕，更不可提着出光端吊挂。没有所谓安全弯曲半径：ETIA 的规定就是不弯。弯折造成的损伤不可逆，外表通常看不出来——第一个征兆是固化不合格。",
+                th: "ห้ามดัดท่อนำแสงนี้ — ไม่ดัดโค้ง ไม่ม้วนเป็นวง และห้ามแขวนด้วยปลายของมัน ไม่มีรัศมีการดัดที่ปลอดภัย: กฎของ ETIA คือห้ามดัดเลย ความเสียหายจากการดัดเป็นแบบถาวรและมักมองไม่เห็นจากภายนอก — สัญญาณแรกคือการบ่มที่ไม่ผ่าน",
+                vi: "Không uốn ống dẫn sáng này — không uốn cong, không cuộn vòng, và tuyệt đối không treo bằng chính đầu ống. Không có bán kính uốn an toàn: quy định của ETIA là không uốn. Hư hỏng do uốn là vĩnh viễn và thường không nhìn thấy từ bên ngoài — dấu hiệu đầu tiên là mẻ đóng rắn không đạt.",
               },
               locale
             )}
