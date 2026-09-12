@@ -38,7 +38,6 @@ const T = {
     th: "เลือกหมายเลขชิ้นส่วนและจำนวน กดครั้งเดียว รับราคาและกำหนดส่ง",
     vi: "Chọn mã hàng và số lượng. Một lần gửi, nhận giá và thời gian giao.",
   },
-  fits: { en: "Fits", zh: "适用机型", th: "ใช้กับ", vi: "Dùng cho" },
   qty: { en: "Qty", zh: "数量", th: "จำนวน", vi: "SL" },
   genuine: { en: "Genuine Excelitas", zh: "Excelitas 原厂件", th: "ของแท้ Excelitas", vi: "Chính hãng Excelitas" },
 
@@ -62,61 +61,46 @@ const tr = (k: keyof typeof T, lang: L) => T[k][lang];
 
 /**
  * Every lamp ETIA supplies — two spectra across two platforms, so four part
- * numbers and no more. Four is few enough to read, and each card says what it
- * fits, so there is no step in front of them: the list IS the choice.
- *
- * S1500 sits with the S2000 rather than with the Pro: ETIA's own inventory
- * says so — "L02C002 012-64000R Standard Spare 200W Lamp for S2000 and S1500".
- * The S1500 *Pro* is the one that shares the Elite's lamp.
+ * numbers and no more. One line each: the part number a customer orders by,
+ * and what it is followed by what it fits. The manufacturer's long product
+ * name and the spectrum paragraph are gone; four rows should be readable at a
+ * glance, not studied.
  */
-const LAMPS: {
-  pn: string;
-  name: string;
-  fits: string;
-  spectrum: Record<L, string>;
-}[] = [
+const LAMPS: { pn: string; what: Record<L, string> }[] = [
   {
     pn: "012-68000R",
-    name: "S2000 Elite Lamp Module — Standard",
-    fits: "S2000 Elite · S1500 Pro",
-    spectrum: {
-      en: "Broad spectrum — the widest range of UV adhesive bonding",
-      zh: "宽光谱——适用范围最广的 UV 胶粘接",
-      th: "สเปกตรัมกว้าง — งานยึดติดด้วยกาว UV ได้หลากหลายที่สุด",
-      vi: "Phổ rộng — dải ứng dụng dán keo UV rộng nhất",
+    what: {
+      en: "Standard · S2000 Elite / S1500 Pro",
+      zh: "标准型 · S2000 Elite / S1500 Pro",
+      th: "มาตรฐาน · S2000 Elite / S1500 Pro",
+      vi: "Tiêu chuẩn · S2000 Elite / S1500 Pro",
     },
   },
   {
     pn: "012-69000R",
-    name: "S2000 Elite Lamp Module — Surface Cure",
-    fits: "S2000 Elite · S1500 Pro",
-    spectrum: {
-      en: "Surface cure — tack-free finish on acrylic resins",
-      zh: "表面固化——丙烯酸树脂表面不发粘",
-      th: "บ่มผิว — ผิวเรซินอะคริลิกไม่เหนียวติด",
-      vi: "Đóng rắn bề mặt — bề mặt acrylic không dính tay",
+    what: {
+      en: "Surface Cure · S2000 Elite / S1500 Pro",
+      zh: "表面固化型 · S2000 Elite / S1500 Pro",
+      th: "Surface Cure · S2000 Elite / S1500 Pro",
+      vi: "Surface Cure · S2000 Elite / S1500 Pro",
     },
   },
   {
     pn: "012-64000R",
-    name: "S2000 Replacement Lamp — Standard (200 W)",
-    fits: "S2000 · S2000-XLA · S1500",
-    spectrum: {
-      en: "Broad spectrum — the widest range of UV adhesive bonding",
-      zh: "宽光谱——适用范围最广的 UV 胶粘接",
-      th: "สเปกตรัมกว้าง — งานยึดติดด้วยกาว UV ได้หลากหลายที่สุด",
-      vi: "Phổ rộng — dải ứng dụng dán keo UV rộng nhất",
+    what: {
+      en: "Standard · S2000 / S2000-XLA / S1500",
+      zh: "标准型 · S2000 / S2000-XLA / S1500",
+      th: "มาตรฐาน · S2000 / S2000-XLA / S1500",
+      vi: "Tiêu chuẩn · S2000 / S2000-XLA / S1500",
     },
   },
   {
     pn: "012-65000R",
-    name: "S2000 Replacement Lamp — Surface Cure (200 W)",
-    fits: "S2000 · S2000-XLA · S1500",
-    spectrum: {
-      en: "Surface cure — tack-free finish on acrylic resins",
-      zh: "表面固化——丙烯酸树脂表面不发粘",
-      th: "บ่มผิว — ผิวเรซินอะคริลิกไม่เหนียวติด",
-      vi: "Đóng rắn bề mặt — bề mặt acrylic không dính tay",
+    what: {
+      en: "Surface Cure · S2000 / S2000-XLA / S1500",
+      zh: "表面固化型 · S2000 / S2000-XLA / S1500",
+      th: "Surface Cure · S2000 / S2000-XLA / S1500",
+      vi: "Surface Cure · S2000 / S2000-XLA / S1500",
     },
   },
 ];
@@ -223,7 +207,7 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
       website: get("website"), // honeypot
       page,
       lang,
-      items: chosen.map((l) => ({ ref: l.pn, description: l.name, qty: l.n })),
+      items: chosen.map((l) => ({ ref: l.pn, description: l.what[lang], qty: l.n })),
     };
 
     setErr("");
@@ -248,7 +232,7 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
     const body = [
       `${tr("askTitle", lang)}`,
       "",
-      ...chosen.map((l) => `${l.n} × ${l.pn} — ${l.name}`),
+      ...chosen.map((l) => `${l.n} × ${l.pn} — ${l.what[lang]}`),
       "",
       `${tr("wanted", lang)} ${payload.leadTime}`,
       `${tr("name", lang)}: ${payload.name}`,
@@ -279,50 +263,39 @@ export function LampShop({ lang, officeId, page }: { lang: L; officeId: string; 
         <h2 className="text-2xl font-bold md:text-3xl" style={{ color: BRAND.blue }}>{tr("shopTitle", lang)}</h2>
         <p className="mt-2 text-sm text-gray-500">{tr("shopHint", lang)}</p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        {/* All four are the manufacturer's own part — said once, not on every row. */}
+        <p className="mt-4 inline-block rounded-full px-3 py-1 text-xs font-bold" style={{ background: "#41A62A15", color: "#2F7A1E" }}>
+          {tr("genuine", lang)}
+        </p>
+
+        <ul className="mt-4 divide-y divide-gray-100 overflow-hidden rounded-2xl border border-gray-100 bg-white">
           {LAMPS.map((l) => {
             const n = qty[l.pn] ?? 0;
             return (
-              <div
-                key={l.pn}
-                className={`flex flex-col rounded-2xl border bg-white p-5 transition ${
-                  n > 0 ? "border-[#41A62A] shadow-sm" : "border-gray-100"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="font-mono text-base font-bold" style={{ color: BRAND.blue }}>{l.pn}</span>
-                  <span className="rounded-full px-2 py-0.5 text-[10px] font-bold" style={{ background: "#41A62A15", color: "#2F7A1E" }}>
-                    {tr("genuine", lang)}
-                  </span>
+              <li key={l.pn} className={`flex items-center gap-4 p-4 ${n > 0 ? "bg-[#F3FAF1]" : ""}`}>
+                <div className="min-w-0 flex-1">
+                  <p className="font-mono text-base font-bold" style={{ color: BRAND.blue }}>{l.pn}</p>
+                  <p className="mt-0.5 text-sm leading-snug text-gray-600">{l.what[lang]}</p>
                 </div>
-                <p className="mt-2 text-sm font-semibold leading-snug text-gray-900">{l.name}</p>
-                <p className="mt-1 text-xs leading-relaxed text-gray-500">{l.spectrum[lang]}</p>
-                <p className="mt-2 text-xs text-gray-500">
-                  <span className="font-semibold text-gray-600">{tr("fits", lang)}:</span> {l.fits}
-                </p>
-
-                <div className="mt-4 flex items-center gap-3 border-t border-gray-100 pt-4">
-                  <span className="text-xs font-bold uppercase tracking-wide text-gray-400">{tr("qty", lang)}</span>
-                  <div className="flex items-center overflow-hidden rounded-lg border border-gray-300">
-                    <button type="button" onClick={() => bump(l.pn, -1)} aria-label="-" className="px-3 py-1.5 text-lg leading-none text-gray-500 hover:bg-gray-50">
-                      −
-                    </button>
-                    <input
-                      value={n}
-                      onChange={(e) => setQty((q) => ({ ...q, [l.pn]: Math.max(0, Math.min(999, Number(e.target.value.replace(/\D/g, "")) || 0)) }))}
-                      inputMode="numeric"
-                      className="w-12 border-x border-gray-300 py-1.5 text-center text-sm font-bold"
-                      aria-label={`${l.pn} ${tr("qty", lang)}`}
-                    />
-                    <button type="button" onClick={() => bump(l.pn, 1)} aria-label="+" className="px-3 py-1.5 text-lg leading-none text-gray-500 hover:bg-gray-50">
-                      ＋
-                    </button>
-                  </div>
+                <div className="flex shrink-0 items-center overflow-hidden rounded-lg border border-gray-300">
+                  <button type="button" onClick={() => bump(l.pn, -1)} aria-label={`${l.pn} −`} className="px-3 py-2 text-lg leading-none text-gray-500 hover:bg-gray-50">
+                    −
+                  </button>
+                  <input
+                    value={n}
+                    onChange={(e) => setQty((q) => ({ ...q, [l.pn]: Math.max(0, Math.min(999, Number(e.target.value.replace(/\D/g, "")) || 0)) }))}
+                    inputMode="numeric"
+                    className="w-12 border-x border-gray-300 py-2 text-center text-sm font-bold"
+                    aria-label={`${l.pn} ${tr("qty", lang)}`}
+                  />
+                  <button type="button" onClick={() => bump(l.pn, 1)} aria-label={`${l.pn} +`} className="px-3 py-2 text-lg leading-none text-gray-500 hover:bg-gray-50">
+                    ＋
+                  </button>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
 
         {/* The ask */}
         <form onSubmit={onSubmit} className="mt-8 rounded-2xl border border-gray-100 bg-white p-6">
