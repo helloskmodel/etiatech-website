@@ -137,7 +137,7 @@ export default function HomeView() {
               const boxed = src.photo ? src.fit === "contain" : true;
               return (
                 <Link key={src.name.en} href={localizeHref(src.href, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[calc(25%-15px)]">
-                  <div className="relative h-24 bg-[#F7FAFC] sm:h-28">
+                  <div className="relative aspect-video bg-[#F7FAFC]">
                     {img && <Image src={img} alt={t(src.name, locale)} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${boxed ? "object-contain p-3" : "object-cover"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: src.accent }} />
                   </div>
@@ -170,7 +170,7 @@ export default function HomeView() {
             {publishedIndustries.map((s) => (
               <Link key={s.slug} href={localizeHref(industryHref(s.slug), locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[calc(25%-15px)]">
                 {s.cardImage ? (
-                  <div className="relative h-24 bg-[#F7FAFC] sm:h-28">
+                  <div className="relative aspect-video bg-[#F7FAFC]">
                     <Image src={cosResize(s.cardImage, 900)} alt={t(s.name, locale)} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className="object-cover transition duration-300 group-hover:scale-105" />
                   </div>
                 ) : (
@@ -201,7 +201,7 @@ export default function HomeView() {
               const cats = categoriesForBrand(b.catalogBrandId);
               return (
                 <Link key={slug} href={localizeHref(`/product/${slug}`, locale)} className="group flex w-[62%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-[#D9E4EA] bg-white transition hover:border-[#1A56DB]/40 hover:shadow-lg sm:w-[38%] lg:w-[calc(25%-15px)]">
-                  <div className="relative h-24 bg-[#F7FAFC] sm:h-28">
+                  <div className="relative aspect-video bg-[#F7FAFC]">
                     {shot && <Image src={shot} alt={`${b.name} UV curing system`} fill sizes="(max-width:640px) 62vw, (max-width:1024px) 38vw, 23vw" className={`transition duration-300 group-hover:scale-105 ${b.cardImage ? "object-cover" : "object-contain p-3"}`} />}
                     <span className="absolute left-0 top-0 h-1.5 w-12 rounded-br" style={{ background: b.color }} />
                   </div>
