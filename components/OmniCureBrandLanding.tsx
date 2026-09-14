@@ -41,16 +41,26 @@ type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
 
 const order = [
   "s2000-elite", "s1500-pro", "r2000",
-  "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter",
+  "s2000-elite-filters", "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter",
   "lx500", "v3-led-heads", "ls200",
   "ac2", "ac4", "ac5", "ac7", "ac8", "ac8-hd", "ac9225", "ac9225-f",
   "s2e-network-module",
 ];
 
+// Which section of this page each OmniCure product sits in. Accessories are
+// placed next to the machine they serve, which is why this is hand-written
+// rather than derived from techRouteFor() — that returns undefined for anything
+// that doesn't cure (filters, light guides, radiometers).
+//
+// EVERY OmniCure product must appear here. A product missing from this map is
+// silently DROPPED from the page: the lookup below yields undefined, which
+// never equals a route id, so the card simply never renders. Checked by
+// `npm run validate:catalog`.
 const categoryBySlug: Record<string, Exclude<RouteId, "all">> = {
   "s2000-elite": "lamp-spot",
   "s1500-pro": "lamp-spot",
   r2000: "lamp-spot",
+  "s2000-elite-filters": "lamp-spot",
   "s-liquid-light-guide": "lamp-spot",
   "s-fiber-light-guide": "lamp-spot",
   "s-fiber-light-line": "lamp-spot",
