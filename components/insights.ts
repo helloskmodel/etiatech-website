@@ -231,11 +231,11 @@ const INDEX_META: Record<InsightLocale, { title: string; description: string }> 
   },
   vi: {
     title: "Kiến thức & Hướng dẫn UV Curing | ETIA Technology",
-    description: "Hướng dẫn kỹ thuật, khắc phục sự cố và ứng dụng UV curing cho photonics, y tế, ô tô và điện tử — từ ETIA, nhà phân phối ủy quyền.",
+    description: "Hướng dẫn kỹ thuật, khắc phục sự cố và ứng dụng UV curing cho photonics, y tế, ô tô và điện tử — từ ETIA, cung cấp qua kênh được ủy quyền.",
   },
   th: {
     title: "ความรู้และคู่มือ UV Curing | ETIA Technology",
-    description: "คู่มือเทคนิค การแก้ปัญหา และการใช้งาน UV curing สำหรับโฟโตนิกส์ การแพทย์ ยานยนต์ และอิเล็กทรอนิกส์ — จาก ETIA ตัวแทนจำหน่ายที่ได้รับอนุญาต",
+    description: "คู่มือเทคนิค การแก้ปัญหา และการใช้งาน UV curing สำหรับโฟโตนิกส์ การแพทย์ ยานยนต์ และอิเล็กทรอนิกส์ — จาก ETIA จัดจำหน่ายผ่านช่องทางที่ได้รับอนุญาต",
   },
 };
 

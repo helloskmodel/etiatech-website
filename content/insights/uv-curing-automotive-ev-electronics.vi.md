@@ -105,4 +105,4 @@ Con đường nhanh nhất không phải mua hệ thống trước — mà là *
 - So sánh [hệ thống UV curing](/product/omnicure) qua các nền tảng spot, diện tích và LED
 - Có bước bonding, phủ hay potting ô tô cụ thể cần xác nhận? [Trao đổi với kỹ sư ETIA](/contact) — cho chúng tôi biết vật liệu, chi tiết nền và takt time của bạn, phần còn lại để chúng tôi lo.
 
-*ETIA là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam. Chúng tôi cung cấp và hỗ trợ thiết bị cure; keo, lớp phủ và vật liệu đóng gói vẫn là vật liệu của bạn.*
+*ETIA cung cấp thiết bị OmniCure chính hãng qua kênh được ủy quyền. Chúng tôi cung cấp và hỗ trợ thiết bị cure; keo, lớp phủ và vật liệu đóng gói vẫn là vật liệu của bạn.*

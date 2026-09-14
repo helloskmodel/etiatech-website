@@ -60,10 +60,10 @@ const OFFICES: Array<{ city: LangText; country: LangText; note?: LangText; highl
     country: { en: "Thailand", zh: "泰国", th: "ประเทศไทย", vi: "Thái Lan" },
     highlight: true,
     note: {
-      en: "Etiatec (Thailand) Co., Ltd. — appointed by Excelitas Canada Inc. as authorized OmniCure distributor in Thailand.",
-      zh: "Etiatec (Thailand) Co., Ltd. — 获 Excelitas Canada Inc. 授权的 OmniCure 泰国代理。",
-      th: "Etiatec (Thailand) Co., Ltd. — ได้รับการแต่งตั้งจาก Excelitas Canada Inc. เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย",
-      vi: "Etiatec (Thailand) Co., Ltd. — được Excelitas Canada Inc. bổ nhiệm làm nhà phân phối OmniCure ủy quyền tại Thái Lan.",
+      en: "Etiatec (Thailand) Co., Ltd. — our Thai subsidiary, with local stock, installation and service.",
+      zh: "Etiatec (Thailand) Co., Ltd. — 泰国子公司，提供本地备货、安装与服务。",
+      th: "Etiatec (Thailand) Co., Ltd. — บริษัทในเครือที่ประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
+      vi: "Etiatec (Thailand) Co., Ltd. — công ty con tại Thái Lan, có sẵn hàng, lắp đặt và dịch vụ tại chỗ.",
     },
   },
   {
@@ -91,17 +91,17 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-bold text-white">
             <BadgeCheck className="h-4 w-4 text-[#44B549]" />
-            {t({ en: "Genuine Products Through Authorized Channels · 20 Years of Application Expertise", zh: "授权渠道正品 · 20 年应用经验", th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต · ประสบการณ์ 20 ปี", vi: "Nhà phân phối ủy quyền · 20 năm kinh nghiệm" }, locale)}
+            {t({ en: "Genuine Products Through Authorized Channels · 20 Years of Application Expertise", zh: "授权渠道正品 · 20 年应用经验", th: "สินค้าของแท้ผ่านช่องทางที่ได้รับอนุญาต · ประสบการณ์ 20 ปี", vi: "Hàng chính hãng qua kênh được ủy quyền · 20 năm kinh nghiệm" }, locale)}
           </div>
           <h1 className="mt-6 max-w-3xl text-4xl md:text-5xl font-bold leading-tight text-white">
             {t({ en: "About ETIA Technology", zh: "关于 ETIA Technology", th: "เกี่ยวกับ ETIA Technology", vi: "Về ETIA Technology" }, locale)}
           </h1>
           <p className="mt-5 max-w-3xl text-base md:text-lg leading-relaxed text-white/80">
             {t({
-              en: "ETIA Technology is an authorized OmniCure distributor in Thailand and Vietnam and a trusted supplier of UV curing systems across Southeast Asia, helping manufacturers select, validate, install and maintain the right curing solution for their process.",
-              zh: "ETIA Technology 是 OmniCure 在泰国和越南的授权经销商,也是覆盖东南亚的 UV Curing 紫外线固化系统供应商,帮助制造企业完成设备选型、工艺验证、安装与长期维护。",
-              th: "ETIA Technology เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทยและเวียดนาม และเป็นผู้จัดหาระบบบ่มยูวีทั่วจีนและเอเชียตะวันออกเฉียงใต้ ช่วยผู้ผลิตเลือก ตรวจสอบ ติดตั้ง และดูแลโซลูชันการบ่มที่เหมาะกับกระบวนการ",
-              vi: "ETIA Technology là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam, đồng thời là nhà cung cấp hệ thống UV curing trên khắp Trung Quốc và Đông Nam Á, giúp nhà sản xuất lựa chọn, xác nhận, lắp đặt và bảo trì giải pháp phù hợp.",
+              en: "ETIA Technology supplies genuine UV curing systems through authorized channels across Southeast Asia, helping manufacturers select, validate, install and maintain the right curing solution for their process.",
+              zh: "ETIA Technology 通过授权渠道供应覆盖东南亚的 UV Curing 紫外线固化系统原厂正品,帮助制造企业完成设备选型、工艺验证、安装与长期维护。",
+              th: "ETIA Technology จัดจำหน่ายระบบบ่มยูวีของแท้ผ่านช่องทางที่ได้รับอนุญาตทั่วเอเชียตะวันออกเฉียงใต้ ช่วยผู้ผลิตเลือก ตรวจสอบ ติดตั้ง และดูแลโซลูชันการบ่มที่เหมาะกับกระบวนการ",
+              vi: "ETIA Technology cung cấp hệ thống UV curing chính hãng qua kênh được ủy quyền trên khắp Đông Nam Á, giúp nhà sản xuất lựa chọn, xác nhận, lắp đặt và bảo trì giải pháp phù hợp.",
             }, locale)}
           </p>
         </div>

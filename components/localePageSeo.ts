@@ -206,12 +206,12 @@ const BRAND_LOCALE_META: Record<string, Record<SubLocale, { title: string; descr
       description: "ETIA 提供正品 OmniCure® UV Curing 紫外线固化系统、S2000 Elite 点光源、LX500 UV LED 点光源、替换灯管及配件，并提供本地应用支持、安装、维护与维修服务。",
     },
     th: {
-      title: "ระบบ UV Curing OmniCure — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
+      title: "ระบบ UV Curing OmniCure — สินค้าของแท้ผ่านช่องทางที่ได้รับอนุญาต | ETIA",
       description: "ETIA จัดจำหน่ายระบบ UV curing OmniCure® ของแท้, OmniCure S2000 Elite, OmniCure LX500, หลอดไฟทดแทน และอุปกรณ์เสริม พร้อมการสนับสนุนด้านการใช้งาน การติดตั้ง การบำรุงรักษา และการซ่อมในพื้นที่",
     },
     vi: {
       // Title/description from the client's official Vietnamese deck.
-      title: "Hệ thống UV Curing OmniCure — Nhà phân phối được ủy quyền | ETIA",
+      title: "Hệ thống UV Curing OmniCure — Hàng chính hãng qua kênh ủy quyền | ETIA",
       description: "ETIA cung cấp hệ thống UV curing OmniCure® chính hãng, OmniCure S2000 Elite, OmniCure LX500, đèn thay thế và phụ kiện, cùng hỗ trợ kỹ thuật địa phương về lựa chọn, lắp đặt, bảo trì và sửa chữa.",
     },
   },

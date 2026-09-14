@@ -105,4 +105,4 @@ The fastest path is not to buy a system first — it's to **test your actual par
 - Compare [UV curing systems](/product/omnicure) across spot, area and LED platforms
 - Have a specific automotive bonding, coating or potting step to validate? [Talk to an ETIA engineer](/contact) — tell us your material, substrate and takt time, and we'll take it from there.
 
-*ETIA is an authorized OmniCure distributor in Thailand and Vietnam. We supply and support the curing equipment; the adhesives, coatings and encapsulants remain your material.*
+*ETIA supplies genuine OmniCure equipment through authorized channels. We supply and support the curing equipment; the adhesives, coatings and encapsulants remain your material.*

@@ -325,10 +325,10 @@ export default function OmniCureBrandLanding() {
 
       <div className="border-t border-[#E6EAF0] bg-[#F8FAFC] px-4 py-8 sm:px-6 lg:px-8">
         <p className="mx-auto max-w-4xl text-center text-xs leading-5 text-[#94A3B8]">{t({
-          en: "ETIA is an authorized distributor of OmniCure® products in designated territories. OmniCure® and related trademarks are owned by their respective trademark owners. Product names and trademarks are used for identification and product reference only. Authorization scope, availability, warranty and service terms may vary by country and product model.",
-          zh: "在指定地区，ETIA 是 OmniCure® 产品的授权经销商。OmniCure® 及相关商标归其各自的商标所有者所有。产品名称与商标仅用于标识与产品参考。授权范围、供货情况、保修与服务条款可能因国家/地区与产品型号而异。",
-          th: "ETIA เป็นตัวแทนจำหน่ายที่ได้รับอนุญาตของผลิตภัณฑ์ OmniCure® ในพื้นที่ที่กำหนด OmniCure® และเครื่องหมายการค้าที่เกี่ยวข้องเป็นของเจ้าของเครื่องหมายการค้านั้น ๆ ชื่อผลิตภัณฑ์และเครื่องหมายการค้าใช้เพื่อการระบุและอ้างอิงผลิตภัณฑ์เท่านั้น ขอบเขตการได้รับอนุญาต ความพร้อมจำหน่าย การรับประกันและเงื่อนไขบริการอาจแตกต่างกันตามประเทศและรุ่นผลิตภัณฑ์",
-          vi: "ETIA là nhà phân phối được ủy quyền của các sản phẩm OmniCure® tại các khu vực được chỉ định. OmniCure® và các nhãn hiệu liên quan thuộc sở hữu của các chủ sở hữu nhãn hiệu tương ứng. Tên sản phẩm và nhãn hiệu chỉ được sử dụng để nhận diện và tham chiếu sản phẩm. Phạm vi ủy quyền, tình trạng sẵn có, bảo hành và điều khoản dịch vụ có thể khác nhau theo quốc gia và mẫu sản phẩm.",
+          en: "ETIA supplies genuine OmniCure® products through authorized channels. OmniCure® and related trademarks are owned by their respective trademark owners. Product names and trademarks are used for identification and product reference only. Authorization scope, availability, warranty and service terms may vary by country and product model.",
+          zh: "ETIA 通过授权渠道供应 OmniCure® 原厂正品。OmniCure® 及相关商标归其各自的商标所有者所有。产品名称与商标仅用于标识与产品参考。授权范围、供货情况、保修与服务条款可能因国家/地区与产品型号而异。",
+          th: "ETIA จัดจำหน่ายผลิตภัณฑ์ OmniCure® ของแท้ผ่านช่องทางที่ได้รับอนุญาต OmniCure® และเครื่องหมายการค้าที่เกี่ยวข้องเป็นของเจ้าของเครื่องหมายการค้านั้น ๆ ชื่อผลิตภัณฑ์และเครื่องหมายการค้าใช้เพื่อการระบุและอ้างอิงผลิตภัณฑ์เท่านั้น ขอบเขตการได้รับอนุญาต ความพร้อมจำหน่าย การรับประกันและเงื่อนไขบริการอาจแตกต่างกันตามประเทศและรุ่นผลิตภัณฑ์",
+          vi: "ETIA cung cấp sản phẩm OmniCure® chính hãng qua kênh được ủy quyền. OmniCure® và các nhãn hiệu liên quan thuộc sở hữu của các chủ sở hữu nhãn hiệu tương ứng. Tên sản phẩm và nhãn hiệu chỉ được sử dụng để nhận diện và tham chiếu sản phẩm. Phạm vi ủy quyền, tình trạng sẵn có, bảo hành và điều khoản dịch vụ có thể khác nhau theo quốc gia và mẫu sản phẩm.",
         }, locale)}</p>
       </div>
     </div>

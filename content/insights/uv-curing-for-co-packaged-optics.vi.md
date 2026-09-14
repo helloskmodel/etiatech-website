@@ -64,4 +64,4 @@ Chuyển cài đặt, tiêu chí kiểm tra và bảo trì sang sản xuất
 
 Các thiết kế CPO khác nhau đáng kể. Dung sai căn chỉnh, điều kiện chu kỳ nhiệt và thời gian đóng rắn phải dựa trên bản vẽ khách hàng, thông số thiết bị và kế hoạch đánh giá. Không nên biến số liệu của một kiến trúc thành yêu cầu chung cho toàn bộ thị trường.
 
-ETIA là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam, cung cấp hệ thống và linh kiện UV chính hãng thông qua các kênh chính thức, đồng thời hỗ trợ lựa chọn nguồn, thử nghiệm quy trình, rà soát cấu hình và dịch vụ kỹ thuật tại địa phương.
+ETIA cung cấp hệ thống và linh kiện UV chính hãng thông qua các kênh chính thức, đồng thời hỗ trợ lựa chọn nguồn, thử nghiệm quy trình, rà soát cấu hình và dịch vụ kỹ thuật tại địa phương.

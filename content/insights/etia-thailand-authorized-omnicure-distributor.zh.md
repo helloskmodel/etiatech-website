@@ -31,7 +31,7 @@ author: ETIA Technology
 
 ## 关于 ETIA Technology
 
-ETIA Technology 是 OmniCure 在泰国和越南的授权经销商，供应 UV Curing 紫外线固化系统，拥有 **20 年应用经验**，在香港、曼谷、北宁设有办事处，为制造企业提供设备全生命周期支持——选型、工艺验证、安装、校准、维护与维修。
+ETIA Technology 是 OmniCure 在泰国和越南的授权经销商，其他 UV Curing 紫外线固化品牌则通过授权渠道供应，拥有 **20 年应用经验**，在香港、曼谷、北宁设有办事处，为制造企业提供设备全生命周期支持——选型、工艺验证、安装、校准、维护与维修。
 
 ## 联系 ETIA 泰国
 
