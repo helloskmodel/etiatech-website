@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "about ETIA Technology",
     "ETIA Thailand",
     "Etiatec Thailand",
-    "authorized OmniCure distributor",
+    "authorized OmniCure distributor Thailand Vietnam",
     "UV curing distributor",
     "UV curing systems Southeast Asia",
   ],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: [DEFAULT_OG_IMAGE],
     title: "About ETIA Technology | Authorized UV Curing Systems Distributor",
     description:
-      "20 years of UV curing application expertise — authorized distribution, process validation, installation, calibration, maintenance and repair across China and Southeast Asia.",
+      "20 years of UV curing application expertise — genuine products through authorized channels, process validation, installation, calibration, maintenance and repair across Southeast Asia.",
   },
 };
 

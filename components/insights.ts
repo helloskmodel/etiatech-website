@@ -227,7 +227,7 @@ const INDEX_META: Record<InsightLocale, { title: string; description: string }> 
   },
   zh: {
     title: "UV固化技术洞察与应用指南 | ETIA Technology",
-    description: "OmniCure UV固化系统的选型、故障排查与应用工艺指南——覆盖光电子、医疗、汽车与电子制造，由 ETIA 授权代理提供。",
+    description: "OmniCure UV固化系统的选型、故障排查与应用工艺指南——覆盖光电子、医疗、汽车与电子制造，由 ETIA 通过授权渠道提供。",
   },
   vi: {
     title: "Kiến thức & Hướng dẫn UV Curing | ETIA Technology",

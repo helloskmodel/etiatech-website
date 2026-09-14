@@ -18,9 +18,8 @@ const orgJsonLd = {
   url: "https://www.etiatech.com",
   logo: "https://www.etiatech.com/logo/etia-tech.png",
   description:
-    "Authorized distributor of UV curing systems with 20 years of application expertise.",
+    "Supplier of UV curing systems with 20 years of application expertise, providing genuine products through authorized channels.",
   address: [
-    { "@type": "PostalAddress", addressLocality: "Shanghai", addressCountry: "CN" },
     { "@type": "PostalAddress", addressLocality: "Hong Kong", addressCountry: "HK" },
     { "@type": "PostalAddress", addressLocality: "Bangkok", addressCountry: "TH" },
     { "@type": "PostalAddress", addressLocality: "Bac Ninh", addressCountry: "VN" },

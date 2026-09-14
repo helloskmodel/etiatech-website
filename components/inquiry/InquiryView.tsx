@@ -241,7 +241,7 @@ export default function InquiryView() {
               <input id="inq-email" name="email" type="email" className={field} autoComplete="email" />
             </div>
             <div>
-              <label htmlFor="inq-phone" className={label}>{t({ en: "Phone / WeChat / WhatsApp", zh: "电话 / 微信 / WhatsApp", th: "โทรศัพท์ / WhatsApp / Line", vi: "Điện thoại / Zalo / WhatsApp" }, locale)}</label>
+              <label htmlFor="inq-phone" className={label}>{t({ en: "Phone / WhatsApp", zh: "电话 / WhatsApp", th: "โทรศัพท์ / WhatsApp / Line", vi: "Điện thoại / Zalo / WhatsApp" }, locale)}</label>
               <input id="inq-phone" name="phone" type="tel" className={field} autoComplete="tel" />
             </div>
             <div>

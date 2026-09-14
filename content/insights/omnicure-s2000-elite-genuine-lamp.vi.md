@@ -1,6 +1,6 @@
 ---
-title: "Đèn chính hãng OmniCure S2000 Elite từ nhà phân phối được ủy quyền"
-description: "Đèn chính hãng OmniCure S2000 Elite từ nhà phân phối được ủy quyền. ETIA cung cấp 012-68000R, 012-69000R và đèn thay thế S2000."
+title: "Đèn chính hãng OmniCure S2000 Elite từ nhà phân phối ủy quyền tại Việt Nam"
+description: "Đèn chính hãng OmniCure S2000 Elite từ nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam. ETIA cung cấp 012-68000R, 012-69000R và đèn thay thế S2000."
 date: 2026-07-15
 tags: [OmniCure, S2000 Elite, Đèn thay thế, Nhà phân phối ủy quyền]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2000%20LAMP%201609.jpg?imageMogr2/thumbnail/1200x/format/webp/quality/82
@@ -9,7 +9,7 @@ author: ETIA Technology
 
 Bạn đang tìm đèn thay thế chính hãng cho hệ thống UV curing OmniCure S2000 Elite?
 
-ETIA là nhà phân phối OmniCure được ủy quyền, cung cấp đèn và mô-đun đèn OmniCure S2000 Elite chính hãng qua kênh phân phối chính thức, giúp duy trì công suất UV ổn định và hiệu quả đóng rắn nhất quán.
+ETIA là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam, cung cấp đèn và mô-đun đèn OmniCure S2000 Elite chính hãng qua kênh phân phối chính thức, giúp duy trì công suất UV ổn định và hiệu quả đóng rắn nhất quán.
 
 ## Các mã sản phẩm
 

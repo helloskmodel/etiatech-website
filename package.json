@@ -10,7 +10,8 @@
     "validate:i18n": "node scripts/validate-locales.mjs",
     "validate:seo": "node scripts/validate-seo.mjs",
     "validate:redirects": "node scripts/validate-legacy-redirects.mjs",
-    "validate:catalog": "node scripts/validate-catalog.mjs"
+    "validate:catalog": "node scripts/validate-catalog.mjs",
+    "validate:claims": "node scripts/validate-claims.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.22.0",

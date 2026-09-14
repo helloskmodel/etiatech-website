@@ -161,7 +161,7 @@ export function caseStudyDetailJsonLd(slug: string, locale: SubLocale) {
 const CONTACT_META: Record<SubLocale, { title: string; description: string }> = {
   zh: {
     title: "UV Curing 销售与支持——从选型到服务 | ETIA",
-    description: "覆盖中国与东南亚的应用驱动型 UV Curing 紫外线固化支持：系统选型、应用评估、本地供货、安装培训、维护维修与辐照计校准，服务 OmniCure® 与 Phoseon® 系统。",
+    description: "覆盖东南亚与香港的应用驱动型 UV Curing 紫外线固化支持：系统选型、应用评估、本地供货、安装培训、维护维修与辐照计校准，服务 OmniCure® 与 Phoseon® 系统。",
   },
   th: {
     title: "ฝ่ายขายและการสนับสนุน UV Curing — ตั้งแต่การเลือกจนถึงบริการ | ETIA",
@@ -202,7 +202,7 @@ export function brandLanguageAlternates(slug: string): Record<string, string> {
 const BRAND_LOCALE_META: Record<string, Record<SubLocale, { title: string; description: string }>> = {
   omnicure: {
     zh: {
-      title: "OmniCure UV Curing 紫外线固化系统 — 授权经销商 | ETIA",
+      title: "OmniCure UV Curing 紫外线固化系统 — 授权渠道正品 | ETIA",
       description: "ETIA 提供正品 OmniCure® UV Curing 紫外线固化系统、S2000 Elite 点光源、LX500 UV LED 点光源、替换灯管及配件，并提供本地应用支持、安装、维护与维修服务。",
     },
     th: {

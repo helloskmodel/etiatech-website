@@ -97,7 +97,7 @@ Chất lượng ô tô nghĩa là chứng minh từng lần cure. Hai thực hà
 4. **Thiết kế cho vùng bóng** — cure diện tích độ đồng đều cao, và khi cần dùng vật liệu dual-cure
 5. **Lập kế hoạch xác nhận** — đo bức xạ mỗi ca, cùng xác nhận cure bằng thị giác, giữ quy trình kiểm toán được
 
-Con đường nhanh nhất không phải mua hệ thống trước — mà là **thử nghiệm chi tiết và vật liệu thực của bạn**. ETIA thực hiện thử nghiệm cure cùng khách hàng ô tô tại Thái Lan, Trung Quốc, Việt Nam và Đông Nam Á, rồi mới đề xuất cấu hình khi quy trình đã được chứng minh.
+Con đường nhanh nhất không phải mua hệ thống trước — mà là **thử nghiệm chi tiết và vật liệu thực của bạn**. ETIA thực hiện thử nghiệm cure cùng khách hàng ô tô tại Thái Lan, Việt Nam và Đông Nam Á, rồi mới đề xuất cấu hình khi quy trình đã được chứng minh.
 
 ## Tiếp theo là gì
 

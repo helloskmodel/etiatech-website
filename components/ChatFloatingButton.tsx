@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { X } from "lucide-react";
 import { useLocale, type Locale } from "@/components/LocaleContext";
 import { CONTACT } from "@/components/omnicure/copy";
@@ -13,30 +12,23 @@ import { useConsentBannerVisible } from "@/components/consentBanner";
 // so a second icon there is clutter.
 //
 // The EN and ZH pages carry several, because neither serves one country:
-// EN covers everything outside TH/VN/CN (Malaysia, Singapore, Indonesia,
-// the Philippines), and ZH is read by Chinese-speaking factory staff *inside*
-// Southeast Asia — Bac Ninh, Haiphong, eastern Thailand — who use WeChat with
-// head office and a local messenger with everyone around them. Those pages
-// render a tap-to-expand stack, primary channel first. Three is the cap: more
-// reads as a link farm and visitors pick none.
+// EN covers everything outside TH/VN (Malaysia, Singapore, Indonesia, the
+// Philippines), and ZH is read in Hong Kong and by Chinese-speaking factory
+// staff *inside* Southeast Asia — Bac Ninh, Haiphong, eastern Thailand — who
+// reach us on WhatsApp and use a local messenger with everyone around them.
+// Those pages render a tap-to-expand stack, primary channel first.
+//
+// No WeChat / WeCom channel: this is the overseas deployment, it carries no
+// mainland China ICP filing, and it publishes no mainland contact point.
 //
 // Renders nothing when the visitor's language has no channel configured. Pass
 // `force` on locale-locked route trees (/th, /vi, /zh) that don't mount a
 // LocaleProvider of their own.
-const WECHAT_QR = "/images/etia-wechat-qr.jpg";
-
-type LinkChannel = { kind: "link"; label: string; href: string; bg: string; aria: string };
-// A personal WeChat account can only be added by scanning, so this variant
-// opens a QR card instead of navigating. Currently unused — the WeCom
-// customer-service link works as a plain URL — but kept for when the WeCom
-// QR image lands, so that button can show the code inline.
-type WeChatChannel = { kind: "wechat"; label: string; bg: string; aria: string };
-type Channel = LinkChannel | WeChatChannel;
+type Channel = { kind: "link"; label: string; href: string; bg: string; aria: string };
 
 const whatsapp = (aria: string): Channel => ({ kind: "link", label: "WhatsApp", href: CONTACT.whatsappUrl, bg: "#25D366", aria });
 const line = (aria: string): Channel => ({ kind: "link", label: "LINE", href: CONTACT.lineUrl, bg: "#06C755", aria });
 const zalo = (aria: string): Channel => ({ kind: "link", label: "Zalo", href: CONTACT.zaloUrl, bg: "#0068FF", aria });
-const wechat = (aria: string): Channel => ({ kind: "link", label: "微信", href: CONTACT.wecomUrl, bg: "#07C160", aria });
 
 const CHANNELS: Partial<Record<Locale, Channel[]>> = {
   th: [line("แชทกับเราทาง LINE")],
@@ -44,10 +36,8 @@ const CHANNELS: Partial<Record<Locale, Channel[]>> = {
   en: [
     whatsapp("Chat with us on WhatsApp"),
     line("Chat with us on LINE"),
-    wechat("Chat with us on WeChat"),
   ],
   zh: [
-    wechat("通过企业微信客服咨询"),
     whatsapp("通过 WhatsApp 咨询"),
     line("通过 LINE 咨询"),
   ],
@@ -86,7 +76,6 @@ export default function ChatFloatingButton({ force }: { force?: Locale }) {
   const { locale } = useLocale();
   const active = force ?? locale;
   const channels = CHANNELS[active];
-  const [qrOpen, setQrOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const bannerUp = useConsentBannerVisible();
@@ -109,47 +98,19 @@ export default function ChatFloatingButton({ force }: { force?: Locale }) {
 
   if (!channels?.length) return null;
 
-  const qrCard = qrOpen ? (
-    <div role="dialog" aria-modal="true" aria-label="微信二维码" className="fixed inset-0 z-[70] flex items-center justify-center p-4" onClick={() => setQrOpen(false)}>
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="relative w-full max-w-xs rounded-2xl bg-white p-5 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-        <button type="button" onClick={() => setQrOpen(false)} aria-label="关闭" className="absolute right-3 top-3 rounded-full p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600">
-          <X className="h-5 w-5" />
-        </button>
-        <p className="text-sm font-bold text-gray-900">微信扫码咨询</p>
-        <p className="mt-1 text-xs text-gray-500">扫一扫添加客服,工程师在线解答 UV 固化选型与工艺问题。</p>
-        <div className="relative mx-auto mt-4 aspect-[640/922] w-full overflow-hidden rounded-lg border border-gray-100">
-          <Image src={WECHAT_QR} alt="ETIA 微信客服二维码" fill sizes="320px" className="object-contain" />
-        </div>
-      </div>
-    </div>
-  ) : null;
-
   const renderChannel = (c: Channel, key: string) =>
-    c.kind === "link" ? (
-      c.href ? (
-        <a key={key} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.aria} className={PILL} style={{ background: c.bg }}>
-          <Bubble />
-          {c.label}
-        </a>
-      ) : null
-    ) : (
-      <button key={key} type="button" onClick={() => { setQrOpen(true); setMenuOpen(false); }} aria-label={c.aria} aria-haspopup="dialog" className={PILL} style={{ background: c.bg }}>
+    c.href ? (
+      <a key={key} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.aria} className={PILL} style={{ background: c.bg }}>
         <Bubble />
         {c.label}
-      </button>
-    );
+      </a>
+    ) : null;
 
   // One channel — no menu, the button IS the channel.
   if (channels.length === 1) {
     const only = renderChannel(channels[0], "only");
     if (!only) return null;
-    return (
-      <>
-        <div className={anchor}>{only}</div>
-        {qrCard}
-      </>
-    );
+    return <div className={anchor}>{only}</div>;
   }
 
   return (
@@ -177,7 +138,6 @@ export default function ChatFloatingButton({ force }: { force?: Locale }) {
           {TOGGLE_LABEL[active]}
         </button>
       </div>
-      {qrCard}
     </>
   );
 }

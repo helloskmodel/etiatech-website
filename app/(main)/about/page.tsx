@@ -52,12 +52,8 @@ const BRANDS: Array<{ name: string; href: string; blurb: LangText }> = [
 
 const OFFICES: Array<{ city: LangText; country: LangText; note?: LangText; highlight?: boolean }> = [
   {
-    city: { en: "Shanghai", zh: "上海", th: "เซี่ยงไฮ้", vi: "Thượng Hải" },
-    country: { en: "China", zh: "中国", th: "จีน", vi: "Trung Quốc" },
-  },
-  {
     city: { en: "Hong Kong", zh: "香港", th: "ฮ่องกง", vi: "Hồng Kông" },
-    country: { en: "China", zh: "中国", th: "จีน", vi: "Trung Quốc" },
+    country: { en: "Hong Kong SAR", zh: "香港特别行政区", th: "เขตบริหารพิเศษฮ่องกง", vi: "Đặc khu Hành chính Hồng Kông" },
   },
   {
     city: { en: "Bangkok", zh: "曼谷", th: "กรุงเทพฯ", vi: "Bangkok" },
@@ -95,15 +91,15 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-bold text-white">
             <BadgeCheck className="h-4 w-4 text-[#44B549]" />
-            {t({ en: "Authorized Distributor · 20 Years of Application Expertise", zh: "授权代理 · 20 年应用经验", th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต · ประสบการณ์ 20 ปี", vi: "Nhà phân phối ủy quyền · 20 năm kinh nghiệm" }, locale)}
+            {t({ en: "Genuine Products Through Authorized Channels · 20 Years of Application Expertise", zh: "授权渠道正品 · 20 年应用经验", th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต · ประสบการณ์ 20 ปี", vi: "Nhà phân phối ủy quyền · 20 năm kinh nghiệm" }, locale)}
           </div>
           <h1 className="mt-6 max-w-3xl text-4xl md:text-5xl font-bold leading-tight text-white">
             {t({ en: "About ETIA Technology", zh: "关于 ETIA Technology", th: "เกี่ยวกับ ETIA Technology", vi: "Về ETIA Technology" }, locale)}
           </h1>
           <p className="mt-5 max-w-3xl text-base md:text-lg leading-relaxed text-white/80">
             {t({
-              en: "ETIA Technology is an authorized OmniCure distributor in Thailand and Vietnam and a trusted supplier of UV curing systems across China and Southeast Asia, helping manufacturers select, validate, install and maintain the right curing solution for their process.",
-              zh: "ETIA Technology 是 OmniCure 在泰国和越南的授权经销商,也是覆盖中国及东南亚的 UV Curing 紫外线固化系统供应商,帮助制造企业完成设备选型、工艺验证、安装与长期维护。",
+              en: "ETIA Technology is an authorized OmniCure distributor in Thailand and Vietnam and a trusted supplier of UV curing systems across Southeast Asia, helping manufacturers select, validate, install and maintain the right curing solution for their process.",
+              zh: "ETIA Technology 是 OmniCure 在泰国和越南的授权经销商,也是覆盖东南亚的 UV Curing 紫外线固化系统供应商,帮助制造企业完成设备选型、工艺验证、安装与长期维护。",
               th: "ETIA Technology เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทยและเวียดนาม และเป็นผู้จัดหาระบบบ่มยูวีทั่วจีนและเอเชียตะวันออกเฉียงใต้ ช่วยผู้ผลิตเลือก ตรวจสอบ ติดตั้ง และดูแลโซลูชันการบ่มที่เหมาะกับกระบวนการ",
               vi: "ETIA Technology là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam, đồng thời là nhà cung cấp hệ thống UV curing trên khắp Trung Quốc và Đông Nam Á, giúp nhà sản xuất lựa chọn, xác nhận, lắp đặt và bảo trì giải pháp phù hợp.",
             }, locale)}

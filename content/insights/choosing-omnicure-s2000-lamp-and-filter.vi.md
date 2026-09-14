@@ -61,4 +61,4 @@ Xác nhận thời gian chiếu và liều UV
 
 Thử trên sản phẩm thực tế
 
-ETIA cung cấp thiết bị và linh kiện đóng rắn UV chính hãng thông qua các kênh chính thức, cùng với hỗ trợ lựa chọn ứng dụng, xác nhận cấu hình và dịch vụ kỹ thuật tại địa phương.
+ETIA là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam, cung cấp thiết bị và linh kiện đóng rắn UV chính hãng thông qua các kênh chính thức, cùng với hỗ trợ lựa chọn ứng dụng, xác nhận cấu hình và dịch vụ kỹ thuật tại địa phương.

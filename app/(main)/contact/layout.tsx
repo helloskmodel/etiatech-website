@@ -7,14 +7,14 @@ const PAGE_PATH = "/contact";
 export const metadata: Metadata = {
   title: "UV Curing Service & Support — From Selection to Service | ETIA",
   description:
-    "UV curing support across China and Southeast Asia: system selection, application review, local supply, installation, training, repair and calibration.",
+    "UV curing support across Thailand, Vietnam and Southeast Asia: system selection, application review, local supply, installation, training, repair and calibration.",
   keywords: [
     "UV curing support",
     "UV curing service",
     "UV curing system selection",
     "how to choose UV curing system",
     "OmniCure distributor",
-    "authorized distributor",
+    "genuine UV curing products authorized channel",
     "Phoseon distributor",
     "UV curing maintenance and repair",
     "onsite troubleshooting",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     images: [DEFAULT_OG_IMAGE],
     title: "UV Curing Service & Support — From Selection to Service | ETIA",
     description:
-      "Reliable, application-driven UV curing support across China and Southeast Asia — selection, implementation, and long-term service for OmniCure® and Phoseon systems.",
+      "Reliable, application-driven UV curing support across Thailand, Vietnam and Southeast Asia — selection, implementation, and long-term service for OmniCure® and Phoseon systems.",
   },
 };
 

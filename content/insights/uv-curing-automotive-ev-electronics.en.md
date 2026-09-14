@@ -97,7 +97,7 @@ Automotive quality means proving every cure. Two practices matter:
 4. **Design for shadows** — high-uniformity area curing plus, where needed, a dual-cure material
 5. **Plan verification** — radiometry per shift, plus visual cure confirmation, keeps the process auditable
 
-The fastest path is not to buy a system first — it's to **test your actual parts and material**. ETIA runs cure trials with automotive customers across Thailand, China, Vietnam and Southeast Asia, then recommends a configuration only once the process is proven.
+The fastest path is not to buy a system first — it's to **test your actual parts and material**. ETIA runs cure trials with automotive customers across Thailand, Vietnam and Southeast Asia, then recommends a configuration only once the process is proven.
 
 ## Where to go next
 

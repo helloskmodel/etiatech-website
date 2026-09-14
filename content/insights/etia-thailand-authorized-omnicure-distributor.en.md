@@ -31,7 +31,7 @@ Thai manufacturers in medical devices, electronics, automotive and photonics no 
 
 ## About ETIA Technology
 
-ETIA Technology is an authorized distributor of UV curing systems with **20 years of application expertise**, serving manufacturers from offices in Shanghai, Hong Kong, Bangkok and Bac Ninh. We support the full equipment lifecycle — selection, process validation, installation, calibration, maintenance and repair.
+ETIA Technology is the authorized OmniCure distributor in Thailand and Vietnam, supplying UV curing systems with **20 years of application expertise**, serving manufacturers from offices in Hong Kong, Bangkok and Bac Ninh. We support the full equipment lifecycle — selection, process validation, installation, calibration, maintenance and repair.
 
 ## Contact ETIA Thailand
 

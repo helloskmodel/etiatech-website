@@ -169,7 +169,7 @@ export default function OmniCureBrandLanding() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm">
-              <BadgeCheck className="h-4 w-4" /> {t({ en: "Authorized OmniCure® Distributor", zh: "OmniCure® 授权代理商", th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต OmniCure®", vi: "Nhà phân phối ủy quyền OmniCure®" }, locale)}
+              <BadgeCheck className="h-4 w-4" /> {t({ en: "Genuine OmniCure® Through Authorized Channels", zh: "OmniCure® 授权渠道正品", th: "OmniCure® ของแท้ผ่านช่องทางที่ได้รับอนุญาต", vi: "OmniCure® chính hãng qua kênh được ủy quyền" }, locale)}
             </div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "OmniCure UV Curing Solutions", zh: "OmniCure 紫外线固化解决方案", th: "โซลูชัน UV Curing จาก OmniCure", vi: "Giải pháp UV Curing OmniCure" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Precision Cures. Supreme Control.", zh: "精准固化 稳定掌控", th: "การคิวริ่งแม่นยำ ควบคุมได้อย่างเสถียร", vi: "Đóng rắn chính xác, kiểm soát ổn định." }, locale)}</span></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

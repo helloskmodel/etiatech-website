@@ -107,8 +107,8 @@ const tri = {
   ctaButton: { th: "ติดต่อฝ่ายขาย", en: "Talk to Our Sales", zh: "联系我们的销售" } as Tri,
   footerTagline: {
     th: "ตัวแทนจำหน่ายที่ได้รับอนุญาตของระบบ UV curing ระดับโลก ประสบการณ์ความเชี่ยวชาญเชิงการใช้งานกว่า 20 ปี ใน 10 อุตสาหกรรม",
-    en: "Authorized distributor of industrial UV curing systems from recognized manufacturers. 20 years of application expertise across Asia.",
-    zh: "世界级 UV Curing 紫外线固化系统授权代理，20 年应用专业经验，覆盖 10 大行业。",
+    en: "Authorized OmniCure distributor in Thailand and Vietnam, supplying industrial UV curing systems through authorized channels. 20 years of application expertise across Asia.",
+    zh: "OmniCure 在泰国和越南的授权经销商，通过授权渠道供应 UV Curing 紫外线固化系统，20 年应用专业经验，覆盖 10 大行业。",
   } as Tri,
   footerRights: {
     th: "สงวนลิขสิทธิ์",

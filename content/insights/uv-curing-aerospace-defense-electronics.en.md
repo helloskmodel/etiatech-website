@@ -86,7 +86,7 @@ Broad-spectrum lamp systems still earn their place where your material needs a w
 4. **Design for shadows** — high-uniformity area curing plus, where needed, a dual-cure material
 5. **Plan verification** — radiometry per shift plus visual cure confirmation, with records for the traveler
 
-The fastest path is not to buy a system first — it's to **test your actual boards and qualified material**. ETIA runs cure trials with customers across Thailand, China, Vietnam and Southeast Asia, then recommends a configuration only once the process is proven and documented.
+The fastest path is not to buy a system first — it's to **test your actual boards and qualified material**. ETIA runs cure trials with customers across Thailand, Vietnam and Southeast Asia, then recommends a configuration only once the process is proven and documented.
 
 ## Where to go next
 
