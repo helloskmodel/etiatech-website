@@ -41,16 +41,26 @@ type RouteId = "all" | "lamp-spot" | "led-spot" | "large-area" | "small-area";
 
 const order = [
   "s2000-elite", "s1500-pro", "r2000",
-  "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter",
+  "s2000-elite-filters", "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter",
   "lx500", "v3-led-heads", "ls200",
   "ac2", "ac4", "ac5", "ac7", "ac8", "ac8-hd", "ac9225", "ac9225-f",
   "s2e-network-module",
 ];
 
+// Which section of this page each OmniCure product sits in. Accessories are
+// placed next to the machine they serve, which is why this is hand-written
+// rather than derived from techRouteFor() — that returns undefined for anything
+// that doesn't cure (filters, light guides, radiometers).
+//
+// EVERY OmniCure product must appear here. A product missing from this map is
+// silently DROPPED from the page: the lookup below yields undefined, which
+// never equals a route id, so the card simply never renders. Checked by
+// `npm run validate:catalog`.
 const categoryBySlug: Record<string, Exclude<RouteId, "all">> = {
   "s2000-elite": "lamp-spot",
   "s1500-pro": "lamp-spot",
   r2000: "lamp-spot",
+  "s2000-elite-filters": "lamp-spot",
   "s-liquid-light-guide": "lamp-spot",
   "s-fiber-light-guide": "lamp-spot",
   "s-fiber-light-line": "lamp-spot",
@@ -159,7 +169,7 @@ export default function OmniCureBrandLanding() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm">
-              <BadgeCheck className="h-4 w-4" /> {t({ en: "Authorized OmniCure® Distributor", zh: "OmniCure® 授权代理商", th: "ตัวแทนจำหน่ายที่ได้รับอนุญาต OmniCure®", vi: "Nhà phân phối ủy quyền OmniCure®" }, locale)}
+              <BadgeCheck className="h-4 w-4" /> {t({ en: "Genuine OmniCure® Through Authorized Channels", zh: "OmniCure® 授权渠道正品", th: "OmniCure® ของแท้ผ่านช่องทางที่ได้รับอนุญาต", vi: "OmniCure® chính hãng qua kênh được ủy quyền" }, locale)}
             </div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl">{t({ en: "OmniCure UV Curing Solutions", zh: "OmniCure 紫外线固化解决方案", th: "โซลูชัน UV Curing จาก OmniCure", vi: "Giải pháp UV Curing OmniCure" }, locale)}<span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "Precision Cures. Supreme Control.", zh: "精准固化 稳定掌控", th: "การคิวริ่งแม่นยำ ควบคุมได้อย่างเสถียร", vi: "Đóng rắn chính xác, kiểm soát ổn định." }, locale)}</span></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -315,10 +325,10 @@ export default function OmniCureBrandLanding() {
 
       <div className="border-t border-[#E6EAF0] bg-[#F8FAFC] px-4 py-8 sm:px-6 lg:px-8">
         <p className="mx-auto max-w-4xl text-center text-xs leading-5 text-[#94A3B8]">{t({
-          en: "ETIA is an authorized distributor of OmniCure® products in designated territories. OmniCure® and related trademarks are owned by their respective trademark owners. Product names and trademarks are used for identification and product reference only. Authorization scope, availability, warranty and service terms may vary by country and product model.",
-          zh: "在指定地区，ETIA 是 OmniCure® 产品的授权经销商。OmniCure® 及相关商标归其各自的商标所有者所有。产品名称与商标仅用于标识与产品参考。授权范围、供货情况、保修与服务条款可能因国家/地区与产品型号而异。",
-          th: "ETIA เป็นตัวแทนจำหน่ายที่ได้รับอนุญาตของผลิตภัณฑ์ OmniCure® ในพื้นที่ที่กำหนด OmniCure® และเครื่องหมายการค้าที่เกี่ยวข้องเป็นของเจ้าของเครื่องหมายการค้านั้น ๆ ชื่อผลิตภัณฑ์และเครื่องหมายการค้าใช้เพื่อการระบุและอ้างอิงผลิตภัณฑ์เท่านั้น ขอบเขตการได้รับอนุญาต ความพร้อมจำหน่าย การรับประกันและเงื่อนไขบริการอาจแตกต่างกันตามประเทศและรุ่นผลิตภัณฑ์",
-          vi: "ETIA là nhà phân phối được ủy quyền của các sản phẩm OmniCure® tại các khu vực được chỉ định. OmniCure® và các nhãn hiệu liên quan thuộc sở hữu của các chủ sở hữu nhãn hiệu tương ứng. Tên sản phẩm và nhãn hiệu chỉ được sử dụng để nhận diện và tham chiếu sản phẩm. Phạm vi ủy quyền, tình trạng sẵn có, bảo hành và điều khoản dịch vụ có thể khác nhau theo quốc gia và mẫu sản phẩm.",
+          en: "ETIA supplies genuine OmniCure® products through authorized channels. OmniCure® and related trademarks are owned by their respective trademark owners. Product names and trademarks are used for identification and product reference only. Authorization scope, availability, warranty and service terms may vary by country and product model.",
+          zh: "ETIA 通过授权渠道供应 OmniCure® 原厂正品。OmniCure® 及相关商标归其各自的商标所有者所有。产品名称与商标仅用于标识与产品参考。授权范围、供货情况、保修与服务条款可能因国家/地区与产品型号而异。",
+          th: "ETIA จัดจำหน่ายผลิตภัณฑ์ OmniCure® ของแท้ผ่านช่องทางที่ได้รับอนุญาต OmniCure® และเครื่องหมายการค้าที่เกี่ยวข้องเป็นของเจ้าของเครื่องหมายการค้านั้น ๆ ชื่อผลิตภัณฑ์และเครื่องหมายการค้าใช้เพื่อการระบุและอ้างอิงผลิตภัณฑ์เท่านั้น ขอบเขตการได้รับอนุญาต ความพร้อมจำหน่าย การรับประกันและเงื่อนไขบริการอาจแตกต่างกันตามประเทศและรุ่นผลิตภัณฑ์",
+          vi: "ETIA cung cấp sản phẩm OmniCure® chính hãng qua kênh được ủy quyền. OmniCure® và các nhãn hiệu liên quan thuộc sở hữu của các chủ sở hữu nhãn hiệu tương ứng. Tên sản phẩm và nhãn hiệu chỉ được sử dụng để nhận diện và tham chiếu sản phẩm. Phạm vi ủy quyền, tình trạng sẵn có, bảo hành và điều khoản dịch vụ có thể khác nhau theo quốc gia và mẫu sản phẩm.",
         }, locale)}</p>
       </div>
     </div>

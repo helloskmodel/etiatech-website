@@ -234,7 +234,7 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
     faq: [
       { q: "Which S2000 lamp do I need — Standard or Surface Cure?", a: "Standard (S2000 Elite 012-68000R · S2000 012-64000R) suits most UV adhesive bonding. Surface Cure (S2000 Elite 012-69000R · S2000 012-65000R) reshapes the spectrum for a tack-free, seamless acrylic finish. Not sure? Send us your application and we'll confirm the right part number." },
       { q: "How long does the S2000 200 W lamp last?", a: "It is guaranteed for 2,000 hours. With the S2000's closed-loop feedback auto-compensation and a gentle decay curve, most customers reach around 4,000 hours." },
-      { q: "Are these genuine OmniCure lamps with warranty?", a: "Yes — ETIA is an authorized OmniCure distributor; genuine lamps with full manufacturer warranty, not grey-market imports." },
+      { q: "Are these genuine OmniCure lamps with warranty?", a: "Yes — supplied through authorized channels; genuine lamps with full manufacturer warranty, not grey-market imports." },
       { q: "Do you stock S2000 lamps in Thailand?", a: "Yes — local stock and fast delivery, so your production line isn't left waiting for a replacement." },
     ],
   },
@@ -260,7 +260,7 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
     faq: [
       { q: "我应该选择哪种 S2000 灯管——Standard 还是 Surface Cure?", a: "Standard（S2000 Elite 012-68000R · S2000 012-64000R）适用于大多数 UV 粘合剂粘接应用；Surface Cure（S2000 Elite 012-69000R · S2000 012-65000R）通过重塑光谱实现丙烯酸树脂表面不发粘、平滑无缝。不确定选哪种？把您的应用告诉我们，我们帮您确认正确的零件号。" },
       { q: "S2000 200W 灯管能用多久?", a: "保证使用寿命 2000 小时。凭借 S2000 的闭环反馈自动补偿和平缓的衰减曲线，多数客户可达到约 4000 小时。" },
-      { q: "是原厂正品 OmniCure 灯管并有保修吗?", a: "是——ETIA 是 OmniCure 授权经销商，供应原厂正品灯管并提供完整的原厂保修，绝非水货。" },
+      { q: "是原厂正品 OmniCure 灯管并有保修吗?", a: "是——通过授权渠道供应 OmniCure 原厂正品灯管，并提供完整的原厂保修，绝非水货。" },
       { q: "有现货吗？交期多久?", a: "有——本地备货、快速发货，不会让您的产线停等备件。" },
     ],
   },
@@ -286,7 +286,7 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
     faq: [
       { q: "ควรเลือกหลอด S2000 รุ่นไหน — Standard หรือ Surface Cure?", a: "Standard (S2000 Elite 012-68000R · S2000 012-64000R) เหมาะกับงานบ่มกาวยูวีส่วนใหญ่ ส่วน Surface Cure (S2000 Elite 012-69000R · S2000 012-65000R) ปรับสเปกตรัมเพื่อผิวอะคริลิกเรียบเนียนไร้รอยต่อ ไม่แน่ใจ? ส่งลักษณะงานมาให้เรา แล้วเราจะช่วยยืนยันหมายเลขชิ้นส่วนที่ถูกต้อง" },
       { q: "หลอด S2000 200 วัตต์ใช้งานได้นานแค่ไหน?", a: "รับประกัน 2000 ชั่วโมง และด้วยการชดเชยอัตโนมัติแบบวงปิดของ S2000 ลูกค้าส่วนใหญ่ใช้งานได้ราว 4000 ชั่วโมง" },
-      { q: "เป็นหลอด OmniCure ของแท้พร้อมการรับประกันหรือไม่?", a: "ใช่ — ETIA เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาต หลอดของแท้พร้อมการรับประกันจากโรงงาน ไม่ใช่สินค้าหิ้ว" },
+      { q: "เป็นหลอด OmniCure ของแท้พร้อมการรับประกันหรือไม่?", a: "ใช่ — ETIA จัดจำหน่ายผ่านช่องทางที่ได้รับอนุญาต หลอดของแท้พร้อมการรับประกันจากโรงงาน ไม่ใช่สินค้าหิ้ว" },
       { q: "มีสต็อกหลอด S2000 ในประเทศไทยหรือไม่?", a: "มี — สต็อกในพื้นที่และจัดส่งรวดเร็ว เพื่อไม่ให้สายการผลิตของคุณต้องรอ" },
     ],
   },
@@ -312,7 +312,7 @@ const CONTENT: Record<LampLang, { h1: string; intro: string[]; features: string[
     faq: [
       { q: "Tôi nên chọn đèn S2000 nào — Standard hay Surface Cure?", a: "Standard (S2000 Elite 012-68000R · S2000 012-64000R) phù hợp với hầu hết ứng dụng dán keo UV. Surface Cure (S2000 Elite 012-69000R · S2000 012-65000R) định hình lại phổ để bề mặt acrylic liền mạch, không dính tay. Chưa chắc chắn? Hãy gửi ứng dụng của bạn cho chúng tôi, chúng tôi sẽ xác nhận đúng mã hàng." },
       { q: "Đèn S2000 200W dùng được bao lâu?", a: "Được bảo đảm 2000 giờ. Nhờ tính năng tự động bù phản hồi vòng kín của S2000 và đường cong suy giảm thoải, phần lớn khách hàng đạt khoảng 4000 giờ." },
-      { q: "Đây có phải đèn OmniCure chính hãng kèm bảo hành không?", a: "Đúng — ETIA là nhà phân phối OmniCure được ủy quyền; đèn chính hãng với bảo hành đầy đủ từ nhà sản xuất, không phải hàng trôi nổi." },
+      { q: "Đây có phải đèn OmniCure chính hãng kèm bảo hành không?", a: "Đúng — cung cấp qua kênh được ủy quyền; đèn chính hãng với bảo hành đầy đủ từ nhà sản xuất, không phải hàng trôi nổi." },
       { q: "Có sẵn hàng không? Giao hàng mất bao lâu?", a: "Có — hàng có sẵn và giao nhanh, để dây chuyền sản xuất của bạn không phải chờ linh kiện thay thế." },
     ],
   },

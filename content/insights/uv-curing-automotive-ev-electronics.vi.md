@@ -97,7 +97,7 @@ Chất lượng ô tô nghĩa là chứng minh từng lần cure. Hai thực hà
 4. **Thiết kế cho vùng bóng** — cure diện tích độ đồng đều cao, và khi cần dùng vật liệu dual-cure
 5. **Lập kế hoạch xác nhận** — đo bức xạ mỗi ca, cùng xác nhận cure bằng thị giác, giữ quy trình kiểm toán được
 
-Con đường nhanh nhất không phải mua hệ thống trước — mà là **thử nghiệm chi tiết và vật liệu thực của bạn**. ETIA thực hiện thử nghiệm cure cùng khách hàng ô tô tại Thái Lan, Trung Quốc, Việt Nam và Đông Nam Á, rồi mới đề xuất cấu hình khi quy trình đã được chứng minh.
+Con đường nhanh nhất không phải mua hệ thống trước — mà là **thử nghiệm chi tiết và vật liệu thực của bạn**. ETIA thực hiện thử nghiệm cure cùng khách hàng ô tô tại Thái Lan, Việt Nam và Đông Nam Á, rồi mới đề xuất cấu hình khi quy trình đã được chứng minh.
 
 ## Tiếp theo là gì
 
@@ -105,4 +105,4 @@ Con đường nhanh nhất không phải mua hệ thống trước — mà là *
 - So sánh [hệ thống UV curing](/product/omnicure) qua các nền tảng spot, diện tích và LED
 - Có bước bonding, phủ hay potting ô tô cụ thể cần xác nhận? [Trao đổi với kỹ sư ETIA](/contact) — cho chúng tôi biết vật liệu, chi tiết nền và takt time của bạn, phần còn lại để chúng tôi lo.
 
-*ETIA là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam. Chúng tôi cung cấp và hỗ trợ thiết bị cure; keo, lớp phủ và vật liệu đóng gói vẫn là vật liệu của bạn.*
+*ETIA cung cấp thiết bị OmniCure chính hãng qua kênh được ủy quyền. Chúng tôi cung cấp và hỗ trợ thiết bị cure; keo, lớp phủ và vật liệu đóng gói vẫn là vật liệu của bạn.*

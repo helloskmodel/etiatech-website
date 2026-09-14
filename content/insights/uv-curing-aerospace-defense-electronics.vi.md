@@ -88,7 +88,7 @@ Hệ đèn phổ rộng vẫn có chỗ đứng khi vật liệu của bạn c�
 4. **Thiết kế cho vùng bóng** — cure diện tích độ đồng đều cao, và khi cần dùng vật liệu dual-cure
 5. **Lập kế hoạch xác nhận** — đo bức xạ mỗi ca cùng xác nhận cure bằng thị giác, với hồ sơ cho phiếu công đoạn
 
-Con đường nhanh nhất không phải mua hệ thống trước — mà là **thử nghiệm bo mạch và vật liệu đã phê duyệt thực của bạn**. ETIA thực hiện thử nghiệm cure cùng khách hàng tại Thái Lan, Trung Quốc, Việt Nam và Đông Nam Á, rồi mới đề xuất cấu hình khi quy trình đã được chứng minh và ghi hồ sơ.
+Con đường nhanh nhất không phải mua hệ thống trước — mà là **thử nghiệm bo mạch và vật liệu đã phê duyệt thực của bạn**. ETIA thực hiện thử nghiệm cure cùng khách hàng tại Thái Lan, Việt Nam và Đông Nam Á, rồi mới đề xuất cấu hình khi quy trình đã được chứng minh và ghi hồ sơ.
 
 ## Tiếp theo là gì
 
@@ -96,4 +96,4 @@ Con đường nhanh nhất không phải mua hệ thống trước — mà là *
 - So sánh [hệ thống UV curing](/product/omnicure) qua các nền tảng spot, diện tích và LED
 - Có bước phủ, potting hay bonding cảm biến avionics cụ thể cần phê duyệt? [Trao đổi với kỹ sư ETIA](/contact) — cho chúng tôi biết vật liệu, spec và takt time của bạn, phần còn lại để chúng tôi lo.
 
-*ETIA là nhà phân phối OmniCure được ủy quyền tại Thái Lan và Việt Nam. Chúng tôi cung cấp và hỗ trợ thiết bị cure; lớp phủ conformal, vật liệu potting và keo vẫn là vật liệu đã phê duyệt của bạn.*
+*ETIA cung cấp thiết bị OmniCure chính hãng qua kênh được ủy quyền. Chúng tôi cung cấp và hỗ trợ thiết bị cure; lớp phủ conformal, vật liệu potting và keo vẫn là vật liệu đã phê duyệt của bạn.*

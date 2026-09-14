@@ -35,11 +35,6 @@ export const CONTACT = {
   // than appended here as ?text= (that parameter only applies to the
   // https://wa.me/<number> form).
   whatsappUrl: "https://wa.me/message/HDAWX7IOYT4CO1",
-  // WeCom (企业微信) customer-service link for the Chinese pages. Unlike a
-  // personal WeChat account — which can only be added by scanning a QR — a
-  // WeCom "kfid" link is a real URL: on mobile it hands off to WeChat/WeCom,
-  // on desktop it opens WeCom's own scan page.
-  wecomUrl: "https://work.weixin.qq.com/kfid/kfcae13b93d714df6b6",
   email: "sales@etia-tech.com",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Rd, Prawet, Bangkok 10250",
 } as const;
@@ -89,11 +84,11 @@ export type LandingCopy = {
 };
 
 const en: LandingCopy = {
-  metaTitle: "Authorized OmniCure Distributor in Thailand | S2000, LX500 | ETIA",
+  metaTitle: "Genuine OmniCure Systems in Thailand | S2000, LX500 | ETIA",
   metaDescription:
-    "ETIA is an authorized OmniCure distributor in Thailand — S2000, LX500 UV curing systems with local stock, installation, service and manufacturer warranty.",
+    "ETIA supplies genuine OmniCure products through authorized channels in Thailand — S2000, LX500 UV curing systems with local stock, installation, service and manufacturer warranty.",
   hero: {
-    h1: "Authorized OmniCure Distributor in Thailand",
+    h1: "Genuine OmniCure Systems in Thailand",
     subhead:
       "S2000 · LX500 · Spot & Flood UV Curing — local sales, installation, and service from Bangkok.",
     badges: ["Authorized by Excelitas Canada", "Full manufacturer guarantee", "On-site service in Thailand"],
@@ -101,7 +96,7 @@ const en: LandingCopy = {
     ctaSecondary: "Talk to us on LINE",
   },
   trustBar:
-    "As an authorized distributor appointed by Excelitas Canada, ETIA supplies genuine OmniCure UV curing systems in Thailand — backed by the manufacturer's full guarantee and local installation support. Authentic products, local stock, Thai-language support, and after-sales service you can actually reach.",
+    "ETIA supplies genuine OmniCure UV curing systems through authorized channels in Thailand — backed by the manufacturer's full guarantee and local installation support. Authentic products, local stock, Thai-language support, and after-sales service you can actually reach.",
   productsHeading: "OmniCure Systems",
   products: [
     { id: "s2000", name: "OmniCure S2000 / S2000 Elite", desc: "High-intensity spot UV curing for precise, repeatable bonding." },
@@ -110,7 +105,7 @@ const en: LandingCopy = {
     { id: "accessories", name: "Accessories & spare parts", desc: "Lightguides, radiometers, accessories & spare parts." },
   ],
   askPrice: "Ask Price",
-  whyHeading: "Why buy from an authorized local distributor",
+  whyHeading: "Why buy through an authorized channel",
   why: [
     "Genuine & guaranteed — authentic OmniCure units with manufacturer warranty, not grey-market imports.",
     "Local stock & faster delivery — no long overseas lead times.",
@@ -128,7 +123,7 @@ const en: LandingCopy = {
   contactLine: `☎ ${CONTACT.phone} · 💬 LINE: ${CONTACT.lineId} · ✉ ${CONTACT.email} · 📍 Bangkok, Thailand`,
   faqHeading: "Frequently asked questions",
   faq: [
-    { q: "Where can I buy OmniCure in Thailand?", a: "From ETIA, an authorized distributor appointed by Excelitas Canada, with local stock and service." },
+    { q: "Where can I buy OmniCure in Thailand?", a: "From ETIA — genuine units supplied through authorized channels, with local stock and service." },
     { q: "Do you supply the OmniCure S2000 and LX500?", a: "Yes — both available, pricing on request." },
     { q: "Do you provide repair and calibration in Thailand?", a: "Yes — local service, calibration, and spare parts." },
     { q: "Are these genuine units with warranty?", a: "Yes — authentic products with full manufacturer guarantee." },
@@ -151,9 +146,9 @@ const en: LandingCopy = {
 // TH: reviewed strings where available; everything else falls back to EN.
 // TODO_TH: hero.subhead, trustBar, why[], applications, service, faq[], form.*
 const th: Partial<LandingCopy> = {
-  metaTitle: "ตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย | S2000, LX500 | ETIA",
+  metaTitle: "สินค้า OmniCure ของแท้ในประเทศไทย | S2000, LX500 | ETIA",
   hero: {
-    h1: "ตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย",
+    h1: "สินค้า OmniCure ของแท้ผ่านช่องทางที่ได้รับอนุญาตในประเทศไทย",
     subhead: "S2000 · LX500 · Spot & Flood UV Curing — local sales, installation, and service from Bangkok.", // TODO_TH
     badges: ["ได้รับการแต่งตั้งโดย Excelitas Canada", "รับประกันจากโรงงานเต็มรูปแบบ", "บริการติดตั้งในประเทศไทย"],
     ctaPrimary: "ขอใบเสนอราคา",
@@ -161,7 +156,7 @@ const th: Partial<LandingCopy> = {
   },
   productsHeading: "ระบบ OmniCure",
   askPrice: "สอบถามราคา",
-  whyHeading: "ทำไมต้องซื้อจากตัวแทนจำหน่ายที่ได้รับอนุญาตในพื้นที่",
+  whyHeading: "ทำไมต้องซื้อผ่านช่องทางที่ได้รับอนุญาต",
   applicationsHeading: "การใช้งาน",
   serviceHeading: "บริการและการสนับสนุน",
   faqHeading: "คำถามที่พบบ่อย",

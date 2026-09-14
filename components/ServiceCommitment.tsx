@@ -29,7 +29,7 @@ export default function ServiceCommitment({ compact = false }: { compact?: boole
               <h2 id="service-commitment-title" className="text-2xl font-bold text-[#1A56DB] md:text-3xl">ETIA Service Commitment</h2>
               <p className="mt-3 text-base font-semibold leading-relaxed text-gray-800 md:text-lg">{PROMISE}</p>
               <p className="mt-4 max-w-4xl text-sm leading-7 text-gray-600 md:text-base">
-                As an authorized OmniCure® distributor, ETIA supports customers from product selection to installation, training, troubleshooting, and long-term service — helping manufacturers build reliable UV curing processes with confidence.
+                Supplying genuine OmniCure® products through authorized channels, ETIA supports customers from product selection to installation, training, troubleshooting, and long-term service — helping manufacturers build reliable UV curing processes with confidence.
               </p>
             </div>
           </div>

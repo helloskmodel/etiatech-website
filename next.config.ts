@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacyApplicationRedirects } from "./components/legacyApplicationRedirects";
 
 const nextConfig: NextConfig = {
   images: {
@@ -87,6 +88,12 @@ const nextConfig: NextConfig = {
       { source: "/en/contact", destination: "/contact", permanent: true },
       { source: "/en/applications", destination: "/applications", permanent: true },
       { source: "/application", destination: "/applications", permanent: true },
+      // The 62 notes of the old /application section, each sent to the live
+      // page about the same subject. A redirect passes ranking signals only
+      // when source and destination cover the same topic — the bare catch-all
+      // below put all 62 on the generic index, which Google reads as a soft
+      // 404 and drops. These specific rules must stay AHEAD of it.
+      ...legacyApplicationRedirects(),
       { source: "/application/:path*", destination: "/applications", permanent: true },
       // The short-lived /industries section was retired (its images duplicated
       // the application notes and confused visitors) — send any indexed URLs

@@ -86,7 +86,7 @@ Broad-spectrum lamp systems still earn their place where your material needs a w
 4. **Design for shadows** — high-uniformity area curing plus, where needed, a dual-cure material
 5. **Plan verification** — radiometry per shift plus visual cure confirmation, with records for the traveler
 
-The fastest path is not to buy a system first — it's to **test your actual boards and qualified material**. ETIA runs cure trials with customers across Thailand, China, Vietnam and Southeast Asia, then recommends a configuration only once the process is proven and documented.
+The fastest path is not to buy a system first — it's to **test your actual boards and qualified material**. ETIA runs cure trials with customers across Thailand, Vietnam and Southeast Asia, then recommends a configuration only once the process is proven and documented.
 
 ## Where to go next
 
@@ -94,4 +94,4 @@ The fastest path is not to buy a system first — it's to **test your actual boa
 - Compare [UV curing systems](/product/omnicure) across spot, area and LED platforms
 - Have a specific avionics coating, potting or sensor-bonding step to qualify? [Talk to an ETIA engineer](/contact) — tell us your material, spec and takt time, and we'll take it from there.
 
-*ETIA is an authorized OmniCure distributor in Thailand and Vietnam. We supply and support the curing equipment; the conformal coatings, potting compounds and adhesives remain your qualified material.*
+*ETIA supplies genuine OmniCure equipment through authorized channels. We supply and support the curing equipment; the conformal coatings, potting compounds and adhesives remain your qualified material.*

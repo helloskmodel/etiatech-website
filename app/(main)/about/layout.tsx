@@ -6,14 +6,14 @@ const SITE = "https://www.etiatech.com";
 const PAGE_PATH = "/about";
 
 export const metadata: Metadata = {
-  title: "About ETIA Technology | Authorized UV Curing Systems Distributor",
+  title: "About ETIA Technology | Genuine UV Curing Systems, Authorized Channel",
   description:
-    "Authorized OmniCure distributor in Thailand and Vietnam, also supplying Phoseon, Fusion UV and Noblelight — 20 years of UV curing expertise across Asia.",
+    "Genuine OmniCure, Phoseon, Fusion UV and Noblelight UV curing systems supplied through authorized channels — 20 years of UV curing expertise across Asia.",
   keywords: [
     "about ETIA Technology",
     "ETIA Thailand",
     "Etiatec Thailand",
-    "authorized OmniCure distributor",
+    "genuine OmniCure supply Thailand Vietnam",
     "UV curing distributor",
     "UV curing systems Southeast Asia",
   ],
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     url: SITE + PAGE_PATH,
     siteName: "ETIA Technology",
     images: [DEFAULT_OG_IMAGE],
-    title: "About ETIA Technology | Authorized UV Curing Systems Distributor",
+    title: "About ETIA Technology | Genuine UV Curing Systems, Authorized Channel",
     description:
-      "20 years of UV curing application expertise — authorized distribution, process validation, installation, calibration, maintenance and repair across China and Southeast Asia.",
+      "20 years of UV curing application expertise — genuine products through authorized channels, process validation, installation, calibration, maintenance and repair across Southeast Asia.",
   },
 };
 

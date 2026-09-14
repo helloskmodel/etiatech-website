@@ -58,7 +58,7 @@ export const brandLanding: Record<BrandSlug, BrandLanding> = {
       { en: "Photonics & Advanced Packaging", zh: "光子学与先进封装" },
       { en: "EV Battery & Automotive", zh: "动力电池与汽车" },
     ],
-    metaTitle: "OmniCure UV Curing Systems — Authorized Distributor | ETIA",
+    metaTitle: "OmniCure UV Curing Systems — Genuine, Authorized Channel | ETIA",
     metaDescription:
       "OmniCure precision UV curing systems for assembly, bonding, medical devices and electronics. ETIA supplies genuine systems, lamps, application support and service.",
   },

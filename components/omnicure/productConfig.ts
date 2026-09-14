@@ -45,7 +45,7 @@ const META: Record<string, {
     },
     faq: [
       { q: { en: "Is the OmniCure S2000 Elite available in Thailand?", th: "OmniCure S2000 Elite มีจำหน่ายในประเทศไทยหรือไม่?" },
-        a: { en: "Yes — ETIA is an authorized OmniCure distributor in Thailand, with local stock, installation and service.", th: "มี — ETIA เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่" } },
+        a: { en: "Yes — ETIA supplies genuine OmniCure products through authorized channels in Thailand, with local stock, installation and service.", th: "มี — ETIA จัดจำหน่ายสินค้า OmniCure ของแท้ผ่านช่องทางที่ได้รับอนุญาตในประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่" } },
       { q: { en: "What irradiance does the S2000 Elite deliver?", th: "S2000 Elite ให้ค่าความเข้มแสงเท่าใด?" },
         a: { en: "Up to 30 W/cm², with Closed-Loop Feedback holding ±5% stability across lamp life.", th: "สูงถึง 30 W/cm² พร้อม Closed-Loop Feedback รักษาเสถียรภาพ ±5% ตลอดอายุหลอด" } },
       { q: { en: "Do you provide installation and calibration?", th: "มีบริการติดตั้งและสอบเทียบหรือไม่?" },
@@ -89,7 +89,7 @@ const META: Record<string, {
     },
     faq: [
       { q: { en: "Is the OmniCure S1500 Pro available in Thailand?", th: "OmniCure S1500 Pro มีจำหน่ายในประเทศไทยหรือไม่?" },
-        a: { en: "Yes — ETIA is an authorized OmniCure distributor in Thailand, with local stock, installation and service.", th: "มี — ETIA เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่" } },
+        a: { en: "Yes — ETIA supplies genuine OmniCure products through authorized channels in Thailand, with local stock, installation and service.", th: "มี — ETIA จัดจำหน่ายสินค้า OmniCure ของแท้ผ่านช่องทางที่ได้รับอนุญาตในประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่" } },
       { q: { en: "How is the S1500 Pro suited to automated production?", th: "S1500 Pro เหมาะกับการผลิตอัตโนมัติอย่างไร?" },
         a: { en: "It offers a programmable PLC output (DB50), StepCure 2.0 profiles, NFC access control and Flight Recorder event tracking for traceability.", th: "มีเอาต์พุต PLC (DB50) ตั้งโปรแกรมได้, โปรไฟล์ StepCure 2.0, ควบคุมสิทธิ์ด้วย NFC และ Flight Recorder สำหรับการตรวจสอบย้อนกลับ" } },
       { q: { en: "Can I keep my original S1500 accessories?", th: "ใช้อุปกรณ์เสริมของ S1500 รุ่นเดิมได้หรือไม่?" },
@@ -134,7 +134,7 @@ const META: Record<string, {
     },
     faq: [
       { q: { en: "Is the OmniCure LX500 available in Thailand?", th: "OmniCure LX500 มีจำหน่ายในประเทศไทยหรือไม่?" },
-        a: { en: "Yes — ETIA is an authorized OmniCure distributor in Thailand, with local stock, installation and service.", th: "มี — ETIA เป็นตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่" } },
+        a: { en: "Yes — ETIA supplies genuine OmniCure products through authorized channels in Thailand, with local stock, installation and service.", th: "มี — ETIA จัดจำหน่ายสินค้า OmniCure ของแท้ผ่านช่องทางที่ได้รับอนุญาตในประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่" } },
       { q: { en: "How many heads can the LX500 control?", th: "LX500 ควบคุมหัวได้กี่หัว?" },
         a: { en: "Up to four UV LED heads, simultaneously or independently, at 365 / 385 / 395 / 405 nm.", th: "สูงสุด 4 หัว UV LED พร้อมกันหรือแยกอิสระ ที่ 365 / 385 / 395 / 405 nm" } },
       { q: { en: "Do you provide installation and calibration?", th: "มีบริการติดตั้งและสอบเทียบหรือไม่?" },

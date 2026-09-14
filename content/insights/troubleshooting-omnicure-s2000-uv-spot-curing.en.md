@@ -50,6 +50,6 @@ Because the S2000's Closed-Loop Feedback continuously corrects for lamp decay, a
 
 ## When to call in support
 
-If a fault persists after these checks — a red ring that won't clear, repeated failure to strike, or output you can't recover with recalibration — stop and get help rather than guessing. As an authorized OmniCure distributor, ETIA provides troubleshooting, genuine replacement lamps and modules, R2000 calibration, and local service across Southeast Asia.
+If a fault persists after these checks — a red ring that won't clear, repeated failure to strike, or output you can't recover with recalibration — stop and get help rather than guessing. Supplying genuine OmniCure product through authorized channels, ETIA provides troubleshooting, genuine replacement lamps and modules, R2000 calibration, and local service across Southeast Asia.
 
 For the full step-by-step procedures, indicator table and safety guidance, see the [OmniCure S2000 Elite Installation & Support Guide](/product/omnicure/s2000). To order a genuine lamp by part number, visit the [S2000 lamp page](/product/omnicure/s2000-lamp).

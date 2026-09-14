@@ -14,7 +14,7 @@ Buying a UV curing system is the easy part. Keeping it running — genuine spare
 
 ## Four commitments, in Thailand
 
-**Genuine products, quality guaranteed.** As an authorized OmniCure distributor, we source everything through official, legitimate channels — genuine products, backed by the manufacturer warranty and support that only authorized supply carries.
+**Genuine products, quality guaranteed.** We source everything through official, legitimate channels — genuine products, backed by the manufacturer warranty and support that only authorized supply carries.
 
 **Application-driven solutions.** Our engineers help you select the right system for your adhesive, substrate and takt time — and run cure trials on your real parts before you buy, not after.
 

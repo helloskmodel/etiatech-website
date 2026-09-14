@@ -10,6 +10,8 @@
 //   5. page-level hreflang groups are reciprocal and identical across members
 //   6. no production page contains "LX500 V2" (case-insensitive)
 //   7. no staging/preview/off-site URL appears in the sitemap
+//   8. every <image:loc> is an absolute URL (Search Console rejects the whole
+//      sitemap with "Invalid URL" on a site-relative image path) and resolves
 
 const BASE = process.env.SEO_BASE_URL || "http://localhost:3000";
 const SITE = "https://www.etiatech.com";
@@ -40,6 +42,25 @@ for (const u of locs) {
 // 2. duplicates
 const dupes = locs.filter((u, i) => locs.indexOf(u) !== i);
 for (const d of new Set(dupes)) err(`duplicate sitemap URL: ${d}`);
+
+// 8. image URLs must be absolute. A site-relative <image:loc> makes Search
+// Console flag the sitemap "readable, but has errors → Invalid URL", which
+// stops it from being processed cleanly.
+const imageLocs = [...xml.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((m) => m[1]);
+const relativeImages = imageLocs.filter((u) => !/^https?:\/\//.test(u));
+for (const u of new Set(relativeImages)) err(`sitemap image URL is not absolute: ${u}`);
+
+// Every same-host image must actually resolve — a 404 in <image:loc> is a
+// wasted crawl budget signal.
+const ownImages = [...new Set(imageLocs.filter((u) => u.startsWith(`${SITE}/`)))];
+for (let i = 0; i < ownImages.length; i += CONCURRENCY) {
+  await Promise.all(
+    ownImages.slice(i, i + CONCURRENCY).map(async (u) => {
+      const r = await fetch(toLocal(u), { method: "HEAD", redirect: "manual" });
+      if (r.status !== 200) err(`sitemap image ${u} returned ${r.status}`);
+    })
+  );
+}
 
 // Crawl every URL.
 const pages = new Map(); // url -> { canonical, hreflang: Map(lang -> href), noindex, hasV2 }

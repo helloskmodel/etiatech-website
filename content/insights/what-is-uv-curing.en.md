@@ -46,6 +46,6 @@ UV curing is standard practice in [medical device assembly](/applications/uv-spo
 
 ## Getting started
 
-The fastest route is not to buy a system — it's to **test your actual parts and adhesive first**. ETIA runs cure trials with customers across Thailand, China, Vietnam and Southeast Asia, then recommends a configuration only when the process is proven.
+The fastest route is not to buy a system — it's to **test your actual parts and adhesive first**. ETIA runs cure trials with customers across Thailand, Vietnam and Southeast Asia, then recommends a configuration only when the process is proven.
 
 [Talk to an ETIA engineer](/contact) — tell us your adhesive, substrate and takt time, and we'll take it from there.

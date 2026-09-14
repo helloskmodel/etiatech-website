@@ -432,7 +432,7 @@ export default function S2000View() {
       <section className="bg-gradient-to-r from-[#143C96] to-[#1A56DB] px-4 py-5 text-white sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
           <p className="text-sm font-semibold">
-            {t({ en: "ETIA is an authorized distributor of OmniCure® products.", zh: "ETIA 是 OmniCure® 产品的授权分销商。" }, locale)}
+            {t({ en: "ETIA provides genuine OmniCure® products through authorized channels.", zh: "ETIA 通过授权渠道提供 OmniCure® 原厂正品。" }, locale)}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-xs font-semibold text-blue-100">
             {[
@@ -669,8 +669,8 @@ export default function S2000View() {
             eyebrow={{ en: "Why ETIA", zh: "为何选择 ETIA" }}
             title={{ en: "Why Buy OmniCure S2000 Elite from ETIA", zh: "为何从 ETIA 购买 OmniCure S2000 Elite" }}
             sub={{
-              en: "ETIA supports manufacturers across China, Thailand, Vietnam, and Southeast Asia with genuine OmniCure products, application consultation, local supply, installation training, lamp replacement guidance, maintenance, repair support, and troubleshooting.",
-              zh: "ETIA 为中国、泰国、越南及东南亚的制造商提供正品 OmniCure 产品、应用咨询、本地供货、安装培训、灯管更换指导、维护、维修支持与故障排查。",
+              en: "ETIA supports manufacturers across Thailand, Vietnam, Hong Kong, and Southeast Asia with genuine OmniCure products, application consultation, local supply, installation training, lamp replacement guidance, maintenance, repair support, and troubleshooting.",
+              zh: "ETIA 为泰国、越南、香港及东南亚的制造商提供正品 OmniCure 产品、应用咨询、本地供货、安装培训、灯管更换指导、维护、维修支持与故障排查。",
             }}
             locale={locale}
           />

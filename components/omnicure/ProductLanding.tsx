@@ -18,7 +18,7 @@ export default function ProductLanding({ config }: { config: ProductLandingConfi
     specs: th ? "ข้อมูลจำเพาะ" : "Specifications",
     apps: th ? "การใช้งาน" : "Applications",
     faq: th ? "คำถามที่พบบ่อย" : "Frequently asked questions",
-    authorized: th ? "ตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาตในประเทศไทย" : "Authorized OmniCure Distributor in Thailand",
+    authorized: th ? "สินค้า OmniCure ของแท้ผ่านช่องทางที่ได้รับอนุญาตในประเทศไทย" : "Genuine OmniCure Products Through Authorized Channels in Thailand",
     closing: th ? `ต้องการ ${c.name} ในประเทศไทย? ขอราคาและคำแนะนำวันนี้` : `Need the ${c.name} in Thailand? Get pricing and expert advice today.`,
   };
   const onCall = () => track("click_call", { page, lang: c.lang });

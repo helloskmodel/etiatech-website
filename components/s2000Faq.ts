@@ -56,8 +56,8 @@ export const s2000Faqs: { q: LangText; a: LangText }[] = [
   {
     q: { en: "Can ETIA provide OmniCure S2000 Elite troubleshooting support?", zh: "ETIA 能否提供 OmniCure S2000 Elite 故障排除支持?" },
     a: {
-      en: "Yes. ETIA provides OmniCure S2000 Elite troubleshooting, lamp replacement, optical filter and light guide support, calibration guidance, maintenance, and repair coordination across China, Thailand, Vietnam, and Southeast Asia.",
-      zh: "可以。ETIA 在中国、泰国、越南及东南亚地区提供 OmniCure S2000 Elite 故障排除、灯管更换、光学滤光片与导光管支持、校准指导、维护与维修协调。",
+      en: "Yes. ETIA provides OmniCure S2000 Elite troubleshooting, lamp replacement, optical filter and light guide support, calibration guidance, maintenance, and repair coordination across Thailand, Vietnam, Hong Kong, and Southeast Asia.",
+      zh: "可以。ETIA 在泰国、越南、香港及东南亚地区提供 OmniCure S2000 Elite 故障排除、灯管更换、光学滤光片与导光管支持、校准指导、维护与维修协调。",
     },
   },
 ];

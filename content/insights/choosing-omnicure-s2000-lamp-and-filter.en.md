@@ -61,7 +61,7 @@ Selecting the right lamp and filter gets you the right *spectrum*. Getting the r
 
 ## Not sure? Send us the application
 
-If you can tell us your adhesive, substrate and cure requirement, we can confirm the exact lamp module and filter part numbers for your process. ETIA is an authorized OmniCure distributor and supplies genuine lamps, filters and light guides with local support.
+If you can tell us your adhesive, substrate and cure requirement, we can confirm the exact lamp module and filter part numbers for your process. ETIA supplies genuine lamps, filters and light guides with local support.
 
 - Step-by-step install and configuration: see the [OmniCure S2000 Elite Installation & Support Guide](/product/omnicure/s2000).
 - Order a genuine replacement lamp by part number on the [S2000 lamp page](/product/omnicure/s2000-lamp).

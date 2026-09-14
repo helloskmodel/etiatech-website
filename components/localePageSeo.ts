@@ -161,7 +161,7 @@ export function caseStudyDetailJsonLd(slug: string, locale: SubLocale) {
 const CONTACT_META: Record<SubLocale, { title: string; description: string }> = {
   zh: {
     title: "UV Curing 销售与支持——从选型到服务 | ETIA",
-    description: "覆盖中国与东南亚的应用驱动型 UV Curing 紫外线固化支持：系统选型、应用评估、本地供货、安装培训、维护维修与辐照计校准，服务 OmniCure® 与 Phoseon® 系统。",
+    description: "覆盖东南亚与香港的应用驱动型 UV Curing 紫外线固化支持：系统选型、应用评估、本地供货、安装培训、维护维修与辐照计校准，服务 OmniCure® 与 Phoseon® 系统。",
   },
   th: {
     title: "ฝ่ายขายและการสนับสนุน UV Curing — ตั้งแต่การเลือกจนถึงบริการ | ETIA",
@@ -202,16 +202,16 @@ export function brandLanguageAlternates(slug: string): Record<string, string> {
 const BRAND_LOCALE_META: Record<string, Record<SubLocale, { title: string; description: string }>> = {
   omnicure: {
     zh: {
-      title: "OmniCure UV Curing 紫外线固化系统 — 授权经销商 | ETIA",
+      title: "OmniCure UV Curing 紫外线固化系统 — 授权渠道正品 | ETIA",
       description: "ETIA 提供正品 OmniCure® UV Curing 紫外线固化系统、S2000 Elite 点光源、LX500 UV LED 点光源、替换灯管及配件，并提供本地应用支持、安装、维护与维修服务。",
     },
     th: {
-      title: "ระบบ UV Curing OmniCure — ตัวแทนจำหน่ายที่ได้รับอนุญาต | ETIA",
+      title: "ระบบ UV Curing OmniCure — สินค้าของแท้ผ่านช่องทางที่ได้รับอนุญาต | ETIA",
       description: "ETIA จัดจำหน่ายระบบ UV curing OmniCure® ของแท้, OmniCure S2000 Elite, OmniCure LX500, หลอดไฟทดแทน และอุปกรณ์เสริม พร้อมการสนับสนุนด้านการใช้งาน การติดตั้ง การบำรุงรักษา และการซ่อมในพื้นที่",
     },
     vi: {
       // Title/description from the client's official Vietnamese deck.
-      title: "Hệ thống UV Curing OmniCure — Nhà phân phối được ủy quyền | ETIA",
+      title: "Hệ thống UV Curing OmniCure — Hàng chính hãng qua kênh ủy quyền | ETIA",
       description: "ETIA cung cấp hệ thống UV curing OmniCure® chính hãng, OmniCure S2000 Elite, OmniCure LX500, đèn thay thế và phụ kiện, cùng hỗ trợ kỹ thuật địa phương về lựa chọn, lắp đặt, bảo trì và sửa chữa.",
     },
   },
