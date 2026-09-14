@@ -14,6 +14,12 @@ const LOCALE_PREFIXES = ["", "/zh", "/vi", "/th"] as const;
 
 const SITE = "https://www.etiatech.com";
 
+// Sitemaps require FULLY-QUALIFIED image URLs. Product photos stored in the
+// repo come back from productImage() as site-relative paths ("/images/..."),
+// which is what <Image> wants but is invalid in <image:loc> — Search Console
+// rejects the whole sitemap with "Invalid URL". Absolutize before emitting.
+const absoluteUrl = (u: string) => (u.startsWith("/") ? `${SITE}${u}` : u);
+
 // NOTE: we intentionally omit `lastModified` on most pages. We don't track a
 // reliable per-page modification date, and stamping every URL with the build
 // time (new Date()) is a misleading freshness signal — omitting it is better
@@ -170,7 +176,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url,
       changeFrequency: "monthly",
       priority: FEATURED_PRIORITY[p.slug] ?? 0.7,
-      ...(image ? { images: [image] } : {}),
+      ...(image ? { images: [absoluteUrl(image)] } : {}),
     });
   }
 
@@ -185,7 +191,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.75,
       alternates: { languages: languageAlternates(`/applications/${application.slug}`) },
-      ...(application.image ? { images: [application.image] } : {}),
+      ...(application.image ? { images: [absoluteUrl(application.image)] } : {}),
     }))
   );
 

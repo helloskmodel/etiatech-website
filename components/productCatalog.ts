@@ -3067,7 +3067,10 @@ export function productModel(p: Product): string {
 // would wrongly signal an e-commerce "buy now" flow. The page is inquiry-first
 // ("Request a Quote"), so we publish an informational Product only.
 export function productJsonLd(p: Product) {
-  const img = productImage(p);
+  // Structured data wants an absolute image URL; productImage() returns a
+  // site-relative path for photos stored in the repo.
+  const raw = productImage(p);
+  const img = raw.startsWith("/") ? `${SITE}${raw}` : raw;
   return {
     "@context": "https://schema.org",
     "@type": "Product",

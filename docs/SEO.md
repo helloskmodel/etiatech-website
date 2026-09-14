@@ -13,8 +13,8 @@ the prioritized roadmap.
   Territories: Asia-Pacific (esp. Vietnam, Thailand, China).
 - **Stack:** Next.js 16 App Router · React 19 · TypeScript · Tailwind v4 ·
   Vercel · Tencent COS (images/PDFs). **SSG-first** (static pages, JSON-LD).
-- **i18n:** Bilingual **EN / ZH** via cookie + `t()`/`LangText`. Data is
-  structured so **VN/TH** can be added later (`ACTIVE_LOCALES = ["en","zh"]`).
+- **i18n:** Four locales — **EN / ZH / VI / TH**. EN is unprefixed; the others
+  live under `/zh`, `/vi`, `/th` and are hreflang-linked to each other.
 - **No CMS/DB** — all content lives in typed `.ts` data files.
 
 ---
@@ -45,19 +45,23 @@ card automatically.
 ## 3. SEO architecture already in place
 
 - **Individual landing pages** (each on its own indexable URL, no modals):
-  - `/application/[slug]` — 62 application notes. `TechArticle` +
-    `BreadcrumbList` JSON-LD, canonical, OpenGraph. Four-tag taxonomy:
-    industry / application point / UV technology / UV brand.
-  - `/case-studies/[slug]` — 10 case studies. `Article` + `BreadcrumbList`
-    JSON-LD. Brand + UV-technology **stickers** derived from the systems each
-    case uses (`brandsForCase` / `techRoutesForCase`).
-- **Product pages:**
-  - `/product` (landing), `/product/systems` (grouped by the 6 technologies +
-    Accessories), `/product/[brand]` (shop grid), `/product/systems/[slug]`
-    (detail, `Product` + `Breadcrumb` JSON-LD).
-- **Discovery:** cards on `/application`, the case grid, and the home strip
-  navigate **straight to landing pages** (every click = an indexable URL) and
-  show a compact brand + technology hint.
+  - `/applications/[slug]` — 18 published application notes, in all four
+    locales. `TechArticle` + `BreadcrumbList` JSON-LD, canonical, OpenGraph.
+  - `/solutions/[slug]` — 6 industry pages (optical modules, optical fibre,
+    semiconductor, automotive, medical device, scientific instruments).
+  - `/insights/[slug]` — knowledge articles from `content/insights/*.md`, per
+    locale, with a real publish date as `lastModified`.
+  - `/case-studies/[slug]` — **withdrawn**: `noindex, nofollow`, unlinked, and
+    out of the sitemap. See the diagnosis log in §8 before changing this.
+- **Product pages:** `/product` (hub), `/product/technology/[slug]` (by
+  technology), `/product/[brand]` (shop grid), `/product/systems/[slug]`
+  (detail, `Product` + `Breadcrumb` JSON-LD), `/consumables[/machine]`
+  (part-number searches).
+- **Legacy URLs:** `/application/*`, `/industries/*`, `/en/*` and the retired
+  country landing pages all 308 — see `next.config.ts` and
+  `components/legacyApplicationRedirects.ts`. The `app/(main)/application/`
+  route still exists in the tree but is unreachable: redirects are matched
+  before the filesystem.
 - **Infra:** `app/sitemap.ts` (all pages), `app/robots.ts`. Pre-filled inquiry
   `mailto:` CTAs (`components/contact.ts`).
 
@@ -83,7 +87,8 @@ card automatically.
 7. **Datasheets** — "Download Datasheet (PDF)" buttons once the COS PDF links
    are provided (engagement + dwell time).
 8. **Core Web Vitals** — audit LCP/CLS on key templates.
-9. **Multilingual SEO** — `hreflang` when VN/TH activate.
+9. ~~**Multilingual SEO** — `hreflang` when VN/TH activate.~~ **Done** — all
+   four locales ship reciprocal hreflang, enforced by `validate:seo`.
 
 ---
 
@@ -91,9 +96,14 @@ card automatically.
 
 - **Emails:** sales = `sales@etia-tech.com`; service/repair =
   `guoren_wang@etia-tech.com`. **Never** use `support@etiatech.com`.
-- **Bilingual EN/ZH** via `t()`/`LangText`; keep structured for VN/TH later.
-- **Dev branch:** `claude/product-image-assets-30ar7q`. Don't push elsewhere
-  without permission. Each task: implement → build → commit → PR → merge.
+- **Four locales (EN/ZH/VI/TH)** via `t()`/`LangText`; keep every locale's
+  hreflang group reciprocal.
+- **Dev branch:** whichever branch the task assigns. Don't push elsewhere
+  without permission. Each task: implement → build → validate → commit → PR.
+- **Never break a redirect's topical match.** A retired URL must point at a page
+  about the *same subject*. Many-to-one redirects onto an index page are read by
+  Google as soft 404s and the old URL is dropped, losing everything it ranked
+  for. See `components/legacyApplicationRedirects.ts`.
 - Do **not** put the model identifier in commits, PRs, or code.
 
 ---
@@ -104,20 +114,61 @@ card automatically.
 |------|-------|
 | Technology taxonomy (source of truth) | `components/productCatalog.ts` (`TECH_ROUTES`, `techRouteFor`) |
 | Product catalog | `components/productCatalog.ts` (+ `.zh`) |
-| Application notes (62) | `components/applicationNotes.ts` (+ `.zh`); `appSlug`/`getAppBySlug` |
-| Case studies (10) | `components/caseStudies.ts` (+ `.zh`); `caseSlug`/`getCaseBySlug` |
+| Application notes (live, 18) | `data/applicationsData.js` (+ `.zh.ts`) |
+| Application notes (retired 62) | `components/applicationNotes.ts` (+ `.zh`) — content kept for reference; the route is redirected |
+| Legacy URL map | `components/legacyApplicationRedirects.ts` |
+| Case studies (10, withdrawn) | `components/caseStudies.ts` (+ `.zh`); `caseSlug`/`getCaseBySlug` |
 | Product ↔ app/case matching | `components/productApplications.ts` (`brandsForCase`, `techRoutesForCase`, `productForAppNote`) |
 | App-note page | `app/application/[slug]/page.tsx` + `components/AppNoteView.tsx` |
 | Case-study page | `app/case-studies/[slug]/page.tsx` + `components/CaseStudyPageView.tsx` |
 | Product listings | `components/SystemsIndexView.tsx`, `BrandLandingView.tsx`, `ProductDetailView.tsx` |
-| Crawl infra | `app/sitemap.ts`, `app/robots.ts` |
+| Crawl infra | `app/sitemap.ts`, `app/robots.ts`, `next.config.ts` (redirects) |
+| SEO validation | `scripts/validate-seo.mjs`, `scripts/validate-legacy-redirects.mjs` |
 
 ---
 
-## 7. Current state
+## 7. Validation (run these before every SEO push)
 
-- Open **PR #71** (branch `claude/product-image-assets-30ar7q`) bundles: modal
-  removal → landing-page navigation, brand + technology stickers, the 6-tech
-  canonical taxonomy (EN + ZH, all with "System"/"系统"). **Merge to deploy.**
-- Pending (user): upload product PDFs to COS + send links → add datasheet
-  buttons. "News" section deferred until 3+ pieces are ready.
+Build and start the site (`npm run build && npm start`), then:
+
+| Command | Checks |
+|---------|--------|
+| `npm run validate:seo` | sitemap is valid XML; every URL 200s exactly once; self-referencing canonicals; no noindex in the sitemap; reciprocal hreflang groups; **every `<image:loc>` absolute and resolving**; no off-site URLs |
+| `npm run validate:redirects` | every legacy `/application/[slug]` 308s to the destination the map declares, and that destination 200s |
+| `npm run validate:i18n` | locale files carry the same keys |
+
+---
+
+## 8. Diagnosis log — 2026-09-14 impression drop
+
+Search Console showed impressions falling away over 2026-09-07 → 09-14, the week
+of the #240–#253 restructure. Three distinct causes, two now fixed:
+
+1. **Sitemap rejected as invalid (fixed).** 21 of the 135 `<image:loc>` entries
+   were site-relative paths (`/images/infrared/...`) because `productImage()`
+   returns a relative path for photos stored in the repo, and `app/sitemap.ts`
+   emitted it verbatim. Search Console reported "sitemap is readable, but has
+   errors → Invalid URL". Fixed by absolutizing in `app/sitemap.ts`
+   (`absoluteUrl()`); the same fix went into `productJsonLd()`. `validate:seo`
+   now fails on any relative or non-resolving image URL.
+
+2. **62 indexed URLs redirected onto a generic index (fixed).** The old
+   `/application/[slug]` notes were all sent to `/applications` by one
+   `/application/:path*` catch-all. Google treats that as a soft 404 — the URLs
+   are dropped rather than passing their ranking signals on, and they appear
+   under "Page with redirect". 59 of the 62 are now mapped one-to-one to the
+   live page on the same subject (`components/legacyApplicationRedirects.ts`);
+   the remaining 3 are aerospace notes with no live equivalent yet.
+
+3. **24 case-study URLs withdrawn (open decision, NOT reversed).** All
+   `/case-studies` pages went `noindex, nofollow`, were unlinked, and left the
+   sitemap (205 → 238 URLs overall, but these 24 were removed). They were
+   deliberately withdrawn, so nothing was changed here — but they are indexed
+   pages taken off the board, and they account for the largest single block of
+   lost impressions. Decide whether the withdrawal is permanent: if it is, the
+   pages should 301 to their closest live equivalent rather than sit on
+   `noindex`; if not, restore them to the sitemap.
+
+**Still to do (needs the site owner):** resubmit `sitemap.xml` in Search Console
+once the sitemap fix is deployed, then use the URL Inspection tool on a few of
+the remapped `/application/...` URLs to get them recrawled.

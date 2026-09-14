@@ -108,7 +108,7 @@ export const partFamilies: PartFamily[] = [
   },
   {
     id: "lx500",
-    name: {"en": "LX500 V2 Controllers, LED Heads & Accessories", "zh": "LX500 V2 控制器、LED 灯头与配件", "vi": "Bộ điều khiển LX500 V2, đầu LED & phụ kiện", "th": "ตัวควบคุม LX500 V2 หัว LED & อุปกรณ์เสริม"},
+    name: {"en": "LX500 Controllers, LED Heads & Accessories", "zh": "LX500 控制器、LED 灯头与配件", "vi": "Bộ điều khiển LX500, đầu LED & phụ kiện", "th": "ตัวควบคุม LX500 หัว LED & อุปกรณ์เสริม"},
     dims: [
       { key: "kind", label: {"en": "Kind", "zh": "类别", "vi": "Loại", "th": "ประเภท"} },
       { key: "item", label: {"en": "Item", "zh": "项目", "vi": "Mục", "th": "รายการ"} },
