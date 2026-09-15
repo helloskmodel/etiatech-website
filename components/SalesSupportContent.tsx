@@ -7,9 +7,10 @@ import { SERVICE_EMAIL } from "@/components/contact";
 
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
 
-// Where the troubleshooter entry point is offered. The tool carries all four
-// languages; Thai and Vietnamese are held back on purpose.
-const TROUBLESHOOTER_LOCALES: Locale[] = ["en", "zh"];
+// Where the troubleshooter entry point is offered. Thai and Vietnamese were
+// held back while their fault text was machine-translated; ETIA Thailand and
+// ETIA Viet Nam have since supplied their own, so all four are open.
+const TROUBLESHOOTER_LOCALES: Locale[] = ["en", "zh", "th", "vi"];
 
 // ETIA Service Commitment poster — one per language, shown on the right.
 // ?v bump forces Next's image optimizer to refetch after the artwork is
@@ -130,28 +131,34 @@ export default function SalesSupportContent() {
       </section>
 
       {/* Self-service troubleshooter. The tool itself lives in public/tools/
-          and carries all four languages, but the entry point is offered in
-          Chinese and English only — Thai and Vietnamese are deliberately out.
-          The link passes ?lang= so the tool opens in the page's language. */}
+          and carries all four languages. The link passes ?lang= so the tool
+          opens in the page's language. */}
       {TROUBLESHOOTER_LOCALES.includes(locale) && (
         <section className="bg-[#F6F8FB] py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Self-service support", zh: "自助支持" }, locale)}</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Troubleshooting Guide", zh: "故障排查向导" }, locale)}</h2>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Self-service support", zh: "自助支持", th: "การสนับสนุนด้วยตนเอง", vi: "Tự hỗ trợ" }, locale)}</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Troubleshooting Guide", zh: "故障排查向导", th: "คู่มือแก้ปัญหา", vi: "Hướng dẫn khắc phục sự cố" }, locale)}</h2>
             <p className="mx-auto mt-4 max-w-xl leading-7 text-[#5F6C7B]">
               {t({
-                en: "Drawn from the troubleshooting sections of the official user guides. Pick your model and the symptom, and work down to the cause and the fix — if it is not there, talk to an engineer.",
-                zh: "基于官方用户指南的故障排查章节整理。按提示选择设备与症状，一步步定位原因与处理方法——查不出的问题再联系工程师。",
+                en: "The fault list ETIA's own service engineers work from. Pick your model and the symptom, then work down the checks in order — if none of them clears it, talk to an engineer.",
+                zh: "ETIA 维修中心工程师的现场故障清单。选择设备与症状，按顺序逐项排查——都试过仍未解决，再联系工程师。",
+                th: "รายการอาการเสียที่วิศวกรศูนย์ซ่อม ETIA ใช้งานจริง เลือกรุ่นเครื่องและอาการ แล้วไล่ตรวจตามลำดับ หากยังไม่หาย ให้ติดต่อวิศวกร",
+                vi: "Danh mục lỗi mà kỹ sư trung tâm bảo hành ETIA dùng thực tế. Chọn model và hiện tượng, rồi kiểm tra lần lượt theo thứ tự — nếu vẫn chưa hết lỗi, hãy liên hệ kỹ sư.",
               }, locale)}
             </p>
             <a
               href={`/tools/troubleshooter?lang=${locale}`}
               className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#1A56DB] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#123C94]"
             >
-              🔧 {t({ en: "Start troubleshooting", zh: "开始排查" }, locale)} <ArrowRight className="h-4 w-4" />
+              🔧 {t({ en: "Start troubleshooting", zh: "开始排查", th: "เริ่มตรวจหาสาเหตุ", vi: "Bắt đầu kiểm tra" }, locale)} <ArrowRight className="h-4 w-4" />
             </a>
             <p className="mt-3 text-xs text-[#7B8794]">
-              {t({ en: "Covers common faults on the OmniCure S2000 Elite and LX500.", zh: "覆盖 OmniCure S2000 Elite 与 LX500 的常见故障。" }, locale)}
+              {t({
+                en: "Covers common faults on the OmniCure S2000 Elite and LX500.",
+                zh: "覆盖 OmniCure S2000 Elite 与 LX500 的常见故障。",
+                th: "ครอบคลุมอาการเสียที่พบบ่อยของ OmniCure S2000 Elite และ LX500",
+                vi: "Bao gồm các lỗi thường gặp của OmniCure S2000 Elite và LX500.",
+              }, locale)}
             </p>
 
             {/* The tool answers what the manual answers. Everything else needs a
@@ -159,7 +166,7 @@ export default function SalesSupportContent() {
                 away — the same mailbox and messengers the rest of the site uses. */}
             <div className="mt-10 border-t border-[#E2E8F0] pt-8">
               <p className="text-sm text-[#5F6C7B]">
-                {t({ en: "Need a person? Contact us:", zh: "如需人工支持，请联系：" }, locale)}
+                {t({ en: "Need a person? Contact us:", zh: "如需人工支持，请联系：", th: "ต้องการคุยกับเจ้าหน้าที่? ติดต่อเรา:", vi: "Cần gặp người hỗ trợ? Liên hệ:" }, locale)}
               </p>
               <div className="mt-4 flex flex-wrap justify-center gap-3">
                 <a
