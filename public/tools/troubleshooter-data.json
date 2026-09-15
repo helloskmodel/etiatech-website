@@ -133,7 +133,7 @@
           "name": {
             "en": "Head is not recognised",
             "zh": "照射头无法正常识别",
-            "th": "หัวฉายแสงไม่ถูกตรวจจับตามปกติ",
+            "th": "หัวฉายแสง (LED Head) ไม่ถูกตรวจจับตามปกติ",
             "vi": "Đầu chiếu (LED Head) không được nhận dạng bình thường"
           },
           "checks": [
@@ -156,20 +156,20 @@
           "name": {
             "en": "No UV output",
             "zh": "无法放出紫外光",
-            "th": "ไม่มีแสงออกมา",
+            "th": "ไม่มีแสง UV ออกมา",
             "vi": "Không phát ra tia UV"
           },
           "checks": [
             {
               "en": "Check the safety interlock connection.",
               "zh": "检查安全互锁连接是否正常。",
-              "th": "ตรวจสอบว่าการเชื่อมต่อระบบล็อกนิรภัยปกติหรือไม่",
+              "th": "ตรวจสอบว่าการเชื่อมต่อระบบล็อกนิรภัย (Safety Interlock) ปกติหรือไม่",
               "vi": "Kiểm tra kết nối khóa liên động an toàn (Safety Interlock) có bình thường không"
             },
             {
               "en": "Check the trigger signal source setting in the system.",
               "zh": "在系统中检查信号来源是否异常。",
-              "th": "ตรวจสอบในระบบว่าแหล่งสัญญาณสั่งงานผิดปกติหรือไม่",
+              "th": "ตรวจสอบในระบบว่าแหล่งสัญญาณสั่งงาน (Trigger Source) ผิดปกติหรือไม่",
               "vi": "Kiểm tra trong hệ thống nguồn tín hiệu kích hoạt (Trigger Source) có bất thường không"
             },
             {
@@ -198,7 +198,7 @@
             {
               "en": "Check the focusing lens for contamination.",
               "zh": "检查聚光镜是否沾染污渍。",
-              "th": "ตรวจสอบว่าเลนส์รวมแสงมีคราบสกปรกหรือไม่",
+              "th": "ตรวจสอบว่าเลนส์รวมแสง (Focusing Lens) มีคราบสกปรกหรือไม่",
               "vi": "Kiểm tra thấu kính hội tụ (Focusing Lens) có bị bám bẩn không"
             }
           ]
@@ -250,20 +250,20 @@
           "name": {
             "en": "No UV output",
             "zh": "无法放出紫外光",
-            "th": "ไม่มีแสงออกมา",
+            "th": "ไม่มีแสง UV ออกมา",
             "vi": "Không phát ra tia UV"
           },
           "checks": [
             {
               "en": "Check the light guide is fully seated — a red indicator LED means it is not.",
               "zh": "检查光导管是否安装到位——LED 指示灯呈红色则未安装到位。",
-              "th": "ตรวจสอบว่าท่อนำแสงติดตั้งเข้าที่แล้วหรือไม่ หากไฟแสดงสีแดงแสดงว่ายังไม่เข้าที่",
+              "th": "ตรวจสอบว่าท่อนำแสง (Light Guide) ติดตั้งเข้าที่แล้วหรือไม่ (หากไฟ LED แสดงสีแดง แสดงว่ายังไม่เข้าที่)",
               "vi": "Kiểm tra ống dẫn sáng (Light Guide) đã lắp đúng vị trí chưa (đèn LED báo màu đỏ nghĩa là chưa lắp đúng)"
             },
             {
               "en": "Check the screen: the lamp may still be warming up.",
               "zh": "检查系统界面，灯泡是否处于预热状态。",
-              "th": "ตรวจสอบหน้าจอระบบว่าหลอดไฟอยู่ในสถานะอุ่นเครื่องหรือไม่",
+              "th": "ตรวจสอบหน้าจอระบบว่าหลอดไฟอยู่ในสถานะอุ่นเครื่อง (Warm-up) หรือไม่",
               "vi": "Kiểm tra trên giao diện hệ thống xem bóng đèn có đang ở trạng thái làm nóng (Warm-up) không"
             },
             {
