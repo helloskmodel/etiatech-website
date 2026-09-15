@@ -60,15 +60,21 @@ const OFFICES: Array<{ city: LangText; country: LangText; note?: LangText; highl
     country: { en: "Thailand", zh: "泰国", th: "ประเทศไทย", vi: "Thái Lan" },
     highlight: true,
     note: {
-      en: "Etiatec (Thailand) Co., Ltd. — our Thai subsidiary, with local stock, installation and service.",
-      zh: "Etiatec (Thailand) Co., Ltd. — 泰国子公司，提供本地备货、安装与服务。",
-      th: "Etiatec (Thailand) Co., Ltd. — บริษัทในเครือที่ประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
-      vi: "Etiatec (Thailand) Co., Ltd. — công ty con tại Thái Lan, có sẵn hàng, lắp đặt và dịch vụ tại chỗ.",
+      en: "ETIATECH (THAILAND) Co., Ltd. — our Thai group company, with local stock, installation and service.",
+      zh: "ETIATECH (THAILAND) Co., Ltd. — 集团泰国公司，提供本地备货、安装与服务。",
+      th: "บริษัท อีเทียเทค (ไทยแลนด์) จำกัด — บริษัทในเครือที่ประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
+      vi: "ETIATECH (THAILAND) Co., Ltd. — công ty trong tập đoàn tại Thái Lan, có sẵn hàng, lắp đặt và dịch vụ tại chỗ.",
     },
   },
   {
     city: { en: "Bac Ninh", zh: "北宁", th: "บั๊กนิญ", vi: "Bắc Ninh" },
     country: { en: "Vietnam", zh: "越南", th: "เวียดนาม", vi: "Việt Nam" },
+    note: {
+      en: "ETIA-TECH VIET NAM Co., Ltd. — our Vietnamese group company, with local stock, installation and service.",
+      zh: "ETIA-TECH VIET NAM Co., Ltd. — 集团越南公司，提供本地备货、安装与服务。",
+      th: "ETIA-TECH VIET NAM Co., Ltd. — บริษัทในเครือที่เวียดนาม พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
+      vi: "CÔNG TY TNHH ETIA-TECH VIỆT NAM — công ty trong tập đoàn tại Việt Nam, có sẵn hàng, lắp đặt và dịch vụ tại chỗ.",
+    },
   },
 ];
 
@@ -135,14 +141,14 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-[#143C96] mb-8">{t({ en: "Local teams in four cities", zh: "四地本地团队", th: "ทีมงานท้องถิ่นในสี่เมือง", vi: "Đội ngũ địa phương tại bốn thành phố" }, locale)}</h2>
           <figure className="mb-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
             <div className="relative aspect-[16/7]">
-              <Image src="/images/etiatec-thailand-office.jpg" alt="ETIATEC (Thailand) Co., Ltd. office in Bangkok" fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
+              <Image src="/images/etiatec-thailand-office.jpg" alt="ETIATECH (THAILAND) Co., Ltd. office in Bangkok" fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
             </div>
             <figcaption className="px-5 py-3 text-xs text-gray-500">
               {t({
-                en: "The ETIATEC (Thailand) Co., Ltd. office in Bangkok.",
-                zh: "ETIATEC (Thailand) Co., Ltd. 曼谷办公楼。",
-                th: "สำนักงาน ETIATEC (Thailand) Co., Ltd. ในกรุงเทพฯ",
-                vi: "Văn phòng ETIATEC (Thailand) Co., Ltd. tại Bangkok.",
+                en: "The ETIATECH (THAILAND) Co., Ltd. office in Bangkok.",
+                zh: "ETIATECH (THAILAND) Co., Ltd. 曼谷办公楼。",
+                th: "สำนักงาน ETIATECH (THAILAND) Co., Ltd. ในกรุงเทพฯ",
+                vi: "Văn phòng ETIATECH (THAILAND) Co., Ltd. tại Bangkok.",
               }, locale)}
             </figcaption>
           </figure>

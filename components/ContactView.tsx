@@ -36,8 +36,14 @@ export default function ContactView() {
   const inquiryEmail = localeSalesEmail(locale);
   const inquiryHref = inquiryMailto(locale, { subject: selected.subject, context: selected.context });
 
+  // The three ETIA group companies are separate legal entities on separate
+  // books. A customer's PO, invoice and warranty are with whichever one serves
+  // their market, so each card names its own — the site is shared, the legal
+  // counterparty is not. Names exactly as registered; nothing abbreviated.
   const offices: {
     region: { en: string; zh: string; th?: string; vi?: string };
+    /** Registered legal entity behind this office. */
+    entity: LangText;
     contact?: LangText;
     title?: { en: string; zh: string; th?: string; vi?: string };
     phone?: string;
@@ -49,9 +55,9 @@ export default function ContactView() {
     localLang?: Locale;
     en?: string;
   }[] = [
-    { region: { en: "Hong Kong", zh: "香港", th: "ฮ่องกง", vi: "Hồng Kông" }, contact: { en: "Vincent Wang", zh: "汪先生 Vincent Wang", th: "Vincent Wang", vi: "Vincent Wang" }, phone: "00852-69150539", email: "sales@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
-    { region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷", th: "ไทย · กรุงเทพฯ", vi: "Thái Lan · Bangkok" }, contact: { en: "Mr. Sompoch Ratchakom (Job)", zh: "Mr. Sompoch Ratchakom (Job)", th: "คุณสมโภช รัชกร (จ๊อบ)", vi: "Mr. Sompoch Ratchakom (Job)" }, title: { en: "Sales Director", zh: "销售总监", th: "ผู้อำนวยการฝ่ายขาย", vi: "Giám đốc kinh doanh" }, phone: "+66 811 746 947", email: "sales@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", localLang: "th", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
-    { region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁", th: "เวียดนาม · บั๊กนิญ", vi: "Việt Nam · Bắc Ninh" }, contact: { en: "Tien Nguyen", zh: "Tien Nguyen", th: "Tien Nguyen", vi: "Tiến Nguyễn" }, title: { en: "Technical Engineer", zh: "技术工程师", th: "วิศวกรเทคนิค", vi: "Kỹ sư kỹ thuật" }, phone: "+84 344 590 091", email: "sales@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", localLang: "vi", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
+    { entity: { en: "ETIA-TECH (ASIA) Co., Limited", zh: "ETIA-TECH (ASIA) Co., Limited", th: "ETIA-TECH (ASIA) Co., Limited", vi: "ETIA-TECH (ASIA) Co., Limited" }, region: { en: "Hong Kong", zh: "香港", th: "ฮ่องกง", vi: "Hồng Kông" }, contact: { en: "Vincent Wang", zh: "汪先生 Vincent Wang", th: "Vincent Wang", vi: "Vincent Wang" }, phone: "00852-69150539", email: "sales@etia-tech.com", en: "Room 1003, 10/F, Tower 1, Lippo Centre, 89 Queensway, Admiralty, Hong Kong" },
+    { entity: { en: "ETIATECH (THAILAND) Co., Ltd.", zh: "ETIATECH (THAILAND) Co., Ltd.", th: "บริษัท อีเทียเทค (ไทยแลนด์) จำกัด", vi: "ETIATECH (THAILAND) Co., Ltd." }, region: { en: "Thailand · Bangkok", zh: "泰国 · 曼谷", th: "ไทย · กรุงเทพฯ", vi: "Thái Lan · Bangkok" }, contact: { en: "Mr. Sompoch Ratchakom (Job)", zh: "Mr. Sompoch Ratchakom (Job)", th: "คุณสมโภช รัชกร (จ๊อบ)", vi: "Mr. Sompoch Ratchakom (Job)" }, title: { en: "Sales Director", zh: "销售总监", th: "ผู้อำนวยการฝ่ายขาย", vi: "Giám đốc kinh doanh" }, phone: "+66 811 746 947", email: "sales@etia-tech.com", local: "22/41 เอช-เคป บิซ เซ็นเตอร์ ถนนสุขาภิบาล 2 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250", localLang: "th", en: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250, Thailand" },
+    { entity: { en: "ETIA-TECH VIET NAM Co., Ltd.", zh: "ETIA-TECH VIET NAM Co., Ltd.", th: "ETIA-TECH VIET NAM Co., Ltd.", vi: "CÔNG TY TNHH ETIA-TECH VIỆT NAM" }, region: { en: "Vietnam · Bac Ninh", zh: "越南 · 北宁", th: "เวียดนาม · บั๊กนิญ", vi: "Việt Nam · Bắc Ninh" }, contact: { en: "Alik Wei", zh: "Alik Wei", th: "Alik Wei", vi: "Alik Wei" }, title: { en: "Sales Manager", zh: "销售经理", th: "ผู้จัดการฝ่ายขาย", vi: "Trưởng phòng kinh doanh" }, phone: "+84 344 590 091", email: "sales@etia-tech.com", local: "Số 10 đường Thanh Niên, Khu 5, Phường Võ Cường, Tỉnh Bắc Ninh, Việt Nam", localLang: "vi", en: "No. 10 Thanh Nien Street, Area 5, Vo Cuong Ward, Bac Ninh Province, Viet Nam" },
   ];
 
   return (
@@ -126,6 +132,7 @@ export default function ContactView() {
               return (
               <div key={c.en ?? c.email} className="rounded-2xl border border-[#E6EAF0] bg-white p-6 transition-all hover:shadow-md">
                 <span className="font-bold text-[#1A56DB]">{t(c.region, locale)}</span>
+                <p className="mt-1 text-[11px] font-semibold leading-snug text-[#667085]">{t(c.entity, locale)}</p>
                 {c.contact && (
                   <p className="mt-2 text-xs text-gray-600">
                     <span className="font-semibold">{t(c.contact, locale)}</span>
@@ -146,7 +153,20 @@ export default function ContactView() {
               );
             })}
           </div>
-          <p className="mt-6 text-xs text-gray-400">{t({ en: "* Contact us by email for the fastest response — our team typically replies within one business day.", zh: "* 通过邮件联系我们可获得快速响应——我们的团队通常在1个工作日内回复。", th: "* ติดต่อเราทางอีเมลเพื่อการตอบกลับที่รวดเร็ว — ทีมงานของเรามักตอบกลับภายในหนึ่งวันทำการ", vi: "* Liên hệ qua email để được phản hồi nhanh chóng — đội ngũ của chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
+          {/* Which legal entity a customer is actually dealing with. The three
+              companies share this website but not their books: the PO, the
+              invoice and the warranty are with the one that serves the market. */}
+          <div className="mt-6 rounded-xl border border-[#E6EAF0] bg-[#F7FAFC] p-4">
+            <p className="text-xs leading-relaxed text-[#667085]">
+              {t({
+                en: "ETIA Technology is a group of separately incorporated companies. This website is operated by ETIA-TECH (ASIA) Co., Limited (Hong Kong). ETIATECH (THAILAND) Co., Ltd. and ETIA-TECH VIET NAM Co., Ltd. are separate legal entities within the same group, each keeping its own accounts; your order, invoice and warranty are with the company that serves your market.",
+                zh: "ETIA Technology 由数家独立注册的公司组成。本网站由 ETIA-TECH (ASIA) Co., Limited（中国香港）运营。ETIATECH (THAILAND) Co., Ltd. 与 ETIA-TECH VIET NAM Co., Ltd. 为同一集团内的独立法人，各自独立核算；您的订单、发票与保修由服务您所在市场的那家公司承担。",
+                th: "ETIA Technology ประกอบด้วยบริษัทที่จดทะเบียนแยกจากกันหลายแห่ง เว็บไซต์นี้ดำเนินการโดย ETIA-TECH (ASIA) Co., Limited (ฮ่องกง) ส่วน บริษัท อีเทียเทค (ไทยแลนด์) จำกัด และ ETIA-TECH VIET NAM Co., Ltd. เป็นนิติบุคคลแยกต่างหากภายในกลุ่มเดียวกัน แต่ละแห่งมีบัญชีของตนเอง คำสั่งซื้อ ใบแจ้งหนี้ และการรับประกันของท่านจะอยู่กับบริษัทที่ให้บริการตลาดของท่าน",
+                vi: "ETIA Technology gồm nhiều công ty được thành lập độc lập. Trang web này do ETIA-TECH (ASIA) Co., Limited (Hồng Kông) vận hành. ETIATECH (THAILAND) Co., Ltd. và CÔNG TY TNHH ETIA-TECH VIỆT NAM là các pháp nhân riêng biệt trong cùng tập đoàn, mỗi công ty hạch toán độc lập; đơn hàng, hóa đơn và bảo hành của quý vị thuộc về công ty phục vụ thị trường của quý vị.",
+              }, locale)}
+            </p>
+          </div>
+          <p className="mt-4 text-xs text-gray-400">{t({ en: "* Contact us by email for the fastest response — our team typically replies within one business day.", zh: "* 通过邮件联系我们可获得快速响应——我们的团队通常在1个工作日内回复。", th: "* ติดต่อเราทางอีเมลเพื่อการตอบกลับที่รวดเร็ว — ทีมงานของเรามักตอบกลับภายในหนึ่งวันทำการ", vi: "* Liên hệ qua email để được phản hồi nhanh chóng — đội ngũ của chúng tôi thường trả lời trong vòng một ngày làm việc." }, locale)}</p>
         </div>
       </section>
 

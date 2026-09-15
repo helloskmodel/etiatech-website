@@ -292,11 +292,11 @@ export function getHomeDict(lang: ThLocale): ThHomeDict {
 }
 
 // ─── Authorized-distributor trust block ─────────────────────────────────
-// Etiatec (Thailand) is the Excelitas-appointed authorized OmniCure distributor
+// ETIATECH (THAILAND) is the Excelitas-appointed authorized OmniCure distributor
 // for Thailand (cert. dated 2026-05-28, valid one year). Surfacing this on every
 // page is both a conversion driver and an E-E-A-T trust signal.
 export const COMPANY = {
-  legalName: "Etiatec (Thailand) Co., Ltd.",
+  legalName: "ETIATECH (THAILAND) Co., Ltd.",
   address: "22/41 H-Cape Biz Center, Sukhaphiban 2 Road, Prawet Subdistrict, Prawet District, Bangkok 10250",
   addressLocality: "Bangkok",
   postalCode: "10250",

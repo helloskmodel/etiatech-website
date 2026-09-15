@@ -27,7 +27,7 @@ const URL = `${SITE_URL}/omnicure-thailand`;
 export const metadata: Metadata = {
   title: seoTitle("OmniCure UV Curing Systems in Thailand"),
   description: seoDescription(
-    "Genuine OmniCure UV curing systems in Thailand through authorized channels — S2000 Elite, S1500 Pro, LX500 and AC Series, with Bangkok stock, installation, calibration and service from Etiatec (Thailand)."
+    "Genuine OmniCure UV curing systems in Thailand through authorized channels — S2000 Elite, S1500 Pro, LX500 and AC Series, with Bangkok stock, installation, calibration and service from ETIATECH (THAILAND)."
   ),
   keywords: [
     "OmniCure Thailand",
