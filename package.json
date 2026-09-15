@@ -11,7 +11,8 @@
     "validate:seo": "node scripts/validate-seo.mjs",
     "validate:redirects": "node scripts/validate-legacy-redirects.mjs",
     "validate:catalog": "node scripts/validate-catalog.mjs",
-    "validate:claims": "node scripts/validate-claims.mjs"
+    "validate:claims": "node scripts/validate-claims.mjs",
+    "validate:search": "node --experimental-strip-types --no-warnings scripts/validate-search.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.22.0",

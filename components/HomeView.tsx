@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { inquiryMailto } from "@/components/contact";
 import { useLocale, t, type LangText, type Locale } from "@/components/LocaleContext";
+import SiteSearch from "@/components/SiteSearch";
 import { productImage, products } from "@/components/productCatalog";
 import { cosResize } from "@/components/cosImage";
 import { localizeHref } from "@/components/localeHref";
@@ -74,13 +75,19 @@ export default function HomeView() {
   }, [heroProducts.length]);
 
   return <div className="bg-white text-[#102038]">
-    <section className="relative overflow-hidden border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
-      <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1A56DB]/10 blur-3xl" />
-      <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
+    {/* No `overflow-hidden` on the section itself: it would clip the search
+        panel, which has to hang below the hero. The decorative blurs are the
+        only thing that needed clipping, so they get their own clipped layer. */}
+    <section className="relative z-20 border-b border-[#D9E4EA] bg-gradient-to-br from-white via-[#EEF6FF] to-[#F1FAEF]">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full bg-[#1A56DB]/10 blur-3xl" />
+        <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-[#63C94A]/10 blur-3xl" />
+      </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-12 sm:px-6 md:py-16 lg:grid-cols-[1.05fr_.95fr] lg:items-start lg:px-8">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" />{t({ en: "Genuine Products Through Authorized Channels", zh: "授权渠道正品", th: "สินค้าของแท้ผ่านช่องทางที่ได้รับอนุญาต" , vi: "Sản phẩm chính hãng qua kênh được ủy quyền" }, locale)}</span>
           <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl"><CjkHeading locale={locale} text={{ en: "Your UV Curing Solution Partner", zh: "紫外线固化 就找 ETIA", th: "โซลูชัน UV Curing เลือก ETIA", vi: "Giải pháp UV Curing, hãy chọn ETIA" }} zh={<>紫外线固化 就找 ETIA</>} /><span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "From Selection to Support.", zh: "选型 应用 售后 一站支持", th: "การเลือกอุปกรณ์ การใช้งาน และบริการหลังการขาย — รองรับครบวงจร", vi: "Tư vấn lựa chọn, ứng dụng và hậu mãi — hỗ trợ trọn gói." }, locale)}</span></h1>
+          <div className="mt-7 max-w-xl"><SiteSearch /></div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href={salesMail} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to Sales", zh: "联系销售", th: "ติดต่อฝ่ายขาย" , vi: "Liên hệ kinh doanh" }, locale)} <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Connect with Engineer", zh: "对接工程师", th: "เชื่อมต่อกับวิศวกร" , vi: "Kết nối với kỹ sư" }, locale)}</a></div>
         </div>
         <div className="relative min-h-[340px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
