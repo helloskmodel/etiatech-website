@@ -350,6 +350,17 @@ function mailto(to, subject) {
   ].join("\n");
   return `mailto:${to}?subject=${encodeURIComponent(where ? `${subject} — ${where}` : subject)}&body=${encodeURIComponent(body)}`;
 }
+// The messengers a reader can reach ETIA on, all three shown to everyone: a
+// customer picks the app they already have open, not the one their country is
+// supposed to use, and labelling them by market only made two of the three look
+// like they were meant for somebody else. Brand names are the same in all four
+// site languages, so they are not carried as translations.
+const CHATS = [
+  { name: "WhatsApp", url: "whatsapp_url" },
+  { name: "LINE", url: "line_url" },
+  { name: "Zalo", url: "zalo_url" },
+];
+
 function contactBox() {
   const c = DATA.contact;
   return `<div class="stuck">
@@ -357,8 +368,7 @@ function contactBox() {
     <p>${esc(T(DATA.ui.stuck_b))}</p>
     <div class="stuck-actions">
       <a class="btn primary" href="${mailto(c.engineer_email, "OmniCure technical support")}">${esc(T(DATA.ui.contact_eng))}</a>
-      <a class="btn ghost" href="${esc(c.line_url)}" target="_blank" rel="noopener noreferrer">${esc(T(DATA.ui.contact_line))}</a>
-      <a class="btn ghost" href="${mailto(c.sales_email, "OmniCure parts enquiry")}">${esc(T(DATA.ui.contact_parts))}</a>
+      ${CHATS.map((k) => c[k.url] ? `<a class="btn ghost" href="${esc(c[k.url])}" target="_blank" rel="noopener noreferrer">${k.name}</a>` : "").join("")}
     </div></div>`;
 }
 
