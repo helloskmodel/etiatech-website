@@ -23,7 +23,6 @@ const OMNICURE_CATALOG_ORDER = [
   "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter",
   "lx500", "v3-led-heads", "ls200",
   "ac2", "ac4", "ac5", "ac7", "ac8", "ac8-hd", "ac9225", "ac9225-f",
-  "s2e-network-module",
 ];
 
 // Short technology tag shown on each product card (English + Chinese).
