@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: [
     "about ETIA Technology",
     "ETIA Thailand",
-    "Etiatec Thailand",
+    "ETIATECH Thailand",
     "genuine OmniCure supply Thailand Vietnam",
     "UV curing distributor",
     "UV curing systems Southeast Asia",

@@ -102,10 +102,10 @@ export default function OmniCureThailandView() {
           <p className="mt-5 max-w-3xl text-base leading-7 text-[#475467] md:text-lg">
             {t(
               {
-                en: "Etiatec (Thailand) Co., Ltd. supplies genuine OmniCure spot and area curing systems through authorized channels, with stock held in Bangkok and engineers who install, train and service on site.",
-                zh: "Etiatec (Thailand) Co., Ltd. 通过授权渠道供应 OmniCure 点光源与面光源固化系统原厂正品，曼谷备有现货，工程师提供现场安装、培训与维护。",
-                th: "Etiatec (Thailand) Co., Ltd. จัดจำหน่ายระบบบ่มแบบจุดและแบบพื้นที่ของ OmniCure ของแท้ผ่านช่องทางที่ได้รับอนุญาต มีสต็อกในกรุงเทพฯ และวิศวกรที่ติดตั้ง อบรม และบริการหน้างาน",
-                vi: "Etiatec (Thailand) Co., Ltd. cung cấp hệ thống đóng rắn điểm và diện tích OmniCure chính hãng qua kênh được ủy quyền, có sẵn hàng tại Bangkok cùng kỹ sư lắp đặt, đào tạo và bảo trì tại chỗ.",
+                en: "ETIATECH (THAILAND) Co., Ltd. supplies genuine OmniCure spot and area curing systems through authorized channels, with stock held in Bangkok and engineers who install, train and service on site.",
+                zh: "ETIATECH (THAILAND) Co., Ltd. 通过授权渠道供应 OmniCure 点光源与面光源固化系统原厂正品，曼谷备有现货，工程师提供现场安装、培训与维护。",
+                th: "บริษัท อีเทียเทค (ไทยแลนด์) จำกัด จัดจำหน่ายระบบบ่มแบบจุดและแบบพื้นที่ของ OmniCure ของแท้ผ่านช่องทางที่ได้รับอนุญาต มีสต็อกในกรุงเทพฯ และวิศวกรที่ติดตั้ง อบรม และบริการหน้างาน",
+                vi: "ETIATECH (THAILAND) Co., Ltd. cung cấp hệ thống đóng rắn điểm và diện tích OmniCure chính hãng qua kênh được ủy quyền, có sẵn hàng tại Bangkok cùng kỹ sư lắp đặt, đào tạo và bảo trì tại chỗ.",
               },
               locale
             )}
@@ -242,7 +242,7 @@ export default function OmniCureThailandView() {
             </p>
           </div>
           <div className="rounded-2xl border border-[#D9E4EA] bg-white p-6">
-            <p className="text-sm font-bold text-[#102A43]">Etiatec (Thailand) Co., Ltd.</p>
+            <p className="text-sm font-bold text-[#102A43]">{t({ en: "ETIATECH (THAILAND) Co., Ltd.", zh: "ETIATECH (THAILAND) Co., Ltd.", th: "บริษัท อีเทียเทค (ไทยแลนด์) จำกัด", vi: "ETIATECH (THAILAND) Co., Ltd." }, locale)}</p>
             <ul className="mt-4 space-y-3 text-sm text-[#475467]">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#98A2B3]" />
