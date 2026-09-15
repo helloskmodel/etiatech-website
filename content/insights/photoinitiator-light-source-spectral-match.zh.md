@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV 固化基础, 光引发剂, 光谱匹配]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/03-mercury-iron-gallium-lamp-spectral-output.png
-coverFit: contain
 ---
 
 **一句话答案：** 光引发剂只吸收特定波段的光，光源光谱与引发剂吸收谱不重叠时反应不会启动——这是 UV 固化的第一条规则。宽谱汞灯几乎兼容所有配方；UV LED 光谱窄（±10 nm），必须使用为该波长设计的 LED 配方。

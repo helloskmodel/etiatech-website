@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV Curing Basics, Photoinitiator, Spectral Matching]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/03-mercury-iron-gallium-lamp-spectral-output.png
-coverFit: contain
 ---
 
 **Câu trả lời một dòng:** Chất khơi mào quang chỉ hấp thụ ở những bước sóng nhất định; nếu phổ nguồn sáng không chồng lên phổ hấp thụ thì phản ứng không bao giờ bắt đầu — quy tắc số một của sấy UV. Đèn thủy ngân phổ rộng tương thích hầu hết công thức; UV LED phổ hẹp (±10 nm) nên phải dùng công thức thiết kế riêng cho bước sóng đó.

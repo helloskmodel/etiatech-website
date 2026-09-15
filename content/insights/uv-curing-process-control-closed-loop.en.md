@@ -4,8 +4,10 @@ description: "Light source output drifts with time and temperature and no operat
 date: 2026-09-15
 tags: [Process Control, Closed-Loop Feedback, Traceability]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 9
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/09-closed-loop-feedback-vs-no-feedback-lamp-output.png
-coverFit: contain
 ---
 
 **One-sentence answer:** Light source output drifts with time and temperature, and no operator can guarantee dose consistency piece by piece; process control solves this in three layers — source stability (closed-loop feedback, temperature monitoring), programmed exposure (multi-step StepCure, PLC triggering) and traceability (logs, permissions, remote management). This is the basis of batch consistency and audit compliance in medical, optical and automotive production.

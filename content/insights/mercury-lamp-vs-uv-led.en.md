@@ -4,6 +4,9 @@ description: "Mercury lamps are 200-600 nm broad-spectrum sources compatible wit
 date: 2026-09-15
 tags: [UV Curing Basics, Mercury Lamp, UV LED, Selection]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 6
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/06-mercury-lamp-vs-uv-led-spectrum.png
 ---
 

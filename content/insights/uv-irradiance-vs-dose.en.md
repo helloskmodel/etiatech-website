@@ -4,6 +4,9 @@ description: "Peak irradiance (W/cm²) determines cure speed and depth; dose (J/
 date: 2026-09-15
 tags: [UV Curing Basics, Irradiance, Dose, Process Window]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 4
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/04-uv-led-irradiance-vs-working-distance-optics.png
 ---
 

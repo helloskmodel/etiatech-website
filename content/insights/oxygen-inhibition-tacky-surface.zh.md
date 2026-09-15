@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV 固化基础, 氧阻聚, 表面固化]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/05-uvc-uvb-uva-penetration-depth-coating.png
-coverFit: contain
 ---
 
 **一句话答案：** 氧阻聚是涂层与空气界面的氧气捕获自由基、抑制聚合，导致表面发粘或欠固化的现象。对策有四：提高辐照度、氮气保护、引入 UVC 促成快速表皮、选用抗氧阻聚配方。

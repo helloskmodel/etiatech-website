@@ -4,8 +4,10 @@ description: "A photoinitiator absorbs only specific wavelengths; if the source 
 date: 2026-09-15
 tags: [UV Curing Basics, Photoinitiator, Spectral Matching]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 3
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/03-mercury-iron-gallium-lamp-spectral-output.png
-coverFit: contain
 ---
 
 **One-sentence answer:** A photoinitiator absorbs only specific wavelengths; if the light source spectrum does not overlap its absorption spectrum the reaction never starts — the first rule of UV curing. Broad-spectrum mercury lamps are compatible with almost any formulation; UV LEDs have a narrow spectrum (±10 nm) and require formulations designed for that wavelength.

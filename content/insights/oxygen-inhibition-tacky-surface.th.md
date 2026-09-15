@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV Curing Basics, Oxygen Inhibition, Surface Cure]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/05-uvc-uvb-uva-penetration-depth-coating.png
-coverFit: contain
 ---
 
 **คำตอบหนึ่งประโยค:** การยับยั้งด้วยออกซิเจน (oxygen inhibition) เกิดเมื่อออกซิเจนที่รอยต่อระหว่างสารเคลือบกับอากาศจับอนุมูลอิสระและกดปฏิกิริยาพอลิเมอไรเซชัน ทำให้ผิวเหนียวหรือบ่มไม่สมบูรณ์ วิธีแก้มีสี่ทาง: เพิ่มความเข้มแสง, ปกคลุมด้วยไนโตรเจน, เพิ่ม UVC เพื่อสร้างชั้นผิวเร็ว หรือใช้สูตรที่ต้านการยับยั้ง

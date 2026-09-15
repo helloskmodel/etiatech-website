@@ -31,6 +31,16 @@ export type Article = {
   // How the card thumbnail should fit the cover. "contain" suits square
   // infographics (shows the whole image, no crop); default is "cover".
   coverFit?: "cover" | "contain";
+  // "summary" drops the thumbnail from the index card and puts the headline on
+  // a tinted panel instead. For articles illustrated with diagrams: a spectrum
+  // chart or a screenshot is legible at full width inside the article and an
+  // unreadable smudge at 350 px. `cover` stays in the frontmatter either way —
+  // it is still the article's JSON-LD and Open Graph image.
+  cardStyle?: "summary";
+  // Series this article belongs to, and its place in the run. Rendered as the
+  // eyebrow line on a "summary" card — see components/insightSeries.ts.
+  series?: string;
+  seriesNo?: number;
   readingMinutes: number;
   locales: {
     en: ArticleLocaleContent;
@@ -48,6 +58,9 @@ type Frontmatter = {
   author?: string;
   cover?: string;
   coverFit?: string;
+  cardStyle?: string;
+  series?: string;
+  seriesNo?: string;
 };
 
 // Minimal, dependency-free frontmatter parser. Supports:
@@ -131,12 +144,22 @@ export function getAllArticles(): Article[] {
       author: en.fm.author ?? "ETIA Technology",
       cover: en.fm.cover || undefined,
       coverFit: en.fm.coverFit === "contain" ? "contain" : undefined,
+      cardStyle: en.fm.cardStyle === "summary" ? "summary" : undefined,
+      series: en.fm.series || undefined,
+      seriesNo: en.fm.seriesNo ? Number(en.fm.seriesNo) || undefined : undefined,
       readingMinutes: Math.max(1, Math.round(wordCount(rawEnBody) / 200)),
       locales,
     });
   }
 
-  articles.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  // Newest first. A series published in one batch shares a date, so fall back
+  // to its running order — otherwise the cards come out in readdir order and a
+  // run numbered 1..10 lands on the page shuffled.
+  articles.sort((a, b) => {
+    if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+    if (a.seriesNo && b.seriesNo) return a.seriesNo - b.seriesNo;
+    return 0;
+  });
   return (cache = articles);
 }
 
@@ -162,6 +185,9 @@ export function getArticleCards() {
       author: a.author,
       cover: a.cover,
       coverFit: a.coverFit,
+      cardStyle: a.cardStyle,
+      series: a.series,
+      seriesNo: a.seriesNo,
       readingMinutes: a.readingMinutes,
       locales,
     };

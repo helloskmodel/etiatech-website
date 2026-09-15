@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [过程控制, 闭环反馈, 可追溯]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/09-closed-loop-feedback-vs-no-feedback-lamp-output.png
-coverFit: contain
 ---
 
 **一句话答案：** 光源输出会随时间衰减、随温度波动，人工无法逐件保证剂量一致；过程控制通过三件事解决：光源稳定（闭环反馈、温度监测）、曝光程序化（多阶段 StepCure、PLC 触发）、过程可追溯（日志、权限、远程管理）。这是医疗、光学、汽车等行业实现批间一致与审计合规的基础。

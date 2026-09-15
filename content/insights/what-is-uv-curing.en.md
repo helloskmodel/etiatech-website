@@ -4,6 +4,9 @@ description: "UV curing is a photochemical process: a photoinitiator absorbs UV 
 date: 2026-09-15
 tags: [UV Curing Basics, Photochemistry, Guide]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 1
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/01-uv-curing-process-photo.png
 ---
 

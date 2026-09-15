@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [Radiometer, Calibration, Process Control]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/10-uv-led-beam-positioning-radiometer-calibration.png
-coverFit: contain
 ---
 
 **คำตอบหนึ่งประโยค:** เรดิโอมิเตอร์ UV คือเครื่องมือวัดความเข้มแสง (W/cm²) หรือกำลังแสง (W) ณ ตำแหน่งบ่ม เป็นวิธีเดียวที่เปลี่ยน "ค่าระบุของอุปกรณ์" ให้เป็น "ค่ากระบวนการจริง" แหล่งกำเนิดปรอทและ LED ต้องใช้เรดิโอมิเตอร์ที่ปรับเทียบต่างกัน การวัดต้องทำ ณ ตำแหน่งบ่มจริง ที่ความสูงโฟกัสถูกต้อง ลำแสงจัดแนวกับตัวตรวจจับ และสอบกลับได้ถึงมาตรฐานชาติ เช่น NIST

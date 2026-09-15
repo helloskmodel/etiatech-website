@@ -4,8 +4,10 @@ description: "Air-cooled UV LEDs need no chiller, integrate fastest at the lowes
 date: 2026-09-15
 tags: [UV LED, Cooling, Selection]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 8
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/08-air-cooled-vs-water-cooled-uv-led.png
-coverFit: contain
 ---
 
 **One-sentence answer:** Air-cooled UV LEDs need no chiller, run on 48 V DC, integrate fastest at the lowest cost and deliver 2–20 W/cm²; water-cooled UV LEDs remove heat through a coolant loop, deliver higher power (25–30 W/cm²), tolerate extreme temperature and dust, run quietly and reach 1.35 m in a single unit. Air-cooled is the default for normal factories; water-cooled for harsh environments or very high power.

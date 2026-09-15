@@ -4,8 +4,10 @@ description: "A UV radiometer is the only way to turn nominal equipment values i
 date: 2026-09-15
 tags: [Radiometer, Calibration, Process Control]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 10
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/10-uv-led-beam-positioning-radiometer-calibration.png
-coverFit: contain
 ---
 
 **One-sentence answer:** A UV radiometer measures irradiance (W/cm²) or optical power (W) at the cure position and is the only way to turn "nominal equipment values" into "actual process values". Mercury and LED sources need differently calibrated radiometers; measurement must be made at the actual cure position, at the correct focal height, with the beam aligned to the detector, and traced to a national standard such as NIST.

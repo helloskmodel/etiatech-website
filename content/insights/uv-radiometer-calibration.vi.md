@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [Radiometer, Calibration, Process Control]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/10-uv-led-beam-positioning-radiometer-calibration.png
-coverFit: contain
 ---
 
 **Câu trả lời một dòng:** Máy đo bức xạ UV (radiometer) đo cường độ (W/cm²) hoặc công suất quang (W) tại vị trí sấy, là cách duy nhất biến "giá trị danh định của thiết bị" thành "giá trị quy trình thực tế". Nguồn thủy ngân và LED cần máy đo hiệu chuẩn khác nhau; phép đo phải thực hiện tại đúng vị trí sấy, đúng chiều cao tiêu điểm, chùm sáng căn thẳng vào đầu dò và truy nguyên tới chuẩn quốc gia như NIST.
