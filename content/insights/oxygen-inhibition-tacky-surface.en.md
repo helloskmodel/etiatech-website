@@ -4,8 +4,10 @@ description: "Oxygen at the coating-air interface scavenges free radicals and le
 date: 2026-09-15
 tags: [UV Curing Basics, Oxygen Inhibition, Surface Cure]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 5
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/05-uvc-uvb-uva-penetration-depth-coating.png
-coverFit: contain
 ---
 
 **One-sentence answer:** Oxygen inhibition occurs when oxygen at the coating-air interface scavenges free radicals and suppresses polymerization, leaving the surface tacky or under-cured. Four remedies: raise irradiance, nitrogen inerting, add UVC to form a fast skin, or use an inhibition-resistant formulation.

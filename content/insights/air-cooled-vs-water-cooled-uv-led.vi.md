@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV LED, Cooling, Selection]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/08-air-cooled-vs-water-cooled-uv-led.png
-coverFit: contain
 ---
 
 **Câu trả lời một dòng:** UV LED làm mát bằng gió không cần chiller, chạy 48 V DC, tích hợp nhanh nhất với chi phí thấp nhất, cho 2–20 W/cm²; UV LED làm mát bằng nước tản nhiệt qua vòng nước, công suất cao hơn (25–30 W/cm²), chịu nhiệt độ khắc nghiệt và bụi, chạy êm, đạt 1,35 m trong một máy. Nhà xưởng thông thường mặc định chọn làm mát gió; môi trường khắc nghiệt hoặc công suất rất cao chọn làm mát nước.

@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [辐射计, 校准, 过程控制]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/10-uv-led-beam-positioning-radiometer-calibration.png
-coverFit: contain
 ---
 
 **一句话答案：** UV 辐射计是测量固化位置辐照度（W/cm²）或光功率（W）的仪器，是把"设备标称值"变成"实际工艺值"的唯一途径。汞灯与 LED 需用不同校准的辐射计；测量必须在实际固化位置、正确焦距、光束对准探测器的条件下进行，并溯源到 NIST 等国家标准。

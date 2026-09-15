@@ -4,6 +4,9 @@ description: "Spot curing focuses light into a millimeter-scale spot at very hig
 date: 2026-09-15
 tags: [UV Curing Basics, Spot Curing, Area Curing, Selection]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 7
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/07-uv-curing-spot-vs-area-six-technologies.png
 ---
 

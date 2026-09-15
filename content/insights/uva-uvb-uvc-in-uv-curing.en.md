@@ -4,6 +4,9 @@ description: "UVC is absorbed at the surface and overcomes oxygen inhibition; UV
 date: 2026-09-15
 tags: [UV Curing Basics, Wavelength, Spectrum]
 author: ETIA Technology
+cardStyle: summary
+series: uv-basics
+seriesNo: 2
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/02-ultraviolet-spectrum-uvc-uvb-uva-bands.png
 ---
 

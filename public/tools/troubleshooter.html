@@ -8,7 +8,7 @@
   :root {
     --ink:#1a2230; --ink-soft:#4a5568; --line:#e2e6ec; --bg:#f6f8fa; --card:#fff;
     --brand:#1f6feb; --brand-dark:#1a5fd0; --brand-tint:#eaf2ff;
-    --ok:#16a34a; --warn:#d97706; --stop:#dc2626;
+    --stop:#dc2626;
     --radius:12px; --shadow:0 1px 3px rgba(20,30,50,.06),0 6px 20px rgba(20,30,50,.05);
   }
   * { box-sizing:border-box; }
@@ -40,29 +40,14 @@
   .choice .body { min-width:0; }
   .choice .name { font-weight:650; font-size:15px; }
   .choice .desc { font-size:12.5px; color:var(--ink-soft); margin-top:3px; }
-  .choice.soon { opacity:.55; cursor:default; }
-  .choice.soon:hover { border-color:var(--line); transform:none; }
-  .badge-soon { font-size:10px; background:#eef1f5; color:#8794a5; padding:2px 7px; border-radius:10px; margin-left:6px; vertical-align:middle; }
-  .badge-feat { font-size:10px; background:#eaf2ff; color:#1f6feb; padding:2px 7px; border-radius:10px; margin-left:6px; vertical-align:middle; }
-  .swatch { width:30px; height:30px; border-radius:8px; flex-shrink:0; margin-top:1px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.08); }
   .panel { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); border-left:4px solid var(--brand); }
-  .panel.ok { border-left-color:var(--ok); } .panel.warn { border-left-color:var(--warn); } .panel.stop { border-left-color:var(--stop); }
-  .panel .tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; padding:3px 9px; border-radius:20px; margin-bottom:12px; }
-  .tag.cause { background:var(--brand-tint); color:var(--brand-dark); }
-  .tag.ok { background:#e7f6ec; color:var(--ok); } .tag.warn { background:#fdf0dc; color:var(--warn); } .tag.stop { background:#fdeaea; color:var(--stop); }
+  .panel.stop { border-left-color:var(--stop); }
   .panel h2 { font-size:18px; margin:0 0 10px; }
   .panel p { margin:0 0 12px; font-size:14.5px; color:#33404f; }
   .steps { margin:0 0 14px; padding-left:0; list-style:none; counter-reset:s; }
   .steps li { position:relative; padding:6px 0 6px 34px; font-size:14.5px; border-bottom:1px dashed var(--line); }
   .steps li:last-child { border-bottom:none; }
   .steps li::before { counter-increment:s; content:counter(s); position:absolute; left:0; top:6px; width:22px; height:22px; background:var(--brand); color:#fff; border-radius:50%; font-size:12px; font-weight:700; display:grid; place-items:center; }
-  .note { background:#fbfcfe; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:13px; color:var(--ink-soft); }
-  .note b { color:var(--ink); }
-  .followup { margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
-  .followup .fq { font-weight:650; font-size:15px; margin-bottom:10px; }
-  .yn { display:flex; gap:10px; flex-wrap:wrap; }
-  .yn button { flex:1; min-width:130px; padding:11px; border:1px solid var(--line); background:#fff; border-radius:10px; cursor:pointer; font-family:inherit; font-size:14px; font-weight:600; color:var(--ink); transition:.14s; }
-  .yn button:hover { border-color:var(--brand); background:var(--brand-tint); }
   .stuck { margin-top:22px; background:linear-gradient(180deg,#fff,#f9fbff); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; }
   .stuck h3 { margin:0 0 4px; font-size:15px; }
   .stuck p { margin:0 0 14px; font-size:13px; color:var(--ink-soft); }
@@ -88,8 +73,6 @@
     font:inherit; font-size:12px; padding:4px 9px; border-radius:7px; cursor:pointer; }
   .langs button[aria-current="true"] { background:var(--brand-tint); border-color:var(--brand);
     color:var(--brand-dark); font-weight:700; }
-  .when { display:inline-block; margin:0 0 8px; padding:3px 9px; border-radius:99px;
-    background:var(--brand-tint); color:var(--brand-dark); font-size:12px; font-weight:600; }
   .answers { display:flex; flex-direction:column; gap:14px; }
   .results { margin-top:14px; display:flex; flex-direction:column; gap:8px; }
   .result { display:block; width:100%; text-align:left; border:1px solid var(--line); background:#fff;
@@ -100,8 +83,6 @@
   .empty { padding:14px; color:var(--ink-soft); font-size:14px; }
   .src-note { margin-top:26px; font-size:12px; color:var(--ink-soft); }
   .src-note span { display:block; }
-  .ring-dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:7px;
-    vertical-align:-1px; box-shadow:0 0 0 2px #fff, 0 0 0 3px var(--line); }
 </style>
 </head>
 <body>
@@ -266,26 +247,14 @@ function renderAnswer() {
     <div><div class="eyebrow">${esc(state.product.name)}</div>
     <h1 class="q">${esc(T(s.name))}</h1>
     <div class="sub">${esc(T(DATA.ui.answer_sub))}</div></div>
-    <div class="answers">${s.causes.map(causeCard).join("")}</div>
+    <div class="answers"><div class="panel">
+      <ol class="steps">${s.checks.map((c) => `<li>${esc(T(c))}</li>`).join("")}</ol>
+    </div></div>
     ${refTable(state.product.id)}
     ${contactBox()}`;
 }
 
-function causeCard(c) {
-  const lvl = ["ok", "warn", "stop"].includes(c.level) ? c.level : "";
-  const tagClass = lvl || "cause";
-  const dot = c.swatch ? `<span class="ring-dot" style="background:${esc(c.swatch)}"></span>` : "";
-  return `<div class="panel ${lvl}">
-    <span class="tag ${tagClass}">${dot}${esc(T(c.tag))}</span>
-    ${c.when ? `<div class="when">${esc(T(DATA.ui.when))}: ${esc(T(c.when))}</div>` : ""}
-    <h2>${esc(T(c.title))}</h2>
-    <p>${esc(T(c.intro))}</p>
-    <ol class="steps">${c.steps.map((st) => `<li>${esc(T(st))}</li>`).join("")}</ol>
-    ${c.note ? `<div class="note"><b>${esc(T(DATA.ui.note))}:</b> ${esc(T(c.note))}</div>` : ""}
-  </div>`;
-}
-
-/* ---- search: symptoms and cause titles, across every product ---- */
+/* ---- search: symptom names and check text, across every product ---- */
 function searchBox() {
   return `<div class="search">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
@@ -307,7 +276,7 @@ function searchHits(q) {
       // A symptom matches on its own name, on any cause title or tag, and on
       // the reference table's error codes — "Error 1" should find its way home.
       const hay = fold([T(s.name), s.id, p.name,
-        ...s.causes.flatMap((c) => [T(c.title), T(c.tag), T(c.intro)])].join(" "));
+        ...s.checks.map((c) => T(c))].join(" "));
       if (tokens.every((t) => hay.includes(t))) hits.push({ p, s });
     }
   }

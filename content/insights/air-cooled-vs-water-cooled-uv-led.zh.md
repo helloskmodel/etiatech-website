@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV LED, 散热, 选型]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/08-air-cooled-vs-water-cooled-uv-led.png
-coverFit: contain
 ---
 
 **一句话答案：** 风冷 UV LED 无需冷水机、48 V 直流即用，集成最快、成本最低，峰值 2–20 W/cm²；水冷 UV LED 靠冷却回路带走热量，功率更高（25–30 W/cm²）、耐极端温度与粉尘、噪音低、单机幅宽可达 1.35 m。常规车间首选风冷，恶劣环境或超高功率选水冷。

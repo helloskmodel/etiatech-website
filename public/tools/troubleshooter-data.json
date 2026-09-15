@@ -1,15 +1,9 @@
 {
   "_meta": {
     "schema_version": "2.0",
-    "description": "三层结构:产品 products → 症状 symptoms → 原因 causes。每个可见字符串都是 {en,zh,th,vi}。加产品只需在此文件追加,界面代码不动。",
-    "levels": {
-      "ok": "正常(绿)",
-      "warn": "建议尽快处理(黄)",
-      "stop": "需立即停机处理(红)",
-      "(空)": "中性继续检查(蓝)"
-    },
-    "source": "内容提取自 Excelitas OmniCure 原厂手册(LX500 User Guide 035-00628R;S2000 Elite User Guide 035-00707R / Quick Start 035-00708R)。",
-    "translation_status": "en/zh 已定稿;th/vi 待母语者复核。"
+    "description": "三层结构:产品 products → 症状 symptoms → 排查步骤 checks。每个可见字符串都是 {en,zh,th,vi}。加产品只需在此文件追加,界面代码不动。",
+    "source": "内容由 ETIA 维修中心工程师提供的现场高频故障清单整理。",
+    "translation_status": "zh 为原始稿;en 由 zh 翻译;th/vi 待母语者复核。"
   },
   "ui": {
     "brand": {
@@ -55,22 +49,10 @@
       "vi": "Chọn mô tả gần nhất. Màn hình tiếp theo là câu trả lời."
     },
     "answer_sub": {
-      "en": "Work through the causes in order — the most common is first.",
-      "zh": "按顺序排查，最常见的排在最前。",
-      "th": "ไล่ตรวจตามลำดับ สาเหตุที่พบบ่อยที่สุดอยู่บนสุด",
-      "vi": "Kiểm tra theo thứ tự — nguyên nhân phổ biến nhất ở trên cùng."
-    },
-    "when": {
-      "en": "Applies when",
-      "zh": "适用于",
-      "th": "ใช้เมื่อ",
-      "vi": "Áp dụng khi"
-    },
-    "note": {
-      "en": "Note",
-      "zh": "说明",
-      "th": "หมายเหตุ",
-      "vi": "Ghi chú"
+      "en": "Work down the list in order. If none of it clears the fault, contact the service centre below.",
+      "zh": "按顺序逐项排查。都试过仍未解决，请联系下方维修中心。",
+      "th": "ไล่ตรวจตามลำดับ หากยังไม่หาย โปรดติดต่อศูนย์ซ่อมด้านล่าง",
+      "vi": "Kiểm tra lần lượt theo thứ tự. Nếu vẫn chưa hết lỗi, liên hệ trung tâm bảo hành bên dưới."
     },
     "back": {
       "en": "← Back",
@@ -121,10 +103,10 @@
       "vi": "Tra cứu mã lỗi"
     },
     "src": {
-      "en": "Source: Excelitas OmniCure user guides.",
-      "zh": "内容来源：Excelitas OmniCure 原厂手册。",
-      "th": "ที่มา: คู่มือผู้ใช้ Excelitas OmniCure",
-      "vi": "Nguồn: hướng dẫn sử dụng Excelitas OmniCure."
+      "en": "Source: the fault list ETIA's service engineers work from.",
+      "zh": "内容来源：ETIA 维修中心工程师的现场故障清单。",
+      "th": "ที่มา: รายการอาการเสียที่วิศวกรศูนย์ซ่อม ETIA ใช้งานจริง",
+      "vi": "Nguồn: danh mục lỗi mà kỹ sư trung tâm bảo hành ETIA dùng thực tế."
     },
     "review": {
       "en": "Thai and Vietnamese pending native review.",
@@ -153,481 +135,77 @@
       },
       "symptoms": [
         {
-          "id": "lx-nolight",
+          "id": "lx-nohead",
           "name": {
-            "en": "UV head will not light",
-            "zh": "UV 灯头不亮",
-            "th": "หัว UV ไม่ติด",
-            "vi": "Đầu UV không sáng"
+            "en": "Head is not recognised",
+            "zh": "照射头无法正常识别",
+            "th": "ระบบไม่รู้จักหัวฉายแสง",
+            "vi": "Không nhận diện được đầu chiếu"
           },
-          "causes": [
+          "checks": [
             {
-              "level": "stop",
-              "tag": {
-                "en": "Found it",
-                "zh": "找到原因",
-                "th": "พบสาเหตุ",
-                "vi": "Đã tìm ra"
-              },
-              "title": {
-                "en": "Door-interlock jumper not fitted",
-                "zh": "门锁跳线未接好",
-                "th": "จัมเปอร์อินเตอร์ล็อกประตูไม่ได้ต่อ",
-                "vi": "Chưa gắn jumper khóa liên động cửa"
-              },
-              "when": {
-                "en": "The interlock jumper is missing or loose",
-                "zh": "门锁跳线缺失或松动",
-                "th": "จัมเปอร์อินเตอร์ล็อกหายไปหรือหลวม",
-                "vi": "Jumper khóa liên động bị thiếu hoặc lỏng"
-              },
-              "intro": {
-                "en": "Head output is disabled until the interlock is closed.",
-                "zh": "灯头输出被禁用了，接好跳线即可恢复。",
-                "th": "เอาต์พุตหัวไฟถูกปิดจนกว่าอินเตอร์ล็อกจะปิดวงจร",
-                "vi": "Đầu ra bị vô hiệu cho đến khi khóa liên động được đóng mạch."
-              },
-              "steps": [
-                {
-                  "en": "Switch the controller off first.",
-                  "zh": "先关闭控制器电源。",
-                  "th": "ปิดเครื่องควบคุมก่อน",
-                  "vi": "Tắt bộ điều khiển trước."
-                },
-                {
-                  "en": "Fit the jumper across pins 24 and 25 of the PLC connector.",
-                  "zh": "把门锁跳线接在 PLC 接口 24 与 25 针之间（短接）。",
-                  "th": "ต่อจัมเปอร์ระหว่างพิน 24 และ 25 ของขั้วต่อ PLC",
-                  "vi": "Gắn jumper giữa chân 24 và 25 của đầu nối PLC."
-                },
-                {
-                  "en": "If a UV enclosure is used, wire the interlock to the enclosure instead, so the head cannot fire with it open.",
-                  "zh": "如已接入 UV 防护罩，可把跳线接到防护罩，防止误照射。",
-                  "th": "หากใช้ตู้ครอบ UV ให้ต่ออินเตอร์ล็อกเข้ากับตู้แทน เพื่อไม่ให้หัวไฟทำงานขณะเปิดตู้",
-                  "vi": "Nếu dùng buồng che UV, hãy nối khóa liên động vào buồng để đầu đèn không phát khi buồng mở."
-                },
-                {
-                  "en": "Power back up and test.",
-                  "zh": "重新开机测试。",
-                  "th": "เปิดเครื่องแล้วทดสอบ",
-                  "vi": "Bật lại nguồn và thử."
-                }
-              ],
-              "note": {
-                "en": "Closed contact = head enabled; open contact = head disabled.",
-                "zh": "闭合接点 = 启用灯头；断开接点 = 禁用灯头。",
-                "th": "หน้าสัมผัสปิด = เปิดใช้งานหัวไฟ; หน้าสัมผัสเปิด = ปิดใช้งาน",
-                "vi": "Tiếp điểm đóng = bật đầu đèn; tiếp điểm hở = tắt đầu đèn."
-              }
+              "en": "Unplug and reseat the head, making sure it is fully home.",
+              "zh": "插拔照射头，确保安装到位。",
+              "th": "ถอดแล้วเสียบหัวฉายใหม่ ให้แน่ใจว่าเข้าสุด",
+              "vi": "Rút ra cắm lại đầu chiếu, đảm bảo vào hết."
             },
             {
-              "level": "warn",
-              "tag": {
-                "en": "Found it",
-                "zh": "找到原因",
-                "th": "พบสาเหตุ",
-                "vi": "Đã tìm ra"
-              },
-              "title": {
-                "en": "Head connector not seated",
-                "zh": "灯头连接松动",
-                "th": "ขั้วต่อหัวไฟไม่แน่น",
-                "vi": "Đầu nối chưa cắm chặt"
-              },
-              "when": {
-                "en": "The head cable is loose at the back of the controller",
-                "zh": "灯头线在控制器背面没插牢",
-                "th": "สายหัวไฟหลวมที่ด้านหลังตัวควบคุม",
-                "vi": "Cáp đầu đèn lỏng ở mặt sau bộ điều khiển"
-              },
-              "intro": {
-                "en": "Re-seat the head and it will be recognised again.",
-                "zh": "重新插紧灯头即可。",
-                "th": "เสียบหัวไฟใหม่ให้แน่น ระบบจะรู้จักอีกครั้ง",
-                "vi": "Cắm lại đầu đèn cho chặt là nhận được."
-              },
-              "steps": [
-                {
-                  "en": "Switch the controller off — never plug or unplug a head under power.",
-                  "zh": "先关闭控制器电源（务必断电再插拔）。",
-                  "th": "ปิดเครื่องก่อน — ห้ามเสียบหรือถอดหัวไฟขณะจ่ายไฟ",
-                  "vi": "Tắt bộ điều khiển — tuyệt đối không cắm/rút đầu đèn khi đang có điện."
-                },
-                {
-                  "en": "Push the head cable back into its channel until the latch clicks home.",
-                  "zh": "把灯头线重新插入背面对应通道，插到锁扣到位。",
-                  "th": "ดันสายหัวไฟกลับเข้าช่องจนล็อกเข้าที่",
-                  "vi": "Cắm lại cáp đầu đèn vào đúng kênh cho đến khi chốt khớp."
-                },
-                {
-                  "en": "Power up and confirm the head is detected.",
-                  "zh": "开机确认灯头被识别。",
-                  "th": "เปิดเครื่องและยืนยันว่าระบบตรวจพบหัวไฟ",
-                  "vi": "Bật nguồn và xác nhận đầu đèn được nhận."
-                }
-              ],
-              "note": {
-                "en": "Squeeze the latch on the plastic shell to release; always power down first.",
-                "zh": "拔灯头时捏住塑料外壳的卡扣；插拔前一定断电。",
-                "th": "บีบสลักบนเปลือกพลาสติกเพื่อปลดล็อก และต้องปิดเครื่องก่อนเสมอ",
-                "vi": "Bóp chốt trên vỏ nhựa để tháo; luôn tắt nguồn trước."
-              }
-            },
-            {
-              "level": "warn",
-              "tag": {
-                "en": "Found it",
-                "zh": "找到原因",
-                "th": "พบสาเหตุ",
-                "vi": "Đã tìm ra"
-              },
-              "title": {
-                "en": "Front panel is locked",
-                "zh": "前面板被锁定",
-                "th": "แผงหน้าปัดถูกล็อก",
-                "vi": "Bảng điều khiển đang bị khóa"
-              },
-              "when": {
-                "en": "A padlock icon is showing in the status bar",
-                "zh": "状态栏出现锁图标",
-                "th": "มีไอคอนแม่กุญแจในแถบสถานะ",
-                "vi": "Có biểu tượng ổ khóa trên thanh trạng thái"
-              },
-              "intro": {
-                "en": "The panel is locked out and must be released before it will respond.",
-                "zh": "面板处于锁定状态，需要解锁才能操作。",
-                "th": "แผงถูกล็อกอยู่ ต้องปลดล็อกก่อนจึงจะใช้งานได้",
-                "vi": "Bảng điều khiển đang bị khóa, cần mở khóa mới thao tác được."
-              },
-              "steps": [
-                {
-                  "en": "Release the front-panel lock from the PLC input or a PC command.",
-                  "zh": "通过 PLC 输入或 PC 指令解除前面板锁定。",
-                  "th": "ปลดล็อกแผงหน้าปัดจากอินพุต PLC หรือคำสั่งจาก PC",
-                  "vi": "Mở khóa bảng điều khiển từ đầu vào PLC hoặc lệnh từ máy tính."
-                },
-                {
-                  "en": "The padlock icon disappears once it is unlocked.",
-                  "zh": "解锁后状态栏锁图标消失。",
-                  "th": "ไอคอนแม่กุญแจจะหายไปเมื่อปลดล็อกแล้ว",
-                  "vi": "Biểu tượng ổ khóa biến mất khi đã mở."
-                },
-                {
-                  "en": "Trigger the exposure again with Start/Stop.",
-                  "zh": "重新用 Start/Stop 触发曝光。",
-                  "th": "สั่งการฉายแสงอีกครั้งด้วย Start/Stop",
-                  "vi": "Kích hoạt lại chiếu xạ bằng Start/Stop."
-                }
-              ],
-              "note": {
-                "en": "The lock does not survive a power cycle — restarting also clears it.",
-                "zh": "锁定状态在断电后不保留，重启也可解除。",
-                "th": "การล็อกไม่คงอยู่หลังปิด-เปิดเครื่อง การรีสตาร์ทก็ปลดล็อกได้",
-                "vi": "Khóa không giữ sau khi tắt nguồn — khởi động lại cũng xóa được."
-              }
-            },
-            {
-              "level": "",
-              "tag": {
-                "en": "Keep checking",
-                "zh": "继续检查",
-                "th": "ตรวจต่อ",
-                "vi": "Kiểm tra tiếp"
-              },
-              "title": {
-                "en": "Check StepCure and the exposure settings",
-                "zh": "检查 StepCure 与曝光设置",
-                "th": "ตรวจ StepCure และการตั้งค่าการฉายแสง",
-                "vi": "Kiểm tra StepCure và cài đặt chiếu xạ"
-              },
-              "when": {
-                "en": "Connections are fine and nothing is locked",
-                "zh": "连接正常、也没有锁定",
-                "th": "การเชื่อมต่อปกติและไม่มีการล็อก",
-                "vi": "Kết nối bình thường và không bị khóa"
-              },
-              "intro": {
-                "en": "With the basics ruled out, the fault is usually in the program or the timer mode.",
-                "zh": "基础连接都正常，问题可能出在曝光程序或模式上。",
-                "th": "เมื่อพื้นฐานปกติแล้ว ปัญหามักอยู่ที่โปรแกรมหรือโหมดจับเวลา",
-                "vi": "Khi phần cơ bản đã ổn, lỗi thường nằm ở chương trình hoặc chế độ hẹn giờ."
-              },
-              "steps": [
-                {
-                  "en": "Check the StepCure table is filled in correctly, or left empty.",
-                  "zh": "确认 StepCure 表格填写正确，或留空。",
-                  "th": "ตรวจว่าตาราง StepCure กรอกถูกต้อง หรือเว้นว่างไว้",
-                  "vi": "Kiểm tra bảng StepCure điền đúng, hoặc để trống."
-                },
-                {
-                  "en": "StepCure runs only in count-down mode — not in count-up.",
-                  "zh": "StepCure 只在倒计时模式工作，计数上升模式下不运行。",
-                  "th": "StepCure ทำงานเฉพาะโหมดนับถอยหลัง ไม่ทำงานในโหมดนับขึ้น",
-                  "vi": "StepCure chỉ chạy ở chế độ đếm ngược, không chạy ở chế độ đếm lên."
-                },
-                {
-                  "en": "If it still will not light, contact an engineer.",
-                  "zh": "若仍不亮，联系技术支持。",
-                  "th": "หากยังไม่ติด ให้ติดต่อวิศวกร",
-                  "vi": "Nếu vẫn không sáng, hãy liên hệ kỹ sư."
-                }
-              ],
-              "note": {
-                "en": "StepCure applies in count-down mode only (except where set by the S2000 command set).",
-                "zh": "StepCure 仅在倒计时模式下生效（S2000 指令集设置除外）。",
-                "th": "StepCure ใช้ได้เฉพาะโหมดนับถอยหลัง (ยกเว้นที่ตั้งผ่านชุดคำสั่ง S2000)",
-                "vi": "StepCure chỉ áp dụng ở chế độ đếm ngược (trừ khi đặt qua bộ lệnh S2000)."
-              }
+              "en": "Move the head to another channel and see whether it is recognised there.",
+              "zh": "把照射头换到另一个通道，确认是否可以识别。",
+              "th": "ย้ายหัวฉายไปอีกช่องแล้วดูว่าระบบรู้จักหรือไม่",
+              "vi": "Chuyển đầu chiếu sang kênh khác xem có nhận không."
             }
           ]
         },
         {
-          "id": "lx-overheat",
+          "id": "lx-nouv",
           "name": {
-            "en": "Head overheating / Error 1",
-            "zh": "灯头过热 / 报警",
-            "th": "หัวไฟร้อนเกิน / Error 1",
-            "vi": "Đầu đèn quá nhiệt / Error 1"
+            "en": "No UV output",
+            "zh": "无法放出紫外光",
+            "th": "ไม่มีแสง UV ออกมา",
+            "vi": "Không phát ra tia UV"
           },
-          "causes": [
+          "checks": [
             {
-              "level": "warn",
-              "tag": {
-                "en": "Overheat alarm (Error 1)",
-                "zh": "过热报警（错误 1）",
-                "th": "สัญญาณเตือนความร้อนเกิน (Error 1)",
-                "vi": "Cảnh báo quá nhiệt (Error 1)"
-              },
-              "title": {
-                "en": "Head is above its allowed operating temperature",
-                "zh": "灯头超过允许工作温度",
-                "th": "หัวไฟมีอุณหภูมิเกินค่าที่อนุญาต",
-                "vi": "Đầu đèn vượt nhiệt độ cho phép"
-              },
-              "intro": {
-                "en": "The head recovers on its own once it cools below the threshold; the next trigger clears the alarm. What matters is why it overheated.",
-                "zh": "温度降到阈值以下后灯头会恢复，下次触发即可清除报警。重点是排查散热。",
-                "th": "หัวไฟจะกลับมาทำงานเมื่อเย็นลงต่ำกว่าเกณฑ์ และการสั่งงานครั้งถัดไปจะล้างสัญญาณเตือน สิ่งสำคัญคือหาสาเหตุความร้อน",
-                "vi": "Đầu đèn tự phục hồi khi nguội xuống dưới ngưỡng; lần kích hoạt sau sẽ xóa cảnh báo. Điều quan trọng là tìm nguyên nhân quá nhiệt."
-              },
-              "steps": [
-                {
-                  "en": "Check where the clamp sits on the head — it must be between the crease in the lens housing and the reference line.",
-                  "zh": "检查夹具在灯头上的位置——底面应在镜头壳体折痕与参考线之间。",
-                  "th": "ตรวจตำแหน่งแคลมป์บนหัวไฟ ต้องอยู่ระหว่างรอยพับของตัวเลนส์กับเส้นอ้างอิง",
-                  "vi": "Kiểm tra vị trí kẹp trên đầu đèn — phải nằm giữa nếp vỏ thấu kính và vạch tham chiếu."
-                },
-                {
-                  "en": "Check the ambient temperature does not exceed 35 °C.",
-                  "zh": "检查环境温度不超过 35°C。",
-                  "th": "ตรวจว่าอุณหภูมิแวดล้อมไม่เกิน 35 °C",
-                  "vi": "Kiểm tra nhiệt độ môi trường không quá 35 °C."
-                },
-                {
-                  "en": "On a 55 mm short head, confirm the clamp is tight.",
-                  "zh": "用 55mm 短灯头时确认夹具装牢。",
-                  "th": "สำหรับหัวสั้น 55 มม. ตรวจว่าแคลมป์แน่น",
-                  "vi": "Với đầu ngắn 55 mm, xác nhận kẹp đã siết chặt."
-                },
-                {
-                  "en": "Check the emission mode and timer mode settings.",
-                  "zh": "检查发射模式与计时模式设置。",
-                  "th": "ตรวจการตั้งค่าโหมดการปล่อยแสงและโหมดจับเวลา",
-                  "vi": "Kiểm tra cài đặt chế độ phát và chế độ hẹn giờ."
-                },
-                {
-                  "en": "Check the lens is clean.",
-                  "zh": "检查镜头是否清洁。",
-                  "th": "ตรวจว่าเลนส์สะอาด",
-                  "vi": "Kiểm tra thấu kính sạch."
-                }
-              ],
-              "note": {
-                "en": "A badly placed clamp is the most common cause. The reference line is the first circular groove on the head.",
-                "zh": "夹具位置错误是过热最常见的原因。参考线 = 灯头上第一个圆形凹槽。",
-                "th": "แคลมป์วางผิดตำแหน่งเป็นสาเหตุที่พบบ่อยที่สุด เส้นอ้างอิงคือร่องวงกลมแรกบนหัวไฟ",
-                "vi": "Kẹp đặt sai là nguyên nhân phổ biến nhất. Vạch tham chiếu là rãnh tròn đầu tiên trên đầu đèn."
-              }
+              "en": "Check the safety interlock connection.",
+              "zh": "检查安全互锁连接是否正常。",
+              "th": "ตรวจการต่อระบบอินเตอร์ล็อกนิรภัย",
+              "vi": "Kiểm tra kết nối khóa liên động an toàn."
+            },
+            {
+              "en": "Check the trigger signal source setting in the system.",
+              "zh": "在系统中检查信号来源是否异常。",
+              "th": "ตรวจการตั้งค่าแหล่งสัญญาณสั่งงานในระบบ",
+              "vi": "Kiểm tra cài đặt nguồn tín hiệu kích trong hệ thống."
+            },
+            {
+              "en": "Swap in another footswitch and test.",
+              "zh": "更换脚踏开关测试。",
+              "th": "เปลี่ยนสวิตช์เท้าตัวอื่นแล้วทดสอบ",
+              "vi": "Đổi bàn đạp khác và thử."
             }
           ]
         },
         {
           "id": "lx-lowpower",
           "name": {
-            "en": "Irradiance too low",
-            "zh": "光强太低",
-            "th": "ความเข้มแสงต่ำเกินไป",
-            "vi": "Cường độ sáng quá thấp"
+            "en": "Optical power drops suddenly",
+            "zh": "光功率突然下降",
+            "th": "กำลังแสงลดลงกะทันหัน",
+            "vi": "Công suất quang đột ngột giảm"
           },
-          "causes": [
+          "checks": [
             {
-              "level": "",
-              "tag": {
-                "en": "Low output",
-                "zh": "光强偏低",
-                "th": "เอาต์พุตต่ำ",
-                "vi": "Đầu ra thấp"
-              },
-              "title": {
-                "en": "Output irradiance is below what the process needs",
-                "zh": "输出光强不足",
-                "th": "ความเข้มแสงต่ำกว่าที่กระบวนการต้องการ",
-                "vi": "Cường độ đầu ra thấp hơn yêu cầu"
-              },
-              "intro": {
-                "en": "Work through the lens and the setpoint first, then the closed-loop feedback.",
-                "zh": "先排查镜头和设置，再看闭环反馈。",
-                "th": "ตรวจเลนส์และค่าที่ตั้งไว้ก่อน แล้วจึงดูระบบป้อนกลับแบบวงปิด",
-                "vi": "Kiểm tra thấu kính và giá trị đặt trước, sau đó mới đến phản hồi vòng kín."
-              },
-              "steps": [
-                {
-                  "en": "With the power off, check the head lens is clean.",
-                  "zh": "确认电源关闭后，检查灯头镜头是否洁净。",
-                  "th": "ปิดเครื่องแล้วตรวจว่าเลนส์หัวไฟสะอาด",
-                  "vi": "Tắt nguồn rồi kiểm tra thấu kính đầu đèn sạch."
-                },
-                {
-                  "en": "Confirm the irradiance setpoint is correct.",
-                  "zh": "确认光强设定值正确。",
-                  "th": "ยืนยันว่าค่าความเข้มที่ตั้งไว้ถูกต้อง",
-                  "vi": "Xác nhận giá trị cường độ đặt đúng."
-                },
-                {
-                  "en": "If closed-loop feedback is in use, keep the setpoint below 80% — at the top of the range CLF runs out of headroom and stops correcting.",
-                  "zh": "若用闭环反馈（CLF），建议光强设在 80% 以下——过高时 CLF 达上限会失效。",
-                  "th": "หากใช้ CLF ให้ตั้งค่าต่ำกว่า 80% เพราะที่ปลายช่วง CLF จะไม่มีระยะชดเชยเหลือ",
-                  "vi": "Nếu dùng CLF, giữ giá trị đặt dưới 80% — ở cận trên CLF hết dư địa bù."
-                }
-              ],
-              "note": {
-                "en": "After calibration the reading can be shown in W/cm² (irradiance) or W (power).",
-                "zh": "校准后光强可用 W/cm²（辐照度）或 W（功率）显示。",
-                "th": "หลังสอบเทียบ ค่าที่อ่านได้แสดงเป็น W/cm² หรือ W ได้",
-                "vi": "Sau hiệu chuẩn, giá trị có thể hiển thị theo W/cm² hoặc W."
-              }
-            }
-          ]
-        },
-        {
-          "id": "lx-stepcure",
-          "name": {
-            "en": "StepCure program does not run",
-            "zh": "StepCure 程序不生效",
-            "th": "โปรแกรม StepCure ไม่ทำงาน",
-            "vi": "Chương trình StepCure không chạy"
-          },
-          "causes": [
+              "en": "Check the intensity setting in the system is not set too low.",
+              "zh": "检查系统中光强度设定是否过低。",
+              "th": "ตรวจว่าค่าความเข้มที่ตั้งไว้ในระบบต่ำเกินไปหรือไม่",
+              "vi": "Kiểm tra mức cường độ cài đặt trong hệ thống có quá thấp không."
+            },
             {
-              "level": "",
-              "tag": {
-                "en": "StepCure inactive",
-                "zh": "StepCure 不生效",
-                "th": "StepCure ไม่ทำงาน",
-                "vi": "StepCure không hoạt động"
-              },
-              "title": {
-                "en": "The StepCure program is not running",
-                "zh": "StepCure 程序没有运行",
-                "th": "โปรแกรม StepCure ไม่ได้ทำงาน",
-                "vi": "Chương trình StepCure không chạy"
-              },
-              "intro": {
-                "en": "Almost always the timer is in the wrong mode.",
-                "zh": "最常见原因：不在倒计时模式。",
-                "th": "เกือบทุกครั้งเกิดจากโหมดจับเวลาผิด",
-                "vi": "Hầu như luôn do chế độ hẹn giờ sai."
-              },
-              "steps": [
-                {
-                  "en": "Look at the arrow in the status bar — it must point down for count-down mode.",
-                  "zh": "检查状态栏箭头——朝下才是倒计时模式。",
-                  "th": "ดูลูกศรบนแถบสถานะ ต้องชี้ลงจึงเป็นโหมดนับถอยหลัง",
-                  "vi": "Nhìn mũi tên trên thanh trạng thái — phải hướng xuống mới là đếm ngược."
-                },
-                {
-                  "en": "StepCure applies in count-down mode only (except where set by the S2000 command set).",
-                  "zh": "StepCure 只在倒计时模式下生效（S2000 指令集设置除外）。",
-                  "th": "StepCure ใช้ได้เฉพาะโหมดนับถอยหลัง (ยกเว้นที่ตั้งผ่านชุดคำสั่ง S2000)",
-                  "vi": "StepCure chỉ áp dụng ở chế độ đếm ngược (trừ khi đặt qua bộ lệnh S2000)."
-                },
-                {
-                  "en": "Confirm the trigger source (Src) matches the input actually being used.",
-                  "zh": "确认触发源（Src）与实际使用的输入一致。",
-                  "th": "ยืนยันว่าแหล่งทริกเกอร์ (Src) ตรงกับอินพุตที่ใช้จริง",
-                  "vi": "Xác nhận nguồn kích (Src) khớp với đầu vào đang dùng."
-                },
-                {
-                  "en": "Confirm the intensity type matches the head's calibration type, or Error 8 is raised.",
-                  "zh": "确认强度类型与灯头校准类型匹配，否则会报错误 8。",
-                  "th": "ยืนยันว่าชนิดความเข้มตรงกับชนิดการสอบเทียบของหัวไฟ มิฉะนั้นจะขึ้น Error 8",
-                  "vi": "Xác nhận loại cường độ khớp loại hiệu chuẩn của đầu đèn, nếu không sẽ báo Error 8."
-                }
-              ],
-              "note": {
-                "en": "In count-up mode (timer at 0.0 s) StepCure does not run.",
-                "zh": "计数上升模式（计时器 0.0 秒）下 StepCure 不工作。",
-                "th": "ในโหมดนับขึ้น (ตัวจับเวลา 0.0 วินาที) StepCure จะไม่ทำงาน",
-                "vi": "Ở chế độ đếm lên (hẹn giờ 0,0 giây) StepCure không chạy."
-              }
-            }
-          ]
-        },
-        {
-          "id": "lx-nopower",
-          "name": {
-            "en": "Controller will not power up",
-            "zh": "控制器不通电",
-            "th": "ตัวควบคุมไม่มีไฟ",
-            "vi": "Bộ điều khiển không lên nguồn"
-          },
-          "causes": [
-            {
-              "level": "stop",
-              "tag": {
-                "en": "No power",
-                "zh": "不通电",
-                "th": "ไม่มีไฟ",
-                "vi": "Không có điện"
-              },
-              "title": {
-                "en": "The controller does not power up",
-                "zh": "控制器无法通电",
-                "th": "ตัวควบคุมไม่สามารถเปิดเครื่องได้",
-                "vi": "Bộ điều khiển không khởi động"
-              },
-              "intro": {
-                "en": "Work along the supply chain, one link at a time.",
-                "zh": "逐项检查供电链路。",
-                "th": "ไล่ตรวจเส้นทางจ่ายไฟทีละจุด",
-                "vi": "Kiểm tra lần lượt từng mắt xích cấp nguồn."
-              },
-              "steps": [
-                {
-                  "en": "Confirm the AC cord is firmly in a grounded outlet.",
-                  "zh": "确认 AC 电源线牢固接入接地插座。",
-                  "th": "ยืนยันว่าสายไฟ AC เสียบแน่นในเต้ารับที่มีสายดิน",
-                  "vi": "Xác nhận dây AC cắm chắc vào ổ có tiếp đất."
-                },
-                {
-                  "en": "Confirm the adapter's DC barrel plug is in the DC IN socket on the back.",
-                  "zh": "确认电源适配器 DC 圆头插入控制器背面 DC IN。",
-                  "th": "ยืนยันว่าปลั๊ก DC ของอะแดปเตอร์เสียบที่ช่อง DC IN ด้านหลัง",
-                  "vi": "Xác nhận giắc DC của adapter cắm vào cổng DC IN phía sau."
-                },
-                {
-                  "en": "Confirm the power switch is set to “I” (ON).",
-                  "zh": "确认电源开关拨到 “I”（ON）。",
-                  "th": "ยืนยันว่าสวิตช์เปิดอยู่ที่ “I” (ON)",
-                  "vi": "Xác nhận công tắc ở vị trí “I” (ON)."
-                }
-              ],
-              "note": {
-                "en": "Use only the supplied cord, or an equivalent shielded and certified one.",
-                "zh": "只使用随附电源线或同等规格、带屏蔽和认证的线缆。",
-                "th": "ใช้เฉพาะสายที่ให้มา หรือสายหุ้มฉนวนที่ผ่านการรับรองเทียบเท่า",
-                "vi": "Chỉ dùng dây đi kèm, hoặc dây có vỏ chắn và chứng nhận tương đương."
-              }
+              "en": "Check the focusing lens for contamination.",
+              "zh": "检查聚光镜是否沾染污渍。",
+              "th": "ตรวจเลนส์รวมแสงว่าเปื้อนหรือไม่",
+              "vi": "Kiểm tra thấu kính hội tụ có bị bẩn không."
             }
           ]
         }
@@ -645,503 +223,112 @@
       },
       "symptoms": [
         {
-          "id": "s2-ring",
-          "name": {
-            "en": "Status ring colour — what it means",
-            "zh": "光环颜色说明",
-            "th": "สีวงแหวนสถานะ — ความหมาย",
-            "vi": "Màu vòng trạng thái — ý nghĩa"
-          },
-          "causes": [
-            {
-              "level": "stop",
-              "swatch": "#dc2626",
-              "tag": {
-                "en": "Red ring",
-                "zh": "红环",
-                "th": "วงแหวนแดง",
-                "vi": "Vòng đỏ"
-              },
-              "title": {
-                "en": "No light guide detected",
-                "zh": "没检测到光导",
-                "th": "ไม่พบท่อนำแสง",
-                "vi": "Không phát hiện ống dẫn sáng"
-              },
-              "intro": {
-                "en": "The light guide is not seated, so the system cannot see it.",
-                "zh": "光导没插到位，系统检测不到。",
-                "th": "ท่อนำแสงไม่เข้าที่ ระบบจึงตรวจไม่พบ",
-                "vi": "Ống dẫn sáng chưa vào đúng vị trí nên hệ thống không nhận."
-              },
-              "steps": [
-                {
-                  "en": "Remove the protective caps from both ends of the light guide.",
-                  "zh": "取下光导两端的保护端盖。",
-                  "th": "ถอดฝาครอบปลายทั้งสองด้านของท่อนำแสง",
-                  "vi": "Tháo nắp bảo vệ ở cả hai đầu ống dẫn sáng."
-                },
-                {
-                  "en": "Insert the guide into the port on the front panel.",
-                  "zh": "把光导插入前面板的光导端口。",
-                  "th": "เสียบท่อนำแสงเข้าพอร์ตที่แผงหน้า",
-                  "vi": "Cắm ống dẫn sáng vào cổng ở mặt trước."
-                },
-                {
-                  "en": "Push until it clicks distinctly into place.",
-                  "zh": "插到听见或感到一声明确的“咔哒”到位。",
-                  "th": "ดันจนได้ยินหรือรู้สึกเสียงคลิกชัดเจน",
-                  "vi": "Đẩy đến khi nghe hoặc cảm nhận tiếng “tách” rõ ràng."
-                }
-              ]
-            },
-            {
-              "level": "",
-              "swatch": "#2563eb",
-              "tag": {
-                "en": "Blue ring",
-                "zh": "蓝环",
-                "th": "วงแหวนน้ำเงิน",
-                "vi": "Vòng xanh lam"
-              },
-              "title": {
-                "en": "Guide fitted, system warming up",
-                "zh": "光导已插入，系统预热中",
-                "th": "ใส่ท่อแล้ว ระบบกำลังอุ่นเครื่อง",
-                "vi": "Đã lắp ống, hệ thống đang khởi nhiệt"
-              },
-              "intro": {
-                "en": "This is normal operation, not a fault.",
-                "zh": "这是正常过程，不是故障。",
-                "th": "นี่คือการทำงานปกติ ไม่ใช่ข้อผิดพลาด",
-                "vi": "Đây là hoạt động bình thường, không phải lỗi."
-              },
-              "steps": [
-                {
-                  "en": "Let the system finish warming up.",
-                  "zh": "等待系统完成预热。",
-                  "th": "รอให้ระบบอุ่นเครื่องจนเสร็จ",
-                  "vi": "Đợi hệ thống khởi nhiệt xong."
-                },
-                {
-                  "en": "Excelitas recommends a full 20 minutes for stable output.",
-                  "zh": "Excelitas 建议充分预热 20 分钟以确保光输出稳定。",
-                  "th": "Excelitas แนะนำให้อุ่นเครื่องเต็ม 20 นาทีเพื่อเอาต์พุตที่เสถียร",
-                  "vi": "Excelitas khuyến nghị đủ 20 phút để đầu ra ổn định."
-                },
-                {
-                  "en": "The countdown is shown on screen.",
-                  "zh": "预热倒计时会显示在屏幕上。",
-                  "th": "การนับถอยหลังแสดงบนหน้าจอ",
-                  "vi": "Đồng hồ đếm ngược hiện trên màn hình."
-                }
-              ]
-            },
-            {
-              "level": "",
-              "swatch": "#c026d3",
-              "tag": {
-                "en": "Magenta ring",
-                "zh": "品红环",
-                "th": "วงแหวนม่วงแดง",
-                "vi": "Vòng đỏ tím"
-              },
-              "title": {
-                "en": "Closed-loop feedback not active yet",
-                "zh": "闭环反馈未激活",
-                "th": "ระบบป้อนกลับวงปิดยังไม่ทำงาน",
-                "vi": "Phản hồi vòng kín chưa kích hoạt"
-              },
-              "intro": {
-                "en": "The guide is in, but closed-loop feedback has not engaged.",
-                "zh": "光导已插入，但闭环反馈（CLF）尚未激活。",
-                "th": "ใส่ท่อแล้ว แต่ CLF ยังไม่เริ่มทำงาน",
-                "vi": "Ống đã lắp nhưng CLF chưa vào hoạt động."
-              },
-              "steps": [
-                {
-                  "en": "Confirm the lamp has finished warming up.",
-                  "zh": "确认已完成灯的预热。",
-                  "th": "ยืนยันว่าหลอดอุ่นเครื่องเสร็จแล้ว",
-                  "vi": "Xác nhận đèn đã khởi nhiệt xong."
-                },
-                {
-                  "en": "If CLF is required, confirm the head is calibrated and the setpoint is within the controllable range.",
-                  "zh": "若需要 CLF，确认灯头已校准且光强设置在可控范围内。",
-                  "th": "หากต้องใช้ CLF ให้ยืนยันว่าหัวไฟสอบเทียบแล้วและค่าที่ตั้งอยู่ในช่วงที่ควบคุมได้",
-                  "vi": "Nếu cần CLF, xác nhận đầu đèn đã hiệu chuẩn và giá trị đặt nằm trong dải điều khiển được."
-                },
-                {
-                  "en": "It usually engages and turns green as the run continues.",
-                  "zh": "继续运行后 CLF 通常会激活转为绿色。",
-                  "th": "โดยทั่วไปจะเริ่มทำงานและเปลี่ยนเป็นสีเขียวเมื่อใช้งานต่อ",
-                  "vi": "Thường sẽ kích hoạt và chuyển xanh khi tiếp tục chạy."
-                }
-              ]
-            },
-            {
-              "level": "warn",
-              "swatch": "#eab308",
-              "tag": {
-                "en": "Yellow ring",
-                "zh": "黄环",
-                "th": "วงแหวนเหลือง",
-                "vi": "Vòng vàng"
-              },
-              "title": {
-                "en": "CLF active, calibration nearly due",
-                "zh": "闭环反馈激活，但校准快到期",
-                "th": "CLF ทำงาน แต่ใกล้ถึงกำหนดสอบเทียบ",
-                "vi": "CLF hoạt động, sắp đến hạn hiệu chuẩn"
-              },
-              "intro": {
-                "en": "Still usable, but recalibrate soon.",
-                "zh": "系统仍可用，但校准即将过期，建议尽快重新校准。",
-                "th": "ยังใช้งานได้ แต่ควรสอบเทียบใหม่เร็ว ๆ นี้",
-                "vi": "Vẫn dùng được, nhưng nên hiệu chuẩn lại sớm."
-              },
-              "steps": [
-                {
-                  "en": "Schedule a recalibration of the head or system.",
-                  "zh": "安排对灯头/系统重新校准。",
-                  "th": "นัดหมายสอบเทียบหัวไฟหรือระบบใหม่",
-                  "vi": "Lên lịch hiệu chuẩn lại đầu đèn hoặc hệ thống."
-                },
-                {
-                  "en": "Have the matching radiometer ready (LS100 / LS100P).",
-                  "zh": "准备好对应的辐射计（如 LS100/LS100P）。",
-                  "th": "เตรียมเครื่องวัดรังสีที่ตรงรุ่น (LS100 / LS100P)",
-                  "vi": "Chuẩn bị thiết bị đo phù hợp (LS100 / LS100P)."
-                },
-                {
-                  "en": "The ring returns to green after calibration.",
-                  "zh": "校准后光环应恢复绿色。",
-                  "th": "วงแหวนจะกลับเป็นสีเขียวหลังสอบเทียบ",
-                  "vi": "Vòng sẽ trở lại xanh sau khi hiệu chuẩn."
-                }
-              ]
-            },
-            {
-              "level": "ok",
-              "swatch": "#16a34a",
-              "tag": {
-                "en": "Green ring",
-                "zh": "绿环",
-                "th": "วงแหวนเขียว",
-                "vi": "Vòng xanh lá"
-              },
-              "title": {
-                "en": "Everything normal",
-                "zh": "一切正常",
-                "th": "ทุกอย่างปกติ",
-                "vi": "Mọi thứ bình thường"
-              },
-              "intro": {
-                "en": "Guide fitted, closed-loop feedback active, system healthy.",
-                "zh": "光导已插入，闭环反馈激活，系统状态良好。",
-                "th": "ใส่ท่อแล้ว CLF ทำงาน ระบบปกติดี",
-                "vi": "Đã lắp ống, CLF hoạt động, hệ thống tốt."
-              },
-              "steps": [
-                {
-                  "en": "Nothing to do — run exposures as normal.",
-                  "zh": "无需操作，可正常运行曝光。",
-                  "th": "ไม่ต้องทำอะไร ใช้งานได้ตามปกติ",
-                  "vi": "Không cần làm gì — chiếu xạ bình thường."
-                },
-                {
-                  "en": "Before running, confirm everyone has UV protection or the head is inside an enclosure.",
-                  "zh": "运行前确认所有人已佩戴 UV 防护，或灯头处于防护罩内。",
-                  "th": "ก่อนใช้งาน ยืนยันว่าทุกคนมีอุปกรณ์ป้องกัน UV หรือหัวไฟอยู่ในตู้ครอบ",
-                  "vi": "Trước khi chạy, xác nhận mọi người có bảo hộ UV hoặc đầu đèn nằm trong buồng che."
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": "s2-nopower",
           "name": {
-            "en": "Lamp will not strike / no power",
-            "zh": "灯不亮 / 系统不通电",
-            "th": "หลอดไม่ติด / ไม่มีไฟ",
-            "vi": "Đèn không cháy / không lên nguồn"
+            "en": "Controller will not power on",
+            "zh": "主机不通电",
+            "th": "เครื่องควบคุมไม่มีไฟเข้า",
+            "vi": "Máy chính không lên nguồn"
           },
-          "causes": [
+          "checks": [
             {
-              "level": "stop",
-              "tag": {
-                "en": "Found it",
-                "zh": "找到原因",
-                "th": "พบสาเหตุ",
-                "vi": "Đã tìm ra"
-              },
-              "title": {
-                "en": "Lamp-housing side panel not fully secured",
-                "zh": "灯罩侧板未固定到位",
-                "th": "แผงข้างโคมไฟยังไม่ยึดแน่น",
-                "vi": "Tấm hông vỏ đèn chưa cố định chặt"
-              },
-              "when": {
-                "en": "The side panel was removed and refitted",
-                "zh": "侧板拆下后重新装过",
-                "th": "ถอดแผงข้างออกแล้วใส่กลับ",
-                "vi": "Tấm hông đã tháo ra và lắp lại"
-              },
-              "intro": {
-                "en": "The system will not power up while the panel is loose.",
-                "zh": "侧板未完全固定时系统不会通电。",
-                "th": "ระบบจะไม่จ่ายไฟขณะแผงยังหลวม",
-                "vi": "Hệ thống không lên nguồn khi tấm hông còn lỏng."
-              },
-              "steps": [
-                {
-                  "en": "Disconnect AC power.",
-                  "zh": "断开 AC 电源。",
-                  "th": "ถอดไฟ AC ออก",
-                  "vi": "Ngắt nguồn AC."
-                },
-                {
-                  "en": "Refit the lamp-housing side panel.",
-                  "zh": "重新装好灯罩侧板。",
-                  "th": "ใส่แผงข้างโคมไฟกลับ",
-                  "vi": "Lắp lại tấm hông vỏ đèn."
-                },
-                {
-                  "en": "Tighten the retaining screws fully with a 3 mm hex key.",
-                  "zh": "用 3mm 内六角把固定螺丝完全拧紧。",
-                  "th": "ขันสกรูยึดให้แน่นด้วยประแจหกเหลี่ยม 3 มม.",
-                  "vi": "Siết chặt vít bằng lục giác 3 mm."
-                },
-                {
-                  "en": "Reconnect power and switch on.",
-                  "zh": "重新接电开机。",
-                  "th": "ต่อไฟและเปิดเครื่อง",
-                  "vi": "Cắm điện và bật máy."
-                }
-              ]
+              "en": "Check the power cord and the supply at the socket.",
+              "zh": "检查电源线以及用电环境。",
+              "th": "ตรวจสายไฟและระบบไฟที่เต้ารับ",
+              "vi": "Kiểm tra dây nguồn và nguồn điện tại ổ cắm."
             },
             {
-              "level": "stop",
-              "tag": {
-                "en": "Found it",
-                "zh": "找到原因",
-                "th": "พบสาเหตุ",
-                "vi": "Đã tìm ra"
-              },
-              "title": {
-                "en": "Intelli-Lamp cable not tucked into its grommet",
-                "zh": "Intelli-Lamp 线未收进橡胶圈",
-                "th": "สาย Intelli-Lamp ไม่ได้เก็บเข้าในยางรอง",
-                "vi": "Cáp Intelli-Lamp chưa luồn vào gioăng"
-              },
-              "when": {
-                "en": "The lamp was changed recently",
-                "zh": "近期更换过灯",
-                "th": "เพิ่งเปลี่ยนหลอดมา",
-                "vi": "Vừa thay đèn gần đây"
-              },
-              "intro": {
-                "en": "A trapped cable stops the door closing, and the system will not power up.",
-                "zh": "线没收好会导致门关不严，系统不通电。",
-                "th": "สายที่ถูกหนีบทำให้ปิดประตูไม่สนิท ระบบจึงไม่จ่ายไฟ",
-                "vi": "Cáp bị kẹt khiến cửa không đóng kín, hệ thống không lên nguồn."
-              },
-              "steps": [
-                {
-                  "en": "Power down and open the lamp-housing side panel.",
-                  "zh": "断电并打开灯罩侧板。",
-                  "th": "ปิดเครื่องและเปิดแผงข้างโคมไฟ",
-                  "vi": "Tắt nguồn và mở tấm hông vỏ đèn."
-                },
-                {
-                  "en": "Tuck the Intelli-Lamp cable into the grommet on the divider between the lamp and the connector.",
-                  "zh": "把 Intelli-Lamp 线塞进灯与连接器之间隔板上的橡胶圈。",
-                  "th": "เก็บสาย Intelli-Lamp เข้าในยางรองบนแผ่นกั้นระหว่างหลอดกับขั้วต่อ",
-                  "vi": "Luồn cáp Intelli-Lamp vào gioăng trên vách ngăn giữa đèn và đầu nối."
-                },
-                {
-                  "en": "Confirm the door closes fully.",
-                  "zh": "确认门可完全闭合。",
-                  "th": "ยืนยันว่าประตูปิดสนิท",
-                  "vi": "Xác nhận cửa đóng kín hoàn toàn."
-                },
-                {
-                  "en": "Refit the panel and tighten the screws.",
-                  "zh": "装回侧板并拧紧螺丝。",
-                  "th": "ใส่แผงกลับและขันสกรูให้แน่น",
-                  "vi": "Lắp lại tấm hông và siết vít."
-                }
-              ]
+              "en": "Check that the lamp-bay cover is fitted — the unit will not power up without it.",
+              "zh": "检查灯泡仓盖板是否未安装——未装到位主机不会上电。",
+              "th": "ตรวจว่าฝาครอบช่องหลอดไฟติดตั้งแล้วหรือยัง — ถ้ายังไม่ปิด เครื่องจะไม่จ่ายไฟ",
+              "vi": "Kiểm tra nắp khoang đèn đã lắp chưa — chưa lắp thì máy không lên nguồn."
             },
             {
-              "level": "warn",
-              "tag": {
-                "en": "Keep checking",
-                "zh": "继续检查",
-                "th": "ตรวจต่อ",
-                "vi": "Kiểm tra tiếp"
-              },
-              "title": {
-                "en": "Check the optical filter is correctly fitted",
-                "zh": "检查光学滤镜是否正确安装",
-                "th": "ตรวจว่าติดตั้งฟิลเตอร์ออปติกถูกต้อง",
-                "vi": "Kiểm tra kính lọc quang đã lắp đúng"
-              },
-              "when": {
-                "en": "Power is on but the lamp does not strike",
-                "zh": "有电但灯不点亮",
-                "th": "มีไฟแต่หลอดไม่ติด",
-                "vi": "Có điện nhưng đèn không cháy"
-              },
-              "intro": {
-                "en": "If the filter is not seated and secured the system cannot identify it, and the lamp will not strike.",
-                "zh": "滤镜没装正或没拧紧，系统识别不到，灯就不会点亮。",
-                "th": "หากฟิลเตอร์ไม่เข้าที่และไม่ได้ยึด ระบบจะระบุไม่ได้ และหลอดจะไม่ติด",
-                "vi": "Nếu kính lọc chưa vào đúng và chưa siết, hệ thống không nhận diện được và đèn sẽ không cháy."
-              },
-              "steps": [
-                {
-                  "en": "Confirm the filter cartridge is inserted with its label facing the lamp.",
-                  "zh": "确认滤镜卡盒已插入，型号标签朝向灯的方向。",
-                  "th": "ยืนยันว่าตลับฟิลเตอร์เสียบเข้าโดยหันฉลากไปทางหลอด",
-                  "vi": "Xác nhận hộp kính lọc đã cắm, nhãn hướng về phía đèn."
-                },
-                {
-                  "en": "Secure it with the M4 screw and a 3 mm hex key.",
-                  "zh": "用 M4 螺丝和 3mm 内六角固定牢靠。",
-                  "th": "ยึดด้วยสกรู M4 และประแจหกเหลี่ยม 3 มม.",
-                  "vi": "Cố định bằng vít M4 và lục giác 3 mm."
-                },
-                {
-                  "en": "Power up and confirm the filter type under GUI → Information.",
-                  "zh": "开机后在 GUI “Information” 中确认系统已识别滤镜类型。",
-                  "th": "เปิดเครื่องและยืนยันชนิดฟิลเตอร์ใน GUI → Information",
-                  "vi": "Bật máy và xác nhận loại kính lọc trong GUI → Information."
-                },
-                {
-                  "en": "On a demo system the lamp does not strike automatically at power-on — that is by design, not a fault.",
-                  "zh": "若是 Demo 系统：默认开机灯不自动点亮，需手动点灯（这是设定，不是故障）。",
-                  "th": "ในเครื่องเดโม หลอดจะไม่ติดอัตโนมัติเมื่อเปิดเครื่อง ซึ่งเป็นการออกแบบ ไม่ใช่ข้อผิดพลาด",
-                  "vi": "Trên máy demo, đèn không tự cháy khi bật nguồn — đó là thiết kế, không phải lỗi."
-                }
-              ]
+              "en": "Check the fuse.",
+              "zh": "检查保险丝是否正常。",
+              "th": "ตรวจฟิวส์",
+              "vi": "Kiểm tra cầu chì."
             }
           ]
         },
         {
-          "id": "s2-locked",
+          "id": "s2-nouv",
           "name": {
-            "en": "Screen locked / settings cannot be changed",
-            "zh": "屏幕被锁 / 改不了设置",
-            "th": "หน้าจอถูกล็อก / แก้ไขค่าไม่ได้",
-            "vi": "Màn hình bị khóa / không đổi được cài đặt"
+            "en": "No UV output",
+            "zh": "无法放出紫外光",
+            "th": "ไม่มีแสง UV ออกมา",
+            "vi": "Không phát ra tia UV"
           },
-          "causes": [
+          "checks": [
             {
-              "level": "",
-              "tag": {
-                "en": "Screen lock",
-                "zh": "屏幕锁定",
-                "th": "ล็อกหน้าจอ",
-                "vi": "Khóa màn hình"
-              },
-              "title": {
-                "en": "The system is PIN-locked",
-                "zh": "系统已被 PIN 锁定",
-                "th": "ระบบถูกล็อกด้วย PIN",
-                "vi": "Hệ thống bị khóa bằng PIN"
-              },
-              "intro": {
-                "en": "While locked you cannot leave the screen or change exposure settings; only Start/Stop, Play or the foot pedal will trigger.",
-                "zh": "锁定后无法退出屏幕或更改曝光设置，只能用 Start/Stop、Play 或脚踏板触发。",
-                "th": "ขณะล็อกจะออกจากหน้าจอหรือแก้ค่าการฉายแสงไม่ได้ ใช้ได้เฉพาะ Start/Stop, Play หรือแป้นเหยียบ",
-                "vi": "Khi khóa, không thể rời màn hình hay đổi cài đặt; chỉ Start/Stop, Play hoặc bàn đạp mới kích hoạt."
-              },
-              "steps": [
-                {
-                  "en": "Select the unlock icon on the RUN screen.",
-                  "zh": "在 RUN 界面选择解锁图标。",
-                  "th": "เลือกไอคอนปลดล็อกบนหน้าจอ RUN",
-                  "vi": "Chọn biểu tượng mở khóa trên màn hình RUN."
-                },
-                {
-                  "en": "Enter the PIN — the default is 1234.",
-                  "zh": "输入 PIN（默认 1234）解锁。",
-                  "th": "ใส่ PIN — ค่าเริ่มต้นคือ 1234",
-                  "vi": "Nhập PIN — mặc định là 1234."
-                },
-                {
-                  "en": "To change it: Settings → Advanced Setup → Screen Lock Pin.",
-                  "zh": "如需修改 PIN：Settings → Advanced Setup → Screen Lock Pin。",
-                  "th": "หากต้องการเปลี่ยน: Settings → Advanced Setup → Screen Lock Pin",
-                  "vi": "Để đổi: Settings → Advanced Setup → Screen Lock Pin."
-                }
-              ],
-              "note": {
-                "en": "The default PIN is 1234.",
-                "zh": "默认 PIN 为 1234。",
-                "th": "PIN เริ่มต้นคือ 1234",
-                "vi": "PIN mặc định là 1234."
-              }
+              "en": "Check the light guide is fully seated — a red indicator LED means it is not.",
+              "zh": "检查光导管是否安装到位——LED 指示灯呈红色则未安装到位。",
+              "th": "ตรวจว่าไลท์ไกด์เสียบเข้าสุดหรือไม่ — ไฟ LED สีแดงแปลว่ายังไม่สุด",
+              "vi": "Kiểm tra ống dẫn sáng đã cắm hết chưa — đèn LED đỏ nghĩa là chưa."
+            },
+            {
+              "en": "Check the screen: the lamp may still be warming up.",
+              "zh": "检查系统界面，灯泡是否处于预热状态。",
+              "th": "ดูที่หน้าจอ: หลอดไฟอาจยังอุ่นเครื่องอยู่",
+              "vi": "Xem màn hình: đèn có thể vẫn đang khởi động."
+            },
+            {
+              "en": "Connect the footswitch and test whether it triggers normally.",
+              "zh": "连接脚踏开关，测试触发是否正常。",
+              "th": "ต่อสวิตช์เท้าแล้วทดสอบว่าสั่งงานได้ปกติหรือไม่",
+              "vi": "Kết nối bàn đạp và thử xem có kích hoạt bình thường không."
             }
           ]
         },
         {
-          "id": "s2-units",
+          "id": "s2-nostrike",
           "name": {
-            "en": "Cannot set irradiance in W/cm²",
-            "zh": "无法设置 W/cm² 光强",
-            "th": "ตั้งค่าความเข้มเป็น W/cm² ไม่ได้",
-            "vi": "Không đặt được cường độ theo W/cm²"
+            "en": "Lamp will not strike",
+            "zh": "灯泡无法点亮",
+            "th": "หลอดไฟไม่ติด",
+            "vi": "Đèn không đánh lửa"
           },
-          "causes": [
+          "checks": [
             {
-              "level": "",
-              "tag": {
-                "en": "Irradiance units",
-                "zh": "光强单位",
-                "th": "หน่วยความเข้ม",
-                "vi": "Đơn vị cường độ"
-              },
-              "title": {
-                "en": "Calibration is required before W/cm² or W can be used",
-                "zh": "需要先校准才能用 W/cm² 或 W",
-                "th": "ต้องสอบเทียบก่อนจึงใช้ W/cm² หรือ W ได้",
-                "vi": "Phải hiệu chuẩn trước khi dùng W/cm² hoặc W"
-              },
-              "intro": {
-                "en": "Until the system is calibrated, irradiance can only be set as a percentage.",
-                "zh": "未校准时光强只能按百分比设置。",
-                "th": "จนกว่าจะสอบเทียบ ความเข้มตั้งได้เป็นเปอร์เซ็นต์เท่านั้น",
-                "vi": "Khi chưa hiệu chuẩn, cường độ chỉ đặt được theo phần trăm."
-              },
-              "steps": [
-                {
-                  "en": "Calibrate the head or system with the matching radiometer.",
-                  "zh": "用对应辐射计对灯头/系统进行校准。",
-                  "th": "สอบเทียบหัวไฟหรือระบบด้วยเครื่องวัดรังสีที่ตรงรุ่น",
-                  "vi": "Hiệu chuẩn đầu đèn hoặc hệ thống bằng thiết bị đo phù hợp."
-                },
-                {
-                  "en": "After calibration, irradiance can be set in W/cm² or W.",
-                  "zh": "校准后即可在 W/cm²（辐照度）或 W（功率）下设置光强。",
-                  "th": "หลังสอบเทียบ ตั้งความเข้มเป็น W/cm² หรือ W ได้",
-                  "vi": "Sau hiệu chuẩn, đặt cường độ theo W/cm² hoặc W."
-                },
-                {
-                  "en": "Use the arrows on the Run screen, or type the value on the keypad.",
-                  "zh": "用 Run 界面的上下键，或直接在数字键盘输入数值。",
-                  "th": "ใช้ปุ่มลูกศรบนหน้าจอ Run หรือพิมพ์ค่าบนแป้นตัวเลข",
-                  "vi": "Dùng mũi tên trên màn hình Run, hoặc nhập giá trị bằng bàn phím số."
-                }
-              ],
-              "note": {
-                "en": "Calibration is the prerequisite for W/cm² and W control.",
-                "zh": "校准是启用 W/cm² 和 W 光强控制的前提。",
-                "th": "การสอบเทียบเป็นเงื่อนไขก่อนใช้การควบคุมแบบ W/cm² และ W",
-                "vi": "Hiệu chuẩn là điều kiện tiên quyết để điều khiển theo W/cm² và W."
-              }
+              "en": "Check the lamp wiring is correctly connected.",
+              "zh": "检查灯泡连线是否正确连接。",
+              "th": "ตรวจว่าสายหลอดไฟต่อถูกต้องหรือไม่",
+              "vi": "Kiểm tra dây đèn đã nối đúng chưa."
+            },
+            {
+              "en": "Fit a new lamp and test.",
+              "zh": "更换新灯泡测试。",
+              "th": "เปลี่ยนหลอดใหม่แล้วทดสอบ",
+              "vi": "Thay đèn mới và thử."
+            }
+          ]
+        },
+        {
+          "id": "s2-lowpower",
+          "name": {
+            "en": "Optical power drops suddenly",
+            "zh": "光功率突然下降",
+            "th": "กำลังแสงลดลงกะทันหัน",
+            "vi": "Công suất quang đột ngột giảm"
+          },
+          "checks": [
+            {
+              "en": "Check the intensity setting in the system is not set too low.",
+              "zh": "检查系统中光强度设定是否过低。",
+              "th": "ตรวจว่าค่าความเข้มที่ตั้งไว้ในระบบต่ำเกินไปหรือไม่",
+              "vi": "Kiểm tra mức cường độ cài đặt trong hệ thống có quá thấp không."
+            },
+            {
+              "en": "Check the light-guide exit face for contamination.",
+              "zh": "检查光导管出口端面是否有异物。",
+              "th": "ตรวจหน้าปลายทางออกของไลท์ไกด์ว่ามีสิ่งสกปรกหรือไม่",
+              "vi": "Kiểm tra mặt đầu ra của ống dẫn sáng có bụi bẩn không."
+            },
+            {
+              "en": "Check the lamp is correctly installed.",
+              "zh": "检查灯泡是否正确安装。",
+              "th": "ตรวจว่าหลอดไฟติดตั้งถูกต้องหรือไม่",
+              "vi": "Kiểm tra đèn đã lắp đúng chưa."
             }
           ]
         }

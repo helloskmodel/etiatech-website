@@ -2,8 +2,14 @@
 import Image from "next/image";
 import { ClipboardCheck, Settings2, LifeBuoy, ArrowRight, FlaskConical, Gauge, Lightbulb } from "lucide-react";
 import { useLocale, t, type Locale, type LangText } from "@/components/LocaleContext";
+import { liveChatChannels } from "@/components/chatChannels";
+import { SERVICE_EMAIL } from "@/components/contact";
 
 const IMG = "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo";
+
+// Where the troubleshooter entry point is offered. The tool carries all four
+// languages; Thai and Vietnamese are held back on purpose.
+const TROUBLESHOOTER_LOCALES: Locale[] = ["en", "zh"];
 
 // ETIA Service Commitment poster — one per language, shown on the right.
 // ?v bump forces Next's image optimizer to refetch after the artwork is
@@ -123,24 +129,60 @@ export default function SalesSupportContent() {
         </div>
       </section>
 
-      {/* Self-service troubleshooter — Chinese-only trial. The tool itself
-          lives in public/tools/; add languages by extending its data JSON,
-          then widen this locale gate. */}
-      {locale === "zh" && (
+      {/* Self-service troubleshooter. The tool itself lives in public/tools/
+          and carries all four languages, but the entry point is offered in
+          Chinese and English only — Thai and Vietnamese are deliberately out.
+          The link passes ?lang= so the tool opens in the page's language. */}
+      {TROUBLESHOOTER_LOCALES.includes(locale) && (
         <section className="bg-[#F6F8FB] py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">自助支持</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">故障排查向导</h2>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-[#41A62A]">{t({ en: "Self-service support", zh: "自助支持" }, locale)}</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102A43] md:text-4xl">{t({ en: "Troubleshooting Guide", zh: "故障排查向导" }, locale)}</h2>
             <p className="mx-auto mt-4 max-w-xl leading-7 text-[#5F6C7B]">
-              基于官方用户指南的故障排查章节整理。按提示选择设备与症状，一步步定位原因与处理方法——查不出的问题再联系工程师。
+              {t({
+                en: "Drawn from the troubleshooting sections of the official user guides. Pick your model and the symptom, and work down to the cause and the fix — if it is not there, talk to an engineer.",
+                zh: "基于官方用户指南的故障排查章节整理。按提示选择设备与症状，一步步定位原因与处理方法——查不出的问题再联系工程师。",
+              }, locale)}
             </p>
             <a
-              href="/tools/troubleshooter"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#1A56DB] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#1A56DB]"
+              href={`/tools/troubleshooter?lang=${locale}`}
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#1A56DB] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#123C94]"
             >
-              🔧 开始排查 <ArrowRight className="h-4 w-4" />
+              🔧 {t({ en: "Start troubleshooting", zh: "开始排查" }, locale)} <ArrowRight className="h-4 w-4" />
             </a>
-            <p className="mt-3 text-xs text-[#7B8794]">试用版 · 当前覆盖 OmniCure LX500 常见故障</p>
+            <p className="mt-3 text-xs text-[#7B8794]">
+              {t({ en: "Covers common faults on the OmniCure S2000 Elite and LX500.", zh: "覆盖 OmniCure S2000 Elite 与 LX500 的常见故障。" }, locale)}
+            </p>
+
+            {/* The tool answers what the manual answers. Everything else needs a
+                person, so the routes to one sit right here rather than a page
+                away — the same mailbox and messengers the rest of the site uses. */}
+            <div className="mt-10 border-t border-[#E2E8F0] pt-8">
+              <p className="text-sm text-[#5F6C7B]">
+                {t({ en: "Need a person? Contact us:", zh: "如需人工支持，请联系：" }, locale)}
+              </p>
+              <div className="mt-4 flex flex-wrap justify-center gap-3">
+                <a
+                  href={`mailto:${SERVICE_EMAIL}?subject=${encodeURIComponent("OmniCure technical support")}`}
+                  className="inline-flex items-center justify-center rounded-xl bg-[#41A62A] px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]"
+                >
+                  {SERVICE_EMAIL}
+                </a>
+                {liveChatChannels().map((ch) => (
+                  <a
+                    key={ch.label}
+                    href={ch.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={ch.aria[locale]}
+                    className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-5 py-3 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96]"
+                  >
+                    <span className="mr-2 inline-block h-2.5 w-2.5 rounded-full" style={{ background: ch.bg }} />
+                    {ch.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       )}

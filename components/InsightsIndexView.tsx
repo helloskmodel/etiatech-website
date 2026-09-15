@@ -10,6 +10,7 @@ import { PAGE_BANNERS } from "@/components/caseStudies";
 import { useLocale, t } from "@/components/LocaleContext";
 import { localizeHref } from "@/components/localeHref";
 import { cosResize } from "@/components/cosImage";
+import { seriesEyebrow, seriesStyle } from "@/components/insightSeries";
 
 type CardLocale = { title: string; description: string };
 type CardLocales = { en: CardLocale; zh?: CardLocale; vi?: CardLocale; th?: CardLocale };
@@ -20,6 +21,9 @@ export type ArticleCard = {
   author: string;
   cover?: string;
   coverFit?: "cover" | "contain";
+  cardStyle?: "summary";
+  series?: string;
+  seriesNo?: number;
   readingMinutes: number;
   locales: CardLocales;
 };
@@ -82,15 +86,29 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
                     href={localizeHref(`/insights/${a.slug}`, locale)}
                     className="group flex flex-col rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all"
                   >
-                    <div className={`relative h-44 overflow-hidden ${a.coverFit === "contain" ? "bg-white" : "bg-gray-100"}`}>
-                      {a.cover ? (
-                        <Image src={cosResize(a.cover, 800)} alt={c.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className={`${a.coverFit === "contain" ? "object-contain" : "object-cover group-hover:scale-105"} transition-transform duration-300`} />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
-                          <span className="text-white/90 text-4xl font-bold">ETIA</span>
-                        </div>
-                      )}
-                    </div>
+                    {/* A diagram is legible at full width inside the article and
+                        an unreadable smudge at 350 px, so a "summary" card
+                        carries no picture at all: series line, then headline. */}
+                    {a.cardStyle === "summary" ? (
+                      <div className="flex h-44 flex-col justify-center px-5" style={{ background: seriesStyle(a.series).tint }}>
+                        {seriesEyebrow(a.series, a.seriesNo, locale) && (
+                          <span className="mb-2.5 text-[11px] font-bold uppercase tracking-[.14em]" style={{ color: seriesStyle(a.series).accent }}>
+                            {seriesEyebrow(a.series, a.seriesNo, locale)}
+                          </span>
+                        )}
+                        <h2 className="line-clamp-4 text-lg font-bold leading-snug" style={{ color: seriesStyle(a.series).ink }}>{c.title}</h2>
+                      </div>
+                    ) : (
+                      <div className={`relative h-44 overflow-hidden ${a.coverFit === "contain" ? "bg-white" : "bg-gray-100"}`}>
+                        {a.cover ? (
+                          <Image src={cosResize(a.cover, 800)} alt={c.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className={`${a.coverFit === "contain" ? "object-contain" : "object-cover group-hover:scale-105"} transition-transform duration-300`} />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1A56DB 0%, #123C94 100%)" }}>
+                            <span className="text-white/90 text-4xl font-bold">ETIA</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <div className="p-5 flex flex-col flex-1">
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {a.tags.slice(0, 3).map((tag) => (
@@ -99,7 +117,9 @@ export default function InsightsIndexView({ articles }: { articles: ArticleCard[
                           </span>
                         ))}
                       </div>
-                      <h2 className="font-bold text-base leading-snug text-gray-800 group-hover:text-[#1A56DB] transition-colors line-clamp-2 mb-2">{c.title}</h2>
+                      {a.cardStyle !== "summary" && (
+                        <h2 className="font-bold text-base leading-snug text-gray-800 group-hover:text-[#1A56DB] transition-colors line-clamp-2 mb-2">{c.title}</h2>
+                      )}
                       <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 flex-1">{c.description}</p>
                       <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400">
                         <span>{fmtDate(a.date, locale)}</span>

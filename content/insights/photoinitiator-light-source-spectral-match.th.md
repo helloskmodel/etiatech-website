@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV Curing Basics, Photoinitiator, Spectral Matching]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/03-mercury-iron-gallium-lamp-spectral-output.png
-coverFit: contain
 ---
 
 **คำตอบหนึ่งประโยค:** สารเริ่มปฏิกิริยาด้วยแสงดูดซับได้เฉพาะช่วงความยาวคลื่นจำเพาะ หากสเปกตรัมของแหล่งกำเนิดแสงไม่ซ้อนทับกับสเปกตรัมการดูดกลืน ปฏิกิริยาจะไม่เริ่มเลย — นี่คือกฎข้อแรกของการบ่มด้วย UV หลอดปรอทสเปกตรัมกว้างเข้ากันได้กับแทบทุกสูตร; UV LED มีสเปกตรัมแคบ (±10 nm) จึงต้องใช้สูตรที่ออกแบบสำหรับความยาวคลื่นนั้น

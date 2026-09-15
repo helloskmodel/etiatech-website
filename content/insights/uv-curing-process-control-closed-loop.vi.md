@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [Process Control, Closed-Loop Feedback, Traceability]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/09-closed-loop-feedback-vs-no-feedback-lamp-output.png
-coverFit: contain
 ---
 
 **Câu trả lời một dòng:** Quang thông của nguồn sáng trôi theo thời gian và nhiệt độ, không người vận hành nào đảm bảo được liều đồng đều từng chi tiết; kiểm soát quy trình giải quyết bằng ba lớp — ổn định nguồn sáng (phản hồi vòng kín, giám sát nhiệt độ), chương trình hóa việc chiếu (StepCure nhiều bước, kích hoạt PLC) và truy xuất (nhật ký, phân quyền, quản lý từ xa). Đây là nền tảng của sự đồng nhất giữa các lô và tuân thủ kiểm toán trong sản xuất y tế, quang học, ô tô.

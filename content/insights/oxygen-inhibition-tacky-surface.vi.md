@@ -5,7 +5,6 @@ date: 2026-09-15
 tags: [UV Curing Basics, Oxygen Inhibition, Surface Cure]
 author: ETIA Technology
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/insight%20/05-uvc-uvb-uva-penetration-depth-coating.png
-coverFit: contain
 ---
 
 **Câu trả lời một dòng:** Ức chế oxy (oxygen inhibition) xảy ra khi oxy tại mặt phân cách lớp phủ-không khí bắt gốc tự do và kìm hãm phản ứng trùng hợp, khiến bề mặt dính hoặc chưa khô hẳn. Bốn cách xử lý: tăng cường độ, phủ khí nitơ, bổ sung UVC để tạo lớp da nhanh, hoặc dùng công thức chống ức chế.
