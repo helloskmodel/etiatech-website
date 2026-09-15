@@ -40,6 +40,15 @@ export default function ContactView() {
   // books. A customer's PO, invoice and warranty are with whichever one serves
   // their market, so each card names its own — the site is shared, the legal
   // counterparty is not. Names exactly as registered; nothing abbreviated.
+  //
+  // Two entries below look like mistakes and are not. Both were checked with
+  // ETIA and confirmed as they stand; please do not "fix" either one:
+  //
+  //   · Vietnam ward. The 2023 business licence records Phường Đại Phúc, this
+  //     card says Phường Võ Cường. Same street, same Khu 5. ETIA confirmed the
+  //     site is to show Võ Cường.
+  //   · The phone numbers are company lines, not the named contact's own. They
+  //     stay put when the contact person changes.
   const offices: {
     region: { en: string; zh: string; th?: string; vi?: string };
     /** Registered legal entity behind this office. */
