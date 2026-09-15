@@ -61,6 +61,12 @@ const nextConfig: NextConfig = {
       { source: "/th/th/:path*", destination: "/", permanent: true },
       { source: "/th/en/:path*", destination: "/", permanent: true },
       { source: "/th/zh/:path*", destination: "/", permanent: true },
+      // NOTE: /omnicure-thailand is NOT redirected — it is a real page again
+      // (app/(main)/omnicure-thailand). Google still ranks that URL around
+      // position 7 for "OmniCure Thailand"; folding it into /product/omnicure,
+      // which ranks far worse for that query, would hand the position away.
+      // /omnicure-vietnam and /vi/omnicure stay redirected: Search Console
+      // shows no impressions for either, so there is nothing to hold.
       // OmniCure country SEM landing pages retired: their bare standalone
       // quote-form design is replaced by the proper OmniCure product page
       // (full catalogue + site chrome), which the client considers the better
@@ -70,7 +76,6 @@ const nextConfig: NextConfig = {
       // the retirement is final, so pass the old URLs' ranking equity to the
       // product pages; English landing → English product page, localized
       // landing → same-language product page.
-      { source: "/omnicure-thailand", destination: "/product/omnicure", permanent: true },
       { source: "/th/omnicure", destination: "/th/product/omnicure", permanent: true },
       { source: "/omnicure-vietnam", destination: "/product/omnicure", permanent: true },
       { source: "/vi/omnicure", destination: "/vi/product/omnicure", permanent: true },

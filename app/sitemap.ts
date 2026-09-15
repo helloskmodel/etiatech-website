@@ -158,6 +158,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE}${pair.th}`, changeFrequency: "weekly" as const, priority: 0.9, alternates: { languages: langs } },
       ];
     }),
+    // The Thailand market page. Thailand is the site's strongest market by
+    // click-through, so this one ranks ahead of the other standalone pages.
+    { url: `${SITE}/omnicure-thailand`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
   ];
