@@ -1,6 +1,6 @@
 ---
 title: "Same Standard, Local Speed: ETIA's Service Commitment in Vietnam"
-description: "Etiatech Vietnam backs its genuine OmniCure UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — genuine supply, application support and long-term service, in Vietnam."
+description: "ETIA-TECH VIET NAM backs its genuine OmniCure UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — genuine supply, application support and long-term service, in Vietnam."
 date: 2026-07-31
 tags: [ETIA Vietnam, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-VN
@@ -10,7 +10,7 @@ author: ETIA Technology
 
 ![ETIA Service Commitment — Vietnam](https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE-VN)
 
-Buying a UV curing system is the easy part. Keeping it running — genuine spare lamps on hand, an engineer who answers when the line is down, calibration that keeps a validated process in spec — is what actually protects your production. That is why **Etiatech Vietnam** runs a full local operation, not just a sales desk: **the same service commitment as our headquarters, delivered at local speed.**
+Buying a UV curing system is the easy part. Keeping it running — genuine spare lamps on hand, an engineer who answers when the line is down, calibration that keeps a validated process in spec — is what actually protects your production. That is why **ETIA-TECH VIET NAM** runs a full local operation, not just a sales desk: **the same service commitment as our headquarters, delivered at local speed.**
 
 ## Four commitments, in Vietnam
 
@@ -24,7 +24,7 @@ Buying a UV curing system is the easy part. Keeping it running — genuine spare
 
 ## The same standard, closer to you
 
-Manufacturers in Vietnam should not have to choose between local convenience and headquarters-level expertise. With a local warehouse and a local engineering team, Etiatech Vietnam delivers both: the depth of the ETIA group, with someone nearby who picks up the phone.
+Manufacturers in Vietnam should not have to choose between local convenience and headquarters-level expertise. With a local warehouse and a local engineering team, ETIA-TECH VIET NAM delivers both: the depth of the ETIA group, with someone nearby who picks up the phone.
 
 ## Talk to the Vietnam team
 

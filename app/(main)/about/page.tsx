@@ -62,7 +62,7 @@ const OFFICES: Array<{ city: LangText; country: LangText; note?: LangText; highl
     note: {
       en: "ETIATECH (THAILAND) Co., Ltd. — our Thai group company, with local stock, installation and service.",
       zh: "ETIATECH (THAILAND) Co., Ltd. — 集团泰国公司，提供本地备货、安装与服务。",
-      th: "บริษัท อีเทียเทค (ไทยแลนด์) จำกัด — บริษัทในเครือที่ประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
+      th: "บริษัท อีเทียเทค (ไทยแลนด์) จำกัด — บริษัทในกลุ่ม ETIA ที่ประเทศไทย พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
       vi: "ETIATECH (THAILAND) Co., Ltd. — công ty trong tập đoàn tại Thái Lan, có sẵn hàng, lắp đặt và dịch vụ tại chỗ.",
     },
   },
@@ -72,7 +72,7 @@ const OFFICES: Array<{ city: LangText; country: LangText; note?: LangText; highl
     note: {
       en: "ETIA-TECH VIET NAM Co., Ltd. — our Vietnamese group company, with local stock, installation and service.",
       zh: "ETIA-TECH VIET NAM Co., Ltd. — 集团越南公司，提供本地备货、安装与服务。",
-      th: "ETIA-TECH VIET NAM Co., Ltd. — บริษัทในเครือที่เวียดนาม พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
+      th: "ETIA-TECH VIET NAM Co., Ltd. — บริษัทในกลุ่ม ETIA ที่เวียดนาม พร้อมสต็อก ติดตั้ง และบริการในพื้นที่",
       vi: "CÔNG TY TNHH ETIA-TECH VIỆT NAM — công ty trong tập đoàn tại Việt Nam, có sẵn hàng, lắp đặt và dịch vụ tại chỗ.",
     },
   },

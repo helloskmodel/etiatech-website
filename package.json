@@ -12,6 +12,7 @@
     "validate:redirects": "node scripts/validate-legacy-redirects.mjs",
     "validate:catalog": "node scripts/validate-catalog.mjs",
     "validate:claims": "node scripts/validate-claims.mjs",
+    "validate:entities": "node scripts/validate-entities.mjs",
     "validate:search": "node --experimental-strip-types --no-warnings scripts/validate-search.mjs"
   },
   "dependencies": {

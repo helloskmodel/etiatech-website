@@ -1,6 +1,6 @@
 ---
 title: "Same Standard, Local Speed: ETIA's Service Commitment in Thailand"
-description: "Etiatec (Thailand) backs its OmniCure UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — genuine products, application support and long-term service, in Thailand."
+description: "ETIATECH (THAILAND) backs its OmniCure UV curing systems with a local warehouse, a local engineering team and the same service commitment as our headquarters — genuine products, application support and long-term service, in Thailand."
 date: 2026-07-31
 tags: [ETIA Thailand, Service Commitment, UV Curing, Company News]
 cover: https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE.TH
@@ -10,7 +10,7 @@ author: ETIA Technology
 
 ![ETIA Service Commitment — Thailand](https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/logo/ETIA%20SERVICE.TH)
 
-Buying a UV curing system is the easy part. Keeping it running — genuine spare lamps on hand, an engineer who answers when the line is down, calibration that keeps a validated process in spec — is what actually protects your production. That is why **Etiatec (Thailand)** runs a full local operation, not just a sales desk: **the same service commitment as our headquarters, delivered at local speed.**
+Buying a UV curing system is the easy part. Keeping it running — genuine spare lamps on hand, an engineer who answers when the line is down, calibration that keeps a validated process in spec — is what actually protects your production. That is why **ETIATECH (THAILAND)** runs a full local operation, not just a sales desk: **the same service commitment as our headquarters, delivered at local speed.**
 
 ## Four commitments, in Thailand
 
@@ -24,7 +24,7 @@ Buying a UV curing system is the easy part. Keeping it running — genuine spare
 
 ## The same standard, closer to you
 
-Manufacturers in Thailand should not have to choose between local convenience and headquarters-level expertise. With a local warehouse and a local engineering team, Etiatec (Thailand) delivers both: the depth of the ETIA group, with someone nearby who picks up the phone.
+Manufacturers in Thailand should not have to choose between local convenience and headquarters-level expertise. With a local warehouse and a local engineering team, ETIATECH (THAILAND) delivers both: the depth of the ETIA group, with someone nearby who picks up the phone.
 
 ## Talk to the Thailand team
 

@@ -1,16 +1,16 @@
 ---
 title: "ETIA เปิดตัวการดำเนินงานในประเทศไทย ในฐานะตัวแทนจำหน่าย OmniCure ที่ได้รับอนุญาต"
-description: "Etiatec (Thailand) Co., Ltd. — ได้รับการแต่งตั้งจาก Excelitas — นำระบบบ่มยูวี OmniCure ของแท้ พร้อมสต็อกในประเทศ การติดตั้ง และการสนับสนุนภาษาไทย มาสู่ผู้ผลิตทั่วประเทศไทย"
+description: "ETIATECH (THAILAND) Co., Ltd. — ได้รับการแต่งตั้งจาก Excelitas — นำระบบบ่มยูวี OmniCure ของแท้ พร้อมสต็อกในประเทศ การติดตั้ง และการสนับสนุนภาษาไทย มาสู่ผู้ผลิตทั่วประเทศไทย"
 date: 2026-07-19
 tags: [ETIA Thailand, OmniCure, UV Curing, Company News]
 cover: /images/etiatec-thailand-office.jpg
 author: ETIA Technology
 ---
 
-![สำนักงาน ETIATEC (Thailand) Co., Ltd. ในกรุงเทพฯ](/images/etiatec-thailand-office.jpg)
-*สำนักงาน ETIATEC (Thailand) Co., Ltd. ในกรุงเทพฯ*
+![สำนักงาน ETIATECH (THAILAND) Co., Ltd. ในกรุงเทพฯ](/images/etiatec-thailand-office.jpg)
+*สำนักงาน ETIATECH (THAILAND) Co., Ltd. ในกรุงเทพฯ*
 
-**กรุงเทพฯ ประเทศไทย** — ETIA Technology ภูมิใจที่จะประกาศเปิดตัว **Etiatec (Thailand) Co., Ltd.** หน่วยงานของเราในประเทศไทย ซึ่งได้รับการแต่งตั้งจาก **Excelitas Canada Inc.** ให้เป็นตัวแทนจำหน่าย **ระบบบ่มยูวี OmniCure®** ที่ได้รับอนุญาตในประเทศไทย
+**กรุงเทพฯ ประเทศไทย** — ETIA Technology ภูมิใจที่จะประกาศเปิดตัว **ETIATECH (THAILAND) Co., Ltd.** ซึ่งเป็นบริษัทที่จดทะเบียนแยกต่างหากของกลุ่ม ETIA ในประเทศไทย และได้รับการแต่งตั้งจาก **Excelitas Canada Inc.** ให้เป็นตัวแทนจำหน่าย **ระบบบ่มยูวี OmniCure®** ที่ได้รับอนุญาตในประเทศไทย
 
 ผู้ผลิตในไทย ทั้งกลุ่มอุปกรณ์การแพทย์ อิเล็กทรอนิกส์ ยานยนต์ และโฟโตนิกส์ ไม่จำเป็นต้องสั่งซื้ออุปกรณ์บ่มยูวีจากต่างประเทศอีกต่อไป — ระบบ OmniCure ของแท้ หลอดอะไหล่ และอุปกรณ์เสริม มีสต็อก ติดตั้ง และบริการในประเทศ พร้อมการสนับสนุนเป็นภาษาไทย
 
