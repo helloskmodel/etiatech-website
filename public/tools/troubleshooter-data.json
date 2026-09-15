@@ -3,7 +3,7 @@
     "schema_version": "2.0",
     "description": "三层结构:产品 products → 症状 symptoms → 排查步骤 checks。每个可见字符串都是 {en,zh,th,vi}。加产品只需在此文件追加,界面代码不动。",
     "source": "内容由 ETIA 维修中心工程师提供的现场高频故障清单整理。",
-    "translation_status": "zh 为原始稿;en 由 zh 翻译;th/vi 待母语者复核。"
+    "translation_status": "zh 为原始稿;en 由 zh 翻译;th/vi 的故障与排查步骤由泰国、越南同事直接提供(S2000 Elite / LX500 FAQ),界面文案仍为翻译稿。"
   },
   "ui": {
     "brand": {
@@ -103,10 +103,10 @@
       "vi": "Nguồn: danh mục lỗi mà kỹ sư trung tâm bảo hành ETIA dùng thực tế."
     },
     "review": {
-      "en": "Thai and Vietnamese pending native review.",
-      "zh": "泰语与越南语待母语者复核。",
-      "th": "ภาษาไทยและเวียดนามอยู่ระหว่างการตรวจทานโดยเจ้าของภาษา",
-      "vi": "Tiếng Thái và tiếng Việt đang chờ người bản ngữ rà soát."
+      "en": "Thai and Vietnamese fault text supplied by ETIA Thailand and ETIA Viet Nam.",
+      "zh": "泰语与越南语故障文本由泰国、越南同事提供。",
+      "th": "ข้อความอาการเสียภาษาไทยจัดทำโดยทีมงาน ETIA ประเทศไทย",
+      "vi": "Nội dung lỗi tiếng Việt do đội ngũ ETIA Việt Nam cung cấp."
     }
   },
   "contact": {
@@ -133,21 +133,21 @@
           "name": {
             "en": "Head is not recognised",
             "zh": "照射头无法正常识别",
-            "th": "ระบบไม่รู้จักหัวฉายแสง",
-            "vi": "Không nhận diện được đầu chiếu"
+            "th": "หัวฉายแสงไม่ถูกตรวจจับตามปกติ",
+            "vi": "Đầu chiếu (LED Head) không được nhận dạng bình thường"
           },
           "checks": [
             {
               "en": "Unplug and reseat the head, making sure it is fully home.",
               "zh": "插拔照射头，确保安装到位。",
-              "th": "ถอดแล้วเสียบหัวฉายใหม่ ให้แน่ใจว่าเข้าสุด",
-              "vi": "Rút ra cắm lại đầu chiếu, đảm bảo vào hết."
+              "th": "ถอดและเสียบหัวฉายแสงใหม่ ให้แน่ใจว่าติดตั้งเข้าที่",
+              "vi": "Rút ra và cắm lại đầu chiếu, đảm bảo đã lắp chắc chắn"
             },
             {
               "en": "Move the head to another channel and see whether it is recognised there.",
               "zh": "把照射头换到另一个通道，确认是否可以识别。",
-              "th": "ย้ายหัวฉายไปอีกช่องแล้วดูว่าระบบรู้จักหรือไม่",
-              "vi": "Chuyển đầu chiếu sang kênh khác xem có nhận không."
+              "th": "เปลี่ยนหัวฉายแสงไปช่องอื่นเพื่อตรวจสอบว่าตรวจจับได้หรือไม่",
+              "vi": "Đổi đầu chiếu sang kênh khác để xác nhận có nhận dạng được không"
             }
           ]
         },
@@ -156,27 +156,27 @@
           "name": {
             "en": "No UV output",
             "zh": "无法放出紫外光",
-            "th": "ไม่มีแสง UV ออกมา",
+            "th": "ไม่มีแสงออกมา",
             "vi": "Không phát ra tia UV"
           },
           "checks": [
             {
               "en": "Check the safety interlock connection.",
               "zh": "检查安全互锁连接是否正常。",
-              "th": "ตรวจการต่อระบบอินเตอร์ล็อกนิรภัย",
-              "vi": "Kiểm tra kết nối khóa liên động an toàn."
+              "th": "ตรวจสอบว่าการเชื่อมต่อระบบล็อกนิรภัยปกติหรือไม่",
+              "vi": "Kiểm tra kết nối khóa liên động an toàn (Safety Interlock) có bình thường không"
             },
             {
               "en": "Check the trigger signal source setting in the system.",
               "zh": "在系统中检查信号来源是否异常。",
-              "th": "ตรวจการตั้งค่าแหล่งสัญญาณสั่งงานในระบบ",
-              "vi": "Kiểm tra cài đặt nguồn tín hiệu kích trong hệ thống."
+              "th": "ตรวจสอบในระบบว่าแหล่งสัญญาณสั่งงานผิดปกติหรือไม่",
+              "vi": "Kiểm tra trong hệ thống nguồn tín hiệu kích hoạt (Trigger Source) có bất thường không"
             },
             {
               "en": "Swap in another footswitch and test.",
               "zh": "更换脚踏开关测试。",
-              "th": "เปลี่ยนสวิตช์เท้าตัวอื่นแล้วทดสอบ",
-              "vi": "Đổi bàn đạp khác và thử."
+              "th": "เปลี่ยนสวิตช์เท้าเหยียบเพื่อทดสอบ",
+              "vi": "Thay công tắc chân để kiểm tra"
             }
           ]
         },
@@ -186,20 +186,20 @@
             "en": "Optical power drops suddenly",
             "zh": "光功率突然下降",
             "th": "กำลังแสงลดลงกะทันหัน",
-            "vi": "Công suất quang đột ngột giảm"
+            "vi": "Công suất quang giảm đột ngột"
           },
           "checks": [
             {
               "en": "Check the intensity setting in the system is not set too low.",
               "zh": "检查系统中光强度设定是否过低。",
-              "th": "ตรวจว่าค่าความเข้มที่ตั้งไว้ในระบบต่ำเกินไปหรือไม่",
-              "vi": "Kiểm tra mức cường độ cài đặt trong hệ thống có quá thấp không."
+              "th": "ตรวจสอบว่าค่าความเข้มแสงที่ตั้งไว้ในระบบต่ำเกินไปหรือไม่",
+              "vi": "Kiểm tra cường độ sáng cài đặt trong hệ thống có quá thấp không"
             },
             {
               "en": "Check the focusing lens for contamination.",
               "zh": "检查聚光镜是否沾染污渍。",
-              "th": "ตรวจเลนส์รวมแสงว่าเปื้อนหรือไม่",
-              "vi": "Kiểm tra thấu kính hội tụ có bị bẩn không."
+              "th": "ตรวจสอบว่าเลนส์รวมแสงมีคราบสกปรกหรือไม่",
+              "vi": "Kiểm tra thấu kính hội tụ (Focusing Lens) có bị bám bẩn không"
             }
           ]
         }
@@ -221,27 +221,27 @@
           "name": {
             "en": "Controller will not power on",
             "zh": "主机不通电",
-            "th": "เครื่องควบคุมไม่มีไฟเข้า",
+            "th": "เครื่องหลักไม่มีไฟเข้า",
             "vi": "Máy chính không lên nguồn"
           },
           "checks": [
             {
               "en": "Check the power cord and the supply at the socket.",
               "zh": "检查电源线以及用电环境。",
-              "th": "ตรวจสายไฟและระบบไฟที่เต้ารับ",
-              "vi": "Kiểm tra dây nguồn và nguồn điện tại ổ cắm."
+              "th": "ตรวจสอบสายไฟและสภาพแวดล้อมการจ่ายไฟ",
+              "vi": "Kiểm tra dây nguồn và môi trường cấp điện"
             },
             {
               "en": "Check that the lamp-bay cover is fitted — the unit will not power up without it.",
               "zh": "检查灯泡仓盖板是否未安装——未装到位主机不会上电。",
-              "th": "ตรวจว่าฝาครอบช่องหลอดไฟติดตั้งแล้วหรือยัง — ถ้ายังไม่ปิด เครื่องจะไม่จ่ายไฟ",
-              "vi": "Kiểm tra nắp khoang đèn đã lắp chưa — chưa lắp thì máy không lên nguồn."
+              "th": "ตรวจสอบว่าฝาปิดช่องหลอดไฟติดตั้งแล้วหรือไม่",
+              "vi": "Kiểm tra nắp khoang bóng đèn đã được lắp chưa"
             },
             {
               "en": "Check the fuse.",
               "zh": "检查保险丝是否正常。",
-              "th": "ตรวจฟิวส์",
-              "vi": "Kiểm tra cầu chì."
+              "th": "ตรวจสอบฟิวส์ว่าปกติหรือไม่",
+              "vi": "Kiểm tra cầu chì có bình thường không"
             }
           ]
         },
@@ -250,27 +250,27 @@
           "name": {
             "en": "No UV output",
             "zh": "无法放出紫外光",
-            "th": "ไม่มีแสง UV ออกมา",
+            "th": "ไม่มีแสงออกมา",
             "vi": "Không phát ra tia UV"
           },
           "checks": [
             {
               "en": "Check the light guide is fully seated — a red indicator LED means it is not.",
               "zh": "检查光导管是否安装到位——LED 指示灯呈红色则未安装到位。",
-              "th": "ตรวจว่าไลท์ไกด์เสียบเข้าสุดหรือไม่ — ไฟ LED สีแดงแปลว่ายังไม่สุด",
-              "vi": "Kiểm tra ống dẫn sáng đã cắm hết chưa — đèn LED đỏ nghĩa là chưa."
+              "th": "ตรวจสอบว่าท่อนำแสงติดตั้งเข้าที่แล้วหรือไม่ หากไฟแสดงสีแดงแสดงว่ายังไม่เข้าที่",
+              "vi": "Kiểm tra ống dẫn sáng (Light Guide) đã lắp đúng vị trí chưa (đèn LED báo màu đỏ nghĩa là chưa lắp đúng)"
             },
             {
               "en": "Check the screen: the lamp may still be warming up.",
               "zh": "检查系统界面，灯泡是否处于预热状态。",
-              "th": "ดูที่หน้าจอ: หลอดไฟอาจยังอุ่นเครื่องอยู่",
-              "vi": "Xem màn hình: đèn có thể vẫn đang khởi động."
+              "th": "ตรวจสอบหน้าจอระบบว่าหลอดไฟอยู่ในสถานะอุ่นเครื่องหรือไม่",
+              "vi": "Kiểm tra trên giao diện hệ thống xem bóng đèn có đang ở trạng thái làm nóng (Warm-up) không"
             },
             {
               "en": "Connect the footswitch and test whether it triggers normally.",
               "zh": "连接脚踏开关，测试触发是否正常。",
-              "th": "ต่อสวิตช์เท้าแล้วทดสอบว่าสั่งงานได้ปกติหรือไม่",
-              "vi": "Kết nối bàn đạp và thử xem có kích hoạt bình thường không."
+              "th": "ต่อสวิตช์เท้าเหยียบเพื่อทดสอบว่าทำงานปกติหรือไม่",
+              "vi": "Kết nối công tắc chân để kiểm tra hoạt động có bình thường không"
             }
           ]
         },
@@ -280,20 +280,20 @@
             "en": "Lamp will not strike",
             "zh": "灯泡无法点亮",
             "th": "หลอดไฟไม่ติด",
-            "vi": "Đèn không đánh lửa"
+            "vi": "Bóng đèn không sáng"
           },
           "checks": [
             {
               "en": "Check the lamp wiring is correctly connected.",
               "zh": "检查灯泡连线是否正确连接。",
-              "th": "ตรวจว่าสายหลอดไฟต่อถูกต้องหรือไม่",
-              "vi": "Kiểm tra dây đèn đã nối đúng chưa."
+              "th": "ตรวจสอบว่าสายเชื่อมต่อหลอดไฟต่อถูกต้องหรือไม่",
+              "vi": "Kiểm tra dây kết nối bóng đèn đã đấu nối đúng chưa"
             },
             {
               "en": "Fit a new lamp and test.",
               "zh": "更换新灯泡测试。",
-              "th": "เปลี่ยนหลอดใหม่แล้วทดสอบ",
-              "vi": "Thay đèn mới và thử."
+              "th": "เปลี่ยนหลอดไฟใหม่เพื่อทดสอบ",
+              "vi": "Thay bóng đèn mới để kiểm tra"
             }
           ]
         },
@@ -303,26 +303,26 @@
             "en": "Optical power drops suddenly",
             "zh": "光功率突然下降",
             "th": "กำลังแสงลดลงกะทันหัน",
-            "vi": "Công suất quang đột ngột giảm"
+            "vi": "Công suất quang giảm đột ngột"
           },
           "checks": [
             {
               "en": "Check the intensity setting in the system is not set too low.",
               "zh": "检查系统中光强度设定是否过低。",
-              "th": "ตรวจว่าค่าความเข้มที่ตั้งไว้ในระบบต่ำเกินไปหรือไม่",
-              "vi": "Kiểm tra mức cường độ cài đặt trong hệ thống có quá thấp không."
+              "th": "ตรวจสอบว่าค่าความเข้มแสงที่ตั้งไว้ในระบบต่ำเกินไปหรือไม่",
+              "vi": "Kiểm tra cường độ sáng cài đặt trong hệ thống có quá thấp không"
             },
             {
               "en": "Check the light-guide exit face for contamination.",
               "zh": "检查光导管出口端面是否有异物。",
-              "th": "ตรวจหน้าปลายทางออกของไลท์ไกด์ว่ามีสิ่งสกปรกหรือไม่",
-              "vi": "Kiểm tra mặt đầu ra của ống dẫn sáng có bụi bẩn không."
+              "th": "ตรวจสอบว่าปลายทางออกของท่อนำแสงมีสิ่งแปลกปลอมหรือไม่",
+              "vi": "Kiểm tra đầu ra của ống dẫn sáng có dị vật bám không"
             },
             {
               "en": "Check the lamp is correctly installed.",
               "zh": "检查灯泡是否正确安装。",
-              "th": "ตรวจว่าหลอดไฟติดตั้งถูกต้องหรือไม่",
-              "vi": "Kiểm tra đèn đã lắp đúng chưa."
+              "th": "ตรวจสอบว่าหลอดไฟติดตั้งถูกต้องหรือไม่",
+              "vi": "Kiểm tra bóng đèn đã lắp đúng chưa"
             }
           ]
         }
