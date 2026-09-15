@@ -82,413 +82,293 @@
   @keyframes fade { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
   @media (prefers-reduced-motion:reduce) { .fade { animation:none; } }
   .loading { color:var(--ink-soft); font-size:14px; padding:40px 0; text-align:center; }
+  /* ── added for the 3-level rebuild ───────────────────────────── */
+  .langs { margin-left:auto; display:flex; gap:2px; }
+  .langs button { border:1px solid var(--line); background:#fff; color:var(--ink-soft);
+    font:inherit; font-size:12px; padding:4px 9px; border-radius:7px; cursor:pointer; }
+  .langs button[aria-current="true"] { background:var(--brand-tint); border-color:var(--brand);
+    color:var(--brand-dark); font-weight:700; }
+  .when { display:inline-block; margin:0 0 8px; padding:3px 9px; border-radius:99px;
+    background:var(--brand-tint); color:var(--brand-dark); font-size:12px; font-weight:600; }
+  .answers { display:flex; flex-direction:column; gap:14px; }
+  .results { margin-top:14px; display:flex; flex-direction:column; gap:8px; }
+  .result { display:block; width:100%; text-align:left; border:1px solid var(--line); background:#fff;
+    border-radius:var(--radius); padding:12px 14px; cursor:pointer; font:inherit; color:inherit; }
+  .result:hover { border-color:var(--brand); background:var(--brand-tint); }
+  .result .rname { font-weight:700; font-size:14px; }
+  .result .rpath { display:block; margin-top:2px; font-size:12px; color:var(--ink-soft); }
+  .empty { padding:14px; color:var(--ink-soft); font-size:14px; }
+  .src-note { margin-top:26px; font-size:12px; color:var(--ink-soft); }
+  .src-note span { display:block; }
+  .ring-dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:7px;
+    vertical-align:-1px; box-shadow:0 0 0 2px #fff, 0 0 0 3px var(--line); }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="top-inner">
-    <span class="logo">技术支持中心<span class="dot">.</span></span>
-    <span class="top-tag">故障排查向导</span>
+    <span class="logo" id="brandName">ETIA<span class="dot">.</span></span>
+    <span class="top-tag" id="tagLine"></span>
+    <span class="langs" id="langs"></span>
   </div>
 </header>
 <div class="wrap">
   <nav class="crumbs" id="crumbs"></nav>
-  <div id="app"><div class="loading">加载中…</div></div>
+  <div id="app"><div class="loading">…</div></div>
   <div class="back-link" id="backLink"></div>
+  <div class="src-note" id="srcNote"></div>
 </div>
 
 <script>
-/* ============================================================
-   数据加载:优先从外部 troubleshooter-data.json 读取。
-   若因本地直接双击打开(file://)导致读取失败,自动回退到内嵌数据。
-   → 部署到服务器/Vercel 时,请把 troubleshooter-data.json 放同目录,
-     改数据只改 JSON,无需动本文件。
-============================================================ */
-const FALLBACK_DATA = {
-  "_meta": {
-    "schema_version": "1.0",
-    "description": "故障排查向导数据。三层结构:品牌 brands → 产品 products → 症状 symptoms → 排查节点 nodes。加新产品只需在此文件追加,无需改动界面代码。",
-    "node_types": {
-      "branch": "是非追问。字段:tag, q, body, yes(→节点id), no(→节点id)",
-      "cause": "给出原因+解决步骤。字段:tag, level(ok|warn|stop|默认), title, intro, steps[], note, followup?{q,yes,no}",
-      "ringpicker": "特殊入口:S2000 光环颜色选择器"
-    },
-    "level_meaning": {
-      "ok": "正常/无需处理(绿)",
-      "warn": "警告/建议尽快处理(黄)",
-      "stop": "严重/需立即停机处理(红)",
-      "默认(cause无level)": "中性继续检查(蓝)"
-    },
-    "source": "内容提取自 Excelitas OmniCure 原厂手册(LX500 User Guide 035-00628R / Windows Control Panel 035-00666R;S2000 Elite User Guide 035-00707R / Quick Start 035-00708R)。上线前需与原厂确认再编排授权。"
-  },
+/* ────────────────────────────────────────────────────────────────
+   Three screens, and no more:
+     1. product   — the model on the nameplate
+     2. symptom   — what is happening
+     3. answer    — every cause for that symptom, on one page
 
-  "brands": [
-    {
-      "id": "omnicure",
-      "name": "OmniCure",
-      "icon": "🔆",
-      "desc": "Excelitas · UV 点光源固化系统",
-      "products": [
-        {
-          "id": "lx500",
-          "name": "LX500 系列",
-          "icon": "🟦",
-          "desc": "LED 点光源固化 · 2/4 通道控制器",
-          "symptoms": [
-            { "id": "lx-nolight", "name": "UV 灯头不亮", "icon": "🌑", "start": "lx_door" },
-            { "id": "lx-overheat", "name": "灯头过热 / 报警", "icon": "🌡️", "start": "lx_heat" },
-            { "id": "lx-lowint", "name": "光强太低", "icon": "🔅", "start": "lx_low" },
-            { "id": "lx-step", "name": "StepCure 程序不生效", "icon": "🔁", "start": "lx_step" },
-            { "id": "lx-nopower", "name": "控制器不通电", "icon": "🔌", "start": "lx_power" }
-          ]
-        },
-        {
-          "id": "s2000",
-          "name": "S2000 Elite",
-          "icon": "🟥",
-          "desc": "汞灯点光源固化 · 触屏 + 光导",
-          "symptoms": [
-            { "id": "s2-ring", "name": "看光环颜色定位状态", "icon": "🌈", "start": "s2_ring", "featured": true },
-            { "id": "s2-nostrike", "name": "灯不亮 / 系统不通电", "icon": "🌑", "start": "s2_strike" },
-            { "id": "s2-locked", "name": "屏幕被锁 / 改不了设置", "icon": "🔒", "start": "s2_lock" },
-            { "id": "s2-intensity", "name": "无法设置 W/cm² 光强", "icon": "🔅", "start": "s2_cal" }
-          ]
-        }
-      ]
-    }
-  ],
+   The old build had brand → product → symptom → a chain of yes/no
+   questions before an answer appeared: five or six taps for a fact
+   that is one line in the user guide. Customers said it was too much
+   work, and they were right. The yes/no questions were not thrown
+   away — each one became the "applies when" line on the cause it used
+   to gate, so the reader scans instead of clicking.
 
-  "nodes": {
-    "lx_door": {
-      "type": "branch", "tag": "第 1 步排查",
-      "q": "门锁跳线接好了吗?",
-      "body": "如果不接入外部 PLC,必须把门锁跳线插在 PLC 接口的 24 和 25 针之间。接点闭合才会启用灯头输出——这是灯不亮最常见的原因。",
-      "yes": "lx_head", "no": "lx_door_fix"
-    },
-    "lx_door_fix": {
-      "type": "cause", "level": "stop", "tag": "找到原因",
-      "title": "门锁跳线未接好", "intro": "灯头输出被禁用了,接好跳线即可恢复。",
-      "steps": ["先关闭控制器电源", "把门锁跳线接在 PLC 接口 24 与 25 针之间(短接)", "如已接入 UV 防护罩,可把跳线接到防护罩,防止误照射", "重新开机测试"],
-      "note": "闭合接点 = 启用灯头;断开接点 = 禁用灯头。"
-    },
-    "lx_head": {
-      "type": "branch", "tag": "第 2 步排查",
-      "q": "UV 灯头插牢了吗?",
-      "body": "灯头连接器带锁扣。松动会导致识别不到或不出光。",
-      "yes": "lx_lock", "no": "lx_head_fix"
-    },
-    "lx_head_fix": {
-      "type": "cause", "level": "warn", "tag": "找到原因",
-      "title": "灯头连接松动", "intro": "重新插紧灯头即可。",
-      "steps": ["先关闭控制器电源(务必断电再插拔)", "把灯头线重新插入背面对应通道,插到锁扣到位", "开机确认灯头被识别"],
-      "note": "拔灯头时捏住塑料外壳的卡扣;插拔前一定断电。"
-    },
-    "lx_lock": {
-      "type": "branch", "tag": "第 3 步排查",
-      "q": "状态栏出现锁图标了吗?",
-      "body": "如果前面板被 PLC 输入或 PC 指令锁定,Start/Stop 按了没反应,状态栏会显示一个锁的图标。",
-      "yes": "lx_lock_fix", "no": "lx_step_check"
-    },
-    "lx_lock_fix": {
-      "type": "cause", "level": "warn", "tag": "找到原因",
-      "title": "前面板被锁定", "intro": "面板处于锁定状态,需要解锁才能操作。",
-      "steps": ["通过 PLC 输入或 PC 指令解除前面板锁定", "解锁后状态栏锁图标消失", "重新用 Start/Stop 触发曝光"],
-      "note": "锁定状态在断电后不保留,重启也可解除。"
-    },
-    "lx_step_check": {
-      "type": "cause", "level": "cause", "tag": "继续检查",
-      "title": "检查 StepCure 与曝光设置", "intro": "基础连接都正常,问题可能出在曝光程序或模式上。",
-      "steps": ["确认 StepCure 表格填写正确,或留空", "确认不是在计数上升模式下期望 StepCure 运行(StepCure 只在倒计时模式工作)", "若仍不亮,联系技术支持"],
-      "note": "StepCure 仅在倒计时模式下生效(S2000 指令集设置除外)。"
-    },
-    "lx_heat": {
-      "type": "cause", "level": "warn", "tag": "过热报警(错误 1)",
-      "title": "灯头超过允许工作温度", "intro": "温度降到阈值以下后灯头会恢复;下次触发即可清除报警。重点是排查散热。",
-      "steps": ["检查夹具在灯头上的位置——底面应在镜头壳体折痕与参考线之间", "检查环境温度不超过 35°C", "用 55mm 短灯头时确认夹具装牢", "检查发射模式与计时模式设置", "检查镜头是否清洁"],
-      "note": "夹具位置错误是过热最常见的原因。参考线 = 灯头上第一个圆形凹槽。"
-    },
-    "lx_low": {
-      "type": "cause", "level": "cause", "tag": "光强偏低",
-      "title": "输出光强不足", "intro": "先排查镜头和设置,再看闭环反馈。",
-      "steps": ["确认电源关闭后,检查灯头镜头是否洁净", "确认光强设定值正确", "若用闭环反馈(CLF),建议光强设在 80% 以下——过高时 CLF 达上限会失效"],
-      "note": "校准后光强可用 W/cm²(辐照度)或 W(功率)显示。"
-    },
-    "lx_step": {
-      "type": "cause", "level": "cause", "tag": "StepCure 不生效",
-      "title": "StepCure 程序没有运行", "intro": "最常见原因:不在倒计时模式。",
-      "steps": ["检查状态栏箭头——朝下才是倒计时模式", "StepCure 只在倒计时模式下生效(S2000 指令集设置除外)", "确认触发源(Src)与实际使用的输入一致", "确认强度类型与灯头校准类型匹配,否则会报错误 8"],
-      "note": "计数上升模式(计时器 0.0 秒)下 StepCure 不工作。"
-    },
-    "lx_power": {
-      "type": "cause", "level": "stop", "tag": "不通电",
-      "title": "控制器无法通电", "intro": "逐项检查供电链路。",
-      "steps": ["确认 AC 电源线牢固接入接地插座", "确认电源适配器 DC 圆头插入控制器背面 DC IN", "确认电源开关拨到 “I”(ON)"],
-      "note": "只使用随附电源线或同等规格、带屏蔽和认证的线缆。"
-    },
+   All visible copy is {en,zh,th,vi} in troubleshooter-data.json, so
+   adding a product still means editing only that file.
+   ──────────────────────────────────────────────────────────────── */
 
-    "s2_ring": {
-      "type": "ringpicker", "tag": "看光环颜色",
-      "q": "你在前面板看到的光环是什么颜色?",
-      "body": "S2000 Elite 的彩色光环直接反映系统状态。点一下你看到的颜色。",
-      "options": [
-        { "color": "#dc2626", "label": "红色", "to": "s2_ring_red" },
-        { "color": "#2563eb", "label": "蓝色", "to": "s2_ring_blue" },
-        { "color": "#c026d3", "label": "品红", "to": "s2_ring_magenta" },
-        { "color": "#eab308", "label": "黄色", "to": "s2_ring_yellow" },
-        { "color": "#16a34a", "label": "绿色", "to": "s2_ring_green" }
-      ]
-    },
-    "s2_ring_red": {
-      "type": "cause", "level": "stop", "tag": "红色",
-      "title": "没检测到光导(Light Guide)", "intro": "光导没插到位,系统检测不到。",
-      "steps": ["取下光导两端的保护端盖", "把光导插入前面板的光导端口", "插到听见/感到一声明确的 “咔哒” 到位"],
-      "note": "红色 = 未检测到光导。"
-    },
-    "s2_ring_blue": {
-      "type": "cause", "level": "cause", "tag": "蓝色",
-      "title": "光导已插入,系统预热中", "intro": "这是正常过程,不是故障。",
-      "steps": ["等待系统完成预热", "Excelitas 建议充分预热 20 分钟以确保光输出稳定", "预热倒计时会显示在屏幕上"],
-      "note": "蓝色 = 已插入光导,正在预热。"
-    },
-    "s2_ring_magenta": {
-      "type": "cause", "level": "cause", "tag": "品红",
-      "title": "闭环反馈未激活", "intro": "光导已插入,但闭环反馈(CLF)尚未激活。",
-      "steps": ["确认已完成灯的预热", "若需要 CLF,确认灯头已校准且光强设置在可控范围内", "继续运行后 CLF 通常会激活转为绿色"],
-      "note": "品红 = 已插光导,闭环反馈未激活。"
-    },
-    "s2_ring_yellow": {
-      "type": "cause", "level": "warn", "tag": "黄色",
-      "title": "闭环反馈激活,但校准快到期", "intro": "系统仍可用,但校准即将过期,建议尽快重新校准。",
-      "steps": ["安排对灯头/系统重新校准", "准备好对应的辐射计(如 LS100/LS100P)", "校准后光环应恢复绿色"],
-      "note": "黄色 = 闭环反馈激活 + 校准接近到期。"
-    },
-    "s2_ring_green": {
-      "type": "cause", "level": "ok", "tag": "绿色",
-      "title": "一切正常", "intro": "光导已插入,闭环反馈激活,系统状态良好。",
-      "steps": ["无需操作,可正常运行曝光", "运行前确认所有人已佩戴 UV 防护或灯头处于防护罩内"],
-      "note": "绿色 = 闭环反馈激活,状态正常。"
-    },
-    "s2_strike": {
-      "type": "branch", "tag": "第 1 步排查",
-      "q": "灯罩侧板已完全装好并拧紧了吗?",
-      "body": "S2000 Elite 有多个 “没装好就不通电” 的安全联锁。侧板没到位是其中之一。",
-      "yes": "s2_strike_grommet", "no": "s2_strike_panel_fix"
-    },
-    "s2_strike_panel_fix": {
-      "type": "cause", "level": "stop", "tag": "找到原因",
-      "title": "灯罩侧板未固定到位", "intro": "侧板未完全固定时系统不会通电。",
-      "steps": ["断开 AC 电源", "重新装好灯罩侧板", "用 3mm 内六角把固定螺丝完全拧紧", "重新接电开机"],
-      "note": "灯罩面板未完全固定 → 系统不通电。"
-    },
-    "s2_strike_grommet": {
-      "type": "branch", "tag": "第 2 步排查",
-      "q": "Intelli-Lamp 线塞进橡胶圈了吗?",
-      "body": "灯泡模块安装时,Intelli-Lamp 线要塞进隔板上的橡胶圈,否则门关不严。",
-      "yes": "s2_strike_filter", "no": "s2_strike_grommet_fix"
-    },
-    "s2_strike_grommet_fix": {
-      "type": "cause", "level": "stop", "tag": "找到原因",
-      "title": "Intelli-Lamp 线未收进橡胶圈", "intro": "线没收好会导致门关不严,系统不通电。",
-      "steps": ["断电并打开灯罩侧板", "把 Intelli-Lamp 线塞进灯与连接器之间隔板上的橡胶圈", "确认门可完全闭合", "装回侧板并拧紧螺丝"],
-      "note": "线未收好 → 门关不严 → 系统不通电。"
-    },
-    "s2_strike_filter": {
-      "type": "cause", "level": "warn", "tag": "继续检查",
-      "title": "检查光学滤镜是否正确安装", "intro": "滤镜没装正/没拧紧,系统识别不到,灯不会striking。",
-      "steps": ["确认滤镜卡盒已插入,型号标签朝向灯的方向", "用 M4 螺丝和 3mm 内六角固定牢靠", "开机后在 GUI “Information” 中确认系统已识别滤镜类型", "若是 Demo 系统:默认开机灯不自动点亮,需手动点灯(这是设定,不是故障)"],
-      "note": "滤镜未正确安装/固定 → 不被识别 → 灯不striking。"
-    },
-    "s2_lock": {
-      "type": "cause", "level": "cause", "tag": "屏幕锁定",
-      "title": "系统已被 PIN 锁定", "intro": "锁定后无法退出屏幕或更改曝光设置,只能用 Start/Stop、Play 或脚踏板触发。",
-      "steps": ["在 RUN 界面选择解锁图标", "输入 PIN(默认 1234)解锁", "如需修改 PIN:Settings → Advanced Setup → Screen Lock Pin"],
-      "note": "默认 PIN 为 1234。"
-    },
-    "s2_cal": {
-      "type": "cause", "level": "cause", "tag": "光强单位",
-      "title": "需要先校准才能用 W/cm² 或 W", "intro": "未校准时光强只能按百分比设置。",
-      "steps": ["用对应辐射计对灯头/系统进行校准", "校准后即可在 W/cm²(辐照度)或 W(功率)下设置光强", "用 Run 界面的上下键或直接在数字键盘输入数值"],
-      "note": "校准是启用 W/cm² 和 W 光强控制的前提。"
-    }
-  },
+const LANGS = ["en", "zh", "th", "vi"];
+const LANG_LABEL = { en: "EN", zh: "中文", th: "ไทย", vi: "VI" };
 
-  "ref_tables": {
-    "lx500": {
-      "title": "LX500 错误码速查",
-      "cols": ["错误码", "含义", "处理"],
-      "rows": [
-        ["Error 1", "灯头超过允许工作温度", "检查夹具位置、发射/计时模式、镜头清洁度"],
-        ["Error 2", "灯头短路", "检查灯头到控制器连接"],
-        ["Error 3", "开机后灯头被断开", "检查连接,需断电重启"],
-        ["Error 4", "灯头开路", "检查连接与灯头线是否损坏"],
-        ["Error 5", "灯头 1-wire 存储芯片错误", "检查灯头连接,断电重启"],
-        ["Error 6", "读不到灯头温度", "检查灯头连接,断电重启"],
-        ["Error 7", "灯头位于不同控制器/接口位置", "按提示插回原位,按 Select 确认"],
-        ["Error 8", "StepCure 光强超出灯头能力", "调整光强或重新校准灯头"],
-        ["System 1–3", "内部硬件/通信/存储错误", "重启系统;持续则联系服务中心"],
-        ["System 5", "系统性能不足", "放慢控制输入速率"]
-      ]
-    },
-    "s2000": {
-      "title": "S2000 Elite 光环颜色速查",
-      "cols": ["颜色", "状态", "说明"],
-      "rows": [
-        ["红色", "未检测到光导", "把光导插到 “咔哒” 到位"],
-        ["蓝色", "预热中", "正常,等待预热完成(建议 20 分钟)"],
-        ["品红", "闭环反馈未激活", "继续运行,通常会转绿"],
-        ["黄色", "CLF 激活 + 校准快到期", "尽快重新校准"],
-        ["绿色", "闭环反馈激活,状态正常", "可正常使用"]
-      ]
-    }
-  }
+function initialLang() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (LANGS.includes(q)) return q;
+  try { const s = localStorage.getItem("ts-lang"); if (LANGS.includes(s)) return s; } catch (e) {}
+  const n = (navigator.language || "en").toLowerCase();
+  if (n.startsWith("zh")) return "zh";
+  if (n.startsWith("th")) return "th";
+  if (n.startsWith("vi")) return "vi";
+  return "en";
 }
-;
+let LANG = initialLang();
+/** Read a {en,zh,th,vi} value in the current language, falling back to English. */
+const T = (v) => (v && (v[LANG] || v.en)) || "";
 
-let DATA, NODES, REF_TABLES;
+let DATA = null;
+const app = document.getElementById("app");
+const crumbsEl = document.getElementById("crumbs");
+const backEl = document.getElementById("backLink");
+const langsEl = document.getElementById("langs");
 
+let state = { product: null, symptom: null, query: "" };
+
+/* ---- boot ---- */
 async function boot() {
   try {
-    const res = await fetch('troubleshooter-data.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('http ' + res.status);
-    const json = await res.json();
-    apply(json);
+    const res = await fetch("troubleshooter-data.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("http " + res.status);
+    DATA = await res.json();
   } catch (e) {
-    apply(FALLBACK_DATA); // 本地打开时回退
+    // No stale inline copy of the content: a fallback that silently serves
+    // last year's troubleshooting steps is worse than an honest failure.
+    app.innerHTML = `<div class="panel stop"><h2>Could not load the troubleshooting data</h2>
+      <p>Please reload the page. If it keeps failing, contact an ETIA engineer directly —
+      <a href="mailto:guoren_wang@etia-tech.com">guoren_wang@etia-tech.com</a>.</p></div>`;
+    return;
   }
+  renderLangs();
   render();
 }
-function apply(json){ DATA = { brands: json.brands }; NODES = json.nodes; REF_TABLES = json.ref_tables; }
 
-/* ---- 状态 ---- */
-let state = { brand:null, product:null, symptom:null, node:null };
-const app = document.getElementById('app');
-const crumbsEl = document.getElementById('crumbs');
-const backLinkEl = document.getElementById('backLink');
+function setLang(l) {
+  LANG = l;
+  try { localStorage.setItem("ts-lang", l); } catch (e) {}
+  document.documentElement.lang = l;
+  renderLangs();
+  render();
+}
+function renderLangs() {
+  langsEl.innerHTML = LANGS.map((l) =>
+    `<button onclick="setLang('${l}')" aria-current="${l === LANG}">${LANG_LABEL[l]}</button>`).join("");
+  document.getElementById("brandName").innerHTML = `${esc(T(DATA.ui.brand))}<span class="dot">.</span>`;
+  document.getElementById("tagLine").textContent = T(DATA.ui.tagline);
+  document.getElementById("srcNote").innerHTML =
+    `<span>${esc(T(DATA.ui.src))}</span><span>${esc(T(DATA.ui.review))}</span>`;
+  document.title = `${T(DATA.ui.brand)} · ${T(DATA.ui.tagline)}`;
+}
 
-function reset(){ state={brand:null,product:null,symptom:null,node:null}; render(); }
-function findBrand(id){ return DATA.brands.find(b=>b.id===id); }
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-function render(){
+/* ---- navigation ---- */
+function pickProduct(id) { state.product = DATA.products.find((p) => p.id === id); state.symptom = null; state.query = ""; render(); }
+function pickSymptom(id) { state.symptom = state.product.symptoms.find((s) => s.id === id); render(); }
+function toHome() { state = { product: null, symptom: null, query: "" }; render(); }
+function toProduct() { state.symptom = null; render(); }
+function stepBack() { if (state.symptom) toProduct(); else if (state.product) toHome(); }
+/** Jump straight from a search hit to its answer, skipping both earlier screens. */
+function jump(pid, sid) { state.product = DATA.products.find((p) => p.id === pid); state.symptom = state.product.symptoms.find((s) => s.id === sid); state.query = ""; render(); }
+
+function render() {
   renderCrumbs();
-  if(!state.brand) return renderBrands();
-  if(!state.product) return renderProducts();
-  if(!state.symptom) return renderSymptoms();
-  return renderNode(state.node);
+  if (!state.product) return renderHome();
+  if (!state.symptom) return renderSymptoms();
+  return renderAnswer();
 }
-function renderCrumbs(){
-  const p=[]; p.push(`<button onclick="reset()">技术支持</button>`);
-  if(state.brand) p.push(`<span class="sep">›</span><button onclick="toBrand()">${state.brand.name}</button>`);
-  if(state.product) p.push(`<span class="sep">›</span><button onclick="toProduct()">${state.product.name}</button>`);
-  if(state.symptom) p.push(`<span class="sep">›</span><button onclick="toSymptom()">${state.symptom.name}</button>`);
-  crumbsEl.innerHTML=p.join(" ");
-  backLinkEl.innerHTML = state.brand ? `<button onclick="stepBack()">← 返回上一步</button>` : "";
-}
-function toBrand(){ state.product=null; state.symptom=null; state.node=null; render(); }
-function toProduct(){ state.symptom=null; state.node=null; render(); }
-function toSymptom(){ state.node=state.symptom.start; render(); }
-function stepBack(){ if(state.symptom) toProduct(); else if(state.product) toBrand(); else if(state.brand) reset(); }
 
-function renderBrands(){
-  app.className='fade';
-  app.innerHTML=`
-    <div><div class="eyebrow">故障排查 · 第 1 步</div>
-    <h1 class="q">先选择设备品牌</h1>
-    <div class="sub">找到你正在使用的设备,我们一步步帮你定位问题。</div></div>
+function renderCrumbs() {
+  const parts = [`<button onclick="toHome()">${esc(T(DATA.ui.home_crumb))}</button>`];
+  if (state.product) parts.push(`<span class="sep">›</span><button onclick="toProduct()">${esc(state.product.name)}</button>`);
+  if (state.symptom) parts.push(`<span class="sep">›</span><button>${esc(T(state.symptom.name))}</button>`);
+  crumbsEl.innerHTML = parts.join(" ");
+  backEl.innerHTML = state.product ? `<button onclick="stepBack()">${esc(T(DATA.ui.back))}</button>` : "";
+}
+
+/* ---- 1. products, search, and a way straight to a human ---- */
+function renderHome() {
+  app.className = "fade";
+  app.innerHTML = `
+    <div><h1 class="q">${esc(T(DATA.ui.home_h1))}</h1>
+    <div class="sub">${esc(T(DATA.ui.home_sub))}</div></div>
     ${searchBox()}
-    <div class="grid">
-      ${DATA.brands.map(b=> b.comingSoon ? cardSoon(b) :
-        `<button class="choice" onclick="pickBrand('${b.id}')"><span class="ico">${b.icon}</span>
-         <span class="body"><span class="name">${b.name}</span><span class="desc">${b.desc}</span></span></button>`).join("")}
-      ${cardSoon({icon:"➕",name:"更多品牌",desc:"框架可扩展,持续录入"})}
-    </div>`;
-}
-function renderProducts(){
-  app.className='fade'; const b=state.brand;
-  app.innerHTML=`
-    <div><div class="eyebrow">${b.name} · 第 2 步</div>
-    <h1 class="q">选择产品型号</h1>
-    <div class="sub">不同型号的排查方式不同,请选择你的机型。</div></div>
-    <div class="grid">
-      ${b.products.map(p=>`<button class="choice" onclick="pickProduct('${p.id}')"><span class="ico">${p.icon}</span>
-        <span class="body"><span class="name">${p.name}</span><span class="desc">${p.desc}</span></span></button>`).join("")}
-      ${cardSoon({icon:"➕",name:"更多型号",desc:"框架可扩展,持续录入"})}
-    </div>`;
-}
-function renderSymptoms(){
-  app.className='fade'; const p=state.product;
-  app.innerHTML=`
-    <div><div class="eyebrow">${p.name} · 第 3 步</div>
-    <h1 class="q">你遇到的是哪种情况?</h1>
-    <div class="sub">选择最接近的症状,进入分步排查。</div></div>
-    ${searchBox()}
-    <div class="grid">
-      ${p.symptoms.map(s=>`<button class="choice" onclick="pickSymptom('${s.id}')"><span class="ico">${s.icon}</span>
-        <span class="body"><span class="name">${s.name}${s.featured?'<span class="badge-feat">推荐入口</span>':''}</span></span></button>`).join("")}
+    <div id="searchResults"></div>
+    <div class="grid" id="productGrid">
+      ${DATA.products.map((p) => `
+        <button class="choice" onclick="pickProduct('${p.id}')"><span class="ico">${p.icon}</span>
+          <span class="body"><span class="name">${esc(p.name)}</span>
+          <span class="desc">${esc(T(p.desc))}</span></span></button>`).join("")}
     </div>
-    ${refTable(p.id)}`;
+    ${contactBox()}`;
+  wireSearch();
 }
-function renderNode(id){
-  const n=NODES[id]; app.className='fade';
-  if(!n){ app.innerHTML="<p>节点缺失</p>"; return; }
-  if(n.type==="branch"){
-    app.innerHTML=`<div class="panel"><span class="tag cause">${n.tag}</span>
-      <h2>${n.q}</h2><p>${n.body}</p>
-      <div class="yn"><button onclick="goNode('${n.yes}')">是 ✓</button>
-      <button onclick="goNode('${n.no}')">否 / 不确定</button></div></div>`;
-    return;
-  }
-  if(n.type==="ringpicker"){
-    app.innerHTML=`
-      <div><div class="eyebrow">${state.product.name} · 状态诊断</div>
-      <h1 class="q">${n.q}</h1><div class="sub">${n.body}</div></div>
-      <div class="grid">
-        ${n.options.map(o=>`<button class="choice" onclick="goNode('${o.to}')">
-          <span class="swatch" style="background:${o.color}"></span>
-          <span class="body"><span class="name">${o.label}</span></span></button>`).join("")}
-      </div>`;
-    return;
-  }
-  const lvl=n.level==="ok"?"ok":n.level==="warn"?"warn":n.level==="stop"?"stop":"";
-  const tc=n.level==="ok"?"ok":n.level==="warn"?"warn":n.level==="stop"?"stop":"cause";
-  app.innerHTML=`
-    <div class="panel ${lvl}"><span class="tag ${tc}">${n.tag}</span>
-      <h2>${n.title}</h2><p>${n.intro}</p>
-      <ol class="steps">${n.steps.map(s=>`<li>${s}</li>`).join("")}</ol>
-      ${n.note?`<div class="note"><b>说明:</b> ${n.note}</div>`:""}
-      ${n.followup?`<div class="followup"><div class="fq">${n.followup.q}</div>
-        <div class="yn"><button onclick="goNode('${n.followup.yes}')">是 ✓</button>
-        <button onclick="goNode('${n.followup.no}')">否</button></div></div>`:""}
+
+/* ---- 2. symptoms for the chosen model ---- */
+function renderSymptoms() {
+  app.className = "fade";
+  const p = state.product;
+  app.innerHTML = `
+    <div><div class="eyebrow">${esc(p.name)}</div>
+    <h1 class="q">${esc(T(DATA.ui.symptoms_h1))}</h1>
+    <div class="sub">${esc(T(DATA.ui.symptoms_sub))}</div></div>
+    <div class="grid">
+      ${p.symptoms.map((s) => `
+        <button class="choice" onclick="pickSymptom('${s.id}')">
+          <span class="body"><span class="name">${esc(T(s.name))}</span></span></button>`).join("")}
     </div>
-    ${stuckBox()}`;
+    ${refTable(p.id)}
+    ${contactBox()}`;
 }
-function searchBox(){
+
+/* ---- 3. the answer: every cause, on one page ---- */
+function renderAnswer() {
+  app.className = "fade";
+  const s = state.symptom;
+  app.innerHTML = `
+    <div><div class="eyebrow">${esc(state.product.name)}</div>
+    <h1 class="q">${esc(T(s.name))}</h1>
+    <div class="sub">${esc(T(DATA.ui.answer_sub))}</div></div>
+    <div class="answers">${s.causes.map(causeCard).join("")}</div>
+    ${refTable(state.product.id)}
+    ${contactBox()}`;
+}
+
+function causeCard(c) {
+  const lvl = ["ok", "warn", "stop"].includes(c.level) ? c.level : "";
+  const tagClass = lvl || "cause";
+  const dot = c.swatch ? `<span class="ring-dot" style="background:${esc(c.swatch)}"></span>` : "";
+  return `<div class="panel ${lvl}">
+    <span class="tag ${tagClass}">${dot}${esc(T(c.tag))}</span>
+    ${c.when ? `<div class="when">${esc(T(DATA.ui.when))}: ${esc(T(c.when))}</div>` : ""}
+    <h2>${esc(T(c.title))}</h2>
+    <p>${esc(T(c.intro))}</p>
+    <ol class="steps">${c.steps.map((st) => `<li>${esc(T(st))}</li>`).join("")}</ol>
+    ${c.note ? `<div class="note"><b>${esc(T(DATA.ui.note))}:</b> ${esc(T(c.note))}</div>` : ""}
+  </div>`;
+}
+
+/* ---- search: symptoms and cause titles, across every product ---- */
+function searchBox() {
   return `<div class="search">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    <input placeholder="或直接搜索关键词,如 “灯不亮”、“error 1”、“光环红色”…（原型未接搜索）"></div>`;
+    <input id="tsSearch" type="search" autocomplete="off" placeholder="${esc(T(DATA.ui.search_ph))}" value="${esc(state.query)}"></div>`;
 }
-function cardSoon(x){
-  return `<div class="choice soon"><span class="ico">${x.icon||'🔒'}</span>
-    <span class="body"><span class="name">${x.name}<span class="badge-soon">待录入</span></span><span class="desc">${x.desc||''}</span></span></div>`;
+function wireSearch() {
+  const input = document.getElementById("tsSearch");
+  if (!input) return;
+  input.addEventListener("input", () => { state.query = input.value; paintResults(); });
+  if (state.query) paintResults();
 }
-function stuckBox(){
-  const ctx = `${state.brand?.name} / ${state.product?.name} / ${state.symptom?.name}`;
-  return `<div class="stuck"><h3>问题还没解决?</h3>
-    <p>把设备型号和现象发给我们的工程师,通常当天回复。也可以顺带询价易损件与配件。</p>
+const fold = (s) => String(s).toLowerCase().replace(/[\s\-_./]/g, "");
+function searchHits(q) {
+  const tokens = q.trim().split(/\s+/).map(fold).filter(Boolean);
+  if (!tokens.length) return [];
+  const hits = [];
+  for (const p of DATA.products) {
+    for (const s of p.symptoms) {
+      // A symptom matches on its own name, on any cause title or tag, and on
+      // the reference table's error codes — "Error 1" should find its way home.
+      const hay = fold([T(s.name), s.id, p.name,
+        ...s.causes.flatMap((c) => [T(c.title), T(c.tag), T(c.intro)])].join(" "));
+      if (tokens.every((t) => hay.includes(t))) hits.push({ p, s });
+    }
+  }
+  return hits.slice(0, 10);
+}
+function paintResults() {
+  const box = document.getElementById("searchResults");
+  const grid = document.getElementById("productGrid");
+  if (!box) return;
+  const q = state.query.trim();
+  if (!q) { box.innerHTML = ""; if (grid) grid.style.display = ""; return; }
+  const hits = searchHits(q);
+  if (grid) grid.style.display = hits.length ? "none" : "";
+  box.innerHTML = hits.length
+    ? `<div class="results">${hits.map((h) => `
+        <button class="result" onclick="jump('${h.p.id}','${h.s.id}')">
+          <span class="rname">${esc(T(h.s.name))}</span>
+          <span class="rpath">${esc(h.p.name)}</span></button>`).join("")}</div>`
+    : `<div class="empty">${esc(T(DATA.ui.no_result))}</div>`;
+}
+
+/* ---- contact: a real mailto, carrying where the reader got to ---- */
+function ctx() {
+  const bits = [];
+  if (state.product) bits.push(state.product.name);
+  if (state.symptom) bits.push(T(state.symptom.name));
+  return bits.join(" / ");
+}
+function mailto(to, subject) {
+  const where = ctx();
+  const body = [
+    where ? `Product / symptom: ${where}` : "Product / symptom:",
+    "",
+    "What I am seeing:",
+    "",
+    "Serial number (if known):",
+    "Site / country:",
+    "Contact name and phone:",
+    "",
+  ].join("\n");
+  return `mailto:${to}?subject=${encodeURIComponent(where ? `${subject} — ${where}` : subject)}&body=${encodeURIComponent(body)}`;
+}
+function contactBox() {
+  const c = DATA.contact;
+  return `<div class="stuck">
+    <h3>${esc(state.product ? T(DATA.ui.stuck_h) : T(DATA.ui.contact_now))}</h3>
+    <p>${esc(T(DATA.ui.stuck_b))}</p>
     <div class="stuck-actions">
-      <button class="btn primary" onclick="alert('接入工单/表单,自动带上下文:\\n${ctx}')">联系技术支持</button>
-      <button class="btn ghost" onclick="alert('接入配件/耗材询价表单,自动带上下文:\\n${ctx}')">询价配件耗材</button>
+      <a class="btn primary" href="${mailto(c.engineer_email, "OmniCure technical support")}">${esc(T(DATA.ui.contact_eng))}</a>
+      <a class="btn ghost" href="${esc(c.line_url)}" target="_blank" rel="noopener noreferrer">${esc(T(DATA.ui.contact_line))}</a>
+      <a class="btn ghost" href="${mailto(c.sales_email, "OmniCure parts enquiry")}">${esc(T(DATA.ui.contact_parts))}</a>
     </div></div>`;
 }
-function refTable(pid){
-  const t=REF_TABLES[pid]; if(!t) return "";
-  return `<details class="ref"><summary>展开:${t.title}</summary>
-    <table><thead><tr>${t.cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead>
-    <tbody>${t.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></details>`;
+
+function refTable(pid) {
+  const t = DATA.ref_tables[pid];
+  if (!t) return "";
+  return `<details class="ref"><summary>${esc(T(DATA.ui.ref_open))}: ${esc(T(t.title))}</summary>
+    <table><thead><tr>${t.cols.map((c) => `<th>${esc(T(c))}</th>`).join("")}</tr></thead>
+    <tbody>${t.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(typeof c === "string" ? c : T(c))}</td>`).join("")}</tr>`).join("")}</tbody></table></details>`;
 }
-function pickBrand(id){ state.brand=findBrand(id); render(); }
-function pickProduct(id){ state.product=state.brand.products.find(p=>p.id===id); render(); }
-function pickSymptom(id){ state.symptom=state.product.symptoms.find(s=>s.id===id); state.node=state.symptom.start; render(); }
-function goNode(id){ state.node=id; render(); }
 
 boot();
 </script>
