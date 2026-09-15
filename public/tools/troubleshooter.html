@@ -57,12 +57,6 @@
   .btn.ghost { background:#fff; color:var(--brand); } .btn.ghost:hover { background:var(--brand-tint); }
   .back-link { margin-top:20px; } .back-link button { background:none; border:none; color:var(--ink-soft); cursor:pointer; font-size:13px; font-family:inherit; padding:4px; }
   .back-link button:hover { color:var(--brand); }
-  .ref { margin-top:30px; border-top:1px solid var(--line); padding-top:18px; }
-  .ref summary { cursor:pointer; font-weight:650; font-size:14px; color:var(--ink); }
-  .ref table { width:100%; border-collapse:collapse; margin-top:12px; font-size:13px; }
-  .ref th,.ref td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
-  .ref th { background:#f2f5f8; font-weight:600; }
-  .ref td:first-child { font-weight:600; white-space:nowrap; }
   .fade { animation:fade .25s ease; }
   @keyframes fade { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
   @media (prefers-reduced-motion:reduce) { .fade { animation:none; } }
@@ -105,14 +99,20 @@
    Three screens, and no more:
      1. product   — the model on the nameplate
      2. symptom   — what is happening
-     3. answer    — every cause for that symptom, on one page
+     3. answer    — the checks for that symptom, in order, on one page
 
-   The old build had brand → product → symptom → a chain of yes/no
+   An earlier build had brand → product → symptom → a chain of yes/no
    questions before an answer appeared: five or six taps for a fact
-   that is one line in the user guide. Customers said it was too much
-   work, and they were right. The yes/no questions were not thrown
-   away — each one became the "applies when" line on the cause it used
-   to gate, so the reader scans instead of clicking.
+   that is one line long. Customers said it was too much work.
+
+   The content is the list ETIA's service engineers work from, and it
+   is written the way they wrote it: per symptom, a short ordered run
+   of checks. Their last step is always "contact the service centre",
+   which is not in the list — the contact block at the foot of the
+   answer does that job, and it carries the product and symptom into
+   the mail it opens.
+
+   Nothing from the manuals is carried here. Field experience only.
 
    All visible copy is {en,zh,th,vi} in troubleshooter-data.json, so
    adding a product still means editing only that file.
@@ -235,7 +235,6 @@ function renderSymptoms() {
         <button class="choice" onclick="pickSymptom('${s.id}')">
           <span class="body"><span class="name">${esc(T(s.name))}</span></span></button>`).join("")}
     </div>
-    ${refTable(p.id)}
     ${contactBox()}`;
 }
 
@@ -250,7 +249,6 @@ function renderAnswer() {
     <div class="answers"><div class="panel">
       <ol class="steps">${s.checks.map((c) => `<li>${esc(T(c))}</li>`).join("")}</ol>
     </div></div>
-    ${refTable(state.product.id)}
     ${contactBox()}`;
 }
 
@@ -339,14 +337,6 @@ function contactBox() {
       <a class="btn primary" href="${mailto(c.engineer_email, "OmniCure technical support")}">${esc(T(DATA.ui.contact_eng))}</a>
       ${CHATS.map((k) => c[k.url] ? `<a class="btn ghost" href="${esc(c[k.url])}" target="_blank" rel="noopener noreferrer">${k.name}</a>` : "").join("")}
     </div></div>`;
-}
-
-function refTable(pid) {
-  const t = DATA.ref_tables[pid];
-  if (!t) return "";
-  return `<details class="ref"><summary>${esc(T(DATA.ui.ref_open))}: ${esc(T(t.title))}</summary>
-    <table><thead><tr>${t.cols.map((c) => `<th>${esc(T(c))}</th>`).join("")}</tr></thead>
-    <tbody>${t.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(typeof c === "string" ? c : T(c))}</td>`).join("")}</tr>`).join("")}</tbody></table></details>`;
 }
 
 boot();
