@@ -26,6 +26,7 @@ import CustomerLogos from "@/components/CustomerLogos";
 import HomeCarousel from "@/components/HomeCarousel";
 import LampStockBand from "@/components/LampStockBand";
 import { LIGHT_SOURCES } from "@/components/lightSources";
+import { liveChatChannels } from "@/components/chatChannels";
 
 const whyCards: { title: LangText; body: LangText; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
   { title: { en: "20 Years of Application Experience", zh: "20 年应用经验", th: "ประสบการณ์ด้านการใช้งาน 20 ปี", vi: "20 năm kinh nghiệm ứng dụng" }, body: { en: "Hands-on UV curing knowledge across medical, electronics, photonics, automotive and industrial manufacturing.", zh: "覆盖医疗、电子、光子、汽车及工业制造场景，提供贴近现场的紫外线固化经验。", th: "เรามีความรู้ด้าน UV curing จากประสบการณ์จริง ครอบคลุมงานผลิตในอุตสาหกรรมการแพทย์ อิเล็กทรอนิกส์ โฟโตนิกส์ ยานยนต์ และอุตสาหกรรมการผลิตทั่วไป", vi: "Chúng tôi có kiến thức thực tiễn về UV curing trong các lĩnh vực sản xuất thiết bị y tế, điện tử, quang tử, ô tô và sản xuất công nghiệp." }, icon: GraduationCap },
@@ -56,8 +57,12 @@ function product(slug: string) {
 export default function HomeView() {
   const { locale } = useLocale();
   const engineerMail = inquiryMailto(locale, { subject: "UV Curing Engineering Inquiry", context: "Application / adhesive / curing area / wavelength / production requirements" });
-  // The hero offers two ways to reach a person rather than a browse link: one
-  // for a commercial conversation, one for a technical one.
+  // The hero offers ways to reach a person rather than a browse link. It used
+  // to offer two of them — "Talk to Sales" and "Connect with Engineer" — but
+  // both opened the same mailbox, so the choice was cosmetic. One mail button
+  // now, plus the three messengers, which is the choice that actually matters:
+  // a reader has one of those apps and not the others. The technical route is
+  // still one tap away in the closing CTA at the foot of this page.
   const salesMail = inquiryMailto(locale, { subject: "UV Curing Sales Inquiry", context: "Product or model of interest / quantity / delivery location / timeline" });
 
   const heroProducts = heroProductSlugs
@@ -88,7 +93,15 @@ export default function HomeView() {
           <span className="inline-flex items-center gap-2 rounded-full border border-[#41A62A]/20 bg-white px-3 py-1.5 text-xs font-bold text-[#41A62A] shadow-sm"><BadgeCheck className="h-4 w-4" />{t({ en: "Genuine Products Through Authorized Channels", zh: "授权渠道正品", th: "สินค้าของแท้ผ่านช่องทางที่ได้รับอนุญาต" , vi: "Sản phẩm chính hãng qua kênh được ủy quyền" }, locale)}</span>
           <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#143C96] md:text-6xl"><CjkHeading locale={locale} text={{ en: "Your UV Curing Solution Partner", zh: "紫外线固化 就找 ETIA", th: "โซลูชัน UV Curing เลือก ETIA", vi: "Giải pháp UV Curing, hãy chọn ETIA" }} zh={<>紫外线固化 就找 ETIA</>} /><span className="mt-2 block text-2xl font-bold text-[#41A62A] md:text-4xl">{t({ en: "From Selection to Support.", zh: "选型 应用 售后 一站支持", th: "การเลือกอุปกรณ์ การใช้งาน และบริการหลังการขาย — รองรับครบวงจร", vi: "Tư vấn lựa chọn, ứng dụng và hậu mãi — hỗ trợ trọn gói." }, locale)}</span></h1>
           <div className="mt-7 max-w-xl"><SiteSearch /></div>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href={salesMail} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to Sales", zh: "联系销售", th: "ติดต่อฝ่ายขาย" , vi: "Liên hệ kinh doanh" }, locale)} <ArrowRight className="h-4 w-4" /></a><a href={engineerMail} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-6 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96] hover:text-[#1A56DB]">{t({ en: "Connect with Engineer", zh: "对接工程师", th: "เชื่อมต่อกับวิศวกร" , vi: "Kết nối với kỹ sư" }, locale)}</a></div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href={salesMail} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#41A62A] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#358B22]">{t({ en: "Talk to Sales", zh: "联系销售", th: "ติดต่อฝ่ายขาย" , vi: "Liên hệ kinh doanh" }, locale)} <ArrowRight className="h-4 w-4" /></a>
+            {liveChatChannels().map((c) => (
+              <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.aria[locale]} className="inline-flex items-center justify-center rounded-xl border border-[#D4DFEC] bg-white px-5 py-3.5 text-sm font-bold text-[#143C96] transition hover:-translate-y-0.5 hover:border-[#143C96]">
+                <span className="mr-2 inline-block h-2.5 w-2.5 rounded-full" style={{ background: c.bg }} />
+                {c.label}
+              </a>
+            ))}
+          </div>
         </div>
         <div className="relative min-h-[340px] rounded-[32px] border border-white/80 bg-white/75 p-5 shadow-[0_25px_80px_rgba(20,60,150,.12)] backdrop-blur sm:p-8">
           <div className="absolute left-10 right-10 top-1/2 h-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1A56DB]/20 via-[#63C94A]/35 to-transparent blur-2xl" />

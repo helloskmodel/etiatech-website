@@ -2,49 +2,18 @@
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { useLocale, type Locale } from "@/components/LocaleContext";
-import { CONTACT } from "@/components/omnicure/copy";
+import { liveChatChannels, type ChatChannel } from "@/components/chatChannels";
 import { useConsentBannerVisible } from "@/components/consentBanner";
 
-// Floating chat button, fixed bottom-right, per-market messengers.
+// Floating chat button, fixed bottom-right.
 //
-// Single-market pages keep one channel and stay one tap: /th → LINE,
-// /vi → Zalo. Those two messengers are near-universal in their own markets,
-// so a second icon there is clutter.
+// Every visitor sees all three messengers, whatever the page language: the
+// channel list and the reasoning for it live in components/chatChannels.ts.
+// With more than one channel the button is a tap-to-expand stack.
 //
-// The EN and ZH pages carry several, because neither serves one country:
-// EN covers everything outside TH/VN (Malaysia, Singapore, Indonesia, the
-// Philippines), and ZH is read in Hong Kong and by Chinese-speaking factory
-// staff *inside* Southeast Asia — Bac Ninh, Haiphong, eastern Thailand — who
-// reach us on WhatsApp and use a local messenger with everyone around them.
-// Those pages render a tap-to-expand stack, primary channel first.
-//
-// No WeChat / WeCom channel: this is the overseas deployment, it carries no
-// mainland China ICP filing, and it publishes no mainland contact point.
-//
-// Renders nothing when the visitor's language has no channel configured. Pass
-// `force` on locale-locked route trees (/th, /vi, /zh) that don't mount a
-// LocaleProvider of their own.
-type Channel = { kind: "link"; label: string; href: string; bg: string; aria: string };
+// Renders nothing when no channel is configured. Pass `force` on locale-locked
+// route trees (/th, /vi, /zh) that don't mount a LocaleProvider of their own.
 
-const whatsapp = (aria: string): Channel => ({ kind: "link", label: "WhatsApp", href: CONTACT.whatsappUrl, bg: "#25D366", aria });
-const line = (aria: string): Channel => ({ kind: "link", label: "LINE", href: CONTACT.lineUrl, bg: "#06C755", aria });
-const zalo = (aria: string): Channel => ({ kind: "link", label: "Zalo", href: CONTACT.zaloUrl, bg: "#0068FF", aria });
-
-const CHANNELS: Partial<Record<Locale, Channel[]>> = {
-  th: [line("แชทกับเราทาง LINE")],
-  vi: [zalo("Nhắn tin cho chúng tôi qua Zalo")],
-  en: [
-    whatsapp("Chat with us on WhatsApp"),
-    line("Chat with us on LINE"),
-  ],
-  zh: [
-    whatsapp("通过 WhatsApp 咨询"),
-    line("通过 LINE 咨询"),
-  ],
-};
-
-// Label on the collapsed button when several channels are offered. Naming the
-// primary channel there would be a trap — the tap opens the menu, not that app.
 const TOGGLE_LABEL: Record<Locale, string> = { en: "Chat", zh: "在线咨询", th: "แชท", vi: "Chat" };
 const TOGGLE_ARIA: Record<Locale, string> = {
   en: "Open chat options",
@@ -75,7 +44,7 @@ const ANCHOR_DEFAULT = "bottom-5";
 export default function ChatFloatingButton({ force }: { force?: Locale }) {
   const { locale } = useLocale();
   const active = force ?? locale;
-  const channels = CHANNELS[active];
+  const channels = liveChatChannels();
   const [menuOpen, setMenuOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const bannerUp = useConsentBannerVisible();
@@ -96,21 +65,18 @@ export default function ChatFloatingButton({ force }: { force?: Locale }) {
     };
   }, [menuOpen]);
 
-  if (!channels?.length) return null;
+  if (!channels.length) return null;
 
-  const renderChannel = (c: Channel, key: string) =>
-    c.href ? (
-      <a key={key} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.aria} className={PILL} style={{ background: c.bg }}>
-        <Bubble />
-        {c.label}
-      </a>
-    ) : null;
+  const renderChannel = (c: ChatChannel, key: string) => (
+    <a key={key} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.aria[active]} className={PILL} style={{ background: c.bg }}>
+      <Bubble />
+      {c.label}
+    </a>
+  );
 
   // One channel — no menu, the button IS the channel.
   if (channels.length === 1) {
-    const only = renderChannel(channels[0], "only");
-    if (!only) return null;
-    return <div className={anchor}>{only}</div>;
+    return <div className={anchor}>{renderChannel(channels[0], "only")}</div>;
   }
 
   return (
