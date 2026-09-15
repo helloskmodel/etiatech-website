@@ -409,46 +409,6 @@ const catalogProducts: Product[] = [
       ["Cleanroom Ready", "Yes (dedicated duct attachment area)"],
     ],
   },
-  {
-    slug: "s2e-network-module",
-    name: "OmniCure S2E Network Module",
-    brand: "OmniCure",
-    brandId: "omnicure",
-    tech: "UV Spot Curing",
-    sub: "S-Series Accessory",
-    accent: "#1A56DB",
-    imageUrl:
-      "https://etiatech-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/product/S2E%20NETWORK%20MODULE.png",
-    intro:
-      "Ethernet adapter for S-Series spot curing — remotely monitor and control up to 300 systems on a LAN through the OmniCure Monitoring Station software.",
-    features: [
-      "Save maintenance time and keep production running smoothly with OmniCure Monitoring Station software",
-      "Proactively trend and predict maintenance requirements with continuous operational data logging",
-      "Enhance visibility of production activity and quickly isolate issues that result in potential waste/rework",
-      "Increase productivity and eliminate time lost identifying system faults with real-time email alerts",
-      "Remotely access and monitor up to 300 UV curing systems on a local area network",
-      "Adds StepCure process functionality to the S1500",
-    ],
-    applications: [
-      "Remote process monitoring of OmniCure S2000 and S1500 spot curing systems",
-      "Multi-station production floors requiring centralized UV equipment oversight",
-      "Predictive maintenance and operational data logging",
-      "Production environments requiring real-time fault email alerts and electronic records",
-    ],
-    specs: [
-      ["Compatible OmniCure Systems", "S2000 and S1500 (*S2E adds StepCure to the S1500)"],
-      ["Power Supply (Included)", "DC input: 12 VDC, 0.5 A max"],
-      ["Ethernet Interface", "10/100 Mbps (auto-sensing), RJ45 connector"],
-      ["Remote Ethernet Functions", "HTTP web interface; auto TCP/IP device-find; XML data logging; SMTP email (up to 7 recipients); optional Modbus TCP PLC control"],
-      ["Ambient Operating Temperature", "15°C to 35°C (59°F to 95°F)"],
-      ["Storage Temperature", "-10°C to 60°C (14°F to 140°F)"],
-      ["Humidity Range", "Up to 85% max (non-condensing)"],
-      ["Operating Voltage", "100–240 VAC (±10%), 50/60 Hz, 0.06/0.025 A"],
-      ["Dimensions (L×W×H)", '32 × 89 × 114 mm (1¼" × 3½" × 4½")'],
-      ["Weight", "181 g (0.4 lb)"],
-      ["Warranty", "1 year"],
-    ],
-  },
   // The six S-Series accessories the manufacturer lists individually, in its
   // own order. They were one catalogue entry with six bullets, which is not
   // something a customer can point at and ask for.
@@ -1815,50 +1775,6 @@ const catalogProducts: Product[] = [
       ["Mercury", "Yes — manage per disposal laws"],
     ],
   },
-  {
-    slug: "cv300-conveyor",
-    name: "OmniCure CV300 Low-Volume Production Conveyor",
-    brand: "OmniCure",
-    brandId: "omnicure",
-    tech: "Air-Cooled UV LED Curing",
-    sub: "Conveyor",
-    accent: "#41A62A",
-    imageUrl: "/images/omnicure/cv300.jpg",
-    intro:
-      "The conveyor built around the OmniCure AC Series of high-power UV LED heads — substrates to 310 mm wide on an open-mesh Teflon®-coated fibreglass belt, with the head height and angle adjustable to the part. Suits production, laboratory and R&D alike.",
-    features: [
-      "Designed to complement the OmniCure AC Series of high-power UV LED curing systems",
-      "Handles substrates up to 310 mm (12.2 in.) wide",
-      "Effective curing area up to 300 mm (12 in.), depending on the LED system fitted",
-      "Open-mesh Teflon®-coated fibreglass belt",
-      "Belt speed adjustable from 1 to 14.5 m/min (3 to 48 ft/min)",
-      "Head height adjustable from 30 to 60 mm in 10 mm increments",
-      "Head angle adjustable 0 to 90° to the direction of belt travel, in 15° increments",
-      "Suitable for production, laboratory and R&D use",
-    ],
-    applications: [
-      "Low-volume and short production runs",
-      "Formulation development for UV-curable adhesives, inks and coatings",
-      "Laboratory and R&D curing",
-      "Conveyorised curing of flat parts and substrates",
-      "Process trials before specifying a full production line",
-    ],
-    specs: [
-      ["Designed For", "OmniCure AC Series high-power UV LED curing systems"],
-      ["Substrate Width", "Up to 310 mm (12.2 in.)"],
-      ["Effective Curing Area", "Up to 300 mm (12 in.), depending on the LED system fitted"],
-      ["Belt Width", "305 mm (12 in.) open-mesh Teflon®-coated fibreglass"],
-      ["Belt Speed", "1–14.5 m/min (3–48 ft/min)"],
-      ["Head Height Adjustment", "30–60 mm in 10 mm increments"],
-      ["Head Angle Adjustment", "0–90° to belt travel, in 15° increments"],
-      ["Mounting", "Supports a single or multiple curing systems"],
-      ["Weight", "34 kg (74 lbs.)"],
-      ["Electrical", "100–240 V AC, 50/60 Hz, single phase"],
-      ["Controls", "Power on, speed adjust, LED on"],
-      ["Note", "Smaller AC Series heads may need an extra adaptor and mounting bracket for fit and stray-light shielding"],
-      ["Typical Use", "Production, laboratory and R&D"],
-    ],
-  },
   // ─────────── TECHNOLOGY 5: INFRARED HEATING (Noblelight) ───────────
   // Sourced from the Excelitas "Infrared Modules for Industrial Process
   // Technology" brochure (Inhouse XNG 03/24). These modules are configured to
@@ -2647,7 +2563,6 @@ export const modelToSlug: Record<string, string> = {
   "LS200 Radiometer": "ls200",
   "UV LED Heads (V3)": "v3-led-heads",
   "R2000 Radiometer": "r2000",
-  "S2E Network Module": "s2e-network-module",
   "AC2": "ac2",
   "AC4": "ac4",
   "AC5": "ac5",
@@ -2692,7 +2607,6 @@ export function productHref(p: Product): string {
 export const productPopularity: string[] = [
   // OmniCure
   "s2000-elite", "s2000-lamp", "lx500", "ac8", "s1500-pro", "ac8-hd", "v3-led-heads", "ac5", "ac7",
-  "r2000", "ls200", "ac9225", "ac4", "ac2", "ac9225-f", "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter", "s2e-network-module",
   // Phoseon
   "firejet-one", "fl400", "fj800", "nexus-ii", "vericure", "fe400", "fl440", "fl200",
   "fl400-i", "fj100", "fj240", "fj801", "fe100", "fe410", "nexus-ii-ac",
@@ -2725,7 +2639,6 @@ export const productHighlights: Record<string, LangText[]> = {
   "s2000-elite": [{ en: "Closed-Loop Feedback", zh: "闭环反馈", th: "ฟีดแบ็กแบบวงปิด", vi: "Phản hồi vòng kín" }, { en: "Intelli-Lamp 2.0", zh: "Intelli-Lamp 2.0", th: "Intelli-Lamp 2.0", vi: "Intelli-Lamp 2.0" }, { en: "Industry 4.0 Ready", zh: "支持工业 4.0", th: "รองรับ Industry 4.0", vi: "Sẵn sàng Industry 4.0" }],
   "s1500-pro": [{ en: "Intelli-Lamp 2.0", zh: "Intelli-Lamp 2.0", th: "Intelli-Lamp 2.0", vi: "Intelli-Lamp 2.0" }, { en: "4.3-inch Touchscreen", zh: "4.3 英寸触摸屏", th: "หน้าจอสัมผัส 4.3 นิ้ว", vi: "Màn hình cảm ứng 4.3 inch" }, { en: "StepCure 2.0", zh: "StepCure 2.0", th: "StepCure 2.0", vi: "StepCure 2.0" }],
   "r2000": [{ en: "Real-Time NIST Calibration", zh: "NIST 实时校准", th: "การสอบเทียบ NIST แบบเรียลไทม์", vi: "Hiệu chuẩn NIST thời gian thực" }, { en: "Multi-Station Matching", zh: "多工位匹配", th: "จับคู่หลายสถานี", vi: "Đồng bộ nhiều trạm" }, { en: "Cure-Ring Sensor", zh: "Cure-Ring 传感器", th: "เซนเซอร์ Cure-Ring", vi: "Cảm biến Cure-Ring" }],
-  "s2e-network-module": [{ en: "Remote Monitoring", zh: "远程监控", th: "การมอนิเตอร์ระยะไกล", vi: "Giám sát từ xa" }, { en: "Up to 300 Systems", zh: "最多 300 台系统", th: "รองรับสูงสุด 300 ระบบ", vi: "Tối đa 300 hệ thống" }, { en: "Fault Email Alerts", zh: "故障邮件告警", th: "แจ้งเตือนข้อผิดพลาดทางอีเมล", vi: "Cảnh báo lỗi qua email" }],
   "s-liquid-light-guide": [{ en: "3 / 5 / 8 mm Tips", zh: "管口 3/5/8 mm", th: "ปลาย 3/5/8 มม.", vi: "Đầu 3/5/8 mm" }, { en: "750–3000 mm", zh: "750–3000 mm", th: "750–3000 มม.", vi: "750–3000 mm" }, { en: "Dual & Triple Leg", zh: "双/三分支", th: "สองและสามขา", vi: "Hai & ba nhánh" }],
   "s-fiber-light-guide": [{ en: "Equal Distribution", zh: "能量均分", th: "กระจายเท่ากัน", vi: "Phân bố đều" }, { en: "Multi-Site", zh: "多点固化", th: "หลายจุด", vi: "Nhiều điểm" }],
   "s-fiber-light-line": [{ en: "Linear Beam", zh: "线形光束", th: "ลำแสงเส้นตรง", vi: "Chùm dạng vạch" }, { en: "No Coupling Loss", zh: "无耦合损失", th: "ไม่มีการสูญเสียจากการต่อ", vi: "Không tổn hao ghép nối" }],
@@ -2836,9 +2749,6 @@ export const productDocs: Record<string, ProductDoc[]> = {
   ],
   "r2000": [
     { file: "Brochure - OmniCure R2000 UV Radiometer.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
-  ],
-  "s2e-network-module": [
-    { file: "Brochure - OmniCure S2E Network Module.pdf", kind: DOC_BROCHURE, base: SITE_PDF_BASE },
   ],
   "v3-led-heads": [
     { file: "Specification Guide - OmniCure LX500 V3 LED UV Head Assembly.pdf", kind: DOC_SPEC_GUIDE, base: SITE_PDF_BASE },

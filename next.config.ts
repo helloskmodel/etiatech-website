@@ -50,6 +50,13 @@ const nextConfig: NextConfig = {
         destination: "/product/technology/mercury-uv-lamp#s-series-accessories-replacement-lamps",
         permanent: true,
       },
+      // Discontinued by Excelitas. Their URLs were live and in the sitemap, so
+      // they redirect to the shelf that holds what replaced them rather than
+      // 404ing: the S2E was an S-Series accessory, the CV300 an AC-Series
+      // conveyor. Neither had any Search Console impressions, so nothing is
+      // being handed over — this only keeps old links and bookmarks working.
+      { source: "/product/systems/s2e-network-module", destination: "/product/technology/mercury-uv-lamp", permanent: true },
+      { source: "/product/systems/cv300-conveyor", destination: "/product/technology/uv-led", permanent: true },
       // The analytical OEM lamp line (FiberLight, deuterium, PID, hollow
       // cathode) is discontinued; its indexed pages go to the brand shelf.
       ...["fiberlight-d2", "pid-lamps", "deuterium-lamps", "fiberlight-l3", "hollow-cathode-lamps"].map((slug) => ({

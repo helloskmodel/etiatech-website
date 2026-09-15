@@ -44,7 +44,6 @@ const order = [
   "s2000-elite-filters", "s-liquid-light-guide", "s-fiber-light-guide", "s-fiber-light-line", "s-cure-ring-adapter", "s-light-line-adapter", "s-collimating-adapter",
   "lx500", "v3-led-heads", "ls200",
   "ac2", "ac4", "ac5", "ac7", "ac8", "ac8-hd", "ac9225", "ac9225-f",
-  "s2e-network-module",
 ];
 
 // Which section of this page each OmniCure product sits in. Accessories are
@@ -67,7 +66,6 @@ const categoryBySlug: Record<string, Exclude<RouteId, "all">> = {
   "s-cure-ring-adapter": "lamp-spot",
   "s-light-line-adapter": "lamp-spot",
   "s-collimating-adapter": "lamp-spot",
-  "s2e-network-module": "lamp-spot",
   "s2000-lamp": "lamp-spot",
   lx500: "led-spot",
   lx505: "led-spot",
@@ -81,7 +79,6 @@ const categoryBySlug: Record<string, Exclude<RouteId, "all">> = {
   "ac8-hd": "large-area",
   ac9225: "large-area",
   "ac9225-f": "large-area",
-  "cv300-conveyor": "large-area",
 };
 
 const routes: Array<{
